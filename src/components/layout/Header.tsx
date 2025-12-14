@@ -50,7 +50,6 @@ const educationMenu = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
 
@@ -158,45 +157,43 @@ export function Header() {
         <div className="bg-background border-b border-border hidden lg:block">
           <div className="container mx-auto px-4">
             <nav className="flex items-center gap-0 h-12 overflow-x-auto">
-              {currentSubmenu.items.map((item) => (
-                <div
-                  key={item.href}
-                  className="relative group"
-                  onMouseEnter={() => {
-                    if (currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0) {
-                      setHoveredCategory(item.label);
-                    }
-                  }}
-                  onMouseLeave={() => setHoveredCategory(null)}
-                >
-                  <Link
-                    to={item.href}
-                    className="flex items-center gap-1 text-sm font-semibold px-4 py-3 text-foreground hover:text-primary whitespace-nowrap transition-colors"
+              {currentSubmenu.items.map((item) => {
+                const hasSubcategories = currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0;
+                
+                return (
+                  <div
+                    key={item.href}
+                    className="relative group/dropdown"
                   >
-                    {item.label}
-                    {currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0 && (
-                      <ChevronDown className={`h-3 w-3 transition-transform ${hoveredCategory === item.label ? 'rotate-180' : ''}`} />
-                    )}
-                  </Link>
+                    <Link
+                      to={item.href}
+                      className="flex items-center gap-1 text-sm font-semibold px-4 py-3 text-foreground hover:text-primary whitespace-nowrap transition-colors"
+                    >
+                      {item.label}
+                      {hasSubcategories && (
+                        <ChevronDown className="h-3 w-3 transition-transform group-hover/dropdown:rotate-180" />
+                      )}
+                    </Link>
 
-                  {/* Dropdown for subcategories */}
-                  {currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0 && hoveredCategory === item.label && (
-                    <div className="absolute top-full left-0 pt-0 z-[100]">
-                      <div className="bg-card border border-border rounded-md shadow-lg py-2 min-w-[180px] animate-fade-in">
-                        {item.subcategories.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            to={sub.href}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                    {/* Dropdown for subcategories - CSS based */}
+                    {hasSubcategories && (
+                      <div className="absolute top-full left-0 pt-1 z-[100] invisible opacity-0 group-hover/dropdown:visible group-hover/dropdown:opacity-100 transition-all duration-200">
+                        <div className="bg-card border border-border rounded-md shadow-lg py-2 min-w-[180px]">
+                          {item.subcategories!.map((sub) => (
+                            <Link
+                              key={sub.href}
+                              to={sub.href}
+                              className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    )}
+                  </div>
+                );
+              })}
             </nav>
           </div>
         </div>

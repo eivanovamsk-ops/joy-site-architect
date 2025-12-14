@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Search, MessageCircle, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import articonLogo from "@/assets/articon-logo.png";
+import { categories } from "@/data/products";
 
 // Top bar navigation items
 const topNavItems = [
@@ -21,17 +22,21 @@ const laboratoryMenu = [
   { label: "Контроль качества", href: "/laboratory#quality" },
 ];
 
-// Shop submenu (from Tilda structure)
-const shopMenu = [
-  { label: "3Д-печать", href: "/shop#3d-print" },
-  { label: "3Д-сканеры", href: "/shop#scanners" },
-  { label: "Фрезерные станки", href: "/shop#milling" },
-  { label: "Циркониевые диски", href: "/shop#zirconia" },
-  { label: "Диски Cad Cam", href: "/shop#cadcam" },
-  { label: "Краски и глазурь", href: "/shop#paints" },
-  { label: "Печи", href: "/shop#furnaces" },
-  { label: "Доставка и оплата", href: "/shop#delivery" },
-];
+interface ShopMenuItem {
+  label: string;
+  href: string;
+  subcategories?: { label: string; href: string }[];
+}
+
+// Shop submenu with subcategories from products data
+const shopMenu: ShopMenuItem[] = categories.map((cat) => ({
+  label: cat.name,
+  href: `/shop?category=${cat.id}`,
+  subcategories: cat.subcategories?.map((sub) => ({
+    label: sub.name,
+    href: `/shop?category=${cat.id}&subcategory=${sub.id}`,
+  })),
+}));
 
 // Education submenu
 const educationMenu = [
@@ -45,6 +50,7 @@ const educationMenu = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
 
@@ -54,10 +60,10 @@ export function Header() {
   const isShopPage = location.pathname === "/shop";
   const isEducationPage = location.pathname === "/education";
 
-  const getCurrentSubmenu = () => {
-    if (isLaboratoryPage) return laboratoryMenu;
-    if (isShopPage) return shopMenu;
-    if (isEducationPage) return educationMenu;
+  const getCurrentSubmenu = (): { items: ShopMenuItem[]; hasDropdowns: boolean } | null => {
+    if (isLaboratoryPage) return { items: laboratoryMenu as ShopMenuItem[], hasDropdowns: false };
+    if (isShopPage) return { items: shopMenu, hasDropdowns: true };
+    if (isEducationPage) return { items: educationMenu as ShopMenuItem[], hasDropdowns: false };
     return null;
   };
 
@@ -152,14 +158,42 @@ export function Header() {
         <div className="bg-background border-b border-border hidden lg:block">
           <div className="container mx-auto px-4">
             <nav className="flex items-center gap-0 h-12 overflow-x-auto">
-              {currentSubmenu.map((item) => (
-                <a
+              {currentSubmenu.items.map((item) => (
+                <div
                   key={item.href}
-                  href={item.href}
-                  className="text-sm font-semibold px-4 py-3 text-foreground hover:text-primary whitespace-nowrap transition-colors"
+                  className="relative"
+                  onMouseEnter={() => {
+                    if (currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories) {
+                      setHoveredCategory(item.label);
+                    }
+                  }}
+                  onMouseLeave={() => setHoveredCategory(null)}
                 >
-                  {item.label}
-                </a>
+                  <Link
+                    to={item.href}
+                    className="flex items-center gap-1 text-sm font-semibold px-4 py-3 text-foreground hover:text-primary whitespace-nowrap transition-colors"
+                  >
+                    {item.label}
+                    {currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories && (
+                      <ChevronDown className="h-3 w-3" />
+                    )}
+                  </Link>
+
+                  {/* Dropdown for subcategories */}
+                  {currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories && hoveredCategory === item.label && (
+                    <div className="absolute top-full left-0 bg-card border border-border rounded-md shadow-lg py-2 min-w-[180px] z-50 animate-fade-in">
+                      {item.subcategories.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          to={sub.href}
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
           </div>

@@ -13,7 +13,7 @@ const banners: Banner[] = [
   {
     id: 1,
     tag: "CYBER WEEK DEAL!",
-    title: "Скидка 10% на все 3D-принтеры Asiga",
+    title: "Скидка 10% на все фотополимеры TopCore",
     description: "Используйте код CyberWeek10 при оформлении заказа",
     cta: "Купить сейчас",
   },

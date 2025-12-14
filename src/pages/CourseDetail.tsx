@@ -24,6 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CourseEnrollmentForm } from "@/components/education/CourseEnrollmentForm";
 
 interface Course {
   id: number;
@@ -649,9 +650,11 @@ const CourseDetail = () => {
             Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Записаться на курс
-            </Button>
+            <CourseEnrollmentForm 
+              courseName={course.title}
+              courseDate={course.date}
+              coursePrice={course.price}
+            />
             <Button size="lg" variant="outline">
               Задать вопрос
             </Button>

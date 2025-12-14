@@ -18,7 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+
 import { courses, courseCategories, courseFormats } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
@@ -61,8 +61,6 @@ const CourseCalendar = () => {
     <Layout>
       <div className="min-h-screen bg-muted/30">
         <div className="container mx-auto px-4 py-8">
-          <Breadcrumbs />
-
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Календарь курсов

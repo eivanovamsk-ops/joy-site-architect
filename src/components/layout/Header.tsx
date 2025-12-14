@@ -1,65 +1,80 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, MessageCircle, ChevronDown, Menu, X } from "lucide-react";
+import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User } from "lucide-react";
 import articonLogo from "@/assets/articon-logo.png";
-import { categories } from "@/data/products";
 
-// Top gray bar navigation - main sections
-const mainSections = [
+// Top gray bar navigation - main sections (no dropdowns)
+const topBarSections = [
   { label: "Лаборатория", href: "/laboratory" },
-  { 
-    label: "Магазин", 
-    href: "/shop",
-    hasDropdown: true,
-  },
-  { 
-    label: "Учебный центр", 
-    href: "/education",
-    hasDropdown: true,
-  },
+  { label: "Магазин", href: "/shop" },
+  { label: "Учебный центр", href: "/education" },
 ];
 
-// Shop categories with subcategories from products data
-const shopCategories = categories.map((cat) => ({
-  label: cat.name,
-  href: `/shop?category=${cat.id}`,
-  subcategories: cat.subcategories?.map((sub) => ({
-    label: sub.name,
-    href: `/shop?category=${cat.id}&subcategory=${sub.id}`,
-  })),
-}));
+// Home page menu items
+const homeMenuItems = [
+  { label: "Услуги лаборатории", href: "/laboratory" },
+  { label: "Магазин оборудования и расходных материалов", href: "/shop" },
+  { label: "Учебный центр", href: "/education" },
+];
 
-// Education categories
-const educationCategories = [
+// Laboratory menu items with submenus
+const laboratoryMenuItems = [
   {
-    label: "Для врачей",
+    label: "Услуги и цены",
+    href: "/laboratory#services",
+    subcategories: [
+      { label: "Эстетика (безметалловая керамика)", href: "/laboratory?service=esthetics" },
+      { label: "Ортодонтия (Ortho)", href: "/laboratory?service=orthodontics" },
+      { label: "Хирургические шаблоны", href: "/laboratory?service=surgical" },
+      { label: "Сплинты и депрограмматоры", href: "/laboratory?service=splints" },
+      { label: "Съемное протезирование", href: "/laboratory?service=removable" },
+    ],
+  },
+  { label: "Прайс-листы", href: "/laboratory#pricing" },
+  { label: "Заказ-наряды", href: "/laboratory#orders" },
+  { label: "Как сделать заказ", href: "/laboratory#how-to-order" },
+  { label: "Контакты", href: "/contacts" },
+];
+
+// Shop menu items from tilda structure
+const shopMenuItems = [
+  { label: "Фрезерные станки", href: "/shop?category=milling" },
+  { label: "Печи", href: "/shop?category=furnaces" },
+  { label: "Вытяжки и пылесосы", href: "/shop?category=vacuums" },
+  { label: "3Д-принтеры", href: "/shop?category=3d-print" },
+  { label: "Расходные материалы", href: "/shop?category=consumables" },
+  { label: "3Д-сканеры", href: "/shop?category=3d-scanners" },
+];
+
+// Education menu items with submenus
+const educationMenuItems = [
+  { label: "Календарь курсов", href: "/education#calendar" },
+  {
+    label: "Обучение для врачей",
     href: "/education?direction=doctors",
     subcategories: [
       { label: "Ортопедия", href: "/education?direction=doctors&course=orthopedics" },
       { label: "Ортодонтия", href: "/education?direction=doctors&course=orthodontics" },
-      { label: "Хирургия", href: "/education?direction=doctors&course=surgery" },
       { label: "Цифровое планирование", href: "/education?direction=doctors&course=digital-planning" },
-      { label: "Дентальный фотопротокол", href: "/education?direction=doctors&course=photo-protocol" },
     ],
   },
   {
-    label: "Для техников",
+    label: "Обучение для техников",
     href: "/education?direction=technicians",
     subcategories: [
-      { label: "CAD/CAM (Exocad)", href: "/education?direction=technicians&course=cadcam" },
+      { label: "CAD/CAM", href: "/education?direction=technicians&course=cadcam" },
       { label: "3D-моделирование", href: "/education?direction=technicians&course=3d-modeling" },
       { label: "Цифровая ортодонтия", href: "/education?direction=technicians&course=digital-ortho" },
-      { label: "3D-печать", href: "/education?direction=technicians&course=3d-printing" },
     ],
   },
+  { label: "Контакты", href: "/contacts" },
 ];
 
-// Secondary nav items
-const secondaryNavItems = [
-  { label: "Новости и блоги", href: "/blog" },
-  { label: "О нас", href: "/about" },
-  { label: "Связаться с нами", href: "/contacts" },
-];
+type MenuItem = {
+  label: string;
+  href: string;
+  subcategories?: { label: string; href: string }[];
+};
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,80 +82,38 @@ export function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
 
-  const isActive = (href: string) => location.pathname === href;
+  const isHome = location.pathname === "/";
+  const isLaboratory = location.pathname === "/laboratory";
+  const isShop = location.pathname === "/shop";
+  const isEducation = location.pathname === "/education";
+
+  // Get menu items based on current section
+  const getMenuItems = (): MenuItem[] => {
+    if (isLaboratory) return laboratoryMenuItems;
+    if (isShop) return shopMenuItems;
+    if (isEducation) return educationMenuItems;
+    return homeMenuItems;
+  };
+
+  const currentMenuItems = getMenuItems();
+  const showShopIcons = isShop;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Gray Bar - Main Sections */}
-      <div className="bg-muted border-b border-border">
+      {/* Top Gray Bar - Darker, items aligned right */}
+      <div className="bg-[#5a5a5a] border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-10">
+          <div className="flex items-center justify-end h-9 gap-1">
             <nav className="hidden lg:flex items-center">
-              {mainSections.map((section) => {
-                const isShop = section.label === "Магазин";
-                const isEducation = section.label === "Учебный центр";
-                const dropdownItems = isShop ? shopCategories : isEducation ? educationCategories : null;
-
-                return (
-                  <div key={section.href} className="relative group">
-                    <Link
-                      to={section.href}
-                      className={`flex items-center gap-1 px-4 py-2.5 text-sm font-medium transition-colors ${
-                        isActive(section.href)
-                          ? "text-primary"
-                          : "text-foreground hover:text-primary"
-                      }`}
-                    >
-                      {section.label}
-                      {section.hasDropdown && (
-                        <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
-                      )}
-                    </Link>
-
-                    {/* Dropdown for Shop and Education */}
-                    {dropdownItems && (
-                      <div className="absolute top-full left-0 pt-0 z-[100] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
-                        <div className="bg-background border border-border shadow-xl py-2 min-w-[220px]">
-                          {dropdownItems.map((category) => {
-                            const hasSubcategories = category.subcategories && category.subcategories.length > 0;
-                            
-                            return (
-                              <div key={category.href} className="relative group/item">
-                                <Link
-                                  to={category.href}
-                                  className="flex items-center justify-between px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                                >
-                                  {category.label}
-                                  {hasSubcategories && (
-                                    <ChevronDown className="h-3.5 w-3.5 -rotate-90" />
-                                  )}
-                                </Link>
-
-                                {/* Nested dropdown for subcategories */}
-                                {hasSubcategories && (
-                                  <div className="absolute top-0 left-full pl-0 z-[110] invisible opacity-0 group-hover/item:visible group-hover/item:opacity-100 transition-all duration-200">
-                                    <div className="bg-background border border-border shadow-xl py-2 min-w-[200px]">
-                                      {category.subcategories!.map((sub) => (
-                                        <Link
-                                          key={sub.href}
-                                          to={sub.href}
-                                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                                        >
-                                          {sub.label}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+              {topBarSections.map((section) => (
+                <Link
+                  key={section.href}
+                  to={section.href}
+                  className="px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors"
+                >
+                  {section.label}
+                </Link>
+              ))}
             </nav>
 
             {/* Chat-bot link */}
@@ -148,7 +121,7 @@ export function Header() {
               href="https://t.me/articondental_bot"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
               Чат-бот
@@ -160,28 +133,29 @@ export function Header() {
       {/* Main Header with Logo and Search */}
       <div className="bg-background border-b border-border">
         <div className="container mx-auto px-4">
+          {/* Top row: Logo, Search, Shop icons (if on shop) */}
           <div className="flex items-center justify-between h-16 gap-6">
-            {/* Logo */}
-            <Link to="/" className="flex-shrink-0">
+            {/* Logo - with padding from edge */}
+            <Link to="/" className="flex-shrink-0 pl-2">
               <img
                 src={articonLogo}
                 alt="Articon - Dental Digital Solutions"
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </Link>
 
-            {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex flex-1 max-w-lg">
+            {/* Search Bar - Center, wider like articon.com */}
+            <div className="hidden lg:flex flex-1 max-w-xl mx-auto">
               <div className="relative w-full">
                 <input
                   type="text"
                   placeholder="Поиск по сайту..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-10 pl-4 pr-12 rounded border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  className="w-full h-9 pl-4 pr-12 rounded border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                 />
                 <button
-                  className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors"
+                  className="absolute right-0 top-0 h-9 w-9 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors"
                   aria-label="Поиск"
                 >
                   <Search className="h-4 w-4" />
@@ -189,24 +163,21 @@ export function Header() {
               </div>
             </div>
 
-            {/* Secondary Navigation - Desktop */}
-            <div className="hidden lg:flex items-center gap-6">
-              {secondaryNavItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href="tel:+74951234567"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                +7 (495) 123-45-67
-              </a>
-            </div>
+            {/* Shop icons (Favorites, Cart, Account) - only on shop page */}
+            {showShopIcons && (
+              <div className="hidden lg:flex items-center gap-4">
+                <button className="p-2 text-foreground hover:text-primary transition-colors" aria-label="Избранное">
+                  <Heart className="h-5 w-5" />
+                </button>
+                <button className="p-2 text-foreground hover:text-primary transition-colors relative" aria-label="Корзина">
+                  <ShoppingCart className="h-5 w-5" />
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button className="p-2 text-foreground hover:text-primary transition-colors" aria-label="Личный кабинет">
+                  <User className="h-5 w-5" />
+                </button>
+              </div>
+            )}
 
             {/* Mobile Menu Button */}
             <button
@@ -217,6 +188,44 @@ export function Header() {
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
+
+          {/* Section-specific menu items - bold, with dropdowns */}
+          <nav className="hidden lg:flex items-center gap-1 h-12 border-t border-border/50">
+            {currentMenuItems.map((item) => {
+              const hasSubmenu = item.subcategories && item.subcategories.length > 0;
+
+              return (
+                <div key={item.href} className="relative group">
+                  <Link
+                    to={item.href}
+                    className="flex items-center gap-1 px-4 py-3 text-sm font-bold text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                    {hasSubmenu && (
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                    )}
+                  </Link>
+
+                  {/* Dropdown submenu */}
+                  {hasSubmenu && (
+                    <div className="absolute top-full left-0 pt-0 z-[100] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
+                      <div className="bg-background border border-border shadow-xl py-2 min-w-[240px]">
+                        {item.subcategories!.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
         </div>
       </div>
 
@@ -241,53 +250,69 @@ export function Header() {
               </button>
             </div>
 
-            {/* Mobile Nav - Main Sections */}
+            {/* Mobile Top Sections */}
+            <div className="flex flex-wrap gap-2 mb-4 pb-4 border-b border-border">
+              {topBarSections.map((section) => (
+                <Link
+                  key={section.href}
+                  to={section.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-3 py-1.5 bg-muted rounded text-sm font-medium text-foreground"
+                >
+                  {section.label}
+                </Link>
+              ))}
+              <a
+                href="https://t.me/articondental_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 rounded text-sm font-medium text-primary"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Чат-бот
+              </a>
+            </div>
+
+            {/* Mobile Nav - Current Section Menu */}
             <nav className="flex flex-col">
-              {mainSections.map((section) => {
-                const isShop = section.label === "Магазин";
-                const isEducation = section.label === "Учебный центр";
-                const dropdownItems = isShop ? shopCategories : isEducation ? educationCategories : null;
-                const hasSubmenu = !!dropdownItems;
+              {currentMenuItems.map((item) => {
+                const hasSubmenu = item.subcategories && item.subcategories.length > 0;
 
                 return (
-                  <div key={section.href}>
+                  <div key={item.href}>
                     {hasSubmenu ? (
                       <button
-                        onClick={() => setActiveSubmenu(activeSubmenu === section.label ? null : section.label)}
-                        className={`w-full flex items-center justify-between py-3 text-base font-medium transition-colors ${
-                          isActive(section.href) ? "text-primary" : "text-foreground"
-                        }`}
+                        onClick={() => setActiveSubmenu(activeSubmenu === item.label ? null : item.label)}
+                        className="w-full flex items-center justify-between py-3 text-base font-bold text-foreground"
                       >
-                        {section.label}
+                        {item.label}
                         <ChevronDown
                           className={`h-4 w-4 transition-transform ${
-                            activeSubmenu === section.label ? "rotate-180" : ""
+                            activeSubmenu === item.label ? "rotate-180" : ""
                           }`}
                         />
                       </button>
                     ) : (
                       <Link
-                        to={section.href}
+                        to={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`block py-3 text-base font-medium transition-colors ${
-                          isActive(section.href) ? "text-primary" : "text-foreground"
-                        }`}
+                        className="block py-3 text-base font-bold text-foreground"
                       >
-                        {section.label}
+                        {item.label}
                       </Link>
                     )}
 
                     {/* Mobile submenu */}
-                    {activeSubmenu === section.label && dropdownItems && (
+                    {activeSubmenu === item.label && hasSubmenu && (
                       <div className="pl-4 pb-2 border-l-2 border-primary/20 ml-2">
-                        {dropdownItems.map((category) => (
+                        {item.subcategories!.map((sub) => (
                           <Link
-                            key={category.href}
-                            to={category.href}
+                            key={sub.href}
+                            to={sub.href}
                             onClick={() => setIsMenuOpen(false)}
                             className="block py-2 text-sm text-muted-foreground hover:text-primary"
                           >
-                            {category.label}
+                            {sub.label}
                           </Link>
                         ))}
                       </div>
@@ -296,27 +321,23 @@ export function Header() {
                 );
               })}
 
-              <div className="pt-4 mt-4 border-t border-border">
-                {secondaryNavItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 text-sm text-muted-foreground hover:text-primary"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <a
-                  href="https://t.me/articondental_bot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 py-2 text-sm text-primary"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Чат-бот
-                </a>
-              </div>
+              {/* Shop icons in mobile */}
+              {showShopIcons && (
+                <div className="flex items-center gap-4 pt-4 mt-4 border-t border-border">
+                  <button className="flex items-center gap-2 text-sm text-foreground">
+                    <Heart className="h-5 w-5" />
+                    Избранное
+                  </button>
+                  <button className="flex items-center gap-2 text-sm text-foreground">
+                    <ShoppingCart className="h-5 w-5" />
+                    Корзина
+                  </button>
+                  <button className="flex items-center gap-2 text-sm text-foreground">
+                    <User className="h-5 w-5" />
+                    Кабинет
+                  </button>
+                </div>
+              )}
             </nav>
           </div>
         </div>

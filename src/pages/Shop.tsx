@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ShopHeroBanner } from "@/components/shop/HeroBanner";
 import { ShopQuickLinks } from "@/components/shop/QuickLinks";
-import { ShopFeaturedProducts } from "@/components/shop/FeaturedProducts";
+import { ProductCatalog } from "@/components/shop/ProductCatalog";
 import { ShopAdvantages } from "@/components/shop/Advantages";
 import { ShopBrands } from "@/components/shop/Brands";
 
@@ -10,7 +10,7 @@ const Shop = () => {
     <Layout>
       <ShopHeroBanner />
       <ShopQuickLinks />
-      <ShopFeaturedProducts />
+      <ProductCatalog />
       <ShopAdvantages />
       <ShopBrands />
     </Layout>

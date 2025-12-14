@@ -36,14 +36,67 @@ const laboratoryMenuItems = [
   { label: "Контакты", href: "/contacts" },
 ];
 
-// Shop menu items from tilda structure
+// Shop menu items with full structure
 const shopMenuItems = [
-  { label: "Фрезерные станки", href: "/shop?category=milling" },
-  { label: "Печи", href: "/shop?category=furnaces" },
-  { label: "Вытяжки и пылесосы", href: "/shop?category=vacuums" },
-  { label: "3Д-принтеры", href: "/shop?category=3d-print" },
-  { label: "Расходные материалы", href: "/shop?category=consumables" },
-  { label: "3Д-сканеры", href: "/shop?category=3d-scanners" },
+  { label: "Акции", href: "/shop?category=sales" },
+  { 
+    label: "3D-печать", 
+    href: "/shop?category=3d-printing",
+    subcategories: [
+      { label: "3Д-принтеры", href: "/shop?category=3d-printers" },
+      { label: "Фотополимеры", href: "/shop?category=photopolymers" },
+      { label: "Комплектующие", href: "/shop?category=3d-parts" },
+    ]
+  },
+  { 
+    label: "3D-сканеры", 
+    href: "/shop?category=scanners",
+    subcategories: [
+      { label: "Интраоральные", href: "/shop?category=intraoral-scanners" },
+      { label: "Лабораторные", href: "/shop?category=lab-scanners" },
+      { label: "Аксессуары", href: "/shop?category=scanner-accessories" },
+    ]
+  },
+  { 
+    label: "Фрезерные станки", 
+    href: "/shop?category=milling",
+    subcategories: [
+      { label: "Станки", href: "/shop?category=milling-machines" },
+      { label: "Компрессоры", href: "/shop?category=compressors" },
+      { label: "Пылесосы", href: "/shop?category=vacuums" },
+      { label: "Вытяжки", href: "/shop?category=extraction" },
+      { label: "Фрезы", href: "/shop?category=milling-tools" },
+    ]
+  },
+  { 
+    label: "Циркониевые диски", 
+    href: "/shop?category=zirconia",
+    subcategories: [
+      { label: "Белый", href: "/shop?category=zirconia-white" },
+      { label: "Окрашенный", href: "/shop?category=zirconia-colored" },
+      { label: "Мультилеер", href: "/shop?category=zirconia-multilayer" },
+      { label: "Каркасный", href: "/shop?category=zirconia-frame" },
+    ]
+  },
+  { 
+    label: "Диски Cad/Cam", 
+    href: "/shop?category=cadcam-discs",
+    subcategories: [
+      { label: "Титан", href: "/shop?category=titanium-discs" },
+      { label: "ПММА", href: "/shop?category=pmma-discs" },
+      { label: "Пресс-керамика", href: "/shop?category=press-ceramics" },
+      { label: "Дисиликат лития", href: "/shop?category=lithium-disilicate" },
+    ]
+  },
+  { 
+    label: "Краски и глазурь", 
+    href: "/shop?category=paints",
+    subcategories: [
+      { label: "Низкотемпературные", href: "/shop?category=low-temp-paints" },
+      { label: "Глазурь", href: "/shop?category=glaze" },
+    ]
+  },
+  { label: "Доставка и оплата", href: "/shop/delivery" },
 ];
 
 // Education menu items with submenus

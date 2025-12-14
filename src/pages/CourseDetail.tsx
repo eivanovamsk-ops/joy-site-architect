@@ -10,10 +10,20 @@ import {
   Award,
   ChevronRight,
   Share2,
-  FileText,
-  CheckCircle2
+  CheckCircle2,
+  Target,
+  GraduationCap,
+  UserCheck,
+  Lightbulb,
+  HelpCircle
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface Course {
   id: number;
@@ -23,11 +33,16 @@ interface Course {
   format: string;
   price: number;
   lecturer: string;
+  lecturerBio: string;
   category: string;
   duration: string;
   description: string;
+  goal: string;
+  targetAudience: string[];
+  skills: string[];
   program: string[];
   includes: string[];
+  faq: { question: string; answer: string }[];
 }
 
 const courses: Course[] = [
@@ -39,9 +54,23 @@ const courses: Course[] = [
     format: "Практика",
     price: 45000,
     lecturer: "Д-р Иванов А.С.",
+    lecturerBio: "Врач-ортодонт высшей категории с 15-летним стажем. Сертифицированный тренер по цифровым технологиям в ортодонтии. Автор более 20 научных публикаций.",
     category: "Ортодонтия",
     duration: "2 дня (16 часов)",
     description: "Комплексный курс по цифровому планированию ортодонтического лечения. Вы научитесь работать с современными программами для планирования перемещения зубов, создавать виртуальные сетапы и проводить анализ клинических случаев.",
+    goal: "Освоить полный цикл цифрового планирования ортодонтического лечения: от сканирования до создания виртуального сетапа и выбора оптимальной тактики лечения.",
+    targetAudience: [
+      "Врачи-ортодонты, желающие освоить цифровые технологии",
+      "Специалисты, работающие с элайнерами",
+      "Зубные техники ортодонтического направления"
+    ],
+    skills: [
+      "Работа с интраоральным сканером",
+      "Создание виртуальных сетапов",
+      "Планирование перемещения зубов",
+      "Анализ клинических случаев в цифровом формате",
+      "Коммуникация с лабораторией через цифровые платформы"
+    ],
     program: [
       "Введение в цифровую ортодонтию",
       "Работа с интраоральным сканером",
@@ -55,6 +84,20 @@ const courses: Course[] = [
       "Сертификат об обучении",
       "Кофе-брейки и обеды",
       "Доступ к записям лекций"
+    ],
+    faq: [
+      {
+        question: "Нужен ли опыт работы с цифровыми технологиями?",
+        answer: "Нет, курс подходит для начинающих. Мы начинаем с основ и постепенно переходим к более сложным темам."
+      },
+      {
+        question: "Какое оборудование будет использоваться?",
+        answer: "На курсе используются сканеры Medit и 3Shape, а также программное обеспечение для планирования ортодонтического лечения."
+      },
+      {
+        question: "Выдается ли сертификат?",
+        answer: "Да, по окончании курса выдается сертификат установленного образца с указанием количества часов обучения."
+      }
     ]
   },
   {
@@ -65,9 +108,23 @@ const courses: Course[] = [
     format: "Практика",
     price: 65000,
     lecturer: "Петров В.А.",
+    lecturerBio: "Зубной техник с 12-летним опытом работы в CAD/CAM. Официальный тренер exocad. Специализируется на сложных ортопедических конструкциях.",
     category: "CAD/CAM",
     duration: "3 дня (24 часа)",
-    description: "Интенсивный курс по работе в программе Exocad. Курс охватывает все аспекты работы: от базового моделирования до сложных ортопедических конструкций. Подходит как для начинающих, так и для практикующих специалистов.",
+    description: "Интенсивный курс по работе в программе Exocad. Курс охватывает все аспекты работы: от базового моделирования до сложных ортопедических конструкций.",
+    goal: "Научиться самостоятельно моделировать любые виды протетических конструкций в программе Exocad на профессиональном уровне.",
+    targetAudience: [
+      "Начинающие зубные техники",
+      "Техники, переходящие на цифровые технологии",
+      "Практикующие специалисты, желающие повысить квалификацию"
+    ],
+    skills: [
+      "Полное владение интерфейсом Exocad",
+      "Моделирование одиночных коронок всех видов",
+      "Создание мостовидных протезов любой протяженности",
+      "Работа с имплантатными абатментами",
+      "Моделирование съемных конструкций"
+    ],
     program: [
       "Интерфейс и основы работы в Exocad",
       "Моделирование одиночных коронок",
@@ -81,28 +138,78 @@ const courses: Course[] = [
       "Сертификат об обучении",
       "Кофе-брейки и обеды",
       "Поддержка после курса"
+    ],
+    faq: [
+      {
+        question: "Подойдет ли курс, если я никогда не работал в CAD-программах?",
+        answer: "Да, курс разработан с учетом разного уровня подготовки. Первый день полностью посвящен основам работы в программе."
+      },
+      {
+        question: "Смогу ли я практиковаться после курса?",
+        answer: "Мы предоставляем доступ к демо-версии программы и учебным материалам для самостоятельной практики."
+      },
+      {
+        question: "Есть ли поддержка после обучения?",
+        answer: "Да, все участники получают доступ к закрытому чату с преподавателем для консультаций в течение месяца после курса."
+      }
     ]
   },
   {
     id: 3,
-    title: "3D-моделирование в зуботехнике",
-    date: "15 февраля 2025",
-    location: "Онлайн",
-    format: "Вебинар",
-    price: 5000,
-    lecturer: "Сидорова М.К.",
-    category: "3D-моделирование",
-    duration: "4 часа",
-    description: "Вводный вебинар по основам 3D-моделирования для зубных техников. Познакомитесь с современными технологиями и программами, узнаете о перспективах цифрового производства в стоматологии.",
+    title: "CAD/CAM School: полный цикл цифрового производства",
+    date: "19-24 января 2025",
+    location: "Москва",
+    format: "Практика",
+    price: 70000,
+    lecturer: "Команда тренеров Артикон",
+    lecturerBio: "Квалифицированные зубные техники производства Артикон: Григорий Сулима (тренер SUM3D, MillBox), Ислам Гашимов (тренер exocad и Medit), Шамиль Магомедов (тренер Contrast Dental Direkt, MIYO).",
+    category: "CAD/CAM",
+    duration: "6 дней (48 часов)",
+    description: "Недельное погружение в полный цикл CAD/CAM на действующем производстве. Мировой опыт индустрии для ваших профессиональных достижений. Практика на передовом оборудовании под руководством специалистов крупнейшей цифровой лаборатории России.",
+    goal: "Освоить все этапы цифрового производства зуботехнических конструкций — от сканирования до финишной обработки — и уверенно применять полученные навыки в работе.",
+    targetAudience: [
+      "Зубные техники, начинающие работу с цифровыми технологиями",
+      "Специалисты лабораторий, внедряющих CAD/CAM",
+      "Владельцы и руководители зуботехнических лабораторий",
+      "Техники, желающие освоить полный производственный цикл"
+    ],
+    skills: [
+      "Сканирование работ на культях, имплантатах, под культевые вкладки",
+      "Моделирование в exocad: коронки, мосты, винтовая фиксация",
+      "Работа с ПО MillBox: размещение работ, расстановка коннекторов",
+      "Фрезерование на оборудовании imes-icore",
+      "3D-печать: подготовка файлов, печать моделей, постобработка",
+      "Синтеризация циркония: выбор программ для разных конструкций",
+      "Индивидуализация: окрашивание, жидкая керамика, глазурь"
+    ],
     program: [
-      "Обзор CAD/CAM технологий",
-      "Популярные программы для моделирования",
-      "Демонстрация рабочего процесса",
-      "Ответы на вопросы"
+      "День 1: Сканирование — работы на культях, имплантатах, диагностические модели",
+      "День 2: Моделирование в exocad — одиночные коронки, построение моделей для 3D-печати",
+      "День 3: Моделирование — мостовидные протезы на винтовой фиксации",
+      "День 4: Фрезерование — работа с MillBox, размещение в диске, фрезеровка",
+      "День 5: 3D-печать и синтеризация — печать моделей, работа с печами",
+      "День 6: Обработка и индивидуализация — окрашивание, финишная обработка"
     ],
     includes: [
-      "Запись вебинара",
-      "Электронный сертификат"
+      "Все учебные материалы и методички",
+      "Сертификат об обучении (возможность получить баллы НМО)",
+      "Кофе-брейки и обеды каждый день",
+      "Практика на реальном производстве",
+      "Поддержка от преподавателей после курса"
+    ],
+    faq: [
+      {
+        question: "Сколько человек в группе?",
+        answer: "Количество мест в потоке ограничено для обеспечения максимального внимания каждому участнику и возможности практики на оборудовании."
+      },
+      {
+        question: "Где проходит обучение?",
+        answer: "Обучение проходит на производстве Артикон — самой цифровой лаборатории России, работающей на рынке с 2010 года. Адрес: Москва, Варшавское шоссе, д. 33к12."
+      },
+      {
+        question: "Можно ли получить баллы НМО?",
+        answer: "Да, курс аккредитован. Чтобы получить баллы НМО, сообщите менеджеру Артикон при регистрации."
+      }
     ]
   },
   {
@@ -113,9 +220,23 @@ const courses: Course[] = [
     format: "Практика",
     price: 35000,
     lecturer: "Козлов Д.Н.",
+    lecturerBio: "Хирург-имплантолог, челюстно-лицевой хирург. Более 3000 установленных имплантатов. Специализируется на немедленной нагрузке и сложных клинических случаях.",
     category: "Хирургия",
     duration: "1 день (8 часов)",
-    description: "Практический курс для хирургов-имплантологов. Рассмотрим протоколы одномоментной имплантации, критерии отбора пациентов и техники немедленной нагрузки.",
+    description: "Практический курс для хирургов-имплантологов по протоколам одномоментной имплантации и техникам немедленной нагрузки.",
+    goal: "Освоить современные протоколы одномоментной имплантации с немедленной нагрузкой и научиться правильно отбирать пациентов для данных методик.",
+    targetAudience: [
+      "Хирурги-имплантологи",
+      "Стоматологи-хирурги, осваивающие имплантацию",
+      "Челюстно-лицевые хирурги"
+    ],
+    skills: [
+      "Оценка показаний и противопоказаний",
+      "Планирование хирургического вмешательства",
+      "Техника одномоментной имплантации",
+      "Протоколы немедленной нагрузки",
+      "Изготовление временных конструкций"
+    ],
     program: [
       "Показания и противопоказания",
       "Планирование хирургического вмешательства",
@@ -128,6 +249,20 @@ const courses: Course[] = [
       "Учебные материалы",
       "Сертификат",
       "Обед"
+    ],
+    faq: [
+      {
+        question: "Будет ли практика на пациентах?",
+        answer: "Курс включает демонстрацию операции и работу на моделях. Практика на пациентах не предусмотрена."
+      },
+      {
+        question: "Какие имплантационные системы рассматриваются?",
+        answer: "Мы рассматриваем общие принципы, применимые к большинству систем, с акцентом на Straumann и Nobel Biocare."
+      },
+      {
+        question: "Нужен ли опыт в имплантации?",
+        answer: "Рекомендуется базовый опыт установки имплантатов. Курс ориентирован на практикующих специалистов."
+      }
     ]
   },
   {
@@ -138,9 +273,22 @@ const courses: Course[] = [
     format: "Практика",
     price: 25000,
     lecturer: "Смирнова Е.В.",
+    lecturerBio: "Стоматолог-ортопед, специалист по дентальной фотографии. Автор курсов по фотопротоколу. Более 500 обученных специалистов.",
     category: "Фотография",
     duration: "1 день (8 часов)",
-    description: "Научитесь делать качественные дентальные фотографии для документации, планирования лечения и коммуникации с лабораторией. Разберем настройки камеры, освещение и обработку снимков.",
+    description: "Научитесь делать качественные дентальные фотографии для документации, планирования лечения и коммуникации с лабораторией.",
+    goal: "Освоить технику дентальной фотографии для создания качественной документации и эффективной коммуникации с лабораторией.",
+    targetAudience: [
+      "Врачи-стоматологи всех специальностей",
+      "Ассистенты стоматолога",
+      "Зубные техники"
+    ],
+    skills: [
+      "Настройка камеры и вспышки для дентальной съемки",
+      "Выполнение стандартных ракурсов",
+      "Работа с ретракторами и зеркалами",
+      "Базовая обработка фотографий"
+    ],
     program: [
       "Выбор оборудования",
       "Настройки камеры и вспышки",
@@ -153,6 +301,20 @@ const courses: Course[] = [
       "Методические материалы",
       "Сертификат",
       "Кофе-брейк"
+    ],
+    faq: [
+      {
+        question: "Нужно ли приносить свою камеру?",
+        answer: "Желательно, но не обязательно. На курсе есть камеры для практики. Если у вас есть своя камера — приносите, мы поможем её настроить."
+      },
+      {
+        question: "Какую камеру вы рекомендуете для начинающих?",
+        answer: "Мы рассмотрим разные варианты на курсе — от бюджетных до профессиональных. Дадим конкретные рекомендации по вашему бюджету."
+      },
+      {
+        question: "Подойдет ли смартфон для дентальной фотографии?",
+        answer: "Для базовой документации — да, с определенными ограничениями. На курсе мы также рассмотрим возможности мобильной фотографии."
+      }
     ]
   },
   {
@@ -163,9 +325,22 @@ const courses: Course[] = [
     format: "Вебинар",
     price: 5000,
     lecturer: "Белов А.И.",
+    lecturerBio: "Рентгенолог, специалист по КТ-диагностике в стоматологии. Опыт анализа более 10 000 КЛКТ-исследований.",
     category: "Диагностика",
     duration: "3 часа",
-    description: "Вебинар посвящен работе с конусно-лучевой компьютерной томографией. Научитесь анализировать КЛКТ снимки, определять патологии и использовать данные для планирования лечения.",
+    description: "Вебинар посвящен работе с конусно-лучевой компьютерной томографией. Научитесь анализировать снимки и использовать данные для планирования.",
+    goal: "Научиться самостоятельно анализировать КЛКТ-снимки для диагностики и планирования стоматологического лечения.",
+    targetAudience: [
+      "Врачи-стоматологи всех специальностей",
+      "Хирурги-имплантологи",
+      "Ортодонты"
+    ],
+    skills: [
+      "Анализ анатомических структур на КЛКТ",
+      "Диагностика патологий челюстно-лицевой области",
+      "Планирование имплантации по КЛКТ",
+      "Измерения и разметка в программах просмотра"
+    ],
     program: [
       "Принципы КЛКТ",
       "Анатомия на КЛКТ",
@@ -175,6 +350,20 @@ const courses: Course[] = [
     includes: [
       "Запись вебинара",
       "Электронный сертификат"
+    ],
+    faq: [
+      {
+        question: "Какая программа нужна для просмотра КЛКТ?",
+        answer: "Мы рассмотрим работу в бесплатных программах, которые вы сможете использовать в своей практике."
+      },
+      {
+        question: "Будет ли запись вебинара?",
+        answer: "Да, все зарегистрированные участники получат доступ к записи вебинара на 30 дней."
+      },
+      {
+        question: "Нужны ли специальные знания для участия?",
+        answer: "Базовые знания анатомии челюстно-лицевой области. Вебинар подходит для специалистов любого уровня."
+      }
     ]
   }
 ];
@@ -291,7 +480,67 @@ const CourseDetail = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
+      {/* Course Goal */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Target className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold mb-2">Цель курса</h2>
+              <p className="text-muted-foreground text-lg">{course.goal}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Target Audience & Skills */}
+      <div className="container mx-auto px-4 pb-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* For Whom */}
+          <div className="bg-card border border-border rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
+                <UserCheck className="h-5 w-5 text-secondary-foreground" />
+              </div>
+              <h2 className="text-xl font-bold">Для кого этот курс</h2>
+            </div>
+            <ul className="space-y-4">
+              {course.targetAudience.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                  </div>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* What You'll Learn */}
+          <div className="bg-card border border-border rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
+                <GraduationCap className="h-5 w-5 text-accent-foreground" />
+              </div>
+              <h2 className="text-xl font-bold">Чему вы научитесь</h2>
+            </div>
+            <ul className="space-y-4">
+              {course.skills.map((skill, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Lightbulb className="h-4 w-4 text-accent-foreground" />
+                  </div>
+                  <span>{skill}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 pb-8">
         {/* Tabs */}
         <Tabs defaultValue="program" className="mb-12">
           <TabsList className="w-full justify-start border-b rounded-none bg-transparent p-0 mb-6">
@@ -336,8 +585,7 @@ const CourseDetail = () => {
               <div>
                 <h3 className="text-xl font-bold mb-2">{course.lecturer}</h3>
                 <p className="text-muted-foreground mb-4">
-                  Практикующий специалист с многолетним опытом работы в области {course.category.toLowerCase()}. 
-                  Проводит обучение для врачей и зубных техников по всей России.
+                  {course.lecturerBio}
                 </p>
                 <div className="flex items-center gap-2">
                   <Award className="h-5 w-5 text-primary" />
@@ -361,7 +609,7 @@ const CourseDetail = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Учебный центр Articon</h3>
                   <p className="text-muted-foreground mb-4">
-                    {course.location}, ул. Примерная, д. 1, офис 100
+                    {course.location}, Варшавское шоссе, д. 33к12
                   </p>
                   <div className="aspect-video bg-muted rounded-xl flex items-center justify-center">
                     <MapPin className="h-12 w-12 text-muted-foreground" />
@@ -372,14 +620,42 @@ const CourseDetail = () => {
           </TabsContent>
         </Tabs>
 
+        {/* FAQ Section */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+              <HelpCircle className="h-5 w-5 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">Часто задаваемые вопросы</h2>
+          </div>
+          <Accordion type="single" collapsible className="bg-card border border-border rounded-xl">
+            {course.faq.map((item, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border-b last:border-b-0">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/30">
+                  <span className="text-left font-medium">{item.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
         {/* CTA */}
         <div className="bg-primary/10 rounded-2xl p-8 text-center mb-12">
-          <FileText className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Остались вопросы?</h2>
+          <h2 className="text-2xl font-bold mb-2">Готовы начать обучение?</h2>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            Свяжитесь с нами для получения дополнительной информации о курсе или помощи с регистрацией.
+            Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации.
           </p>
-          <Button variant="outline">Связаться с нами</Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Записаться на курс
+            </Button>
+            <Button size="lg" variant="outline">
+              Задать вопрос
+            </Button>
+          </div>
         </div>
 
         {/* Related Courses */}
@@ -404,13 +680,10 @@ const CourseDetail = () => {
                   <div className="p-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                       <Calendar className="h-4 w-4" />
-                      {relCourse.date}
+                      <span>{relCourse.date}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-primary">
-                        {formatPrice(relCourse.price)}
-                      </span>
-                      <span className="text-sm text-muted-foreground">{relCourse.format}</span>
+                    <div className="font-bold text-primary">
+                      {formatPrice(relCourse.price)}
                     </div>
                   </div>
                 </Link>

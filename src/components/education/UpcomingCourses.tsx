@@ -135,9 +135,11 @@ export function EducationUpcomingCourses() {
                   <span className="text-xl font-bold text-primary">
                     {course.price.toLocaleString("ru-RU")} ₽
                   </span>
-                  <Button size="sm" className="gradient-primary text-primary-foreground">
-                    Подробнее
-                  </Button>
+                  <Link to={`/education/course/${course.id}`}>
+                    <Button size="sm" className="gradient-primary text-primary-foreground">
+                      Подробнее
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

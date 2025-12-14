@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -38,13 +39,15 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
         {/* Quick actions */}
         <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button
-            size="icon"
-            variant="secondary"
-            className="h-8 w-8 rounded-full shadow-md"
-          >
-            <Eye className="h-4 w-4" />
-          </Button>
+          <Link to={`/shop/product/${product.id}`}>
+            <Button
+              size="icon"
+              variant="secondary"
+              className="h-8 w-8 rounded-full shadow-md"
+            >
+              <Eye className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
 

@@ -6,8 +6,6 @@ import articonLogo from "@/assets/articon-logo.png";
 
 const footerLinks = {
   company: [
-    { label: "О компании", href: "/about" },
-    { label: "Новости", href: "/news" },
     { label: "Контакты", href: "/contacts" },
   ],
   navigation: [

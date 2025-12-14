@@ -161,9 +161,9 @@ export function Header() {
               {currentSubmenu.items.map((item) => (
                 <div
                   key={item.href}
-                  className="relative"
+                  className="relative group"
                   onMouseEnter={() => {
-                    if (currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories) {
+                    if (currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0) {
                       setHoveredCategory(item.label);
                     }
                   }}
@@ -174,23 +174,25 @@ export function Header() {
                     className="flex items-center gap-1 text-sm font-semibold px-4 py-3 text-foreground hover:text-primary whitespace-nowrap transition-colors"
                   >
                     {item.label}
-                    {currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories && (
-                      <ChevronDown className="h-3 w-3" />
+                    {currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0 && (
+                      <ChevronDown className={`h-3 w-3 transition-transform ${hoveredCategory === item.label ? 'rotate-180' : ''}`} />
                     )}
                   </Link>
 
                   {/* Dropdown for subcategories */}
-                  {currentSubmenu.hasDropdowns && 'subcategories' in item && item.subcategories && hoveredCategory === item.label && (
-                    <div className="absolute top-full left-0 bg-card border border-border rounded-md shadow-lg py-2 min-w-[180px] z-50 animate-fade-in">
-                      {item.subcategories.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          to={sub.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
+                  {currentSubmenu.hasDropdowns && item.subcategories && item.subcategories.length > 0 && hoveredCategory === item.label && (
+                    <div className="absolute top-full left-0 pt-0 z-[100]">
+                      <div className="bg-card border border-border rounded-md shadow-lg py-2 min-w-[180px] animate-fade-in">
+                        {item.subcategories.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

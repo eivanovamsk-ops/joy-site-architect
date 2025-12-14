@@ -134,28 +134,28 @@ export function Header() {
       <div className="bg-background border-b border-border">
         <div className="container mx-auto px-4">
           {/* Top row: Logo, Search, Shop icons (if on shop) */}
-          <div className="flex items-center justify-between h-16 gap-6">
-            {/* Logo - with padding from edge */}
+          <div className="flex items-center justify-between h-20 gap-6">
+            {/* Logo - larger like articon.com (~50px height) */}
             <Link to="/" className="flex-shrink-0 pl-2">
               <img
                 src={articonLogo}
                 alt="Articon - Dental Digital Solutions"
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
 
-            {/* Search Bar - Center, wider like articon.com */}
-            <div className="hidden lg:flex flex-1 max-w-xl mx-auto">
-              <div className="relative w-full">
+            {/* Search Bar - narrower like articon.com (~260px width) */}
+            <div className="hidden lg:flex items-center">
+              <div className="relative" style={{ width: '260px' }}>
                 <input
                   type="text"
-                  placeholder="Поиск по сайту..."
+                  placeholder="Search here..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-9 pl-4 pr-12 rounded border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  className="w-full h-10 pl-3 pr-10 rounded border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                 />
                 <button
-                  className="absolute right-0 top-0 h-9 w-9 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors"
+                  className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors"
                   aria-label="Поиск"
                 >
                   <Search className="h-4 w-4" />

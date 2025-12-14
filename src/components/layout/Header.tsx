@@ -109,20 +109,20 @@ export function Header() {
             </Link>
 
             {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex flex-1 max-w-xl">
+            <div className="hidden lg:flex flex-1 max-w-[280px]">
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Поиск по сайту"
+                  placeholder="Поиск по сайту..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-10 pl-4 pr-12 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                  className="w-full h-8 pl-3 pr-10 rounded border border-border bg-background text-xs focus:outline-none focus:ring-1 focus:ring-primary/20 focus:border-primary transition-colors"
                 />
                 <button
-                  className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center bg-primary text-primary-foreground rounded-r-md hover:bg-primary/90 transition-colors"
+                  className="absolute right-0 top-0 h-8 w-8 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors"
                   aria-label="Поиск"
                 >
-                  <Search className="h-4 w-4" />
+                  <Search className="h-3.5 w-3.5" />
                 </button>
               </div>
             </div>

@@ -101,7 +101,7 @@ const shopMenuItems = [
 
 // Education menu items with submenus
 const educationMenuItems = [
-  { label: "Календарь курсов", href: "/education#calendar" },
+  { label: "Календарь курсов", href: "/education/calendar" },
   {
     label: "Обучение для врачей",
     href: "/education?direction=doctors",

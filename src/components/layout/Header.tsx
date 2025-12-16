@@ -99,25 +99,25 @@ const shopMenuItems = [
   { label: "Доставка и оплата", href: "/shop/delivery" },
 ];
 
-// Education menu items with submenus
+// Education menu items with submenus - linking to specific courses
 const educationMenuItems = [
   { label: "Календарь курсов", href: "/education/calendar" },
   {
     label: "Обучение для врачей",
-    href: "/education?direction=doctors",
+    href: "/education/calendar?category=Ортодонтия",
     subcategories: [
-      { label: "Ортопедия", href: "/education?direction=doctors&course=orthopedics" },
-      { label: "Ортодонтия", href: "/education?direction=doctors&course=orthodontics" },
-      { label: "Цифровое планирование", href: "/education?direction=doctors&course=digital-planning" },
+      { label: "Ортопедия", href: "/education/calendar?category=Ортопедия" },
+      { label: "Ортодонтия", href: "/education/course/1" }, // Всё сложится
+      { label: "Цифровое планирование", href: "/education/course/2" }, // ORTHO Skills
     ],
   },
   {
     label: "Обучение для техников",
-    href: "/education?direction=technicians",
+    href: "/education/calendar?category=CAD/CAM",
     subcategories: [
-      { label: "CAD/CAM", href: "/education?direction=technicians&course=cadcam" },
-      { label: "3D-моделирование", href: "/education?direction=technicians&course=3d-modeling" },
-      { label: "Цифровая ортодонтия", href: "/education?direction=technicians&course=digital-ortho" },
+      { label: "CAD/CAM", href: "/education/course/3" }, // CAD/CAM SCHOOL
+      { label: "3D-моделирование", href: "/education/course/4" }, // Сплинты
+      { label: "Цифровая ортодонтия", href: "/education/course/2" }, // ORTHO Skills
     ],
   },
   { label: "Контакты", href: "/contacts" },

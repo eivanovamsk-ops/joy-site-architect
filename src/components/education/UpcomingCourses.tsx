@@ -1,82 +1,20 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, MapPin, Video, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface Course {
-  id: number;
-  title: string;
-  date: string;
-  location: string;
-  format: string;
-  price: number;
-  lecturer: string;
-  category: string;
-}
-
-const upcomingCourses: Course[] = [
-  {
-    id: 1,
-    title: "Цифровое планирование в ортодонтии",
-    date: "20-21 января 2025",
-    location: "Москва",
-    format: "Практика",
-    price: 45000,
-    lecturer: "Д-р Иванов А.С.",
-    category: "Ортодонтия",
-  },
-  {
-    id: 2,
-    title: "Exocad: от новичка до профессионала",
-    date: "5-7 февраля 2025",
-    location: "Москва",
-    format: "Практика",
-    price: 65000,
-    lecturer: "Петров В.А.",
-    category: "CAD/CAM",
-  },
-  {
-    id: 3,
-    title: "3D-моделирование в зуботехнике",
-    date: "15 февраля 2025",
-    location: "Онлайн",
-    format: "Вебинар",
-    price: 5000,
-    lecturer: "Сидорова М.К.",
-    category: "3D-моделирование",
-  },
-  {
-    id: 4,
-    title: "Одномоментная имплантация и немедленная нагрузка",
-    date: "12 марта 2025",
-    location: "Москва",
-    format: "Практика",
-    price: 35000,
-    lecturer: "Козлов Д.Н.",
-    category: "Хирургия",
-  },
-  {
-    id: 5,
-    title: "Дентальный фотопротокол",
-    date: "20 марта 2025",
-    location: "Москва",
-    format: "Практика",
-    price: 25000,
-    lecturer: "Смирнова Е.В.",
-    category: "Фотография",
-  },
-  {
-    id: 6,
-    title: "Диагностические возможности КЛКТ",
-    date: "5 апреля 2025",
-    location: "Онлайн",
-    format: "Вебинар",
-    price: 5000,
-    lecturer: "Белов А.И.",
-    category: "Диагностика",
-  },
-];
+import { courses } from "@/data/courses";
 
 export function EducationUpcomingCourses() {
+  // Sort courses by date and get upcoming ones (limit to 6)
+  const upcomingCourses = courses
+    .filter(course => course.dateStart >= new Date())
+    .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime())
+    .slice(0, 6);
+
+  // If no upcoming courses, show all courses sorted by date
+  const displayCourses = upcomingCourses.length > 0 
+    ? upcomingCourses 
+    : courses.slice(0, 6);
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -93,7 +31,7 @@ export function EducationUpcomingCourses() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingCourses.map((course) => (
+          {displayCourses.map((course) => (
             <div
               key={course.id}
               className="bg-card border border-border rounded-2xl overflow-hidden hover-lift group"
@@ -127,14 +65,21 @@ export function EducationUpcomingCourses() {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Users className="h-4 w-4 flex-shrink-0" />
-                    {course.lecturer}
+                    {course.lecturers[0]?.name || "Эксперты Артикон"}
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-xl font-bold text-primary">
-                    {course.price.toLocaleString("ru-RU")} ₽
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {course.originalPrice && (
+                      <span className="text-sm text-muted-foreground line-through">
+                        {course.originalPrice.toLocaleString("ru-RU")} ₽
+                      </span>
+                    )}
+                    <span className="text-xl font-bold text-primary">
+                      {course.price.toLocaleString("ru-RU")} ₽
+                    </span>
+                  </div>
                   <Link to={`/education/course/${course.id}`}>
                     <Button size="sm" className="gradient-primary text-primary-foreground">
                       Подробнее

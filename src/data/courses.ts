@@ -366,13 +366,6 @@ export const courses: Course[] = [
     ],
     lecturers: [
       {
-        name: "Григорий Сулима",
-        photo: "https://static.wixstatic.com/media/526e65_62aa4334df2048009148815303d34f22~mv2.jpg/v1/crop/x_798,y_781,w_3128,h_3124/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/089_JPG.jpg",
-        position: "Ведущий специалист фрезерного центра Артикон",
-        bio: "Зубной техник, тренер SUM3D, MillBox, инженер по запуску и ремонту оборудования imes-icore.",
-        achievements: ["Сертифицированный тренер imes-icore", "Более 500 обученных специалистов"]
-      },
-      {
         name: "Ислам Гашимов",
         photo: "https://static.wixstatic.com/media/526e65_0e5fd6295b4a43d0a1f50e9b9aa0a474~mv2.png/v1/crop/x_20,y_0,w_367,h_367/fill/w_200,h_200,al_c,q_85,enc_avif,quality_auto/Islam.png",
         position: "Ведущий специалист отдела CAD Артикон",
@@ -385,6 +378,13 @@ export const courses: Course[] = [
         position: "Ведущий специалист отдела керамики",
         bio: "Зубной техник, тренер Contrast Dental Direkt, MIYO. Мастер индивидуализации и финишной обработки.",
         achievements: ["Тренер Contrast Dental Direkt", "Эксперт MIYO"]
+      },
+      {
+        name: "Григорий Сулима",
+        photo: "https://static.wixstatic.com/media/526e65_62aa4334df2048009148815303d34f22~mv2.jpg/v1/crop/x_798,y_781,w_3128,h_3124/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/089_JPG.jpg",
+        position: "Ведущий специалист фрезерного центра Артикон",
+        bio: "Зубной техник, тренер SUM3D, MillBox, инженер по запуску и ремонту оборудования imes-icore.",
+        achievements: ["Сертифицированный тренер imes-icore", "Более 500 обученных специалистов"]
       }
     ],
     includes: [

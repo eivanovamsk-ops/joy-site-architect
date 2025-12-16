@@ -1,10 +1,13 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, Video, Users, Filter, X } from "lucide-react";
+import { Calendar, MapPin, Video, Users, Filter, X, Search, Award, Tag } from "lucide-react";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { Calendar as CalendarUI } from "@/components/ui/calendar";
 import {
   Select,
@@ -19,13 +22,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { courses, courseCategories, courseFormats } from "@/data/courses";
+import { courses, courseCategories, courseFormats, getUniqueLecturers } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
 const CourseCalendar = () => {
   const [selectedCategory, setSelectedCategory] = useState("Все категории");
   const [selectedFormat, setSelectedFormat] = useState("Все форматы");
+  const [selectedLecturer, setSelectedLecturer] = useState("Все лекторы");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const uniqueLecturers = useMemo(() => getUniqueLecturers(), []);
 
   const filteredCourses = useMemo(() => {
     return courses.filter((course) => {
@@ -38,27 +45,58 @@ const CourseCalendar = () => {
         !selectedDate ||
         (course.dateStart.getMonth() === selectedDate.getMonth() &&
           course.dateStart.getFullYear() === selectedDate.getFullYear());
+      const matchesSearch =
+        !searchQuery ||
+        course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        course.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesLecturer =
+        selectedLecturer === "Все лекторы" ||
+        course.lecturers.some(l => l.name === selectedLecturer);
 
-      return matchesCategory && matchesFormat && matchesDate;
+      return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer;
     });
-  }, [selectedCategory, selectedFormat, selectedDate]);
+  }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer]);
 
   const clearFilters = () => {
     setSelectedCategory("Все категории");
     setSelectedFormat("Все форматы");
+    setSelectedLecturer("Все лекторы");
     setSelectedDate(undefined);
+    setSearchQuery("");
   };
 
   const hasActiveFilters =
     selectedCategory !== "Все категории" ||
     selectedFormat !== "Все форматы" ||
-    selectedDate !== undefined;
+    selectedLecturer !== "Все лекторы" ||
+    selectedDate !== undefined ||
+    searchQuery !== "";
 
-  // Get dates with courses for calendar highlighting
   const courseDates = courses.map((c) => c.dateStart);
+
+  const formatPrice = (price: number, originalPrice?: number) => {
+    if (price === 0) return "Бесплатно";
+    return (
+      <div className="flex items-center gap-2">
+        <span className="text-xl font-bold text-primary">
+          {price.toLocaleString("ru-RU")} ₽
+        </span>
+        {originalPrice && originalPrice > price && (
+          <span className="text-sm text-muted-foreground line-through">
+            {originalPrice.toLocaleString("ru-RU")} ₽
+          </span>
+        )}
+      </div>
+    );
+  };
 
   return (
     <Layout>
+      <Helmet>
+        <title>Календарь курсов | Учебный центр Артикон</title>
+        <meta name="description" content="Расписание курсов Артикон: CAD/CAM, ортодонтия, эстетика, 3D-печать. Практическое обучение от ведущих специалистов. Записывайтесь онлайн." />
+      </Helmet>
+
       <div className="min-h-screen bg-muted/30">
         <div className="container mx-auto px-4 py-8">
           <div className="mb-8">
@@ -68,6 +106,17 @@ const CourseCalendar = () => {
             <p className="text-muted-foreground text-lg">
               Выберите интересующий курс и запишитесь на обучение
             </p>
+          </div>
+
+          {/* Search */}
+          <div className="relative mb-6">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              placeholder="Поиск по названию курса..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-12 h-12 text-base bg-card border-border"
+            />
           </div>
 
           {/* Filters */}
@@ -88,7 +137,7 @@ const CourseCalendar = () => {
               )}
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Category Filter */}
               <div>
                 <label className="text-sm text-muted-foreground mb-2 block">
@@ -98,10 +147,10 @@ const CourseCalendar = () => {
                   value={selectedCategory}
                   onValueChange={setSelectedCategory}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-background">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-card border-border">
                     {courseCategories.map((cat) => (
                       <SelectItem key={cat} value={cat}>
                         {cat}
@@ -120,13 +169,36 @@ const CourseCalendar = () => {
                   value={selectedFormat}
                   onValueChange={setSelectedFormat}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-background">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-card border-border">
                     {courseFormats.map((fmt) => (
                       <SelectItem key={fmt} value={fmt}>
                         {fmt}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Lecturer Filter */}
+              <div>
+                <label className="text-sm text-muted-foreground mb-2 block">
+                  Лектор
+                </label>
+                <Select
+                  value={selectedLecturer}
+                  onValueChange={setSelectedLecturer}
+                >
+                  <SelectTrigger className="bg-background">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-card border-border">
+                    <SelectItem value="Все лекторы">Все лекторы</SelectItem>
+                    {uniqueLecturers.map((lecturer) => (
+                      <SelectItem key={lecturer} value={lecturer}>
+                        {lecturer}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -143,7 +215,7 @@ const CourseCalendar = () => {
                     <Button
                       variant="outline"
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-left font-normal bg-background",
                         !selectedDate && "text-muted-foreground"
                       )}
                     >
@@ -153,7 +225,7 @@ const CourseCalendar = () => {
                         : "Выберите месяц"}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
+                  <PopoverContent className="w-auto p-0 bg-card border-border" align="start">
                     <CalendarUI
                       mode="single"
                       selected={selectedDate}
@@ -192,49 +264,125 @@ const CourseCalendar = () => {
               {filteredCourses.map((course) => (
                 <div
                   key={course.id}
-                  className="bg-card border border-border rounded-2xl overflow-hidden hover-lift group"
+                  className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group"
                 >
-                  {/* Header */}
-                  <div className="gradient-education p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2 text-education-foreground/80 text-sm">
-                        <Calendar className="h-4 w-4" />
-                        {course.date}
+                  {/* Cover Image */}
+                  {course.coverImage && (
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={course.coverImage}
+                        alt={course.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                        <Badge className="bg-primary/90 text-primary-foreground text-xs">
+                          {course.category}
+                        </Badge>
+                        <div className="flex gap-2">
+                          {course.isAccredited && (
+                            <Badge className="bg-green-600/90 text-white text-xs">
+                              <Award className="h-3 w-3 mr-1" />
+                              НМО
+                            </Badge>
+                          )}
+                          {course.placesLeft && course.placesLeft < 10 && (
+                            <Badge className="bg-orange-500/90 text-white text-xs">
+                              Осталось {course.placesLeft} мест
+                            </Badge>
+                          )}
+                        </div>
                       </div>
-                      <span className="text-xs bg-education-foreground/20 text-education-foreground px-2 py-1 rounded-full">
-                        {course.category}
-                      </span>
                     </div>
-                    <h3 className="text-lg font-bold text-education-foreground line-clamp-2">
-                      {course.title}
-                    </h3>
-                  </div>
+                  )}
+
+                  {/* Header without image */}
+                  {!course.coverImage && (
+                    <div className="gradient-education p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge className="bg-education-foreground/20 text-education-foreground text-xs">
+                          {course.category}
+                        </Badge>
+                        {course.isAccredited && (
+                          <Badge className="bg-green-600/90 text-white text-xs">
+                            НМО
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Content */}
                   <div className="p-4">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <Calendar className="h-4 w-4" />
+                      {course.date}
+                    </div>
+                    
+                    <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                      {course.title}
+                    </h3>
+
+                    {course.subtitle && (
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        {course.subtitle}
+                      </p>
+                    )}
+
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <MapPin className="h-4 w-4 flex-shrink-0" />
-                        {course.location}
+                        <span className="line-clamp-1">{course.location}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Video className="h-4 w-4 flex-shrink-0" />
                         {course.format}
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Users className="h-4 w-4 flex-shrink-0" />
-                        {course.lecturer}
-                      </div>
+                      {course.lecturers.length > 0 && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Users className="h-4 w-4 flex-shrink-0" />
+                          <span className="line-clamp-1">
+                            {course.lecturers.length === 1 
+                              ? course.lecturers[0].name 
+                              : `${course.lecturers.length} лекторов`}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
+                    {/* Lecturers avatars */}
+                    {course.lecturers.length > 1 && (
+                      <div className="flex -space-x-2 mb-4">
+                        {course.lecturers.slice(0, 4).map((lecturer, idx) => (
+                          <div
+                            key={idx}
+                            className="w-8 h-8 rounded-full border-2 border-card overflow-hidden bg-muted"
+                            title={lecturer.name}
+                          >
+                            <img
+                              src={lecturer.photo}
+                              alt={lecturer.name}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          </div>
+                        ))}
+                        {course.lecturers.length > 4 && (
+                          <div className="w-8 h-8 rounded-full border-2 border-card bg-muted flex items-center justify-center text-xs font-medium">
+                            +{course.lecturers.length - 4}
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <span className="text-xl font-bold text-primary">
-                        {course.price.toLocaleString("ru-RU")} ₽
-                      </span>
+                      {formatPrice(course.price, course.originalPrice)}
                       <Link to={`/education/course/${course.id}`}>
                         <Button
                           size="sm"
-                          className="gradient-primary text-primary-foreground"
+                          className="bg-primary hover:bg-primary/90 text-primary-foreground"
                         >
                           Подробнее
                         </Button>

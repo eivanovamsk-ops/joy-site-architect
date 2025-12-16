@@ -130,7 +130,7 @@ export const courses: Course[] = [
     id: 2,
     slug: "ortho-skills-december",
     title: "ORTHO Skills",
-    subtitle: "Полный цикл производства ортодонтических аппаратов за 5 дней",
+    subtitle: "Школа цифровой ортодонтии",
     date: "15-19 декабря 2025",
     dateStart: new Date(2025, 11, 15),
     dateEnd: new Date(2025, 11, 19),

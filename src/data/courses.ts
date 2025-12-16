@@ -416,7 +416,7 @@ export const courses: Course[] = [
     id: 4,
     slug: "splints-virtual-articulator",
     title: "Цифровое моделирование сплинтов и работа в виртуальном артикуляторе",
-    subtitle: "Теория и практика гнатологии в цифровой среде",
+    subtitle: "Гнатология в цифровой среде",
     date: "29 января 2026",
     dateStart: new Date(2026, 0, 29),
     location: "Москва, Варшавское шоссе, д33с12",

@@ -137,7 +137,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
                 <UserCheck className="h-5 w-5 text-secondary-foreground" />
               </div>
-              <h2 className="text-xl font-bold">Для кого этот курс</h2>
+              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Кому будет интересно' : 'Для кого этот курс'}</h2>
             </div>
             <ul className="space-y-4">
               {course.targetAudience.map((item, index) => <li key={index} className="flex items-start gap-3">

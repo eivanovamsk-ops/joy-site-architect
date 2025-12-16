@@ -960,7 +960,7 @@ export const courses: Course[] = [
     id: 11,
     slug: "3d-print-open-day",
     title: "Печать на 3D принтере за 100 000 vs 1 000 000",
-    subtitle: "Open Day встреча в Артикон. Есть ли разница?",
+    subtitle: "Есть ли разница? Open Day встреча в Артикон",
     date: "27 февраля 2026 | 15:00-18:00",
     dateStart: new Date(2026, 1, 27),
     location: "Москва, Варшавское шоссе, д33с12, MEGAPOLIS HALL",

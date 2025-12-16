@@ -174,7 +174,9 @@ const CourseDetail = () => {
                 <Users className="h-5 w-5 text-primary" />
               </div>
               <h2 className="text-2xl font-bold">
-                {course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
+                {course.format === 'Open Day' 
+                  ? (course.lecturers.length === 1 ? 'Спикер' : 'Спикеры')
+                  : (course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели')}
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

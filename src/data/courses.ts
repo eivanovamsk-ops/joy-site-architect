@@ -131,8 +131,8 @@ export const courses: Course[] = [
     slug: "navigational-surgery-for-orthopedists",
     title: "Навигационная хирургия для ортопеда",
     subtitle: "Как управлять результатом протезирования на всех этапах: от планирования имплантации до изготовления постоянной конструкции",
-    date: "24 марта 2025",
-    dateStart: new Date(2025, 2, 24),
+    date: "24 марта 2026",
+    dateStart: new Date(2026, 2, 24),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,
@@ -249,7 +249,7 @@ export const courses: Course[] = [
       }
     ],
     metaTitle: "Навигационная хирургия для ортопеда | Артикон",
-    metaDescription: "Курс по навигационной хирургии для ортопедов. 24 марта 2025, Москва. 20 000₽.",
+    metaDescription: "Курс по навигационной хирургии для ортопедов. 24 марта 2026, Москва. 20 000₽.",
     category: "Ортопедия",
     tags: ["навигационная хирургия", "имплантация", "ортопедия", "цифровое планирование"],
     externalUrl: "https://www.articon-consulting.ru/navigational-surgery-for-orthopedists"

@@ -221,7 +221,7 @@ export const courses: Course[] = [
         name: "Плотникова Наталья",
         photo: "https://static.wixstatic.com/media/526e65_5de9e47f9ce848b09331922efe45f81c~mv2.jpg/v1/crop/x_767,y_634,w_1732,h_1733/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker3.jpg",
         position: "Специалист по мануальной обработке аппаратов",
-        bio: "Специалист по изготовлению элайнеров."
+        bio: "Зубной техник, наставник по стажировке студентов. Специалист по изготовлению элайнеров."
       }
     ],
     guestSpeakerNote: "В каждом курсе участвует приглашенный врач-ортодонт",

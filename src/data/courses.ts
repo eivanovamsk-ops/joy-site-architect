@@ -1013,7 +1013,7 @@ export const courses: Course[] = [
       {
         name: "Самир Мустафаев",
         photo: "https://static.wixstatic.com/media/526e65_91bf0a1c36d0479c865e1b1eacc7bacd~mv2.png/v1/crop/x_0,y_0,w_1134,h_1134/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%A1%D0%B0%D0%BC%D0%B8%D1%80.png",
-        position: "Ведущий специалист отдела 3D-печати Артикон",
+        position: "Руководитель отдела 3D-печати Артикон",
         bio: "Зубной техник, эксперт по 3D-печати в стоматологии."
       }
     ],

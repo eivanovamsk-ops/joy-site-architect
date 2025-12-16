@@ -421,7 +421,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 0, 29),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
-    price: 15000,
+    price: 20000,
     coverImage: "https://static.wixstatic.com/media/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg/v1/fill/w_1200,h_600,al_c,q_85,enc_avif,quality_auto/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg",
     description: "Однодневный интенсив по цифровому моделированию окклюзионных сплинтов с использованием виртуального артикулятора. Научитесь настраивать параметры артикуляции и создавать функциональные сплинты в exocad.",
     shortDescription: "Теория и практика работы с виртуальным артикулятором",

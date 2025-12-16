@@ -154,7 +154,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                 <GraduationCap className="h-5 w-5 text-accent-foreground" />
               </div>
-              <h2 className="text-xl font-bold">Чему вы научитесь</h2>
+              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Что вам даст встреча' : 'Чему вы научитесь'}</h2>
             </div>
             <ul className="space-y-4">
               {course.skills.map((skill, index) => <li key={index} className="flex items-start gap-3">

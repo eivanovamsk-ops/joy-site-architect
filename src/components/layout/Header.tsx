@@ -136,9 +136,9 @@ export function Header() {
   const location = useLocation();
 
   const isHome = location.pathname === "/";
-  const isLaboratory = location.pathname === "/laboratory";
-  const isShop = location.pathname === "/shop";
-  const isEducation = location.pathname === "/education";
+  const isLaboratory = location.pathname.startsWith("/laboratory");
+  const isShop = location.pathname.startsWith("/shop");
+  const isEducation = location.pathname.startsWith("/education");
 
   // Get menu items based on current section
   const getMenuItems = (): MenuItem[] => {

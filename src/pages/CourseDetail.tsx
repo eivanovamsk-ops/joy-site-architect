@@ -124,7 +124,7 @@ const CourseDetail = () => {
               <Target className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2">Цель курса</h2>
+              <h2 className="text-xl font-bold mb-2">{course.format === 'Open Day' ? 'Цель встречи' : 'Цель курса'}</h2>
               <p className="text-muted-foreground text-lg">{course.goal}</p>
             </div>
           </div>

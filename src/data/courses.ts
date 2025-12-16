@@ -222,9 +222,14 @@ export const courses: Course[] = [
         photo: "https://static.wixstatic.com/media/526e65_5de9e47f9ce848b09331922efe45f81c~mv2.jpg/v1/crop/x_767,y_634,w_1732,h_1733/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker3.jpg",
         position: "Специалист по мануальной обработке аппаратов",
         bio: "Зубной техник, наставник по стажировке студентов. Специалист по изготовлению элайнеров."
+      },
+      {
+        name: "Гаспарян Кристина",
+        photo: "https://static.wixstatic.com/media/526e65_0a8b9c7d8e4f4a9b8c7d8e4f4a9b8c7d~mv2.jpg/v1/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/doctor.jpg",
+        position: "Врач-ортодонт, эксперт клиники Orthoffice",
+        bio: "Опыт работы 12 лет, 9 из которых применяет аппараты с опорой на минивинты. Лечение взрослых и детей, тесное взаимодействие с челюстно-лицевыми хирургами."
       }
     ],
-    guestSpeakerNote: "В каждом курсе участвует приглашенный врач-ортодонт",
     includes: [
       "Все учебные материалы и методички",
       "Сертификат об обучении",

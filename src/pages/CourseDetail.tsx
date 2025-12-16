@@ -238,6 +238,12 @@ const CourseDetail = () => {
                 </div>
               ))}
             </div>
+            {course.guestSpeakerNote && (
+              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">
+                <Users className="h-5 w-5 text-primary flex-shrink-0" />
+                <p className="text-muted-foreground">{course.guestSpeakerNote}</p>
+              </div>
+            )}
           </div>
         )}
 

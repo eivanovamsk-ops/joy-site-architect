@@ -33,6 +33,7 @@ export interface Course {
   skills: string[];
   program: CourseDay[];
   lecturers: Lecturer[];
+  guestSpeakerNote?: string;
   includes: string[];
   faq: { question: string; answer: string }[];
   metaTitle: string;
@@ -205,36 +206,25 @@ export const courses: Course[] = [
     ],
     lecturers: [
       {
-        name: "Палей Роман",
-        photo: "https://static.wixstatic.com/media/526e65_f0cf9882a5cd4eb8a4f627792de8a09e~mv2.jpg/v1/crop/x_535,y_525,w_1907,h_1904/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker1.jpg",
-        position: "Ведущий специалист по цифровому моделированию",
-        bio: "Прошел путь от оператора отдела 3D-печати до мастера планирования аппаратов с кортикальной опорой."
-      },
-      {
-        name: "Толмачев Дмитрий",
-        photo: "https://static.wixstatic.com/media/526e65_d6a865d505b34a1fad52e121fdec67dc~mv2.jpg/v1/crop/x_638,y_480,w_1868,h_1868/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker2.jpg",
-        position: "Зубной техник",
-        bio: "Специализируется на обработке сложных аппаратов на имплантатах."
-      },
-      {
-        name: "Плотникова Наталья",
-        photo: "https://static.wixstatic.com/media/526e65_5de9e47f9ce848b09331922efe45f81c~mv2.jpg/v1/crop/x_767,y_634,w_1732,h_1733/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker3.jpg",
-        position: "Наставник по стажировке студентов",
-        bio: "Специалист по изготовлению элайнеров."
-      },
-      {
         name: "Исаев Максим",
         photo: "https://static.wixstatic.com/media/526e65_6e961e97de4e48df883e20085f816662~mv2.jpg/v1/crop/x_672,y_540,w_1831,h_1830/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker4.jpg",
         position: "Руководитель отдела Цифровой ортодонтии Артикон",
         bio: "Соразработчик цифровых библиотек, лектор авторских курсов по моделированию ортодонтических аппаратов."
       },
       {
-        name: "Грибкова Арина",
-        photo: "https://static.wixstatic.com/media/526e65_24b07510aeaf4d07b0b523a5884b34fd~mv2.jpg/v1/crop/x_720,y_647,w_1868,h_1868/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker5.jpg",
-        position: "Зубной техник",
-        bio: "Специалист по обработке аппаратов любой сложности и изготовлению пластинок с креативным дизайном."
+        name: "Палей Роман",
+        photo: "https://static.wixstatic.com/media/526e65_f0cf9882a5cd4eb8a4f627792de8a09e~mv2.jpg/v1/crop/x_535,y_525,w_1907,h_1904/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker1.jpg",
+        position: "Ведущий специалист по цифровому моделированию",
+        bio: "Прошел путь от оператора отдела 3D-печати до мастера планирования аппаратов с кортикальной опорой."
+      },
+      {
+        name: "Плотникова Наталья",
+        photo: "https://static.wixstatic.com/media/526e65_5de9e47f9ce848b09331922efe45f81c~mv2.jpg/v1/crop/x_767,y_634,w_1732,h_1733/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/speaker3.jpg",
+        position: "Наставник по стажировке студентов",
+        bio: "Специалист по изготовлению элайнеров."
       }
     ],
+    guestSpeakerNote: "В каждом курсе участвует приглашенный врач-ортодонт",
     includes: [
       "Все учебные материалы и методички",
       "Сертификат об обучении",

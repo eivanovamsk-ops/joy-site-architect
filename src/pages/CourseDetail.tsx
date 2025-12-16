@@ -59,19 +59,6 @@ const CourseDetail = () => {
         {course.coverImage && <meta property="og:image" content={course.coverImage} />}
       </Helmet>
 
-      {/* Breadcrumbs */}
-      <div className="bg-muted/30 border-b border-border">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition-colors">Главная</Link>
-            <ChevronRight className="h-4 w-4" />
-            <Link to="/education/calendar" className="hover:text-foreground transition-colors">Календарь курсов</Link>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-foreground line-clamp-1">{course.title}</span>
-          </nav>
-        </div>
-      </div>
-
       {/* Hero */}
       <div className="relative">
         {course.coverImage && (

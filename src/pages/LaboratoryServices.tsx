@@ -11,8 +11,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Download, ChevronRight, FileText } from "lucide-react";
-import { serviceCategories, priceListDownloads } from "@/data/laboratoryServices";
+import { ChevronRight } from "lucide-react";
+import { serviceCategories } from "@/data/laboratoryServices";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
@@ -82,27 +82,6 @@ const LaboratoryServices = () => {
                   ))}
                 </nav>
 
-                {/* Download Price Lists */}
-                <div className="mt-8 pt-6 border-t">
-                  <h3 className="font-semibold text-sm mb-3 px-2 flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
-                    Скачать прайс-листы
-                  </h3>
-                  <div className="space-y-2">
-                    {priceListDownloads.map((priceList) => (
-                      <a
-                        key={priceList.id}
-                        href={priceList.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
-                      >
-                        <Download className="h-4 w-4 flex-shrink-0" />
-                        <span>{priceList.name}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
               </Card>
             </aside>
 

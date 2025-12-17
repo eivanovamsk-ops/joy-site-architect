@@ -28,21 +28,20 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/20 text-background text-sm font-medium mb-8 animate-fade-in backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Лидер цифровой стоматологии в России
+            Ваш надежный партнер в цифровой стоматологии
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in-up text-background">
             <span>АРТИКОН:</span>{" "}
-            <span className="text-accent">Экосистема</span>
+            <span className="text-accent">Цифровые решения</span>
             <br />
-            <span>цифровых решений</span>
+            <span>для стоматологии</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-background/80 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            От обучения и оборудования до полного цикла производства в
-            зуботехнической лаборатории. Мы продаём то, что используем сами.
+            Полный цикл поддержки: от обучения и оборудования до производства в зуботехнической лаборатории.
           </p>
 
           {/* CTA Buttons */}

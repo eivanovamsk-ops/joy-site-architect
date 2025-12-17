@@ -35,7 +35,7 @@ const CourseCalendar = () => {
   const uniqueLecturers = useMemo(() => getUniqueLecturers(), []);
 
   const filteredCourses = useMemo(() => {
-    return courses.filter((course) => {
+    const filtered = courses.filter((course) => {
       const matchesCategory =
         selectedCategory === "Все категории" ||
         course.category === selectedCategory;
@@ -54,6 +54,18 @@ const CourseCalendar = () => {
         course.lecturers.some(l => l.name === selectedLecturer);
 
       return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer;
+    });
+
+    // Sort: courses with "менеджмент" or "сканирование по запросу" go to the end
+    return filtered.sort((a, b) => {
+      const titleA = a.title.toLowerCase();
+      const titleB = b.title.toLowerCase();
+      const isLastA = titleA.includes('менеджмент') || titleA.includes('сканирование по запросу');
+      const isLastB = titleB.includes('менеджмент') || titleB.includes('сканирование по запросу');
+      
+      if (isLastA && !isLastB) return 1;
+      if (!isLastA && isLastB) return -1;
+      return 0;
     });
   }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer]);
 

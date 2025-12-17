@@ -124,7 +124,7 @@ const CourseDetail = () => {
               <Target className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2">{course.format === 'Open Day' ? 'Цель встречи' : (course.format === 'Воркшоп' || course.format === 'Конференция') ? 'Цель мероприятия' : 'Цель курса'}</h2>
+              <h2 className="text-xl font-bold mb-2">{course.format === 'Open Day' ? 'Цель встречи' : (course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Цель мероприятия' : 'Цель курса'}</h2>
               <p className="text-muted-foreground text-lg">{course.goal}</p>
             </div>
           </div>
@@ -137,7 +137,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
                 <UserCheck className="h-5 w-5 text-secondary-foreground" />
               </div>
-              <h2 className="text-xl font-bold">{(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция') ? 'Кому будет интересно' : 'Для кого этот курс'}</h2>
+              <h2 className="text-xl font-bold">{(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Кому будет интересно' : 'Для кого этот курс'}</h2>
             </div>
             <ul className="space-y-4">
               {course.targetAudience.map((item, index) => <li key={index} className="flex items-start gap-3">
@@ -154,7 +154,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                 <GraduationCap className="h-5 w-5 text-accent-foreground" />
               </div>
-              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Что вам даст встреча' : (course.format === 'Воркшоп' || course.format === 'Конференция') ? 'Что вы получите' : 'Чему вы научитесь'}</h2>
+              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Что вам даст встреча' : (course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Что вы получите' : 'Чему вы научитесь'}</h2>
             </div>
             <ul className="space-y-4">
               {course.skills.map((skill, index) => <li key={index} className="flex items-start gap-3">
@@ -174,7 +174,7 @@ const CourseDetail = () => {
                 <Users className="h-5 w-5 text-primary" />
               </div>
               <h2 className="text-2xl font-bold">
-                {(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция')
+                {(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча')
                   ? (course.lecturers.length === 1 ? 'Спикер' : 'Спикеры')
                   : (course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели')}
               </h2>

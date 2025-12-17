@@ -1,0 +1,185 @@
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Download, ChevronRight, FileText } from "lucide-react";
+import { serviceCategories, priceListDownloads } from "@/data/laboratoryServices";
+import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
+
+const LaboratoryServices = () => {
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
+  
+  const findCategoryBySlug = (slug: string | null) => {
+    if (!slug) return null;
+    return serviceCategories.find(c => c.id === slug || c.slug === slug);
+  };
+  
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const found = findCategoryBySlug(categoryFromUrl);
+    return found ? found.id : serviceCategories[0].id;
+  });
+
+  useEffect(() => {
+    const found = findCategoryBySlug(categoryFromUrl);
+    if (found) {
+      setActiveCategory(found.id);
+    }
+  }, [categoryFromUrl]);
+
+  const currentCategory = serviceCategories.find((cat) => cat.id === activeCategory);
+
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("ru-RU").format(price);
+  };
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Услуги и цены
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            Полный спектр зуботехнических услуг с использованием современных цифровых технологий CAD/CAM
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left Sidebar - Categories */}
+            <aside className="lg:w-72 flex-shrink-0">
+              <Card className="sticky top-24 p-4">
+                <h2 className="font-semibold text-lg mb-4 px-2">Категории услуг</h2>
+                <nav className="space-y-1">
+                  {serviceCategories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setActiveCategory(category.id)}
+                      className={cn(
+                        "w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors",
+                        activeCategory === category.id
+                          ? "bg-primary text-primary-foreground font-medium"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      )}
+                    >
+                      {category.name}
+                    </button>
+                  ))}
+                </nav>
+
+                {/* Download Price Lists */}
+                <div className="mt-8 pt-6 border-t">
+                  <h3 className="font-semibold text-sm mb-3 px-2 flex items-center gap-2">
+                    <FileText className="h-4 w-4" />
+                    Скачать прайс-листы
+                  </h3>
+                  <div className="space-y-2">
+                    {priceListDownloads.map((priceList) => (
+                      <a
+                        key={priceList.id}
+                        href={priceList.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                      >
+                        <Download className="h-4 w-4 flex-shrink-0" />
+                        <span>{priceList.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </aside>
+
+            {/* Right Content - Services Table */}
+            <main className="flex-1 min-w-0">
+              <Card className="overflow-hidden">
+                <div className="bg-muted/50 px-6 py-4 border-b">
+                  <h2 className="text-xl font-semibold">{currentCategory?.name}</h2>
+                </div>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-[60%]">Услуга</TableHead>
+                        <TableHead className="text-right">Цена</TableHead>
+                        <TableHead className="w-[120px]"></TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {currentCategory?.services.map((service) => (
+                        <TableRow key={service.id} className="group">
+                          <TableCell className="font-medium">
+                            {service.name}
+                          </TableCell>
+                          <TableCell className="text-right whitespace-nowrap">
+                            <span className="text-muted-foreground text-sm mr-1">
+                              {service.pricePrefix}
+                            </span>
+                            <span className="font-semibold text-foreground">
+                              {formatPrice(service.price)} ₽
+                            </span>
+                          </TableCell>
+                          <TableCell className="text-right">
+                            <Link
+                              to={`/laboratory/services/${currentCategory.slug}/${service.id}`}
+                            >
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="opacity-0 group-hover:opacity-100 transition-opacity"
+                              >
+                                Подробнее
+                                <ChevronRight className="h-4 w-4 ml-1" />
+                              </Button>
+                            </Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </Card>
+
+              {/* Info Block */}
+              <Card className="mt-6 p-6 bg-primary/5 border-primary/20">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">
+                      Нужна консультация по услугам?
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Свяжитесь с нами для получения индивидуального расчета стоимости
+                    </p>
+                  </div>
+                  <Link to="/contacts">
+                    <Button>
+                      Связаться с нами
+                    </Button>
+                  </Link>
+                </div>
+              </Card>
+            </main>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default LaboratoryServices;

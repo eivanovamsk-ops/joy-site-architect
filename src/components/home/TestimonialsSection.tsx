@@ -41,8 +41,7 @@ export function TestimonialsSection() {
             <span className="text-gradient-primary">наши клиенты</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Отзывы специалистов, которые уже работают с нами и доверяют
-            Артикон своему бизнесу.
+            Отзывы специалистов, которые уже работают с нами и доверяют свой бизнес Артикону.
           </p>
         </div>
 

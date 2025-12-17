@@ -5,26 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const contacts = [
+const departments = [
   {
-    icon: MapPin,
-    title: "Адрес",
-    lines: ["Москва, Варшавское шоссе, д. 33с12"],
+    name: "Администрация",
+    phone: "+7 964 500-00-20",
+    telegram: "https://t.me/articon1",
   },
   {
-    icon: Phone,
-    title: "Телефон",
-    lines: ["+7 (495) 123-45-67", "+7 (495) 765-43-21"],
+    name: "Фрезерный центр",
+    phone: "+7 (964) 500-00-60",
+    telegram: "https://t.me/+79645000060",
   },
   {
-    icon: Mail,
-    title: "Email",
-    lines: ["info@articon.pro", "moscow@articon.pro"],
-  },
-  {
-    icon: Clock,
-    title: "Режим работы",
-    lines: ["Пн-Пт: 9:00 — 18:00", "Сб-Вс: выходной"],
+    name: "Ортодонтия",
+    phone: "+7 (963) 996-51-78",
+    telegram: "https://t.me/articon3",
   },
 ];
 
@@ -52,30 +47,74 @@ const Contacts = () => {
             <div>
               <h2 className="text-2xl font-bold mb-8">Как с нами связаться</h2>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-8">
-                {contacts.map((contact, index) => {
-                  const Icon = contact.icon;
-                  return (
-                    <div key={index} className="flex gap-4">
-                      <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-5 w-5 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">{contact.title}</h3>
-                        {contact.lines.map((line, i) => (
-                          <p key={i} className="text-muted-foreground text-sm">
-                            {line}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
+              {/* Address, Email, Working Hours */}
+              <div className="grid sm:grid-cols-3 gap-6 mb-8">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Адрес</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Москва, Варшавское шоссе, д. 33с12
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Email</h3>
+                    <a href="mailto:lab@articon.pro" className="text-muted-foreground text-sm hover:text-primary">
+                      lab@articon.pro
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Режим работы</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Ежедневно с 9:00 до 21:00
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Telegram CTA */}
+              {/* Departments */}
+              <h3 className="text-xl font-bold mb-4">Наши отделы</h3>
+              <div className="space-y-4 mb-8">
+                {departments.map((dept, index) => (
+                  <div key={index} className="bg-secondary/50 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex gap-4 items-center">
+                      <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
+                        <Phone className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{dept.name}</h4>
+                        <a href={`tel:${dept.phone.replace(/[\s()-]/g, '')}`} className="text-muted-foreground text-sm hover:text-primary">
+                          {dept.phone}
+                        </a>
+                      </div>
+                    </div>
+                    <Button asChild variant="outline" size="sm">
+                      <a href={dept.telegram} target="_blank" rel="noopener noreferrer">
+                        <Send className="mr-2 h-4 w-4" />
+                        Написать в Telegram
+                      </a>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+
+              {/* Telegram Bot CTA */}
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
-                <h3 className="font-semibold mb-2">Быстрая связь через Telegram</h3>
+                <h3 className="font-semibold mb-2">Быстрая связь через Telegram-бот</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   Используйте нашего Telegram-бота для быстрой связи и отслеживания заказов
                 </p>

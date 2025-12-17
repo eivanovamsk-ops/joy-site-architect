@@ -56,12 +56,12 @@ const CourseCalendar = () => {
       return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer;
     });
 
-    // Sort: courses with "менеджмент" or "сканирование по запросу" go to the end
+    // Sort: courses with "менеджмент", "сканирование по запросу", "интраоральное сканирование" go to the end
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
-      const isLastA = titleA.includes('менеджмент') || titleA.includes('сканирование по запросу');
-      const isLastB = titleB.includes('менеджмент') || titleB.includes('сканирование по запросу');
+      const isLastA = titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');
+      const isLastB = titleB.includes('менеджмент') || titleB.includes('сканирование по запросу') || titleB.includes('интраоральное сканирование');
       
       if (isLastA && !isLastB) return 1;
       if (!isLastA && isLastB) return -1;

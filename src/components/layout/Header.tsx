@@ -31,8 +31,7 @@ const laboratoryMenuItems = [
       { label: "Съемное протезирование", href: "/laboratory/services?category=removable" },
     ],
   },
-  { label: "Прайс-листы", href: "/laboratory/services#price-lists" },
-  { label: "Заказ-наряды", href: "/laboratory#orders" },
+  { label: "Прайс-листы и заказ-наряды", href: "/laboratory/documents" },
   { label: "Как сделать заказ", href: "/laboratory#how-to-order" },
   { label: "Контакты", href: "/contacts" },
 ];

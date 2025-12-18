@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User } from "lucide-react";
 import articonLogo from "@/assets/articon-logo.png";
@@ -133,12 +133,23 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const isHome = location.pathname === "/";
   const isLaboratory = location.pathname.startsWith("/laboratory");
   const isShop = location.pathname.startsWith("/shop");
   const isEducation = location.pathname.startsWith("/education");
+
+  // Track scroll position to hide main header on homepage
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Get menu items based on current section
   const getMenuItems = (): MenuItem[] => {
@@ -150,7 +161,9 @@ export function Header() {
 
   const currentMenuItems = getMenuItems();
   const showShopIcons = isShop;
-
+  
+  // Hide main header on scroll for homepage (desktop only)
+  const hideMainHeader = isHome && isScrolled;
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Gray Bar - Darker, items aligned right */}
@@ -183,8 +196,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Header with Logo and Search */}
-      <div className="bg-background border-b border-border">
+      {/* Main Header with Logo and Search - hidden on scroll for homepage desktop */}
+      <div className={`bg-background border-b border-border transition-all duration-300 ${hideMainHeader ? 'lg:max-h-0 lg:overflow-hidden lg:border-b-0' : 'lg:max-h-40'}`}>
         <div className="container mx-auto px-4">
           {/* Top row: Logo, Search, Shop icons (if on shop) */}
           <div className="flex items-center justify-between h-20 gap-6">

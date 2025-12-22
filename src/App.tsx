@@ -14,6 +14,7 @@ import Contacts from "./pages/Contacts";
 import ProductDetail from "./pages/ProductDetail";
 import CourseDetail from "./pages/CourseDetail";
 import CourseCalendar from "./pages/CourseCalendar";
+import IntraoralScanners from "./pages/IntraoralScanners";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/laboratory/documents" element={<PriceListsAndOrders />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/product/:id" element={<ProductDetail />} />
+          <Route path="/shop/catalog/intraoral-scanners" element={<IntraoralScanners />} />
           <Route path="/education" element={<Education />} />
           <Route path="/education/calendar" element={<CourseCalendar />} />
           <Route path="/education/course/:id" element={<CourseDetail />} />

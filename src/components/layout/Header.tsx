@@ -65,7 +65,7 @@ const shopMenuItems = [
       { label: "Компрессоры", href: "/shop?category=compressors" },
       { label: "Пылесосы", href: "/shop?category=vacuums" },
       { label: "Вытяжки", href: "/shop?category=extraction" },
-      { label: "Фрезы", href: "/shop?category=milling-tools" },
+      { label: "Фрезы", href: "/shop/catalog/burs" },
     ]
   },
   { 

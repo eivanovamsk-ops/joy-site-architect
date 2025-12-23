@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -210,8 +211,13 @@ const ZirconiaDiscs = () => {
           </div>
 
           <div className="flex gap-8">
+            {/* Category Sidebar */}
+            <aside className="w-64 shrink-0 hidden lg:block">
+              <CatalogSidebar />
+            </aside>
+
             {/* Filters Sidebar */}
-            <aside className={`w-64 shrink-0 ${showFilters ? 'block' : 'hidden'} md:block`}>
+            <aside className={`w-64 shrink-0 ${showFilters ? 'block' : 'hidden'} md:block lg:hidden`}>
               <div className="sticky top-24 space-y-6">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold text-foreground">Фильтры</h3>
@@ -275,8 +281,37 @@ const ZirconiaDiscs = () => {
 
             {/* Products Grid */}
             <div className="flex-1">
+              {/* Inline Filters for Desktop */}
+              <div className="hidden lg:block mb-6">
+                <div className="bg-card rounded-lg border border-border p-4">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium text-foreground">Фильтры:</span>
+                      {activeFiltersCount > 0 && (
+                        <Button variant="ghost" size="sm" onClick={clearFilters} className="h-7">
+                          <X className="h-3 w-3 mr-1" />
+                          Сбросить ({activeFiltersCount})
+                        </Button>
+                      )}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {brands.map(brand => (
+                        <label key={brand} className="flex items-center gap-1.5 cursor-pointer bg-muted/50 px-2 py-1 rounded-md hover:bg-muted transition-colors">
+                          <Checkbox
+                            checked={selectedBrands.includes(brand)}
+                            onCheckedChange={() => toggleFilter(brand, selectedBrands, setSelectedBrands)}
+                            className="h-3.5 w-3.5"
+                          />
+                          <span className="text-xs text-foreground">{brand}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {filteredDiscs.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                   {filteredDiscs.map((disc) => (
                     <Card key={disc.id} className="group overflow-hidden border-border/50 bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <div className="relative aspect-square overflow-hidden bg-muted/30">

@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
+import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Helmet } from "react-helmet-async";
 import { Product } from "@/data/products";
 
@@ -107,31 +108,41 @@ const Printers3D = () => {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Printers Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-foreground">3D-принтеры</h2>
-            <div className="h-px flex-1 bg-border" />
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <div className="lg:w-64 flex-shrink-0">
+            <CatalogSidebar />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {printers.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
 
-        {/* Accessories Section */}
-        <section>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-foreground">Оборудование для постобработки</h2>
-            <div className="h-px flex-1 bg-border" />
+          {/* Content */}
+          <div className="flex-1">
+            {/* Printers Section */}
+            <section className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-2xl font-bold text-foreground">3D-принтеры</h2>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {printers.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+
+            {/* Accessories Section */}
+            <section>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-2xl font-bold text-foreground">Оборудование для постобработки</h2>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {accessories.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {accessories.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
+        </div>
       </div>
     </Layout>
   );

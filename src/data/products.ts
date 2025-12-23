@@ -14,7 +14,7 @@ export interface Product {
 export interface Category {
   id: string;
   name: string;
-  subcategories?: { id: string; name: string }[];
+  subcategories?: { id: string; name: string; href?: string }[];
 }
 
 export const categories: Category[] = [
@@ -22,7 +22,7 @@ export const categories: Category[] = [
     id: "3d-print",
     name: "3Д-печать",
     subcategories: [
-      { id: "3d-printers", name: "3Д-принтеры" },
+      { id: "3d-printers", name: "3Д-принтеры", href: "/shop/catalog/3d-printers" },
       { id: "photopolymers", name: "Фотополимеры" },
     ],
   },
@@ -30,8 +30,8 @@ export const categories: Category[] = [
     id: "3d-scanners",
     name: "3Д-сканеры",
     subcategories: [
-      { id: "clinical", name: "Клинические" },
-      { id: "laboratory", name: "Лабораторные" },
+      { id: "clinical", name: "Клинические", href: "/shop/catalog/intraoral-scanners" },
+      { id: "laboratory", name: "Лабораторные", href: "/shop/catalog/lab-scanners" },
     ],
   },
   {

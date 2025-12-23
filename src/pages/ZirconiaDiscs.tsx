@@ -165,17 +165,11 @@ const ZirconiaDiscs = () => {
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
   };
 
-  const breadcrumbItems = [
-    { label: "Главная", href: "/" },
-    { label: "Магазин", href: "/shop" },
-    { label: "Диски CAD/CAM" },
-  ];
-
   return (
     <Layout>
       <div className="bg-muted/30 py-4">
         <div className="container mx-auto px-4">
-          <Breadcrumbs items={breadcrumbItems} />
+          <Breadcrumbs />
         </div>
       </div>
 

@@ -59,9 +59,9 @@ const shopMenuItems = [
   },
   { 
     label: "Фрезерные станки", 
-    href: "/shop?category=milling",
+    href: "/shop/catalog/milling-machines",
     subcategories: [
-      { label: "Станки", href: "/shop?category=milling-machines" },
+      { label: "Станки", href: "/shop/catalog/milling-machines" },
       { label: "Компрессоры", href: "/shop?category=compressors" },
       { label: "Пылесосы", href: "/shop?category=vacuums" },
       { label: "Вытяжки", href: "/shop?category=extraction" },

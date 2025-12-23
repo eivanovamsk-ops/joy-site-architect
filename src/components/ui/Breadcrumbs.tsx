@@ -21,6 +21,7 @@ const routeNames: Record<string, string> = {
   "zirconia-discs": "Диски CAD/CAM",
   "burs": "Фрезы",
   "paints-glaze": "Краски и глазурь",
+  "delivery": "Доставка и оплата",
 };
 
 export function Breadcrumbs() {

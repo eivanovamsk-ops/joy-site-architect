@@ -53,7 +53,7 @@ const shopMenuItems = [
     href: "/shop?category=scanners",
     subcategories: [
       { label: "Интраоральные", href: "/shop/catalog/intraoral-scanners" },
-      { label: "Лабораторные", href: "/shop?category=lab-scanners" },
+      { label: "Лабораторные", href: "/shop/catalog/lab-scanners" },
       { label: "Аксессуары", href: "/shop?category=scanner-accessories" },
     ]
   },

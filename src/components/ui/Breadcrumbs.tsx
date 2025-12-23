@@ -17,6 +17,7 @@ const routeNames: Record<string, string> = {
   "track-order": "Отслеживание заказа",
   "price-lists": "Прайс-листы",
   "intraoral-scanners": "Интраоральные сканеры",
+  "lab-scanners": "Лабораторные сканеры",
 };
 
 export function Breadcrumbs() {

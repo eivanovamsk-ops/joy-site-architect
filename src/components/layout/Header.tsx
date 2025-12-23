@@ -38,7 +38,7 @@ const laboratoryMenuItems = [
 
 // Shop menu items with full structure
 const shopMenuItems = [
-  { label: "Акции", href: "/shop?category=sales" },
+  { label: "Акции", href: "/shop/catalog/sale" },
   { 
     label: "3D-печать", 
     href: "/shop?category=3d-printing",

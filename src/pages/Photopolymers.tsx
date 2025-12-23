@@ -154,27 +154,27 @@ const Photopolymers = () => {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        {/* HARZ Labs Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-foreground">HARZ Labs</h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {harzLabsProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
         {/* TOPCORE Section */}
-        <section>
+        <section className="mb-16">
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl font-bold text-foreground">TOPCORE</h2>
             <div className="h-px flex-1 bg-border" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {topcoreProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
+        {/* HARZ Labs Section */}
+        <section>
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="text-2xl font-bold text-foreground">HARZ Labs</h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {harzLabsProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

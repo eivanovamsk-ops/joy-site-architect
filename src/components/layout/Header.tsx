@@ -44,7 +44,7 @@ const shopMenuItems = [
     href: "/shop?category=3d-printing",
     subcategories: [
       { label: "3Д-принтеры", href: "/shop/catalog/3d-printers" },
-      { label: "Фотополимеры", href: "/shop?category=photopolymers" },
+      { label: "Фотополимеры", href: "/shop/catalog/photopolymers" },
       { label: "Комплектующие", href: "/shop?category=3d-parts" },
     ]
   },

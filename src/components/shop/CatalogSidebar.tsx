@@ -72,6 +72,11 @@ const catalogCategories: Category[] = [
     name: "Краски и глазурь",
     href: "/shop/catalog/paints-glaze",
   },
+  {
+    id: "furnaces",
+    name: "Печи",
+    href: "/shop/catalog/furnaces",
+  },
 ];
 
 export const CatalogSidebar = () => {

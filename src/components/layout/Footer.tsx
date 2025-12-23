@@ -1,58 +1,50 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import articonLogo from "@/assets/articon-logo.png";
-
 const footerLinks = {
-  company: [
-    { label: "Контакты", href: "/contacts" },
-  ],
-  navigation: [
-    { label: "Лаборатория", href: "/laboratory" },
-    { label: "Магазин", href: "/shop" },
-    { label: "Учебный центр", href: "/education" },
-  ],
-  services: [
-    { label: "Прайс-листы", href: "/laboratory/prices" },
-    { label: "Каталог товаров", href: "/shop/catalog" },
-    { label: "Календарь курсов", href: "/education/calendar" },
-  ],
+  company: [{
+    label: "Контакты",
+    href: "/contacts"
+  }],
+  navigation: [{
+    label: "Лаборатория",
+    href: "/laboratory"
+  }, {
+    label: "Магазин",
+    href: "/shop"
+  }, {
+    label: "Учебный центр",
+    href: "/education"
+  }],
+  services: [{
+    label: "Прайс-листы",
+    href: "/laboratory/prices"
+  }, {
+    label: "Каталог товаров",
+    href: "/shop/catalog"
+  }, {
+    label: "Календарь курсов",
+    href: "/education/calendar"
+  }]
 };
-
 export function Footer() {
-  return (
-    <footer className="bg-foreground text-background">
+  return <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <img
-              src={articonLogo}
-              alt="Articon"
-              className="h-8 w-auto brightness-0 invert"
-            />
+            <img src={articonLogo} alt="Articon" className="h-8 w-auto brightness-0 invert" />
             <p className="text-background/70 text-sm leading-relaxed">
               Экосистема цифровых решений для стоматологии. От обучения и
               оборудования до полного цикла производства.
             </p>
             <div className="flex gap-3">
-              <a
-                href="https://vk.com/articondental"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="ВКонтакте"
-              >
+              <a href="https://vk.com/articondental" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="ВКонтакте">
                 <span className="text-sm font-bold">VK</span>
               </a>
-              <a
-                href="https://t.me/articondental_bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Telegram"
-              >
+              <a href="https://t.me/articondental_bot" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Telegram">
                 <Send className="h-4 w-4" />
               </a>
             </div>
@@ -62,26 +54,16 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Навигация</h4>
             <ul className="space-y-3">
-              {footerLinks.navigation.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                  >
+              {footerLinks.navigation.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
                     {link.label}
                   </Link>
-                </li>
-              ))}
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                  >
+                </li>)}
+              {footerLinks.company.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -96,22 +78,12 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+74951234567"
-                  className="text-background/70 hover:text-background transition-colors text-sm"
-                >
-                  +7 (495) 123-45-67
-                </a>
+                
+                
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                <a
-                  href="mailto:info@articon.pro"
-                  className="text-background/70 hover:text-background transition-colors text-sm"
-                >
-                  info@articon.pro
-                </a>
+                
+                
               </li>
             </ul>
           </div>
@@ -122,17 +94,9 @@ export function Footer() {
             <p className="text-background/70 text-sm mb-4">
               Подпишитесь на рассылку и получайте новости о курсах и акциях.
             </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <Input
-                type="email"
-                placeholder="Ваш email"
-                className="bg-background/10 border-background/20 text-background placeholder:text-background/50 flex-1"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="gradient-accent flex-shrink-0"
-              >
+            <form className="flex gap-2" onSubmit={e => e.preventDefault()}>
+              <Input type="email" placeholder="Ваш email" className="bg-background/10 border-background/20 text-background placeholder:text-background/50 flex-1" />
+              <Button type="submit" size="icon" className="gradient-accent flex-shrink-0">
                 <Send className="h-4 w-4" />
               </Button>
             </form>
@@ -145,21 +109,14 @@ export function Footer() {
             © 2025 Артикон. Все права защищены.
           </p>
           <div className="flex gap-6">
-            <Link
-              to="/privacy"
-              className="text-background/50 hover:text-background text-sm transition-colors"
-            >
+            <Link to="/privacy" className="text-background/50 hover:text-background text-sm transition-colors">
               Политика конфиденциальности
             </Link>
-            <Link
-              to="/terms"
-              className="text-background/50 hover:text-background text-sm transition-colors"
-            >
+            <Link to="/terms" className="text-background/50 hover:text-background text-sm transition-colors">
               Согласие на обработку данных
             </Link>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }

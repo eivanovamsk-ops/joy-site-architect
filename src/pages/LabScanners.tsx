@@ -1,5 +1,4 @@
 import { Layout } from "@/components/layout/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { Helmet } from "react-helmet-async";
 import { Product } from "@/data/products";
@@ -48,8 +47,6 @@ const LabScanners = () => {
           content="Лабораторные 3D сканеры Medit T310, T510, T710 для зуботехнических лабораторий. Высокоточное сканирование моделей и оттисков. Доставка по России." 
         />
       </Helmet>
-
-      <Breadcrumbs />
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">

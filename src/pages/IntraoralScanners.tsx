@@ -1,5 +1,4 @@
 import { Layout } from "@/components/layout/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { Helmet } from "react-helmet-async";
 import { Product } from "@/data/products";
@@ -81,8 +80,6 @@ const IntraoralScanners = () => {
           content="Интраоральные 3D сканеры для стоматологии. Runyes 3DS, Medit T310, T510, T710. Высокое качество сканирования, удобство использования. Доставка по России." 
         />
       </Helmet>
-
-      <Breadcrumbs />
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">

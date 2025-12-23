@@ -38,40 +38,6 @@ const intraoralScanners: Product[] = [
   },
 ];
 
-const laboratoryScanners: Product[] = [
-  {
-    id: "lab-1",
-    name: "Medit T310 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: 655000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T310-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-    isSale: true,
-  },
-  {
-    id: "lab-2",
-    name: "Medit T510 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T510-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-  {
-    id: "lab-3",
-    name: "Medit T710 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T710-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-];
-
 const accessories: Product[] = [
   {
     id: "acc-1",
@@ -142,19 +108,6 @@ const IntraoralScanners = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {intraoralScanners.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
-        {/* Laboratory Scanners Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-foreground">Лабораторные сканеры</h2>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {laboratoryScanners.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

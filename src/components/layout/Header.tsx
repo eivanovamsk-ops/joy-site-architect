@@ -70,12 +70,12 @@ const shopMenuItems = [
   },
   { 
     label: "Циркониевые диски", 
-    href: "/shop?category=zirconia",
+    href: "/shop/catalog/zirconia-discs",
     subcategories: [
-      { label: "Белый", href: "/shop?category=zirconia-white" },
-      { label: "Окрашенный", href: "/shop?category=zirconia-colored" },
-      { label: "Мультилеер", href: "/shop?category=zirconia-multilayer" },
-      { label: "Каркасный", href: "/shop?category=zirconia-frame" },
+      { label: "Каркасный", href: "/shop/catalog/zirconia-discs?type=frame" },
+      { label: "Белый", href: "/shop/catalog/zirconia-discs?type=white" },
+      { label: "Мультилеер", href: "/shop/catalog/zirconia-discs?type=multilayer" },
+      { label: "Окрашенный", href: "/shop/catalog/zirconia-discs?type=colored" },
     ]
   },
   { 

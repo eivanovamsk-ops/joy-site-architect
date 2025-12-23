@@ -9,6 +9,7 @@ import LaboratoryServices from "./pages/LaboratoryServices";
 import PriceListsAndOrders from "./pages/PriceListsAndOrders";
 import Shop from "./pages/Shop";
 import Education from "./pages/Education";
+import EducationContacts from "./pages/EducationContacts";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import ProductDetail from "./pages/ProductDetail";
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/shop/catalog/furnaces" element={<Furnaces />} />
           <Route path="/shop/delivery" element={<Delivery />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/education/contacts" element={<EducationContacts />} />
           <Route path="/education/calendar" element={<CourseCalendar />} />
           <Route path="/education/course/:id" element={<CourseDetail />} />
           <Route path="/about" element={<About />} />

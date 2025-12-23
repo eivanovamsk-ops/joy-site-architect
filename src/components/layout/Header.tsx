@@ -116,7 +116,7 @@ const educationMenuItems = [
       { label: "Цифровая ортодонтия", href: "/education/course/2" }, // ORTHO Skills
     ],
   },
-  { label: "Контакты", href: "/contacts" },
+  { label: "Контакты", href: "/education/contacts" },
 ];
 
 type MenuItem = {

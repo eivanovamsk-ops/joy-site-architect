@@ -18,6 +18,7 @@ import IntraoralScanners from "./pages/IntraoralScanners";
 import LabScanners from "./pages/LabScanners";
 import Sale from "./pages/Sale";
 import Printers3D from "./pages/Printers3D";
+import Photopolymers from "./pages/Photopolymers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/shop/catalog/lab-scanners" element={<LabScanners />} />
           <Route path="/shop/catalog/sale" element={<Sale />} />
           <Route path="/shop/catalog/3d-printers" element={<Printers3D />} />
+          <Route path="/shop/catalog/photopolymers" element={<Photopolymers />} />
           <Route path="/education" element={<Education />} />
           <Route path="/education/calendar" element={<CourseCalendar />} />
           <Route path="/education/course/:id" element={<CourseDetail />} />

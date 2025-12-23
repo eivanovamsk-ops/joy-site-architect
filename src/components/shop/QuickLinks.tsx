@@ -21,7 +21,7 @@ const categories = [
   { name: "Фрезы", icon: CircleDot, slug: "burs" },
   { name: "Циркониевые диски", icon: Disc, slug: "zirconia-discs" },
   { name: "Диски CAD/CAM", icon: Disc, slug: "cadcam-discs" },
-  { name: "Краски и глазурь", icon: Palette, slug: "paints" },
+  { name: "Краски и глазурь", icon: Palette, slug: "paints-glaze" },
 ];
 
 export function ShopQuickLinks() {

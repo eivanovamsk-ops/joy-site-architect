@@ -20,6 +20,7 @@ const routeNames: Record<string, string> = {
   "lab-scanners": "Лабораторные сканеры",
   "zirconia-discs": "Диски CAD/CAM",
   "burs": "Фрезы",
+  "paints-glaze": "Краски и глазурь",
 };
 
 export function Breadcrumbs() {

@@ -22,6 +22,7 @@ import Photopolymers from "./pages/Photopolymers";
 import MillingMachines from "./pages/MillingMachines";
 import Burs from "./pages/Burs";
 import ZirconiaDiscs from "./pages/ZirconiaDiscs";
+import PaintsGlaze from "./pages/PaintsGlaze";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/shop/catalog/milling-machines" element={<MillingMachines />} />
           <Route path="/shop/catalog/burs" element={<Burs />} />
           <Route path="/shop/catalog/zirconia-discs" element={<ZirconiaDiscs />} />
+          <Route path="/shop/catalog/paints-glaze" element={<PaintsGlaze />} />
           <Route path="/education" element={<Education />} />
           <Route path="/education/calendar" element={<CourseCalendar />} />
           <Route path="/education/course/:id" element={<CourseDetail />} />

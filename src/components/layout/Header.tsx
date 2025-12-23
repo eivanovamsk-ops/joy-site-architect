@@ -90,11 +90,7 @@ const shopMenuItems = [
   },
   { 
     label: "Краски и глазурь", 
-    href: "/shop?category=paints",
-    subcategories: [
-      { label: "Низкотемпературные", href: "/shop?category=low-temp-paints" },
-      { label: "Глазурь", href: "/shop?category=glaze" },
-    ]
+    href: "/shop/catalog/paints-glaze",
   },
   { label: "Доставка и оплата", href: "/shop/delivery" },
 ];

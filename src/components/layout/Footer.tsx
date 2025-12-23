@@ -77,13 +77,16 @@ export function Footer() {
                   Москва, Варшавское шоссе, д. 33с12
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                
-                
-              </li>
-              <li className="flex items-center gap-3">
-                
-                
+              <li>
+                <a 
+                  href="https://t.me/articondental_bot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
+                >
+                  <Send className="h-5 w-5 text-accent flex-shrink-0" />
+                  <span className="text-sm">Telegram-бот</span>
+                </a>
               </li>
             </ul>
           </div>

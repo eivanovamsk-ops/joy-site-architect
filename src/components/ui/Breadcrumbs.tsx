@@ -18,6 +18,8 @@ const routeNames: Record<string, string> = {
   "price-lists": "Прайс-листы",
   "intraoral-scanners": "Интраоральные сканеры",
   "lab-scanners": "Лабораторные сканеры",
+  "zirconia-discs": "Диски CAD/CAM",
+  "burs": "Фрезы",
 };
 
 export function Breadcrumbs() {

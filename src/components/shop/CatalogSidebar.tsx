@@ -52,7 +52,7 @@ const catalogCategories: Category[] = [
     subcategories: [
       { 
         id: "zirconia", 
-        name: "Диски циркониевые", 
+        name: "Циркониевые диски (ZrO2)", 
         href: "/shop/catalog/zirconia-discs",
         subcategories: [
           { id: "framework", name: "Каркасный", href: "/shop/catalog/zirconia-discs?type=framework" },
@@ -61,8 +61,10 @@ const catalogCategories: Category[] = [
           { id: "colored", name: "Окрашенный", href: "/shop/catalog/zirconia-discs?type=colored" },
         ],
       },
-      { id: "pmma", name: "Диски PMMA", href: "/shop/catalog/zirconia-discs?material=PMMA" },
-      { id: "plastic", name: "Диски пластиковые", href: "/shop/catalog/zirconia-discs?material=Пластик" },
+      { id: "metal", name: "Диски металл (CoCr/Ti)", href: "/shop/catalog/metal-discs" },
+      { id: "pmma", name: "Диски пластик (PMMA)", href: "/shop/catalog/pmma-discs" },
+      { id: "press-ceramic", name: "Пресс-керамика", href: "/shop/catalog/press-ceramic" },
+      { id: "lithium", name: "Дисиликат лития", href: "/shop/catalog/lithium-disilicate" },
     ],
   },
 ];

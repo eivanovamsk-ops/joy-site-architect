@@ -67,6 +67,11 @@ const catalogCategories: Category[] = [
       { id: "lithium", name: "Дисиликат лития", href: "/shop/catalog/lithium-disilicate" },
     ],
   },
+  {
+    id: "paints",
+    name: "Краски и глазурь",
+    href: "/shop/catalog/paints-glaze",
+  },
 ];
 
 export const CatalogSidebar = () => {

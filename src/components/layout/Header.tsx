@@ -58,7 +58,7 @@ const laboratoryMenuItems = [{
   href: "/laboratory#how-to-order"
 }, {
   label: "Контакты",
-  href: "/contacts"
+  href: "/laboratory/contacts"
 }];
 
 // Shop menu items with full structure

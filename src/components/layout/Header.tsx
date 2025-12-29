@@ -274,23 +274,25 @@ export function Header() {
             return <div key={item.href} className="relative group">
                   <Link to={item.href} className="flex items-center gap-1 px-4 py-3 text-sm font-bold text-foreground hover:text-primary transition-colors">
                     {item.label}
-                    {hasSubmenu}
+                    {hasSubmenu && <ChevronDown className="h-3 w-3 ml-1 transition-transform group-hover:rotate-180" />}
                   </Link>
 
-                  {/* Dropdown submenu */}
-                  {hasSubmenu && <div className="absolute top-full left-0 pt-0 z-[100] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
-                      <div className="bg-background border border-border shadow-xl py-2 min-w-[240px]">
+                  {/* Dropdown submenu - with pseudo-element bridge for hover */}
+                  {hasSubmenu && (
+                    <div className="absolute top-full left-0 z-[9999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 before:content-[''] before:absolute before:top-[-10px] before:left-0 before:right-0 before:h-[10px]">
+                      <div className="bg-background border border-border rounded-md shadow-lg py-2 min-w-[240px]">
                         {item.subcategories!.map(sub => (
                           <Link
                             key={sub.href}
                             to={sub.href}
-                            className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition-colors"
+                            className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
                           >
                             {sub.label}
                           </Link>
                         ))}
                       </div>
-                    </div>}
+                    </div>
+                  )}
                 </div>;
           })}
           </nav>

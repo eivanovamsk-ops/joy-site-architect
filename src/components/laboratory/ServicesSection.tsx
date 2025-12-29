@@ -1,45 +1,23 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { serviceCategories } from "@/data/laboratoryServices";
 
-const services = [
-  {
-    title: "Функциональная эстетика",
-    description: "Виниры, коронки из диоксида циркония, керамики E.max. Безметалловые реставрации высочайшего качества.",
-    price: "от 5,500 ₽",
-    items: ["Виниры керамические", "Коронки цельноциркониевые", "Коронки E.max", "Мосты из циркония"],
-  },
-  {
-    title: "Ortho (Цифровая ортодонтия)",
-    description: "Элайнеры, ретейнеры, ортодонтические аппараты. Полный цикл цифрового ортодонтического лечения.",
-    price: "от 3,000 ₽",
-    items: ["Элайнеры", "Ретейнеры", "Ортодонтические аппараты", "Трейнеры"],
-  },
-  {
-    title: "Хирургические шаблоны",
-    description: "3D-планирование и изготовление навигационных хирургических шаблонов для точной установки имплантов.",
-    price: "от 4,500 ₽",
-    items: ["Навигационные шаблоны", "Планирование имплантации", "Временные конструкции"],
-  },
-  {
-    title: "Сплинты и депрограмматоры",
-    description: "Лечение дисфункции ВНЧС, окклюзионные шины, ночные капы для защиты зубов.",
-    price: "от 6,000 ₽",
-    items: ["Окклюзионные шины", "Депрограмматоры", "Ночные капы", "Спортивные капы"],
-  },
-  {
-    title: "Съёмное протезирование",
-    description: "Полные и частичные съёмные протезы с использованием современных материалов.",
-    price: "от 8,000 ₽",
-    items: ["Полные съёмные протезы", "Частичные протезы", "Иммедиат-протезы"],
-  },
-  {
-    title: "Балочные конструкции",
-    description: "Протезирование на имплантах с балочной фиксацией для максимальной надёжности.",
-    price: "от 25,000 ₽",
-    items: ["Балки на имплантах", "Съёмные протезы на балках", "Телескопические конструкции"],
-  },
-];
+// Get top 6 categories for display
+const topServices = serviceCategories.slice(0, 6).map(category => {
+  // Get first price from first subsection
+  const firstPrice = category.subsections[0]?.services[0]?.price || "";
+  
+  // Get first 3 service names from subsections
+  const items = category.subsections.slice(0, 3).map(sub => sub.name);
+  
+  return {
+    title: category.name,
+    slug: category.slug,
+    price: `от ${firstPrice.replace(/\s*₽.*/, '')} ₽`,
+    items,
+  };
+});
 
 export function LaboratoryServicesSection() {
   return (
@@ -56,19 +34,17 @@ export function LaboratoryServicesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
+          {topServices.map((service, index) => (
+            <Link
               key={index}
-              className="bg-card border border-border rounded-2xl p-6 hover-lift group"
+              to={`/laboratory/services#${service.slug}`}
+              className="bg-card border border-border rounded-2xl p-6 hover-lift group block"
             >
               <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-4 text-sm">
-                {service.description}
-              </p>
               <ul className="space-y-1 mb-4">
-                {service.items.slice(0, 3).map((item, i) => (
+                {service.items.map((item, i) => (
                   <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
                     <span className="w-1 h-1 rounded-full bg-primary" />
                     {item}
@@ -81,7 +57,7 @@ export function LaboratoryServicesSection() {
                   Подробнее <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

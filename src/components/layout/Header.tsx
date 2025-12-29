@@ -27,29 +27,10 @@ const homeMenuItems = [{
   href: "/education"
 }];
 
-// Laboratory menu items with submenus
+// Laboratory menu items
 const laboratoryMenuItems = [{
   label: "Услуги и цены",
-  href: "/laboratory/services",
-  subcategories: [{
-    label: "Эстетика (безметалловая керамика)",
-    href: "/laboratory/services?category=esthetics"
-  }, {
-    label: "Металлокерамика и цельнолитые",
-    href: "/laboratory/services?category=metal-ceramic"
-  }, {
-    label: "Ортодонтия",
-    href: "/laboratory/services?category=orthodontics"
-  }, {
-    label: "Хирургия и цифровое планирование",
-    href: "/laboratory/services?category=surgery"
-  }, {
-    label: "Сплинты и депрограмматоры",
-    href: "/laboratory/services?category=splints"
-  }, {
-    label: "Съемное протезирование",
-    href: "/laboratory/services?category=removable"
-  }]
+  href: "/laboratory/services"
 }, {
   label: "Прайс-листы и заказ-наряды",
   href: "/laboratory/documents"

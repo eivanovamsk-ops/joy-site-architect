@@ -48,7 +48,7 @@ const shopMenuItems = [{
   href: "/shop/catalog/sale"
 }, {
   label: "3D-печать",
-  href: "/shop?category=3d-printing",
+  href: "/shop/catalog/printers",
   subcategories: [{
     label: "3Д-принтеры",
     href: "/shop/catalog/3d-printers"

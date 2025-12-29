@@ -38,6 +38,39 @@ const laboratoryScanners: Product[] = [
   },
 ];
 
+const accessories: Product[] = [
+  {
+    id: "acc-lab-1",
+    name: "Калибровочная пластина для Medit",
+    category: "accessories",
+    subcategory: "scanner-accessories",
+    price: 15000,
+    image: "https://articon.pro/wp-content/uploads/2024/01/calibration-plate-300x300.jpg",
+    brand: "Medit",
+    inStock: true,
+  },
+  {
+    id: "acc-lab-2",
+    name: "Держатель моделей для лабораторного сканера",
+    category: "accessories",
+    subcategory: "scanner-accessories",
+    price: 8500,
+    image: "https://articon.pro/wp-content/uploads/2024/01/model-holder-300x300.jpg",
+    brand: "Medit",
+    inStock: true,
+  },
+  {
+    id: "acc-lab-3",
+    name: "Антибликовый спрей для сканирования",
+    category: "accessories",
+    subcategory: "scanner-accessories",
+    price: 3500,
+    image: "https://articon.pro/wp-content/uploads/2024/01/scan-spray-300x300.jpg",
+    brand: "Medit",
+    inStock: true,
+  },
+];
+
 const LabScanners = () => {
   return (
     <Layout>
@@ -72,13 +105,25 @@ const LabScanners = () => {
 
           {/* Content */}
           <div className="flex-1">
-            <section>
+            <section className="mb-16">
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-2xl font-bold text-foreground">Сканеры Medit</h2>
                 <div className="h-px flex-1 bg-border" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {laboratoryScanners.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-2xl font-bold text-foreground">Аксессуары</h2>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {accessories.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>

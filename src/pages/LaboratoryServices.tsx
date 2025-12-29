@@ -11,7 +11,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { ChevronRight } from "lucide-react";
 import { serviceCategories } from "@/data/laboratoryServices";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -38,10 +37,6 @@ const LaboratoryServices = () => {
   }, [categoryFromUrl]);
 
   const currentCategory = serviceCategories.find((cat) => cat.id === activeCategory);
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("ru-RU").format(price);
-  };
 
   return (
     <Layout>
@@ -81,62 +76,58 @@ const LaboratoryServices = () => {
                     </button>
                   ))}
                 </nav>
-
               </Card>
             </aside>
 
-            {/* Right Content - Services Table */}
-            <main className="flex-1 min-w-0">
-              <Card className="overflow-hidden">
-                <div className="bg-muted/50 px-6 py-4 border-b">
-                  <h2 className="text-xl font-semibold">{currentCategory?.name}</h2>
-                </div>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-[60%]">Услуга</TableHead>
-                        <TableHead className="text-right">Цена</TableHead>
-                        <TableHead className="w-[120px]"></TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {currentCategory?.services.map((service) => (
-                        <TableRow key={service.id} className="group">
-                          <TableCell className="font-medium">
-                            {service.name}
-                          </TableCell>
-                          <TableCell className="text-right whitespace-nowrap">
-                            <span className="text-muted-foreground text-sm mr-1">
-                              {service.pricePrefix}
-                            </span>
-                            <span className="font-semibold text-foreground">
-                              {formatPrice(service.price)} ₽
-                            </span>
-                          </TableCell>
-                          <TableCell className="text-right">
-                            <Link
-                              to={`/laboratory/services/${currentCategory.slug}/${service.id}`}
-                            >
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                className="opacity-0 group-hover:opacity-100 transition-opacity"
-                              >
-                                Подробнее
-                                <ChevronRight className="h-4 w-4 ml-1" />
-                              </Button>
-                            </Link>
-                          </TableCell>
+            {/* Right Content - Services Tables */}
+            <main className="flex-1 min-w-0 space-y-6">
+              <h2 className="text-2xl font-bold">{currentCategory?.name}</h2>
+              
+              {currentCategory?.subsections.map((subsection) => (
+                <Card key={subsection.id} className="overflow-hidden">
+                  <div className="bg-muted/50 px-6 py-4 border-b">
+                    <h3 className="text-lg font-semibold">{subsection.name}</h3>
+                    {subsection.note && (
+                      <p className="text-sm text-muted-foreground mt-1">{subsection.note}</p>
+                    )}
+                  </div>
+                  <div className="overflow-x-auto">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead className="w-[60%]">Услуга</TableHead>
+                          <TableHead className="text-right">Цена</TableHead>
+                          {subsection.services.some(s => s.description) && (
+                            <TableHead className="text-right">Сроки</TableHead>
+                          )}
                         </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </Card>
+                      </TableHeader>
+                      <TableBody>
+                        {subsection.services.map((service) => (
+                          <TableRow key={service.id} className="group">
+                            <TableCell className="font-medium">
+                              {service.name}
+                            </TableCell>
+                            <TableCell className="text-right whitespace-nowrap">
+                              <span className="font-semibold text-foreground">
+                                {service.price}
+                              </span>
+                            </TableCell>
+                            {subsection.services.some(s => s.description) && (
+                              <TableCell className="text-right text-sm text-muted-foreground whitespace-nowrap">
+                                {service.description || "—"}
+                              </TableCell>
+                            )}
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </div>
+                </Card>
+              ))}
 
               {/* Info Block */}
-              <Card className="mt-6 p-6 bg-primary/5 border-primary/20">
+              <Card className="p-6 bg-primary/5 border-primary/20">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h3 className="font-semibold text-lg mb-1">

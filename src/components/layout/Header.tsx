@@ -307,7 +307,15 @@ export function Header() {
                   {/* Dropdown submenu */}
                   {hasSubmenu && <div className="absolute top-full left-0 pt-0 z-[100] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200">
                       <div className="bg-background border border-border shadow-xl py-2 min-w-[240px]">
-                        {item.subcategories!.map(sub => {})}
+                        {item.subcategories!.map(sub => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
                       </div>
                     </div>}
                 </div>;

@@ -21,6 +21,11 @@ const departments = [
     phone: "+7 (963) 996-51-78",
     telegram: "https://t.me/articon3",
   },
+  {
+    name: "Отдел сотрудничества",
+    phone: "+7 967 211-37-56",
+    telegram: "https://t.me/articonrazvitie",
+  },
 ];
 
 const Contacts = () => {

@@ -143,32 +143,24 @@ const educationMenuItems = [{
     href: "/education/calendar?category=Ортопедия"
   }, {
     label: "Ортодонтия",
-    href: "/education/course/1"
-  },
-  // Всё сложится
-  {
+    href: "/education/calendar?category=Ортодонтия"
+  }, {
     label: "Цифровое планирование",
-    href: "/education/course/2"
-  } // ORTHO Skills
-  ]
+    href: "/education/calendar?category=Цифровое планирование"
+  }]
 }, {
   label: "Обучение для техников",
   href: "/education/calendar?category=CAD/CAM",
   subcategories: [{
     label: "CAD/CAM",
     href: "/education/course/3"
-  },
-  // CAD/CAM SCHOOL
-  {
+  }, {
     label: "3D-моделирование",
     href: "/education/course/4"
-  },
-  // Сплинты
-  {
+  }, {
     label: "Цифровая ортодонтия",
-    href: "/education/course/2"
-  } // ORTHO Skills
-  ]
+    href: "/education/calendar?category=Ортодонтия"
+  }]
 }, {
   label: "Контакты",
   href: "/education/contacts"

@@ -17,12 +17,15 @@ export function LaboratoryCTASection() {
             Прайс-листы
           </Button>
           <Button
+            asChild
             size="lg"
             variant="outline"
             className="border-lab-foreground/30 text-lab-foreground hover:bg-lab-foreground/10"
           >
-            <Truck className="mr-2 h-5 w-5" />
-            Вызвать курьера
+            <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">
+              <Truck className="mr-2 h-5 w-5" />
+              Вызвать курьера
+            </a>
           </Button>
           <Button
             size="lg"

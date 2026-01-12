@@ -42,10 +42,11 @@ export function LaboratoryHeroSection() {
               <Link to="/laboratory/documents">Прайс-листы</Link>
             </Button>
             <Button
+              asChild
               size="lg"
               className="bg-lab-foreground/20 text-lab-foreground hover:bg-lab-foreground/30 px-8 transition-transform duration-200 hover:scale-105"
             >
-              Вызвать курьера
+              <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">Вызвать курьера</a>
             </Button>
           </div>
         </div>

@@ -39,7 +39,6 @@ export function LaboratoryHeroSection() {
               className="bg-background text-lab hover:bg-background/90 px-8"
             >
               Прайс-листы
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
               size="lg"

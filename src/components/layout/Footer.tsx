@@ -44,7 +44,7 @@ export function Footer() {
               <a href="https://vk.com/articondental" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="ВКонтакте">
                 <span className="text-sm font-bold">VK</span>
               </a>
-              <a href="https://t.me/articondental_bot" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Telegram">
+              <a href="https://t.me/articon" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Telegram">
                 <Send className="h-4 w-4" />
               </a>
             </div>

@@ -60,9 +60,7 @@ export function Footer() {
                   </Link>
                 </li>)}
               {footerLinks.company.map(link => <li key={link.href}>
-                  <Link to={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
-                    {link.label}
-                  </Link>
+                  
                 </li>)}
             </ul>
           </div>
@@ -78,12 +76,7 @@ export function Footer() {
                 </span>
               </li>
               <li>
-                <a 
-                  href="https://t.me/articondental_bot" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
-                >
+                <a href="https://t.me/articondental_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
                   <Send className="h-5 w-5 text-accent flex-shrink-0" />
                   <span className="text-sm">Telegram-бот</span>
                 </a>

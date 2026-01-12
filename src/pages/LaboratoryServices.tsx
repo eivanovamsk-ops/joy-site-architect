@@ -137,11 +137,11 @@ const LaboratoryServices = () => {
                       Свяжитесь с нами для получения индивидуального расчета стоимости
                     </p>
                   </div>
-                  <Link to="/contacts">
+                  <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">
                     <Button>
                       Связаться с нами
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </Card>
             </main>

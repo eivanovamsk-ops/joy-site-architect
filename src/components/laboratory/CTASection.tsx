@@ -12,15 +12,14 @@ export function LaboratoryCTASection() {
           Свяжитесь с нами, и мы поможем вам с любыми вопросами
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="bg-background text-lab hover:bg-background/90">
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90">
             <FileText className="mr-2 h-5 w-5" />
             Прайс-листы
           </Button>
           <Button
             asChild
             size="lg"
-            variant="outline"
-            className="border-lab-foreground/30 text-lab-foreground hover:bg-lab-foreground/10"
+            className="bg-white text-primary hover:bg-white/90"
           >
             <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">
               <Truck className="mr-2 h-5 w-5" />
@@ -29,8 +28,7 @@ export function LaboratoryCTASection() {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="border-lab-foreground/30 text-lab-foreground hover:bg-lab-foreground/10"
+            className="bg-white text-primary hover:bg-white/90"
           >
             <MessageCircle className="mr-2 h-5 w-5" />
             Связаться с нами

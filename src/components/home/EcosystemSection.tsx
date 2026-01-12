@@ -1,43 +1,35 @@
 import { GraduationCap, ScanLine, FlaskConical, Headphones, ArrowRight, ArrowDown } from "lucide-react";
-
-const steps = [
-  {
-    number: "1",
-    title: "Знания",
-    direction: "Учебный центр",
-    description: "Обучение передовым цифровым протоколам.",
-    icon: GraduationCap,
-    gradient: "from-blue-500 to-blue-600",
-  },
-  {
-    number: "2",
-    title: "Оснащение",
-    direction: "Магазин оборудования",
-    description: "Покупка проверенного оборудования, которое мы используем сами.",
-    icon: ScanLine,
-    gradient: "from-orange-500 to-orange-600",
-  },
-  {
-    number: "3",
-    title: "Производство",
-    direction: "Зуботехническая лаборатория",
-    description: "Заказ высокоточных работ в одной из крупнейших лабораторий страны.",
-    icon: FlaskConical,
-    gradient: "from-teal-500 to-teal-600",
-  },
-  {
-    number: "4",
-    title: "Поддержка",
-    direction: "Сервис",
-    description: "Полный цикл технической поддержки на каждом этапе.",
-    icon: Headphones,
-    gradient: "from-primary to-blue-700",
-  },
-];
-
+const steps = [{
+  number: "1",
+  title: "Знания",
+  direction: "Учебный центр",
+  description: "Обучение передовым цифровым протоколам.",
+  icon: GraduationCap,
+  gradient: "from-blue-500 to-blue-600"
+}, {
+  number: "2",
+  title: "Оснащение",
+  direction: "Магазин оборудования",
+  description: "Покупка проверенного оборудования, которое мы используем сами.",
+  icon: ScanLine,
+  gradient: "from-orange-500 to-orange-600"
+}, {
+  number: "3",
+  title: "Производство",
+  direction: "Зуботехническая лаборатория",
+  description: "Заказ высокоточных работ в одной из крупнейших лабораторий страны.",
+  icon: FlaskConical,
+  gradient: "from-teal-500 to-teal-600"
+}, {
+  number: "4",
+  title: "Поддержка",
+  direction: "Сервис",
+  description: "Полный цикл технической поддержки на каждом этапе.",
+  icon: Headphones,
+  gradient: "from-primary to-blue-700"
+}];
 export function EcosystemSection() {
-  return (
-    <section className="py-20 lg:py-28 bg-muted/30 overflow-hidden">
+  return <section className="py-20 lg:py-28 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -53,8 +45,7 @@ export function EcosystemSection() {
 
         {/* Infographic - Desktop (horizontal cycle) */}
         <div className="hidden lg:flex items-center justify-center gap-4 mb-16">
-          {steps.map((step, index) => (
-            <div key={step.number} className="flex items-center">
+          {steps.map((step, index) => <div key={step.number} className="flex items-center">
               {/* Step Card */}
               <div className="relative group">
                 <div className="w-64 bg-background rounded-2xl p-6 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -76,34 +67,23 @@ export function EcosystemSection() {
               </div>
               
               {/* Arrow between cards */}
-              {index < steps.length - 1 && (
-                <ArrowRight className="h-6 w-6 text-primary mx-2 flex-shrink-0" />
-              )}
+              {index < steps.length - 1 && <ArrowRight className="h-6 w-6 text-primary mx-2 flex-shrink-0" />}
               
               {/* Closing arrow from last to first */}
-              {index === steps.length - 1 && (
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-primary">
+              {index === steps.length - 1 && <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-primary">
                   <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary" />
                   <span className="text-sm font-medium">Цикл повторяется</span>
                   <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary" />
-                </div>
-              )}
-            </div>
-          ))}
+                </div>}
+            </div>)}
         </div>
 
         {/* Cycle indicator - Desktop */}
-        <div className="hidden lg:flex justify-center mb-16">
-          <div className="flex items-center gap-2 text-primary bg-primary/5 px-6 py-3 rounded-full border border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium">Непрерывный цикл поддержки</span>
-          </div>
-        </div>
+        
 
         {/* Infographic - Mobile/Tablet (vertical list) */}
         <div className="lg:hidden space-y-4 mb-12">
-          {steps.map((step, index) => (
-            <div key={step.number} className="flex flex-col items-center">
+          {steps.map((step, index) => <div key={step.number} className="flex flex-col items-center">
               {/* Step Card */}
               <div className="relative w-full max-w-md bg-background rounded-2xl p-6 shadow-lg border border-border/50">
                 {/* Step Number */}
@@ -127,11 +107,8 @@ export function EcosystemSection() {
               </div>
               
               {/* Arrow between cards */}
-              {index < steps.length - 1 && (
-                <ArrowDown className="h-6 w-6 text-primary my-2" />
-              )}
-            </div>
-          ))}
+              {index < steps.length - 1 && <ArrowDown className="h-6 w-6 text-primary my-2" />}
+            </div>)}
           
           {/* Cycle indicator - Mobile */}
           <div className="flex justify-center pt-4">
@@ -152,6 +129,5 @@ export function EcosystemSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

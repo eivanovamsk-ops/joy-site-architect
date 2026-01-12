@@ -36,14 +36,13 @@ export function LaboratoryHeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              className="bg-background text-lab hover:bg-background/90 px-8"
+              className="bg-background text-lab hover:bg-background/90 px-8 transition-transform duration-200 hover:scale-105"
             >
               Прайс-листы
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="border-lab-foreground/30 text-lab-foreground hover:bg-lab-foreground/10"
+              className="bg-lab-foreground/20 text-lab-foreground hover:bg-lab-foreground/30 px-8 transition-transform duration-200 hover:scale-105"
             >
               Вызвать курьера
             </Button>

@@ -62,8 +62,8 @@ export function LaboratoryHowToOrderSection() {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="gradient-primary text-primary-foreground">
-            Вызвать курьера
+          <Button asChild size="lg" className="gradient-primary text-primary-foreground">
+            <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">Вызвать курьера</a>
           </Button>
         </div>
       </div>

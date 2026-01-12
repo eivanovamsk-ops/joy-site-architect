@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export function LaboratoryHeroSection() {
@@ -35,10 +35,11 @@ export function LaboratoryHeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
+              asChild
               size="lg"
               className="bg-background text-lab hover:bg-background/90 px-8 transition-transform duration-200 hover:scale-105"
             >
-              Прайс-листы
+              <Link to="/laboratory/documents">Прайс-листы</Link>
             </Button>
             <Button
               size="lg"

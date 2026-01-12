@@ -27,11 +27,14 @@ export function LaboratoryCTASection() {
             </a>
           </Button>
           <Button
+            asChild
             size="lg"
             className="bg-white text-primary hover:bg-white/90"
           >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Связаться с нами
+            <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Связаться с нами
+            </a>
           </Button>
         </div>
       </div>

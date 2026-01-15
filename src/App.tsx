@@ -25,6 +25,7 @@ import Burs from "./pages/Burs";
 import ZirconiaDiscs from "./pages/ZirconiaDiscs";
 import PaintsGlaze from "./pages/PaintsGlaze";
 import Furnaces from "./pages/Furnaces";
+import MetalDiscs from "./pages/MetalDiscs";
 import Delivery from "./pages/Delivery";
 import NotFound from "./pages/NotFound";
 
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/shop/catalog/zirconia-discs" element={<ZirconiaDiscs />} />
           <Route path="/shop/catalog/paints-glaze" element={<PaintsGlaze />} />
           <Route path="/shop/catalog/furnaces" element={<Furnaces />} />
+          <Route path="/shop/catalog/metal-discs" element={<MetalDiscs />} />
           <Route path="/shop/delivery" element={<Delivery />} />
           <Route path="/education" element={<Education />} />
           <Route path="/education/contacts" element={<EducationContacts />} />

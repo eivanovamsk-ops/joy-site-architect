@@ -2,564 +2,32 @@ import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Helmet } from "react-helmet-async";
-import { Product } from "@/data/products";
-
-const bursProducts: Product[] = [
-  {
-    id: "bur-1",
-    name: "0,3 мм шаровая концевая фреза (коническая, алмазная), цирконий, ПММА, воск, агломерат, композит (T33, T43, T53)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6348,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w6-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-2",
-    name: "0,6 мм шаровая концевая фреза (коническая, алмазная), цирконий, ПММА, воск, металлокерамика, композит (T15, T42, T52)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6348,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w4-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-3",
-    name: "1,0 мм шаровая концевая фреза (алмазная), цирконий, ПММА, воск (T12, T14)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6348,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w3-1-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-4",
-    name: "1,0 мм шаровая концевая фреза (алмазное покрытие), цирконий, металлокерамика, композит (T14, T41, T51)",
-    category: "milling",
-    subcategory: "burs",
-    price: 7590,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w7-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-5",
-    name: "1,0 мм шаровая концевая фреза (короткая), Ti, CoCr (T4, T9)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c11-1-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-6",
-    name: "1,0 мм шаровая концевая фреза (с алмазным покрытием), Zr, Sint, Comp (T14, T41, T51)",
-    category: "milling",
-    subcategory: "burs",
-    price: 10120,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c14-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-7",
-    name: "1,0 мм шаровая концевая фреза (скользящее покрытие), ПММА, воск, ПЭЭК (T12)",
-    category: "milling",
-    subcategory: "burs",
-    price: 4767,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-530004-1003-Imes-Icore-Bur-T12-1.0mm-3mm-shank-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-8",
-    name: "1,0 мм шаровая концевая фреза (скользящее покрытие), ПММА, воск, ПЭЭК (T12)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5405,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c3-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-9",
-    name: "1,0 мм шаровая концевая фреза, цирконий, ПММА, воск (T12, T14)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c18-1-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-10",
-    name: "1,5 мм плоская концевая фреза, универсальная (T5, T10, T17)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5011,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w5-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-11",
-    name: "1,5 мм Торическая концевая фреза R0.08, (l = 15 мм), Ti, CoCr (T64)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6210,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c19-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-12",
-    name: "1,5 мм шаровая концевая фреза (короткая), Ti, CoCr (T3, T8)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c10-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  // Page 2 products
-  {
-    id: "bur-13",
-    name: "2,0 мм шаровая концевая фреза (короткая), Ti, CoCr (T2, T7)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5290,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c7-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-14",
-    name: "2,5 мм шаровая концевая фреза (алмазная), цирконий, полиметилметакрилат, воск (T11, T13)",
-    category: "milling",
-    subcategory: "burs",
-    price: 6348,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w2-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-15",
-    name: "2,5 мм шаровая концевая фреза (с алмазным покрытием), Zr, Sint, Comp (T13, T40, T50)",
-    category: "milling",
-    subcategory: "burs",
-    price: 10120,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c20-1-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-16",
-    name: "2,5 мм шаровая концевая фреза (скользящее покрытие), ПММА, воск, ПЭЭК (T11)",
-    category: "milling",
-    subcategory: "burs",
-    price: 4767,
-    image: "https://articon.pro/wp-content/uploads/2024/03/%D1%881-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-17",
-    name: "2,5 мм шаровая концевая фреза (скользящее покрытие), ПММА, воск, ПЭЭК (T11)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5405,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c4-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-18",
-    name: "2,5 мм шлифовальный инструмент (алмазный), стеклокерамика (T21)",
-    category: "milling",
-    subcategory: "burs",
-    price: 4042,
-    image: "https://articon.pro/wp-content/uploads/2024/03/w8-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-19",
-    name: "3,0 мм шаровая концевая фреза (короткая), Ti, CoCr (T1, T6)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5290,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c12-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-20",
-    name: "Фреза T11/T13 для станков Imes-Icore – radius milling tool, d1=2.5, d2=6.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-12-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-21",
-    name: "Фреза T12 для станков Imes-Icore – radius milling tool, d1=1.0, d2=3.0, l=14",
-    category: "milling",
-    subcategory: "burs",
-    price: 7592,
-    image: "https://articon.pro/wp-content/uploads/2024/06/12-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-22",
-    name: "Фреза T13/T40/T50 для станков Imes-Icore – radius milling tool, d1=2.5, d2=3.0, l=20",
-    category: "milling",
-    subcategory: "burs",
-    price: 7590,
-    image: "https://articon.pro/wp-content/uploads/2024/06/14-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-23",
-    name: "Фреза T13/T40/T50 для станков Imes-Icore – radius milling tool (diamond coated), d1=2.5, d2=6.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 7592,
-    image: "https://articon.pro/wp-content/uploads/2024/06/13-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-24",
-    name: "Фреза T15/T42/T52 для станков Imes-Icore – radius milling tool (conical), d1=0.6, d2=6.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/06/22-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  // Page 3 products
-  {
-    id: "bur-25",
-    name: "Фреза T17 для станков Imes-Icore – shaft milling tool, d1=1.5, d2=6.0, l=15",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/06/21-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-26",
-    name: "Фреза T18 для станков Imes-Icore – radius milling tool (universal), d1=0.5, d2=6.0, l=4",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/06/24-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-27",
-    name: "Фреза T19 для станков Imes-Icore – shaft milling tool (universal), d1=0.5, d2=3.0, l=4",
-    category: "milling",
-    subcategory: "burs",
-    price: 5010,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-7-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-28",
-    name: "Фреза T19 для станков Imes-Icore – shaft milling tool (universal), d1=0.5, d2=6.0, l=4",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-8-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-29",
-    name: "Фреза T20 для станков Imes-Icore – radius milling tool (conical), d1=0.6, d2=3.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 4766,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-10-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-30",
-    name: "Фреза T22 для станков Imes-Icore – radius grinding tool (diamond), d1=1.0, d2=3.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 4042,
-    image: "https://articon.pro/wp-content/uploads/2024/06/18-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-31",
-    name: "Фреза T23 для станков Imes-Icore – radius grinding tool (conical, diamond), d1=0.6, d2=3.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 4042,
-    image: "https://articon.pro/wp-content/uploads/2024/06/19-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-32",
-    name: "Фреза T23 для станков Imes-Icore – radius milling tool (conical, diamond), d1=0.6, d2=6.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 6379,
-    image: "https://articon.pro/wp-content/uploads/2024/06/23-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-33",
-    name: "Фреза T26 для станков Imes-Icore – radius milling tool long, d1=3.0, d2=6.0, l=20",
-    category: "milling",
-    subcategory: "burs",
-    price: 8015,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-6-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-34",
-    name: "Фреза T28 для станков Imes-Icore – radius milling tool long, d1=1.5, d2=6.0, l=15",
-    category: "milling",
-    subcategory: "burs",
-    price: 5520,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-2-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-35",
-    name: "Фреза T29 для станков Imes-Icore – radius milling tool long, d1=1.0, d2=6.0, l=11",
-    category: "milling",
-    subcategory: "burs",
-    price: 5520,
-    image: "https://articon.pro/wp-content/uploads/2024/08/122-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-36",
-    name: "Фреза T3/T8 для станков Imes-Icore – radius milling tool long, d1=1.5, d2=3.0, l=12",
-    category: "milling",
-    subcategory: "burs",
-    price: 4715,
-    image: "https://articon.pro/wp-content/uploads/2024/06/16-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  // Page 4 products
-  {
-    id: "bur-37",
-    name: "Фреза T3/T8/T16 для станков Imes-Icore – universal, d1=1.5, d2=3.0, l=12",
-    category: "milling",
-    subcategory: "burs",
-    price: 4042,
-    image: "https://articon.pro/wp-content/uploads/2024/08/26526-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-38",
-    name: "Фреза T30 для станков Imes-Icore – shaft milling tool long (single blade, slide coated), d1=4.0, d2=6.0, l=32",
-    category: "milling",
-    subcategory: "burs",
-    price: 10120,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-11-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-39",
-    name: "Фреза T32 для станков Imes-Icore – radius milling tool, d1=0.6, d2=3.0, l=12",
-    category: "milling",
-    subcategory: "burs",
-    price: 6210,
-    image: "https://articon.pro/wp-content/uploads/2024/06/15-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-40",
-    name: "Фреза T33/T43/T53 для станков Imes-Icore – radius milling tool (conical), d1=0.3, d2=6.0",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/06/20-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-41",
-    name: "Фреза T4/T9 для станков Imes-Icore – radius milling tool, d1=1.0, d2=3.0, l=9",
-    category: "milling",
-    subcategory: "burs",
-    price: 4715,
-    image: "https://articon.pro/wp-content/uploads/2024/06/17-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-42",
-    name: "Фреза T5/T10 для станков Imes-Icore – shaft milling tool short, d1=1.5, d2=6.0, l=12",
-    category: "milling",
-    subcategory: "burs",
-    price: 6774,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Frame-284mes-Icore-shaft-milling-tool-short-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-43",
-    name: "Фреза T61 для станков Imes-Icore – quattro speed milling tool, d1=3.0, d2=6.0, l=15",
-    category: "milling",
-    subcategory: "burs",
-    price: 8015,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-5-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-44",
-    name: "Фреза T62 для станков Imes-Icore – torus milling tool (r = 0.2 мм, 4 blades), d1=2.0, d2=6.0, l=16",
-    category: "milling",
-    subcategory: "burs",
-    price: 8015,
-    image: "https://articon.pro/wp-content/uploads/2024/06/26-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-45",
-    name: "Фреза T63 для станков Imes-Icore – torus milling tool (r = 0.08 mm, 2 blades), d1=1.5, d2=6.0, l=7",
-    category: "milling",
-    subcategory: "burs",
-    price: 6210,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-1-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-46",
-    name: "Фреза T67 для станков Imes-Icore – shaft milling tool short, d1=2.0, d2=6.0, l=7",
-    category: "milling",
-    subcategory: "burs",
-    price: 7993,
-    image: "https://articon.pro/wp-content/uploads/2024/06/25-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-47",
-    name: "Фреза T68 для станков Imes-Icore – shaft milling tool long (universal), d1=1.5, d2=6.0, l=15",
-    category: "milling",
-    subcategory: "burs",
-    price: 8015,
-    image: "https://articon.pro/wp-content/uploads/2024/08/56262-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-48",
-    name: "Фреза T81 для станков Imes-Icore – drilling tool, d1=1.5, d2=6.0, l=18",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/08/n-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  // Page 5 products
-  {
-    id: "bur-49",
-    name: "Фреза T98 для станков Imes-Icore – shaft milling tool (three blades), d1=2.5, d2=3.0, l=20",
-    category: "milling",
-    subcategory: "burs",
-    price: 4715,
-    image: "https://articon.pro/wp-content/uploads/2024/08/sss-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-50",
-    name: "Фреза Т27 для станков Imes-Icore – radius milling tool long, d1=2.0, d2=6.0, l=16",
-    category: "milling",
-    subcategory: "burs",
-    price: 5520,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-3-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-51",
-    name: "Фреза Т80 для станков Imes-Icore – drilling tool, d1=2.5, d2=6.0, l=22",
-    category: "milling",
-    subcategory: "burs",
-    price: 6613,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Frame-285-4-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-52",
-    name: "Шлифовальный инструмент 1,0 мм (алмазный), стеклокерамика (T22)",
-    category: "milling",
-    subcategory: "burs",
-    price: 4767,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c16-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-  {
-    id: "bur-53",
-    name: "Шлифовальный инструмент 2,5 мм (алмазный), стеклокерамика (T21)",
-    category: "milling",
-    subcategory: "burs",
-    price: 5656,
-    image: "https://articon.pro/wp-content/uploads/2024/03/c15-300x300.jpg",
-    brand: "imes-icore",
-    inStock: true,
-  },
-];
+import { products } from "@/data/products";
 
 const Burs = () => {
+  // Фильтруем фрезы из общего каталога (subcategory: "cutters" в products.ts)
+  const bursProducts = products.filter(
+    (p) => p.category === "milling" && p.subcategory === "cutters"
+  );
+
   return (
     <Layout>
       <Helmet>
         <title>Фрезы для CAD/CAM станков | Артикон</title>
         <meta 
           name="description" 
-          content="Фрезы для стоматологических CAD/CAM станков imes-icore. Шаровые, плоские, торические фрезы для обработки циркония, титана, ПММА, воска. Доставка по России." 
+          content="Фрезы для CAD/CAM станков imes-icore: алмазные, торические, шаровые концевые фрезы для обработки циркония, титана, PMMA, воска. Доставка по России." 
         />
       </Helmet>
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Фрезы
+            Фрезы для CAD/CAM станков
           </h1>
           <p className="text-muted-foreground max-w-3xl">
-            Профессиональные фрезы для CAD/CAM станков. Шаровые, плоские и торические концевые фрезы 
-            для обработки циркония, титана, кобальт-хрома, ПММА и других материалов.
+            Профессиональные фрезы для CAD/CAM станков imes-icore. 
+            Алмазные, торические, шаровые концевые фрезы для обработки циркония, титана, PMMA, PEEK, воска и других материалов.
           </p>
         </div>
       </div>
@@ -573,17 +41,28 @@ const Burs = () => {
 
           {/* Content */}
           <div className="flex-1">
-            <section>
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-foreground">Концевые фрезы imes-icore</h2>
-                <div className="h-px flex-1 bg-border" />
+            {bursProducts.length > 0 ? (
+              <section>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Все фрезы</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {bursProducts.length} товаров
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {bursProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            ) : (
+              <div className="text-center py-12 text-muted-foreground">
+                Товары в данной категории временно недоступны
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {bursProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
+            )}
           </div>
         </div>
       </div>

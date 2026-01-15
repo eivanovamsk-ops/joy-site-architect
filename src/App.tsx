@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/hooks/useAuth";
+import { CartProvider } from "@/hooks/useCart";
 import Index from "./pages/Index";
 import Laboratory from "./pages/Laboratory";
 import LaboratoryServices from "./pages/LaboratoryServices";
@@ -27,47 +29,57 @@ import PaintsGlaze from "./pages/PaintsGlaze";
 import Furnaces from "./pages/Furnaces";
 import MetalDiscs from "./pages/MetalDiscs";
 import Delivery from "./pages/Delivery";
+import Auth from "./pages/Auth";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/laboratory" element={<Laboratory />} />
-          <Route path="/laboratory/services" element={<LaboratoryServices />} />
-          <Route path="/laboratory/documents" element={<PriceListsAndOrders />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/product/:id" element={<ProductDetail />} />
-          <Route path="/shop/catalog/intraoral-scanners" element={<IntraoralScanners />} />
-          <Route path="/shop/catalog/lab-scanners" element={<LabScanners />} />
-          <Route path="/shop/catalog/sale" element={<Sale />} />
-          <Route path="/shop/catalog/3d-printers" element={<Printers3D />} />
-          <Route path="/shop/catalog/printers" element={<Printers3D />} />
-          <Route path="/shop/catalog/photopolymers" element={<Photopolymers />} />
-          <Route path="/shop/catalog/milling-machines" element={<MillingMachines />} />
-          <Route path="/shop/catalog/burs" element={<Burs />} />
-          <Route path="/shop/catalog/zirconia-discs" element={<ZirconiaDiscs />} />
-          <Route path="/shop/catalog/paints-glaze" element={<PaintsGlaze />} />
-          <Route path="/shop/catalog/furnaces" element={<Furnaces />} />
-          <Route path="/shop/catalog/metal-discs" element={<MetalDiscs />} />
-          <Route path="/shop/delivery" element={<Delivery />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/education/contacts" element={<EducationContacts />} />
-          <Route path="/education/calendar" element={<CourseCalendar />} />
-          <Route path="/education/course/:id" element={<CourseDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/laboratory/contacts" element={<Contacts />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <AuthProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/laboratory" element={<Laboratory />} />
+              <Route path="/laboratory/services" element={<LaboratoryServices />} />
+              <Route path="/laboratory/documents" element={<PriceListsAndOrders />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop/product/:id" element={<ProductDetail />} />
+              <Route path="/shop/catalog/intraoral-scanners" element={<IntraoralScanners />} />
+              <Route path="/shop/catalog/lab-scanners" element={<LabScanners />} />
+              <Route path="/shop/catalog/sale" element={<Sale />} />
+              <Route path="/shop/catalog/3d-printers" element={<Printers3D />} />
+              <Route path="/shop/catalog/printers" element={<Printers3D />} />
+              <Route path="/shop/catalog/photopolymers" element={<Photopolymers />} />
+              <Route path="/shop/catalog/milling-machines" element={<MillingMachines />} />
+              <Route path="/shop/catalog/burs" element={<Burs />} />
+              <Route path="/shop/catalog/zirconia-discs" element={<ZirconiaDiscs />} />
+              <Route path="/shop/catalog/paints-glaze" element={<PaintsGlaze />} />
+              <Route path="/shop/catalog/furnaces" element={<Furnaces />} />
+              <Route path="/shop/catalog/metal-discs" element={<MetalDiscs />} />
+              <Route path="/shop/delivery" element={<Delivery />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/education/contacts" element={<EducationContacts />} />
+              <Route path="/education/calendar" element={<CourseCalendar />} />
+              <Route path="/education/course/:id" element={<CourseDetail />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/laboratory/contacts" element={<Contacts />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/profile" element={<Profile />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </CartProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

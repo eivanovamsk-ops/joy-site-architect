@@ -36,6 +36,8 @@ const ProductDetail = () => {
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
   };
 
+  const hasOldPrice = product.oldPrice && product.oldPrice > (product.price || 0);
+
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
@@ -87,8 +89,15 @@ const ProductDetail = () => {
             {/* Price */}
             <div className="mb-6">
               {product.price ? (
-                <div className="text-3xl font-bold text-primary">
-                  {formatPrice(product.price)}
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl font-bold text-primary">
+                    {formatPrice(product.price)}
+                  </span>
+                  {hasOldPrice && (
+                    <span className="text-xl text-muted-foreground line-through">
+                      {formatPrice(product.oldPrice!)}
+                    </span>
+                  )}
                 </div>
               ) : (
                 <div className="text-2xl font-bold text-foreground">
@@ -162,14 +171,20 @@ const ProductDetail = () => {
           </TabsList>
           
           <TabsContent value="description" className="prose max-w-none">
-            <p className="text-muted-foreground">
-              {product.name} — профессиональное оборудование от {product.brand} для зуботехнических лабораторий и стоматологических клиник.
-              Отличается высокой точностью, надежностью и простотой в использовании.
-            </p>
-            <p className="text-muted-foreground mt-4">
-              Продукт прошел сертификацию и соответствует международным стандартам качества.
-              Идеально подходит для профессионального использования в сфере цифровой стоматологии.
-            </p>
+            {product.description ? (
+              <div className="text-muted-foreground whitespace-pre-line">
+                {product.description}
+              </div>
+            ) : (
+              <>
+                <p className="text-muted-foreground">
+                  {product.name} — профессиональное оборудование от {product.brand} для зуботехнических лабораторий и стоматологических клиник.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Продукт прошел сертификацию и соответствует международным стандартам качества.
+                </p>
+              </>
+            )}
           </TabsContent>
           
           <TabsContent value="specs">
@@ -178,10 +193,18 @@ const ProductDetail = () => {
                 <span className="w-1/3 text-muted-foreground">Бренд</span>
                 <span className="font-medium">{product.brand}</span>
               </div>
-              <div className="flex py-3 border-b border-border">
-                <span className="w-1/3 text-muted-foreground">Категория</span>
-                <span className="font-medium">{product.category}</span>
-              </div>
+              {product.sku && (
+                <div className="flex py-3 border-b border-border">
+                  <span className="w-1/3 text-muted-foreground">Артикул</span>
+                  <span className="font-medium">{product.sku}</span>
+                </div>
+              )}
+              {product.specifications && Object.entries(product.specifications).map(([key, value]) => (
+                <div key={key} className="flex py-3 border-b border-border">
+                  <span className="w-1/3 text-muted-foreground">{key}</span>
+                  <span className="font-medium">{value}</span>
+                </div>
+              ))}
               <div className="flex py-3 border-b border-border">
                 <span className="w-1/3 text-muted-foreground">Наличие</span>
                 <span className="font-medium">{product.inStock ? "В наличии" : "Под заказ"}</span>

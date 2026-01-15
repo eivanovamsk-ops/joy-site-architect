@@ -23,6 +23,14 @@ import {
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 
+interface OrderItem {
+  id: string;
+  product_name: string;
+  product_slug: string;
+  quantity: number;
+  price_at_purchase: number;
+}
+
 interface Order {
   id: string;
   created_at: string;
@@ -67,6 +75,9 @@ const Admin = () => {
   const [orders, setOrders] = useState<Order[]>([]);
   const [applications, setApplications] = useState<CourseApplication[]>([]);
   const [feedback, setFeedback] = useState<Feedback[]>([]);
+  const [orderItems, setOrderItems] = useState<Record<string, OrderItem[]>>({});
+  const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
+  const [loadingOrderItems, setLoadingOrderItems] = useState<string | null>(null);
   
   const [loadingOrders, setLoadingOrders] = useState(true);
   const [loadingApplications, setLoadingApplications] = useState(true);
@@ -238,14 +249,37 @@ const Admin = () => {
     return new Intl.NumberFormat("ru-RU").format(amount) + " ₽";
   };
 
+  const fetchOrderItems = async (orderId: string) => {
+    if (orderItems[orderId]) {
+      setExpandedOrderId(expandedOrderId === orderId ? null : orderId);
+      return;
+    }
+    
+    setLoadingOrderItems(orderId);
+    try {
+      const { data, error } = await supabase
+        .from("order_items")
+        .select("*")
+        .eq("order_id", orderId);
+      
+      if (error) throw error;
+      setOrderItems(prev => ({ ...prev, [orderId]: data || [] }));
+      setExpandedOrderId(orderId);
+    } catch (error) {
+      toast({ variant: "destructive", title: "Ошибка загрузки товаров" });
+    } finally {
+      setLoadingOrderItems(null);
+    }
+  };
+
   const getStatusBadge = (status: string) => {
     const statusMap: Record<string, { label: string; variant: "default" | "secondary" | "destructive" | "outline" }> = {
       pending: { label: "Ожидает", variant: "secondary" },
-      processing: { label: "В обработке", variant: "default" },
-      completed: { label: "Выполнен", variant: "outline" },
+      confirmed: { label: "Подтверждён", variant: "default" },
+      shipped: { label: "Отправлен", variant: "default" },
+      delivered: { label: "Доставлен", variant: "outline" },
       cancelled: { label: "Отменён", variant: "destructive" },
       new: { label: "Новая", variant: "secondary" },
-      confirmed: { label: "Подтверждена", variant: "default" },
       rejected: { label: "Отклонена", variant: "destructive" },
     };
     
@@ -376,18 +410,39 @@ const Admin = () => {
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => updateOrderStatus(order.id, "processing")}
-                            disabled={order.status === "processing"}
+                            onClick={() => fetchOrderItems(order.id)}
+                            disabled={loadingOrderItems === order.id}
                           >
-                            <Clock className="h-4 w-4 mr-1" /> В обработку
+                            {loadingOrderItems === order.id ? (
+                              <Loader2 className="h-4 w-4 mr-1 animate-spin" />
+                            ) : (
+                              <Eye className="h-4 w-4 mr-1" />
+                            )}
+                            Состав
                           </Button>
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => updateOrderStatus(order.id, "completed")}
-                            disabled={order.status === "completed"}
+                            onClick={() => updateOrderStatus(order.id, "confirmed")}
+                            disabled={order.status === "confirmed" || order.status === "shipped" || order.status === "delivered"}
                           >
-                            <CheckCircle className="h-4 w-4 mr-1" /> Выполнен
+                            <Check className="h-4 w-4 mr-1" /> Подтвердить
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => updateOrderStatus(order.id, "shipped")}
+                            disabled={order.status === "shipped" || order.status === "delivered"}
+                          >
+                            <Package className="h-4 w-4 mr-1" /> Отправлен
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={() => updateOrderStatus(order.id, "delivered")}
+                            disabled={order.status === "delivered"}
+                          >
+                            <CheckCircle className="h-4 w-4 mr-1" /> Доставлен
                           </Button>
                           <Button
                             size="sm"
@@ -399,6 +454,25 @@ const Admin = () => {
                           </Button>
                         </div>
                       </div>
+                      
+                      {/* Order Items */}
+                      {expandedOrderId === order.id && orderItems[order.id] && (
+                        <div className="mt-4 pt-4 border-t">
+                          <h4 className="font-medium mb-2">Состав заказа:</h4>
+                          {orderItems[order.id].length === 0 ? (
+                            <p className="text-sm text-muted-foreground">Товары не найдены</p>
+                          ) : (
+                            <ul className="space-y-2">
+                              {orderItems[order.id].map((item) => (
+                                <li key={item.id} className="flex justify-between text-sm">
+                                  <span>{item.product_name} × {item.quantity}</span>
+                                  <span className="font-medium">{formatPrice(item.price_at_purchase * item.quantity)}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 ))}

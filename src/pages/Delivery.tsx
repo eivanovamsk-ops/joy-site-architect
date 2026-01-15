@@ -15,7 +15,7 @@ const Delivery = () => {
         />
       </Helmet>
 
-      <Breadcrumbs />
+      
 
       {/* Hero Section */}
       <div className="bg-muted/30 py-12">

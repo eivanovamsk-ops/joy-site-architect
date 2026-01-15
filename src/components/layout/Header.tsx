@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User } from "lucide-react";
+import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User, Shield } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
+import { supabase } from "@/integrations/supabase/client";
 import articonLogo from "@/assets/articon-logo.png";
 
 // Top gray bar navigation - main sections (no dropdowns)
@@ -185,6 +186,24 @@ export function Header() {
   const location = useLocation();
   const { user } = useAuth();
   const { totalItems } = useCart();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Check if user is admin
+  useEffect(() => {
+    const checkAdmin = async () => {
+      if (!user) {
+        setIsAdmin(false);
+        return;
+      }
+      try {
+        const { data } = await supabase.rpc('is_admin');
+        setIsAdmin(!!data);
+      } catch {
+        setIsAdmin(false);
+      }
+    };
+    checkAdmin();
+  }, [user]);
   
   const isHome = location.pathname === "/";
   const isLaboratory = location.pathname.startsWith("/laboratory");
@@ -299,6 +318,15 @@ export function Header() {
                 >
                   <User className="h-5 w-5" />
                 </Link>
+                {isAdmin && (
+                  <Link 
+                    to="/admin" 
+                    className="p-2 text-primary hover:text-primary/80 transition-colors" 
+                    aria-label="Админ-панель"
+                  >
+                    <Shield className="h-5 w-5" />
+                  </Link>
+                )}
               </div>
             )}
 

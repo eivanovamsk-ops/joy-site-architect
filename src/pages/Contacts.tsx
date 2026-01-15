@@ -1,9 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 const departments = [
   {
@@ -142,76 +141,10 @@ const Contacts = () => {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold mb-8">Напишите нам</h2>
-
-              <form
-                className="space-y-6"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Имя *
-                    </label>
-                    <Input placeholder="Ваше имя" required />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Телефон *
-                    </label>
-                    <Input type="tel" placeholder="+7 (___) ___-__-__" required />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <Input type="email" placeholder="email@example.com" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Тема обращения
-                  </label>
-                  <Input placeholder="Выберите тему или введите свою" />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Сообщение *
-                  </label>
-                  <Textarea
-                    placeholder="Опишите ваш вопрос или запрос..."
-                    rows={5}
-                    required
-                  />
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="consent"
-                    className="mt-1"
-                    required
-                  />
-                  <label htmlFor="consent" className="text-sm text-muted-foreground">
-                    Я согласен с{" "}
-                    <Link to="/privacy" className="text-primary hover:underline">
-                      политикой конфиденциальности
-                    </Link>{" "}
-                    и даю согласие на обработку персональных данных
-                  </label>
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full gradient-primary text-primary-foreground"
-                >
-                  Отправить сообщение
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </form>
+              <ContactForm 
+                title="Отправить сообщение"
+                description="Заполните форму и мы свяжемся с вами в ближайшее время"
+              />
             </div>
           </div>
         </div>

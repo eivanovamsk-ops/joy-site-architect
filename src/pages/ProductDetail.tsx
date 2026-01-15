@@ -15,10 +15,14 @@ import {
   Check
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useCart } from "@/hooks/useCart";
+import { useToast } from "@/hooks/use-toast";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   if (!product) {
     return (
@@ -174,7 +178,26 @@ const ProductDetail = () => {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
-              <Button size="lg" className="flex-1 bg-primary hover:bg-primary/90">
+              <Button 
+                size="lg" 
+                className="flex-1 bg-primary hover:bg-primary/90"
+                onClick={() => {
+                  if (product.price) {
+                    addItem({
+                      slug: product.id,
+                      name: product.name,
+                      price: product.price,
+                      image: product.image,
+                    });
+                    toast({
+                      title: "Товар добавлен в корзину",
+                      description: product.name,
+                    });
+                  } else {
+                    window.open("https://t.me/articondental_bot", "_blank");
+                  }
+                }}
+              >
                 <ShoppingCart className="h-5 w-5 mr-2" />
                 {product.price ? "Добавить в корзину" : "Запросить цену"}
               </Button>

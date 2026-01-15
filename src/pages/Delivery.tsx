@@ -253,6 +253,21 @@ const Delivery = () => {
             </div>
           </div>
         </section>
+
+        {/* Map Section */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Наш офис на карте</h2>
+          <div className="rounded-2xl overflow-hidden border border-border h-[400px]">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=109957568237"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Артикон на карте"
+              className="w-full h-full"
+            />
+          </div>
+        </section>
       </div>
     </Layout>
   );

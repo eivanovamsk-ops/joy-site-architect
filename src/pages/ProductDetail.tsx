@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
@@ -42,8 +43,73 @@ const ProductDetail = () => {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
+  // SEO description generation
+  const generateSeoDescription = () => {
+    const base = product.description?.slice(0, 150) || `${product.name} от ${product.brand}`;
+    const priceText = product.price ? ` Цена от ${formatPrice(product.price)}.` : " Цена по запросу.";
+    return `${base}${priceText} Купить в Артикон с доставкой по России. Официальная гарантия.`;
+  };
+
+  const getCategoryName = () => {
+    const categoryNames: Record<string, string> = {
+      "3d-print": "3D-печать",
+      "3d-scanners": "3D-сканеры",
+      "milling": "Фрезерное оборудование",
+      "furnaces": "Зуботехнические печи",
+      "zircon-discs": "Циркониевые диски",
+      "cad-cam-discs": "Диски CAD/CAM",
+      "discs": "Диски для фрезерования",
+      "paints-glazes": "Краски и глазурь"
+    };
+    return categoryNames[product.category] || product.category;
+  };
+
   return (
     <Layout>
+      <Helmet>
+        <title>{product.name} | Купить в Артикон — {product.brand}</title>
+        <meta name="description" content={generateSeoDescription()} />
+        <meta name="keywords" content={`${product.name}, ${product.brand}, ${getCategoryName()}, купить, цена, Артикон, стоматологическое оборудование, зуботехническая лаборатория`} />
+        <link rel="canonical" href={`https://articon.pro/shop/product/${product.id}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${product.name} | Артикон`} />
+        <meta property="og:description" content={generateSeoDescription()} />
+        <meta property="og:image" content={product.image} />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content={`https://articon.pro/shop/product/${product.id}`} />
+        <meta property="product:price:amount" content={product.price?.toString() || ""} />
+        <meta property="product:price:currency" content="RUB" />
+        <meta property="product:availability" content={product.inStock ? "in stock" : "preorder"} />
+        <meta property="product:brand" content={product.brand} />
+        
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.name,
+            "description": product.description || `${product.name} — профессиональное оборудование от ${product.brand}`,
+            "image": product.image,
+            "brand": {
+              "@type": "Brand",
+              "name": product.brand
+            },
+            "sku": product.sku || product.id,
+            "offers": {
+              "@type": "Offer",
+              "url": `https://articon.pro/shop/product/${product.id}`,
+              "priceCurrency": "RUB",
+              "price": product.price || undefined,
+              "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+              "seller": {
+                "@type": "Organization",
+                "name": "Артикон"
+              }
+            }
+          })}
+        </script>
+      </Helmet>
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-2 gap-8 mb-12">

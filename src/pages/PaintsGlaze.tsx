@@ -132,11 +132,14 @@ const PaintsGlaze = () => {
               {/* Products Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filteredProducts.map((product) => (
-                  <div
+                  <Link
                     key={product.id}
-                    className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-shadow"
+                    to={`/shop/product/${product.id}`}
+                    className="block"
                   >
-                    <Link to={`/shop/product/${product.id}`}>
+                    <div
+                      className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-shadow h-full cursor-pointer"
+                    >
                       <div className="relative aspect-square bg-muted">
                         <img
                           src={product.image}
@@ -156,42 +159,41 @@ const PaintsGlaze = () => {
                           </Badge>
                         )}
                       </div>
-                    </Link>
 
-                    <div className="p-4">
-                      <Link to={`/shop/product/${product.id}`}>
-                        <h3 className="font-medium text-foreground hover:text-primary transition-colors line-clamp-2 min-h-[3rem] mb-2">
+                      <div className="p-4">
+                        <h3 className="font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[3rem] mb-2">
                           {product.name}
                         </h3>
-                      </Link>
 
-                      <div className="text-xs text-muted-foreground mb-2">
-                        {product.brand} • {product.category}
-                      </div>
+                        <div className="text-xs text-muted-foreground mb-2">
+                          {product.brand} • {product.category}
+                        </div>
 
-                      <div className="flex items-center justify-between">
-                        <span className="text-lg font-bold text-primary">
-                          {formatPrice(product.price)}
-                        </span>
-                      </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-bold text-primary">
+                            {formatPrice(product.price)}
+                          </span>
+                        </div>
 
-                      <div className="flex gap-2 mt-3">
-                        <Button
-                          size="sm"
-                          className="flex-1"
-                          onClick={() => handleAddToCart(product)}
-                        >
-                          <ShoppingCart className="h-4 w-4 mr-1" />
-                          В корзину
-                        </Button>
-                        <Button size="sm" variant="outline" asChild>
-                          <Link to={`/shop/product/${product.id}`}>
+                        <div className="flex gap-2 mt-3">
+                          <Button
+                            size="sm"
+                            className="flex-1"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              handleAddToCart(product);
+                            }}
+                          >
+                            <ShoppingCart className="h-4 w-4 mr-1" />
+                            В корзину
+                          </Button>
+                          <Button size="sm" variant="outline">
                             <Eye className="h-4 w-4" />
-                          </Link>
-                        </Button>
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 

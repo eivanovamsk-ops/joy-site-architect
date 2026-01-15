@@ -7,7 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Calendar, MapPin, Clock, Users, Award, ChevronRight, Share2, CheckCircle2, Target, GraduationCap, UserCheck, Lightbulb, HelpCircle, ExternalLink } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CourseEnrollmentForm } from "@/components/education/CourseEnrollmentForm";
+import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 const CourseDetail = () => {
   const {
@@ -95,7 +95,7 @@ const CourseDetail = () => {
                     <Button size="lg" className="w-full bg-primary hover:bg-primary/90 mb-3">
                       Записаться на курс <ExternalLink className="h-4 w-4 ml-2" />
                     </Button>
-                  </a> : <CourseEnrollmentForm courseName={course.title} courseDate={course.date} coursePrice={course.price} />}
+                  </a> : <CourseApplicationForm courseName={course.title} courseDate={course.date} />}
                 <Button size="lg" variant="outline" className="w-full mb-6">
                   <Share2 className="h-4 w-4 mr-2" /> Поделиться
                 </Button>
@@ -268,7 +268,7 @@ const CourseDetail = () => {
                 <Button size="lg" className="bg-primary hover:bg-primary/90">
                   Записаться на курс <ExternalLink className="h-4 w-4 ml-2" />
                 </Button>
-              </a> : <CourseEnrollmentForm courseName={course.title} courseDate={course.date} coursePrice={course.price} />}
+              </a> : <CourseApplicationForm courseName={course.title} courseDate={course.date} />}
             <Button size="lg" variant="outline">Задать вопрос</Button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Award, Users, Target, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -37,8 +38,98 @@ const values = [
 ];
 
 const About = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://articon.pro",
+    "name": "Артикон",
+    "alternateName": "Articon",
+    "description": "Экосистема цифровых решений для стоматологии: зуботехническая лаборатория, магазин оборудования и учебный центр. Топ-3 лабораторий России с 15+ годами опыта.",
+    "url": "https://articon.pro",
+    "logo": "https://articon.pro/articon-logo.png",
+    "telephone": "+7 (495) 123-45-67",
+    "email": "info@articon.pro",
+    "foundingDate": "2008",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "170"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://t.me/articon_pro",
+      "https://vk.com/articon_pro"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Россия"
+    },
+    "knowsAbout": [
+      "CAD/CAM стоматология",
+      "Зуботехническое производство",
+      "Цифровая ортодонтия",
+      "Циркониевые конструкции",
+      "Стоматологическое оборудование"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги и продукция Артикон",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Зуботехническая лаборатория",
+          "url": "https://articon.pro/laboratory"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Магазин оборудования",
+          "url": "https://articon.pro/shop"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Учебный центр",
+          "url": "https://articon.pro/education"
+        }
+      ]
+    }
+  };
+
   return (
     <Layout>
+      <Helmet>
+        <title>О компании Артикон — Цифровые решения для стоматологии с 2008 года</title>
+        <meta 
+          name="description" 
+          content="Артикон — экосистема цифровых решений для стоматологии. Зуботехническая лаборатория топ-3 России, магазин оборудования, учебный центр. 15+ лет опыта, 170+ специалистов, 50 000+ работ в год." 
+        />
+        <meta 
+          name="keywords" 
+          content="Артикон, зуботехническая лаборатория, CAD/CAM стоматология, стоматологическое оборудование, курсы для стоматологов, цифровая стоматология Москва, Россия" 
+        />
+        <link rel="canonical" href="https://articon.pro/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="О компании Артикон — Цифровые решения для стоматологии" />
+        <meta property="og:description" content="Экосистема цифровых решений для стоматологии: лаборатория, магазин, обучение. 15+ лет опыта, топ-3 лабораторий России." />
+        <meta property="og:url" content="https://articon.pro/about" />
+        <meta property="og:site_name" content="Артикон" />
+        <meta property="og:locale" content="ru_RU" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="О компании Артикон" />
+        <meta name="twitter:description" content="Экосистема цифровых решений для стоматологии: лаборатория, магазин, обучение." />
+        
+        {/* JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       {/* Hero */}
       <section className="py-20 lg:py-32 bg-secondary">
         <div className="container mx-auto px-4">
@@ -68,7 +159,7 @@ const About = () => {
               <div className="aspect-square rounded-3xl bg-primary/5 border border-primary/10 flex items-center justify-center">
                 <img
                   src={articonLogo}
-                  alt="Articon"
+                  alt="Логотип компании Артикон — цифровые решения для стоматологии"
                   className="w-2/3 opacity-80"
                 />
               </div>

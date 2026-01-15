@@ -2,11 +2,15 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { ShopHeroBanner } from "@/components/shop/HeroBanner";
 import { ShopQuickLinks } from "@/components/shop/QuickLinks";
-import { ProductCatalog } from "@/components/shop/ProductCatalog";
+import { ProductCarousel } from "@/components/shop/ProductCarousel";
 import { ShopAdvantages } from "@/components/shop/Advantages";
 import { ShopBrands } from "@/components/shop/Brands";
+import { products } from "@/data/products";
 
 const Shop = () => {
+  const saleProducts = products.filter(p => p.isSale);
+  const newProducts = products.filter(p => p.isNew);
+
   return (
     <Layout>
       <Helmet>
@@ -41,7 +45,18 @@ const Shop = () => {
       
       <ShopHeroBanner />
       <ShopQuickLinks />
-      <ProductCatalog />
+      
+      <ProductCarousel 
+        title="🔥 Акции" 
+        products={saleProducts} 
+        viewAllHref="/shop/catalog/sale" 
+      />
+      
+      <ProductCarousel 
+        title="✨ Новинки" 
+        products={newProducts} 
+      />
+      
       <ShopAdvantages />
       <ShopBrands />
     </Layout>

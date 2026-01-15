@@ -1,227 +1,85 @@
-import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-import { ShoppingCart, Eye, Phone } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
-
-interface Product {
-  id: string;
-  name: string;
-  price: number | null;
-  image: string;
-  category: string;
-  brand: string;
-  inStock: boolean;
-  isNew?: boolean;
-}
-
-const products: Product[] = [
-  {
-    id: "furnace-upcera-gt1",
-    name: "Зуботехническая печь для синтеризации циркония UPCERA GT1 Pro",
-    price: null,
-    image: "https://articon.pro/wp-content/uploads/2025/06/Frame-811546-6-300x300.png",
-    category: "Печи для синтеризации",
-    brand: "Upcera",
-    inStock: true,
-    isNew: true,
-  },
-  {
-    id: "furnace-programat-p510",
-    name: "Печь для обжига керамики Programat P510",
-    price: 650000,
-    image: "https://articon.pro/wp-content/uploads/2024/10/programat-p510-300x300.jpg",
-    category: "Печи для обжига",
-    brand: "Ivoclar",
-    inStock: true,
-  },
-];
-
-const formatPrice = (price: number) => {
-  return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
-};
+import { Helmet } from "react-helmet-async";
+import { products } from "@/data/products";
 
 const Furnaces = () => {
-  const { toast } = useToast();
-  const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  // Фильтруем печи из общего каталога
+  const sinteringFurnaces = products.filter(
+    (p) => p.category === "furnaces" && p.subcategory === "sintering"
+  );
 
-  const categories = useMemo(() => {
-    const cats = [...new Set(products.map((p) => p.category))];
-    return ["all", ...cats];
-  }, []);
-
-  const filteredProducts = useMemo(() => {
-    if (categoryFilter === "all") return products;
-    return products.filter((p) => p.category === categoryFilter);
-  }, [categoryFilter]);
-
-  const handleAddToCart = (product: Product) => {
-    toast({
-      title: "Добавлено в корзину",
-      description: product.name,
-    });
-  };
-
-  const handleRequest = (product: Product) => {
-    toast({
-      title: "Запрос отправлен",
-      description: `Мы свяжемся с вами по поводу товара: ${product.name}`,
-    });
-  };
+  const firingFurnaces = products.filter(
+    (p) => p.category === "furnaces" && p.subcategory === "firing"
+  );
 
   return (
     <Layout>
       <Helmet>
-        <title>Печи для стоматологии | Articon</title>
+        <title>Зуботехнические печи | Артикон</title>
         <meta
           name="description"
-          content="Зуботехнические печи для синтеризации циркония и обжига керамики. Профессиональное оборудование Upcera, Ivoclar для зуботехнических лабораторий."
+          content="Зуботехнические печи для синтеризации циркония и обжига керамики. Профессиональное оборудование Upcera, Nabertherm, Dekema для зуботехнических лабораторий."
         />
       </Helmet>
 
-      <Breadcrumbs />
-      
-      <div className="bg-background py-8">
+      <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar */}
-            <aside className="w-full lg:w-64 flex-shrink-0">
-              <CatalogSidebar />
-            </aside>
+          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Зуботехнические печи
+          </h1>
+          <p className="text-muted-foreground max-w-3xl">
+            Профессиональные печи для синтеризации циркония и обжига керамики. 
+            Высокоточное оборудование от ведущих мировых производителей.
+          </p>
+        </div>
+      </div>
 
-            {/* Main Content */}
-            <main className="flex-1">
-              <div className="mb-6">
-                <h1 className="text-3xl font-bold text-foreground mb-2">
-                  Печи
-                </h1>
-                <p className="text-muted-foreground">
-                  Профессиональные печи для синтеризации циркония и обжига керамики
-                </p>
-              </div>
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <div className="lg:w-64 flex-shrink-0">
+            <CatalogSidebar />
+          </div>
 
-              {/* Category Filter */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {categories.map((cat) => (
-                  <Button
-                    key={cat}
-                    variant={categoryFilter === cat ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setCategoryFilter(cat)}
-                  >
-                    {cat === "all" ? "Все" : cat}
-                  </Button>
-                ))}
-              </div>
-
-              {/* Products Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filteredProducts.map((product) => (
-                  <Link
-                    key={product.id}
-                    to={`/shop/product/${product.id}`}
-                    className="block"
-                  >
-                    <div
-                      className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-all hover:-translate-y-1 h-full cursor-pointer"
-                    >
-                      <div className="relative aspect-square bg-muted">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                        />
-                        {product.isNew && (
-                          <Badge className="absolute top-2 right-2 bg-blue-500">
-                            Новинка
-                          </Badge>
-                        )}
-                        {product.inStock ? (
-                          <Badge className="absolute top-2 left-2 bg-green-500">
-                            В наличии
-                          </Badge>
-                        ) : (
-                          <Badge
-                            variant="secondary"
-                            className="absolute top-2 left-2"
-                          >
-                            Под заказ
-                          </Badge>
-                        )}
-                      </div>
-
-                      <div className="p-4">
-                        <div className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
-                          {product.brand}
-                        </div>
-                        
-                        <h3 className="font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[3rem] mb-2">
-                          {product.name}
-                        </h3>
-
-                        <div className="flex items-center justify-between mb-3">
-                          {product.price ? (
-                            <span className="text-lg font-bold text-primary">
-                              {formatPrice(product.price)}
-                            </span>
-                          ) : (
-                            <span className="text-lg font-medium text-muted-foreground">
-                              По запросу
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="flex gap-2">
-                          {product.price ? (
-                            <>
-                              <Button
-                                size="sm"
-                                className="flex-1"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  handleAddToCart(product);
-                                }}
-                              >
-                                <ShoppingCart className="h-4 w-4 mr-1" />
-                                В корзину
-                              </Button>
-                              <Button size="sm" variant="outline">
-                                <Eye className="h-4 w-4" />
-                              </Button>
-                            </>
-                          ) : (
-                            <Button
-                              size="sm"
-                              className="flex-1"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleRequest(product);
-                              }}
-                            >
-                              <Phone className="h-4 w-4 mr-1" />
-                              Запросить
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-
-              {filteredProducts.length === 0 && (
-                <div className="text-center py-12">
-                  <p className="text-muted-foreground">
-                    Товары не найдены
-                  </p>
+          {/* Content */}
+          <div className="flex-1">
+            {/* Sintering Furnaces Section */}
+            {sinteringFurnaces.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Печи для синтеризации</h2>
+                  <div className="h-px flex-1 bg-border" />
                 </div>
-              )}
-            </main>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {sinteringFurnaces.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Firing Furnaces Section */}
+            {firingFurnaces.length > 0 && (
+              <section>
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Печи для обжига</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {firingFurnaces.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {sinteringFurnaces.length === 0 && firingFurnaces.length === 0 && (
+              <div className="text-center py-12 text-muted-foreground">
+                Товары в данной категории временно недоступны
+              </div>
+            )}
           </div>
         </div>
       </div>

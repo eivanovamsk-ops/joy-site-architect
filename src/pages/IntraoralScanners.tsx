@@ -2,76 +2,18 @@ import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Helmet } from "react-helmet-async";
-import { Product } from "@/data/products";
-
-const intraoralScanners: Product[] = [
-  {
-    id: "ios-1",
-    name: "Интраоральный сканер Runyes 3DS V3",
-    category: "3d-scanners",
-    subcategory: "clinical",
-    price: 390000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Runyes-3DS-300x300.jpg",
-    brand: "Runyes",
-    inStock: true,
-  },
-  {
-    id: "ios-2",
-    name: "Интраоральный сканер Runyes 3DS V5",
-    category: "3d-scanners",
-    subcategory: "clinical",
-    price: 450000,
-    image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-58-300x300.jpg",
-    brand: "Runyes",
-    inStock: true,
-  },
-  {
-    id: "ios-3",
-    name: "Интраоральный сканер Runyes 3DS V6",
-    category: "3d-scanners",
-    subcategory: "clinical",
-    price: 600000,
-    image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-62-300x300.jpg",
-    brand: "Runyes",
-    inStock: true,
-    isNew: true,
-  },
-];
-
-const accessories: Product[] = [
-  {
-    id: "acc-1",
-    name: "Антибликовый спрей 3D – Helling – 400 мл",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 2850,
-    image: "https://articon.pro/wp-content/uploads/2024/01/%D0%90%D0%BD%D1%82%D0%B8%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9-%D1%81%D0%BF%D1%80%D0%B5%D0%B9-300x300.png",
-    brand: "Helling",
-    inStock: true,
-  },
-  {
-    id: "acc-2",
-    name: "Стойка мобильная для работы с интраоральным сканером",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 390000,
-    image: "https://articon.pro/wp-content/uploads/2024/07/CDM-3S-300x300.jpg",
-    brand: "Articon",
-    inStock: true,
-  },
-  {
-    id: "acc-3",
-    name: "Шаблон Screw jig для сканера Medit T310/T510",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 35000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-Screw-Jig-T310-T510-T710-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-];
+import { products } from "@/data/products";
 
 const IntraoralScanners = () => {
+  // Фильтруем товары из общего каталога
+  const intraoralScanners = products.filter(
+    (p) => p.category === "3d-scanners" && p.subcategory === "clinical"
+  );
+
+  const accessories = products.filter(
+    (p) => p.category === "3d-scanners" && p.subcategory === "accessories"
+  );
+
   return (
     <Layout>
       <Helmet>
@@ -107,30 +49,34 @@ const IntraoralScanners = () => {
           {/* Content */}
           <div className="flex-1">
             {/* Intraoral Scanners Section */}
-            <section className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-foreground">Врачебные (интраоральные)</h2>
-                <div className="h-px flex-1 bg-border" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {intraoralScanners.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
+            {intraoralScanners.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Врачебные (интраоральные)</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {intraoralScanners.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Accessories Section */}
-            <section>
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-foreground">Аксессуары для сканеров</h2>
-                <div className="h-px flex-1 bg-border" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {accessories.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
+            {accessories.length > 0 && (
+              <section>
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Аксессуары для сканеров</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {accessories.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </div>

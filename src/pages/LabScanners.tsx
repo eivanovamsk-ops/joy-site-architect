@@ -2,76 +2,19 @@ import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Helmet } from "react-helmet-async";
-import { Product } from "@/data/products";
-
-const laboratoryScanners: Product[] = [
-  {
-    id: "lab-1",
-    name: "Medit T310 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: 655000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T310-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-    isSale: true,
-  },
-  {
-    id: "lab-2",
-    name: "Medit T510 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T510-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-  {
-    id: "lab-3",
-    name: "Medit T710 Лабораторный 3D сканер",
-    category: "3d-scanners",
-    subcategory: "laboratory",
-    price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/01/Articon-Medit-T710-Scanner-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-];
-
-const accessories: Product[] = [
-  {
-    id: "acc-lab-1",
-    name: "Калибровочная пластина для Medit",
-    category: "accessories",
-    subcategory: "scanner-accessories",
-    price: 15000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/calibration-plate-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-  {
-    id: "acc-lab-2",
-    name: "Держатель моделей для лабораторного сканера",
-    category: "accessories",
-    subcategory: "scanner-accessories",
-    price: 8500,
-    image: "https://articon.pro/wp-content/uploads/2024/01/model-holder-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-  {
-    id: "acc-lab-3",
-    name: "Антибликовый спрей для сканирования",
-    category: "accessories",
-    subcategory: "scanner-accessories",
-    price: 3500,
-    image: "https://articon.pro/wp-content/uploads/2024/01/scan-spray-300x300.jpg",
-    brand: "Medit",
-    inStock: true,
-  },
-];
+import { products } from "@/data/products";
 
 const LabScanners = () => {
+  // Фильтруем лабораторные сканеры из общего каталога
+  const laboratoryScanners = products.filter(
+    (p) => p.category === "3d-scanners" && p.subcategory === "laboratory"
+  );
+
+  // Аксессуары для сканеров
+  const accessories = products.filter(
+    (p) => p.category === "3d-scanners" && p.subcategory === "accessories"
+  );
+
   return (
     <Layout>
       <Helmet>
@@ -105,29 +48,33 @@ const LabScanners = () => {
 
           {/* Content */}
           <div className="flex-1">
-            <section className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-foreground">Сканеры Medit</h2>
-                <div className="h-px flex-1 bg-border" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {laboratoryScanners.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
+            {laboratoryScanners.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Сканеры Medit</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {laboratoryScanners.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
 
-            <section>
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl font-bold text-foreground">Аксессуары</h2>
-                <div className="h-px flex-1 bg-border" />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {accessories.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
+            {accessories.length > 0 && (
+              <section>
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Аксессуары</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {accessories.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </div>

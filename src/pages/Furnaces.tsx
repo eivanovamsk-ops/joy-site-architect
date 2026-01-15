@@ -122,11 +122,14 @@ const Furnaces = () => {
               {/* Products Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filteredProducts.map((product) => (
-                  <div
+                  <Link
                     key={product.id}
-                    className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-shadow"
+                    to={`/shop/product/${product.id}`}
+                    className="block"
                   >
-                    <Link to={`/shop/product/${product.id}`}>
+                    <div
+                      className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-all hover:-translate-y-1 h-full cursor-pointer"
+                    >
                       <div className="relative aspect-square bg-muted">
                         <img
                           src={product.image}
@@ -151,61 +154,63 @@ const Furnaces = () => {
                           </Badge>
                         )}
                       </div>
-                    </Link>
 
-                    <div className="p-4">
-                      <div className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
-                        {product.brand}
-                      </div>
-                      
-                      <Link to={`/shop/product/${product.id}`}>
-                        <h3 className="font-medium text-foreground hover:text-primary transition-colors line-clamp-2 min-h-[3rem] mb-2">
+                      <div className="p-4">
+                        <div className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
+                          {product.brand}
+                        </div>
+                        
+                        <h3 className="font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[3rem] mb-2">
                           {product.name}
                         </h3>
-                      </Link>
 
-                      <div className="flex items-center justify-between mb-3">
-                        {product.price ? (
-                          <span className="text-lg font-bold text-primary">
-                            {formatPrice(product.price)}
-                          </span>
-                        ) : (
-                          <span className="text-lg font-medium text-muted-foreground">
-                            По запросу
-                          </span>
-                        )}
-                      </div>
+                        <div className="flex items-center justify-between mb-3">
+                          {product.price ? (
+                            <span className="text-lg font-bold text-primary">
+                              {formatPrice(product.price)}
+                            </span>
+                          ) : (
+                            <span className="text-lg font-medium text-muted-foreground">
+                              По запросу
+                            </span>
+                          )}
+                        </div>
 
-                      <div className="flex gap-2">
-                        {product.price ? (
-                          <>
+                        <div className="flex gap-2">
+                          {product.price ? (
+                            <>
+                              <Button
+                                size="sm"
+                                className="flex-1"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  handleAddToCart(product);
+                                }}
+                              >
+                                <ShoppingCart className="h-4 w-4 mr-1" />
+                                В корзину
+                              </Button>
+                              <Button size="sm" variant="outline">
+                                <Eye className="h-4 w-4" />
+                              </Button>
+                            </>
+                          ) : (
                             <Button
                               size="sm"
                               className="flex-1"
-                              onClick={() => handleAddToCart(product)}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleRequest(product);
+                              }}
                             >
-                              <ShoppingCart className="h-4 w-4 mr-1" />
-                              В корзину
+                              <Phone className="h-4 w-4 mr-1" />
+                              Запросить
                             </Button>
-                            <Button size="sm" variant="outline" asChild>
-                              <Link to={`/shop/product/${product.id}`}>
-                                <Eye className="h-4 w-4" />
-                              </Link>
-                            </Button>
-                          </>
-                        ) : (
-                          <Button
-                            size="sm"
-                            className="flex-1"
-                            onClick={() => handleRequest(product)}
-                          >
-                            <Phone className="h-4 w-4 mr-1" />
-                            Запросить
-                          </Button>
-                        )}
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 

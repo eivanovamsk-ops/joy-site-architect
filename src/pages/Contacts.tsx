@@ -151,14 +151,15 @@ const Contacts = () => {
       </section>
 
       {/* Map */}
-      <section className="h-96 bg-secondary">
-        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-          <div className="text-center">
-            <MapPin className="h-12 w-12 mx-auto mb-4 text-primary/30" />
-            <p>Карта будет здесь</p>
-            <p className="text-sm">Москва, Варшавское шоссе, д. 33с12</p>
-          </div>
-        </div>
+      <section className="h-[450px] bg-secondary">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=109957568237"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          title="Артикон на карте"
+          className="w-full h-full"
+        />
       </section>
     </Layout>
   );

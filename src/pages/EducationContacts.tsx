@@ -153,17 +153,16 @@ const EducationContacts = () => {
                 ))}
               </div>
 
-              {/* Map placeholder */}
-              <div className="mt-8 rounded-2xl overflow-hidden border border-border">
+              {/* Map */}
+              <div className="mt-8 rounded-2xl overflow-hidden border border-border h-[350px]">
                 <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A1&amp;source=constructor&amp;ll=37.622093,55.686447&amp;z=16&amp;pt=37.622093,55.686447,pm2rdm"
+                  src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=109957568237"
                   width="100%"
-                  height="350"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Карта расположения Учебного центра"
-                ></iframe>
+                  height="100%"
+                  frameBorder="0"
+                  title="Артикон на карте"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>

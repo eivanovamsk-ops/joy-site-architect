@@ -38,9 +38,6 @@ const laboratoryMenuItems = [{
   label: "Прайс-листы и заказ-наряды",
   href: "/laboratory/documents"
 }, {
-  label: "Как сделать заказ",
-  href: "/laboratory#how-to-order"
-}, {
   label: "Контакты",
   href: "/laboratory/contacts"
 }];

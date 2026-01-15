@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/table";
 import { serviceCategories } from "@/data/laboratoryServices";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+import { Handshake } from "lucide-react";
 
 const LaboratoryServices = () => {
   const [searchParams] = useSearchParams();
@@ -43,12 +43,26 @@ const LaboratoryServices = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Услуги и цены
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl">
-            Полный спектр зуботехнических услуг с использованием современных цифровых технологий CAD/CAM
-          </p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Услуги и цены
+              </h1>
+              <p className="text-muted-foreground text-lg max-w-2xl">
+                Полный спектр зуботехнических услуг с использованием современных цифровых технологий CAD/CAM
+              </p>
+            </div>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-6 shrink-0"
+            >
+              <a href="https://t.me/articonrazvitie" target="_blank" rel="noopener noreferrer">
+                <Handshake className="mr-2 h-5 w-5" />
+                Начать сотрудничество
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 

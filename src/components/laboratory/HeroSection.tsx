@@ -37,6 +37,15 @@ export function LaboratoryHeroSection() {
             <Button
               asChild
               size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 transition-transform duration-200 hover:scale-105 font-semibold"
+            >
+              <a href="https://t.me/articonrazvitie" target="_blank" rel="noopener noreferrer">
+                Начать сотрудничество
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
               className="bg-background text-lab hover:bg-background/90 px-8 transition-transform duration-200 hover:scale-105"
             >
               <Link to="/laboratory/documents">Прайс-листы</Link>

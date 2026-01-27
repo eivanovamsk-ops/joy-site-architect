@@ -251,12 +251,6 @@ const ProductDetail = () => {
             >
               Характеристики
             </TabsTrigger>
-            <TabsTrigger 
-              value="delivery"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
-            >
-              Доставка
-            </TabsTrigger>
           </TabsList>
           
           <TabsContent value="description" className="prose max-w-none">
@@ -302,20 +296,6 @@ const ProductDetail = () => {
                 <span className="w-1/3 text-muted-foreground">Гарантия</span>
                 <span className="font-medium">12 месяцев</span>
               </div>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="delivery">
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                <strong className="text-foreground">Доставка по Москве:</strong> 1-2 рабочих дня. Бесплатно при заказе от 50 000 ₽.
-              </p>
-              <p>
-                <strong className="text-foreground">Доставка по России:</strong> 3-7 рабочих дней транспортными компаниями СДЭК, DPD, Деловые Линии.
-              </p>
-              <p>
-                <strong className="text-foreground">Самовывоз:</strong> Бесплатно. Москва, ул. Примерная, д. 1.
-              </p>
             </div>
           </TabsContent>
         </Tabs>

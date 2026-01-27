@@ -1,3 +1,24 @@
+// Rundeer V5 images
+import rundeerV5Main from "@/assets/products/rundeer-v5.png";
+import rundeerV5_1 from "@/assets/products/rundeer-v5-1.png";
+import rundeerV5_2 from "@/assets/products/rundeer-v5-2.png";
+import rundeerV5_3 from "@/assets/products/rundeer-v5-3.png";
+import rundeerV5_4 from "@/assets/products/rundeer-v5-4.png";
+import rundeerV5_5 from "@/assets/products/rundeer-v5-5.png";
+import rundeerV5_6 from "@/assets/products/rundeer-v5-6.png";
+import rundeerV5_7 from "@/assets/products/rundeer-v5-7.png";
+import rundeerV5_8 from "@/assets/products/rundeer-v5-8.png";
+import rundeerV5_9 from "@/assets/products/rundeer-v5-9.png";
+
+// Rundeer V6 images
+import rundeerV6Main from "@/assets/products/rundeer-v6.png";
+import rundeerV6_1 from "@/assets/products/rundeer-v6-1.png";
+import rundeerV6_2 from "@/assets/products/rundeer-v6-2.png";
+import rundeerV6_3 from "@/assets/products/rundeer-v6-3.png";
+import rundeerV6_4 from "@/assets/products/rundeer-v6-4.png";
+import rundeerV6_5 from "@/assets/products/rundeer-v6-5.png";
+import rundeerV6_6 from "@/assets/products/rundeer-v6-6.png";
+
 export interface Product {
   id: string;
   name: string;
@@ -460,17 +481,17 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-scanners",
     subcategory: "clinical",
     price: 365000,
-    image: "/src/assets/products/rundeer-v5.png",
+    image: rundeerV5Main,
     gallery: [
-      "/src/assets/products/rundeer-v5-1.png",
-      "/src/assets/products/rundeer-v5-2.png",
-      "/src/assets/products/rundeer-v5-3.png",
-      "/src/assets/products/rundeer-v5-4.png",
-      "/src/assets/products/rundeer-v5-5.png",
-      "/src/assets/products/rundeer-v5-6.png",
-      "/src/assets/products/rundeer-v5-7.png",
-      "/src/assets/products/rundeer-v5-8.png",
-      "/src/assets/products/rundeer-v5-9.png",
+      rundeerV5_1,
+      rundeerV5_2,
+      rundeerV5_3,
+      rundeerV5_4,
+      rundeerV5_5,
+      rundeerV5_6,
+      rundeerV5_7,
+      rundeerV5_8,
+      rundeerV5_9,
     ],
     brand: "Rundeer",
     inStock: true,
@@ -507,14 +528,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-scanners",
     subcategory: "clinical",
     price: 500000,
-    image: "/src/assets/products/rundeer-v6.png",
+    image: rundeerV6Main,
     gallery: [
-      "/src/assets/products/rundeer-v6-1.png",
-      "/src/assets/products/rundeer-v6-2.png",
-      "/src/assets/products/rundeer-v6-3.png",
-      "/src/assets/products/rundeer-v6-4.png",
-      "/src/assets/products/rundeer-v6-5.png",
-      "/src/assets/products/rundeer-v6-6.png",
+      rundeerV6_1,
+      rundeerV6_2,
+      rundeerV6_3,
+      rundeerV6_4,
+      rundeerV6_5,
+      rundeerV6_6,
     ],
     brand: "Rundeer",
     inStock: true,

@@ -506,7 +506,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Интраоральный сканер Rundeer 3DS V6",
     category: "3d-scanners",
     subcategory: "clinical",
-    price: 600000,
+    price: 500000,
     image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-62-300x300.jpg",
     brand: "Rundeer",
     inStock: true,

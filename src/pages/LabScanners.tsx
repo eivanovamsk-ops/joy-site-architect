@@ -10,10 +10,6 @@ const LabScanners = () => {
     (p) => p.category === "3d-scanners" && p.subcategory === "laboratory"
   );
 
-  // Аксессуары для сканеров
-  const accessories = products.filter(
-    (p) => p.category === "3d-scanners" && p.subcategory === "accessories"
-  );
 
   return (
     <Layout>
@@ -62,19 +58,6 @@ const LabScanners = () => {
               </section>
             )}
 
-            {accessories.length > 0 && (
-              <section>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Аксессуары</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {accessories.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
           </div>
         </div>
       </div>

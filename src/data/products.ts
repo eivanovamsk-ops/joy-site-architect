@@ -454,42 +454,13 @@ Uniformation GK3 Ultra использует передовую технолог�
 
   // 3Д-сканеры - Врачебные (интраоральные)
   {
-    id: "runyes-3ds-v3",
-    name: "Интраоральный сканер Runyes 3DS V3",
-    category: "3d-scanners",
-    subcategory: "clinical",
-    price: 390000,
-    image: "https://articon.pro/wp-content/uploads/2024/01/runyes-3ds-v3.png",
-    brand: "Runyes",
-    inStock: true,
-    description: `Компактный интраоральный сканер от Runyes.
-
-Портативное устройство:
-• Размеры (Д x Ш x В): 240×49,5×30 мм
-• Вес: 210 г
-• Стандартный размер наконечника: 79×19,7×15,8 мм
-• Мини размер наконечника: 80×16×11 мм
-• Область сканирования (стандарт): 15×15 мм
-• Область сканирования (мини): 12×12 мм
-• Глубина резкости: 15 мм
-• Автоклавируемый до 100 раз (121°C 16 мин или 134°C 4 мин)`,
-    specifications: {
-      "Размеры": "240×49,5×30 мм",
-      "Вес": "210 г",
-      "Область сканирования": "15×15 мм",
-      "Глубина резкости": "15 мм",
-      "Автоклавирование": "До 100 раз",
-    },
-    externalUrl: "https://articon.pro/product/runyes-3ds-v3/",
-  },
-  {
-    id: "runyes-3ds-v5",
-    name: "Интраоральный сканер Runyes 3DS V5",
+    id: "rundeer-3ds-v5",
+    name: "Интраоральный сканер Rundeer 3DS V5",
     category: "3d-scanners",
     subcategory: "clinical",
     price: 450000,
     image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-58-300x300.jpg",
-    brand: "Runyes",
+    brand: "Rundeer",
     inStock: true,
     description: `Зона сканирования 25 мм обеспечивает захват каждой детали для качественного лечения.
 
@@ -519,13 +490,13 @@ Uniformation GK3 Ultra использует передовую технолог�
     externalUrl: "https://articon.pro/product/runyes-3ds-v5/",
   },
   {
-    id: "runyes-3ds-v6",
-    name: "Интраоральный сканер Runyes 3DS V6",
+    id: "rundeer-3ds-v6",
+    name: "Интраоральный сканер Rundeer 3DS V6",
     category: "3d-scanners",
     subcategory: "clinical",
     price: 600000,
     image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-62-300x300.jpg",
-    brand: "Runyes",
+    brand: "Rundeer",
     inStock: true,
     isNew: true,
     description: `Два способа зарядки. Стерилизация до 100 раз. Проводной или беспроводной режим.

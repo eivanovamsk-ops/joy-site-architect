@@ -490,7 +490,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     ],
     brand: "Rundeer",
     inStock: true,
-    isNew: true,
+    isNew: false,
     description: `Два способа зарядки. Стерилизация до 100 раз. Проводной или беспроводной режим.
 
 Технические характеристики:

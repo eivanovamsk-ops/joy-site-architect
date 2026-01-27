@@ -6,6 +6,7 @@ export interface Product {
   price: number | null;
   oldPrice?: number | null;
   image: string;
+  gallery?: string[];
   brand: string;
   inStock: boolean;
   isNew?: boolean;
@@ -460,6 +461,17 @@ Uniformation GK3 Ultra использует передовую технолог�
     subcategory: "clinical",
     price: 365000,
     image: "/src/assets/products/rundeer-v5.png",
+    gallery: [
+      "/src/assets/products/rundeer-v5-1.png",
+      "/src/assets/products/rundeer-v5-2.png",
+      "/src/assets/products/rundeer-v5-3.png",
+      "/src/assets/products/rundeer-v5-4.png",
+      "/src/assets/products/rundeer-v5-5.png",
+      "/src/assets/products/rundeer-v5-6.png",
+      "/src/assets/products/rundeer-v5-7.png",
+      "/src/assets/products/rundeer-v5-8.png",
+      "/src/assets/products/rundeer-v5-9.png",
+    ],
     brand: "Rundeer",
     inStock: true,
     description: `Зона сканирования 25 мм обеспечивает захват каждой детали для качественного лечения.

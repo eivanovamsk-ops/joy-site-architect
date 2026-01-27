@@ -268,6 +268,27 @@ const ProductDetail = () => {
                 </p>
               </>
             )}
+            
+            {/* Product Gallery */}
+            {product.gallery && product.gallery.length > 0 && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold mb-4 text-foreground">Фотогалерея</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {product.gallery.map((img, index) => (
+                    <div 
+                      key={index} 
+                      className="aspect-square bg-muted/30 rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow cursor-pointer"
+                    >
+                      <img
+                        src={img}
+                        alt={`${product.name} - фото ${index + 1}`}
+                        className="w-full h-full object-contain p-2"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </TabsContent>
           
           <TabsContent value="specs">

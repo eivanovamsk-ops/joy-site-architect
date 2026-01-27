@@ -68,7 +68,6 @@ export const categories: Category[] = [
     subcategories: [
       { id: "clinical", name: "Врачебные (интраоральные)", href: "/shop/catalog/intraoral-scanners" },
       { id: "laboratory", name: "Лабораторные", href: "/shop/catalog/lab-scanners" },
-      { id: "accessories", name: "Аксессуары для сканеров", href: "/shop/catalog/scanner-accessories" },
     ],
   },
   {
@@ -424,64 +423,6 @@ Uniformation GK3 Ultra использует передовую технолог�
     sku: "PN/02501",
     description: "Встраиваемый лоток Build Tray объёмом 5 литров для 3D-принтера Asiga MAX. Оптимален для средних объёмов производства. Позволяет печатать несколько полноразмерных моделей одновременно. Прозрачная конструкция обеспечивает контроль уровня и качества фотополимера. Произведено в Австралии, официальная гарантия производителя.",
     externalUrl: "https://articon.pro/product/build-tray-asiga-5l-max/",
-  },
-
-  // 3Д-сканеры - Аксессуары
-  {
-    id: "antiglare-spray-helling",
-    name: "Антибликовый спрей 3D – Helling – 400 мл",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 2850,
-    image: "https://articon.pro/wp-content/uploads/2023/06/helling-spray.jpg",
-    brand: "Helling",
-    inStock: true,
-    sku: "3D - Helling - 400 мл",
-    description: "Антибликовый спрей для лазерного сканирования 3-D Laserscanning Antiglare Spray от HELLING – средство для образования тонкого белого равномерного мелкодисперсного слоя для подавления бликов на сканируемой поверхности, используется для оптимизации лазерного сканирования.",
-    externalUrl: "https://articon.pro/product/antiblikovyy-sprey-3-d-400-ml-helling/",
-  },
-  {
-    id: "medit-screw-jig",
-    name: "Шаблон Screw jig для сканера Medit T310/T510",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 35000,
-    image: "https://articon.pro/wp-content/uploads/2024/02/medit-screw-jig.jpg",
-    brand: "Medit",
-    inStock: true,
-    description: "Профессиональный винтовой зажим Screw Jig для лабораторных 3D-сканеров Medit T310 и T510. Обеспечивает надёжную винтовую фиксацию модели во время сканирования. Незаменим для точного позиционирования гипсовых моделей при работе с имплантатами. Высокоточная обработка деталей, антибликовое покрытие. Совместим со всеми стандартными артикуляторами.",
-    externalUrl: "https://articon.pro/product/medit-screw-jig-t310-t510/",
-  },
-  {
-    id: "mobile-stand-scanner",
-    name: "Стойка мобильная для работы с интраоральным сканером с встроенным компьютером",
-    category: "3d-scanners",
-    subcategory: "accessories",
-    price: 390000,
-    image: "https://articon.pro/wp-content/uploads/2024/02/mobile-stand.jpg",
-    brand: "Articon",
-    inStock: true,
-    description: `Мобильная стойка для работы с интраоральным сканером со встроенным компьютером.
-
-Конфигурация компьютера:
-• Операционная система: Windows 11
-• Размер сенсорного экрана: 23,6 дюйма
-• Процессор: Intel Core i7-12700 12-го поколения
-• Видеокарта: RTX 3060
-• Оперативная память: 32 ГБ DDR4
-• Память: SSD емкостью 1 ТБ
-• Разрешение: 1920×1080
-• Аудио: Встроенные 2.0-канальные динамики`,
-    specifications: {
-      "ОС": "Windows 11",
-      "Экран": "23,6\" сенсорный",
-      "Процессор": "Intel Core i7-12700",
-      "Видеокарта": "RTX 3060",
-      "RAM": "32 ГБ DDR4",
-      "SSD": "1 ТБ",
-      "Разрешение": "1920×1080",
-    },
-    externalUrl: "https://articon.pro/product/stoyka-mobilnaya-dlya-raboty-s-intraoralnym-skanerom-s-vstroennym-kompyuterom/",
   },
 
   // 3Д-сканеры - Врачебные (интраоральные)

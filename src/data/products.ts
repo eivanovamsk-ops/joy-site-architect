@@ -23,6 +23,10 @@ import rundeerV6_6 from "@/assets/products/rundeer-v6-6.png";
 import uniformationGk3UltraMain from "@/assets/products/uniformation-gk3-ultra.jpg";
 import uniformationGk3Ultra1 from "@/assets/products/uniformation-gk3-ultra-1.jpg";
 
+// Uniformation GK3 Ultra (actual Ultra model) images
+import gk3UltraMain from "@/assets/products/gk3-ultra-main.jpg";
+import gk3Ultra1 from "@/assets/products/gk3-ultra-1.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -217,7 +221,8 @@ MAX – это линейка компактных 3D принтеров с во
     category: "3d-print",
     subcategory: "3d-printers",
     price: 285000,
-    image: "https://articon.pro/wp-content/uploads/2024/11/uniformation-gk3-ultra.jpg",
+    image: gk3UltraMain,
+    gallery: [gk3Ultra1],
     brand: "UniFormation",
     inStock: true,
     isNew: true,

@@ -459,7 +459,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-scanners",
     subcategory: "clinical",
     price: 365000,
-    image: "https://articon.pro/wp-content/uploads/2025/04/Frame-285-58-300x300.jpg",
+    image: "/src/assets/products/rundeer-v5.png",
     brand: "Rundeer",
     inStock: true,
     description: `Зона сканирования 25 мм обеспечивает захват каждой детали для качественного лечения.

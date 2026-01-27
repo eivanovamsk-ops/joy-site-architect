@@ -79,7 +79,7 @@ const ProductDetail = () => {
         {/* Open Graph */}
         <meta property="og:title" content={`${product.name} | Артикон`} />
         <meta property="og:description" content={generateSeoDescription()} />
-        <meta property="og:image" content={product.image} />
+        <meta property="og:image" content={product.image.startsWith('http') ? product.image : `https://articon.pro${product.image}`} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={`https://articon.pro/shop/product/${product.id}`} />
         <meta property="product:price:amount" content={product.price?.toString() || ""} />

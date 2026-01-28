@@ -268,6 +268,44 @@ const Delivery = () => {
             />
           </div>
         </section>
+
+        {/* Company Details Section */}
+        <section className="mt-16 bg-muted/30 rounded-xl p-8">
+          <div className="flex items-center gap-3 mb-6">
+            <Building2 className="h-8 w-8 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground">Реквизиты организации</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-3">
+              <h3 className="font-semibold text-foreground text-lg">ООО «Артикон Трейд»</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><strong className="text-foreground">Юридический адрес:</strong> 115230, г. Москва, Варшавское шоссе, дом 33, строение 12</li>
+                <li><strong className="text-foreground">ИНН:</strong> 7725752561</li>
+                <li><strong className="text-foreground">КПП:</strong> 772401001</li>
+                <li><strong className="text-foreground">ОГРН:</strong> 1127746237607</li>
+              </ul>
+            </div>
+            
+            <div className="space-y-3">
+              <h3 className="font-semibold text-foreground text-lg">Банковские реквизиты</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><strong className="text-foreground">Банк:</strong> АО «АЛЬФА-БАНК»</li>
+                <li><strong className="text-foreground">Р/с:</strong> 40702810602860000274</li>
+                <li><strong className="text-foreground">К/с:</strong> 30101810200000000593</li>
+                <li><strong className="text-foreground">БИК:</strong> 044525593</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-6 pt-6 border-t border-border">
+            <ul className="space-y-2 text-muted-foreground">
+              <li><strong className="text-foreground">Директор:</strong> Артемов Виктор Юрьевич</li>
+              <li><strong className="text-foreground">Телефон:</strong> <a href="tel:+74951205878" className="text-primary hover:underline">+7 (495) 120-58-78</a></li>
+              <li><strong className="text-foreground">E-mail:</strong> <a href="mailto:moscow@articon.ru" className="text-primary hover:underline">moscow@articon.ru</a></li>
+            </ul>
+          </div>
+        </section>
       </div>
     </Layout>
   );

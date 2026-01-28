@@ -106,7 +106,7 @@ const Terms = () => {
             <p>
               Пользователь вправе отозвать настоящее согласие в любой момент путём направления 
               письменного заявления по адресу: 115230, г. Москва, Варшавское шоссе, дом 33, 
-              строение 12, или по электронной почте: <a href="mailto:moscow@articon.ru" className="text-primary hover:underline">moscow@articon.ru</a>.
+              строение 12, или по электронной почте: <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a>.
             </p>
             <p>
               В заявлении необходимо указать:
@@ -156,7 +156,7 @@ const Terms = () => {
               <li>ИНН: 7725752561 | ОГРН: 1127746237607 | КПП: 772401001</li>
               <li>Юридический адрес: 115230, г. Москва, Варшавское шоссе, дом 33, строение 12</li>
               <li>Телефон: <a href="tel:+74951205878" className="text-primary hover:underline">+7 (495) 120-58-78</a></li>
-              <li>E-mail: <a href="mailto:moscow@articon.ru" className="text-primary hover:underline">moscow@articon.ru</a></li>
+              <li>E-mail: <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a></li>
               <li>Директор: Артемов Виктор Юрьевич</li>
             </ul>
           </section>

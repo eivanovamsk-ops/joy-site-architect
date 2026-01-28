@@ -37,8 +37,10 @@ export function Footer() {
           <div className="space-y-4">
             <img src={articonLogo} alt="Articon" className="h-8 w-auto brightness-0 invert" />
             <p className="text-background/70 text-sm leading-relaxed">
-              Экосистема цифровых решений для стоматологии. От обучения и
-              оборудования до полного цикла производства.
+              ООО «Артикон Трейд»
+            </p>
+            <p className="text-background/50 text-xs leading-relaxed">
+              ИНН 7725752561 | ОГРН 1127746237607
             </p>
             <div className="flex gap-3">
               <a href="https://vk.com/articondental" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="ВКонтакте">
@@ -72,7 +74,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-background/70 text-sm">
-                  Москва, Варшавское шоссе, д. 33с12
+                  115230, г. Москва, Варшавское шоссе, д. 33, стр. 12
                 </span>
               </li>
               <li>

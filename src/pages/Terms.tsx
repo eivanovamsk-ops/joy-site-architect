@@ -155,9 +155,8 @@ const Terms = () => {
               <li><strong className="text-foreground">ООО «Артикон Трейд»</strong></li>
               <li>ИНН: 7725752561 | ОГРН: 1127746237607 | КПП: 772401001</li>
               <li>Юридический адрес: 115230, г. Москва, Варшавское шоссе, дом 33, строение 12</li>
-              <li>Телефон: <a href="tel:+74951205878" className="text-primary hover:underline">+7 (495) 120-58-78</a></li>
+              <li>Телефон: <a href="tel:+79645000040" className="text-primary hover:underline">+7 (964) 500-00-40</a></li>
               <li>E-mail: <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a></li>
-              <li>Директор: Артемов Виктор Юрьевич</li>
             </ul>
           </section>
         </div>

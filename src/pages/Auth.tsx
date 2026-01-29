@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
+import { ForgotPasswordDialog } from "@/components/auth/ForgotPasswordDialog";
 import { z } from "zod";
 import { Loader2, Mail, Lock, User, Phone } from "lucide-react";
 
@@ -29,6 +30,7 @@ const Auth = () => {
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   const { user, signIn, signUp } = useAuth();
   const navigate = useNavigate();
@@ -203,7 +205,18 @@ const Auth = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Пароль</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password">Пароль</Label>
+                  {isLogin && (
+                    <button
+                      type="button"
+                      onClick={() => setShowForgotPassword(true)}
+                      className="text-xs text-primary hover:underline"
+                    >
+                      Забыли пароль?
+                    </button>
+                  )}
+                </div>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
@@ -247,6 +260,11 @@ const Auth = () => {
           </div>
         </div>
       </div>
+
+      <ForgotPasswordDialog 
+        open={showForgotPassword} 
+        onOpenChange={setShowForgotPassword} 
+      />
     </Layout>
   );
 };

@@ -31,6 +31,7 @@ import Furnaces from "./pages/Furnaces";
 import MetalDiscs from "./pages/MetalDiscs";
 import Delivery from "./pages/Delivery";
 import Auth from "./pages/Auth";
+import ResetPassword from "./pages/ResetPassword";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
@@ -76,6 +77,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/laboratory/contacts" element={<Contacts />} />
               <Route path="/auth" element={<Auth />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/admin" element={<Admin />} />

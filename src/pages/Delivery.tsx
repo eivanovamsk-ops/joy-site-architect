@@ -1,311 +1,200 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { Truck, MapPin, CreditCard, Building2, User, Package, AlertCircle, Phone, Mail } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Send, Truck, CreditCard } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Delivery = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Доставка и оплата | Артикон</title>
+        <title>Контакты | Артикон Магазин</title>
         <meta
           name="description"
-          content="Доставка оборудования и расходных материалов по Москве и России. Курьерская доставка, СДЭК, Boxberry, самовывоз. Оплата картой, наличными, безналичный расчёт."
+          content="Контакты магазина Артикон. Адрес: Москва, Варшавское шоссе, 33с12. Телефон: +7 (964) 500-00-40. Доставка по Москве и России."
         />
       </Helmet>
 
-      
-
       {/* Hero Section */}
-      <div className="bg-muted/30 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Доставка и оплата
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Мы сделали всё, чтобы получение вашего заказа было максимально быстрым и удобным.
-            <br />
-            <span className="font-medium text-foreground">Работаем со всеми регионами России.</span>
-          </p>
+      <section className="py-12 lg:py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h1>
+            <p className="text-lg text-muted-foreground">
+              Свяжитесь с нами любым удобным способом
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto px-4 py-12">
-        {/* Delivery Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <Truck className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Доставка</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Moscow */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  Москва и МО
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h4 className="font-semibold text-foreground mb-3">Курьерская доставка</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span><strong className="text-foreground">Бесплатно</strong> – при заказе от 30 000 рублей.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span><strong className="text-foreground">300 рублей</strong> – при заказе до 30 000 рублей.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span>Доставляем на следующий рабочий день после подтверждения заказа.</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Russia */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Truck className="h-5 w-5 text-primary" />
-                  Россия
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h4 className="font-semibold text-foreground mb-3">СДЭК, Boxberry</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span>Стоимость и сроки рассчитываются автоматически при оформлении заказа.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span>Средний срок доставки – <strong className="text-foreground">от 2 до 7 рабочих дней</strong>.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span>Получение в пункте выдачи или курьером до двери.</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Pickup */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Package className="h-5 w-5 text-primary" />
-                  Самовывоз
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h4 className="font-semibold text-foreground mb-3">Москва</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span><strong className="text-foreground">Бесплатно.</strong> Заберите заказ с нашего склада по предварительному согласованию.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
-                    <span><strong className="text-foreground">Адрес:</strong> Москва, Варшавское шоссе, 33с12</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Turnkey */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-5 w-5 text-primary" />
-                  «Под ключ»
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Для крупногабаритного оборудования (фрезерные станки, печи) мы организуем доставку по России и проведем 
-                  <strong className="text-foreground"> профессиональную установку и пусконаладку</strong>. Стоимость рассчитывается индивидуально.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Payment Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <CreditCard className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Оплата</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Individual */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <User className="h-5 w-5 text-primary" />
-                  Частное лицо
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Банковской картой онлайн</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Visa, Mastercard, МИР. Оплата происходит через защищённый сервис. Мы не получаем данные вашей карты.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Наличными или картой курьеру</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Вы можете оплатить заказ при получении. Просьба сообщить о таком способе оплаты заранее.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Legal Entity */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-5 w-5 text-primary" />
-                  Юридическое лицо
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h4 className="font-semibold text-foreground mb-2">Безналичный расчёт</h4>
+      {/* Contact Info */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {/* Address */}
+            <div className="flex gap-4 p-6 bg-secondary/50 rounded-xl">
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                <MapPin className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Адрес</h3>
                 <p className="text-muted-foreground text-sm">
-                  Выставление счёта на оплату. Отгрузка товара производится после поступления денег на наш расчётный счёт. 
-                  Укажите реквизиты вашей компании в комментарии к заказу.
+                  115230, г. Москва, Варшавское шоссе, д. 33, стр. 12
                 </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+              </div>
+            </div>
 
-        {/* Important Info Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <AlertCircle className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Важная информация</h2>
-          </div>
+            {/* Phone */}
+            <div className="flex gap-4 p-6 bg-secondary/50 rounded-xl">
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                <Phone className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">Телефон</h3>
+                <a href="tel:+79645000040" className="text-muted-foreground text-sm hover:text-primary">
+                  +7 (964) 500-00-40
+                </a>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-lg">Отслеживание заказа</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  После отправки мы вышлем вам трек-номер для отслеживания посылки.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-lg">Проверка при получении</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  Внимательно осмотрите заказ при курьере. Если есть повреждения упаковки или несоответствие заказу – вы вправе отказаться от получения и составить акт.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-lg">Возврат</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  Мы принимаем возврат товара надлежащего качества в течение 7 дней с момента получения.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="bg-muted/50 rounded-xl p-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Остались вопросы?</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            <a 
-              href="tel:+79645000040" 
-              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="h-5 w-5 text-primary" />
-              <span className="font-medium">+7 (964) 500-00-40</span>
-            </a>
-            <a 
-              href="mailto:moscow@articon.pro" 
-              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
-            >
-              <Mail className="h-5 w-5 text-primary" />
-              <span className="font-medium">moscow@articon.pro</span>
-            </a>
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <MapPin className="h-5 w-5 text-primary" />
-              <span>Москва, Варшавское шоссе, 33с12</span>
+            {/* Email */}
+            <div className="flex gap-4 p-6 bg-secondary/50 rounded-xl">
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                <Mail className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">E-mail</h3>
+                <a href="mailto:moscow@articon.pro" className="text-muted-foreground text-sm hover:text-primary">
+                  moscow@articon.pro
+                </a>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* Map Section */}
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Наш офис на карте</h2>
-          <div className="rounded-2xl overflow-hidden border border-border h-[400px]">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=109957568237"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              title="Артикон на карте"
-              className="w-full h-full"
-            />
+          {/* Telegram Bot CTA */}
+          <div className="max-w-md mx-auto mt-8 text-center">
+            <Button
+              asChild
+              size="lg"
+              className="gradient-primary text-primary-foreground"
+            >
+              <a
+                href="https://t.me/articondental_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Send className="mr-2 h-4 w-4" />
+                Написать в Telegram-бот
+              </a>
+            </Button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Company Details Section */}
-        <section className="mt-16 bg-muted/30 rounded-xl p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <Building2 className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Реквизиты организации</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground text-lg">ООО «Артикон Трейд»</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><strong className="text-foreground">Юридический адрес:</strong> 115230, г. Москва, Варшавское шоссе, дом 33, строение 12</li>
-                <li><strong className="text-foreground">ИНН:</strong> 7725752561</li>
-                <li><strong className="text-foreground">КПП:</strong> 772401001</li>
-                <li><strong className="text-foreground">ОГРН:</strong> 1127746237607</li>
-              </ul>
-            </div>
+      {/* Map - Half Page */}
+      <section className="h-[50vh] min-h-[400px] bg-secondary">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=109957568237"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          title="Артикон на карте"
+          className="w-full h-full"
+        />
+      </section>
+
+      {/* Requisites */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Реквизиты компании</h2>
             
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground text-lg">Банковские реквизиты</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><strong className="text-foreground">Банк:</strong> АО «АЛЬФА-БАНК»</li>
-                <li><strong className="text-foreground">Р/с:</strong> 40702810602860000274</li>
-                <li><strong className="text-foreground">К/с:</strong> 30101810200000000593</li>
-                <li><strong className="text-foreground">БИК:</strong> 044525593</li>
-              </ul>
+            <div className="bg-secondary/50 rounded-2xl p-6 md:p-8">
+              <h3 className="text-xl font-bold mb-4">ООО «Артикон Трейд»</h3>
+              
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div className="space-y-3">
+                  <p><strong className="text-foreground">ИНН:</strong> <span className="text-muted-foreground">7725752561</span></p>
+                  <p><strong className="text-foreground">ОГРН:</strong> <span className="text-muted-foreground">1127746237607</span></p>
+                  <p><strong className="text-foreground">КПП:</strong> <span className="text-muted-foreground">772501001</span></p>
+                </div>
+                <div className="space-y-3">
+                  <p><strong className="text-foreground">Р/с:</strong> <span className="text-muted-foreground">40702810338000142498</span></p>
+                  <p><strong className="text-foreground">К/с:</strong> <span className="text-muted-foreground">30101810400000000225</span></p>
+                  <p><strong className="text-foreground">БИК:</strong> <span className="text-muted-foreground">044525225</span></p>
+                </div>
+              </div>
+              
+              <div className="mt-4 pt-4 border-t border-border text-sm">
+                <p><strong className="text-foreground">Банк:</strong> <span className="text-muted-foreground">ПАО Сбербанк, г. Москва</span></p>
+                <p className="mt-2"><strong className="text-foreground">Юридический адрес:</strong> <span className="text-muted-foreground">115230, г. Москва, Варшавское шоссе, дом 33, строение 12</span></p>
+              </div>
             </div>
           </div>
-          
-          <div className="mt-6 pt-6 border-t border-border">
-            <ul className="space-y-2 text-muted-foreground">
-              <li><strong className="text-foreground">Телефон:</strong> <a href="tel:+79645000040" className="text-primary hover:underline">+7 (964) 500-00-40</a></li>
-              <li><strong className="text-foreground">E-mail:</strong> <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a></li>
-            </ul>
+        </div>
+      </section>
+
+      {/* Delivery & Payment Brief */}
+      <section className="py-12 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8 text-center">Доставка и оплата</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Delivery */}
+              <div className="bg-background rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+                    <Truck className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-bold">Доставка</h3>
+                </div>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Самовывоз из офиса в Москве</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Курьерская доставка по Москве</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Доставка по РФ транспортной компанией</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Payment */}
+              <div className="bg-background rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+                    <CreditCard className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-bold">Оплата</h3>
+                </div>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Наличными (для физических лиц)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Безналичный расчёт картой</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Сплит-система Яндекс (рассрочка)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                    <span>Безналичный расчёт для юридических лиц</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </Layout>
   );
 };

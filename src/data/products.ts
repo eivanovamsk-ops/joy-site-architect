@@ -32,6 +32,7 @@ import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
 import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
 import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
+import topcoreModel from "@/assets/products/topcore-model.png";
 
 export interface Product {
   id: string;
@@ -1725,6 +1726,35 @@ TOPCORE Composite Bleach — это высококачественная фот�
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-bleach/",
+  },
+  {
+    id: "topcore-model",
+    name: "Фотополимер TOPCORE Model",
+    description: `Профессиональный фотополимер для 3D-печати стоматологических моделей.
+
+TOPCORE Model — это высококачественная фотополимерная смола, разработанная для печати точных стоматологических моделей. Материал обеспечивает высокую детализацию и стабильность размеров, что делает его идеальным выбором для изготовления рабочих моделей.
+
+Особенности:
+• Высокая точность и стабильность размеров
+• Отличная детализация поверхности
+• Быстрое время полимеризации
+• Легкость постобработки
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 11300,
+    image: topcoreModel,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Model",
+    specifications: {
+      "Объём": "1000 г",
+      "Цвет": "Бежевый",
+      "Длина волны": "385-405 нм",
+      "Применение": "Стоматологические модели",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-model/",
   },
   // Металлические диски CoCr
   {

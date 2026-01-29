@@ -34,6 +34,7 @@ import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
 import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
 import topcoreModel from "@/assets/products/topcore-model.png";
 import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
+import topcorePink from "@/assets/products/topcore-pink.png";
 
 export interface Product {
   id: string;
@@ -1787,6 +1788,35 @@ TOPCORE Model Pro — это улучшенная версия смолы TOPCOR
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-model-pro/",
+  },
+  {
+    id: "topcore-pink",
+    name: "Фотополимер TOPCORE Pink",
+    description: `Профессиональный фотополимер для 3D-печати десневых масок и базисов протезов.
+
+TOPCORE Pink — это высококачественная фотополимерная смола розового цвета, имитирующая натуральный цвет десны. Идеально подходит для изготовления десневых масок, базисов съёмных протезов и других изделий, требующих естественного розового оттенка.
+
+Особенности:
+• Натуральный розовый оттенок десны
+• Высокая точность печати
+• Отличная биосовместимость
+• Гибкость и прочность готовых изделий
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 12500,
+    image: topcorePink,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Pink",
+    specifications: {
+      "Объём": "1000 г",
+      "Цвет": "Розовый (имитация десны)",
+      "Длина волны": "385-405 нм",
+      "Применение": "Десневые маски, базисы протезов",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink/",
   },
   // Металлические диски CoCr
   {

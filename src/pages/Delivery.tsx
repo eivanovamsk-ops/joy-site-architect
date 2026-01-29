@@ -115,17 +115,17 @@ const Delivery = () => {
                 <div className="space-y-3">
                   <p><strong className="text-foreground">ИНН:</strong> <span className="text-muted-foreground">7725752561</span></p>
                   <p><strong className="text-foreground">ОГРН:</strong> <span className="text-muted-foreground">1127746237607</span></p>
-                  <p><strong className="text-foreground">КПП:</strong> <span className="text-muted-foreground">772501001</span></p>
+                  <p><strong className="text-foreground">КПП:</strong> <span className="text-muted-foreground">772401001</span></p>
                 </div>
                 <div className="space-y-3">
-                  <p><strong className="text-foreground">Р/с:</strong> <span className="text-muted-foreground">40702810338000142498</span></p>
-                  <p><strong className="text-foreground">К/с:</strong> <span className="text-muted-foreground">30101810400000000225</span></p>
-                  <p><strong className="text-foreground">БИК:</strong> <span className="text-muted-foreground">044525225</span></p>
+                  <p><strong className="text-foreground">Р/с:</strong> <span className="text-muted-foreground">40702810602860000274</span></p>
+                  <p><strong className="text-foreground">К/с:</strong> <span className="text-muted-foreground">30101810200000000593</span></p>
+                  <p><strong className="text-foreground">БИК:</strong> <span className="text-muted-foreground">044525593</span></p>
                 </div>
               </div>
               
               <div className="mt-4 pt-4 border-t border-border text-sm">
-                <p><strong className="text-foreground">Банк:</strong> <span className="text-muted-foreground">ПАО Сбербанк, г. Москва</span></p>
+                <p><strong className="text-foreground">Банк:</strong> <span className="text-muted-foreground">АО «АЛЬФА-БАНК»</span></p>
                 <p className="mt-2"><strong className="text-foreground">Юридический адрес:</strong> <span className="text-muted-foreground">115230, г. Москва, Варшавское шоссе, дом 33, строение 12</span></p>
               </div>
             </div>

@@ -127,7 +127,7 @@ const shopMenuItems = [{
   label: "Краски и глазурь",
   href: "/shop/catalog/paints-glaze"
 }, {
-  label: "Доставка и оплата",
+  label: "Контакты",
   href: "/shop/delivery"
 }];
 

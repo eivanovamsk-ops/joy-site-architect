@@ -30,6 +30,7 @@ import gk3Ultra1 from "@/assets/products/gk3-ultra-1.jpg";
 // TOPCORE images
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
+import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
 
 export interface Product {
   id: string;
@@ -1665,6 +1666,35 @@ TOPCORE Composite A2 — это высококачественная фотоп�
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a2/",
+  },
+  {
+    id: "topcore-composite-a3",
+    name: "Фотополимер TOPCORE Composite A3",
+    description: `Профессиональный фотополимер для 3D-печати временных реставраций цвета A3.
+
+TOPCORE Composite A3 — это высококачественная фотополимерная смола, разработанная специально для изготовления временных коронок, мостов и других ортопедических конструкций. Материал обладает отличными эстетическими свойствами и точно воспроизводит оттенок A3 по шкале VITA.
+
+Особенности:
+• Высокая точность печати и детализация
+• Естественный оттенок A3 для эстетичных временных реставраций
+• Отличная биосовместимость
+• Оптимальная прочность для временного ношения
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 11300,
+    image: topcoreCompositeA3,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Composite A3",
+    specifications: {
+      "Объём": "250 г",
+      "Цвет": "A3 (по шкале VITA)",
+      "Длина волны": "385-405 нм",
+      "Применение": "Временные коронки и мосты",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a3/",
   },
   // Металлические диски CoCr
   {

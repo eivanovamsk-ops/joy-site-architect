@@ -128,7 +128,7 @@ const shopMenuItems = [{
   href: "/shop/catalog/paints-glaze"
 }, {
   label: "Контакты",
-  href: "/shop/delivery"
+  href: "/shop/contacts"
 }];
 
 // Education menu items with submenus - linking to specific courses

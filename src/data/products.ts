@@ -27,6 +27,9 @@ import uniformationGk3Ultra1 from "@/assets/products/uniformation-gk3-ultra-1.jp
 import gk3UltraMain from "@/assets/products/gk3-ultra-main.jpg";
 import gk3Ultra1 from "@/assets/products/gk3-ultra-1.jpg";
 
+// TOPCORE images
+import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
+
 export interface Product {
   id: string;
   name: string;
@@ -1602,6 +1605,36 @@ AUSTROMAT 654 press-i-dent оснащена инновационным элек�
       "Применение": "Десневые маски, гибкие элементы",
     },
     externalUrl: "https://articon.pro/product/harz-pink-soft/",
+  },
+  // Фотополимеры TOPCORE
+  {
+    id: "topcore-composite-a1",
+    name: "Фотополимер TOPCORE Composite A1",
+    description: `Профессиональный фотополимер для 3D-печати временных реставраций цвета A1.
+
+TOPCORE Composite A1 — это высококачественная фотополимерная смола, разработанная специально для изготовления временных коронок, мостов и других ортопедических конструкций. Материал обладает отличными эстетическими свойствами и точно воспроизводит оттенок A1 по шкале VITA.
+
+Особенности:
+• Высокая точность печати и детализация
+• Естественный оттенок A1 для эстетичных временных реставраций
+• Отличная биосовместимость
+• Оптимальная прочность для временного ношения
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 11300,
+    image: topcoreCompositeA1,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Composite A1",
+    specifications: {
+      "Объём": "250 г",
+      "Цвет": "A1 (по шкале VITA)",
+      "Длина волны": "385-405 нм",
+      "Применение": "Временные коронки и мосты",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a1/",
   },
   // Металлические диски CoCr
   {

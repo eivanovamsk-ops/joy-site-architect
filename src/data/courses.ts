@@ -13,6 +13,17 @@ export interface CourseDay {
   speaker?: string;
 }
 
+// Section tags for filtering courses
+export type SectionTag = "для врачей" | "для техников" | "ортопедия" | "ортодонтия" | "CAD/CAM";
+
+export const sectionTags: { id: SectionTag; label: string; color: string }[] = [
+  { id: "для врачей", label: "Для врачей", color: "bg-blue-500/10 text-blue-600 border-blue-500/30" },
+  { id: "для техников", label: "Для техников", color: "bg-purple-500/10 text-purple-600 border-purple-500/30" },
+  { id: "ортопедия", label: "Ортопедия", color: "bg-green-500/10 text-green-600 border-green-500/30" },
+  { id: "ортодонтия", label: "Ортодонтия", color: "bg-orange-500/10 text-orange-600 border-orange-500/30" },
+  { id: "CAD/CAM", label: "CAD/CAM", color: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30" },
+];
+
 export interface Course {
   id: number;
   slug: string;
@@ -40,6 +51,7 @@ export interface Course {
   metaDescription: string;
   category: string;
   tags?: string[];
+  sectionTags?: SectionTag[];
   externalUrl?: string;
   isAccredited?: boolean;
   placesLeft?: number;
@@ -119,6 +131,7 @@ export const courses: Course[] = [
     metaDescription: "Однодневный курс: моделирование окклюзионных сплинтов в exocad, работа с виртуальным артикулятором. Москва, Артикон. 15 000₽.",
     category: "3D-моделирование",
     tags: ["сплинты", "гнатология", "exocad", "артикулятор"],
+    sectionTags: ["для техников", "ортопедия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/digital-modeling-of-splints-and-working-in-a-virtual-articulator"
   },
   {
@@ -190,6 +203,7 @@ export const courses: Course[] = [
     metaDescription: "Однодневный курс: моделирование Марко Роса, Дерихсвайлера в EXOCAD. Практика на клинических случаях. Москва, Артикон.",
     category: "Ортодонтия",
     tags: ["ортодонтия", "exocad", "расширяющие аппараты"],
+    sectionTags: ["для техников", "ортодонтия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/cifr-model-rasshiryayushih-nesyomnyh-appar"
   },
   {
@@ -265,6 +279,7 @@ export const courses: Course[] = [
     metaDescription: "Однодневный курс: планирование мини-имплантатов в RealGuide, моделирование MARPE и Distalslider в EXOCAD. Москва, Артикон. 35 000₽.",
     category: "Ортодонтия",
     tags: ["мини-имплантаты", "MARPE", "планирование", "хирургический шаблон"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/digital-planning-of-orthodontic-mini-implants"
   },
   {
@@ -352,6 +367,7 @@ export const courses: Course[] = [
     metaDescription: "Курс для ортодонтов, хирургов и техников: планирование аппаратов на скелетной опоре, протоколы командной работы. Москва, Артикон. 25 000₽.",
     category: "Ортодонтия",
     tags: ["SARPE", "MARPE", "командная работа", "планирование"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия"],
     externalUrl: "https://www.articon-consulting.ru/planning-of-skeletal-supported-orthodontic-appliances"
   },
   {
@@ -428,6 +444,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс: интраоральное сканирование от коронок до тотальных реставраций. Москва, Артикон. 20 000₽.",
     category: "Ортопедия",
     tags: ["ортопедия", "сканирование", "цифровой workflow"],
+    sectionTags: ["для врачей", "ортопедия"],
     externalUrl: "https://www.articon-consulting.ru/digital-orthopedic-protocol"
   },
   {
@@ -506,6 +523,7 @@ export const courses: Course[] = [
     metaDescription: "Базовый курс по окрашиванию полноанатомических конструкций из диоксида циркония на примере материалов Upcera. Москва, Артикон. 25 000₽.",
     category: "Эстетика",
     tags: ["эстетика", "окрашивание", "циркон", "глазурь", "Upcera"],
+    sectionTags: ["для техников", "ортопедия"],
     externalUrl: "https://www.articon-consulting.ru/color-and-shape"
   },
   {
@@ -588,6 +606,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс по CAM-программам MillBox и SUM: полный цикл фрезерования от проекта до готовой конструкции. Москва, Артикон. 30 000₽.",
     category: "CAD/CAM",
     tags: ["MillBox", "SUM3D", "фрезерование", "CAM", "imes-icore"],
+    sectionTags: ["для техников", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/millbox-sum"
   },
   {
@@ -675,6 +694,7 @@ export const courses: Course[] = [
     metaDescription: "Open Day в Артикон: сравнение 3D-принтеров, демонстрация печати, разбор кейсов. Москва, 28 февраля. 5 000₽.",
     category: "3D-моделирование",
     tags: ["3D-печать", "Open Day", "выбор оборудования", "HeyGears"],
+    sectionTags: ["для техников", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/3dprint-dental-open-day"
   },
   {
@@ -753,6 +773,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс: планирование и производство элайнеров в Maestro 3D V6. Москва, 3 марта. 35 000₽.",
     category: "Ортодонтия",
     tags: ["элайнеры", "Maestro 3D", "ортодонтия", "3D моделирование"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/maestro3d-v6"
   },
   {
@@ -898,6 +919,7 @@ export const courses: Course[] = [
     metaDescription: "5-дневный курс по производству ортодонтических аппаратов: MARPE, Дерихсвайлер, Марко Роса. Практика на производстве Артикон. 100 000₽.",
     category: "Ортодонтия",
     tags: ["ортодонтия", "цифровое моделирование", "MARPE", "exocad"],
+    sectionTags: ["для техников", "ортодонтия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/ortho-skills",
     isAccredited: false,
     placesLeft: 10
@@ -1004,6 +1026,7 @@ export const courses: Course[] = [
     metaDescription: "Курс по навигационной хирургии для ортопедов. 24 марта 2026, Москва. 20 000₽.",
     category: "Ортопедия",
     tags: ["навигационная хирургия", "имплантация", "ортопедия", "цифровое планирование"],
+    sectionTags: ["для врачей", "ортопедия"],
     externalUrl: "https://www.articon-consulting.ru/navigational-surgery-for-orthopedists"
   },
   {
@@ -1096,6 +1119,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс: цифровой протокол непрямой фиксации брекетов, Maestro 3D, трансферные каппы. Москва, Артикон. 30 000₽.",
     category: "Ортодонтия",
     tags: ["брекеты", "непрямая фиксация", "трансферные каппы", "Maestro 3D", "3D-печать"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/indirect-fixation-of-braces-dec"
   },
   {
@@ -1208,6 +1232,7 @@ export const courses: Course[] = [
     metaDescription: "3-дневный практический курс: моделирование, фрезерование и окрашивание протяженных конструкций из циркония. Москва, Артикон. 90 000₽.",
     category: "CAD/CAM",
     tags: ["CAD/CAM", "цирконий", "exocad", "MIYO", "фрезерование"],
+    sectionTags: ["для техников", "ортопедия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/cad-cam-pro"
   },
   {
@@ -1297,6 +1322,7 @@ export const courses: Course[] = [
     metaDescription: "Онлайн-курс для владельцев лабораторий: бизнес-процессы, управление, финансы, маркетинг. Артикон. 35 000₽.",
     category: "Менеджмент",
     tags: ["менеджмент", "бизнес", "онлайн-курс", "лаборатория"],
+    sectionTags: ["для техников"],
     externalUrl: "https://www.articon-consulting.ru/dental-laboratory-management"
   },
   {
@@ -1368,6 +1394,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс по работе со сканером Runyes 3DS V5. Москва, Артикон. 15 000₽. Запись по запросу.",
     category: "Диагностика",
     tags: ["сканирование", "Runyes", "интраоральный сканер"],
+    sectionTags: ["для врачей"],
     externalUrl: "https://www.articon-consulting.ru/event-details/intraoral-scanning"
   },
   {
@@ -1441,6 +1468,7 @@ export const courses: Course[] = [
     metaDescription: "Воркшоп для зубных техников: мастер-классы по окрашиванию и нанесению от сертифицированных тренеров. 10 апреля 2026, Москва. 7 000₽.",
     category: "Эстетика",
     tags: ["воркшоп", "окрашивание", "нанесение", "UPCERA", "Uniformation"],
+    sectionTags: ["для техников"],
     externalUrl: "https://www.articon-consulting.ru/workshop-2026"
   },
   {
@@ -1547,6 +1575,7 @@ export const courses: Course[] = [
     metaDescription: "Ортодонтическая конференция: стратегия, планирование и цифровые технологии. Казань 15 апреля, Самара 17 апреля 2026. От 10 000₽.",
     category: "Ортодонтия",
     tags: ["конференция", "ортодонтия", "элайнеры", "цифровое планирование", "интраоральное сканирование"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия"],
     externalUrl: "https://www.articon-consulting.ru/ortho-conference-2026"
   },
   {
@@ -1629,6 +1658,7 @@ export const courses: Course[] = [
     metaDescription: "Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. 23 апреля 2026, Москва. Теория + практика за 1 день.",
     category: "Ортопедия",
     tags: ["фотография", "фотопротокол", "документирование", "Lightroom", "Photoshop"],
+    sectionTags: ["для врачей", "ортопедия"],
     externalUrl: "https://www.articon-consulting.ru/dental-photo-protocol"
   },
   {
@@ -1703,6 +1733,7 @@ export const courses: Course[] = [
     metaDescription: "Бизнес-встреча для владельцев и руководителей зуботехнических лабораторий. 14 мая 2026, Москва. Стратегии роста, финансы, маркетинг.",
     category: "Менеджмент",
     tags: ["бизнес", "менеджмент", "руководители", "лаборатории", "нетворкинг"],
+    sectionTags: ["для техников"],
     externalUrl: "https://www.articon-consulting.ru/business-meetup"
   },
   {
@@ -1839,6 +1870,7 @@ export const courses: Course[] = [
     metaDescription: "6-дневный курс CAD/CAM: сканирование, моделирование в exocad, фрезерование imes-icore, 3D-печать. Практика на производстве. Сертификат НМО. 70 000₽.",
     category: "CAD/CAM",
     tags: ["CAD/CAM", "exocad", "фрезерование", "3D-печать", "циркон"],
+    sectionTags: ["для техников", "ортопедия", "CAD/CAM"],
     externalUrl: "https://www.articon-consulting.ru/cad-cam-school",
     isAccredited: true,
     placesLeft: 5
@@ -1933,6 +1965,7 @@ export const courses: Course[] = [
     metaDescription: "Ежегодная встреча ортодонтического сообщества. 3 июня 2026, Москва, MEGAPOLIS HALL. Доклады, digital-кейсы, нетворкинг.",
     category: "Ортодонтия",
     tags: ["конференция", "ортодонтия", "цифровая стоматология", "нетворкинг", "хирургия"],
+    sectionTags: ["для врачей", "для техников", "ортодонтия"],
     externalUrl: "https://www.articon-consulting.ru/conference-digital-orthodontics-2026"
   }
 ];

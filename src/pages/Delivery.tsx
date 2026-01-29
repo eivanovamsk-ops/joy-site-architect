@@ -300,8 +300,7 @@ const Delivery = () => {
           
           <div className="mt-6 pt-6 border-t border-border">
             <ul className="space-y-2 text-muted-foreground">
-              <li><strong className="text-foreground">Директор:</strong> Артемов Виктор Юрьевич</li>
-              <li><strong className="text-foreground">Телефон:</strong> <a href="tel:+74951205878" className="text-primary hover:underline">+7 (495) 120-58-78</a></li>
+              <li><strong className="text-foreground">Телефон:</strong> <a href="tel:+79645000040" className="text-primary hover:underline">+7 (964) 500-00-40</a></li>
               <li><strong className="text-foreground">E-mail:</strong> <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a></li>
             </ul>
           </div>

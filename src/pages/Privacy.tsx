@@ -47,7 +47,7 @@ const Privacy = () => {
               <li><strong className="text-foreground">ИНН:</strong> 7725752561</li>
               <li><strong className="text-foreground">ОГРН:</strong> 1127746237607</li>
               <li><strong className="text-foreground">E-mail:</strong> moscow@articon.pro</li>
-              <li><strong className="text-foreground">Телефон:</strong> +7 (495) 120-58-78</li>
+              <li><strong className="text-foreground">Телефон:</strong> +7 (964) 500-00-40</li>
             </ul>
           </section>
 
@@ -171,7 +171,7 @@ const Privacy = () => {
             <ul className="list-none space-y-2">
               <li><strong className="text-foreground">ООО «Артикон Трейд»</strong></li>
               <li>115230, г. Москва, Варшавское шоссе, дом 33, строение 12</li>
-              <li>Телефон: <a href="tel:+74951205878" className="text-primary hover:underline">+7 (495) 120-58-78</a></li>
+              <li>Телефон: <a href="tel:+79645000040" className="text-primary hover:underline">+7 (964) 500-00-40</a></li>
               <li>E-mail: <a href="mailto:moscow@articon.pro" className="text-primary hover:underline">moscow@articon.pro</a></li>
             </ul>
           </section>

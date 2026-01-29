@@ -31,6 +31,7 @@ import gk3Ultra1 from "@/assets/products/gk3-ultra-1.jpg";
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
 import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
+import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
 
 export interface Product {
   id: string;
@@ -1695,6 +1696,35 @@ TOPCORE Composite A3 — это высококачественная фотоп�
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a3/",
+  },
+  {
+    id: "topcore-composite-bleach",
+    name: "Фотополимер TOPCORE Composite Bleach",
+    description: `Профессиональный фотополимер для 3D-печати временных реставраций оттенка Bleach.
+
+TOPCORE Composite Bleach — это высококачественная фотополимерная смола для изготовления временных коронок, мостов и других ортопедических конструкций. Светлый оттенок Bleach идеально подходит для случаев, когда требуется максимально белоснежная эстетика временных реставраций.
+
+Особенности:
+• Высокая точность печати и детализация
+• Светлый оттенок Bleach для максимально белоснежных реставраций
+• Отличная биосовместимость
+• Оптимальная прочность для временного ношения
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 11300,
+    image: topcoreCompositeBleach,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Composite Bleach",
+    specifications: {
+      "Объём": "250 г",
+      "Цвет": "Bleach",
+      "Длина волны": "385-405 нм",
+      "Применение": "Временные коронки и мосты",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-bleach/",
   },
   // Металлические диски CoCr
   {

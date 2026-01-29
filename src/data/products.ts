@@ -35,6 +35,7 @@ import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.p
 import topcoreModel from "@/assets/products/topcore-model.png";
 import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
 import topcorePink from "@/assets/products/topcore-pink.png";
+import topcorePinkBase from "@/assets/products/topcore-pink-base.png";
 
 export interface Product {
   id: string;
@@ -1817,6 +1818,35 @@ TOPCORE Pink — это высококачественная фотополим�
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink/",
+  },
+  {
+    id: "topcore-pink-base",
+    name: "Фотополимер TOPCORE Pink Base",
+    description: `Профессиональный фотополимер для 3D-печати базисов съёмных протезов.
+
+TOPCORE Pink Base — это специализированная фотополимерная смола насыщенного розового цвета для изготовления базисов съёмных протезов. Обладает повышенной прочностью и износостойкостью для долговременной эксплуатации.
+
+Особенности:
+• Насыщенный розовый цвет для базисов протезов
+• Повышенная прочность и износостойкость
+• Отличная биосовместимость
+• Высокая точность печати
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 8800,
+    image: topcorePinkBase,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Pink Base",
+    specifications: {
+      "Объём": "250 г",
+      "Цвет": "Насыщенный розовый",
+      "Длина волны": "385-405 нм",
+      "Применение": "Базисы съёмных протезов",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink-base/",
   },
   // Металлические диски CoCr
   {

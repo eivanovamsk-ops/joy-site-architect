@@ -22,7 +22,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { courses, courseCategories, courseFormats, getUniqueLecturers } from "@/data/courses";
+import { courses, courseCategories, courseFormats, getUniqueLecturers, sectionTags, SectionTag } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
 const CourseCalendar = () => {
@@ -31,8 +31,17 @@ const CourseCalendar = () => {
   const [selectedLecturer, setSelectedLecturer] = useState("Все лекторы");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedSectionTags, setSelectedSectionTags] = useState<SectionTag[]>([]);
 
   const uniqueLecturers = useMemo(() => getUniqueLecturers(), []);
+
+  const toggleSectionTag = (tag: SectionTag) => {
+    setSelectedSectionTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag) 
+        : [...prev, tag]
+    );
+  };
 
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
@@ -52,8 +61,11 @@ const CourseCalendar = () => {
       const matchesLecturer =
         selectedLecturer === "Все лекторы" ||
         course.lecturers.some(l => l.name === selectedLecturer);
+      const matchesSectionTags =
+        selectedSectionTags.length === 0 ||
+        selectedSectionTags.every(tag => course.sectionTags?.includes(tag));
 
-      return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer;
+      return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer && matchesSectionTags;
     });
 
     // Sort: courses with "менеджмент", "сканирование по запросу", "интраоральное сканирование" go to the end
@@ -67,7 +79,7 @@ const CourseCalendar = () => {
       if (!isLastA && isLastB) return -1;
       return 0;
     });
-  }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer]);
+  }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer, selectedSectionTags]);
 
   const clearFilters = () => {
     setSelectedCategory("Все категории");
@@ -75,6 +87,7 @@ const CourseCalendar = () => {
     setSelectedLecturer("Все лекторы");
     setSelectedDate(undefined);
     setSearchQuery("");
+    setSelectedSectionTags([]);
   };
 
   const hasActiveFilters =
@@ -82,7 +95,8 @@ const CourseCalendar = () => {
     selectedFormat !== "Все форматы" ||
     selectedLecturer !== "Все лекторы" ||
     selectedDate !== undefined ||
-    searchQuery !== "";
+    searchQuery !== "" ||
+    selectedSectionTags.length > 0;
 
   const courseDates = courses.map((c) => c.dateStart);
 
@@ -258,6 +272,30 @@ const CourseCalendar = () => {
                 </Popover>
               </div>
             </div>
+
+            {/* Section Tags */}
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 mb-3">
+                <Tag className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium">По разделам</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {sectionTags.map((tag) => (
+                  <button
+                    key={tag.id}
+                    onClick={() => toggleSectionTag(tag.id)}
+                    className={cn(
+                      "px-3 py-1.5 rounded-full text-sm font-medium border transition-all",
+                      selectedSectionTags.includes(tag.id)
+                        ? tag.color + " border-current"
+                        : "bg-muted/50 text-muted-foreground border-transparent hover:bg-muted"
+                    )}
+                  >
+                    #{tag.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Results Count */}
@@ -361,6 +399,32 @@ const CourseCalendar = () => {
                         </div>
                       )}
                     </div>
+
+                    {/* Section Tags */}
+                    {course.sectionTags && course.sectionTags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {course.sectionTags.slice(0, 3).map((tagId) => {
+                          const tag = sectionTags.find(t => t.id === tagId);
+                          if (!tag) return null;
+                          return (
+                            <span
+                              key={tagId}
+                              className={cn(
+                                "px-2 py-0.5 rounded-full text-xs font-medium border",
+                                tag.color
+                              )}
+                            >
+                              #{tag.label}
+                            </span>
+                          );
+                        })}
+                        {course.sectionTags.length > 3 && (
+                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-muted text-muted-foreground">
+                            +{course.sectionTags.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    )}
 
                     {/* Lecturers avatars */}
                     {course.lecturers.length > 1 && (

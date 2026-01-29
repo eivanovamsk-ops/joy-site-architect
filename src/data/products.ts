@@ -33,6 +33,7 @@ import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
 import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
 import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
 import topcoreModel from "@/assets/products/topcore-model.png";
+import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
 
 export interface Product {
   id: string;
@@ -1755,6 +1756,37 @@ TOPCORE Model — это высококачественная фотополим
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-model/",
+  },
+  {
+    id: "topcore-model-pro",
+    name: "Фотополимер TOPCORE Model Pro",
+    description: `Профессиональный фотополимер премиум-класса для 3D-печати стоматологических моделей.
+
+TOPCORE Model Pro — это улучшенная версия смолы TOPCORE Model с повышенной точностью и качеством поверхности. Идеально подходит для печати высокоточных рабочих моделей, требующих максимальной детализации.
+
+Особенности:
+• Премиальное качество поверхности
+• Повышенная точность и стабильность размеров
+• Отличная детализация мельчайших элементов
+• Быстрое время полимеризации
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 6500,
+    oldPrice: 11300,
+    isSale: true,
+    image: topcoreModelPro,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE Model Pro",
+    specifications: {
+      "Объём": "1000 г",
+      "Цвет": "Персиковый",
+      "Длина волны": "385-405 нм",
+      "Применение": "Стоматологические модели",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-model-pro/",
   },
   // Металлические диски CoCr
   {

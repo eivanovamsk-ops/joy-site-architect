@@ -36,6 +36,7 @@ import topcoreModel from "@/assets/products/topcore-model.png";
 import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
 import topcorePink from "@/assets/products/topcore-pink.png";
 import topcorePinkBase from "@/assets/products/topcore-pink-base.png";
+import topcoreSg from "@/assets/products/topcore-sg.png";
 
 export interface Product {
   id: string;
@@ -1847,6 +1848,35 @@ TOPCORE Pink Base — это специализированная фотопол
       "Совместимость": "LCD/DLP 3D-принтеры",
     },
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink-base/",
+  },
+  {
+    id: "topcore-sg",
+    name: "Фотополимер TOPCORE SG",
+    description: `Биосовместимый фотополимер для 3D-печати хирургических шаблонов.
+
+TOPCORE SG (Surgical Guide) — это специализированная фотополимерная смола для изготовления хирургических шаблонов для имплантации. Материал обладает сертифицированной биосовместимостью и высокой прозрачностью для визуального контроля.
+
+Особенности:
+• Сертифицированная биосовместимость класса I
+• Высокая прозрачность для визуального контроля
+• Повышенная жёсткость для точного позиционирования
+• Высокая точность печати
+• Совместимость с большинством LCD/DLP 3D-принтеров`,
+    price: 21000,
+    image: topcoreSg,
+    category: "3d-print",
+    subcategory: "photopolymers",
+    brand: "TOPCORE",
+    inStock: true,
+    sku: "TOPCORE SG",
+    specifications: {
+      "Объём": "1000 г",
+      "Цвет": "Прозрачный зелёный",
+      "Длина волны": "385-405 нм",
+      "Применение": "Хирургические шаблоны",
+      "Совместимость": "LCD/DLP 3D-принтеры",
+    },
+    externalUrl: "https://articon.pro/product/fotopolimer-topcore-sg/",
   },
   // Металлические диски CoCr
   {

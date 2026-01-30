@@ -134,7 +134,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
       shippingPhone,
       email,
       telegram,
-      city,
+      city: deliveryMethod === "russia_delivery" ? city : "Москва",
       deliveryMethod,
       shippingAddress: deliveryMethod !== "pickup" ? shippingAddress : undefined,
       paymentType,
@@ -179,7 +179,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         notes: notes || null,
         status: "pending",
         telegram: telegram || null,
-        city,
+        city: deliveryMethod === "russia_delivery" ? city : "Москва",
         delivery_method: deliveryMethod,
         payment_type: paymentType,
         company_details: paymentType === "company" ? companyDetails : null,
@@ -377,18 +377,20 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
 
         {deliveryMethod !== "pickup" && (
           <>
-            <div className="space-y-2">
-              <Label>Город *</Label>
-              <Input
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="Москва"
-                className={errors.city ? "border-destructive" : ""}
-              />
-              {errors.city && (
-                <p className="text-sm text-destructive">{errors.city}</p>
-              )}
-            </div>
+            {deliveryMethod === "russia_delivery" && (
+              <div className="space-y-2">
+                <Label>Город *</Label>
+                <Input
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="Введите город"
+                  className={errors.city ? "border-destructive" : ""}
+                />
+                {errors.city && (
+                  <p className="text-sm text-destructive">{errors.city}</p>
+                )}
+              </div>
+            )}
 
             <div className="space-y-2">
               <Label>Адрес доставки *</Label>

@@ -3,7 +3,8 @@ import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
-
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 const IntraoralScanners = () => {
   // Фильтруем товары из общего каталога
   const intraoralScanners = products.filter(
@@ -23,15 +24,26 @@ const IntraoralScanners = () => {
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
-          <div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Интраоральные 3D-сканеры
-            </h1>
-            <p className="text-muted-foreground max-w-3xl">
-              Интраоральные сканеры для клинического применения — точная цифровая диагностика 
-              и планирование лечения. Лабораторные сканеры для высокоточного сканирования 
-              моделей и оттисков.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                Интраоральные 3D-сканеры
+              </h1>
+              <p className="text-muted-foreground max-w-3xl">
+                Интраоральные сканеры для клинического применения — точная цифровая диагностика 
+                и планирование лечения. Лабораторные сканеры для высокоточного сканирования 
+                моделей и оттисков.
+              </p>
+            </div>
+            <Button
+              asChild
+              className="shrink-0 bg-accent text-accent-foreground hover:bg-accent/90"
+            >
+              <a href="https://t.me/proscanertut" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Нужна консультация специалиста
+              </a>
+            </Button>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const IntraoralScanners = () => {
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Интраоральные 3D-сканеры

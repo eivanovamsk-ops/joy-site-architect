@@ -18,9 +18,9 @@ const baseSchema = z.object({
   email: z.string().email("Введите корректный email"),
   telegram: z.string().max(100).optional(),
   city: z.string().min(2, "Введите город").max(100),
-  deliveryMethod: z.enum(["delivery", "pickup"]),
+  deliveryMethod: z.enum(["moscow_delivery", "russia_delivery", "pickup"]),
   shippingAddress: z.string().max(500).optional(),
-  paymentType: z.enum(["private_cash", "private_card", "company"]),
+  paymentType: z.enum(["private_cash", "company"]),
   companyDetails: z.string().max(2000).optional(),
   notes: z.string().max(500).optional(),
 });
@@ -53,9 +53,9 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
   const [email, setEmail] = useState("");
   const [telegram, setTelegram] = useState("");
   const [city, setCity] = useState("");
-  const [deliveryMethod, setDeliveryMethod] = useState<"delivery" | "pickup">("delivery");
+  const [deliveryMethod, setDeliveryMethod] = useState<"moscow_delivery" | "russia_delivery" | "pickup">("moscow_delivery");
   const [shippingAddress, setShippingAddress] = useState("");
-  const [paymentType, setPaymentType] = useState<"private_cash" | "private_card" | "company">("private_cash");
+  const [paymentType, setPaymentType] = useState<"private_cash" | "company">("private_cash");
   const [companyDetails, setCompanyDetails] = useState("");
   const [companyFile, setCompanyFile] = useState<File | null>(null);
   const [notes, setNotes] = useState("");
@@ -136,14 +136,14 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
       telegram,
       city,
       deliveryMethod,
-      shippingAddress: deliveryMethod === "delivery" ? shippingAddress : undefined,
+      shippingAddress: deliveryMethod !== "pickup" ? shippingAddress : undefined,
       paymentType,
       companyDetails: paymentType === "company" ? companyDetails : undefined,
       notes,
     };
 
     // Additional validation for delivery
-    if (deliveryMethod === "delivery" && (!shippingAddress || shippingAddress.length < 10)) {
+    if (deliveryMethod !== "pickup" && (!shippingAddress || shippingAddress.length < 10)) {
       setErrors({ shippingAddress: "Введите полный адрес доставки" });
       return;
     }
@@ -175,7 +175,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         total_amount: totalPrice,
         shipping_name: shippingName,
         shipping_phone: shippingPhone,
-        shipping_address: deliveryMethod === "delivery" ? shippingAddress : `Самовывоз: ${city}`,
+        shipping_address: deliveryMethod === "pickup" ? "Самовывоз: Москва, Варшавское ш., 33с12" : shippingAddress,
         notes: notes || null,
         status: "pending",
         telegram: telegram || null,
@@ -347,14 +347,22 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         
         <RadioGroup 
           value={deliveryMethod} 
-          onValueChange={(val) => setDeliveryMethod(val as "delivery" | "pickup")}
-          className="grid md:grid-cols-2 gap-4"
+          onValueChange={(val) => setDeliveryMethod(val as "moscow_delivery" | "russia_delivery" | "pickup")}
+          className="space-y-3"
         >
-          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${deliveryMethod === "delivery" ? "border-primary bg-primary/5" : "border-border"}`}>
-            <RadioGroupItem value="delivery" id="delivery" />
-            <Label htmlFor="delivery" className="flex-1 cursor-pointer">
-              <span className="font-medium">Доставка</span>
+          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${deliveryMethod === "moscow_delivery" ? "border-primary bg-primary/5" : "border-border"}`}>
+            <RadioGroupItem value="moscow_delivery" id="moscow_delivery" />
+            <Label htmlFor="moscow_delivery" className="flex-1 cursor-pointer">
+              <span className="font-medium">Доставка по Москве</span>
               <p className="text-sm text-muted-foreground">Курьером до двери</p>
+            </Label>
+          </div>
+          
+          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${deliveryMethod === "russia_delivery" ? "border-primary bg-primary/5" : "border-border"}`}>
+            <RadioGroupItem value="russia_delivery" id="russia_delivery" />
+            <Label htmlFor="russia_delivery" className="flex-1 cursor-pointer">
+              <span className="font-medium">Доставка по РФ</span>
+              <p className="text-sm text-muted-foreground">Транспортной компанией</p>
             </Label>
           </div>
           
@@ -362,37 +370,39 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
             <RadioGroupItem value="pickup" id="pickup" />
             <Label htmlFor="pickup" className="flex-1 cursor-pointer">
               <span className="font-medium">Самовывоз</span>
-              <p className="text-sm text-muted-foreground">Из нашего офиса</p>
+              <p className="text-sm text-muted-foreground">Москва, Варшавское ш., 33с12</p>
             </Label>
           </div>
         </RadioGroup>
 
-        <div className="space-y-2">
-          <Label>Город *</Label>
-          <Input
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="Москва"
-            className={errors.city ? "border-destructive" : ""}
-          />
-          {errors.city && (
-            <p className="text-sm text-destructive">{errors.city}</p>
-          )}
-        </div>
+        {deliveryMethod !== "pickup" && (
+          <>
+            <div className="space-y-2">
+              <Label>Город *</Label>
+              <Input
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Москва"
+                className={errors.city ? "border-destructive" : ""}
+              />
+              {errors.city && (
+                <p className="text-sm text-destructive">{errors.city}</p>
+              )}
+            </div>
 
-        {deliveryMethod === "delivery" && (
-          <div className="space-y-2">
-            <Label>Адрес доставки *</Label>
-            <Textarea
-              value={shippingAddress}
-              onChange={(e) => setShippingAddress(e.target.value)}
-              placeholder="Улица, дом, квартира, подъезд, этаж"
-              className={errors.shippingAddress ? "border-destructive" : ""}
-            />
-            {errors.shippingAddress && (
-              <p className="text-sm text-destructive">{errors.shippingAddress}</p>
-            )}
-          </div>
+            <div className="space-y-2">
+              <Label>Адрес доставки *</Label>
+              <Textarea
+                value={shippingAddress}
+                onChange={(e) => setShippingAddress(e.target.value)}
+                placeholder="Улица, дом, квартира, подъезд, этаж"
+                className={errors.shippingAddress ? "border-destructive" : ""}
+              />
+              {errors.shippingAddress && (
+                <p className="text-sm text-destructive">{errors.shippingAddress}</p>
+              )}
+            </div>
+          </>
         )}
       </div>
 
@@ -405,37 +415,26 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         
         <RadioGroup 
           value={paymentType} 
-          onValueChange={(val) => setPaymentType(val as "private_cash" | "private_card" | "company")}
+          onValueChange={(val) => setPaymentType(val as "private_cash" | "company")}
           className="space-y-3"
         >
-          <div className="space-y-3">
-            <p className="text-sm font-medium text-muted-foreground">Частное лицо</p>
-            <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "private_cash" ? "border-primary bg-primary/5" : "border-border"}`}>
-              <RadioGroupItem value="private_cash" id="private_cash" />
-              <Label htmlFor="private_cash" className="flex-1 cursor-pointer">
-                Наличными курьеру
-              </Label>
-            </div>
-            
-            <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "private_card" ? "border-primary bg-primary/5" : "border-border"}`}>
-              <RadioGroupItem value="private_card" id="private_card" />
-              <Label htmlFor="private_card" className="flex-1 cursor-pointer">
-                Безналичный расчёт (перевод на карту)
-              </Label>
-            </div>
+          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "private_cash" ? "border-primary bg-primary/5" : "border-border"}`}>
+            <RadioGroupItem value="private_cash" id="private_cash" />
+            <Label htmlFor="private_cash" className="flex-1 cursor-pointer">
+              <span className="font-medium">Частное лицо</span>
+              <p className="text-sm text-muted-foreground">Наличными курьеру</p>
+            </Label>
           </div>
 
-          <div className="space-y-3 pt-2">
-            <p className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "company" ? "border-primary bg-primary/5" : "border-border"}`}>
+            <RadioGroupItem value="company" id="company" />
+            <Label htmlFor="company" className="flex-1 cursor-pointer flex items-center gap-2">
               <Building2 className="h-4 w-4" />
-              Юридическое лицо
-            </p>
-            <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "company" ? "border-primary bg-primary/5" : "border-border"}`}>
-              <RadioGroupItem value="company" id="company" />
-              <Label htmlFor="company" className="flex-1 cursor-pointer">
-                Оплата от компании (по счёту)
-              </Label>
-            </div>
+              <div>
+                <span className="font-medium">Юридическое лицо</span>
+                <p className="text-sm text-muted-foreground">Оплата от компании (по счёту)</p>
+              </div>
+            </Label>
           </div>
         </RadioGroup>
 

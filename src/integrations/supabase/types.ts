@@ -131,37 +131,61 @@ export type Database = {
       }
       orders: {
         Row: {
+          city: string | null
+          company_details: string | null
+          company_file_url: string | null
           created_at: string
+          delivery_method: string | null
+          guest_email: string | null
           id: string
+          is_guest_order: boolean | null
           notes: string | null
+          payment_type: string | null
           shipping_address: string | null
           shipping_name: string | null
           shipping_phone: string | null
           status: string
+          telegram: string | null
           total_amount: number
           updated_at: string
           user_id: string | null
         }
         Insert: {
+          city?: string | null
+          company_details?: string | null
+          company_file_url?: string | null
           created_at?: string
+          delivery_method?: string | null
+          guest_email?: string | null
           id?: string
+          is_guest_order?: boolean | null
           notes?: string | null
+          payment_type?: string | null
           shipping_address?: string | null
           shipping_name?: string | null
           shipping_phone?: string | null
           status?: string
+          telegram?: string | null
           total_amount?: number
           updated_at?: string
           user_id?: string | null
         }
         Update: {
+          city?: string | null
+          company_details?: string | null
+          company_file_url?: string | null
           created_at?: string
+          delivery_method?: string | null
+          guest_email?: string | null
           id?: string
+          is_guest_order?: boolean | null
           notes?: string | null
+          payment_type?: string | null
           shipping_address?: string | null
           shipping_name?: string | null
           shipping_phone?: string | null
           status?: string
+          telegram?: string | null
           total_amount?: number
           updated_at?: string
           user_id?: string | null

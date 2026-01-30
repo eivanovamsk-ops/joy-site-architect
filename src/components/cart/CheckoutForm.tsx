@@ -20,7 +20,7 @@ const baseSchema = z.object({
   city: z.string().min(2, "Введите город").max(100),
   deliveryMethod: z.enum(["moscow_delivery", "russia_delivery", "pickup"]),
   shippingAddress: z.string().max(500).optional(),
-  paymentType: z.enum(["private_cash", "company"]),
+  paymentType: z.enum(["private_cash", "private_transfer", "company"]),
   companyDetails: z.string().max(2000).optional(),
   notes: z.string().max(500).optional(),
 });
@@ -55,7 +55,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
   const [city, setCity] = useState("");
   const [deliveryMethod, setDeliveryMethod] = useState<"moscow_delivery" | "russia_delivery" | "pickup">("moscow_delivery");
   const [shippingAddress, setShippingAddress] = useState("");
-  const [paymentType, setPaymentType] = useState<"private_cash" | "company">("private_cash");
+  const [paymentType, setPaymentType] = useState<"private_cash" | "private_transfer" | "company">("private_cash");
   const [companyDetails, setCompanyDetails] = useState("");
   const [companyFile, setCompanyFile] = useState<File | null>(null);
   const [notes, setNotes] = useState("");
@@ -415,14 +415,22 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         
         <RadioGroup 
           value={paymentType} 
-          onValueChange={(val) => setPaymentType(val as "private_cash" | "company")}
+          onValueChange={(val) => setPaymentType(val as "private_cash" | "private_transfer" | "company")}
           className="space-y-3"
         >
           <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "private_cash" ? "border-primary bg-primary/5" : "border-border"}`}>
             <RadioGroupItem value="private_cash" id="private_cash" />
             <Label htmlFor="private_cash" className="flex-1 cursor-pointer">
-              <span className="font-medium">Частное лицо</span>
-              <p className="text-sm text-muted-foreground">Наличными курьеру</p>
+              <span className="font-medium">Частное лицо — Наличными</span>
+              <p className="text-sm text-muted-foreground">Оплата наличными курьеру при получении</p>
+            </Label>
+          </div>
+
+          <div className={`flex items-center space-x-3 border rounded-lg p-4 cursor-pointer transition-colors ${paymentType === "private_transfer" ? "border-primary bg-primary/5" : "border-border"}`}>
+            <RadioGroupItem value="private_transfer" id="private_transfer" />
+            <Label htmlFor="private_transfer" className="flex-1 cursor-pointer">
+              <span className="font-medium">Частное лицо — Безналичный расчёт</span>
+              <p className="text-sm text-muted-foreground">Перевод на расчётный счёт</p>
             </Label>
           </div>
 

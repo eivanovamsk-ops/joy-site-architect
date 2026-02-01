@@ -4,20 +4,6 @@ import { Button } from "@/components/ui/button";
 
 const directions = [
   {
-    id: "laboratory",
-    icon: FlaskConical,
-    title: "Зуботехническая лаборатория",
-    description:
-      "Одна из крупнейших в стране. Высокоточные работы, передовые цифровые протоколы и гарантия качества.",
-    link: "/laboratory",
-    buttonText: "Перейти в лабораторию",
-    gradient: "gradient-lab",
-    stats: [
-      { value: "50K+", label: "работ в год" },
-      { value: "170+", label: "специалистов" },
-    ],
-  },
-  {
     id: "shop",
     icon: ShoppingBag,
     title: "Оборудование и материалы",
@@ -45,6 +31,20 @@ const directions = [
       { value: "30+", label: "курсов" },
     ],
   },
+  {
+    id: "laboratory",
+    icon: FlaskConical,
+    title: "Цифровая лаборатория",
+    description:
+      "Одна из крупнейших в стране. Высокоточные работы, передовые цифровые протоколы и гарантия качества.",
+    link: "/laboratory",
+    buttonText: "Перейти в лабораторию",
+    gradient: "gradient-lab",
+    stats: [
+      { value: "50K+", label: "работ в год" },
+      { value: "170+", label: "специалистов" },
+    ],
+  },
 ];
 
 export function DirectionsSection() {
@@ -54,7 +54,7 @@ export function DirectionsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Три столпа{" "}
+            Направления{" "}
             <span className="text-gradient-primary">Артикон</span>
           </h2>
           <p className="text-lg text-muted-foreground">

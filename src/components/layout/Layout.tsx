@@ -12,11 +12,12 @@ export function Layout({ children }: LayoutProps) {
   const isHomePage = location.pathname === "/";
   
   // Different padding based on header height
-  // Home page: top bar (32px) + main header (56-64px) = 88-96px
-  // Other pages: top bar (32px) + main header (56-64px) + submenu (48px) = 136-144px
+  // Mobile: top bar (36px) + main header (80px) = 116px
+  // Desktop home: top bar (36px) + main header (80px) = 116px (but header hides on scroll)
+  // Desktop other: top bar (36px) + main header (80px) + submenu (48px) = 164px
   const paddingClass = isHomePage 
-    ? "pt-[88px] lg:pt-[96px]" 
-    : "pt-[88px] lg:pt-[144px]";
+    ? "pt-[116px] lg:pt-[116px]" 
+    : "pt-[116px] lg:pt-[164px]";
 
   return (
     <div className="min-h-screen flex flex-col">

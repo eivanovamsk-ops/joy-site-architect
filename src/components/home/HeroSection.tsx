@@ -31,7 +31,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-background/80 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Полный цикл поддержки: от обучения и оборудования до производства в зуботехнической лаборатории.
+            Полный цикл поддержки: от обучения и оборудования до производства в зуботехнической лаборатории и применения в клинике.
           </p>
 
           {/* CTA Buttons */}

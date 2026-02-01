@@ -10,18 +10,8 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <iframe
-          src="https://rutube.ru/play/embed/abc59a98aaef177d07cc69f0c4166a06?autoplay=1&mute=1&loop=1&controls=0"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-foreground/60" />
-      </div>
+      {/* Black Background */}
+      <div className="absolute inset-0 w-full h-full bg-foreground" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

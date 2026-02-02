@@ -92,29 +92,16 @@ const shopMenuItems = [{
     href: "/shop/catalog/burs"
   }]
 }, {
-  label: "Циркониевые диски",
+  label: "Диски CAD/CAM",
   href: "/shop/catalog/zirconia-discs",
   subcategories: [{
-    label: "Каркасный",
-    href: "/shop/catalog/zirconia-discs?type=frame"
+    label: "Циркониевые диски",
+    href: "/shop/catalog/zirconia-discs"
   }, {
-    label: "Белый",
-    href: "/shop/catalog/zirconia-discs?type=white"
+    label: "Диски металл (CoCr/Ti)",
+    href: "/shop/catalog/metal-discs"
   }, {
-    label: "Мультилеер",
-    href: "/shop/catalog/zirconia-discs?type=multilayer"
-  }, {
-    label: "Окрашенный",
-    href: "/shop/catalog/zirconia-discs?type=colored"
-  }]
-}, {
-  label: "Диски Cad/Cam",
-  href: "/shop?category=cadcam-discs",
-  subcategories: [{
-    label: "Титан",
-    href: "/shop?category=titanium-discs"
-  }, {
-    label: "ПММА",
+    label: "Диски пластик (ПММА)",
     href: "/shop?category=pmma-discs"
   }, {
     label: "Пресс-керамика",

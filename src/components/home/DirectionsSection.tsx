@@ -69,7 +69,7 @@ export function DirectionsSection() {
             return (
               <div
                 key={direction.id}
-                className="group relative bg-card rounded-2xl border border-border overflow-hidden hover-lift"
+                className="group relative bg-card rounded-2xl border border-border overflow-hidden hover-lift flex flex-col"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient Header */}
@@ -84,35 +84,38 @@ export function DirectionsSection() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {direction.description}
                   </p>
 
-                  {/* Stats */}
-                  <div className="flex gap-6 mb-6">
-                    {direction.stats.map((stat, i) => (
-                      <div key={i}>
-                        <div className="text-2xl font-bold text-primary">
-                          {stat.value}
+                  {/* Stats and Button pushed to bottom */}
+                  <div className="mt-auto">
+                    {/* Stats */}
+                    <div className="flex gap-6 mb-6">
+                      {direction.stats.map((stat, i) => (
+                        <div key={i}>
+                          <div className="text-2xl font-bold text-primary">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {stat.label}
+                          </div>
                         </div>
-                        <div className="text-xs text-muted-foreground">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
 
-                  {/* CTA */}
-                  <Button
-                    asChild
-                    className="w-full gradient-primary text-primary-foreground"
-                  >
-                    <Link to={direction.link}>
-                      {direction.buttonText}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                    {/* CTA */}
+                    <Button
+                      asChild
+                      className="w-full gradient-primary text-primary-foreground"
+                    >
+                      <Link to={direction.link}>
+                        {direction.buttonText}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             );

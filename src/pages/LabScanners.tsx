@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
+import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 
@@ -9,7 +10,6 @@ const LabScanners = () => {
   const laboratoryScanners = products.filter(
     (p) => p.category === "3d-scanners" && p.subcategory === "laboratory"
   );
-
 
   return (
     <Layout>
@@ -37,8 +37,11 @@ const LabScanners = () => {
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar */}
-          <div className="lg:w-64 flex-shrink-0">
+          {/* Mobile Drawer */}
+          <MobileCatalogDrawer />
+
+          {/* Desktop Sidebar */}
+          <div className="hidden lg:block lg:w-64 flex-shrink-0">
             <CatalogSidebar />
           </div>
 
@@ -57,7 +60,6 @@ const LabScanners = () => {
                 </div>
               </section>
             )}
-
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export function ShopHeroBanner() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent-foreground mb-6">
-              CAD/CAM оборудование и материалы
+              CAD/CAM оборудование и материалы для клиник и лабораторий
             </h1>
             <p className="text-xl text-accent-foreground/80 mb-8">
               3D-принтеры, сканеры, фрезерные станки, циркониевые диски и расходные материалы от ведущих мировых производителей. Доставка по России, гарантия, техподдержка.

@@ -9,7 +9,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-end pb-16 lg:pb-24 overflow-hidden">
       {/* Black Background */}
       <div className="absolute inset-0 w-full h-full bg-foreground" />
 

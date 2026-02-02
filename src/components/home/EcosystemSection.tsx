@@ -98,50 +98,66 @@ export function EcosystemSection() {
 
         {/* Ecosystem Cycle - Desktop */}
         <div className="hidden lg:block mb-16">
-          <div className="relative bg-card rounded-3xl border border-border p-8">
-            {/* Center label */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">360°</div>
-                  <div className="text-xs text-muted-foreground">поддержка</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Steps in a circle layout */}
-            <div className="grid grid-cols-4 gap-6">
-              {ecosystemSteps.map((step, index) => {
-              const Icon = step.icon;
-              return <div key={step.number} className="relative group">
-                    <div className="bg-background rounded-2xl p-6 border border-border/50 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-                      {/* Step Number Badge */}
+          <div className="bg-card rounded-3xl border border-border p-8">
+            {/* Steps grid with center circle */}
+            <div className="grid grid-cols-9 gap-4 items-center">
+              {/* First two steps */}
+              {ecosystemSteps.slice(0, 2).map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.number} className="col-span-2 relative group">
+                    <div className="bg-background rounded-2xl p-5 border border-border/50 hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-full">
                       <div className={`absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center text-white font-bold text-sm shadow-md`}>
                         {step.number}
                       </div>
-                      
-                      {/* Icon */}
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-4 shadow-md`}>
-                        <Icon className="h-7 w-7 text-white" />
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-3 shadow-md`}>
+                        <Icon className="h-6 w-6 text-white" />
                       </div>
-                      
-                      {/* Content */}
-                      <h3 className="text-xl font-bold text-foreground mb-1">{step.title}</h3>
-                      <p className="text-sm font-medium text-primary mb-2">{step.direction}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                      <h3 className="text-lg font-bold text-foreground mb-1">{step.title}</h3>
+                      <p className="text-sm font-medium text-primary mb-1">{step.direction}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{step.description}</p>
                     </div>
+                    {/* Arrow to center */}
+                    <div className="absolute top-1/2 -right-3 z-20 -translate-y-1/2">
+                      <ArrowRight className="h-4 w-4 text-primary" />
+                    </div>
+                  </div>
+                );
+              })}
 
-                    {/* Connecting Arrow */}
-                    {index < ecosystemSteps.length - 1 && <div className="absolute top-1/2 -right-5 z-20">
-                        <ArrowRight className="h-5 w-5 text-primary" />
-                      </div>}
-                  </div>;
-            })}
-            </div>
+              {/* Center circle */}
+              <div className="col-span-1 flex justify-center">
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 shadow-lg">
+                  <div className="text-center">
+                    <div className="text-xl font-bold text-primary">360°</div>
+                    <div className="text-xs text-muted-foreground">поддержка</div>
+                  </div>
+                </div>
+              </div>
 
-            {/* Cycle indicator */}
-            <div className="flex justify-center mt-6">
-              
+              {/* Last two steps */}
+              {ecosystemSteps.slice(2, 4).map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.number} className="col-span-2 relative group">
+                    {/* Arrow from center */}
+                    <div className="absolute top-1/2 -left-3 z-20 -translate-y-1/2">
+                      <ArrowRight className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="bg-background rounded-2xl p-5 border border-border/50 hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-full">
+                      <div className={`absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center text-white font-bold text-sm shadow-md`}>
+                        {step.number}
+                      </div>
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-3 shadow-md`}>
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground mb-1">{step.title}</h3>
+                      <p className="text-sm font-medium text-primary mb-1">{step.direction}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

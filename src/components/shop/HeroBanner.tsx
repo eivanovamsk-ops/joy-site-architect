@@ -21,10 +21,10 @@ export function ShopHeroBanner() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10">
-                <Link to="/contacts">
+              <Button asChild size="lg" className="bg-background text-foreground hover:bg-background/90">
+                <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
                   Получить консультацию
-                </Link>
+                </a>
               </Button>
             </div>
             {/* Trust badges */}

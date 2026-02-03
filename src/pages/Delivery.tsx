@@ -70,7 +70,7 @@ const Delivery = () => {
             </div>
           </div>
 
-          {/* Telegram Bot CTA */}
+          {/* Manager CTA */}
           <div className="max-w-md mx-auto mt-8 text-center">
             <Button
               asChild
@@ -78,12 +78,12 @@ const Delivery = () => {
               className="gradient-primary text-primary-foreground"
             >
               <a
-                href="https://t.me/articondental_bot"
+                href="https://t.me/articon_zakaz"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Написать в Telegram-бот
+                Связаться с менеджером
               </a>
             </Button>
           </div>

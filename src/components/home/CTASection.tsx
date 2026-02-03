@@ -36,8 +36,7 @@ export function CTASection() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-2 border-background/30 text-background hover:bg-background/10 px-8 py-6 text-lg"
+              className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-lg"
             >
               <a
                 href="https://t.me/articondental_bot"

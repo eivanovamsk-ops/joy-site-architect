@@ -258,6 +258,17 @@ export function Header() {
               <img src={articonLogo} alt="Articon - Dental Digital Solutions" className="h-12 w-auto" />
             </Link>
 
+            {/* Mobile Telegram Bot Button - centered */}
+            <a 
+              href="https://t.me/articondental_bot" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-xs font-medium"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Чат-бот
+            </a>
+
             {/* Search Bar - narrower like articon.com (~260px width) */}
             <div className="hidden lg:flex items-center">
               <div className="relative" style={{ width: '260px' }}>

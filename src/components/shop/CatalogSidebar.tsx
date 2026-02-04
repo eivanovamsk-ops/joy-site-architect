@@ -58,7 +58,6 @@ const catalogCategories: Category[] = [
           { id: "framework", name: "Каркасный", href: "/shop/catalog/zirconia-discs?type=framework" },
           { id: "white", name: "Белый", href: "/shop/catalog/zirconia-discs?type=white" },
           { id: "multilayer", name: "Мультилеер", href: "/shop/catalog/zirconia-discs?type=multilayer" },
-          { id: "colored", name: "Окрашенный", href: "/shop/catalog/zirconia-discs?type=colored" },
         ],
       },
       { id: "metal", name: "Диски металл (CoCr/Ti)", href: "/shop/catalog/metal-discs" },

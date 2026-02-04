@@ -89,6 +89,10 @@ export const categories: Category[] = [
       { id: "pmma-discs", name: "Диски ПММА", href: "/shop/catalog/pmma-discs" },
     ],
   },
+  {
+    id: "paints-glazes",
+    name: "Краски и глазурь",
+  },
 ];
 
 export const products: Product[] = [
@@ -1566,5 +1570,93 @@ Uniformation GK3 Ultra использует передовую технолог�
     sku: "DUO ML A1 D98-25 F",
     description: "UPCERA DUO воплощает в себе сочетание прочности, эстетики, эффективности и универсальности.",
     externalUrl: "https://articon.pro/product/upcera-duo-cirkonievyj-disk-98x25-a1/",
+  },
+
+  // ==============================================
+  // КРАСКИ И ГЛАЗУРЬ
+  // ==============================================
+  {
+    id: "upcera-realism-single",
+    name: "Краски для керамики и циркона Upcera Realism (поштучно)",
+    category: "paints-glazes",
+    price: 3680,
+    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Набор паст для окрашивания и глазури "Realism" имеет широкую цветовую гамму и идеально подходит для любой керамики.
+
+Оптимален для:
+• Циркония
+• Дисиликата лития
+
+Программа обжига для мостов или коронок менее трех единиц:
+• Начальная температура: 500°C
+• Время предварительного нагрева: 4:00 мин
+• Скорость нагрева: 45°C/мин
+• Температура обжига: 760–830°C`,
+    specifications: {
+      "Начальная температура": "500°C",
+      "Температура обжига": "760–830°C",
+      "Скорость нагрева": "45°C/мин",
+    },
+    externalUrl: "https://articonshop.ru/product/upcera-realism/",
+  },
+  {
+    id: "upcera-realism-glaze-liquid",
+    name: "Разбавитель Upcera Realism Glaze Liquid для керамики и циркония",
+    category: "paints-glazes",
+    price: 3680,
+    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-liquid.jpg",
+    brand: "Upcera",
+    inStock: true,
+    sku: "PL-Liquid I",
+    description: "Разбавитель для красок и глазури Upcera Realism.",
+    externalUrl: "https://articonshop.ru/product/glazur_dlya_keramiki_i_tsirkoniya/",
+  },
+  {
+    id: "upcera-realism-7-colors",
+    name: "Набор красок Upcera Realism (7 цветов)",
+    category: "paints-glazes",
+    price: 26105,
+    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism-set.jpg",
+    brand: "Upcera",
+    inStock: true,
+    sku: "22700",
+    description: "Набор из 7 красок Upcera Realism для окрашивания керамики и циркония.",
+    externalUrl: "https://articonshop.ru/product/glazur_upcera_realism-dlya-keramiki-i-tsirkoniya/",
+  },
+  {
+    id: "upcera-realism-glaze",
+    name: "Глазурь Upcera Realism для керамики и циркония",
+    category: "paints-glazes",
+    price: 3853,
+    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-glaze.jpg",
+    brand: "Upcera",
+    inStock: true,
+    sku: "PA-Glaze",
+    description: "Глазурь Upcera Realism для финишного покрытия керамических и циркониевых реставраций.",
+    externalUrl: "https://articonshop.ru/product/glazur_upcera_realism/",
+  },
+  {
+    id: "upcera-realism-20-colors",
+    name: "Набор красок Upcera Realism (20 цветов)",
+    category: "paints-glazes",
+    price: 74980,
+    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism-20.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Набор из 20 красок Upcera Realism для окрашивания и глазури керамики и циркония.
+
+Оптимален для:
+• Циркония
+• Дисиликата лития
+
+Обеспечивает лучшее эстетическое восприятие всех цветов.`,
+    specifications: {
+      "Количество цветов": "20",
+      "Начальная температура": "500°C",
+      "Температура обжига": "760–830°C",
+    },
+    externalUrl: "https://articonshop.ru/product/nabor-krasok-upcera-realism-20/",
   },
 ];

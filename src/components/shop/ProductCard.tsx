@@ -4,14 +4,40 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Eye } from "lucide-react";
 import { Product } from "@/data/products";
+import { useCart } from "@/hooks/useCart";
+import { toast } from "sonner";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const { addItem } = useCart();
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
+  };
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!product.price) {
+      // Redirect to Telegram for products without price
+      window.open("https://t.me/articondental_bot", "_blank");
+      return;
+    }
+
+    addItem({
+      slug: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    
+    toast.success("Товар добавлен в корзину", {
+      description: product.name,
+    });
   };
 
   return (
@@ -67,7 +93,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             <Button
               size="sm"
               className="h-9 px-3 bg-primary hover:bg-primary/90"
-              onClick={(e) => e.preventDefault()}
+              onClick={handleAddToCart}
             >
               <ShoppingCart className="h-4 w-4 mr-1" />
               {product.price ? "В корзину" : "Запросить"}

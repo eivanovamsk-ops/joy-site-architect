@@ -4,10 +4,14 @@ import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
+import { useSearchParams } from "react-router-dom";
 
 const ZirconiaDiscs = () => {
-  // Фильтруем циркониевые диски из общего каталога (category: cad-cam-discs + zirconia subcategories)
-  const zirconiaDiscs = products.filter(
+  const [searchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
+
+  // Фильтруем циркониевые диски из общего каталога
+  const allZirconiaDiscs = products.filter(
     (p) => p.category === "cad-cam-discs" && 
            (p.subcategory === "zirconia-framework" || 
             p.subcategory === "zirconia-white" || 
@@ -15,9 +19,19 @@ const ZirconiaDiscs = () => {
   );
 
   // Группируем по подкатегориям
-  const frameworkDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-framework");
-  const whiteDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-white");
-  const multilayerDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-multilayer");
+  const frameworkDiscs = allZirconiaDiscs.filter((p) => p.subcategory === "zirconia-framework");
+  const whiteDiscs = allZirconiaDiscs.filter((p) => p.subcategory === "zirconia-white");
+  const multilayerDiscs = allZirconiaDiscs.filter((p) => p.subcategory === "zirconia-multilayer");
+
+  // Определяем какие секции показывать
+  const showFramework = !typeFilter || typeFilter === "framework";
+  const showWhite = !typeFilter || typeFilter === "white";
+  const showMultilayer = !typeFilter || typeFilter === "multilayer";
+
+  const visibleDiscsCount = 
+    (showFramework ? frameworkDiscs.length : 0) + 
+    (showWhite ? whiteDiscs.length : 0) + 
+    (showMultilayer ? multilayerDiscs.length : 0);
 
   return (
     <Layout>
@@ -54,10 +68,10 @@ const ZirconiaDiscs = () => {
           {/* Content */}
           <div className="flex-1">
             {/* Каркасный (ST Color) Section */}
-            {frameworkDiscs.length > 0 && (
+            {showFramework && frameworkDiscs.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Каркасный</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Каркасный (ST Color)</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -69,10 +83,10 @@ const ZirconiaDiscs = () => {
             )}
 
             {/* White Section */}
-            {whiteDiscs.length > 0 && (
+            {showWhite && whiteDiscs.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Белый</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Белый (HT White)</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -84,7 +98,7 @@ const ZirconiaDiscs = () => {
             )}
 
             {/* Multilayer Section */}
-            {multilayerDiscs.length > 0 && (
+            {showMultilayer && multilayerDiscs.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
                   <h2 className="text-2xl font-bold text-foreground">Мультилеер</h2>
@@ -98,7 +112,7 @@ const ZirconiaDiscs = () => {
               </section>
             )}
 
-            {zirconiaDiscs.length === 0 && (
+            {visibleDiscsCount === 0 && (
               <div className="text-center py-12 text-muted-foreground">
                 Товары в данной категории временно недоступны
               </div>

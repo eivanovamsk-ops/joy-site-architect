@@ -34,6 +34,15 @@ import topcorePink from "@/assets/products/topcore-pink.png";
 import topcorePinkBase from "@/assets/products/topcore-pink-base.png";
 import topcoreSg from "@/assets/products/topcore-sg.png";
 
+// Upcera Realism paints & glaze images
+import upceraRealismSingle from "@/assets/products/upcera-realism-single.jpg";
+import upceraRealismColors from "@/assets/products/upcera-realism-colors.jpg";
+import upceraRealismGlaze from "@/assets/products/upcera-realism-glaze.jpg";
+import upceraRealismLiquid from "@/assets/products/upcera-realism-liquid.png";
+import upceraRealism7 from "@/assets/products/upcera-realism-7-colors.jpg";
+import upceraRealism20 from "@/assets/products/upcera-realism-20-colors.jpg";
+import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -1580,7 +1589,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Краски для керамики и циркона Upcera Realism (поштучно)",
     category: "paints-glazes",
     price: 3680,
-    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism.jpg",
+    image: upceraRealismSingle,
+    gallery: [upceraRealismColors],
     brand: "Upcera",
     inStock: true,
     description: `Набор паст для окрашивания и глазури "Realism" имеет широкую цветовую гамму и идеально подходит для любой керамики.
@@ -1606,7 +1616,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Разбавитель Upcera Realism Glaze Liquid для керамики и циркония",
     category: "paints-glazes",
     price: 3680,
-    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-liquid.jpg",
+    image: upceraRealismLiquid,
     brand: "Upcera",
     inStock: true,
     sku: "PL-Liquid I",
@@ -1618,7 +1628,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Набор красок Upcera Realism (7 цветов)",
     category: "paints-glazes",
     price: 26105,
-    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism-set.jpg",
+    image: upceraRealism7,
     brand: "Upcera",
     inStock: true,
     sku: "22700",
@@ -1630,7 +1640,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Глазурь Upcera Realism для керамики и циркония",
     category: "paints-glazes",
     price: 3853,
-    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-glaze.jpg",
+    image: upceraRealismGlaze,
     brand: "Upcera",
     inStock: true,
     sku: "PA-Glaze",
@@ -1642,7 +1652,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     name: "Набор красок Upcera Realism (20 цветов)",
     category: "paints-glazes",
     price: 74980,
-    image: "https://articonshop.ru/wp-content/uploads/2024/01/upcera-realism-20.jpg",
+    image: upceraRealism20,
+    gallery: [upceraRealism20_2],
     brand: "Upcera",
     inStock: true,
     description: `Набор из 20 красок Upcera Realism для окрашивания и глазури керамики и циркония.

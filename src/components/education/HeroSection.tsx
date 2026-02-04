@@ -27,13 +27,18 @@ export function EducationHeroSection() {
               <Calendar className="mr-2 h-5 w-5" />
               Календарь курсов
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-education-foreground/30 text-education-foreground hover:bg-education-foreground/10"
+            <a 
+              href="https://t.me/articon_education" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              Подписаться на рассылку
-            </Button>
+              <Button
+                size="lg"
+                className="bg-background text-foreground hover:bg-background/90 px-8"
+              >
+                Связаться с куратором
+              </Button>
+            </a>
           </div>
         </div>
       </div>

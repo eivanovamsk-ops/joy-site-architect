@@ -6,18 +6,18 @@ import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 
 const ZirconiaDiscs = () => {
-  // Фильтруем циркониевые диски из общего каталога
+  // Фильтруем циркониевые диски из общего каталога (category: cad-cam-discs + zirconia subcategories)
   const zirconiaDiscs = products.filter(
-    (p) => p.category === "zircon-discs"
+    (p) => p.category === "cad-cam-discs" && 
+           (p.subcategory === "zirconia-framework" || 
+            p.subcategory === "zirconia-white" || 
+            p.subcategory === "zirconia-multilayer")
   );
 
   // Группируем по подкатегориям
-  const multilayerDiscs = zirconiaDiscs.filter((p) => p.subcategory === "multilayer");
-  const whiteDiscs = zirconiaDiscs.filter((p) => p.subcategory === "white");
-  const coloredDiscs = zirconiaDiscs.filter((p) => p.subcategory === "colored");
-  const otherDiscs = zirconiaDiscs.filter(
-    (p) => !["multilayer", "white", "colored"].includes(p.subcategory || "")
-  );
+  const frameworkDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-framework");
+  const whiteDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-white");
+  const multilayerDiscs = zirconiaDiscs.filter((p) => p.subcategory === "zirconia-multilayer");
 
   return (
     <Layout>
@@ -25,7 +25,7 @@ const ZirconiaDiscs = () => {
         <title>Циркониевые диски для CAD/CAM | Артикон</title>
         <meta
           name="description"
-          content="Циркониевые диски для CAD/CAM фрезерования: UPCERA, Dental Direkt. Мультислойные, белые и окрашенные диски для зуботехнических лабораторий. Доставка по России."
+          content="Циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White. Каркасные, белые и мультислойные диски для зуботехнических лабораторий. Доставка по России."
         />
       </Helmet>
 
@@ -36,7 +36,7 @@ const ZirconiaDiscs = () => {
           </h1>
           <p className="text-muted-foreground max-w-3xl">
             Профессиональные циркониевые диски для CAD/CAM фрезерования. 
-            Мультислойные, белые и окрашенные диски от ведущих производителей.
+            Каркасные, белые и мультислойные диски от ведущих производителей.
           </p>
         </div>
       </div>
@@ -53,15 +53,15 @@ const ZirconiaDiscs = () => {
 
           {/* Content */}
           <div className="flex-1">
-            {/* Multilayer Section */}
-            {multilayerDiscs.length > 0 && (
+            {/* Каркасный (ST Color) Section */}
+            {frameworkDiscs.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Мультилеер</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Каркасный</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {multilayerDiscs.map((product) => (
+                  {frameworkDiscs.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
@@ -83,30 +83,15 @@ const ZirconiaDiscs = () => {
               </section>
             )}
 
-            {/* Colored Section */}
-            {coloredDiscs.length > 0 && (
+            {/* Multilayer Section */}
+            {multilayerDiscs.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Окрашенный</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Мультилеер</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {coloredDiscs.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Other discs */}
-            {otherDiscs.length > 0 && (
-              <section>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Другие диски</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {otherDiscs.map((product) => (
+                  {multilayerDiscs.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>

@@ -45,7 +45,7 @@ import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg"
 
 // Upcera zirconia disc images
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
-import upceraHtWhite from "@/assets/products/upcera-ht-white.png";
+import upceraHtWhite from "@/assets/products/upcera-ht-white.jpg";
 
 export interface Product {
   id: string;

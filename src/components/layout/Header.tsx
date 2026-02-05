@@ -79,9 +79,6 @@ const shopMenuItems = [{
     label: "Пылесосы",
     href: "/shop?category=vacuums"
   }, {
-    label: "Вытяжки",
-    href: "/shop?category=extraction"
-  }, {
     label: "Фрезы",
     href: "/shop/catalog/burs"
   }]

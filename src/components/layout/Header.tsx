@@ -65,9 +65,6 @@ const shopMenuItems = [{
   }, {
     label: "Лабораторные",
     href: "/shop/catalog/lab-scanners"
-  }, {
-    label: "Аксессуары",
-    href: "/shop?category=scanner-accessories"
   }]
 }, {
   label: "Фрезерные станки",

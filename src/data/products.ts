@@ -51,6 +51,10 @@ import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg
 import upceraStMl from "@/assets/products/upcera-st-ml.jpg";
 import upceraDuo from "@/assets/products/upcera-duo.png";
 
+// HeyGears A2D HD images
+import heygearsA2dHd from "@/assets/products/heygears-a2d-hd.png";
+import heygearsA2dHd2 from "@/assets/products/heygears-a2d-hd-2.png";
+
 export interface Product {
   id: string;
   name: string;
@@ -122,10 +126,11 @@ export const products: Product[] = [
     category: "3d-print",
     subcategory: "3d-printers",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2025/02/Frame-811544-1.jpg",
     brand: "HeyGears",
     inStock: true,
     isNew: true,
+    image: heygearsA2dHd,
+    gallery: [heygearsA2dHd, heygearsA2dHd2],
     description: `UltraCraft A2D HD от HeyGears — это идеальное решение для стоматологических лабораторий, стремящихся к высокой точности, автоматизации и эффективности в производстве.
 
 Технические характеристики:

@@ -95,7 +95,6 @@ export const categories: Category[] = [
     subcategories: [
       { id: "3d-printers", name: "3Д-принтеры", href: "/shop/catalog/printers" },
       { id: "photopolymers", name: "Фотополимеры", href: "/shop/catalog/photopolymers" },
-      { id: "consumables", name: "Комплектующие", href: "/shop/catalog/consumables" },
     ],
   },
   {

@@ -59,6 +59,10 @@ import heygearsA2dHd2 from "@/assets/products/heygears-a2d-hd-2.png";
 import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
 import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
 
+// Ultrasonic W230 images
+import ultrasonicW230_1 from "@/assets/products/ultrasonic-w230-1.png";
+import ultrasonicW230_2 from "@/assets/products/ultrasonic-w230-2.png";
+
 export interface Product {
   id: string;
   name: string;
@@ -224,7 +228,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "3d-printers",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/11/ultrasonic-w230.jpg",
+    image: ultrasonicW230_1,
+    gallery: [ultrasonicW230_1, ultrasonicW230_2],
     brand: "UniFormation",
     inStock: true,
     description: `Ультразвуковая ванна для промывки моделей, напечатанных на 3D-принтере.

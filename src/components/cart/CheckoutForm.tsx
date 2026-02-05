@@ -170,8 +170,13 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
     setIsLoading(true);
 
     try {
+      // Generate order id on the client so guest checkout can work without relying on RETURNING/SELECT
+      // (anon users are not allowed to read orders, but they can create guest orders)
+      const orderId = crypto.randomUUID();
+
       // Create order
       const orderData: any = {
+        id: orderId,
         total_amount: totalPrice,
         shipping_name: shippingName,
         shipping_phone: shippingPhone,
@@ -193,13 +198,13 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         orderData.user_id = user!.id;
       }
 
-      const { data: order, error: orderError } = await supabase
+      const { error: orderError } = await supabase
         .from("orders")
-        .insert(orderData)
-        .select()
-        .single();
+        .insert(orderData);
 
       if (orderError) throw orderError;
+
+      const order = { id: orderId };
 
       // Upload company file if exists
       if (companyFile) {

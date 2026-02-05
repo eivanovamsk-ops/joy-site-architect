@@ -232,15 +232,20 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         await supabase.functions.invoke("send-email-unisender", {
           body: {
             type: "order_confirmation",
-            to: email,
             orderData: {
               orderId: order.id,
               customerName: shippingName,
+              customerPhone: shippingPhone,
+              customerEmail: email,
+              telegram: telegram || undefined,
               items: items.map(i => ({ name: i.name, quantity: i.quantity, price: i.price })),
               total: totalPrice,
               deliveryMethod,
-              city,
-              address: shippingAddress,
+              city: deliveryMethod === "russia_delivery" ? city : "Москва",
+              address: deliveryMethod !== "pickup" ? shippingAddress : undefined,
+              paymentType,
+              companyDetails: paymentType === "company" ? companyDetails : undefined,
+              notes: notes || undefined,
             },
           },
         });

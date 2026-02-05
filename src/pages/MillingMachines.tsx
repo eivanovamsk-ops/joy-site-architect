@@ -11,9 +11,19 @@ const MillingMachines = () => {
     (p) => p.category === "milling" && p.subcategory === "machines"
   );
 
-  // Аксессуары и комплектующие (компрессоры, пылесосы)
-  const accessories = products.filter(
-    (p) => p.category === "milling" && (p.subcategory === "accessories" || p.subcategory === "compressors" || p.subcategory === "vacuums")
+  // Печи
+  const furnaces = products.filter(
+    (p) => p.category === "milling" && p.subcategory === "furnaces"
+  );
+
+  // Компрессоры
+  const compressors = products.filter(
+    (p) => p.category === "milling" && p.subcategory === "compressors"
+  );
+
+  // Пылесосы
+  const vacuums = products.filter(
+    (p) => p.category === "milling" && p.subcategory === "vacuums"
   );
 
   return (
@@ -22,18 +32,19 @@ const MillingMachines = () => {
         <title>Фрезерные станки CAD/CAM | Артикон</title>
         <meta 
           name="description" 
-          content="Фрезерные станки CAD/CAM для зуботехнических лабораторий: CORiTEC, UPCERA. Профессиональное оборудование для фрезерования циркония, PMMA, воска. Доставка по России." 
+          content="Фрезерные станки CAD/CAM для зуботехнических лабораторий: UPCERA. Профессиональное оборудование для фрезерования циркония, PMMA, воска. Печи, компрессоры, пылесосы. Доставка по России." 
         />
       </Helmet>
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Фрезерные станки
+            Фрезерные станки и оборудование
           </h1>
           <p className="text-muted-foreground max-w-3xl">
             Профессиональные CAD/CAM фрезерные станки для зуботехнических лабораторий. 
             Высокоточное оборудование для обработки циркония, титана, PMMA и других материалов.
+            Печи для синтеризации, компрессоры и пылесосы.
           </p>
         </div>
       </div>
@@ -53,9 +64,14 @@ const MillingMachines = () => {
             {/* Milling Machines Section */}
             {millingMachines.length > 0 && (
               <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Станки</h2>
-                  <div className="h-px flex-1 bg-border" />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Станки</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {millingMachines.length} товаров
+                  </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {millingMachines.map((product) => (
@@ -65,15 +81,60 @@ const MillingMachines = () => {
               </section>
             )}
 
-            {/* Accessories Section */}
-            {accessories.length > 0 && (
-              <section>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Аксессуары и комплектующие</h2>
-                  <div className="h-px flex-1 bg-border" />
+            {/* Furnaces Section */}
+            {furnaces.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Печи для синтеризации</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {furnaces.length} товаров
+                  </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {accessories.map((product) => (
+                  {furnaces.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Compressors Section */}
+            {compressors.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Компрессоры</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {compressors.length} товаров
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {compressors.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Vacuums Section */}
+            {vacuums.length > 0 && (
+              <section>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Пылесосы</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {vacuums.length} товаров
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {vacuums.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>

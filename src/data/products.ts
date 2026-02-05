@@ -3327,4 +3327,432 @@ Uniformation GK3 Ultra использует передовую технолог�
     },
     externalUrl: "https://articonshop.ru/product/nabor-krasok-upcera-realism-20/",
   },
+
+  // ==============================================
+  // ФРЕЗЕРНЫЕ СТАНКИ - СТАНКИ
+  // ==============================================
+  {
+    id: "upcera-a52",
+    name: "Фрезерный станок Upcera A52",
+    category: "milling",
+    subcategory: "machines",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/CAD-CAM-Upcera-A52.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `5-осевой фрезерный станок для сухого фрезерования. Высокая надежность благодаря высококачественным комплектующим. Большой выбор фрез с хвостовиком 3мм и большой угол вращения заготовок позволяют добиться точной фрезеровки и экономии материала.
+
+Особенности:
+• Автоматический выбор и смена инструмента
+• Простой и элегантный пользовательский интерфейс
+• Большой сенсорный экран
+• Встроенный компьютер обеспечивает независимость станка от внешних устройств
+• Выключение питания и защита от низкого давления воздуха
+• Корпус из высокопрочной литой стали и авиационного алюминиевого сплава
+• Непрерывная обработка 24/7`,
+    specifications: {
+      "Скорость шпинделя": "80,000 об/мин",
+      "Тип охлаждения": "Воздушное",
+      "Скорость обработки": "Циркон, PMMA – 12 мин/ед, Воск – 4 мин/ед",
+      "Количество инструментов": "12 шт",
+      "Точность": "< 0.01 мм",
+      "Материалы": "Диоксид циркония, PMMA, PEEK, Resin, Воск (D98.5, до 30мм)",
+      "Угол вращения": "Ось А: ±360°, Ось B: +35°/-125°",
+      "Электропитание": "AC 220V/50Hz",
+      "Габариты": "55×49×74 см",
+      "Вес": "110 кг",
+    },
+    externalUrl: "https://articon.pro/product/cad-cam-upcera-a52/",
+  },
+  {
+    id: "upcera-b52",
+    name: "Фрезерный станок UPCERA B52",
+    category: "milling",
+    subcategory: "machines",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-B52-Main.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Upcera B52 — высокопроизводительный 5-осевой станок, предназначенный для обработки Ti-балок, Premilled-абатментов и мостовидных конструкций из CoCr с винтовой фиксацией. Благодаря мощному шпинделю и усиленной конструкции, B52 уверенно справляется с самыми твёрдыми материалами.
+
+Ключевые особенности:
+• 12-дюймовый сенсорный экран
+• Централизованная камера
+• Обработка плотных и жёстких материалов
+• Высокая стабильность и точность
+• Непрерывная работа 24/7
+• Защита от сбоев электроснабжения и низкого давления воздуха
+
+Системные требования:
+• CPU: Intel Core i7-8700 или выше
+• RAM: минимум 16 ГБ (рекомендуется 32 ГБ)
+• HDD: 200 ГБ или больше (рекомендуется от 256 ГБ SSD)
+• GPU: NVIDIA с поддержкой OpenGL (видеопамять 8 ГБ)
+• OS: Windows 10 PRO (64-bit)`,
+    specifications: {
+      "Тип станка": "5-осевой",
+      "Дисплей": "12\" сенсорный",
+      "Материалы": "Ti-балки, Premilled-абатменты, CoCr",
+      "Режим работы": "24/7",
+    },
+    externalUrl: "https://articon.pro/product/frezernii-stanok-upcera-b52/",
+  },
+  {
+    id: "upcera-b42",
+    name: "Фрезерный станок UPCERA B42",
+    category: "milling",
+    subcategory: "machines",
+    price: null,
+    image: "https://upcera.com/uploads/images/prd/16/20250105/e99fac.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `UPCERA B42 — компактный 5-осевой фрезерный станок для влажной обработки металлов и стеклокерамики.`,
+    specifications: {
+      "Тип станка": "5-осевой",
+      "Тип обработки": "Влажная",
+    },
+    externalUrl: "https://upcera.com/en/products/identity/29/31/en-b42-35",
+  },
+  {
+    id: "upcera-a52dw",
+    name: "Фрезерный станок UPCERA A52DW",
+    category: "milling",
+    subcategory: "machines",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-A52DW.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Upcera A52DW — 5-осевой фрезерный станок с автоматическим переключением между сухой и влажной обработкой и высоким уровнем точности. Благодаря интегрированному креплению для различных типов заготовок, встроенному компьютеру с 12" сенсорным экраном, мощному шпинделю и системе непрерывной работы, A52DW обеспечивает стабильную и эффективную обработку широкого спектра материалов.
+
+Ключевые особенности:
+• 5-осевая обработка
+• Автоматическое переключение сухой/влажной обработки
+• Встроенный компьютер с 12" сенсорным экраном
+• Интегрированное многофункциональное крепление
+• Мощный шпиндель до 80,000 об/мин
+• Высокая точность <0.01 мм`,
+    specifications: {
+      "Тип станка": "5-осевой",
+      "Количество осей": "5 (XYZ + A + B)",
+      "Угол поворота": "A: ±360°, B: ±95°/-35°",
+      "Мощность": "1 кВт",
+      "Напряжение": "220V 50Hz / 110V 60Hz",
+      "Скорость шпинделя": "80,000 об/мин",
+      "Точность": "<0.01 мм",
+      "Количество инструментов": "12",
+      "Тип обработки": "Сухая / влажная",
+      "Материалы": "Цирконий, стеклокерамика, Ti base, PEEK, PMMA, воск",
+    },
+    externalUrl: "https://articon.pro/product/upcera-a52dw/",
+  },
+
+  // ==============================================
+  // ФРЕЗЕРНЫЕ СТАНКИ - ПЕЧИ
+  // ==============================================
+  {
+    id: "upcera-gt1-pro",
+    name: "Зуботехническая печь для синтеризации циркония UPCERA GT1 Pro",
+    category: "milling",
+    subcategory: "furnaces",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-GT1-Pro.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `UPCERA GT1 Pro – это высокоточная печь для синтеризации циркония, обеспечивающая стабильный и равномерный нагрев.
+
+Благодаря интеллектуальной PID-системе регулирования температуры, устройство поддерживает заданные параметры с максимальной точностью.
+
+Основные преимущества:
+• Функция запоминания при отключении питания: автоматическое восстановление работы
+• Энергоэффективные и экологичные теплоизоляционные материалы
+• Функция предварительной сушки: сокращает время обработки`,
+    specifications: {
+      "Номинальная мощность": "2,5 кВт",
+      "Максимальная температура": "1550°C",
+      "Уровень защиты": "IP21",
+      "Ток при полной нагрузке": "11,5 А",
+      "Встроенные программы": "До 200 (редактируемые)",
+      "Скорость нагрева": "1–50°C/мин",
+      "Напряжение": "230 В / 50 Гц",
+      "Вес": "47 кг",
+      "Габариты": "42×46,5×80 см",
+    },
+    externalUrl: "https://articon.pro/product/gt1-pro-upcera/",
+  },
+  {
+    id: "dekema-austromat-674",
+    name: "Зуботехническая печь для синтеризации ZrO2 Dekema AUSTROMAT 674",
+    category: "milling",
+    subcategory: "furnaces",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Dekema-Austromat-674.jpg",
+    brand: "Dekema",
+    inStock: true,
+    description: `DEKEMA – AUSTROMAT 674 оснащен тремя нагревательными элементами из SiC (карбид кремния), которые обеспечивают обжиг при температуре до 1530°C.
+
+Эти нагревательные элементы отличаются особой прочностью и долговечностью, а также воздействием на объект спекания без его обесцвечивания.
+
+Камера обжига закрывается при помощи безвибрационного подъема лифта. Используется проверенная система автосушки AutoDry для генерации высокотемпературных градиентов. На рабочей платформе помещается около 30 единиц при диаметре до 100 мм.`,
+    specifications: {
+      "Габариты": "780×383×343 мм",
+      "Вес": "24 кг",
+      "Напряжение": "230 V / 50-60 Hz",
+      "Максимальная мощность": "2 кВт",
+      "Максимальная температура": "1530°C",
+      "Сенсорный экран": "7,5\" цветной",
+      "Корпус": "Алюминий анодированный",
+      "USB": "Передача программ, данных, QM файлов",
+    },
+    externalUrl: "https://articon.pro/product/dekema-austromat-674/",
+  },
+
+  // ==============================================
+  // ФРЕЗЕРНЫЕ СТАНКИ - КОМПРЕССОРЫ
+  // ==============================================
+  {
+    id: "remeza-km-50-old20",
+    name: "Компрессор Remeza КМ-50.OLD20 безмасляный",
+    category: "milling",
+    subcategory: "compressors",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Remeza-KM-50-OLD20.jpg",
+    brand: "Remeza",
+    inStock: true,
+    description: `Поршневой безмасляный медицинский компрессор Ремеза КМ-50.OLD20 с прямым приводом предназначен для обеспечения сжатым воздухом стоматологического, медицинского, лабораторного оборудования и инструмента.
+
+Компрессор изготовлен на базе поршневого блока OLD, который позволяет получить качественный воздух на выходе без примесей масла.
+
+Особенности:
+• Поршневой блок OLD с насосами «TwinCylinder», высокий ресурс работы
+• Ресивер с полимерным покрытием внутри (гарантия от коррозии)
+• Два манометра и регулятор давления
+• Компактный размер и низкий уровень шума
+• Регистрационное удостоверение и Декларация о соответствии
+
+Компрессоры собираются из итальянских комплектующих FIAC на белорусском заводе REMEZA.`,
+    specifications: {
+      "Производительность": "160 л/мин при 8 бар",
+      "Объем ресивера": "50 л",
+      "Максимальное давление": "8 бар",
+      "Мощность": "1,4 кВт",
+      "Питание": "220/50 В/Гц",
+      "Уровень шума": "66 дБ",
+      "Количество установок": "2",
+      "Осушитель": "Нет",
+      "Вес": "48 кг",
+      "Габариты": "475×465×845 мм",
+      "Гарантия": "12 мес",
+    },
+    externalUrl: "https://articon.pro/product/remeza-km-50old20/",
+  },
+
+  // ==============================================
+  // ФРЕЗЕРНЫЕ СТАНКИ - ПЫЛЕСОСЫ
+  // ==============================================
+  {
+    id: "upcera-r-407",
+    name: "Пылесос для фрезерных станков сухой обработки Upcera R-407",
+    category: "milling",
+    subcategory: "vacuums",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-R-407.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Компактная и портативная конструкция с сильным всасыванием, достигающим 24 м/с.
+
+Особенности:
+• Работает в условиях ультратишины, уровень шума ниже 65 дБ
+• Бесщеточный двигатель обеспечивает более 20,000 часов работы
+• Длительный срок службы, высокая эффективность
+• Частицы размером 8 мкм могут быть отфильтрованы
+• Легко обслуживать и чистить`,
+    specifications: {
+      "Модель": "R-407",
+      "Напряжение": "220 В",
+      "Электрический ток": "1.6 А",
+      "Мощность": "350 Вт (Max)",
+      "Частота": "50 Гц",
+      "Вес": "29.5 кг",
+      "Габариты": "42×40×60 см",
+      "Подключение": "2 ед.",
+    },
+    externalUrl: "https://articon.pro/product/pylesos-dlya-stankov-sukhoy-obrabotki/",
+  },
+  {
+    id: "upcera-r-412",
+    name: "Пылесос для фрезерных станков сухой обработки Upcera R-412",
+    category: "milling",
+    subcategory: "vacuums",
+    price: null,
+    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-R-412.jpg",
+    brand: "Upcera",
+    inStock: true,
+    description: `Компактная и портативная конструкция с сильным всасыванием, достигающим 24 м/с.
+
+Особенности:
+• Работает в условиях ультратишины, уровень шума ниже 65 дБ
+• Бесщеточный двигатель обеспечивает более 20,000 часов работы
+• Длительный срок службы, высокая эффективность
+• Частицы размером 8 мкм могут быть отфильтрованы
+• Легко обслуживать и чистить`,
+    specifications: {
+      "Модель": "R-412",
+      "Напряжение": "220 В",
+      "Электрический ток": "1.6 А",
+      "Мощность": "350 Вт (Max)",
+      "Частота": "50 Гц",
+      "Вес": "29.5 кг",
+      "Габариты": "42×40×60 см",
+      "Подключение": "2 ед.",
+    },
+    externalUrl: "https://articon.pro/product/pylesos-dlya-stankov-sukhoy-obrabotki/",
+  },
+
+  // ==============================================
+  // ФРЕЗЕРНЫЕ СТАНКИ - ФРЕЗЫ
+  // ==============================================
+  {
+    id: "burs-upcera-a51-a52-pmma",
+    name: "Фрезы для станков UPCERA A51/A52 PMMA",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки PMMA на станках UPCERA A51/A52.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/109.html",
+  },
+  {
+    id: "burs-upcera-a52w-glass-ceramic",
+    name: "Фрезы для станков UPCERA A52W стеклокерамика",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки стеклокерамики на станках UPCERA A52W.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/108.html",
+  },
+  {
+    id: "burs-upcera-a52w-metal",
+    name: "Фрезы для станков UPCERA A52W металл",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки металла на станках UPCERA A52W.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/107.html",
+  },
+  {
+    id: "burs-upcera-a52-zircon",
+    name: "Фрезы для станков UPCERA A52 циркон",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки циркония на станках UPCERA A52.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/52.html",
+  },
+  {
+    id: "burs-upcera-b41-b42-glass-ceramic",
+    name: "Фрезы для станков UPCERA B41/B42 стеклокерамика",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки стеклокерамики на станках UPCERA B41/B42.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/51.html",
+  },
+  {
+    id: "burs-upcera-b51-b52-metal",
+    name: "Фрезы для станков UPCERA B51/B52 металл",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    brand: "Upcera",
+    inStock: true,
+    description: "Фрезы для обработки металла на станках UPCERA B51/B52.",
+    externalUrl: "http://www.vpttool.com/products/Upcera/50.html",
+  },
+  {
+    id: "burs-imes-150i-250i-pmma",
+    name: "Фрезы для станков Imes icore 150i/250i - ПММА",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки PMMA на станках Imes icore 150i/250i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/122.html",
+  },
+  {
+    id: "burs-imes-350i-metal",
+    name: "Фрезы для станков Imes icore 350i - металл",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки металла на станках Imes icore 350i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/72.html",
+  },
+  {
+    id: "burs-imes-350i-zircon",
+    name: "Фрезы для станков Imes icore 350i - циркон",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки циркония на станках Imes icore 350i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/71.html",
+  },
+  {
+    id: "burs-imes-150i-250i-zircon",
+    name: "Фрезы для станков Imes icore 150i/250i - циркон",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки циркония на станках Imes icore 150i/250i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/70.html",
+  },
+  {
+    id: "burs-imes-350i-650i-glass-ceramic",
+    name: "Фрезы для станков Imes icore 350i/650i - стеклокерамика",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки стеклокерамики на станках Imes icore 350i/650i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/69.html",
+  },
+  {
+    id: "burs-imes-150i-250i-glass-ceramic",
+    name: "Фрезы для станков Imes icore 150i/250i - стеклокерамика",
+    category: "milling",
+    subcategory: "cutters",
+    price: null,
+    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    brand: "Imes-icore",
+    inStock: true,
+    description: "Фрезы для обработки стеклокерамики на станках Imes icore 150i/250i.",
+    externalUrl: "http://www.vpttool.com/products/Imes/68.html",
+  },
 ];

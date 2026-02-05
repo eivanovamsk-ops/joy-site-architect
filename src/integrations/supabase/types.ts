@@ -235,6 +235,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      can_add_order_items: { Args: { _order_id: string }; Returns: boolean }
       get_user_role: { Args: { _user_id: string }; Returns: string }
       is_admin: { Args: never; Returns: boolean }
     }

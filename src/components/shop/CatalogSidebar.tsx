@@ -42,6 +42,9 @@ const catalogCategories: Category[] = [
     href: "/shop/catalog/milling-machines",
     subcategories: [
       { id: "machines", name: "Станки", href: "/shop/catalog/milling-machines" },
+      { id: "furnaces", name: "Печи", href: "/shop/catalog/furnaces" },
+      { id: "compressors", name: "Компрессоры", href: "/shop/catalog/compressors" },
+      { id: "vacuums", name: "Пылесосы", href: "/shop/catalog/vacuums" },
       { id: "burs", name: "Фрезы", href: "/shop/catalog/burs" },
     ],
   },

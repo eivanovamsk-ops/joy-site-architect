@@ -55,6 +55,10 @@ import upceraDuo from "@/assets/products/upcera-duo.png";
 import heygearsA2dHd from "@/assets/products/heygears-a2d-hd.png";
 import heygearsA2dHd2 from "@/assets/products/heygears-a2d-hd-2.png";
 
+// Cure 3 Ultra images
+import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
+import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -191,7 +195,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "3d-printers",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/11/cure-3-ultra.jpg",
+    image: cure3Ultra1,
+    gallery: [cure3Ultra1, cure3Ultra2],
     brand: "UniFormation",
     inStock: true,
     description: `Cure 3 Ultra поддерживает модели до 362 × 200 мм, что позволяет обрабатывать крупные детали или одновременно засвечивать несколько моделей.

@@ -55,9 +55,6 @@ const shopMenuItems = [{
   }, {
     label: "Фотополимеры",
     href: "/shop/catalog/photopolymers"
-  }, {
-    label: "Комплектующие",
-    href: "/shop?category=3d-parts"
   }]
 }, {
   label: "3D-сканеры",
@@ -304,7 +301,15 @@ export function Header() {
                   {/* Dropdown submenu - with pseudo-element bridge for hover */}
                   {hasSubmenu && <div className="absolute top-full left-0 z-[9999] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 before:content-[''] before:absolute before:top-[-10px] before:left-0 before:right-0 before:h-[10px]">
                       <div className="bg-background border border-border rounded-md shadow-lg py-2 min-w-[240px]">
-                        {item.subcategories!.map(sub => {})}
+                        {item.subcategories!.map(sub => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
                       </div>
                     </div>}
                 </div>;

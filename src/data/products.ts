@@ -84,6 +84,10 @@ import bursImes350iMetal from "@/assets/products/burs-imes-350i-metal.jpg";
 import bursImes350iZircon from "@/assets/products/burs-imes-350i-zircon.jpg";
 import bursImes350iGlass from "@/assets/products/burs-imes-350i-glass.jpg";
 
+// Lab scanners images
+import meditT310 from "@/assets/products/medit-t310.jpg";
+import hellingSpray from "@/assets/products/helling-spray.png";
+
 // Burs images - Upcera
 import bursUpceraA51A52Pmma from "@/assets/products/burs-upcera-a51-a52-pmma.jpg";
 import bursUpceraA52Zircon from "@/assets/products/burs-upcera-a52-zircon.jpg";
@@ -620,7 +624,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-scanners",
     subcategory: "laboratory",
     price: 2850,
-    image: "https://articon.pro/wp-content/uploads/2023/06/antiglare-spray.jpg",
+    image: hellingSpray,
     brand: "Helling",
     inStock: true,
     sku: "3D - Helling - 400 мл",
@@ -637,7 +641,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     subcategory: "laboratory",
     price: 655000,
     oldPrice: 690000,
-    image: "https://articon.pro/wp-content/uploads/2024/02/medit-t310.jpg",
+    image: meditT310,
     brand: "Medit",
     inStock: true,
     isSale: true,

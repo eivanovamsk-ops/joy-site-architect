@@ -76,6 +76,14 @@ import dekema674_2 from "@/assets/products/dekema-674-2.jpg";
 import remezaKm50 from "@/assets/products/remeza-km50.jpg";
 import upceraVacuum from "@/assets/products/upcera-vacuum.jpg";
 
+// Burs images - Imes-icore
+import bursImes150iPmma from "@/assets/products/burs-imes-150i-pmma.jpg";
+import bursImes150iGlass from "@/assets/products/burs-imes-150i-glass.jpg";
+import bursImes150iZircon from "@/assets/products/burs-imes-150i-zircon.jpg";
+import bursImes350iMetal from "@/assets/products/burs-imes-350i-metal.jpg";
+import bursImes350iZircon from "@/assets/products/burs-imes-350i-zircon.jpg";
+import bursImes350iGlass from "@/assets/products/burs-imes-350i-glass.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -3705,7 +3713,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes150iPmma,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки PMMA на станках Imes icore 150i/250i.",
@@ -3717,7 +3725,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes350iMetal,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки металла на станках Imes icore 350i.",
@@ -3729,7 +3737,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes350iZircon,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки циркония на станках Imes icore 350i.",
@@ -3741,7 +3749,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes150iZircon,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки циркония на станках Imes icore 150i/250i.",
@@ -3753,7 +3761,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes350iGlass,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки стеклокерамики на станках Imes icore 350i/650i.",
@@ -3765,7 +3773,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031055296129.webp",
+    image: bursImes150iGlass,
     brand: "Imes-icore",
     inStock: true,
     description: "Фрезы для обработки стеклокерамики на станках Imes icore 150i/250i.",

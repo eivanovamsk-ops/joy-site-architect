@@ -145,7 +145,7 @@ export const categories: Category[] = [
       { id: "zirconia-framework", name: "Циркон каркасный", href: "/shop/catalog/zirconia-discs?type=framework" },
       { id: "zirconia-white", name: "Циркон белый", href: "/shop/catalog/zirconia-discs?type=white" },
       { id: "zirconia-multilayer", name: "Циркон мультилеер", href: "/shop/catalog/zirconia-discs?type=multilayer" },
-      { id: "lithium-disilicate", name: "Дисиликат лития", href: "/shop/catalog/lithium-disilicate" },
+      { id: "press-ceramic", name: "Пресс-керамика", href: "/shop/catalog/press-ceramic" },
       { id: "metal-discs", name: "Диски металл (Ti)", href: "/shop/catalog/metal-discs" },
       { id: "pmma-discs", name: "Диски ПММА", href: "/shop/catalog/pmma-discs" },
     ],
@@ -1165,13 +1165,13 @@ Uniformation GK3 Ultra использует передовую технолог�
   },
 
   // ==============================================
-  // ДИСКИ CAD/CAM - ДИСИЛИКАТ ЛИТИЯ
+  // ДИСКИ CAD/CAM - ПРЕСС-КЕРАМИКА
   // ==============================================
   {
     id: "upcera-upcad-ht",
     name: "Дисиликат лития UPCERA UP.CAD HT",
     category: "cad-cam-discs",
-    subcategory: "lithium-disilicate",
+    subcategory: "press-ceramic",
     price: 5348,
     image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
     brand: "Upcera",
@@ -1201,7 +1201,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     id: "upcera-upcad-lt",
     name: "Дисиликат лития UP.CAD LT",
     category: "cad-cam-discs",
-    subcategory: "lithium-disilicate",
+    subcategory: "press-ceramic",
     price: 5348,
     image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
     brand: "Upcera",

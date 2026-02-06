@@ -5,25 +5,25 @@ import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 
-const LithiumDisilicate = () => {
-  const lithiumProducts = products.filter(
-    (p) => p.category === "cad-cam-discs" && p.subcategory === "lithium-disilicate"
+const PressCeramic = () => {
+  const pressProducts = products.filter(
+    (p) => p.category === "cad-cam-discs" && p.subcategory === "press-ceramic"
   );
 
   return (
     <Layout>
       <Helmet>
-        <title>Дисиликат лития для CAD/CAM | Артикон</title>
+        <title>Пресс-керамика для CAD/CAM | Артикон</title>
         <meta
           name="description"
-          content="Блоки из дисиликата лития UPCERA UP.CAD для CAD/CAM систем. Высокая эстетика и прочность до 400 МПа. Доставка по России."
+          content="Пресс-керамика UPCERA UP.CAD для CAD/CAM систем. Дисиликат лития, высокая эстетика и прочность до 400 МПа. Доставка по России."
         />
       </Helmet>
 
       <div className="bg-muted/30 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Дисиликат лития
+            Пресс-керамика
           </h1>
           <p className="text-muted-foreground max-w-3xl">
             Блоки из дисиликата лития для CAD/CAM систем. Естественная эстетика, 
@@ -41,7 +41,7 @@ const LithiumDisilicate = () => {
           </div>
 
           <div className="flex-1">
-            {lithiumProducts.length > 0 ? (
+            {pressProducts.length > 0 ? (
               <section>
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
@@ -49,11 +49,11 @@ const LithiumDisilicate = () => {
                     <div className="h-px flex-1 bg-border" />
                   </div>
                   <span className="text-muted-foreground text-sm">
-                    {lithiumProducts.length} товаров
+                    {pressProducts.length} товаров
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {lithiumProducts.map((product) => (
+                  {pressProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
@@ -70,4 +70,4 @@ const LithiumDisilicate = () => {
   );
 };
 
-export default LithiumDisilicate;
+export default PressCeramic;

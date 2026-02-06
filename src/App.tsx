@@ -31,6 +31,7 @@ import Furnaces from "./pages/Furnaces";
 import Compressors from "./pages/Compressors";
 import Vacuums from "./pages/Vacuums";
 import MetalDiscs from "./pages/MetalDiscs";
+import LithiumDisilicate from "./pages/LithiumDisilicate";
 import Delivery from "./pages/Delivery";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
@@ -73,6 +74,7 @@ const App = () => (
               <Route path="/shop/catalog/compressors" element={<Compressors />} />
               <Route path="/shop/catalog/vacuums" element={<Vacuums />} />
               <Route path="/shop/catalog/metal-discs" element={<MetalDiscs />} />
+              <Route path="/shop/catalog/lithium-disilicate" element={<LithiumDisilicate />} />
               <Route path="/shop/contacts" element={<Delivery />} />
               <Route path="/education" element={<Education />} />
               <Route path="/education/contacts" element={<EducationContacts />} />

@@ -1206,7 +1206,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     inStock: true,
     sku: "Заготовка из титана - Honchon Titan - 98×12",
     description: "Заготовка из титана. Биосовместимость. Высокая устойчивость к коррозии.",
-    externalUrl: "https://articon.pro/product/zagotovka-iz-titana-98x12/",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Свойства": "Биосовместимость. Высокая устойчивость к коррозии.",
+      "Диаметр (мм)": "98",
+      "Материал": "Ti",
+      "Высота диска": "12",
+    },
+    externalUrl: "https://articonshop.ru/product/zagotovka-iz-titana-98x12/",
   },
   {
     id: "honchon-titan-98x14",
@@ -1219,7 +1226,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     inStock: true,
     sku: "Заготовка из титана — Honchon Titan — 98×14",
     description: "Заготовка из титана. Биосовместимость. Высокая устойчивость к коррозии.",
-    externalUrl: "https://articon.pro/product/zagotovka-iz-titana-98x14/",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Свойства": "Биосовместимость. Высокая устойчивость к коррозии.",
+      "Диаметр (мм)": "98",
+      "Материал": "Ti",
+      "Высота диска": "14",
+    },
+    externalUrl: "https://articonshop.ru/product/zagotovka-iz-titana-98x14/",
   },
   {
     id: "honchon-titan-98x16",
@@ -1232,7 +1246,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     inStock: true,
     sku: "Заготовка из титана — Honchon Titan — 98×16",
     description: "Заготовка из титана. Биосовместимость. Высокая устойчивость к коррозии.",
-    externalUrl: "https://articon.pro/product/zagotovka-iz-titana-98x16/",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Свойства": "Биосовместимость. Высокая устойчивость к коррозии.",
+      "Диаметр (мм)": "98",
+      "Материал": "Ti",
+      "Высота диска": "16",
+    },
+    externalUrl: "https://articonshop.ru/product/zagotovka-iz-titana-98x16/",
   },
   {
     id: "honchon-titan-98x18",
@@ -1245,7 +1266,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     inStock: true,
     sku: "Заготовка из титана — Honchon Titan — 98×18",
     description: "Заготовка из титана. Биосовместимость. Высокая устойчивость к коррозии.",
-    externalUrl: "https://articon.pro/product/zagotovka-iz-titana-98x18/",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Свойства": "Биосовместимость. Высокая устойчивость к коррозии.",
+      "Диаметр (мм)": "98",
+      "Материал": "Ti",
+      "Высота диска": "18",
+    },
+    externalUrl: "https://articonshop.ru/product/zagotovka-iz-titana-98x18/",
   },
   {
     id: "honchon-titan-98x20",
@@ -1258,7 +1286,14 @@ Uniformation GK3 Ultra использует передовую технолог�
     inStock: true,
     sku: "Заготовка из титана — Honchon Titan — 98×20",
     description: "Заготовка из титана. Биосовместимость. Высокая устойчивость к коррозии.",
-    externalUrl: "https://articon.pro/product/zagotovka-iz-titana-98x20/",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Свойства": "Биосовместимость. Высокая устойчивость к коррозии.",
+      "Диаметр (мм)": "98",
+      "Материал": "Ti",
+      "Высота диска": "20",
+    },
+    externalUrl: "https://articonshop.ru/product/zagotovka-iz-titana-98x20/",
   },
 
   // ==============================================

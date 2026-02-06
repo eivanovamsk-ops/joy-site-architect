@@ -69,6 +69,12 @@ import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
 import upceraB52 from "@/assets/products/upcera-b52.png";
 import upceraB42 from "@/assets/products/upcera-b42.png";
 import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
+import upceraGt1Pro1 from "@/assets/products/upcera-gt1-pro-1.jpg";
+import upceraGt1Pro2 from "@/assets/products/upcera-gt1-pro-2.jpg";
+import dekema674_1 from "@/assets/products/dekema-674-1.jpg";
+import dekema674_2 from "@/assets/products/dekema-674-2.jpg";
+import remezaKm50 from "@/assets/products/remeza-km50.jpg";
+import upceraVacuum from "@/assets/products/upcera-vacuum.jpg";
 
 export interface Product {
   id: string;
@@ -3463,7 +3469,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "furnaces",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-GT1-Pro.jpg",
+    image: upceraGt1Pro1,
+    gallery: [upceraGt1Pro1, upceraGt1Pro2],
     brand: "Upcera",
     inStock: true,
     description: `UPCERA GT1 Pro – это высокоточная печь для синтеризации циркония, обеспечивающая стабильный и равномерный нагрев.
@@ -3493,7 +3500,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "furnaces",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Dekema-Austromat-674.jpg",
+    image: dekema674_1,
+    gallery: [dekema674_1, dekema674_2],
     brand: "Dekema",
     inStock: true,
     description: `DEKEMA – AUSTROMAT 674 оснащен тремя нагревательными элементами из SiC (карбид кремния), которые обеспечивают обжиг при температуре до 1530°C.
@@ -3523,7 +3531,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "compressors",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Remeza-KM-50-OLD20.jpg",
+    image: remezaKm50,
     brand: "Remeza",
     inStock: true,
     description: `Поршневой безмасляный медицинский компрессор Ремеза КМ-50.OLD20 с прямым приводом предназначен для обеспечения сжатым воздухом стоматологического, медицинского, лабораторного оборудования и инструмента.
@@ -3563,7 +3571,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "vacuums",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-R-407.jpg",
+    image: upceraVacuum,
     brand: "Upcera",
     inStock: true,
     description: `Компактная и портативная конструкция с сильным всасыванием, достигающим 24 м/с.
@@ -3592,7 +3600,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "vacuums",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-R-412.jpg",
+    image: upceraVacuum,
     brand: "Upcera",
     inStock: true,
     description: `Компактная и портативная конструкция с сильным всасыванием, достигающим 24 м/с.

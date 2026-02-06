@@ -66,18 +66,12 @@ const catalogCategories: Category[] = [
       { id: "metal", name: "Диски металл (CoCr/Ti)", href: "/shop/catalog/metal-discs" },
       { id: "pmma", name: "Диски пластик (PMMA)", href: "/shop/catalog/pmma-discs" },
       { id: "press-ceramic", name: "Пресс-керамика", href: "/shop/catalog/press-ceramic" },
-      { id: "lithium", name: "Дисиликат лития", href: "/shop/catalog/lithium-disilicate" },
     ],
   },
   {
     id: "paints",
     name: "Краски и глазурь",
     href: "/shop/catalog/paints-glaze",
-  },
-  {
-    id: "furnaces",
-    name: "Печи",
-    href: "/shop/catalog/furnaces",
   },
 ];
 

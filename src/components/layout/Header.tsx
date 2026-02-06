@@ -100,9 +100,6 @@ const shopMenuItems = [{
   }, {
     label: "Пресс-керамика",
     href: "/shop/catalog/press-ceramic"
-  }, {
-    label: "Дисиликат лития",
-    href: "/shop/catalog/lithium-disilicate"
   }]
 }, {
   label: "Краски и глазурь",

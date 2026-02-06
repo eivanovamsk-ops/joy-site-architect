@@ -84,6 +84,14 @@ import bursImes350iMetal from "@/assets/products/burs-imes-350i-metal.jpg";
 import bursImes350iZircon from "@/assets/products/burs-imes-350i-zircon.jpg";
 import bursImes350iGlass from "@/assets/products/burs-imes-350i-glass.jpg";
 
+// Burs images - Upcera
+import bursUpceraA51A52Pmma from "@/assets/products/burs-upcera-a51-a52-pmma.jpg";
+import bursUpceraA52Zircon from "@/assets/products/burs-upcera-a52-zircon.jpg";
+import bursUpceraA52wMetal from "@/assets/products/burs-upcera-a52w-metal.jpg";
+import bursUpceraA52wGlass from "@/assets/products/burs-upcera-a52w-glass.jpg";
+import bursUpceraB41B42Glass from "@/assets/products/burs-upcera-b41-b42-glass.jpg";
+import bursUpceraB51B52Metal from "@/assets/products/burs-upcera-b51-b52-metal.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -3641,7 +3649,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraA51A52Pmma,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки PMMA на станках UPCERA A51/A52.",
@@ -3653,7 +3661,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraA52wGlass,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки стеклокерамики на станках UPCERA A52W.",
@@ -3665,7 +3673,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraA52wMetal,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки металла на станках UPCERA A52W.",
@@ -3677,7 +3685,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraA52Zircon,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки циркония на станках UPCERA A52.",
@@ -3689,7 +3697,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraB41B42Glass,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки стеклокерамики на станках UPCERA B41/B42.",
@@ -3701,7 +3709,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "cutters",
     price: null,
-    image: "https://vpttool.com/upfile/202503/2025031052346645.webp",
+    image: bursUpceraB51B52Metal,
     brand: "Upcera",
     inStock: true,
     description: "Фрезы для обработки металла на станках UPCERA B51/B52.",

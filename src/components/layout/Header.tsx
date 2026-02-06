@@ -58,7 +58,7 @@ const shopMenuItems = [{
   }]
 }, {
   label: "3D-сканеры",
-  href: "/shop?category=scanners",
+  href: "/shop/catalog/intraoral-scanners",
   subcategories: [{
     label: "Интраоральные",
     href: "/shop/catalog/intraoral-scanners"
@@ -73,11 +73,14 @@ const shopMenuItems = [{
     label: "Станки",
     href: "/shop/catalog/milling-machines"
   }, {
+    label: "Печи",
+    href: "/shop/catalog/furnaces"
+  }, {
     label: "Компрессоры",
-    href: "/shop?category=compressors"
+    href: "/shop/catalog/compressors"
   }, {
     label: "Пылесосы",
-    href: "/shop?category=vacuums"
+    href: "/shop/catalog/vacuums"
   }, {
     label: "Фрезы",
     href: "/shop/catalog/burs"
@@ -93,13 +96,13 @@ const shopMenuItems = [{
     href: "/shop/catalog/metal-discs"
   }, {
     label: "Диски пластик (ПММА)",
-    href: "/shop?category=pmma-discs"
+    href: "/shop/catalog/pmma-discs"
   }, {
     label: "Пресс-керамика",
-    href: "/shop?category=press-ceramics"
+    href: "/shop/catalog/press-ceramic"
   }, {
     label: "Дисиликат лития",
-    href: "/shop?category=lithium-disilicate"
+    href: "/shop/catalog/lithium-disilicate"
   }]
 }, {
   label: "Краски и глазурь",

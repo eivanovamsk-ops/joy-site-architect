@@ -7,12 +7,8 @@ import { products } from "@/data/products";
 
 const Furnaces = () => {
   // Фильтруем печи из общего каталога
-  const sinteringFurnaces = products.filter(
-    (p) => p.category === "furnaces" && p.subcategory === "sintering"
-  );
-
-  const firingFurnaces = products.filter(
-    (p) => p.category === "furnaces" && p.subcategory === "firing"
+  const furnaceProducts = products.filter(
+    (p) => p.category === "milling" && p.subcategory === "furnaces"
   );
 
   return (
@@ -49,37 +45,24 @@ const Furnaces = () => {
 
           {/* Content */}
           <div className="flex-1">
-            {/* Sintering Furnaces Section */}
-            {sinteringFurnaces.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Печи для синтеризации</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {sinteringFurnaces.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Firing Furnaces Section */}
-            {firingFurnaces.length > 0 && (
+            {furnaceProducts.length > 0 ? (
               <section>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Печи для обжига</h2>
-                  <div className="h-px flex-1 bg-border" />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <h2 className="text-2xl font-bold text-foreground">Все печи</h2>
+                    <div className="h-px flex-1 bg-border" />
+                  </div>
+                  <span className="text-muted-foreground text-sm">
+                    {furnaceProducts.length} товаров
+                  </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {firingFurnaces.map((product) => (
+                  {furnaceProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
               </section>
-            )}
-
-            {sinteringFurnaces.length === 0 && firingFurnaces.length === 0 && (
+            ) : (
               <div className="text-center py-12 text-muted-foreground">
                 Товары в данной категории временно недоступны
               </div>

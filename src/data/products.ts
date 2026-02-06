@@ -63,6 +63,13 @@ import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
 import ultrasonicW230_1 from "@/assets/products/ultrasonic-w230-1.png";
 import ultrasonicW230_2 from "@/assets/products/ultrasonic-w230-2.png";
 
+// Milling machines images
+import upceraA52_1 from "@/assets/products/upcera-a52-1.jpg";
+import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
+import upceraB52 from "@/assets/products/upcera-b52.png";
+import upceraB42 from "@/assets/products/upcera-b42.png";
+import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -3337,7 +3344,8 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "machines",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/CAD-CAM-Upcera-A52.jpg",
+    image: upceraA52_1,
+    gallery: [upceraA52_1, upceraA52_2],
     brand: "Upcera",
     inStock: true,
     description: `5-осевой фрезерный станок для сухого фрезерования. Высокая надежность благодаря высококачественным комплектующим. Большой выбор фрез с хвостовиком 3мм и большой угол вращения заготовок позволяют добиться точной фрезеровки и экономии материала.
@@ -3370,7 +3378,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "machines",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-B52-Main.jpg",
+    image: upceraB52,
     brand: "Upcera",
     inStock: true,
     description: `Upcera B52 — высокопроизводительный 5-осевой станок, предназначенный для обработки Ti-балок, Premilled-абатментов и мостовидных конструкций из CoCr с винтовой фиксацией. Благодаря мощному шпинделю и усиленной конструкции, B52 уверенно справляется с самыми твёрдыми материалами.
@@ -3403,7 +3411,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "machines",
     price: null,
-    image: "https://upcera.com/uploads/images/prd/16/20250105/e99fac.jpg",
+    image: upceraB42,
     brand: "Upcera",
     inStock: true,
     description: `UPCERA B42 — компактный 5-осевой фрезерный станок для влажной обработки металлов и стеклокерамики.`,
@@ -3419,7 +3427,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "milling",
     subcategory: "machines",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/06/Upcera-A52DW.jpg",
+    image: upceraA52dw,
     brand: "Upcera",
     inStock: true,
     description: `Upcera A52DW — 5-осевой фрезерный станок с автоматическим переключением между сухой и влажной обработкой и высоким уровнем точности. Благодаря интегрированному креплению для различных типов заготовок, встроенному компьютеру с 12" сенсорным экраном, мощному шпинделю и системе непрерывной работы, A52DW обеспечивает стабильную и эффективную обработку широкого спектра материалов.

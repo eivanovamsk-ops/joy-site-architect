@@ -8,7 +8,7 @@ import { products } from "@/data/products";
 const MetalDiscs = () => {
   // Фильтруем металлические диски из общего каталога
   const metalDiscs = products.filter(
-    (p) => p.category === "discs" && p.subcategory === "metal"
+    (p) => p.category === "cad-cam-discs" && p.subcategory === "metal-discs"
   );
 
   // Группируем по бренду

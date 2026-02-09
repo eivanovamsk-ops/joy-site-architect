@@ -123,6 +123,8 @@ const ProductDetail = () => {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-contain p-8"
               />
             </div>
@@ -282,6 +284,8 @@ const ProductDetail = () => {
                       <img
                         src={img}
                         alt={`${product.name} - фото ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-contain p-2"
                       />
                     </div>
@@ -336,6 +340,8 @@ const ProductDetail = () => {
                     <img
                       src={relProduct.image}
                       alt={relProduct.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                     />
                   </div>

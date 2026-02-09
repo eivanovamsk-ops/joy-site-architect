@@ -157,6 +157,8 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                             <img
                               src={result.image}
                               alt=""
+                              loading="lazy"
+                              decoding="async"
                               className="w-12 h-12 rounded-lg object-cover bg-muted flex-shrink-0"
                             />
                           )}

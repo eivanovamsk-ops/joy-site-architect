@@ -77,7 +77,8 @@ const CourseCalendar = () => {
       
       if (isLastA && !isLastB) return 1;
       if (!isLastA && isLastB) return -1;
-      return 0;
+      // Within same group, sort by date
+      return a.dateStart.getTime() - b.dateStart.getTime();
     });
   }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer, selectedSectionTags]);
 

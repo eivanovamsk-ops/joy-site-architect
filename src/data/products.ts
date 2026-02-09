@@ -111,6 +111,9 @@ import bursUpceraA52wGlass from "@/assets/products/burs-upcera-a52w-glass.jpg";
 import bursUpceraB41B42Glass from "@/assets/products/burs-upcera-b41-b42-glass.jpg";
 import bursUpceraB51B52Metal from "@/assets/products/burs-upcera-b51-b52-metal.jpg";
 
+// Asiga tray image
+import asigaTray from "@/assets/products/asiga-tray.jpg";
+
 export interface Product {
   id: string;
   name: string;
@@ -308,7 +311,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     subcategory: "consumables",
     price: 30700,
     oldPrice: 39000,
-    image: "https://articon.pro/wp-content/uploads/2023/06/asiga-max-tray.jpg",
+    image: asigaTray,
     brand: "Asiga",
     inStock: true,
     isSale: true,
@@ -330,7 +333,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     subcategory: "consumables",
     price: 13600,
     oldPrice: 23800,
-    image: "https://articon.pro/wp-content/uploads/2023/06/asiga-max-tray-2l.jpg",
+    image: asigaTray,
     brand: "Asiga",
     inStock: true,
     isSale: true,
@@ -345,7 +348,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     subcategory: "consumables",
     price: 18700,
     oldPrice: 28500,
-    image: "https://articon.pro/wp-content/uploads/2023/06/asiga-max-tray-5l.jpg",
+    image: asigaTray,
     brand: "Asiga",
     inStock: true,
     isSale: true,

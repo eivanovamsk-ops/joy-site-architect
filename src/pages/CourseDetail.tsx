@@ -75,9 +75,16 @@ const CourseDetail = () => {
                 </p>
                 
                 <div className={`flex flex-wrap gap-4 ${course.coverImage ? 'text-white/90' : 'text-education-foreground/90'}`}>
-                  <div className="flex items-center gap-2"><Calendar className="h-5 w-5" /><span>{course.date}</span></div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-5 w-5" />
+                    {course.isComingSoon ? (
+                      <Badge variant="secondary" className="text-sm font-medium">Дата уточняется</Badge>
+                    ) : (
+                      <span>{course.date}</span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-2"><MapPin className="h-5 w-5" /><span>{course.location}</span></div>
-                  <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>{getDuration()}</span></div>
+                  {!course.isComingSoon && <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>{getDuration()}</span></div>}
                 </div>
               </div>
 
@@ -91,11 +98,28 @@ const CourseDetail = () => {
                 </div>
                 <div className="text-muted-foreground mb-6">{course.format}</div>
                 
-                {course.externalUrl ? <a href={course.externalUrl} target="_blank" rel="noopener noreferrer">
+                {course.isComingSoon ? (
+                  <>
+                    <Button size="lg" className="w-full bg-primary hover:bg-primary/90 mb-3" onClick={() => {
+                      if (course.externalUrl) {
+                        window.open(course.externalUrl, "_blank");
+                      }
+                    }}>
+                      Добавьте меня в лист ожидания
+                    </Button>
+                    <p className="text-sm text-muted-foreground text-center mb-3">
+                      Как только новая дата курса будет согласована, мы сразу с вами свяжемся
+                    </p>
+                  </>
+                ) : course.externalUrl ? (
+                  <a href={course.externalUrl} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" className="w-full bg-primary hover:bg-primary/90 mb-3">
                       Записаться на курс <ExternalLink className="h-4 w-4 ml-2" />
                     </Button>
-                  </a> : <CourseApplicationForm courseName={course.title} courseDate={course.date} />}
+                  </a>
+                ) : (
+                  <CourseApplicationForm courseName={course.title} courseDate={course.date} />
+                )}
                 <Button size="lg" variant="outline" className="w-full mb-6">
                   <Share2 className="h-4 w-4 mr-2" /> Поделиться
                 </Button>
@@ -259,16 +283,32 @@ const CourseDetail = () => {
 
         {/* CTA */}
         <div className="bg-primary/10 rounded-2xl p-8 text-center mb-12">
-          <h2 className="text-2xl font-bold mb-2">Готовы начать обучение?</h2>
+          <h2 className="text-2xl font-bold mb-2">
+            {course.isComingSoon ? "Хотите попасть на этот курс?" : "Готовы начать обучение?"}
+          </h2>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации.
+            {course.isComingSoon 
+              ? "Оставьте заявку, и мы свяжемся с вами, как только дата будет согласована."
+              : "Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {course.externalUrl ? <a href={course.externalUrl} target="_blank" rel="noopener noreferrer">
+            {course.isComingSoon ? (
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => {
+                if (course.externalUrl) {
+                  window.open(course.externalUrl, "_blank");
+                }
+              }}>
+                Добавьте меня в лист ожидания
+              </Button>
+            ) : course.externalUrl ? (
+              <a href={course.externalUrl} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-primary hover:bg-primary/90">
                   Записаться на курс <ExternalLink className="h-4 w-4 ml-2" />
                 </Button>
-              </a> : <CourseApplicationForm courseName={course.title} courseDate={course.date} />}
+              </a>
+            ) : (
+              <CourseApplicationForm courseName={course.title} courseDate={course.date} />
+            )}
             <Button size="lg" variant="outline">Задать вопрос</Button>
           </div>
         </div>

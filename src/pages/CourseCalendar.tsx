@@ -68,12 +68,12 @@ const CourseCalendar = () => {
       return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer && matchesSectionTags;
     });
 
-    // Sort: courses with "менеджмент", "сканирование по запросу", "интраоральное сканирование" go to the end
+    // Sort: isComingSoon courses and specific titles go to the end
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
-      const isLastA = titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');
-      const isLastB = titleB.includes('менеджмент') || titleB.includes('сканирование по запросу') || titleB.includes('интраоральное сканирование');
+      const isLastA = a.isComingSoon || titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');
+      const isLastB = b.isComingSoon || titleB.includes('менеджмент') || titleB.includes('сканирование по запросу') || titleB.includes('интраоральное сканирование');
       
       if (isLastA && !isLastB) return 1;
       if (!isLastA && isLastB) return -1;
@@ -366,7 +366,11 @@ const CourseCalendar = () => {
                   <div className="p-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                       <Calendar className="h-4 w-4" />
-                      {course.date}
+                      {course.isComingSoon ? (
+                        <Badge variant="secondary" className="text-xs font-medium">Уже скоро</Badge>
+                      ) : (
+                        course.date
+                      )}
                     </div>
                     
                     <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">

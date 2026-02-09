@@ -55,6 +55,7 @@ export interface Course {
   externalUrl?: string;
   isAccredited?: boolean;
   placesLeft?: number;
+  isComingSoon?: boolean;
 }
 
 export const courses: Course[] = [
@@ -139,8 +140,9 @@ export const courses: Course[] = [
     slug: "expanding-appliances",
     title: "Цифровое моделирование расширяющих несъёмных аппаратов",
     subtitle: "Без опоры на мини-имплантаты",
-    date: "2 февраля 2026 | 11:00-17:00",
-    dateStart: new Date(2026, 1, 2),
+    date: "Уже скоро",
+    dateStart: new Date(2099, 0, 1),
+    isComingSoon: true,
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,
@@ -211,8 +213,9 @@ export const courses: Course[] = [
     slug: "mini-implants-planning",
     title: "Цифровое планирование ортодонтических мини-имплантатов и моделирование аппаратов с кортикальной опорой",
     subtitle: "По концепции pin-first",
-    date: "3 февраля 2026 | 10:00-18:00",
-    dateStart: new Date(2026, 1, 3),
+    date: "Уже скоро",
+    dateStart: new Date(2099, 0, 2),
+    isComingSoon: true,
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 35000,
@@ -287,8 +290,9 @@ export const courses: Course[] = [
     slug: "sarpe-marpe-planning",
     title: "Планирование ортодонтических аппаратов на скелетной опоре (SARPE, MARPE)",
     subtitle: "Протоколы взаимодействия в команде ортодонт-хирург-техник",
-    date: "4 февраля 2026 | 10:00-18:00",
-    dateStart: new Date(2026, 1, 4),
+    date: "Уже скоро",
+    dateStart: new Date(2099, 0, 3),
+    isComingSoon: true,
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Лекция",
     price: 25000,

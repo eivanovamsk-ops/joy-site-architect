@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User, Shield } from "lucide-react";
+import { SearchDialog } from "@/components/layout/SearchDialog";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { supabase } from "@/integrations/supabase/client";
@@ -154,7 +155,7 @@ type MenuItem = {
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const {
@@ -195,6 +196,18 @@ export function Header() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Ctrl+K shortcut to open search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   // Get menu items based on current section
@@ -247,14 +260,14 @@ export function Header() {
 
             {/* Search Bar - narrower like articon.com (~260px width) */}
             <div className="hidden lg:flex items-center">
-              <div className="relative" style={{
-              width: '260px'
-            }}>
-                <input type="text" placeholder="Search here..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full h-10 pl-3 pr-10 rounded border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
-                <button className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center bg-primary text-primary-foreground rounded-r hover:bg-primary/90 transition-colors" aria-label="Поиск">
-                  <Search className="h-4 w-4" />
-                </button>
-              </div>
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="flex items-center gap-2 h-10 px-4 rounded border border-border bg-background text-sm text-muted-foreground hover:border-primary/50 transition-colors"
+                style={{ width: '260px' }}
+              >
+                <Search className="h-4 w-4" />
+                <span>Поиск по сайту...</span>
+              </button>
             </div>
 
             {/* Shop icons (Favorites, Cart, Account) - only on shop page */}
@@ -316,12 +329,13 @@ export function Header() {
       {isMenuOpen && <div className="lg:hidden bg-background border-b border-border animate-fade-in">
           <div className="container mx-auto px-4 py-4">
             {/* Mobile Search */}
-            <div className="relative mb-4">
-              <input type="text" placeholder="Поиск по сайту" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full h-10 pl-4 pr-12 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" />
-              <button className="absolute right-0 top-0 h-10 w-10 flex items-center justify-center bg-primary text-primary-foreground rounded-r-md" aria-label="Поиск">
-                <Search className="h-4 w-4" />
-              </button>
-            </div>
+            <button
+              onClick={() => { setSearchOpen(true); setIsMenuOpen(false); }}
+              className="w-full flex items-center gap-3 h-10 px-4 rounded-md border border-border bg-background text-sm text-muted-foreground mb-4"
+            >
+              <Search className="h-4 w-4" />
+              Поиск по сайту...
+            </button>
 
             {/* Mobile Top Sections */}
             <div className="flex flex-wrap gap-2 mb-4 pb-4 border-b border-border">
@@ -373,5 +387,7 @@ export function Header() {
             </nav>
           </div>
         </div>}
+
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </header>;
 }

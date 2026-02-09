@@ -43,6 +43,13 @@ import upceraRealism7 from "@/assets/products/upcera-realism-7-colors.jpg";
 import upceraRealism20 from "@/assets/products/upcera-realism-20-colors.jpg";
 import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg";
 
+// HARZ Labs images
+import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
+import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
+import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
+import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
+import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
+
 // Upcera zirconia disc images
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraHtWhite from "@/assets/products/upcera-ht-white.jpg";
@@ -348,7 +355,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "photopolymers",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/01/harz-dental-cast.jpg",
+    image: harzDentalCast,
     brand: "HARZ Labs",
     inStock: true,
     description: "Выжигаемая смола HARZ Labs отлично подходит для прямой отливки металлических и прессовки керамических коронок и мостов. Практически нулевое содержание золы (менее 0,1%).",
@@ -365,7 +372,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "photopolymers",
     price: 9700,
-    image: "https://articon.pro/wp-content/uploads/2024/01/harz-model-beige.jpg",
+    image: harzDentalModel,
     brand: "HARZ Labs",
     inStock: true,
     description: "Фотополимер Dental Model Light Grey предназначен для печати разборных, рабочих и диагностических стоматологических моделей светло-серого цвета.",
@@ -381,7 +388,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "photopolymers",
     price: 17900,
-    image: "https://articon.pro/wp-content/uploads/2024/01/harz-dental-sand.jpg",
+    image: harzDentalSand,
     brand: "HARZ Labs",
     inStock: true,
     description: "Фотополимер Dental Sand представляет собой PMMA-подобную смолу с керамическим микро-наполнением. Рекомендуется для печати временных коронок и мостов.",
@@ -397,7 +404,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "photopolymers",
     price: 9900,
-    image: "https://articon.pro/wp-content/uploads/2024/01/harz-dental-clear.jpg",
+    image: harzDentalTray,
     brand: "HARZ Labs",
     inStock: true,
     description: "Фотополимер Dental Tray создан для изготовления индивидуальных ложек для получения точного функционального оттиска.",
@@ -413,7 +420,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "3d-print",
     subcategory: "photopolymers",
     price: 13900,
-    image: "https://articon.pro/wp-content/uploads/2024/01/harz-dental-clear.jpg",
+    image: harzDentalYellowClear,
     brand: "HARZ Labs",
     inStock: true,
     description: "Dental Yellow Clear Pro представляет собой твердую PMMA-подобную смолу для печати автоклавируемых хирургических шаблонов.",

@@ -1,3 +1,6 @@
+import course17Banner from "@/assets/courses/course-17-banner.jpg";
+import course17Preview from "@/assets/courses/course-17-preview.jpg";
+
 export interface Lecturer {
   name: string;
   photo: string;
@@ -37,6 +40,7 @@ export interface Course {
   price: number;
   originalPrice?: number;
   coverImage?: string;
+  previewImage?: string;
   description: string;
   shortDescription: string;
   goal: string;
@@ -1339,7 +1343,8 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Индивидуальная практика",
     price: 25000,
-    coverImage: "https://static.wixstatic.com/media/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg/v1/fill/w_1200,h_600,al_c,q_85,enc_avif,quality_auto/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg",
+    coverImage: course17Banner,
+    previewImage: course17Preview,
     description: "Практический курс по работе с интраоральным сканером. Освойте все функции сканера и научитесь эффективно использовать его в ежедневной практике.",
     shortDescription: "Практический курс по интраоральному сканированию",
     goal: "Освоить работу с интраоральным сканером.",

@@ -2,6 +2,7 @@ import course16Banner from "@/assets/courses/course-16-banner.jpg";
 import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";
 import course17Preview from "@/assets/courses/course-17-preview.jpg";
+import course19Banner from "@/assets/courses/course-19-banner.jpg";
 
 export interface Lecturer {
   name: string;
@@ -1493,11 +1494,11 @@ export const courses: Course[] = [
     dateEnd: new Date(2026, 3, 17),
     location: "Казань / Самара",
     format: "Конференция",
-    price: 10000,
+    price: 5000,
     originalPrice: 15000,
-    coverImage: "https://static.wixstatic.com/media/526e65_a99b0c2a3be34f039a635d63cc7976e0~mv2.png/v1/fill/w_1101,h_617,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/526e65_a99b0c2a3be34f039a635d63cc7976e0~mv2.png",
+    coverImage: course19Banner,
     description: "Наша конференция — это концентрат практических знаний о современных методах планирования лечения. Вы получите не теорию, а готовые к применению протоколы и алгоритмы от экспертов, которые ежедневно доказывают их эффективность.",
-    shortDescription: "Стратегия, планирование и цифровые технологии для безупречного результата",
+    shortDescription: "2 дня • 2 города — стратегия, планирование и цифровые технологии для безупречного результата",
     goal: "Найти свою точку опоры в сложных ортодонтических кейсах и получить готовые к применению протоколы и алгоритмы.",
     targetAudience: [
       "Врачи-ортодонты",

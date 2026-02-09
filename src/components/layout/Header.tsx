@@ -29,6 +29,9 @@ const homeMenuItems = [{
 }, {
   label: "Учебный центр",
   href: "/education"
+}, {
+  label: "Контакты",
+  href: "/contacts"
 }];
 
 // Laboratory menu items

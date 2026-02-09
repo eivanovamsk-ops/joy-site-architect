@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
-import { MapPin, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import articonLogo from "@/assets/articon-logo.png";
 const footerLinks = {
-  company: [{
-    label: "Контакты",
-    href: "/contacts"
-  }],
   navigation: [{
     label: "Лаборатория",
     href: "/laboratory"
@@ -17,10 +13,13 @@ const footerLinks = {
   }, {
     label: "Учебный центр",
     href: "/education"
+  }, {
+    label: "Контакты",
+    href: "/contacts"
   }],
   services: [{
     label: "Прайс-листы",
-    href: "/laboratory/prices"
+    href: "/laboratory/documents"
   }, {
     label: "Каталог товаров",
     href: "/shop/catalog"
@@ -61,9 +60,6 @@ export function Footer() {
                     {link.label}
                   </Link>
                 </li>)}
-              {footerLinks.company.map(link => <li key={link.href}>
-                  
-                </li>)}
             </ul>
           </div>
 
@@ -76,6 +72,18 @@ export function Footer() {
                 <span className="text-background/70 text-sm">
                   115230, г. Москва, Варшавское шоссе, д. 33, стр. 12
                 </span>
+              </li>
+              <li>
+                <a href="tel:+79645000040" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
+                  <Phone className="h-5 w-5 text-accent flex-shrink-0" />
+                  <span className="text-sm">+7 (964) 500-00-40</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:moscow@articon.pro" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
+                  <Mail className="h-5 w-5 text-accent flex-shrink-0" />
+                  <span className="text-sm">moscow@articon.pro</span>
+                </a>
               </li>
               <li>
                 <a href="https://t.me/articondental_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">

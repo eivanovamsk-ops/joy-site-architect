@@ -1,4 +1,3 @@
-import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function EducationHeroSection() {
@@ -19,27 +18,18 @@ export function EducationHeroSection() {
             Для врачей и зубных техников, влюблённых в профессию. Обучаем
             цифровым протоколам, которые применяем ежедневно.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="https://t.me/articon_education" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <Button
               size="lg"
-              className="bg-background text-education hover:bg-background/90 px-8"
+              className="bg-background text-foreground hover:bg-background/90 px-8"
             >
-              <Calendar className="mr-2 h-5 w-5" />
-              Календарь курсов
+              Связаться с куратором
             </Button>
-            <a 
-              href="https://t.me/articon_education" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-background text-foreground hover:bg-background/90 px-8"
-              >
-                Связаться с куратором
-              </Button>
-            </a>
-          </div>
+          </a>
         </div>
       </div>
     </section>

@@ -48,7 +48,7 @@ const CourseDetail = () => {
       {/* Hero */}
       <div className="relative">
         {course.coverImage && <div className="absolute inset-0 h-[400px]">
-            <img src={course.coverImage} alt={course.title} className="w-full h-full object-cover" />
+            <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
           </div>}
         <div className={`relative ${course.coverImage ? 'pt-8 pb-12' : 'gradient-education py-12'}`}>

@@ -1,3 +1,5 @@
+import course16Banner from "@/assets/courses/course-16-banner.jpg";
+import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";
 import course17Preview from "@/assets/courses/course-17-preview.jpg";
 
@@ -1253,7 +1255,8 @@ export const courses: Course[] = [
     location: "Онлайн",
     format: "Онлайн-курс",
     price: 35000,
-    coverImage: "https://static.wixstatic.com/media/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg/v1/fill/w_1200,h_600,al_c,q_85,enc_avif,quality_auto/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg",
+    coverImage: course16Banner,
+    previewImage: course16Preview,
     description: "Онлайн-курс для владельцев и руководителей зуботехнических лабораторий. Бизнес-процессы, управление командой, финансы, маркетинг, внедрение цифровых технологий.",
     shortDescription: "Организация успешной зуботехнической лаборатории",
     goal: "Освоить инструменты эффективного управления зуботехнической лабораторией.",

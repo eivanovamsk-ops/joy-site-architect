@@ -47,6 +47,10 @@ import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg"
 import pmmaLima from "@/assets/products/pmma-lima.jpg";
 import pmmaDentalDirekt from "@/assets/products/pmma-dental-direkt.jpg";
 
+// Upcera UP.CAD press-ceramic images
+import upceraUpcadHt from "@/assets/products/upcera-upcad-ht.jpg";
+import upceraUpcadLt from "@/assets/products/upcera-upcad-lt.jpg";
+
 // HARZ Labs images
 import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
 import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
@@ -1184,7 +1188,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "cad-cam-discs",
     subcategory: "press-ceramic",
     price: 5348,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: upceraUpcadHt,
     brand: "Upcera",
     inStock: true,
     description: `UP.CAD HT – современный стоматологический материал на основе литиевого дисиликата, разработанный для быстрого и эстетичного восстановления зубов с применением CAD/CAM технологий.
@@ -1214,7 +1218,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "cad-cam-discs",
     subcategory: "press-ceramic",
     price: 5348,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: upceraUpcadLt,
     brand: "Upcera",
     inStock: true,
     description: `Low Translucency — LT блоки являются идеальным вариантом для изготовления объёмных реставраций (коронки жевательных зубов) благодаря своей низкой прозрачности, аналогичной прозрачности живого дентина.`,

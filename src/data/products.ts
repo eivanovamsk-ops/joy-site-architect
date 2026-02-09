@@ -43,6 +43,10 @@ import upceraRealism7 from "@/assets/products/upcera-realism-7-colors.jpg";
 import upceraRealism20 from "@/assets/products/upcera-realism-20-colors.jpg";
 import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg";
 
+// PMMA disc images
+import pmmaLima from "@/assets/products/pmma-lima.jpg";
+import pmmaDentalDirekt from "@/assets/products/pmma-dental-direkt.jpg";
+
 // HARZ Labs images
 import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
 import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
@@ -1334,7 +1338,7 @@ Uniformation GK3 Ultra использует передовую технолог�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     sku: "ART981501",
@@ -1368,7 +1372,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     description: `Диск PMMA 98×20 мм цвет A1 от Lima – это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм и высотой 20 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
@@ -1401,7 +1405,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     sku: "ART981502",
@@ -1435,7 +1439,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     description: `Диск PMMA 98×20 мм цвет A2 от Lima – это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм и высотой 20 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
@@ -1468,7 +1472,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     sku: "ART981503",
@@ -1502,7 +1506,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     description: `Диск PMMA 98×20 мм цвет A3 от Lima – это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм и высотой 20 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
@@ -1535,7 +1539,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     sku: "ART981504",
@@ -1569,7 +1573,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     description: `Диск PMMA 98×20 мм цвет A3.5 от Lima – это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм и высотой 20 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
@@ -1602,7 +1606,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     description: `Диск PMMA 98×20 мм цвет BL от Lima – это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм и высотой 20 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
@@ -1635,7 +1639,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: null,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaLima,
     brand: "Lima",
     inStock: true,
     sku: "ART981500",
@@ -1669,7 +1673,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: 2150,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaDentalDirekt,
     brand: "Dental Direkt",
     inStock: true,
     description: `Диск PMMA Bio splint P HI 98×15, Clear от Dental Direkt – это высококачественная заготовка из полиметилметакрилата (PMMA), предназначенная для создания штифтов, терапевтических шин, регуляторов прикуса и протезов.
@@ -1693,7 +1697,7 @@ Lima – турецкий производитель, успешно проше�
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: 2350,
-    image: "https://articon.pro/wp-content/uploads/2024/08/Upcera-ST-Color-300x300.jpg",
+    image: pmmaDentalDirekt,
     brand: "Dental Direkt",
     inStock: true,
     description: `Диск PMMA Bio splint P HI 98×20, Clear от Dental Direkt – это высококачественная заготовка из полиметилметакрилата (PMMA), предназначенная для создания штифтов, терапевтических шин, регуляторов прикуса и протезов.

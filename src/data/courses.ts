@@ -1369,10 +1369,10 @@ export const courses: Course[] = [
     ],
     lecturers: [
       {
-        name: "Специалисты Артикон",
+        name: "Павел Кузнецов",
         photo: "https://static.wixstatic.com/media/526e65_b1af7e3e17374e4ebf059ae9f71943b6~mv2.jpg/v1/fill/w_200,h_200,al_c,q_80,enc_avif,quality_auto/team.jpg",
-        position: "Эксперты по сканированию",
-        bio: "Специалисты с опытом работы на различных интраоральных сканерах."
+        position: "Врач-ортопед",
+        bio: "Врач-стоматолог ортопед, специалист по цифровым технологиям в ортопедической стоматологии."
       }
     ],
     includes: [

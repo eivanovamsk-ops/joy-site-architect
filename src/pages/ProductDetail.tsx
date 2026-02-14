@@ -17,6 +17,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
 import { useToast } from "@/hooks/use-toast";
+import { YandexSplitButton, SPLIT_ELIGIBLE_PRODUCTS } from "@/components/shop/YandexSplitButton";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -210,6 +211,17 @@ const ProductDetail = () => {
                 <Share2 className="h-5 w-5" />
               </Button>
             </div>
+
+            {/* Yandex Split */}
+            {product.price && SPLIT_ELIGIBLE_PRODUCTS.includes(product.id) && (
+              <div className="mb-8">
+                <YandexSplitButton
+                  productId={product.id}
+                  productName={product.name}
+                  price={product.price}
+                />
+              </div>
+            )}
 
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 bg-muted/30 rounded-xl">

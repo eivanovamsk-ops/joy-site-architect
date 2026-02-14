@@ -2,3 +2,6 @@ project_id = "minlrvrnprwcrgqfgsws"
 
 [functions.send-email-unisender]
 verify_jwt = false
+
+[functions.create-split-order]
+verify_jwt = false

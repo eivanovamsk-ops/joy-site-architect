@@ -59,12 +59,13 @@ serve(async (req) => {
       ttl: 1800,
     };
 
+    const headers = new Headers();
+    headers.set("Content-Type", "application/json");
+    headers.set("Authorization", "Api-Key " + YANDEX_PAY_API_KEY.trim());
+
     const response = await fetch(YANDEX_PAY_API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Api-Key ${YANDEX_PAY_API_KEY}`,
-      },
+      headers,
       body: JSON.stringify(orderData),
     });
 

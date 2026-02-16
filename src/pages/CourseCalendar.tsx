@@ -22,12 +22,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { courses, courseCategories, courseFormats, getUniqueLecturers, sectionTags, SectionTag } from "@/data/courses";
+import { courses, getUniqueLecturers, sectionTags, SectionTag } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
 const CourseCalendar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Все категории");
-  const [selectedFormat, setSelectedFormat] = useState("Все форматы");
+  const [selectedCategory, setSelectedCategory] = useState("Все разделы");
   const [selectedLecturer, setSelectedLecturer] = useState("Все лекторы");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [searchQuery, setSearchQuery] = useState("");
@@ -43,13 +42,20 @@ const CourseCalendar = () => {
     );
   };
 
+  const calendarSections = [
+    { label: "Все разделы", tags: [] as SectionTag[] },
+    { label: "Ортопедия (врачи)", tags: ["для врачей", "ортопедия"] as SectionTag[] },
+    { label: "Ортодонтия (врачи)", tags: ["для врачей", "ортодонтия"] as SectionTag[] },
+    { label: "CAD/CAM (техники)", tags: ["для техников", "CAD/CAM"] as SectionTag[] },
+    { label: "Ортодонтия (техники)", tags: ["для техников", "ортодонтия"] as SectionTag[] },
+  ];
+
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
+      const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
-        selectedCategory === "Все категории" ||
-        course.category === selectedCategory;
-      const matchesFormat =
-        selectedFormat === "Все форматы" || course.format === selectedFormat;
+        selectedCategory === "Все разделы" ||
+        (selectedSection && selectedSection.tags.every(tag => course.sectionTags?.includes(tag)));
       const matchesDate =
         !selectedDate ||
         (course.dateStart.getMonth() === selectedDate.getMonth() &&
@@ -65,7 +71,7 @@ const CourseCalendar = () => {
         selectedSectionTags.length === 0 ||
         selectedSectionTags.every(tag => course.sectionTags?.includes(tag));
 
-      return matchesCategory && matchesFormat && matchesDate && matchesSearch && matchesLecturer && matchesSectionTags;
+      return matchesCategory && matchesDate && matchesSearch && matchesLecturer && matchesSectionTags;
     });
 
     // Sort: isComingSoon courses and specific titles go to the end
@@ -80,11 +86,10 @@ const CourseCalendar = () => {
       // Within same group, sort by date
       return a.dateStart.getTime() - b.dateStart.getTime();
     });
-  }, [selectedCategory, selectedFormat, selectedDate, searchQuery, selectedLecturer, selectedSectionTags]);
+  }, [selectedCategory, selectedDate, searchQuery, selectedLecturer, selectedSectionTags]);
 
   const clearFilters = () => {
-    setSelectedCategory("Все категории");
-    setSelectedFormat("Все форматы");
+    setSelectedCategory("Все разделы");
     setSelectedLecturer("Все лекторы");
     setSelectedDate(undefined);
     setSearchQuery("");
@@ -92,8 +97,7 @@ const CourseCalendar = () => {
   };
 
   const hasActiveFilters =
-    selectedCategory !== "Все категории" ||
-    selectedFormat !== "Все форматы" ||
+    selectedCategory !== "Все разделы" ||
     selectedLecturer !== "Все лекторы" ||
     selectedDate !== undefined ||
     searchQuery !== "" ||
@@ -165,11 +169,11 @@ const CourseCalendar = () => {
               )}
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {/* Category Filter */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Category/Section Filter */}
               <div>
                 <label className="text-sm text-muted-foreground mb-2 block">
-                  Категория
+                  Раздел
                 </label>
                 <Select
                   value={selectedCategory}
@@ -179,31 +183,9 @@ const CourseCalendar = () => {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-card border-border">
-                    {courseCategories.map((cat) => (
-                      <SelectItem key={cat} value={cat}>
-                        {cat}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Format Filter */}
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">
-                  Формат
-                </label>
-                <Select
-                  value={selectedFormat}
-                  onValueChange={setSelectedFormat}
-                >
-                  <SelectTrigger className="bg-background">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-card border-border">
-                    {courseFormats.map((fmt) => (
-                      <SelectItem key={fmt} value={fmt}>
-                        {fmt}
+                    {calendarSections.map((s) => (
+                      <SelectItem key={s.label} value={s.label}>
+                        {s.label}
                       </SelectItem>
                     ))}
                   </SelectContent>

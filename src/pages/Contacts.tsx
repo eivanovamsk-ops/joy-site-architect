@@ -123,18 +123,12 @@ const Contacts = () => {
               <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
                 <Mail className="h-5 w-5 text-primary-foreground" />
               </div>
-              <div>
+              <div className="flex items-center">
                 <a
                   href="mailto:lab@articon.pro"
                   className="text-muted-foreground text-sm hover:text-primary transition-colors">
-
                   lab@articon.pro
                 </a>
-                <br />
-                
-
-
-
 
 
               </div>

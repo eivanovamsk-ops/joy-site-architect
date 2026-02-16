@@ -282,7 +282,9 @@ const CourseDetail = () => {
             ) : (
               <CourseApplicationForm courseName={course.title} courseDate={course.date} />
             )}
-            <Button size="lg" variant="outline">Задать вопрос</Button>
+            <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline">Задать вопрос</Button>
+            </a>
           </div>
         </div>
 

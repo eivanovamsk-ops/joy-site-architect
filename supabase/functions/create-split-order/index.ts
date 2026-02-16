@@ -7,6 +7,64 @@ const corsHeaders = {
 
 const YANDEX_PAY_API_URL = "https://pay.yandex.ru/api/merchant/v1/orders";
 
+const sendAdminNotification = async (productName: string, price: number, orderId: string) => {
+  try {
+    const SUPABASE_URL = Deno.env.get('SUPABASE_URL');
+    const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY');
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      console.error("Missing SUPABASE_URL or SUPABASE_ANON_KEY for email notification");
+      return;
+    }
+
+    const formatPrice = (p: number) => new Intl.NumberFormat("ru-RU").format(p) + " ₽";
+
+    const emailBody = `
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8"></head>
+      <body style="font-family: Arial, sans-serif; color: #333;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: #7c3aed; color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
+            <h2 style="margin: 0;">💳 Оплата через Яндекс Сплит</h2>
+          </div>
+          <div style="background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb;">
+            <p style="background: #ede9fe; padding: 15px; border-radius: 8px; border-left: 4px solid #7c3aed;">
+              Клиент оформил покупку через <strong>Яндекс Сплит</strong> (оплата частями).
+            </p>
+            <p><strong>Товар:</strong> ${productName}</p>
+            <p><strong>Сумма:</strong> ${formatPrice(price)}</p>
+            <p><strong>Оплата:</strong> 4 платежа по ${formatPrice(Math.ceil(price / 4))}</p>
+            <p><strong>ID заказа:</strong> ${orderId}</p>
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
+            <p style="color: #6b7280; font-size: 14px;">Свяжитесь с клиентом для уточнения деталей доставки.</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    await fetch(`${SUPABASE_URL}/functions/v1/send-email-unisender`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        type: "legacy",
+        to: "noreply@articon.pro",
+        subject: `💳 Сплит-заказ: ${productName} — ${formatPrice(price)}`,
+        body: emailBody,
+        senderName: "Articon Shop",
+        senderEmail: "moscow@articon.pro",
+      }),
+    });
+
+    console.log("Admin notification sent for split order:", orderId);
+  } catch (e) {
+    console.error("Failed to send admin notification:", e);
+  }
+};
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -75,6 +133,9 @@ serve(async (req) => {
       console.error("Yandex Pay API error:", JSON.stringify(data));
       throw new Error(`Yandex Pay API error [${response.status}]: ${JSON.stringify(data)}`);
     }
+
+    // Send admin notification (non-blocking)
+    sendAdminNotification(productName, price, orderId);
 
     return new Response(
       JSON.stringify({ paymentUrl: data.data?.paymentUrl, orderId }),

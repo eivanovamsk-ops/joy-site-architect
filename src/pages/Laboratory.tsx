@@ -91,6 +91,7 @@ const Laboratory = () => {
         <meta property="og:title" content="Зуботехническая лаборатория Артикон — CAD/CAM технологии" />
         <meta property="og:description" content="Цифровая зуботехническая лаборатория полного цикла. Изготовление коронок, виниров, имплантатов с использованием CAD/CAM технологий." />
         <meta property="og:url" content="https://articon.pro/laboratory" />
+        <meta property="og:image" content="https://articon.pro/og-laboratory.jpg" />
         <meta property="og:site_name" content="Артикон" />
         <meta property="og:locale" content="ru_RU" />
         
@@ -98,6 +99,7 @@ const Laboratory = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Зуботехническая лаборатория Артикон" />
         <meta name="twitter:description" content="Цифровая зуботехническая лаборатория полного цикла с CAD/CAM технологиями." />
+        <meta name="twitter:image" content="https://articon.pro/og-laboratory.jpg" />
         
         {/* JSON-LD */}
         <script type="application/ld+json">

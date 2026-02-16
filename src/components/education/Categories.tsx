@@ -6,16 +6,16 @@ const categories = [
     title: "Для врачей",
     description: "Практические курсы по современным протоколам лечения",
     items: [
-      { name: "Ортопедия", href: "/education/calendar?category=Ортопедия" },
-      { name: "Ортодонтия", href: "/education/calendar?category=Ортодонтия" },
+      { name: "Ортопедия", href: "/education/doctors-orthopedics" },
+      { name: "Ортодонтия", href: "/education/doctors-orthodontics" },
     ],
   },
   {
     title: "Для техников",
     description: "Курсы по цифровым технологиям в зуботехнике",
     items: [
-      { name: "CAD/CAM", href: "/education/calendar?category=CAD%2FCAM" },
-      { name: "Ортодонтия", href: "/education/calendar?category=Ортодонтия" },
+      { name: "CAD/CAM", href: "/education/technicians-cadcam" },
+      { name: "Ортодонтия", href: "/education/technicians-orthodontics" },
     ],
   },
 ];

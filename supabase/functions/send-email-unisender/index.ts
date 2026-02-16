@@ -29,12 +29,27 @@ interface OrderItem {
    notes?: string;
  }
  
+ interface CourseApplicationData {
+   courseName: string;
+   courseDate?: string;
+   name: string;
+   lastName: string;
+   phone: string;
+   telegram: string;
+   city: string;
+   specialization: string;
+   email?: string;
+   organization?: string;
+   paymentType: string;
+ }
+
  interface EmailRequest {
-   type: "order_confirmation" | "legacy";
+   type: "order_confirmation" | "course_application" | "legacy";
    to?: string;
    subject?: string;
    body?: string;
    orderData?: OrderData;
+   courseData?: CourseApplicationData;
    senderName?: string;
    senderEmail?: string;
  }
@@ -298,6 +313,82 @@ interface OrderItem {
       );
       results.push({ recipient: "admin", result: adminResult });
  
+       return new Response(JSON.stringify({ success: true, results }), {
+         status: 200,
+         headers: { "Content-Type": "application/json", ...corsHeaders },
+       });
+      }
+
+     // Handle course application notification
+     if (type === "course_application" && requestData.courseData) {
+       const course = requestData.courseData;
+       const results: any[] = [];
+       const paymentText = course.paymentType === "company" ? "От компании" : "От частного лица";
+
+       const emailHtml = `
+         <!DOCTYPE html>
+         <html>
+         <head>
+           <meta charset="utf-8">
+           <style>
+             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+             .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+             .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
+             .info-block { background: #fff; padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #e5e7eb; }
+             .label { color: #6b7280; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; }
+             .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+           </style>
+         </head>
+         <body>
+           <div class="container">
+             <div class="header">
+               <h2 style="margin: 0;">🎓 Новая заявка на курс</h2>
+               <p style="margin: 5px 0 0; opacity: 0.9;">${course.courseName}</p>
+             </div>
+             <div class="content">
+               ${course.courseDate ? `<p><strong>Дата курса:</strong> ${course.courseDate}</p>` : "<p><strong>Дата:</strong> Уточняется</p>"}
+
+               <div class="info-block">
+                 <p class="label">Данные участника</p>
+                 <p><strong>Имя:</strong> ${course.name}</p>
+                 <p><strong>Фамилия:</strong> ${course.lastName}</p>
+                 <p><strong>Телефон:</strong> ${course.phone}</p>
+                 <p><strong>Telegram:</strong> ${course.telegram}</p>
+                 <p><strong>Город:</strong> ${course.city}</p>
+                 <p><strong>Специализация:</strong> ${course.specialization}</p>
+                 ${course.email ? `<p><strong>Email:</strong> ${course.email}</p>` : ""}
+                 ${course.organization ? `<p><strong>Организация:</strong> ${course.organization}</p>` : ""}
+               </div>
+
+               <div class="info-block">
+                 <p class="label">Оплата</p>
+                 <p><strong>${paymentText}</strong></p>
+               </div>
+             </div>
+             <div class="footer">
+               <p>Articon — Учебный центр</p>
+             </div>
+           </div>
+         </body>
+         </html>
+       `;
+
+       const adminEmails = ["event@articon.pro", "e.ivanova@articon.pro"];
+       const subject = `🎓 Заявка на курс: ${course.courseName} — ${course.name} ${course.lastName}`;
+
+       for (const email of adminEmails) {
+         const result = await sendEmail(
+           UNISENDER_API_KEY,
+           email,
+           subject,
+           emailHtml,
+           "Articon Education",
+           "noreply@articon.pro"
+         );
+         results.push({ recipient: email, result });
+       }
+
        return new Response(JSON.stringify({ success: true, results }), {
          status: 200,
          headers: { "Content-Type": "application/json", ...corsHeaders },

@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2, GraduationCap, ExternalLink } from "lucide-react";
+import { Loader2, GraduationCap, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import {
   Dialog,
@@ -47,6 +47,7 @@ export function CourseApplicationForm({
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     last_name: "",
@@ -108,11 +109,6 @@ export function CourseApplicationForm({
 
       if (error) throw error;
 
-      toast({
-        title: "Заявка отправлена!",
-        description: "Мы свяжемся с вами для подтверждения записи",
-      });
-
       setFormData({
         name: "",
         last_name: "",
@@ -124,7 +120,7 @@ export function CourseApplicationForm({
         organization: "",
         payment_type: "private",
       });
-      setOpen(false);
+      setIsSubmitted(true);
       onSuccess?.();
     } catch (error: any) {
       toast({
@@ -138,7 +134,7 @@ export function CourseApplicationForm({
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) setIsSubmitted(false); }}>
       <DialogTrigger asChild>
         {buttonVariant === "card" ? (
           <Button size="lg" className="w-full gradient-primary text-primary-foreground">
@@ -150,7 +146,22 @@ export function CourseApplicationForm({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto" onOpenAutoFocus={(e) => { if (isSubmitted) e.preventDefault(); }}>
+        {isSubmitted ? (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+              <CheckCircle2 className="h-8 w-8 text-primary" />
+            </div>
+            <DialogHeader>
+              <DialogTitle className="text-xl mb-2">Спасибо, что выбрали Артикон!</DialogTitle>
+            </DialogHeader>
+            <p className="text-muted-foreground mb-6">
+              Куратор Учебного центра свяжется с вами в ближайшее время!
+            </p>
+            <Button onClick={() => { setOpen(false); setIsSubmitted(false); }}>Закрыть</Button>
+          </div>
+        ) : (
+        <>
         <DialogHeader>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
@@ -293,6 +304,8 @@ export function CourseApplicationForm({
             Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
           </p>
         </form>
+        </>
+        )}
       </DialogContent>
     </Dialog>
   );

@@ -97,7 +97,7 @@ export function CourseApplicationForm({
         email: formData.email || null,
         phone: formData.phone,
         course_name: courseName,
-        course_date: courseDate || null,
+        course_date: null,
         message: null,
         last_name: formData.last_name,
         telegram: formData.telegram,

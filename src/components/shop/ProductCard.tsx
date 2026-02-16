@@ -6,6 +6,7 @@ import { ShoppingCart, Eye } from "lucide-react";
 import { Product } from "@/data/products";
 import { useCart } from "@/hooks/useCart";
 import { toast } from "sonner";
+import { SPLIT_ELIGIBLE_PRODUCTS } from "./YandexSplitButton";
 
 interface ProductCardProps {
   product: Product;
@@ -86,6 +87,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <h3 className="font-medium text-sm leading-tight mb-3 line-clamp-2 min-h-[2.5rem] text-foreground">
             {product.name}
           </h3>
+
+          {product.price && SPLIT_ELIGIBLE_PRODUCTS.includes(product.id) && (
+            <div className="flex items-center gap-1.5 mb-2 text-xs text-muted-foreground">
+              <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-[hsl(48,100%,50%)] text-[hsl(0,0%,10%)] font-bold text-[9px] leading-none">С</span>
+              <span>{formatPrice(Math.ceil(product.price / 4))}</span>
+              <span>в Сплит</span>
+            </div>
+          )}
 
           <div className="flex items-center justify-between">
             <div className="font-bold text-lg text-foreground">

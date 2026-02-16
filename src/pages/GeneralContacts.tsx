@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/forms/ContactForm";
 const sections = [
   {
     icon: FlaskConical,
-    title: "Фрезерный центр",
+    title: "Лаборатория",
     description: "Цифровая зуботехническая лаборатория",
     phone: "+7 (964) 500-00-60",
     phoneHref: "tel:+79645000060",

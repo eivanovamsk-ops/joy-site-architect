@@ -6,21 +6,16 @@ const categories = [
     title: "Для врачей",
     description: "Практические курсы по современным протоколам лечения",
     items: [
-      { name: "Ортопедия", count: 8 },
-      { name: "Ортодонтия", count: 5 },
-      { name: "Хирургия", count: 6 },
-      { name: "Цифровое планирование", count: 4 },
-      { name: "Дентальный фотопротокол", count: 3 },
+      { name: "Ортопедия", href: "/education/calendar?category=Ортопедия" },
+      { name: "Ортодонтия", href: "/education/calendar?category=Ортодонтия" },
     ],
   },
   {
     title: "Для техников",
     description: "Курсы по цифровым технологиям в зуботехнике",
     items: [
-      { name: "CAD/CAM (Exocad)", count: 6 },
-      { name: "3D-моделирование", count: 4 },
-      { name: "Цифровая ортодонтия", count: 5 },
-      { name: "3D-печать", count: 3 },
+      { name: "CAD/CAM", href: "/education/calendar?category=CAD%2FCAM" },
+      { name: "Ортодонтия", href: "/education/calendar?category=Ортодонтия" },
     ],
   },
 ];
@@ -48,15 +43,12 @@ export function EducationCategories() {
                 {category.items.map((item, i) => (
                   <li key={i}>
                     <Link
-                      to="/education/calendar"
+                      to={item.href}
                       className="flex items-center justify-between text-foreground hover:text-primary transition-colors group"
                     >
                       <span className="flex items-center gap-3">
                         <ArrowRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
                         {item.name}
-                      </span>
-                      <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
-                        {item.count} курсов
                       </span>
                     </Link>
                   </li>

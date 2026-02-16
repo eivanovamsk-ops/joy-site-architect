@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Send, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,7 +41,18 @@ const quickLinks = [
 const Contacts = () => {
   return (
     <Layout>
-      {/* Hero */}
+      <Helmet>
+        <title>Контакты | Артикон — Цифровая стоматология</title>
+        <meta name="description" content="Контакты Артикон: адрес, телефоны, email, Telegram. Свяжитесь с нами для заказа оборудования, услуг лаборатории или записи на обучение." />
+        <link rel="canonical" href="https://articon.pro/contacts" />
+        <meta property="og:title" content="Контакты | Артикон" />
+        <meta property="og:description" content="Свяжитесь с нами: телефон, email, Telegram. Москва, Варшавское шоссе." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://articon.pro/contacts" />
+        <meta property="og:image" content="https://articon.pro/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://articon.pro/og-image.jpg" />
+      </Helmet>
       <section className="py-16 lg:py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">

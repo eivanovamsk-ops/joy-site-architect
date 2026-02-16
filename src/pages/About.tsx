@@ -116,6 +116,7 @@ const About = () => {
         <meta property="og:title" content="О компании Артикон — Цифровые решения для стоматологии" />
         <meta property="og:description" content="Экосистема цифровых решений для стоматологии: лаборатория, магазин, обучение. 15+ лет опыта, топ-3 лабораторий России." />
         <meta property="og:url" content="https://articon.pro/about" />
+        <meta property="og:image" content="https://articon.pro/og-image.jpg" />
         <meta property="og:site_name" content="Артикон" />
         <meta property="og:locale" content="ru_RU" />
         
@@ -123,6 +124,7 @@ const About = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="О компании Артикон" />
         <meta name="twitter:description" content="Экосистема цифровых решений для стоматологии: лаборатория, магазин, обучение." />
+        <meta name="twitter:image" content="https://articon.pro/og-image.jpg" />
         
         {/* JSON-LD */}
         <script type="application/ld+json">

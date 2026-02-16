@@ -23,6 +23,9 @@ const Shop = () => {
         <meta property="og:description" content="CAD/CAM оборудование и материалы для зуботехнических лабораторий. Доставка по России, гарантия, техподдержка." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://articon.pro/shop" />
+        <meta property="og:image" content="https://articon.pro/og-shop.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://articon.pro/og-shop.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify({

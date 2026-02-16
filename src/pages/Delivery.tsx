@@ -10,8 +10,8 @@ const Delivery = () => {
         <title>Контакты | Артикон Магазин</title>
         <meta
           name="description"
-          content="Контакты магазина Артикон. Адрес: Москва, Варшавское шоссе, 33с12. Телефон: +7 (964) 500-00-40. Доставка по Москве и России."
-        />
+          content="Контакты магазина Артикон. Адрес: Москва, Варшавское шоссе, 33с12. Телефон: +7 (964) 500-00-40. Доставка по Москве и России." />
+
         <link rel="canonical" href="https://articon.pro/shop/contacts" />
       </Helmet>
 
@@ -51,8 +51,8 @@ const Delivery = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Телефон</h3>
-                <a href="tel:+79645000020" className="text-muted-foreground text-sm hover:text-primary">
-                  +7 (964) 500-00-20
+                <a href="tel:+79645000020" className="text-muted-foreground text-sm hover:text-primary">+7 (964) 500-00-40
+
                 </a>
               </div>
             </div>
@@ -76,13 +76,13 @@ const Delivery = () => {
             <Button
               asChild
               size="lg"
-              className="gradient-primary text-primary-foreground"
-            >
+              className="gradient-primary text-primary-foreground">
+
               <a
                 href="https://t.me/articon_zakaz"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
+
                 <Send className="mr-2 h-4 w-4" />
                 Связаться с менеджером
               </a>
@@ -99,8 +99,8 @@ const Delivery = () => {
           height="100%"
           frameBorder="0"
           title="Артикон на карте"
-          className="w-full h-full"
-        />
+          className="w-full h-full" />
+
       </section>
 
       {/* Requisites */}
@@ -196,8 +196,8 @@ const Delivery = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Delivery;

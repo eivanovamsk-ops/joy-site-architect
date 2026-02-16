@@ -32,7 +32,7 @@ const sections = [
     description: "Курсы и обучение для стоматологов",
     phone: "+7 (906) 045-75-37",
     phoneHref: "tel:+79060457537",
-    email: null,
+    email: "event@articon.pro",
     telegram: { href: "https://t.me/articon_education", label: "@articon_education" },
     link: "/education/contacts",
   },

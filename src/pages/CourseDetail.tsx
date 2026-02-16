@@ -108,9 +108,6 @@ const CourseDetail = () => {
                 ) : (
                   <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
                 )}
-                <Button size="lg" variant="outline" className="w-full mb-6">
-                  <Share2 className="h-4 w-4 mr-2" /> Поделиться
-                </Button>
 
                 <div className="border-t border-border pt-4">
                   <div className="text-sm font-medium mb-3">Включено в стоимость:</div>

@@ -10,6 +10,7 @@ const Privacy = () => {
           name="description"
           content="Политика конфиденциальности ООО «Артикон Трейд». Защита персональных данных в соответствии с законодательством РФ."
         />
+        <link rel="canonical" href="https://articon.pro/privacy" />
       </Helmet>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">

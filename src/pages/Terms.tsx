@@ -10,6 +10,7 @@ const Terms = () => {
           name="description"
           content="Согласие на обработку персональных данных ООО «Артикон Трейд» в соответствии с ФЗ-152."
         />
+        <link rel="canonical" href="https://articon.pro/terms" />
       </Helmet>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">

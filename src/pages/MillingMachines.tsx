@@ -34,6 +34,7 @@ const MillingMachines = () => {
           name="description" 
           content="Фрезерные станки CAD/CAM для зуботехнических лабораторий: UPCERA. Профессиональное оборудование для фрезерования циркония, PMMA, воска. Печи, компрессоры, пылесосы. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/milling-machines" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

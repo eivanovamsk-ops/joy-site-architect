@@ -24,6 +24,7 @@ const PmmaDiscs = () => {
           name="description"
           content="Диски PMMA (ПММА) для фрезерования временных конструкций. Lima, Dental Direkt. Доставка по России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/pmma-discs" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

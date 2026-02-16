@@ -18,6 +18,7 @@ const Compressors = () => {
           name="description"
           content="Безмасляные компрессоры для зуботехнических лабораторий. Надёжное оборудование для работы с CAD/CAM станками. Доставка по России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/compressors" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

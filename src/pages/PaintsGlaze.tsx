@@ -21,6 +21,7 @@ const PaintsGlaze = () => {
           name="description"
           content="Профессиональные краски и глазури для окрашивания керамики и циркония. Upcera Realism - наборы красок и глазурей для стоматологических реставраций."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/paints-glaze" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

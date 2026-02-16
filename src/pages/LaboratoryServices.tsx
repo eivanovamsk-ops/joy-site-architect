@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -40,6 +41,11 @@ const LaboratoryServices = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Услуги и цены зуботехнической лаборатории | Артикон</title>
+        <meta name="description" content="Полный прайс-лист зуботехнической лаборатории Артикон. CAD/CAM протезирование, циркониевые коронки, виниры, ортодонтия. Актуальные цены." />
+        <link rel="canonical" href="https://articon.pro/laboratory/services" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-12 md:py-16">
         <div className="container mx-auto px-4">

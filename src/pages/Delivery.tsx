@@ -12,6 +12,7 @@ const Delivery = () => {
           name="description"
           content="Контакты магазина Артикон. Адрес: Москва, Варшавское шоссе, 33с12. Телефон: +7 (964) 500-00-40. Доставка по Москве и России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/contacts" />
       </Helmet>
 
       {/* Hero Section */}

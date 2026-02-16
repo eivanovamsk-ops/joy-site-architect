@@ -19,6 +19,7 @@ const Burs = () => {
           name="description" 
           content="Фрезы для CAD/CAM станков imes-icore: алмазные, торические, шаровые концевые фрезы для обработки циркония, титана, PMMA, воска. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/burs" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

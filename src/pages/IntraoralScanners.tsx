@@ -21,6 +21,7 @@ const IntraoralScanners = () => {
           name="description" 
           content="Интраоральные 3D сканеры для стоматологии. Runyes 3DS, Medit T310, T510, T710. Высокое качество сканирования, удобство использования. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/intraoral-scanners" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

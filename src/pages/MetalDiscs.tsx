@@ -30,6 +30,7 @@ const MetalDiscs = () => {
           name="description" 
           content="Металлические диски для фрезерования: кобальт-хром (CoCr), титан (Ti). Диски для изготовления каркасов коронок и мостов. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/metal-discs" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

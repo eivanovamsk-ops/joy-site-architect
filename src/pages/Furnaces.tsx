@@ -19,6 +19,7 @@ const Furnaces = () => {
           name="description"
           content="Зуботехнические печи для синтеризации циркония и обжига керамики. Профессиональное оборудование Upcera, Nabertherm, Dekema для зуботехнических лабораторий."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/furnaces" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

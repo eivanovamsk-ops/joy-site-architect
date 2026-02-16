@@ -16,39 +16,57 @@ export type Database = {
     Tables: {
       course_applications: {
         Row: {
+          city: string | null
           course_date: string | null
           course_name: string
           created_at: string
           email: string
           id: string
+          last_name: string | null
           message: string | null
           name: string
+          organization: string | null
+          payment_type: string | null
           phone: string | null
+          specialization: string | null
           status: string
+          telegram: string | null
           user_id: string | null
         }
         Insert: {
+          city?: string | null
           course_date?: string | null
           course_name: string
           created_at?: string
           email: string
           id?: string
+          last_name?: string | null
           message?: string | null
           name: string
+          organization?: string | null
+          payment_type?: string | null
           phone?: string | null
+          specialization?: string | null
           status?: string
+          telegram?: string | null
           user_id?: string | null
         }
         Update: {
+          city?: string | null
           course_date?: string | null
           course_name?: string
           created_at?: string
           email?: string
           id?: string
+          last_name?: string | null
           message?: string | null
           name?: string
+          organization?: string | null
+          payment_type?: string | null
           phone?: string | null
+          specialization?: string | null
           status?: string
+          telegram?: string | null
           user_id?: string | null
         }
         Relationships: [

@@ -118,7 +118,7 @@ const CourseDetail = () => {
                     </Button>
                   </a>
                 ) : (
-                  <CourseApplicationForm courseName={course.title} courseDate={course.date} />
+                  <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
                 )}
                 <Button size="lg" variant="outline" className="w-full mb-6">
                   <Share2 className="h-4 w-4 mr-2" /> Поделиться

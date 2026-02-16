@@ -100,8 +100,8 @@ const GeneralContacts = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Телефон</h3>
-                  <a href="tel:+79645000020" className="text-muted-foreground text-sm hover:text-primary transition-colors block">
-                    +7 (964) 500-00-20
+                  <a href="tel:+78047007702" className="text-muted-foreground text-sm hover:text-primary transition-colors block">
+                    +7 (804) 700-77-02
                   </a>
                 </div>
               </div>

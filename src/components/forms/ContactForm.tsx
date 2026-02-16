@@ -18,11 +18,13 @@ const feedbackSchema = z.object({
 interface ContactFormProps {
   title?: string;
   description?: string;
+  notifyEmail?: string;
 }
 
 export function ContactForm({ 
   title = "Свяжитесь с нами",
-  description = "Заполните форму и мы ответим в ближайшее время"
+  description = "Заполните форму и мы ответим в ближайшее время",
+  notifyEmail,
 }: ContactFormProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
@@ -59,6 +61,29 @@ export function ContactForm({
       });
 
       if (error) throw error;
+
+      // Send email notification if configured
+      if (notifyEmail) {
+        try {
+          await supabase.functions.invoke("send-email-unisender", {
+            body: {
+              type: "legacy",
+              to: notifyEmail,
+              subject: `📩 Новое сообщение с сайта от ${name}`,
+              body: `<h3>Новое сообщение с формы обратной связи</h3>
+                <p><strong>Имя:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                ${phone ? `<p><strong>Телефон:</strong> ${phone}</p>` : ""}
+                <p><strong>Сообщение:</strong></p>
+                <p>${message}</p>`,
+              senderName: "Articon",
+              senderEmail: "noreply@articon.pro",
+            },
+          });
+        } catch (emailError) {
+          console.error("Failed to send email notification:", emailError);
+        }
+      }
 
       toast({
         title: "Сообщение отправлено!",

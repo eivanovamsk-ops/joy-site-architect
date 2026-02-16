@@ -228,7 +228,8 @@ const Contacts = () => {
               <h2 className="text-2xl font-bold mb-6">Напишите нам</h2>
               <ContactForm
                 title="Отправить сообщение"
-                description="Заполните форму и мы свяжемся с вами в ближайшее время" />
+                description="Заполните форму и мы свяжемся с вами в ближайшее время"
+                notifyEmail="lab@articon.pro" />
 
             </div>
           </div>

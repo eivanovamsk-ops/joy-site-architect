@@ -15,6 +15,7 @@ import Education from "./pages/Education";
 import EducationContacts from "./pages/EducationContacts";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import GeneralContacts from "./pages/GeneralContacts";
 import ProductDetail from "./pages/ProductDetail";
 import CourseDetail from "./pages/CourseDetail";
 import CourseCalendar from "./pages/CourseCalendar";
@@ -85,6 +86,7 @@ const App = () => (
               <Route path="/education/course/:id" element={<CourseDetail />} />
               <Route path="/education/:section" element={<EducationSection />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<GeneralContacts />} />
               <Route path="/laboratory/contacts" element={<Contacts />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />

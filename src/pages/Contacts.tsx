@@ -124,12 +124,11 @@ const Contacts = () => {
                 <Mail className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Email</h3>
                 <a
-                  href="mailto:moscow@articon.pro"
+                  href="mailto:lab@articon.pro"
                   className="text-muted-foreground text-sm hover:text-primary transition-colors"
                 >
-                  moscow@articon.pro
+                  lab@articon.pro
                 </a>
                 <br />
                 <a

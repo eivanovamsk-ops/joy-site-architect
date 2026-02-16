@@ -13,7 +13,7 @@ const CourseDetail = () => {
   const {
     id
   } = useParams();
-  const course = courses.find(c => c.id === Number(id));
+  const course = courses.find((c) => c.id === Number(id));
   if (!course) {
     return <Layout>
         <div className="container mx-auto px-4 py-20 text-center">
@@ -28,7 +28,7 @@ const CourseDetail = () => {
     if (price === 0) return "Бесплатно";
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
   };
-  const relatedCourses = courses.filter(c => c.category === course.category && c.id !== course.id).slice(0, 3);
+  const relatedCourses = courses.filter((c) => c.category === course.category && c.id !== course.id).slice(0, 3);
   const getDuration = () => {
     if (course.dateEnd) {
       const days = Math.ceil((course.dateEnd.getTime() - course.dateStart.getTime()) / (1000 * 60 * 60 * 24)) + 1;
@@ -51,69 +51,69 @@ const CourseDetail = () => {
         {/* Course JSON-LD */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Course",
-            "name": course.title,
-            "description": course.metaDescription,
-            "provider": {
-              "@type": "Organization",
-              "name": "Учебный центр Артикон",
-              "url": "https://articon.pro/education"
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": course.title,
+          "description": course.metaDescription,
+          "provider": {
+            "@type": "Organization",
+            "name": "Учебный центр Артикон",
+            "url": "https://articon.pro/education"
+          },
+          "url": `https://articon.pro/education/course/${course.id}`,
+          ...(course.coverImage ? { "image": course.coverImage } : {}),
+          "coursePrerequisites": course.targetAudience.join(", "),
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": course.format === "Онлайн" ? "Online" : "Onsite",
+            "startDate": course.dateStart.toISOString().split("T")[0],
+            ...(course.dateEnd ? { "endDate": course.dateEnd.toISOString().split("T")[0] } : {}),
+            "location": {
+              "@type": "Place",
+              "name": course.location,
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Москва",
+                "addressCountry": "RU"
+              }
             },
-            "url": `https://articon.pro/education/course/${course.id}`,
-            ...(course.coverImage ? { "image": course.coverImage } : {}),
-            "coursePrerequisites": course.targetAudience.join(", "),
-            "hasCourseInstance": {
-              "@type": "CourseInstance",
-              "courseMode": course.format === "Онлайн" ? "Online" : "Onsite",
-              "startDate": course.dateStart.toISOString().split("T")[0],
-              ...(course.dateEnd ? { "endDate": course.dateEnd.toISOString().split("T")[0] } : {}),
-              "location": {
-                "@type": "Place",
-                "name": course.location,
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Москва",
-                  "addressCountry": "RU"
-                }
-              },
-              ...(course.price > 0 ? {
-                "offers": {
-                  "@type": "Offer",
-                  "price": course.price,
-                  "priceCurrency": "RUB",
-                  "availability": "https://schema.org/InStock",
-                  "url": `https://articon.pro/education/course/${course.id}`
-                }
-              } : {})
-            },
-            ...(course.lecturers.length > 0 ? {
-              "instructor": course.lecturers.map(l => ({
-                "@type": "Person",
-                "name": l.name,
-                "jobTitle": l.position
-              }))
+            ...(course.price > 0 ? {
+              "offers": {
+                "@type": "Offer",
+                "price": course.price,
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": `https://articon.pro/education/course/${course.id}`
+              }
             } : {})
-          })}
+          },
+          ...(course.lecturers.length > 0 ? {
+            "instructor": course.lecturers.map((l) => ({
+              "@type": "Person",
+              "name": l.name,
+              "jobTitle": l.position
+            }))
+          } : {})
+        })}
         </script>
 
         {/* FAQPage JSON-LD */}
-        {course.faq && course.faq.length > 0 && (
-          <script type="application/ld+json">
+        {course.faq && course.faq.length > 0 &&
+      <script type="application/ld+json">
             {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": course.faq.map(item => ({
-                "@type": "Question",
-                "name": item.question,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": item.answer
-                }
-              }))
-            })}
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": course.faq.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}
           </script>
-        )}
+      }
       </Helmet>
 
       {/* Hero */}
@@ -148,11 +148,11 @@ const CourseDetail = () => {
                 <div className={`flex flex-wrap gap-4 ${course.coverImage ? 'text-white/90' : 'text-education-foreground/90'}`}>
                   <div className="flex items-center gap-2">
                     <Calendar className="h-5 w-5" />
-                    {course.isComingSoon ? (
-                      <Badge variant="secondary" className="text-sm font-medium">Дата уточняется</Badge>
-                    ) : (
-                      <span>{course.date}</span>
-                    )}
+                    {course.isComingSoon ?
+                  <Badge variant="secondary" className="text-sm font-medium">Дата уточняется</Badge> :
+
+                  <span>{course.date}</span>
+                  }
                   </div>
                   <div className="flex items-center gap-2"><MapPin className="h-5 w-5" /><span>{course.location}</span></div>
                   {!course.isComingSoon && <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>{getDuration()}</span></div>}
@@ -169,16 +169,16 @@ const CourseDetail = () => {
                 </div>
                 <div className="text-muted-foreground mb-6">{course.format}</div>
                 
-                {course.isComingSoon ? (
-                  <>
+                {course.isComingSoon ?
+              <>
                     <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" buttonLabel="Добавьте меня в лист ожидания" />
                     <p className="text-sm text-muted-foreground text-center mb-3 mt-3">
                       Как только новая дата курса будет согласована, мы сразу с вами свяжемся
                     </p>
-                  </>
-                ) : (
-                  <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
-                )}
+                  </> :
+
+              <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
+              }
 
                 <div className="border-t border-border pt-4">
                   <div className="text-sm font-medium mb-3">Включено в стоимость:</div>
@@ -204,7 +204,7 @@ const CourseDetail = () => {
               <Target className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h2 className="text-xl font-bold mb-2">{course.format === 'Open Day' ? 'Цель встречи' : (course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Цель мероприятия' : 'Цель курса'}</h2>
+              <h2 className="text-xl font-bold mb-2">{course.format === 'Open Day' ? 'Цель встречи' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Цель мероприятия' : 'Цель курса'}</h2>
               <p className="text-muted-foreground text-lg">{course.goal}</p>
             </div>
           </div>
@@ -217,7 +217,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
                 <UserCheck className="h-5 w-5 text-secondary-foreground" />
               </div>
-              <h2 className="text-xl font-bold">{(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Кому будет интересно' : 'Для кого этот курс'}</h2>
+              <h2 className="text-xl font-bold">{course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Кому будет интересно' : 'Для кого этот курс'}</h2>
             </div>
             <ul className="space-y-4">
               {course.targetAudience.map((item, index) => <li key={index} className="flex items-start gap-3">
@@ -234,7 +234,7 @@ const CourseDetail = () => {
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                 <GraduationCap className="h-5 w-5 text-accent-foreground" />
               </div>
-              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Что вам даст встреча' : (course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча') ? 'Что вы получите' : 'Чему вы научитесь'}</h2>
+              <h2 className="text-xl font-bold">{course.format === 'Open Day' ? 'Что вам даст встреча' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Что вы получите' : 'Чему вы научитесь'}</h2>
             </div>
             <ul className="space-y-4">
               {course.skills.map((skill, index) => <li key={index} className="flex items-start gap-3">
@@ -254,9 +254,9 @@ const CourseDetail = () => {
                 <Users className="h-5 w-5 text-primary" />
               </div>
               <h2 className="text-2xl font-bold">
-                {(course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча')
-                  ? (course.lecturers.length === 1 ? 'Спикер' : 'Спикеры')
-                  : (course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели')}
+                {course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ?
+            course.lecturers.length === 1 ? 'Спикер' : 'Спикеры' :
+            course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -264,7 +264,7 @@ const CourseDetail = () => {
                   <div className="flex items-start gap-4">
                     <Avatar className="w-16 h-16">
                       <AvatarImage src={lecturer.photo} alt={lecturer.name} />
-                      <AvatarFallback>{lecturer.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      <AvatarFallback>{lecturer.name.split(' ').map((n) => n[0]).join('')}</AvatarFallback>
                     </Avatar>
                     <div className="flex-1">
                       <h3 className="font-bold text-lg">{lecturer.name}</h3>
@@ -272,11 +272,11 @@ const CourseDetail = () => {
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm mt-4">{lecturer.bio}</p>
-                  {lecturer.achievements && lecturer.achievements.length > 0 && <div className="flex flex-wrap gap-2 mt-3">
-                      {lecturer.achievements.map((achievement, idx) => <Badge key={idx} variant="secondary" className="text-xs">
-                          <Award className="h-3 w-3 mr-1" /> {achievement}
-                        </Badge>)}
-                    </div>}
+                  {lecturer.achievements && lecturer.achievements.length > 0
+
+
+
+            }
                 </div>)}
             </div>
             {course.guestSpeakerNote && <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">
@@ -290,11 +290,11 @@ const CourseDetail = () => {
           <h2 className="text-2xl font-bold mb-6">Программа курса</h2>
           {course.program.length > 1 ? <Tabs defaultValue="day-1" className="w-full">
               <TabsList className="w-full flex-wrap h-auto gap-2 bg-muted/50 p-2 mb-6">
-                {course.program.map(day => <TabsTrigger key={day.day} value={`day-${day.day}`} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                {course.program.map((day) => <TabsTrigger key={day.day} value={`day-${day.day}`} className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                     День {day.day}
                   </TabsTrigger>)}
               </TabsList>
-              {course.program.map(day => <TabsContent key={day.day} value={`day-${day.day}`} className="bg-card border border-border rounded-xl p-6">
+              {course.program.map((day) => <TabsContent key={day.day} value={`day-${day.day}`} className="bg-card border border-border rounded-xl p-6">
                   <h3 className="text-xl font-bold mb-4">{day.title}</h3>
                   {day.speaker}
                   <ul className="space-y-3">
@@ -343,16 +343,16 @@ const CourseDetail = () => {
             {course.isComingSoon ? "Хотите попасть на этот курс?" : "Готовы начать обучение?"}
           </h2>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            {course.isComingSoon 
-              ? "Оставьте заявку, и мы свяжемся с вами, как только дата будет согласована."
-              : "Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации."}
+            {course.isComingSoon ?
+          "Оставьте заявку, и мы свяжемся с вами, как только дата будет согласована." :
+          "Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {course.isComingSoon ? (
-              <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonLabel="Добавьте меня в лист ожидания" />
-            ) : (
-              <CourseApplicationForm courseName={course.title} courseDate={course.date} />
-            )}
+            {course.isComingSoon ?
+          <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonLabel="Добавьте меня в лист ожидания" /> :
+
+          <CourseApplicationForm courseName={course.title} courseDate={course.date} />
+          }
             <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="outline">Задать вопрос</Button>
             </a>
@@ -363,7 +363,7 @@ const CourseDetail = () => {
         {relatedCourses.length > 0 && <div>
             <h2 className="text-2xl font-bold mb-6">Похожие курсы</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedCourses.map(relCourse => <Link key={relCourse.id} to={`/education/course/${relCourse.id}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all">
+              {relatedCourses.map((relCourse) => <Link key={relCourse.id} to={`/education/course/${relCourse.id}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all">
                   {relCourse.coverImage && <div className="h-32 overflow-hidden">
                       <img src={relCourse.coverImage} alt={relCourse.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                     </div>}

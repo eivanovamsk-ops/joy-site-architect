@@ -113,29 +113,29 @@ const shopMenuItems = [{
   href: "/shop/contacts"
 }];
 
-// Education menu items with submenus - linking to specific courses
+// Education menu items with submenus - linking to section pages
 const educationMenuItems = [{
   label: "Календарь курсов",
   href: "/education/calendar"
 }, {
   label: "Обучение для врачей",
-  href: "/education/calendar?category=Ортодонтия",
+  href: "/education/doctors-orthopedics",
   subcategories: [{
     label: "Ортопедия",
-    href: "/education/calendar?category=Ортопедия"
+    href: "/education/doctors-orthopedics"
   }, {
     label: "Ортодонтия",
-    href: "/education/calendar?category=Ортодонтия"
+    href: "/education/doctors-orthodontics"
   }]
 }, {
   label: "Обучение для техников",
-  href: "/education/calendar?category=CAD/CAM",
+  href: "/education/technicians-cadcam",
   subcategories: [{
     label: "CAD/CAM",
-    href: "/education/calendar?category=CAD%2FCAM"
+    href: "/education/technicians-cadcam"
   }, {
     label: "Ортодонтия",
-    href: "/education/calendar?category=Ортодонтия"
+    href: "/education/technicians-orthodontics"
   }]
 }, {
   label: "Контакты",

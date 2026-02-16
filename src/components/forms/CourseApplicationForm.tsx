@@ -33,6 +33,7 @@ interface CourseApplicationFormProps {
   courseDate?: string;
   onSuccess?: () => void;
   buttonVariant?: "default" | "card";
+  buttonLabel?: string;
 }
 
 export function CourseApplicationForm({
@@ -40,6 +41,7 @@ export function CourseApplicationForm({
   courseDate,
   onSuccess,
   buttonVariant = "default",
+  buttonLabel = "Записаться на курс",
 }: CourseApplicationFormProps) {
   const { toast } = useToast();
   const { user } = useAuth();
@@ -140,11 +142,11 @@ export function CourseApplicationForm({
       <DialogTrigger asChild>
         {buttonVariant === "card" ? (
           <Button size="lg" className="w-full gradient-primary text-primary-foreground">
-            Записаться на курс
+            {buttonLabel}
           </Button>
         ) : (
           <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Записаться на курс
+            {buttonLabel}
           </Button>
         )}
       </DialogTrigger>

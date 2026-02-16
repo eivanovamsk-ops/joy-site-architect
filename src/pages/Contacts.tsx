@@ -71,11 +71,11 @@ const Contacts = () => {
                 +7 (964) 500-00-40
               </a>
               <a
-                href="mailto:moscow@articon.pro"
+                href="mailto:lab@articon.pro"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-card border border-border rounded-xl font-semibold text-sm hover:border-primary/50 transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                moscow@articon.pro
+                lab@articon.pro
               </a>
               <a
                 href="https://t.me/articondental_bot"

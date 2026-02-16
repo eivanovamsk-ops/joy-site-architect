@@ -12,7 +12,7 @@ import { LaboratoryCTASection } from "@/components/laboratory/CTASection";
 const Laboratory = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "MedicalBusiness"],
     "@id": "https://articon.pro/laboratory",
     "name": "Артикон — Цифровая зуботехническая лаборатория",
     "description": "Зуботехническая лаборатория полного цикла с CAD/CAM технологиями. Изготовление циркониевых коронок, виниров, имплантации и ортодонтических конструкций в Москве.",

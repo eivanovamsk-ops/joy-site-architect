@@ -1248,7 +1248,7 @@ export const courses: Course[] = [
     externalUrl: "https://www.articon-consulting.ru/cad-cam-pro"
   },
   {
-    id: 16,
+    id: 23,
     slug: "lab-management",
     title: "Менеджмент зуботехнической лаборатории",
     subtitle: "Организация успешного бизнеса",

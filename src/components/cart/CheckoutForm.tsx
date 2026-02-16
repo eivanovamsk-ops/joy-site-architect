@@ -243,7 +243,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
               customerPhone: shippingPhone,
               customerEmail: email,
               telegram: telegram || undefined,
-              items: items.map(i => ({ name: i.name, quantity: i.quantity, price: i.price })),
+              items: items.map(i => ({ name: i.name, quantity: i.quantity, price: i.price, slug: i.slug })),
               total: totalPrice,
               deliveryMethod,
               city: deliveryMethod === "russia_delivery" ? city : "Москва",

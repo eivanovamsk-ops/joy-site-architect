@@ -109,6 +109,30 @@ export function CourseApplicationForm({
 
       if (error) throw error;
 
+      // Send email notification
+      try {
+        await supabase.functions.invoke("send-email-unisender", {
+          body: {
+            type: "course_application",
+            courseData: {
+              courseName,
+              courseDate: courseDate || undefined,
+              name: formData.name,
+              lastName: formData.last_name,
+              phone: formData.phone,
+              telegram: formData.telegram,
+              city: formData.city,
+              specialization: formData.specialization,
+              email: formData.email || undefined,
+              organization: formData.organization || undefined,
+              paymentType: formData.payment_type,
+            },
+          },
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+      }
+
       setFormData({
         name: "",
         last_name: "",

@@ -18,6 +18,7 @@ const PressCeramic = () => {
           name="description"
           content="Пресс-керамика UPCERA UP.CAD для CAD/CAM систем. Дисиликат лития, высокая эстетика и прочность до 400 МПа. Доставка по России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/press-ceramic" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

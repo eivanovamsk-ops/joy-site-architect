@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Helmet } from "react-helmet-async";
+
 import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -36,11 +37,11 @@ const EducationContacts = () => {
 
   return (
     <Layout>
-      <div className="bg-muted/30 py-4">
-        <div className="container mx-auto px-4">
-          <Breadcrumbs />
-        </div>
-      </div>
+      <Helmet>
+        <title>Контакты Учебного центра | Артикон</title>
+        <meta name="description" content="Контакты Учебного центра Артикон: телефоны, Telegram, адрес в Москве (Варшавское шоссе 33с12). Как добраться от МЦК и метро." />
+        <link rel="canonical" href="https://articon.pro/education/contacts" />
+      </Helmet>
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">

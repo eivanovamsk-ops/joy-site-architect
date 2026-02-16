@@ -16,6 +16,7 @@ const Sale = () => {
           name="description" 
           content="Покупайте товары по выгодной цене! Скидки на 3D-сканеры, принтеры, фотополимеры и аксессуары для стоматологических лабораторий." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/sale" />
       </Helmet>
 
       <div className="bg-gradient-to-r from-destructive/10 via-destructive/5 to-background py-12">

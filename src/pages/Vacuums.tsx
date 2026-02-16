@@ -18,6 +18,7 @@ const Vacuums = () => {
           name="description"
           content="Пылесосы для фрезерных станков сухой обработки Upcera. Эффективное удаление пыли при фрезеровании. Доставка по России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/vacuums" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

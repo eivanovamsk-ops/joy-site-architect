@@ -26,6 +26,7 @@ const Photopolymers = () => {
           name="description" 
           content="Фотополимеры для стоматологической 3D-печати: HARZ Labs, TOPCORE. Смолы для моделей, капп, временных коронок, хирургических шаблонов. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/photopolymers" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

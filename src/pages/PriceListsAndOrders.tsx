@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -133,6 +134,11 @@ const FileCard = ({ name, image, url }: FileCardProps) => (
 const PriceListsAndOrders = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Прайс-листы и заказ-наряды | Артикон Лаборатория</title>
+        <meta name="description" content="Скачайте актуальные прайс-листы и бланки заказ-нарядов зуботехнической лаборатории Артикон. Ортопедические, ортодонтические, фрезерные прайсы." />
+        <link rel="canonical" href="https://articon.pro/laboratory/documents" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-12 md:py-16">
         <div className="container mx-auto px-4">

@@ -19,6 +19,7 @@ const LabScanners = () => {
           name="description" 
           content="Лабораторные 3D сканеры Medit T310, T510, T710 для зуботехнических лабораторий. Высокоточное сканирование моделей и оттисков. Доставка по России." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/lab-scanners" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

@@ -27,6 +27,7 @@ const Printers3D = () => {
           name="description" 
           content="3D-принтеры и фотополимеры для стоматологии: Asiga, Uniformation, HeyGears, HARZ Labs, TOPCORE. Высокоточная печать моделей, капп, хирургических шаблонов." 
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/3d-printers" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

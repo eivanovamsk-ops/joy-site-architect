@@ -41,6 +41,7 @@ const ZirconiaDiscs = () => {
           name="description"
           content="Циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White. Каркасные, белые и мультислойные диски для зуботехнических лабораторий. Доставка по России."
         />
+        <link rel="canonical" href="https://articon.pro/shop/catalog/zirconia-discs" />
       </Helmet>
 
       <div className="bg-muted/30 py-8">

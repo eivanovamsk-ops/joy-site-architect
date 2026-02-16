@@ -40,9 +40,80 @@ const CourseDetail = () => {
       <Helmet>
         <title>{course.metaTitle} | Учебный центр Артикон</title>
         <meta name="description" content={course.metaDescription} />
+        <link rel="canonical" href={`https://articon.pro/education/course/${course.id}`} />
         <meta property="og:title" content={course.metaTitle} />
         <meta property="og:description" content={course.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://articon.pro/education/course/${course.id}`} />
         {course.coverImage && <meta property="og:image" content={course.coverImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        {/* Course JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": course.title,
+            "description": course.metaDescription,
+            "provider": {
+              "@type": "Organization",
+              "name": "Учебный центр Артикон",
+              "url": "https://articon.pro/education"
+            },
+            "url": `https://articon.pro/education/course/${course.id}`,
+            ...(course.coverImage ? { "image": course.coverImage } : {}),
+            "coursePrerequisites": course.targetAudience.join(", "),
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": course.format === "Онлайн" ? "Online" : "Onsite",
+              "startDate": course.dateStart.toISOString().split("T")[0],
+              ...(course.dateEnd ? { "endDate": course.dateEnd.toISOString().split("T")[0] } : {}),
+              "location": {
+                "@type": "Place",
+                "name": course.location,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Москва",
+                  "addressCountry": "RU"
+                }
+              },
+              ...(course.price > 0 ? {
+                "offers": {
+                  "@type": "Offer",
+                  "price": course.price,
+                  "priceCurrency": "RUB",
+                  "availability": "https://schema.org/InStock",
+                  "url": `https://articon.pro/education/course/${course.id}`
+                }
+              } : {})
+            },
+            ...(course.lecturers.length > 0 ? {
+              "instructor": course.lecturers.map(l => ({
+                "@type": "Person",
+                "name": l.name,
+                "jobTitle": l.position
+              }))
+            } : {})
+          })}
+        </script>
+
+        {/* FAQPage JSON-LD */}
+        {course.faq && course.faq.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": course.faq.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            })}
+          </script>
+        )}
       </Helmet>
 
       {/* Hero */}

@@ -6,11 +6,12 @@
      "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
  };
  
- interface OrderItem {
-   name: string;
-   quantity: number;
-   price: number;
- }
+interface OrderItem {
+  name: string;
+  quantity: number;
+  price: number;
+  slug?: string;
+}
  
  interface OrderData {
    orderId: string;
@@ -262,34 +263,40 @@
      const requestData: EmailRequest = await req.json();
      const { type, senderName = "Articon", senderEmail = "moscow@articon.pro" } = requestData;
  
-     // Handle new order confirmation type
-     if (type === "order_confirmation" && requestData.orderData) {
-       const order = requestData.orderData;
-       const results: any[] = [];
- 
-       // 1. Send confirmation email to customer
-       const customerEmailHtml = buildCustomerEmailHtml(order);
-       const customerResult = await sendEmail(
-         UNISENDER_API_KEY,
-         order.customerEmail,
-         `Заказ #${order.orderId.slice(0, 8).toUpperCase()} оформлен — Articon`,
-         customerEmailHtml,
-         senderName,
-         senderEmail
-       );
-       results.push({ recipient: "customer", result: customerResult });
- 
-       // 2. Send notification to admin
-       const adminEmailHtml = buildAdminEmailHtml(order);
-       const adminResult = await sendEmail(
-         UNISENDER_API_KEY,
-         "moscow@articon.pro",
-         `🛒 Новый заказ #${order.orderId.slice(0, 8).toUpperCase()} от ${order.customerName}`,
-         adminEmailHtml,
-         "Articon Shop",
-         senderEmail
-       );
-       results.push({ recipient: "admin", result: adminResult });
+    // Handle new order confirmation type
+    if (type === "order_confirmation" && requestData.orderData) {
+      const order = requestData.orderData;
+      const results: any[] = [];
+
+      // Determine email addresses based on product slugs
+      const scannerSlugs = ["rundeer-3ds-v5", "rundeer-3ds-v6"];
+      const hasScannerOnly = order.items.every(item => item.slug && scannerSlugs.includes(item.slug));
+      const adminEmail = hasScannerOnly ? "noreply@articon.pro" : "moscow@articon.pro";
+      const fromEmail = adminEmail;
+
+      // 1. Send confirmation email to customer
+      const customerEmailHtml = buildCustomerEmailHtml(order);
+      const customerResult = await sendEmail(
+        UNISENDER_API_KEY,
+        order.customerEmail,
+        `Заказ #${order.orderId.slice(0, 8).toUpperCase()} оформлен — Articon`,
+        customerEmailHtml,
+        senderName,
+        fromEmail
+      );
+      results.push({ recipient: "customer", result: customerResult });
+
+      // 2. Send notification to admin
+      const adminEmailHtml = buildAdminEmailHtml(order);
+      const adminResult = await sendEmail(
+        UNISENDER_API_KEY,
+        adminEmail,
+        `🛒 Новый заказ #${order.orderId.slice(0, 8).toUpperCase()} от ${order.customerName}`,
+        adminEmailHtml,
+        "Articon Shop",
+        fromEmail
+      );
+      results.push({ recipient: "admin", result: adminResult });
  
        return new Response(JSON.stringify({ success: true, results }), {
          status: 200,

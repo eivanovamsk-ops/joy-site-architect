@@ -65,7 +65,7 @@ const Contacts = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+79645000040"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">
+                className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-primary-foreground rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">+7 (964) 500-00-20
 
                 <Phone className="h-4 w-4" />
                 +7 (964) 500-00-40

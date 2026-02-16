@@ -4,112 +4,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Articon Design System - Dental Digital Solutions */
+/* Articon Design System — Dark Premium */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    --background: 225 20% 97%;
+    --foreground: 222 35% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card: 225 20% 99%;
+    --card-foreground: 222 35% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover: 225 20% 99%;
+    --popover-foreground: 222 35% 12%;
 
-    /* Primary Blue - Articon brand */
-    --primary: 207 90% 40%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary — Deep Navy */
+    --primary: 218 55% 20%;
+    --primary-foreground: 40 25% 97%;
 
-    /* Secondary - Light gray background */
-    --secondary: 210 20% 97%;
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary — Cool stone */
+    --secondary: 225 15% 94%;
+    --secondary-foreground: 222 35% 15%;
 
     /* Muted */
-    --muted: 210 20% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 225 15% 93%;
+    --muted-foreground: 222 12% 48%;
 
-    /* Accent - Orange from logo */
-    --accent: 30 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent — Rich Gold */
+    --accent: 42 82% 52%;
+    --accent-foreground: 222 40% 10%;
 
-    /* Success - Green */
-    --success: 145 63% 42%;
+    /* Success — Deep Emerald */
+    --success: 160 55% 38%;
     --success-foreground: 0 0% 100%;
 
-    /* Destructive/SALE - Red */
-    --destructive: 354 70% 55%;
+    /* Destructive/SALE — Clean Crimson */
+    --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 207 90% 40%;
+    --border: 225 18% 88%;
+    --input: 225 18% 88%;
+    --ring: 218 55% 20%;
 
     --radius: 0.5rem;
 
-    /* Gray palette from logo */
-    --gray-warm: 0 0% 55%;
-    --gray-light: 0 0% 97%;
-
-    /* Ortho Green */
-    --ortho: 90 65% 55%;
+    /* Ortho — Rich Emerald */
+    --ortho: 155 60% 40%;
     --ortho-foreground: 0 0% 100%;
 
-    /* Lab Dark Teal */
-    --lab: 190 80% 30%;
+    /* Lab — Deep Teal */
+    --lab: 192 75% 25%;
     --lab-foreground: 0 0% 100%;
 
-    /* Education Light Blue */
-    --education: 200 80% 50%;
+    /* Education — Sapphire */
+    --education: 215 65% 45%;
     --education-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 225 18% 96%;
+    --sidebar-foreground: 222 30% 20%;
+    --sidebar-primary: 218 55% 20%;
+    --sidebar-primary-foreground: 40 25% 97%;
+    --sidebar-accent: 225 15% 92%;
+    --sidebar-accent-foreground: 222 35% 12%;
+    --sidebar-border: 225 18% 88%;
+    --sidebar-ring: 218 55% 20%;
   }
 
   .dark {
-    --background: 220 20% 10%;
-    --foreground: 0 0% 95%;
+    --background: 222 30% 7%;
+    --foreground: 220 15% 93%;
 
-    --card: 220 20% 13%;
-    --card-foreground: 0 0% 95%;
+    --card: 222 28% 10%;
+    --card-foreground: 220 15% 93%;
 
-    --popover: 220 20% 13%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222 28% 10%;
+    --popover-foreground: 220 15% 93%;
 
-    --primary: 207 90% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 185 65% 45%;
+    --primary-foreground: 222 30% 7%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 222 25% 14%;
+    --secondary-foreground: 220 15% 90%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 222 25% 14%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 30 100% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 82% 55%;
+    --accent-foreground: 222 30% 7%;
 
-    --destructive: 354 70% 50%;
+    --destructive: 0 65% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 207 90% 55%;
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 185 65% 45%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 222 28% 9%;
+    --sidebar-foreground: 220 15% 90%;
+    --sidebar-primary: 185 65% 45%;
+    --sidebar-primary-foreground: 222 30% 7%;
+    --sidebar-accent: 222 25% 13%;
+    --sidebar-accent-foreground: 220 15% 90%;
+    --sidebar-border: 222 25% 16%;
+    --sidebar-ring: 185 65% 45%;
   }
 }
 
@@ -152,27 +148,27 @@
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(207 90% 50%) 100%);
+    background: linear-gradient(135deg, hsl(218 55% 20%) 0%, hsl(215 50% 30%) 100%);
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(35 100% 55%) 100%);
+    background: linear-gradient(135deg, hsl(42 82% 52%) 0%, hsl(38 85% 58%) 100%);
   }
 
   .gradient-lab {
-    background: linear-gradient(135deg, hsl(var(--lab)) 0%, hsl(200 70% 35%) 100%);
+    background: linear-gradient(135deg, hsl(192 75% 25%) 0%, hsl(200 65% 32%) 100%);
   }
 
   .gradient-ortho {
-    background: linear-gradient(135deg, hsl(var(--ortho)) 0%, hsl(100 60% 50%) 100%);
+    background: linear-gradient(135deg, hsl(155 60% 40%) 0%, hsl(165 55% 45%) 100%);
   }
 
   .gradient-education {
-    background: linear-gradient(135deg, hsl(var(--education)) 0%, hsl(210 80% 55%) 100%);
+    background: linear-gradient(135deg, hsl(215 65% 45%) 0%, hsl(225 60% 52%) 100%);
   }
 
   .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    background: linear-gradient(135deg, hsl(218 55% 20%) 0%, hsl(42 82% 52%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -186,32 +182,16 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }

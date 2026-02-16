@@ -51,8 +51,8 @@ const Delivery = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Телефон</h3>
-                <a href="tel:+79645000040" className="text-muted-foreground text-sm hover:text-primary">
-                  +7 (964) 500-00-40
+                <a href="tel:+79645000020" className="text-muted-foreground text-sm hover:text-primary">
+                  +7 (964) 500-00-20
                 </a>
               </div>
             </div>

@@ -1560,7 +1560,7 @@ export const courses: Course[] = [
       },
       {
         name: "Анастасия Маркова",
-        photo: "/images/lecturers/anastasia-markova.png",
+        photo: "/images/lecturers/anastasia-markova.avif",
         position: "Стоматолог-ортодонт, преподаватель кафедры стоматологии детского возраста и ортодонтии Медицинского института РУДН",
         bio: "Более 200 клинических кейсов. Спикер EUROKAPPA. Ментор молодых врачей и ординаторов. Автор методических пособий и образовательных гайдов для врачей.",
         achievements: [

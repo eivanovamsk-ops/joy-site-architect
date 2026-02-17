@@ -1,6 +1,24 @@
 import { ArrowRight, Truck, Shield, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import bannerRundeer from "@/assets/banners/banner-rundeer-split.jpg";
+import bannerUpcera from "@/assets/banners/banner-upcera-explore.jpg";
+import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
+
+const banners = [
+  { image: bannerRundeer, alt: "Сканеры Rundeer — Плати частями", href: "/shop/product/rundeer-3ds-v5" },
+  { image: bannerUpcera, alt: "Диски Upcera Explore Esthetic", href: "/shop/catalog/zirconia-discs" },
+  { image: bannerHeygears, alt: "3D-принтер HeyGears", href: "/shop/catalog/3d-printers" },
+];
 
 export function ShopHeroBanner() {
   return (
@@ -27,7 +45,6 @@ export function ShopHeroBanner() {
                 </a>
               </Button>
             </div>
-            {/* Trust badges */}
             <div className="flex flex-wrap gap-6 text-accent-foreground/80">
               <div className="flex items-center gap-2">
                 <Truck className="h-5 w-5" />
@@ -44,15 +61,30 @@ export function ShopHeroBanner() {
             </div>
           </div>
           <div className="hidden lg:block">
-            <div className="w-full aspect-square rounded-3xl bg-accent-foreground/10 flex items-center justify-center p-8">
-              <div className="text-center">
-                <div className="text-6xl font-bold text-accent-foreground mb-4">200+</div>
-                <div className="text-xl text-accent-foreground/80">товаров в каталоге</div>
-                <div className="mt-6 text-accent-foreground/60">
-                  Asiga • Medit • Upcera • imes-icore • Nabertherm • Dental Direkt
-                </div>
-              </div>
-            </div>
+            <Carousel
+              opts={{ align: "center", loop: true }}
+              plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {banners.map((banner, i) => (
+                  <CarouselItem key={i}>
+                    <Link to={banner.href} className="block">
+                      <div className="aspect-square overflow-hidden rounded-3xl">
+                        <img
+                          src={banner.image}
+                          alt={banner.alt}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                          loading={i === 0 ? "eager" : "lazy"}
+                        />
+                      </div>
+                    </Link>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-4" />
+              <CarouselNext className="-right-4" />
+            </Carousel>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ import bannerUpcera from "@/assets/banners/banner-upcera-explore.jpg";
 import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
 
 const banners = [
-  { image: bannerRundeer, alt: "Сканеры Rundeer — Плати частями", href: "/shop/product/rundeer-3ds-v5" },
+  { image: bannerRundeer, alt: "Сканеры Rundeer — Плати частями", href: "/shop/product/rundeer-3ds-v6" },
   { image: bannerUpcera, alt: "Диски Upcera Explore Esthetic", href: "/shop/catalog/zirconia-discs" },
   { image: bannerHeygears, alt: "3D-принтер HeyGears", href: "/shop/catalog/3d-printers" },
 ];

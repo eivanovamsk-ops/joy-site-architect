@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { ShopHeroBanner } from "@/components/shop/HeroBanner";
+import { BannerSlider } from "@/components/shop/BannerSlider";
 import { ShopQuickLinks } from "@/components/shop/QuickLinks";
 import { ProductCarousel } from "@/components/shop/ProductCarousel";
 import { ShopAdvantages } from "@/components/shop/Advantages";
@@ -47,6 +48,7 @@ const Shop = () => {
       </Helmet>
       
       <ShopHeroBanner />
+      <BannerSlider />
       <ShopQuickLinks />
       
       <ProductCarousel 

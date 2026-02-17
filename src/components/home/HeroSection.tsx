@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import articonCrystal from "@/assets/articon-crystal.png";
 
 export function HeroSection() {
   const scrollToDirections = () => {
@@ -15,6 +16,15 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 pt-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+
+          {/* Spinning Crystal Logo */}
+          <div className="mb-8 flex justify-center animate-fade-in-up">
+            <img
+              src={articonCrystal}
+              alt="Articon Crystal Logo"
+              className="w-28 h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 animate-[spin_12s_linear_infinite] drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+            />
+          </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in-up text-background">

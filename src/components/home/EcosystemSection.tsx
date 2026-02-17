@@ -78,7 +78,7 @@ export function EcosystemSection() {
             <span className="text-gradient-primary">Артикон</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Бесшовный цикл поддержки для эффективной и предсказуемой работы в цифровой стоматологии
+            Полный цикл поддержки для эффективной и предсказуемой работы в цифровой стоматологии
           </p>
         </div>
 

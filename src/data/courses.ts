@@ -139,8 +139,7 @@ export const courses: Course[] = [
     metaDescription: "Однодневный курс: моделирование окклюзионных сплинтов в exocad, работа с виртуальным артикулятором. Москва, Артикон. 15 000₽.",
     category: "3D-моделирование",
     tags: ["сплинты", "гнатология", "exocad", "артикулятор"],
-    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/digital-modeling-of-splints-and-working-in-a-virtual-articulator"
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"]
   },
   {
     id: 5,
@@ -535,8 +534,7 @@ export const courses: Course[] = [
     metaDescription: "Базовый курс по окрашиванию полноанатомических конструкций из диоксида циркония на примере материалов Upcera. Москва, Артикон. 25 000₽.",
     category: "Эстетика",
     tags: ["эстетика", "окрашивание", "циркон", "глазурь", "Upcera"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/color-and-shape"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 10,
@@ -618,8 +616,7 @@ export const courses: Course[] = [
     metaDescription: "Практический курс по CAM-программам MillBox и SUM: полный цикл фрезерования от проекта до готовой конструкции. Москва, Артикон. 30 000₽.",
     category: "CAD/CAM",
     tags: ["MillBox", "SUM3D", "фрезерование", "CAM", "imes-icore"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/millbox-sum"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 11,
@@ -706,8 +703,7 @@ export const courses: Course[] = [
     metaDescription: "Open Day в Артикон: сравнение 3D-принтеров, демонстрация печати, разбор кейсов. Москва, 28 февраля. 5 000₽.",
     category: "3D-моделирование",
     tags: ["3D-печать", "Open Day", "выбор оборудования", "HeyGears"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/3dprint-dental-open-day"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 12,
@@ -1244,8 +1240,7 @@ export const courses: Course[] = [
     metaDescription: "3-дневный практический курс: моделирование, фрезерование и окрашивание протяженных конструкций из циркония. Москва, Артикон. 90 000₽.",
     category: "CAD/CAM",
     tags: ["CAD/CAM", "цирконий", "exocad", "MIYO", "фрезерование"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/cad-cam-pro"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 23,
@@ -1335,8 +1330,7 @@ export const courses: Course[] = [
     metaDescription: "Онлайн-курс для владельцев лабораторий: бизнес-процессы, управление, финансы, маркетинг. Артикон. 35 000₽.",
     category: "Менеджмент",
     tags: ["менеджмент", "бизнес", "онлайн-курс", "лаборатория"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/dental-laboratory-management"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 17,
@@ -1482,8 +1476,7 @@ export const courses: Course[] = [
     metaDescription: "Воркшоп для зубных техников: мастер-классы по окрашиванию и нанесению от сертифицированных тренеров. 10 апреля 2026, Москва. 7 000₽.",
     category: "Эстетика",
     tags: ["воркшоп", "окрашивание", "нанесение", "UPCERA", "Uniformation"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/workshop-2026"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 19,
@@ -1678,8 +1671,7 @@ export const courses: Course[] = [
     metaDescription: "Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. 23 апреля 2026, Москва. Теория + практика за 1 день.",
     category: "Ортопедия",
     tags: ["фотография", "фотопротокол", "документирование", "Lightroom", "Photoshop"],
-    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/dental-photo-protocol"
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"]
   },
   {
     id: 21,
@@ -1753,8 +1745,7 @@ export const courses: Course[] = [
     metaDescription: "Бизнес-встреча для владельцев и руководителей зуботехнических лабораторий. 14 мая 2026, Москва. Стратегии роста, финансы, маркетинг.",
     category: "Менеджмент",
     tags: ["бизнес", "менеджмент", "руководители", "лаборатории", "нетворкинг"],
-    sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/business-meetup"
+    sectionTags: ["для техников", "CAD/CAM"]
   },
   {
     id: 3,
@@ -1891,7 +1882,6 @@ export const courses: Course[] = [
     category: "CAD/CAM",
     tags: ["CAD/CAM", "exocad", "фрезерование", "3D-печать", "циркон"],
     sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "https://www.articon-consulting.ru/cad-cam-school",
     isAccredited: true,
     placesLeft: 5
   },

@@ -99,7 +99,7 @@ const EducationSection = () => {
               {filteredCourses.map((course) => (
                 <Link
                   key={course.id + "-" + course.slug}
-                  to={course.externalUrl || `/education/course/${course.slug}`}
+                  to={course.externalUrl || `/education/course/${course.id}`}
                   target={course.externalUrl ? "_blank" : undefined}
                   className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block"
                 >

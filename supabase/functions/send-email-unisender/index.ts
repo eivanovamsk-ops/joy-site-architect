@@ -283,8 +283,10 @@ interface OrderItem {
       const order = requestData.orderData;
       const results: any[] = [];
 
-       // Admin email is always moscow@articon.pro (noreply@articon.pro is blocked by Unisender)
-       const adminEmail = "moscow@articon.pro";
+       // Route scanner orders to m.safonov@articon.pro, all others to moscow@articon.pro
+       const scannerSlugs = ["rundeer-3ds-v5", "rundeer-3ds-v6"];
+       const hasScannerOnly = order.items.every(item => item.slug && scannerSlugs.includes(item.slug));
+       const adminEmail = hasScannerOnly ? "m.safonov@articon.pro" : "moscow@articon.pro";
        const fromEmail = "moscow@articon.pro";
 
        // 1. Send confirmation email to customer

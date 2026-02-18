@@ -69,8 +69,8 @@ interface OrderItem {
  
  const getPaymentTypeText = (type: string): string => {
    switch (type) {
-     case "private_cash": return "Частное лицо — Наличными";
-     case "private_transfer": return "Частное лицо — Безналичный расчёт";
+     case "private_cash": return "Частное лицо (наличными или переводом на счёт)";
+     case "private_transfer": return "Частное лицо (наличными или переводом на счёт)";
      case "company": return "Юридическое лицо (по счёту)";
      default: return type;
    }

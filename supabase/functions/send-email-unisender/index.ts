@@ -283,35 +283,33 @@ interface OrderItem {
       const order = requestData.orderData;
       const results: any[] = [];
 
-      // Determine email addresses based on product slugs
-      const scannerSlugs = ["rundeer-3ds-v5", "rundeer-3ds-v6"];
-      const hasScannerOnly = order.items.every(item => item.slug && scannerSlugs.includes(item.slug));
-      const adminEmail = hasScannerOnly ? "noreply@articon.pro" : "moscow@articon.pro";
-      const fromEmail = adminEmail;
+       // Admin email is always moscow@articon.pro (noreply@articon.pro is blocked by Unisender)
+       const adminEmail = "moscow@articon.pro";
+       const fromEmail = "moscow@articon.pro";
 
-      // 1. Send confirmation email to customer
-      const customerEmailHtml = buildCustomerEmailHtml(order);
-      const customerResult = await sendEmail(
-        UNISENDER_API_KEY,
-        order.customerEmail,
-        `Заказ #${order.orderId.slice(0, 8).toUpperCase()} оформлен — Articon`,
-        customerEmailHtml,
-        senderName,
-        fromEmail
-      );
-      results.push({ recipient: "customer", result: customerResult });
+       // 1. Send confirmation email to customer
+       const customerEmailHtml = buildCustomerEmailHtml(order);
+       const customerResult = await sendEmail(
+         UNISENDER_API_KEY,
+         order.customerEmail,
+         `Заказ #${order.orderId.slice(0, 8).toUpperCase()} оформлен — Articon`,
+         customerEmailHtml,
+         "Articon Shop",
+         fromEmail
+       );
+       results.push({ recipient: "customer", result: customerResult });
 
-      // 2. Send notification to admin
-      const adminEmailHtml = buildAdminEmailHtml(order);
-      const adminResult = await sendEmail(
-        UNISENDER_API_KEY,
-        adminEmail,
-        `🛒 Новый заказ #${order.orderId.slice(0, 8).toUpperCase()} от ${order.customerName}`,
-        adminEmailHtml,
-        "Articon Shop",
-        fromEmail
-      );
-      results.push({ recipient: "admin", result: adminResult });
+       // 2. Send notification to admin
+       const adminEmailHtml = buildAdminEmailHtml(order);
+       const adminResult = await sendEmail(
+         UNISENDER_API_KEY,
+         adminEmail,
+         `🛒 Новый заказ #${order.orderId.slice(0, 8).toUpperCase()} от ${order.customerName}`,
+         adminEmailHtml,
+         "Articon Shop",
+         fromEmail
+       );
+       results.push({ recipient: "admin", result: adminResult });
  
        return new Response(JSON.stringify({ success: true, results }), {
          status: 200,

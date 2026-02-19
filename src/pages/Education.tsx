@@ -80,8 +80,8 @@ const Education = () => {
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Курсы для стоматологов — Учебный центр Артикон" />
-        <meta property="og:description" content="Профессиональные курсы CAD/CAM, цифровой ортодонтии. 2000+ обученных специалистов, практика на современном оборудовании." />
+        <meta property="og:title" content="Курсы для стоматологов и зубных техников — Учебный центр Артикон" />
+        <meta property="og:description" content="Практические курсы по цифровой стоматологии: ортопедия, ортодонтия, CAD/CAM. 2000+ выпускников, 30+ авторских курсов. Обучение от практикующих экспертов." />
         <meta property="og:url" content="https://articon.pro/education" />
         <meta property="og:image" content="https://articon.pro/og-education.jpg" />
         <meta property="og:site_name" content="Артикон" />
@@ -89,8 +89,8 @@ const Education = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Курсы для стоматологов — Учебный центр Артикон" />
-        <meta name="twitter:description" content="Профессиональные курсы CAD/CAM технологий и цифровой ортодонтии." />
+        <meta name="twitter:title" content="Курсы для стоматологов и зубных техников — Учебный центр Артикон" />
+        <meta name="twitter:description" content="Практические курсы по цифровой стоматологии: ортопедия, ортодонтия, CAD/CAM. 2000+ выпускников, 30+ авторских курсов." />
         <meta name="twitter:image" content="https://articon.pro/og-education.jpg" />
         
         {/* JSON-LD */}

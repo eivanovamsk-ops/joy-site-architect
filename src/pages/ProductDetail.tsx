@@ -78,15 +78,23 @@ const ProductDetail = () => {
         <link rel="canonical" href={`https://articon.pro/shop/product/${product.id}`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`${product.name} | Артикон`} />
+        <meta property="og:title" content={`${product.name} — купить в Артикон`} />
         <meta property="og:description" content={generateSeoDescription()} />
         <meta property="og:image" content={product.image.startsWith('http') ? product.image : `https://articon.pro${product.image}`} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={`https://articon.pro/shop/product/${product.id}`} />
+        <meta property="og:site_name" content="Артикон" />
+        <meta property="og:locale" content="ru_RU" />
         <meta property="product:price:amount" content={product.price?.toString() || ""} />
         <meta property="product:price:currency" content="RUB" />
         <meta property="product:availability" content={product.inStock ? "in stock" : "preorder"} />
         <meta property="product:brand" content={product.brand} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${product.name} — купить в Артикон`} />
+        <meta name="twitter:description" content={generateSeoDescription()} />
+        <meta name="twitter:image" content={product.image.startsWith('http') ? product.image : `https://articon.pro${product.image}`} />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">

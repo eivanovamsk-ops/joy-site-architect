@@ -88,8 +88,8 @@ const Laboratory = () => {
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Зуботехническая лаборатория Артикон — CAD/CAM технологии" />
-        <meta property="og:description" content="Цифровая зуботехническая лаборатория полного цикла. Изготовление коронок, виниров, имплантатов с использованием CAD/CAM технологий." />
+        <meta property="og:title" content="Зуботехническая лаборатория Articon — цифровое производство в Москве" />
+        <meta property="og:description" content="Изготовление коронок, виниров, элайнеров и хирургических шаблонов с использованием CAD/CAM технологий. 50K+ работ в год. Работаем с клиниками по всей России." />
         <meta property="og:url" content="https://articon.pro/laboratory" />
         <meta property="og:image" content="https://articon.pro/og-laboratory.jpg" />
         <meta property="og:site_name" content="Артикон" />
@@ -97,8 +97,8 @@ const Laboratory = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Зуботехническая лаборатория Артикон" />
-        <meta name="twitter:description" content="Цифровая зуботехническая лаборатория полного цикла с CAD/CAM технологиями." />
+        <meta name="twitter:title" content="Зуботехническая лаборатория Articon — цифровое производство в Москве" />
+        <meta name="twitter:description" content="Изготовление коронок, виниров, элайнеров и хирургических шаблонов. 50K+ работ в год. CAD/CAM технологии." />
         <meta name="twitter:image" content="https://articon.pro/og-laboratory.jpg" />
         
         {/* JSON-LD */}

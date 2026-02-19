@@ -20,12 +20,16 @@ const Shop = () => {
         <meta name="keywords" content="стоматологическое оборудование купить, CAD/CAM стоматология, 3D принтер стоматологический, интраоральный сканер, фрезерный станок стоматологический, циркониевые диски, фотополимеры для 3D печати, Артикон" />
         <link rel="canonical" href="https://articon.pro/shop" />
         
-        <meta property="og:title" content="Магазин стоматологического оборудования | Артикон" />
+        <meta property="og:title" content="Магазин стоматологического оборудования — Артикон" />
         <meta property="og:description" content="CAD/CAM оборудование и материалы для зуботехнических лабораторий. Доставка по России, гарантия, техподдержка." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://articon.pro/shop" />
         <meta property="og:image" content="https://articon.pro/og-shop.jpg" />
+        <meta property="og:site_name" content="Артикон" />
+        <meta property="og:locale" content="ru_RU" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Магазин стоматологического оборудования — Артикон" />
+        <meta name="twitter:description" content="CAD/CAM оборудование и материалы для зуботехнических лабораторий. Доставка по России, гарантия, техподдержка." />
         <meta name="twitter:image" content="https://articon.pro/og-shop.jpg" />
         
         <script type="application/ld+json">

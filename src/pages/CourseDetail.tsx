@@ -28,6 +28,17 @@ const CourseDetail = () => {
     if (price === 0) return "Бесплатно";
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
   };
+
+  const generateCourseOgDescription = () => {
+    const parts: string[] = [];
+    if (!course.isComingSoon) parts.push(course.date + ".");
+    parts.push(course.shortDescription);
+    if (course.lecturers.length > 0) parts.push(`Преподаватель: ${course.lecturers[0].name}.`);
+    if (course.price > 0) parts.push(`Стоимость: ${formatPrice(course.price)}.`);
+    return parts.join(" ").slice(0, 200);
+  };
+
+  const courseOgImage = course.coverImage || (course.lecturers[0]?.photo) || "https://articon.pro/og-education.jpg";
   const relatedCourses = courses.filter((c) => c.category === course.category && c.id !== course.id).slice(0, 3);
   const getDuration = () => {
     if (course.dateEnd) {
@@ -41,12 +52,21 @@ const CourseDetail = () => {
         <title>{course.metaTitle} | Учебный центр Артикон</title>
         <meta name="description" content={course.metaDescription} />
         <link rel="canonical" href={`https://articon.pro/education/course/${course.id}`} />
-        <meta property="og:title" content={course.metaTitle} />
-        <meta property="og:description" content={course.metaDescription} />
-        <meta property="og:type" content="website" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${course.title} — Учебный центр Артикон`} />
+        <meta property="og:description" content={generateCourseOgDescription()} />
+        <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://articon.pro/education/course/${course.id}`} />
-        {course.coverImage && <meta property="og:image" content={course.coverImage} />}
+        <meta property="og:image" content={courseOgImage} />
+        <meta property="og:site_name" content="Артикон" />
+        <meta property="og:locale" content="ru_RU" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${course.title} — Учебный центр Артикон`} />
+        <meta name="twitter:description" content={generateCourseOgDescription()} />
+        <meta name="twitter:image" content={courseOgImage} />
         
         {/* Course JSON-LD */}
         <script type="application/ld+json">

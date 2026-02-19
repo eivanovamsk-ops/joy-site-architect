@@ -325,6 +325,11 @@ const CourseDetail = () => {
                   </ul>
                 </TabsContent>)}
             </Tabs> : <div className="bg-card border border-border rounded-xl p-6">
+              {course.programDescription && (
+                <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
+                  {course.programDescription}
+                </div>
+              )}
               <h3 className="text-xl font-bold mb-4">{course.program[0]?.title}</h3>
               <ul className="space-y-3">
                 {course.program[0]?.topics.map((topic, idx) => <li key={idx} className="flex items-start gap-3">

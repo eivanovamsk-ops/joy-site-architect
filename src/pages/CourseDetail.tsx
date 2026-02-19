@@ -336,7 +336,7 @@ const CourseDetail = () => {
                     <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                       {idx + 1}
                     </div>
-                    <span className={topic.startsWith('---') ? 'font-bold' : ''}>{topic}</span>
+                    
                   </li>)}
               </ul>
             </div>}

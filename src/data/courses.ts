@@ -1456,19 +1456,19 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Дмитрий Филинов",
-        photo: "",
+        photo: "/images/lecturers/dmitry-filinov.png",
         position: "Зубной техник, специалист по цифровым технологиям",
         bio: "Руководитель CAD/CAM департамента группы компаний «РИКОМ». Лектор компании Zirkonzahn. Основатель и владелец зуботехнической лаборатории BrighOneLab. Стаж работы более 13 лет.",
       },
       {
         name: "Дмитрий Никоненко",
-        photo: "",
+        photo: "/images/lecturers/dmitry-nikonenko.png",
         position: "Зубной мастер-техник",
         bio: "Основатель и владелец зуботехнической лаборатории «Дентальные мастерские Феникс». Консультант компании «Kuraray Noritake Dental Inc.». Победитель федеральных и международных чемпионатов зубных техников.",
       },
       {
         name: "Шамиль Магомедов",
-        photo: "",
+        photo: "/images/lecturers/shamil-magomedov.png",
         position: "Руководитель отдела функциональной эстетики Артикон",
         bio: "Зубной техник, тренер Contrast Dental Direkt, MIYO.",
       },

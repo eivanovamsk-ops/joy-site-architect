@@ -63,6 +63,7 @@ export interface Course {
   isAccredited?: boolean;
   placesLeft?: number;
   isComingSoon?: boolean;
+  comingSoonLabel?: string;
 }
 
 export const courses: Course[] = [
@@ -537,8 +538,10 @@ export const courses: Course[] = [
     slug: "millbox-sum",
     title: "MillBox & SUM",
     subtitle: "Полный цикл фрезерования в стоматологии от проекта до готовой конструкции",
-    date: "27 февраля 2026 | 10:00-18:00",
-    dateStart: new Date(2026, 1, 27),
+    date: "Уже скоро в апреле",
+    dateStart: new Date(2099, 3, 1),
+    isComingSoon: true,
+    comingSoonLabel: "Уже скоро в апреле",
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 30000,

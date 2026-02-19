@@ -38,7 +38,7 @@ const CourseDetail = () => {
     return parts.join(" ").slice(0, 200);
   };
 
-  const courseOgImage = course.coverImage || (course.lecturers[0]?.photo) || "https://articon.pro/og-education.jpg";
+  const courseOgImage = course.coverImage || course.lecturers[0]?.photo || "https://articon.pro/og-education.jpg";
   const relatedCourses = courses.filter((c) => c.category === course.category && c.id !== course.id).slice(0, 3);
   const getDuration = () => {
     if (course.dateEnd) {
@@ -325,12 +325,12 @@ const CourseDetail = () => {
                   </ul>
                 </TabsContent>)}
             </Tabs> : <div className="bg-card border border-border rounded-xl p-6">
-              {course.programDescription && (
-                <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
+              {course.programDescription &&
+          <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
                   {course.programDescription}
                 </div>
-              )}
-              <h3 className="text-xl font-bold mb-4">{course.program[0]?.title}</h3>
+          }
+              
               <ul className="space-y-3">
                 {course.program[0]?.topics.map((topic, idx) => <li key={idx} className="flex items-start gap-3">
                     <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">

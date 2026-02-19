@@ -333,9 +333,9 @@ const CourseDetail = () => {
               
               <ul className="space-y-3">
                 {course.program[0]?.topics.map((topic, idx) => <li key={idx} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
-                      {idx + 1}
-                    </div>
+                    
+
+
                     
                   </li>)}
               </ul>

@@ -169,7 +169,7 @@ const CourseDetail = () => {
                   <div className="flex items-center gap-2">
                     <Calendar className="h-5 w-5" />
                     {course.isComingSoon ?
-                  <Badge variant="secondary" className="text-sm font-medium">Дата уточняется</Badge> :
+                  <Badge variant="secondary" className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</Badge> :
 
                   <span>{course.date}</span>
                   }

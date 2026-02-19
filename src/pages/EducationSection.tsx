@@ -130,7 +130,7 @@ const EducationSection = () => {
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                       <Calendar className="h-4 w-4" />
                       {course.isComingSoon ? (
-                        <Badge variant="secondary" className="text-xs font-medium">Уже скоро</Badge>
+                        <Badge variant="secondary" className="text-xs font-medium">{course.comingSoonLabel || "Уже скоро"}</Badge>
                       ) : (
                         course.date
                       )}

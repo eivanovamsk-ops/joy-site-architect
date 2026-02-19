@@ -28,17 +28,6 @@ const CourseDetail = () => {
     if (price === 0) return "Бесплатно";
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
   };
-
-  const generateCourseOgDescription = () => {
-    const parts: string[] = [];
-    if (!course.isComingSoon) parts.push(course.date + ".");
-    parts.push(course.shortDescription);
-    if (course.lecturers.length > 0) parts.push(`Преподаватель: ${course.lecturers[0].name}.`);
-    if (course.price > 0) parts.push(`Стоимость: ${formatPrice(course.price)}.`);
-    return parts.join(" ").slice(0, 200);
-  };
-
-  const courseOgImage = course.coverImage || (course.lecturers[0]?.photo) || "https://articon.pro/og-education.jpg";
   const relatedCourses = courses.filter((c) => c.category === course.category && c.id !== course.id).slice(0, 3);
   const getDuration = () => {
     if (course.dateEnd) {
@@ -52,21 +41,12 @@ const CourseDetail = () => {
         <title>{course.metaTitle} | Учебный центр Артикон</title>
         <meta name="description" content={course.metaDescription} />
         <link rel="canonical" href={`https://articon.pro/education/course/${course.id}`} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={`${course.title} — Учебный центр Артикон`} />
-        <meta property="og:description" content={generateCourseOgDescription()} />
-        <meta property="og:type" content="article" />
+        <meta property="og:title" content={course.metaTitle} />
+        <meta property="og:description" content={course.metaDescription} />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://articon.pro/education/course/${course.id}`} />
-        <meta property="og:image" content={courseOgImage} />
-        <meta property="og:site_name" content="Артикон" />
-        <meta property="og:locale" content="ru_RU" />
-
-        {/* Twitter */}
+        {course.coverImage && <meta property="og:image" content={course.coverImage} />}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${course.title} — Учебный центр Артикон`} />
-        <meta name="twitter:description" content={generateCourseOgDescription()} />
-        <meta name="twitter:image" content={courseOgImage} />
         
         {/* Course JSON-LD */}
         <script type="application/ld+json">
@@ -169,7 +149,7 @@ const CourseDetail = () => {
                   <div className="flex items-center gap-2">
                     <Calendar className="h-5 w-5" />
                     {course.isComingSoon ?
-                  <Badge variant="secondary" className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</Badge> :
+                  <Badge variant="secondary" className="text-sm font-medium">Дата уточняется</Badge> :
 
                   <span>{course.date}</span>
                   }
@@ -325,11 +305,6 @@ const CourseDetail = () => {
                   </ul>
                 </TabsContent>)}
             </Tabs> : <div className="bg-card border border-border rounded-xl p-6">
-              {course.programDescription && (
-                <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
-                  {course.programDescription}
-                </div>
-              )}
               <h3 className="text-xl font-bold mb-4">{course.program[0]?.title}</h3>
               <ul className="space-y-3">
                 {course.program[0]?.topics.map((topic, idx) => <li key={idx} className="flex items-start gap-3">
@@ -355,9 +330,9 @@ const CourseDetail = () => {
                 <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/30">
                   <span className="text-left font-medium">{item.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  {item.answer}
-                </AccordionContent>
+                
+
+
               </AccordionItem>)}
           </Accordion>
         </div>

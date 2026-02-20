@@ -22,11 +22,19 @@ const Printers3D = () => {
   return (
     <Layout>
       <Helmet>
-        <title>3D-печать: принтеры и фотополимеры | Артикон</title>
-        <meta 
-          name="description" 
-          content="3D-принтеры и фотополимеры для стоматологии: Asiga, Uniformation, HeyGears, HARZ Labs, TOPCORE. Высокоточная печать моделей, капп, хирургических шаблонов." 
+        <title>3D-принтеры для стоматологии — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить 3D-принтер для стоматологии: Asiga, Uniformation GK3, HeyGears A2D. Высокоточная 3D-печать моделей, элайнеров, хирургических шаблонов и временных коронок. Фотополимеры HARZ Labs, TOPCORE. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="3D принтер стоматологический, купить 3D принтер для стоматологии, 3D принтер для зубных моделей, Asiga 3D принтер, HeyGears стоматологический принтер, Uniformation GK3, 3D печать в стоматологии, фотополимеры для 3D печати, принтер для элайнеров"
+        />
+        <meta property="og:title" content="3D-принтеры для стоматологии — Артикон" />
+        <meta property="og:description" content="Asiga, Uniformation GK3, HeyGears A2D — высокоточная 3D-печать моделей, капп и шаблонов. Фотополимеры HARZ Labs, TOPCORE. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/3d-printers" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/3d-printers" />
       </Helmet>
 

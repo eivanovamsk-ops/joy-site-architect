@@ -16,11 +16,19 @@ const PaintsGlaze = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Краски и глазурь для керамики и циркония | Артикон</title>
+        <title>Краски и глазурь для циркония и керамики — купить | Артикон</title>
         <meta
           name="description"
-          content="Профессиональные краски и глазури для окрашивания керамики и циркония. Upcera Realism - наборы красок и глазурей для стоматологических реставраций."
+          content="Купить краски и глазурь для окрашивания циркония и керамики: Upcera Realism. Наборы красок для зубных реставраций, глазурь для циркониевых коронок. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="краски для циркония, глазурь для циркония, краски для керамики, купить краски для зубных реставраций, Upcera Realism краски, глазурь для коронок, жидкость для окраски циркония, краски для зубных техников"
+        />
+        <meta property="og:title" content="Краски и глазурь для циркония — Артикон" />
+        <meta property="og:description" content="Upcera Realism — краски и глазурь для профессионального окрашивания циркониевых и керамических реставраций. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/paints-glaze" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/paints-glaze" />
       </Helmet>
 

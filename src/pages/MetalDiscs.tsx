@@ -25,11 +25,19 @@ const MetalDiscs = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Металлические диски CoCr/Ti для CAD/CAM | Артикон</title>
-        <meta 
-          name="description" 
-          content="Металлические диски для фрезерования: кобальт-хром (CoCr), титан (Ti). Диски для изготовления каркасов коронок и мостов. Доставка по России." 
+        <title>Металлические диски CoCr/Ti для CAD/CAM — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить металлические диски для CAD/CAM фрезерования: кобальт-хром CoCr, титан Ti. Заготовки для каркасов коронок, мостов и протезов. Металлические диски для зуботехнических лабораторий. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="металлические диски CAD CAM, диски кобальт-хром, диски CoCr, диски титан, купить металлические диски для фрезерования, заготовки для коронок, каркасы из металла CAD CAM, титановые диски стоматология"
+        />
+        <meta property="og:title" content="Металлические диски CoCr/Ti для CAD/CAM — Артикон" />
+        <meta property="og:description" content="Кобальт-хромовые и титановые диски для фрезерования каркасов коронок и мостов. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/metal-discs" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/metal-discs" />
       </Helmet>
 

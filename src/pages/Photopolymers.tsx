@@ -21,11 +21,19 @@ const Photopolymers = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Фотополимеры для 3D-печати | Артикон</title>
-        <meta 
-          name="description" 
-          content="Фотополимеры для стоматологической 3D-печати: HARZ Labs, TOPCORE. Смолы для моделей, капп, временных коронок, хирургических шаблонов. Доставка по России." 
+        <title>Фотополимеры для стоматологической 3D-печати — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить фотополимеры для стоматологической 3D-печати: HARZ Labs Dental, TOPCORE. Смолы для зубных моделей, элайнеров, хирургических шаблонов, временных коронок. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="фотополимеры для стоматологии, купить фотополимер для 3D печати, смолы для 3D печати стоматологические, HARZ Labs Dental, TOPCORE фотополимер, фотополимер для моделей, фотополимер для элайнеров, смола для временных коронок, хирургический шаблон 3D печать"
+        />
+        <meta property="og:title" content="Фотополимеры для стоматологической 3D-печати — Артикон" />
+        <meta property="og:description" content="HARZ Labs Dental, TOPCORE — фотополимеры для моделей, капп, шаблонов. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/photopolymers" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/photopolymers" />
       </Helmet>
 

@@ -1,4 +1,5 @@
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
+import aevraMLd98 from "@/assets/products/aevra-ml-d98.png";
 import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
 import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
 import upceraExploreFunctional3 from "@/assets/products/upcera-explore-functional-3.jpg";
@@ -479,5 +480,63 @@ UPCERA Explore Functional применяется для:
       "Температура спекания": "1480 °C",
     },
     variants: generateDuoVariants(),
+  },
+
+  // === AEVRA ML D98 ===
+  {
+    id: "aevra-ml-d98",
+    name: "Циркониевый диск Aevra ML D98",
+    subtitle: "Многослойный циркониевый диск с оттенками VITA",
+    brand: "Aevra",
+    category: "cad-cam-discs",
+    subcategory: "zirconia-multilayer",
+    image: aevraMLd98,
+    basePrice: 0,
+    description: `Aevra ML D98 — многослойный циркониевый диск диаметром 98 мм для CAD/CAM фрезерования. Обеспечивает плавный градиент прозрачности и прочности по высоте реставрации, что позволяет создавать эстетичные полноанатомические конструкции без нанесения керамики.
+
+Диск выпускается в широкой палитре оттенков VITA (A1, A2, A3, B1) и отбеливающих оттенках BL1–BL4, что делает его универсальным решением для большинства клинических ситуаций.
+
+Преимущества:
+• Многослойная структура — градиент прочности и прозрачности
+• 8 оттенков в шкале VITA и BL
+• 6 вариантов толщины от 14 до 25 мм
+• Диаметр 98 мм — совместим с большинством CAD/CAM систем
+• Стабильная усадка при спекании`,
+    specifications: {
+      "Диаметр": "98 мм",
+      "Оттенки": "A1, A2, A3, B1, BL1–BL4",
+      "Структура": "Многослойная (ML)",
+    },
+    variants: (() => {
+      const result: ProductVariant[] = [];
+      const fullHeights = [14, 16, 18, 20, 22, 25];
+      const blHeights = [14, 18, 20, 25];
+      const standardShades = ["A1", "A2", "A3", "B1"];
+      const blShades = ["BL1", "BL2", "BL3", "BL4"];
+
+      for (const shade of standardShades) {
+        for (const height of fullHeights) {
+          result.push({
+            diameter: 98,
+            height,
+            shade,
+            price: 0,
+            sku: `AEVRA-ML-D98-${height}-${shade}`,
+          });
+        }
+      }
+      for (const shade of blShades) {
+        for (const height of blHeights) {
+          result.push({
+            diameter: 98,
+            height,
+            shade,
+            price: 0,
+            sku: `AEVRA-ML-D98-${height}-${shade}`,
+          });
+        }
+      }
+      return result;
+    })(),
   },
 ];

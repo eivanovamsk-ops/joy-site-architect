@@ -1,4 +1,7 @@
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
+import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
+import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
+import upceraExploreFunctional3 from "@/assets/products/upcera-explore-functional-3.jpg";
 import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg";
 import upceraStMl from "@/assets/products/upcera-st-ml.jpg";
 import upceraDuo from "@/assets/products/upcera-duo.png";
@@ -21,6 +24,7 @@ export interface VariantProduct {
   category: string;
   subcategory: string;
   image: string;
+  gallery?: string[];
   basePrice: number;
   description?: string;
   specifications?: Record<string, string>;
@@ -317,6 +321,7 @@ export const variantProducts: VariantProduct[] = [
     category: "cad-cam-discs",
     subcategory: "zirconia-multilayer",
     image: upceraExploreFunctional,
+    gallery: [upceraExploreFunctional1, upceraExploreFunctional2, upceraExploreFunctional3],
     basePrice: 8395,
     description: `UPCERA Explore Functional (GT ML) — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для зуботехнических лабораторий, которым важны прочность, эстетика и предсказуемый результат при изготовлении реставраций любой сложности.
 

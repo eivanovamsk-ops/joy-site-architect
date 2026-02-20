@@ -1,10 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { variantProducts } from "@/data/variantProducts";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   ShoppingCart,
   Heart,
@@ -12,6 +11,10 @@ import {
   Truck,
   Shield,
   Phone,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  ZoomIn,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
@@ -26,6 +29,9 @@ const ProductDetailVariant = () => {
   const [selectedDiameter, setSelectedDiameter] = useState<number | null>(null);
   const [selectedHeight, setSelectedHeight] = useState<number | null>(null);
   const [selectedShade, setSelectedShade] = useState<string | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const product = variantProducts.find((p) => p.id === id);
 
@@ -153,19 +159,136 @@ const ProductDetailVariant = () => {
         </nav>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {/* Image */}
+          {/* Image / Slider */}
           <div className="relative">
-            <div className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border">
-              <img
-                src={product.image}
-                alt={product.name}
-                loading="eager"
-                decoding="async"
-                className="w-full h-full object-contain p-8"
-              />
-            </div>
+            {(() => {
+              const images = product.gallery && product.gallery.length > 0
+                ? product.gallery
+                : [product.image];
 
+              const openLightbox = (idx: number) => {
+                setLightboxIndex(idx);
+                setLightboxOpen(true);
+              };
+              const prev = () => setActiveSlide((s) => (s - 1 + images.length) % images.length);
+              const next = () => setActiveSlide((s) => (s + 1) % images.length);
 
+              return (
+                <>
+                  {/* Main slide */}
+                  <div
+                    className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border relative cursor-zoom-in group"
+                    onClick={() => openLightbox(activeSlide)}
+                  >
+                    <img
+                      src={images[activeSlide]}
+                      alt={`${product.name} — фото ${activeSlide + 1}`}
+                      loading="eager"
+                      decoding="async"
+                      className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-black/30 rounded-full p-2">
+                        <ZoomIn className="h-6 w-6 text-white" />
+                      </div>
+                    </div>
+                    {images.length > 1 && (
+                      <>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); prev(); }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background border border-border rounded-full p-1.5 transition-colors"
+                        >
+                          <ChevronLeft className="h-4 w-4" />
+                        </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); next(); }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background border border-border rounded-full p-1.5 transition-colors"
+                        >
+                          <ChevronRight className="h-4 w-4" />
+                        </button>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Thumbnails */}
+                  {images.length > 1 && (
+                    <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+                      {images.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveSlide(i)}
+                          className={cn(
+                            "flex-shrink-0 w-16 h-16 rounded-lg border-2 overflow-hidden transition-colors bg-muted/30",
+                            activeSlide === i ? "border-primary" : "border-border hover:border-primary/50"
+                          )}
+                        >
+                          <img
+                            src={img}
+                            alt={`Миниатюра ${i + 1}`}
+                            className="w-full h-full object-contain p-1"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Lightbox */}
+                  {lightboxOpen && (
+                    <div
+                      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+                      onClick={() => setLightboxOpen(false)}
+                    >
+                      <button
+                        className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                        onClick={() => setLightboxOpen(false)}
+                      >
+                        <X className="h-6 w-6" />
+                      </button>
+                      {images.length > 1 && (
+                        <>
+                          <button
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                            onClick={(e) => { e.stopPropagation(); setLightboxIndex((i) => (i - 1 + images.length) % images.length); }}
+                          >
+                            <ChevronLeft className="h-6 w-6" />
+                          </button>
+                          <button
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                            onClick={(e) => { e.stopPropagation(); setLightboxIndex((i) => (i + 1) % images.length); }}
+                          >
+                            <ChevronRight className="h-6 w-6" />
+                          </button>
+                        </>
+                      )}
+                      <div
+                        className="max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center p-8"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <img
+                          src={images[lightboxIndex]}
+                          alt={`${product.name} — фото ${lightboxIndex + 1}`}
+                          className="max-w-full max-h-full object-contain rounded-lg"
+                        />
+                      </div>
+                      {images.length > 1 && (
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+                          {images.map((_, i) => (
+                            <button
+                              key={i}
+                              onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
+                              className={cn(
+                                "w-2 h-2 rounded-full transition-colors",
+                                lightboxIndex === i ? "bg-white" : "bg-white/40"
+                              )}
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </div>
 
           {/* Info */}

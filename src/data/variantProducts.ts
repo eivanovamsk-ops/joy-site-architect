@@ -431,7 +431,7 @@ UPCERA Explore Functional применяется для:
   },
   {
     id: "upcera-st-ml",
-    name: "Upcera ST ML",
+    name: "Циркониевый диск Upcera ST ML D98",
     subtitle: "Многослойный диск с прозрачностью 43%",
     brand: "Upcera",
     category: "cad-cam-discs",

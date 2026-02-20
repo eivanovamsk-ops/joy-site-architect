@@ -53,11 +53,17 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
           </div>
 
           <div className="flex items-center justify-between">
-            <div>
-              <div className="text-xs text-muted-foreground">от</div>
-              <div className="font-bold text-lg text-foreground">
-                {formatPrice(product.basePrice)}
-              </div>
+          <div>
+              {product.basePrice > 0 ? (
+                <>
+                  <div className="text-xs text-muted-foreground">от</div>
+                  <div className="font-bold text-lg text-foreground">
+                    {formatPrice(product.basePrice)}
+                  </div>
+                </>
+              ) : (
+                <div className="font-bold text-lg text-foreground">По запросу</div>
+              )}
             </div>
             <div className="text-xs text-primary font-medium px-3 py-1.5 border border-primary rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
               Выбрать

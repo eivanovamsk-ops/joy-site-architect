@@ -339,8 +339,43 @@ const ProductDetailVariant = () => {
           </TabsList>
 
           <TabsContent value="description">
-            <div className="text-muted-foreground whitespace-pre-line leading-relaxed">
-              {product.description}
+            <div className="text-foreground leading-relaxed space-y-4">
+              {product.description?.split('\n').map((line, i) => {
+                const trimmed = line.trim();
+                if (!trimmed) return null;
+                // Detect headings: short lines in ALL CAPS or ending without period and < 80 chars
+                const isHeading =
+                  /^[А-ЯЁA-Z][А-ЯЁA-Za-zа-яё0-9\s\-–—(),]+$/.test(trimmed) &&
+                  trimmed.length < 80 &&
+                  !trimmed.endsWith(',') &&
+                  !trimmed.endsWith(';') &&
+                  (trimmed === trimmed.toUpperCase() || /^[А-ЯЁA-Z]/.test(trimmed[0])) &&
+                  !trimmed.startsWith('—') &&
+                  !trimmed.startsWith('-') &&
+                  !trimmed.startsWith('•');
+                // Detect bullet points
+                const isBullet = trimmed.startsWith('—') || trimmed.startsWith('-') || trimmed.startsWith('•');
+                if (isBullet) {
+                  return (
+                    <div key={i} className="flex gap-2 text-foreground/90">
+                      <span className="text-primary mt-1 flex-shrink-0">•</span>
+                      <span>{trimmed.replace(/^[—\-•]\s*/, '')}</span>
+                    </div>
+                  );
+                }
+                if (isHeading && trimmed.length < 60) {
+                  return (
+                    <h3 key={i} className="text-base font-bold text-foreground mt-6 mb-1 border-b border-border pb-1">
+                      {trimmed}
+                    </h3>
+                  );
+                }
+                return (
+                  <p key={i} className="text-foreground/90">
+                    {trimmed}
+                  </p>
+                );
+              })}
             </div>
           </TabsContent>
 

@@ -1,10 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
-import { ProductCard } from "@/components/shop/ProductCard";
 import { VariantProductCard } from "@/components/shop/VariantProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
-import { products } from "@/data/products";
 import { variantProducts } from "@/data/variantProducts";
 import { useSearchParams } from "react-router-dom";
 
@@ -12,15 +10,12 @@ const ZirconiaDiscs = () => {
   const [searchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
 
-  // Каркасные и белые диски (обычные карточки)
-  const frameworkDiscs = products.filter(
+  const frameworkDiscs = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "zirconia-framework"
   );
-  const whiteDiscs = products.filter(
+  const whiteDiscs = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "zirconia-white"
   );
-
-  // Мультислойные — берём из variantProducts (один товар с вариантами)
   const multilayerVariants = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "zirconia-multilayer"
   );
@@ -40,7 +35,7 @@ const ZirconiaDiscs = () => {
         <title>Циркониевые диски для CAD/CAM | Артикон</title>
         <meta
           name="description"
-          content="Циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White. Каркасные, белые и мультислойные диски для зуботехнических лабораторий. Доставка по России."
+          content="Циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White, Explore Functional, Explore Esthetic, ST ML, DUO. Каркасные, белые и мультислойные диски для зуботехнических лабораторий. Доставка по России."
         />
         <link rel="canonical" href="https://articon.pro/shop/catalog/zirconia-discs" />
       </Helmet>
@@ -75,7 +70,7 @@ const ZirconiaDiscs = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {frameworkDiscs.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <VariantProductCard key={product.id} product={product} />
                   ))}
                 </div>
               </section>
@@ -90,7 +85,7 @@ const ZirconiaDiscs = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {whiteDiscs.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <VariantProductCard key={product.id} product={product} />
                   ))}
                 </div>
               </section>
@@ -100,7 +95,7 @@ const ZirconiaDiscs = () => {
             {showMultilayer && multilayerVariants.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Мультилеер</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Мультислой</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -124,4 +119,3 @@ const ZirconiaDiscs = () => {
 };
 
 export default ZirconiaDiscs;
-

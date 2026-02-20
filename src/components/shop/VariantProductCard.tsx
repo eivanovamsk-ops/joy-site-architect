@@ -12,7 +12,13 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
     new Intl.NumberFormat("ru-RU").format(price) + " ₽";
 
   const heights = [...new Set(product.variants.map((v) => v.height))].sort((a, b) => a - b);
-  const shades = [...new Set(product.variants.map((v) => v.shade))];
+  const shades = product.noShade
+    ? []
+    : [...new Set(product.variants.map((v) => v.shade))];
+
+  const variantHint = product.noShade
+    ? `${heights.length} высот`
+    : `${heights.length} высот · ${shades.length} оттенков`;
 
   return (
     <Link to={`/shop/variant/${product.id}`} className="block">
@@ -25,8 +31,6 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
             decoding="async"
             className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
           />
-
-
         </div>
 
         <CardContent className="p-4">
@@ -38,10 +42,14 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
             {product.name}
           </h3>
 
+          {product.subtitle && (
+            <p className="text-xs text-muted-foreground mb-2 line-clamp-1">{product.subtitle}</p>
+          )}
+
           {/* Variant hints */}
           <div className="flex items-center gap-1.5 mb-3 text-xs text-muted-foreground">
             <SlidersHorizontal className="h-3.5 w-3.5 flex-shrink-0" />
-            <span>{heights.length} высот · {shades.length} оттенков</span>
+            <span>{variantHint}</span>
           </div>
 
           <div className="flex items-center justify-between">

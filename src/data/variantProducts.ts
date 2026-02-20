@@ -321,7 +321,7 @@ export const variantProducts: VariantProduct[] = [
     category: "cad-cam-discs",
     subcategory: "zirconia-multilayer",
     image: upceraExploreFunctional,
-    gallery: [upceraExploreFunctional1, upceraExploreFunctional2, upceraExploreFunctional3],
+    gallery: [upceraExploreFunctional, upceraExploreFunctional1, upceraExploreFunctional2, upceraExploreFunctional3],
     basePrice: 8395,
     description: `UPCERA Explore Functional (GT ML) — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для зуботехнических лабораторий, которым важны прочность, эстетика и предсказуемый результат при изготовлении реставраций любой сложности.
 

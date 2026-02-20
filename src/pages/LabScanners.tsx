@@ -14,11 +14,19 @@ const LabScanners = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Лабораторные 3D сканеры | Артикон</title>
-        <meta 
-          name="description" 
-          content="Лабораторные 3D сканеры Medit T310, T510, T710 для зуботехнических лабораторий. Высокоточное сканирование моделей и оттисков. Доставка по России." 
+        <title>Лабораторные 3D-сканеры — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить лабораторный 3D-сканер для зуботехнической лаборатории: Medit T310, T510, T710. Высокоточное сканирование гипсовых моделей, оттисков и артикуляторов. Цены, доставка по России."
         />
+        <meta
+          name="keywords"
+          content="лабораторный сканер, лабораторный 3D сканер, купить лабораторный сканер, сканер для зуботехнической лаборатории, Medit T310, Medit T510, Medit T710, сканер для моделей, сканер оттисков"
+        />
+        <meta property="og:title" content="Лабораторные 3D-сканеры — Артикон" />
+        <meta property="og:description" content="Лабораторные сканеры Medit T310, T510, T710. Точное сканирование моделей и оттисков. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/lab-scanners" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/lab-scanners" />
       </Helmet>
 

@@ -16,11 +16,19 @@ const IntraoralScanners = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Интраоральные сканеры | Артикон</title>
-        <meta 
-          name="description" 
-          content="Интраоральные 3D сканеры для стоматологии. Runyes 3DS, Medit T310, T510, T710. Высокое качество сканирования, удобство использования. Доставка по России." 
+        <title>Интраоральные сканеры — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить интраоральный сканер для стоматологии: Medit i700, Runyes 3DS. Цифровое снятие оттисков, точное 3D-сканирование полости рта. Интраоральные сканеры для клиник. Цены, доставка по России."
         />
+        <meta
+          name="keywords"
+          content="интраоральный сканер, купить интраоральный сканер, интраоральный 3D сканер, сканер для стоматологии, цифровой оттиск, Medit интраоральный сканер, Runyes сканер, интраоральный сканер цена"
+        />
+        <meta property="og:title" content="Интраоральные 3D-сканеры — Артикон" />
+        <meta property="og:description" content="Интраоральные сканеры Medit, Runyes для стоматологических клиник. Точное 3D-сканирование, цифровой оттиск. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/intraoral-scanners" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/intraoral-scanners" />
       </Helmet>
 

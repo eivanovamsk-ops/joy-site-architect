@@ -29,11 +29,19 @@ const MillingMachines = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Фрезерные станки CAD/CAM | Артикон</title>
-        <meta 
-          name="description" 
-          content="Фрезерные станки CAD/CAM для зуботехнических лабораторий: UPCERA. Профессиональное оборудование для фрезерования циркония, PMMA, воска. Печи, компрессоры, пылесосы. Доставка по России." 
+        <title>Фрезерные станки CAD/CAM — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить фрезерный станок CAD/CAM для зуботехнической лаборатории. Фрезерование циркония, PMMA, титана, воска. Станки UPCERA, imes-icore. Печи для синтеризации, компрессоры, пылесосы. Цены и доставка по России."
         />
+        <meta
+          name="keywords"
+          content="фрезерный станок, станок фрезерный CAD CAM, фрезерный станок стоматологический, купить фрезерный станок, фрезерный станок для зуботехнической лаборатории, фрезерный станок для циркония, UPCERA фрезерный станок, CAD CAM система, печь для синтеризации циркония"
+        />
+        <meta property="og:title" content="Фрезерные станки CAD/CAM — Артикон" />
+        <meta property="og:description" content="Профессиональные фрезерные станки для зуботехнических лабораторий. UPCERA, imes-icore. Фрезерование циркония, PMMA, титана. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/milling-machines" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/milling-machines" />
       </Helmet>
 

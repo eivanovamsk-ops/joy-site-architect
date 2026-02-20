@@ -32,11 +32,19 @@ const ZirconiaDiscs = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Циркониевые диски для CAD/CAM | Артикон</title>
+        <title>Циркониевые диски для фрезерования — купить | Артикон</title>
         <meta
           name="description"
-          content="Циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White, Explore Functional, Explore Esthetic, ST ML, DUO. Каркасные, белые и мультислойные диски для зуботехнических лабораторий. Доставка по России."
+          content="Купить циркониевые диски для CAD/CAM фрезерования: UPCERA ST Color, HT White, Explore Functional, ST ML, DUO, Aevra ML. Каркасные, белые и мультислойные диски. Диски циркон D98 для зуботехнических лабораторий. Цены, доставка по России."
         />
+        <meta
+          name="keywords"
+          content="циркониевые диски, диски циркон, циркониевые диски купить, циркониевые диски для фрезерования, диски для CAD/CAM, циркониевые диски UPCERA, циркониевые диски D98, мультислойные циркониевые диски, каркасный цирконий, белый цирконий"
+        />
+        <meta property="og:title" content="Циркониевые диски для фрезерования — Артикон" />
+        <meta property="og:description" content="Каркасные, белые и мультислойные циркониевые диски D98 для CAD/CAM фрезерования. UPCERA, Aevra ML. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/zirconia-discs" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/zirconia-discs" />
       </Helmet>
 

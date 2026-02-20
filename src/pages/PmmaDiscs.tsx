@@ -19,11 +19,19 @@ const PmmaDiscs = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Диски PMMA (ПММА) для CAD/CAM | Артикон</title>
+        <title>Диски PMMA (ПММА) для CAD/CAM — купить | Артикон</title>
         <meta
           name="description"
-          content="Диски PMMA (ПММА) для фрезерования временных конструкций. Lima, Dental Direkt. Доставка по России."
+          content="Купить диски PMMA (ПММА) для фрезерования временных протезов и коронок. Lima, Dental Direkt. Полиметилакрилат для CAD/CAM станков, диски для временных конструкций длительного ношения. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="диски PMMA, диски ПММА, PMMA диски для фрезерования, купить PMMA диски, блоки PMMA стоматология, диски для временных коронок, полиметилакрилат CAD CAM, Lima PMMA, Dental Direkt PMMA"
+        />
+        <meta property="og:title" content="Диски PMMA (ПММА) для CAD/CAM — Артикон" />
+        <meta property="og:description" content="Диски PMMA для фрезерования временных конструкций. Lima, Dental Direkt. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/pmma-discs" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/pmma-discs" />
       </Helmet>
 

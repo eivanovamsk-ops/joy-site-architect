@@ -14,11 +14,19 @@ const Burs = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Фрезы для CAD/CAM станков | Артикон</title>
-        <meta 
-          name="description" 
-          content="Фрезы для CAD/CAM станков imes-icore: алмазные, торические, шаровые концевые фрезы для обработки циркония, титана, PMMA, воска. Доставка по России." 
+        <title>Фрезы для CAD/CAM станков — купить | Артикон</title>
+        <meta
+          name="description"
+          content="Купить фрезы для CAD/CAM станков: imes-icore, UPCERA. Алмазные, торические и шаровые концевые фрезы для обработки циркония, титана, PMMA, PEEK, воска. Фрезы для зуботехнических лабораторий. Доставка по России."
         />
+        <meta
+          name="keywords"
+          content="фрезы для CAD CAM, фрезы для зуботехнической лаборатории, фрезы для циркония, купить фрезы стоматологические, фрезы imes-icore, фрезы UPCERA, алмазные фрезы CAD CAM, торические фрезы, фрезы для PMMA"
+        />
+        <meta property="og:title" content="Фрезы для CAD/CAM станков — Артикон" />
+        <meta property="og:description" content="Фрезы imes-icore и UPCERA для обработки циркония, титана, PMMA. Доставка по России." />
+        <meta property="og:url" content="https://articon.pro/shop/catalog/burs" />
+        <meta property="og:type" content="website" />
         <link rel="canonical" href="https://articon.pro/shop/catalog/burs" />
       </Helmet>
 

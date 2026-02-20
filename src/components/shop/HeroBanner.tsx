@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 
 import bannerRundeer from "@/assets/banners/banner-rundeer-split.jpg";
-import bannerUpcera from "@/assets/banners/banner-upcera-explore.jpg";
+import bannerUpcera from "@/assets/banners/banner-upcera-aevra-duo.jpg";
 import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
 
 const banners = [

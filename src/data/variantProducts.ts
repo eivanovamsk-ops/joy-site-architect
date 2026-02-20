@@ -315,7 +315,7 @@ export const variantProducts: VariantProduct[] = [
   // === МУЛЬТИСЛОЙ ===
   {
     id: "upcera-explore-functional",
-    name: "Upcera Explore Functional (GT ML)",
+    name: "Циркониевый диск Explore Functional D98",
     subtitle: "Многослойный циркониевый диск с градиентной прозрачностью",
     brand: "Upcera",
     category: "cad-cam-discs",

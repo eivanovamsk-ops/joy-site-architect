@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -42,6 +42,15 @@ const ProductDetailVariant = () => {
         : [],
     [product]
   );
+
+  const hasSingleDiameter = availableDiameters.length === 1;
+
+  // Автоматически выбираем диаметр, если он один
+  useEffect(() => {
+    if (hasSingleDiameter && availableDiameters.length > 0) {
+      setSelectedDiameter(availableDiameters[0]);
+    }
+  }, [hasSingleDiameter, availableDiameters]);
 
   const availableHeights = useMemo(() => {
     if (!product) return [];
@@ -301,31 +310,33 @@ const ProductDetailVariant = () => {
               <p className="text-muted-foreground text-sm mb-6">{product.subtitle}</p>
             )}
 
-            {/* Diameter selector */}
-            <div className="mb-5">
-              <div className="text-sm font-semibold mb-2 text-foreground">
-                Диаметр (мм):{" "}
-                {selectedDiameter && (
-                  <span className="font-normal text-primary">{selectedDiameter}</span>
-                )}
+            {/* Diameter selector — скрыт если диаметр один */}
+            {!hasSingleDiameter && (
+              <div className="mb-5">
+                <div className="text-sm font-semibold mb-2 text-foreground">
+                  Диаметр (мм):{" "}
+                  {selectedDiameter && (
+                    <span className="font-normal text-primary">{selectedDiameter}</span>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {availableDiameters.map((d) => (
+                    <button
+                      key={d}
+                      onClick={() => handleDiameterSelect(d)}
+                      className={cn(
+                        "px-4 py-2 rounded-lg border text-sm font-medium transition-colors",
+                        selectedDiameter === d
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border bg-card text-foreground hover:border-primary"
+                      )}
+                    >
+                      {d}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {availableDiameters.map((d) => (
-                  <button
-                    key={d}
-                    onClick={() => handleDiameterSelect(d)}
-                    className={cn(
-                      "px-4 py-2 rounded-lg border text-sm font-medium transition-colors",
-                      selectedDiameter === d
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-card text-foreground hover:border-primary"
-                    )}
-                  >
-                    {d}
-                  </button>
-                ))}
-              </div>
-            </div>
+            )}
 
             {/* Height selector */}
             <div className="mb-5">

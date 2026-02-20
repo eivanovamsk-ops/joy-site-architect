@@ -457,7 +457,7 @@ UPCERA Explore Functional применяется для:
   },
   {
     id: "upcera-duo",
-    name: "UPCERA DUO",
+    name: "Циркониевый диск UPCERA DUO D98",
     subtitle: "Сочетание прочности (800–1200 МПа) и эстетики",
     brand: "Upcera",
     category: "cad-cam-discs",

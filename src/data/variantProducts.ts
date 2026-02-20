@@ -485,7 +485,7 @@ UPCERA Explore Functional применяется для:
   // === AEVRA ML D98 ===
   {
     id: "aevra-ml-d98",
-    name: "Циркониевый диск Aevra ML D98",
+    name: "Циркониевый диск Upcera Aevra ML D98",
     subtitle: "Многослойный циркониевый диск с оттенками VITA",
     brand: "Aevra",
     category: "cad-cam-discs",

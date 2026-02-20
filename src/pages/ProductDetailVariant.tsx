@@ -410,22 +410,24 @@ const ProductDetailVariant = () => {
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col gap-3 mb-8">
               <Button
                 size="lg"
-                className="flex-1 bg-primary hover:bg-primary/90"
+                className="w-full bg-primary hover:bg-primary/90"
                 disabled={!allSelected}
                 onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-5 w-5 mr-2" />
                 {allSelected ? "Добавить в корзину" : "Выберите параметры"}
               </Button>
-              <Button size="lg" variant="outline">
-                <Heart className="h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline">
-                <Share2 className="h-5 w-5" />
-              </Button>
+              <div className="flex gap-3">
+                <Button size="lg" variant="outline" className="flex-1">
+                  <Heart className="h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="flex-1">
+                  <Share2 className="h-5 w-5" />
+                </Button>
+              </div>
             </div>
 
             {/* Trust badges */}

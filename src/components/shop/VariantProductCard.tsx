@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SlidersHorizontal } from "lucide-react";
 import { VariantProduct } from "@/data/variantProducts";
 
@@ -26,9 +25,8 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
             decoding="async"
             className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute top-3 left-3">
-            <Badge className="bg-primary text-primary-foreground text-xs">Мультислой</Badge>
-          </div>
+
+
         </div>
 
         <CardContent className="p-4">

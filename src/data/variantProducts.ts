@@ -406,7 +406,7 @@ UPCERA Explore Functional применяется для:
   },
   {
     id: "upcera-explore-esthetic",
-    name: "Upcera Explore Esthetic",
+    name: "Циркониевый диск Upcera Explore Esthetic D98",
     subtitle: "Высокоэстетичный многослойный циркониевый диск",
     brand: "Upcera",
     category: "cad-cam-discs",

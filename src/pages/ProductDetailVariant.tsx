@@ -163,9 +163,8 @@ const ProductDetailVariant = () => {
                 className="w-full h-full object-contain p-8"
               />
             </div>
-            <div className="absolute top-4 left-4">
-              <Badge className="bg-primary text-primary-foreground">Мультислой</Badge>
-            </div>
+
+
           </div>
 
           {/* Info */}

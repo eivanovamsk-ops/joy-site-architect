@@ -46,7 +46,7 @@ const ProductDetailVariant = () => {
   }, [product, selectedDiameter]);
 
   const availableShades = useMemo(() => {
-    if (!product) return [];
+    if (!product || product.noShade) return [];
     return [
       ...new Set(
         product.variants
@@ -61,13 +61,14 @@ const ProductDetailVariant = () => {
   }, [product, selectedDiameter, selectedHeight]);
 
   const currentVariant = useMemo(() => {
-    if (!product || !selectedDiameter || !selectedHeight || !selectedShade) return null;
+    if (!product || !selectedDiameter || !selectedHeight) return null;
+    if (!product.noShade && !selectedShade) return null;
     return (
       product.variants.find(
         (v) =>
           v.diameter === selectedDiameter &&
           v.height === selectedHeight &&
-          v.shade === selectedShade
+          (product.noShade || v.shade === selectedShade)
       ) ?? null
     );
   }, [product, selectedDiameter, selectedHeight, selectedShade]);
@@ -89,7 +90,7 @@ const ProductDetailVariant = () => {
     new Intl.NumberFormat("ru-RU").format(price) + " ₽";
 
   const displayPrice = currentVariant?.price ?? product.basePrice;
-  const allSelected = selectedDiameter && selectedHeight && selectedShade;
+  const allSelected = selectedDiameter && selectedHeight && (product.noShade || selectedShade);
 
   const handleDiameterSelect = (d: number) => {
     setSelectedDiameter(d);
@@ -229,31 +230,33 @@ const ProductDetailVariant = () => {
               </div>
             </div>
 
-            {/* Shade selector */}
-            <div className="mb-6">
-              <div className="text-sm font-semibold mb-2 text-foreground">
-                Оттенок (VITA):{" "}
-                {selectedShade && (
-                  <span className="font-normal text-primary">{selectedShade}</span>
-                )}
+            {/* Shade selector — скрыт для товаров без оттенков (HT White) */}
+            {!product.noShade && (
+              <div className="mb-6">
+                <div className="text-sm font-semibold mb-2 text-foreground">
+                  Оттенок (VITA):{" "}
+                  {selectedShade && (
+                    <span className="font-normal text-primary">{selectedShade}</span>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {availableShades.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedShade(s)}
+                      className={cn(
+                        "px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors",
+                        selectedShade === s
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border bg-card text-foreground hover:border-primary"
+                      )}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {availableShades.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => setSelectedShade(s)}
-                    className={cn(
-                      "px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors",
-                      selectedShade === s
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-card text-foreground hover:border-primary"
-                    )}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
+            )}
 
             {/* Price */}
             <div className="mb-6">
@@ -355,10 +358,12 @@ const ProductDetailVariant = () => {
                 <span className="w-1/3 text-muted-foreground">Высота (мм)</span>
                 <span className="font-medium">{availableHeights.join(", ")}</span>
               </div>
-              <div className="flex py-3 border-b border-border">
-                <span className="w-1/3 text-muted-foreground">Оттенки VITA</span>
-                <span className="font-medium">{availableShades.join(", ")}</span>
-              </div>
+              {!product.noShade && (
+                <div className="flex py-3 border-b border-border">
+                  <span className="w-1/3 text-muted-foreground">Оттенки VITA</span>
+                  <span className="font-medium">{availableShades.join(", ")}</span>
+                </div>
+              )}
               {product.specifications &&
                 Object.entries(product.specifications).map(([key, value]) => (
                   <div key={key} className="flex py-3 border-b border-border">

@@ -51,7 +51,7 @@ const catalogCategories: Category[] = [
   {
     id: "discs",
     name: "Диски CAD/CAM",
-    href: "/shop/catalog/zirconia-discs",
+    href: "/shop/catalog/cadcam-discs",
     subcategories: [
       { 
         id: "zirconia", 

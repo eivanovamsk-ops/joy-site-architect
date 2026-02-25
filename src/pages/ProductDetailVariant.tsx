@@ -150,7 +150,7 @@ const ProductDetailVariant = () => {
         <title>{product.name} | Артикон</title>
         <meta
           name="description"
-          content={`${product.description?.slice(0, 150)} Купить в Артикон с доставкой по России.`}
+          content={product.metaDescription || `${product.description?.slice(0, 150)} Купить в Артикон с доставкой по России.`}
         />
         <link rel="canonical" href={`https://articon.pro/shop/variant/${product.id}`} />
       </Helmet>

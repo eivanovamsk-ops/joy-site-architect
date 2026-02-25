@@ -33,6 +33,7 @@ export interface VariantProduct {
   gallery?: string[];
   basePrice: number;
   description?: string;
+  metaDescription?: string;
   specifications?: Record<string, string>;
   variants: ProductVariant[];
   noShade?: boolean; // for products without shade selection (e.g. HT White)
@@ -607,6 +608,7 @@ Aevra ML — это современный многослойный циркон
     image: upceraPmma,
     gallery: [upceraPmma, upceraPmmaB1, upceraPmmaMilled, upceraPmmaShades, upceraPmmaSpecs],
     basePrice: 0,
+    metaDescription: "Диск Upcera PMMA для CAD/CAM — однотонный PMMA 14–20 мм (A1–B1, Clear). Прочный материал для временных конструкций. Articon, Москва, доставка по России",
     description: `UPCERA PMMA диск для CAD/CAM — это высококачественная заготовка из полиметилметакрилата, предназначенная для изготовления временных реставраций и базисов зубных протезов в цифровых зуботехнических лабораториях. Материал отличается высокой устойчивостью к истиранию и деформации, что делает его надежным решением для повседневной лабораторной работы.
 
 UPCERA PMMA диск для CAD/CAM фрезеровки обеспечивает стабильность формы, точность посадки и комфорт пациента в период временного протезирования. Материал поставляется в однотонном (Monochrome) и многослойном (Multilayer) исполнении, что позволяет подобрать оптимальное решение под клиническую задачу — от временных коронок до полноценных временных мостов и съемных протезов.

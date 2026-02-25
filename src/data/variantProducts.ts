@@ -33,6 +33,12 @@ export interface ProductVariant {
   sku: string;
 }
 
+export interface DownloadFile {
+  name: string;
+  url: string;
+  size?: string;
+}
+
 export interface VariantProduct {
   id: string;
   name: string;
@@ -47,7 +53,8 @@ export interface VariantProduct {
   metaDescription?: string;
   specifications?: Record<string, string>;
   variants: ProductVariant[];
-  noShade?: boolean; // for products without shade selection (e.g. HT White)
+  noShade?: boolean;
+  downloadFiles?: DownloadFile[];
 }
 
 // ==========================================
@@ -510,6 +517,9 @@ UPCERA Explore Functional применяется для:
     image: aevraMLHero,
     gallery: [aevraMLHero, aevraMLd98, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
     basePrice: 0,
+    downloadFiles: [
+      { name: "Инструкция по работе с цирконом Aevra", url: "/docs/aevra-ml-instructions.pdf", size: "PDF" },
+    ],
     description: `Заготовка из циркония Aevra ML D98 — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для цифровых зуботехнических лабораторий, которым необходим баланс прочности, эстетики и предсказуемого результата.
 
 Aevra ML сочетает в себе технологии 4Y–5Y диоксида циркония и обеспечивает высокую механическую устойчивость при сохранении естественной прозрачности. Прочность на изгиб 800–1050 МПа позволяет использовать данный циркониевый диск для изготовления как одиночных коронок, так и мостовидных протезов различной протяженности.

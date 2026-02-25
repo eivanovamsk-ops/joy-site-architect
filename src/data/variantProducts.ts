@@ -6,6 +6,16 @@ import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.png";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.png";
 import pmmaLima from "@/assets/products/pmma-lima.jpg";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.png";
+import aevraMLHero from "@/assets/products/aevra-ml-hero.png";
+import aevraMLShades from "@/assets/products/aevra-ml-shades.png";
+import aevraMLSpecs from "@/assets/products/aevra-ml-specs.png";
+import aevraMLSinteringCurve from "@/assets/products/aevra-ml-sintering-curve.png";
+import aevraMLIndications from "@/assets/products/aevra-ml-indications.png";
+import aevraMLWorkflow from "@/assets/products/aevra-ml-workflow.png";
+import aevraMLPhysical from "@/assets/products/aevra-ml-physical.png";
+import aevraMLDimensions from "@/assets/products/aevra-ml-dimensions.png";
+import aevraMLSinteringProgram from "@/assets/products/aevra-ml-sintering-program.png";
+import aevraMLStructure from "@/assets/products/aevra-ml-structure.png";
 import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
 import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
 import upceraExploreFunctional3 from "@/assets/products/upcera-explore-functional-3.jpg";
@@ -497,7 +507,8 @@ UPCERA Explore Functional применяется для:
     brand: "Aevra",
     category: "cad-cam-discs",
     subcategory: "zirconia-multilayer",
-    image: aevraMLd98,
+    image: aevraMLHero,
+    gallery: [aevraMLHero, aevraMLd98, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
     basePrice: 0,
     description: `Заготовка из циркония Aevra ML D98 — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для цифровых зуботехнических лабораторий, которым необходим баланс прочности, эстетики и предсказуемого результата.
 

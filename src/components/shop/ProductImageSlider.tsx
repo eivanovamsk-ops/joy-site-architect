@@ -22,72 +22,74 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
 
   return (
     <>
-      <div className="relative">
-        {/* Main Image */}
-        <div
-          className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border cursor-zoom-in group"
-          onClick={() => setLightboxOpen(true)}
-        >
-          <img
-            src={images[activeIndex]}
-            alt={`${name} — фото ${activeIndex + 1}`}
-            loading="eager"
-            decoding="async"
-            className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-          />
-          <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <ZoomIn className="h-5 w-5 text-foreground" />
+      <div className="min-w-0">
+        <div className="relative">
+          {/* Main Image */}
+          <div
+            className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border cursor-zoom-in group"
+            onClick={() => setLightboxOpen(true)}
+          >
+            <img
+              src={images[activeIndex]}
+              alt={`${name} — фото ${activeIndex + 1}`}
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <ZoomIn className="h-5 w-5 text-foreground" />
+            </div>
           </div>
+
+          {/* Badges */}
+          <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+            {isNew && <Badge className="bg-primary text-primary-foreground">NEW</Badge>}
+            {isSale && <Badge className="bg-accent text-accent-foreground">SALE</Badge>}
+          </div>
+
+          {/* Nav Arrows */}
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); goTo(activeIndex - 1); }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-background transition-colors"
+                aria-label="Предыдущее фото"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); goTo(activeIndex + 1); }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-background transition-colors"
+                aria-label="Следующее фото"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </>
+          )}
         </div>
 
-        {/* Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
-          {isNew && <Badge className="bg-primary text-primary-foreground">NEW</Badge>}
-          {isSale && <Badge className="bg-accent text-accent-foreground">SALE</Badge>}
-        </div>
-
-        {/* Nav Arrows */}
+        {/* Thumbnails */}
         {images.length > 1 && (
-          <>
-            <button
-              onClick={(e) => { e.stopPropagation(); goTo(activeIndex - 1); }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-background transition-colors"
-              aria-label="Предыдущее фото"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); goTo(activeIndex + 1); }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-background transition-colors"
-              aria-label="Следующее фото"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </>
+          <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
+                  i === activeIndex ? "border-primary" : "border-border hover:border-primary/50"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={`${name} — миниатюра ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-contain p-1"
+                />
+              </button>
+            ))}
+          </div>
         )}
       </div>
-
-      {/* Thumbnails */}
-      {images.length > 1 && (
-        <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-colors ${
-                i === activeIndex ? "border-primary" : "border-border hover:border-primary/50"
-              }`}
-            >
-              <img
-                src={img}
-                alt={`${name} — миниатюра ${i + 1}`}
-                loading="lazy"
-                className="w-full h-full object-contain p-1"
-              />
-            </button>
-          ))}
-        </div>
-      )}
 
       {/* Lightbox */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>

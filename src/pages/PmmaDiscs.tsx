@@ -12,13 +12,14 @@ const PmmaDiscs = () => {
     (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
 
-  const upceraVariants = variantProducts.filter(
-    (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs" && p.brand === "Upcera"
+  const pmmaVariants = variantProducts.filter(
+    (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
-  const limaProducts = pmmaDiscs.filter((p) => p.brand === "Lima");
+  const upceraVariants = pmmaVariants.filter((p) => p.brand === "Upcera");
+  const limaVariants = pmmaVariants.filter((p) => p.brand === "Lima");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
   const otherProducts = pmmaDiscs.filter(
-    (p) => p.brand !== "Lima" && p.brand !== "Dental Direkt"
+    (p) => p.brand !== "Dental Direkt"
   );
 
   return (
@@ -77,15 +78,15 @@ const PmmaDiscs = () => {
             )}
 
             {/* Lima Section */}
-            {limaProducts.length > 0 && (
+            {limaVariants.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
                   <h2 className="text-2xl font-bold text-foreground">Lima</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {limaProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                  {limaVariants.map((product) => (
+                    <VariantProductCard key={product.id} product={product} />
                   ))}
                 </div>
               </section>

@@ -51,6 +51,7 @@ const ProductDetail = () => {
 
   // SEO description generation
   const generateSeoDescription = () => {
+    if (product.metaDescription) return product.metaDescription;
     const base = product.description?.slice(0, 150) || `${product.name} от ${product.brand}`;
     const priceText = product.price ? ` Цена от ${formatPrice(product.price)}.` : " Цена по запросу.";
     return `${base}${priceText} Купить в Артикон с доставкой по России. Официальная гарантия.`;

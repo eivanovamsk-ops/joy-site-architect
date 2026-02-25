@@ -44,7 +44,7 @@ export function Breadcrumbs() {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   // Don't show on home, product detail, or course detail pages
-  if (pathnames.length === 0 || pathnames.includes("product") || pathnames.includes("course")) {
+  if (pathnames.length === 0 || pathnames.includes("product") || pathnames.includes("course") || pathnames.includes("variant")) {
     return null;
   }
 

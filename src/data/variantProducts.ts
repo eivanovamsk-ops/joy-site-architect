@@ -1,4 +1,5 @@
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
+import upceraPmma from "@/assets/products/upcera-pmma-flnt.png";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.png";
 import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
 import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
@@ -586,6 +587,64 @@ Aevra ML — это современный многослойный циркон
             sku: `AEVRA-ML-D98-${height}-${shade}`,
           });
         }
+      }
+      return result;
+    })(),
+  },
+
+  // === PMMA Upcera FLNT Temp ===
+  {
+    id: "upcera-pmma-flnt",
+    name: "Диск Upcera PMMA FLNT Temp D98",
+    subtitle: "PMMA диск для временных коронок и мостов",
+    brand: "Upcera",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: upceraPmma,
+    basePrice: 0,
+    description: `Upcera FLNT Temp — монохроматическая блок-заготовка из полиметилметакрилата (PMMA) для изготовления временных коронок и мостовидных протезов при помощи CAD/CAM систем.
+
+Свойства и преимущества:
+• Прочность на изгиб ≥100 МПа
+• Отличная устойчивость к истиранию и деформации
+• Низкое водопоглощение ≤40 мкг/см³
+• Количество вещества, перешедшего в раствор ≤7.5 мкг/см³
+• Химический состав: Methacrylic acid polymer ≈99%, Pigment ≤1%
+• Биосовместимость
+• Легко полируется
+• Поставляется в однотонном варианте (Monochromatic)`,
+    specifications: {
+      "Производитель": "Upcera",
+      "Материал": "PMMA",
+      "Система": "98 мм",
+      "Прочность на изгиб": "≥100 МПа",
+      "Водопоглощение": "≤40 мкг/см³",
+      "Тип": "Monochromatic",
+    },
+    variants: (() => {
+      const shades = ["A1", "A2", "A3", "A3.5", "B1"];
+      const heights = [14, 16, 18, 20];
+      const result: ProductVariant[] = [];
+      for (const shade of shades) {
+        for (const height of heights) {
+          result.push({
+            diameter: 98,
+            height,
+            shade,
+            price: 0,
+            sku: `UPCERA-PMMA-${height}-${shade.replace(".", "")}`,
+          });
+        }
+      }
+      // Clear only 16 and 20
+      for (const height of [16, 20]) {
+        result.push({
+          diameter: 98,
+          height,
+          shade: "Clear",
+          price: 0,
+          sku: `UPCERA-PMMA-${height}-CLEAR`,
+        });
       }
       return result;
     })(),

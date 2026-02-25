@@ -29,6 +29,7 @@ const routeNames: Record<string, string> = {
   "pmma-discs": "Диски PMMA",
   "press-ceramic": "Пресс-керамика",
   burs: "Фрезы",
+  "cadcam-discs": "Диски CAD/CAM",
   "paints-glaze": "Краски и глазурь",
   furnaces: "Печи",
   compressors: "Компрессоры",

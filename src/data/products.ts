@@ -29,6 +29,15 @@ import gk3UltraZaxis from "@/assets/products/gk3-ultra-zaxis.webp";
 import gk3UltraResinFeed from "@/assets/products/gk3-ultra-resin-feed.webp";
 import gk3UltraHeating from "@/assets/products/gk3-ultra-heating.webp";
 
+// Uniformation GK3 Pro images
+import gk3Pro1 from "@/assets/products/gk3-pro-1.png";
+import gk3Pro2 from "@/assets/products/gk3-pro-2.png";
+import gk3Pro3 from "@/assets/products/gk3-pro-3.png";
+import gk3Pro4 from "@/assets/products/gk3-pro-4.png";
+import gk3Pro5 from "@/assets/products/gk3-pro-5.png";
+import gk3ProUvCompare from "@/assets/products/gk3-pro-uv-compare.png";
+import gk3ProCuringChart from "@/assets/products/gk3-pro-curing-chart.png";
+
 // TOPCORE images
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
@@ -320,7 +329,8 @@ Uniformation GK3 Ultra отличается от GK3 Pro увеличенной 
     category: "3d-print",
     subcategory: "3d-printers",
     price: null,
-    image: gk3UltraMain,
+    image: gk3Pro1,
+    gallery: [gk3Pro1, gk3Pro2, gk3Pro3, gk3Pro4, gk3Pro5, gk3ProUvCompare, gk3ProCuringChart],
     brand: "UniFormation",
     inStock: true,
     isNew: true,

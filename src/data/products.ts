@@ -21,7 +21,13 @@ import rundeerV6_6 from "@/assets/products/rundeer-v6-6.png";
 
 // Uniformation GK3 Ultra (actual Ultra model) images
 import gk3UltraMain from "@/assets/products/gk3-ultra-main.jpg";
-import gk3Ultra1 from "@/assets/products/gk3-ultra-1.jpg";
+import gk3UltraScaled from "@/assets/products/gk3-ultra-scaled.webp";
+import gk3UltraResin from "@/assets/products/gk3-ultra-resin.png";
+import gk3UltraCartridges from "@/assets/products/gk3-ultra-cartridges.webp";
+import gk3UltraOpen from "@/assets/products/gk3-ultra-open.webp";
+import gk3UltraZaxis from "@/assets/products/gk3-ultra-zaxis.webp";
+import gk3UltraResinFeed from "@/assets/products/gk3-ultra-resin-feed.webp";
+import gk3UltraHeating from "@/assets/products/gk3-ultra-heating.webp";
 
 // TOPCORE images
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
@@ -219,7 +225,7 @@ export const products: Product[] = [
     subcategory: "3d-printers",
     price: null,
     image: gk3UltraMain,
-    gallery: [gk3Ultra1],
+    gallery: [gk3UltraScaled, gk3UltraResin, gk3UltraCartridges, gk3UltraOpen, gk3UltraZaxis, gk3UltraResinFeed, gk3UltraHeating],
     brand: "UniFormation",
     inStock: true,
     isNew: true,

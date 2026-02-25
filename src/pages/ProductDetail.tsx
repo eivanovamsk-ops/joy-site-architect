@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { products } from "@/data/products";
 import { getProductBreadcrumbs } from "@/lib/breadcrumbs";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import ProductImageSlider from "@/components/shop/ProductImageSlider";
 import { 
   ShoppingCart, 
   Heart, 
@@ -145,26 +145,12 @@ const ProductDetail = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Product Image */}
-          <div className="relative">
-            <div className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border">
-              <img
-                src={product.image}
-                alt={product.name}
-                loading="eager"
-                decoding="async"
-                className="w-full h-full object-contain p-8"
-              />
-            </div>
-            {/* Badges */}
-            <div className="absolute top-4 left-4 flex flex-col gap-2">
-              {product.isNew && (
-                <Badge className="bg-primary text-primary-foreground">NEW</Badge>
-              )}
-              {product.isSale && (
-                <Badge className="bg-accent text-accent-foreground">SALE</Badge>
-              )}
-            </div>
-          </div>
+          <ProductImageSlider
+            images={[product.image, ...(product.gallery || [])]}
+            name={product.name}
+            isNew={product.isNew}
+            isSale={product.isSale}
+          />
 
           {/* Product Info */}
           <div className="flex flex-col">
@@ -307,29 +293,6 @@ const ProductDetail = () => {
                   Продукт прошел сертификацию и соответствует международным стандартам качества.
                 </p>
               </>
-            )}
-            
-            {/* Product Gallery */}
-            {product.gallery && product.gallery.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4 text-foreground">Фотогалерея</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {product.gallery.map((img, index) => (
-                    <div 
-                      key={index} 
-                      className="aspect-square bg-muted/30 rounded-xl overflow-hidden border border-border hover:shadow-lg transition-shadow cursor-pointer"
-                    >
-                      <img
-                        src={img}
-                        alt={`${product.name} - фото ${index + 1}`}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-contain p-2"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
             )}
           </TabsContent>
           

@@ -10,10 +10,11 @@ const PmmaDiscs = () => {
     (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
 
+  const upceraProducts = pmmaDiscs.filter((p) => p.brand === "Upcera");
   const limaProducts = pmmaDiscs.filter((p) => p.brand === "Lima");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
   const otherProducts = pmmaDiscs.filter(
-    (p) => p.brand !== "Lima" && p.brand !== "Dental Direkt"
+    (p) => p.brand !== "Lima" && p.brand !== "Dental Direkt" && p.brand !== "Upcera"
   );
 
   return (
@@ -56,6 +57,21 @@ const PmmaDiscs = () => {
           </div>
 
           <div className="flex-1">
+            {/* Upcera Section */}
+            {upceraProducts.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Upcera</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {upceraProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Lima Section */}
             {limaProducts.length > 0 && (
               <section className="mb-16">

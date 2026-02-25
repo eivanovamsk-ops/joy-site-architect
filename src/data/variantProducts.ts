@@ -1,5 +1,9 @@
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
 import upceraPmma from "@/assets/products/upcera-pmma-flnt.png";
+import upceraPmmaMilled from "@/assets/products/upcera-pmma-milled.jpg";
+import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.png";
+import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.png";
+import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.png";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.png";
 import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
 import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
@@ -601,6 +605,7 @@ Aevra ML — это современный многослойный циркон
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     image: upceraPmma,
+    gallery: [upceraPmma, upceraPmmaB1, upceraPmmaMilled, upceraPmmaShades, upceraPmmaSpecs],
     basePrice: 0,
     description: `Upcera FLNT Temp — монохроматическая блок-заготовка из полиметилметакрилата (PMMA) для изготовления временных коронок и мостовидных протезов при помощи CAD/CAM систем.
 

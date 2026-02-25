@@ -36,6 +36,7 @@ import MetalDiscs from "./pages/MetalDiscs";
 import PressCeramic from "./pages/PressCeramic";
 import PmmaDiscs from "./pages/PmmaDiscs";
 import CadcamDiscs from "./pages/CadcamDiscs";
+import Catalog from "./pages/Catalog";
 import Delivery from "./pages/Delivery";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
@@ -64,6 +65,7 @@ const App = () => (
               <Route path="/laboratory/services" element={<LaboratoryServices />} />
               <Route path="/laboratory/documents" element={<PriceListsAndOrders />} />
               <Route path="/shop" element={<Shop />} />
+              <Route path="/shop/catalog" element={<Catalog />} />
               <Route path="/shop/product/:id" element={<ProductDetail />} />
               <Route path="/shop/variant/:id" element={<ProductDetailVariant />} />
               <Route path="/shop/catalog/intraoral-scanners" element={<IntraoralScanners />} />

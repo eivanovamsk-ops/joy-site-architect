@@ -136,6 +136,7 @@ export interface Product {
   isSale?: boolean;
   sku?: string;
   description?: string;
+  metaDescription?: string;
   specifications?: Record<string, string>;
   externalUrl?: string;
 }
@@ -229,6 +230,7 @@ export const products: Product[] = [
     brand: "UniFormation",
     inStock: true,
     isNew: true,
+    metaDescription: "3D-принтер Uniformation GK3 Ultra для стоматологии — LCD 16K, рабочая область 300×160×300 мм, автоподача смолы и Wi-Fi. Профессиональное оборудование для цифровых лабораторий. Articon, Москва, доставка по России.",
     description: `Профессиональный фотополимерный 3D-принтер 16K с увеличенной областью печати
 
 Uniformation GK3 Ultra — это профессиональный фотополимерный 3D-принтер, разработанный для задач, где требуется высокая производительность, стабильность и крупная рабочая зона. Модель использует технологию Masked SLA (MSLA) с LCD-экраном и предназначена для стоматологических лабораторий и цифровых клиник, где важна высокая надёжность и точность печати.

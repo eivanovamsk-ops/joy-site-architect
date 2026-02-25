@@ -330,7 +330,7 @@ Uniformation GK3 Ultra отличается от GK3 Pro увеличенной 
     subcategory: "3d-printers",
     price: null,
     image: gk3Pro1,
-    gallery: [gk3Pro1, gk3Pro2, gk3Pro3, gk3Pro4, gk3Pro5, gk3ProUvCompare, gk3ProCuringChart],
+    gallery: [gk3Pro2, gk3Pro3, gk3Pro4, gk3Pro5, gk3ProUvCompare, gk3ProCuringChart],
     brand: "UniFormation",
     inStock: true,
     isNew: true,

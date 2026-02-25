@@ -1,4 +1,6 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
+// @ts-ignore - FileDown may not exist in older lucide versions
+
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
@@ -16,6 +18,7 @@ import {
   ChevronRight,
   X,
   ZoomIn,
+  FileDown,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
@@ -556,6 +559,33 @@ const ProductDetailVariant = () => {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Download files */}
+        {product.downloadFiles && product.downloadFiles.length > 0 && (
+          <div className="mb-12">
+            <h3 className="text-lg font-semibold mb-4">Документы для скачивания</h3>
+            <div className="flex flex-col gap-3">
+              {product.downloadFiles.map((file, i) => (
+                <a
+                  key={i}
+                  href={file.url}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-border bg-secondary/50 hover:bg-secondary transition-colors group"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                    <FileDown className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-sm text-foreground truncate">{file.name}</p>
+                    {file.size && <p className="text-xs text-muted-foreground">{file.size}</p>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </Layout>
   );

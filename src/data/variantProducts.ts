@@ -4,6 +4,7 @@ import upceraPmmaMilled from "@/assets/products/upcera-pmma-milled.jpg";
 import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.png";
 import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.png";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.png";
+import pmmaLima from "@/assets/products/pmma-lima.jpg";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.png";
 import upceraExploreFunctional1 from "@/assets/products/upcera-explore-functional-1.jpg";
 import upceraExploreFunctional2 from "@/assets/products/upcera-explore-functional-2.jpg";
@@ -672,6 +673,65 @@ UPCERA PMMA диски доступны в широкой палитре отт�
           sku: `UPCERA-PMMA-${height}-CLEAR`,
         });
       }
+      return result;
+    })(),
+  },
+
+  // === PMMA Lima ===
+  {
+    id: "lima-pmma",
+    name: "Диск Lima PMMA D98",
+    subtitle: "PMMA диск для временных конструкций",
+    brand: "Lima",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: pmmaLima,
+    basePrice: 0,
+    description: `Диск PMMA от Lima — это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
+
+Lima — турецкий производитель, успешно прошедший тестирования в нашей лаборатории. Рекомендуем как качественный материал по отличной цене.
+
+Свойства и преимущества:
+• Биосовместим
+• Низкое содержание остаточного мономера
+• Высокая трещиностойкость к постоянной изгибной нагрузке
+• Низкое водопоглощение и плотная структура
+• Стойкий к налёту
+• Легко полируется
+
+Область применения:
+• Временные коронки и мосты
+• Диагностические конструкции
+• Временные работы на имплантатах
+
+Купить диски Lima PMMA можно в компании Articon (Артикон) — поставщик зуботехнических материалов в Москве с доставкой по всей России.`,
+    metaDescription: "Диск Lima PMMA для CAD/CAM — однослойный PMMA 15–20 мм (A1–A3.5, BL, W3). Качественный турецкий материал для временных конструкций. Articon, Москва, доставка по России",
+    specifications: {
+      "Производитель": "Lima",
+      "Страна производства": "Турция",
+      "Материал": "PMMA",
+      "Серия": "Monolayer",
+      "Система": "98 мм",
+    },
+    variants: (() => {
+      const shades = ["A1", "A2", "A3", "A3.5"];
+      const heights = [15, 20];
+      const result: ProductVariant[] = [];
+      for (const shade of shades) {
+        for (const height of heights) {
+          result.push({
+            diameter: 98,
+            height,
+            shade,
+            price: 0,
+            sku: `LIMA-PMMA-${height}-${shade.replace(".", "")}`,
+          });
+        }
+      }
+      // BL only 20mm
+      result.push({ diameter: 98, height: 20, shade: "BL", price: 0, sku: "LIMA-PMMA-20-BL" });
+      // W3 only 15mm
+      result.push({ diameter: 98, height: 15, shade: "W3", price: 0, sku: "LIMA-PMMA-15-W3" });
       return result;
     })(),
   },

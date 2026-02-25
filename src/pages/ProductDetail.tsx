@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { products } from "@/data/products";
+import { getProductBreadcrumbs } from "@/lib/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -125,6 +126,23 @@ const ProductDetail = () => {
       </Helmet>
 
       <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumb */}
+        {(() => {
+          const crumbs = getProductBreadcrumbs(product.category, product.subcategory);
+          return (
+            <nav className="text-sm text-muted-foreground mb-6 flex gap-2 items-center flex-wrap">
+              {crumbs.map((crumb, i) => (
+                <span key={i} className="flex items-center gap-2">
+                  {i > 0 && <span>/</span>}
+                  <Link to={crumb.href} className="hover:text-foreground">{crumb.label}</Link>
+                </span>
+              ))}
+              <span>/</span>
+              <span className="text-foreground">{product.name}</span>
+            </nav>
+          );
+        })()}
+
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Product Image */}
           <div className="relative">

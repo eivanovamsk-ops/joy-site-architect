@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { variantProducts } from "@/data/variantProducts";
+import { getProductBreadcrumbs } from "@/lib/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import {
   ShoppingCart,
@@ -157,15 +158,21 @@ const ProductDetailVariant = () => {
 
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb */}
-        <nav className="text-sm text-muted-foreground mb-6 flex gap-2 items-center flex-wrap">
-          <Link to="/shop" className="hover:text-foreground">Магазин</Link>
-          <span>/</span>
-          <Link to="/shop/catalog/zirconia-discs" className="hover:text-foreground">
-            Циркониевые диски
-          </Link>
-          <span>/</span>
-          <span className="text-foreground">{product.name}</span>
-        </nav>
+        {(() => {
+          const crumbs = getProductBreadcrumbs(product.category, product.subcategory);
+          return (
+            <nav className="text-sm text-muted-foreground mb-6 flex gap-2 items-center flex-wrap">
+              {crumbs.map((crumb, i) => (
+                <span key={i} className="flex items-center gap-2">
+                  {i > 0 && <span>/</span>}
+                  <Link to={crumb.href} className="hover:text-foreground">{crumb.label}</Link>
+                </span>
+              ))}
+              <span>/</span>
+              <span className="text-foreground">{product.name}</span>
+            </nav>
+          );
+        })()}
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Image / Slider */}

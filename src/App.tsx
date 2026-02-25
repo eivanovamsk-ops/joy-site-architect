@@ -35,6 +35,7 @@ import Vacuums from "./pages/Vacuums";
 import MetalDiscs from "./pages/MetalDiscs";
 import PressCeramic from "./pages/PressCeramic";
 import PmmaDiscs from "./pages/PmmaDiscs";
+import CadcamDiscs from "./pages/CadcamDiscs";
 import Delivery from "./pages/Delivery";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
@@ -81,6 +82,7 @@ const App = () => (
               <Route path="/shop/catalog/metal-discs" element={<MetalDiscs />} />
               <Route path="/shop/catalog/press-ceramic" element={<PressCeramic />} />
               <Route path="/shop/catalog/pmma-discs" element={<PmmaDiscs />} />
+              <Route path="/shop/catalog/cadcam-discs" element={<CadcamDiscs />} />
               <Route path="/shop/contacts" element={<Delivery />} />
               <Route path="/education" element={<Education />} />
               <Route path="/education/contacts" element={<EducationContacts />} />

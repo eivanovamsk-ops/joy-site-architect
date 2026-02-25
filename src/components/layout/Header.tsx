@@ -91,7 +91,7 @@ const shopMenuItems = [{
   }]
 }, {
   label: "Диски CAD/CAM",
-  href: "/shop/catalog/zirconia-discs",
+  href: "/shop/catalog/cadcam-discs",
   subcategories: [{
     label: "Циркониевые диски",
     href: "/shop/catalog/zirconia-discs"

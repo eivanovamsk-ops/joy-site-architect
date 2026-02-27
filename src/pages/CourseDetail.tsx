@@ -333,10 +333,7 @@ const CourseDetail = () => {
               
               <ul className="space-y-3">
                 {course.program[0]?.topics.map((topic, idx) => <li key={idx} className="flex items-start gap-3">
-                    
-
-
-                    
+                    <span className={topic.startsWith('---') ? 'font-bold text-foreground' : 'text-foreground'}>{topic}</span>
                   </li>)}
               </ul>
             </div>}

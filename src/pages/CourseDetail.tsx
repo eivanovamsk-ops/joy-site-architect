@@ -5,7 +5,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Calendar, MapPin, Clock, Users, Award, ChevronRight, Share2, CheckCircle2, Target, GraduationCap, UserCheck, Lightbulb, HelpCircle, ExternalLink, BookOpen, Wrench, Beaker, Monitor, Cpu, Layers } from "lucide-react";
+import { Calendar, MapPin, Clock, Users, Award, ChevronRight, Share2, CheckCircle2, Target, GraduationCap, UserCheck, Lightbulb, HelpCircle, ExternalLink, BookOpen, Wrench, Beaker, Monitor, Cpu, Layers, ArrowDown } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
@@ -219,7 +219,7 @@ const CourseDetail = () => {
 
       {/* Sticky Anchor Nav */}
       <div className={cn(
-        "fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10 transition-all duration-500 shadow-lg",
         stickyNavVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       )}>
         <div className="container mx-auto px-4">
@@ -229,7 +229,7 @@ const CourseDetail = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+                  className="px-4 py-2 text-sm font-medium text-primary-foreground/70 hover:text-primary-foreground transition-colors whitespace-nowrap rounded-lg hover:bg-primary-foreground/10"
                 >
                   {item.label}
                 </button>
@@ -247,58 +247,255 @@ const CourseDetail = () => {
         </div>
       </div>
 
-      {/* Hero */}
-      <div ref={heroRef} className="relative" id="course-pricing">
-        {course.coverImage && (
-          <div className="absolute inset-0 h-[400px]">
+      {/* ===== HERO — Full-screen immersive ===== */}
+      <div ref={heroRef} className="relative min-h-[70vh] lg:min-h-[80vh] flex items-end" id="course-pricing">
+        {/* Background */}
+        {course.coverImage ? (
+          <div className="absolute inset-0">
             <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
           </div>
+        ) : (
+          <div className="absolute inset-0 gradient-primary" />
         )}
-        <div className={`relative ${course.coverImage ? 'pt-8 pb-12' : 'gradient-education py-12'}`}>
+
+        <div className="relative w-full pb-12 pt-32">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge className={course.coverImage ? "bg-primary text-primary-foreground" : "bg-education-foreground/20 text-education-foreground"}>
+            <div className="grid lg:grid-cols-5 gap-8 items-end">
+              {/* Left: Course info */}
+              <div className="lg:col-span-3">
+                <div className="flex flex-wrap gap-2 mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                  <Badge className="bg-accent text-accent-foreground text-sm px-3 py-1 font-semibold">
                     {course.category}
                   </Badge>
                   {course.isAccredited && (
-                    <Badge className="bg-green-600 text-white">
-                      <Award className="h-3 w-3 mr-1" /> Аккредитация НМО
+                    <Badge className="bg-green-500 text-white text-sm px-3 py-1">
+                      <Award className="h-3.5 w-3.5 mr-1" /> НМО
                     </Badge>
                   )}
                   {course.placesLeft && course.placesLeft < 10 && (
-                    <Badge className="bg-orange-500 text-white">Осталось {course.placesLeft} мест</Badge>
+                    <Badge className="bg-orange-500 text-white text-sm px-3 py-1">Осталось {course.placesLeft} мест</Badge>
                   )}
                 </div>
-                <h1 className={`text-3xl md:text-4xl font-bold mb-2 ${course.coverImage ? 'text-white' : 'text-education-foreground'}`}>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   {course.title}
                 </h1>
                 {course.subtitle && (
-                  <p className={`text-xl mb-4 ${course.coverImage ? 'text-white/80' : 'text-education-foreground/80'}`}>
+                  <p className="text-xl md:text-2xl text-white/80 mb-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                     {course.subtitle}
                   </p>
                 )}
-                <p className={`text-lg mb-6 ${course.coverImage ? 'text-white/70' : 'text-education-foreground/80'}`}>
+                <p className="text-lg text-white/60 mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                   {course.shortDescription}
                 </p>
                 
-                <div className={`flex flex-wrap gap-4 mb-6 ${course.coverImage ? 'text-white/90' : 'text-education-foreground/90'}`}>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-5 w-5" />
+                <div className="flex flex-wrap gap-6 mb-8 text-white/90 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                    <Calendar className="h-5 w-5 text-accent" />
                     {course.isComingSoon ? (
-                      <Badge variant="secondary" className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</Badge>
+                      <span className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</span>
                     ) : (
-                      <span>{course.date}</span>
+                      <span className="text-sm font-medium">{course.date}</span>
                     )}
                   </div>
-                  <div className="flex items-center gap-2"><MapPin className="h-5 w-5" /><span>{course.location}</span></div>
-                  {!course.isComingSoon && <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>{getDuration()}</span></div>}
+                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                    <MapPin className="h-5 w-5 text-accent" />
+                    <span className="text-sm font-medium">{course.location}</span>
+                  </div>
+                  {!course.isComingSoon && (
+                    <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                      <Clock className="h-5 w-5 text-accent" />
+                      <span className="text-sm font-medium">{getDuration()}</span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Hero CTA button with pulse */}
-                <div className="hidden lg:block">
+                {/* Hero CTA with pulse */}
+                <div className="hidden lg:flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                  <div className="animate-pulse-soft">
+                    <CourseApplicationForm
+                      courseName={course.title}
+                      courseDate={course.date}
+                      buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
+                    />
+                  </div>
+                  <button
+                    onClick={() => scrollToSection('course-program')}
+                    className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
+                  >
+                    Подробнее <ArrowDown className="h-4 w-4 animate-bounce" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right: Pricing Card */}
+              <div className="lg:col-span-2 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                <div className="bg-card/95 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-border/50">
+                  <div className="mb-4">
+                    {course.originalPrice && course.originalPrice > course.price && (
+                      <span className="text-lg text-muted-foreground line-through mr-2">
+                        {formatPrice(course.originalPrice)}
+                      </span>
+                    )}
+                    <div className="text-4xl font-extrabold text-primary">{formatPrice(course.price)}</div>
+                  </div>
+                  <div className="text-muted-foreground mb-6 text-sm uppercase tracking-wider">{course.format}</div>
+                  
+                  {course.isComingSoon ? (
+                    <>
+                      <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" buttonLabel="Добавьте меня в лист ожидания" />
+                      <p className="text-sm text-muted-foreground text-center mb-3 mt-3">
+                        Как только новая дата курса будет согласована, мы сразу с вами свяжемся
+                      </p>
+                    </>
+                  ) : (
+                    <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
+                  )}
+
+                  <div className="border-t border-border mt-6 pt-6">
+                    <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Включено в стоимость</div>
+                    <ul className="space-y-3">
+                      {course.includes.map((item, index) => (
+                        <li key={index} className="flex items-center gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== Main Content ===== */}
+      <div className="relative">
+        {/* Course Goal — Contrasting section */}
+        <section className="bg-muted/50 py-16">
+          <div className="container mx-auto px-4">
+            <div ref={goalRef} className="max-w-4xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-sm">
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Target className="h-7 w-7 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                      {course.format === 'Open Day' ? 'Цель встречи' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Цель мероприятия' : 'Цель курса'}
+                    </h2>
+                    <p className="text-muted-foreground text-lg leading-relaxed">{course.goal}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Target Audience & Skills */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div ref={audienceRef} className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <UserCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold">
+                    {course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Кому будет интересно' : 'Для кого этот курс'}
+                  </h2>
+                </div>
+                <ul className="space-y-4">
+                  {course.targetAudience.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-7 h-7 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
+                      </div>
+                      <span className="text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Skills as Grid Cards */}
+              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-12 h-12 bg-accent/20 rounded-2xl flex items-center justify-center">
+                    <GraduationCap className="h-6 w-6 text-accent-foreground" />
+                  </div>
+                  <h2 className="text-2xl font-bold">
+                    {course.format === 'Open Day' ? 'Что вам даст встреча' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Что вы получите' : 'Чему вы научитесь'}
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {course.skills.map((skill, index) => {
+                    const Icon = skillIcons[index % skillIcons.length];
+                    return (
+                      <div key={index} className="flex items-start gap-3 bg-muted/50 rounded-xl p-4 border border-border/50 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
+                        <div className="w-9 h-9 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Icon className="h-4.5 w-4.5 text-accent-foreground" />
+                        </div>
+                        <span className="text-sm leading-snug">{skill}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Lecturers Section — Contrasting background */}
+        {course.lecturers.length > 0 && (
+          <section className="bg-muted/50 py-16" id="course-lecturers">
+            <div className="container mx-auto px-4">
+              <div ref={lecturersRef} className="max-w-6xl mx-auto">
+                <div className="flex items-center gap-3 mb-10">
+                  <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                    <Users className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <h2 className="text-3xl font-bold">
+                    {course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча'
+                      ? course.lecturers.length === 1 ? 'Спикер' : 'Спикеры'
+                      : course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
+                  </h2>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {course.lecturers.map((lecturer, index) => (
+                    <div key={index} className="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group/lecturer">
+                      <div className="flex flex-col items-center text-center">
+                        <Avatar className="w-28 h-28 border-4 border-primary/20 transition-transform duration-300 group-hover/lecturer:scale-110 mb-5 shadow-lg">
+                          <AvatarImage src={lecturer.photo} alt={lecturer.name} />
+                          <AvatarFallback className="text-2xl">{lecturer.name.split(' ').map((n) => n[0]).join('')}</AvatarFallback>
+                        </Avatar>
+                        <h3 className="font-bold text-xl mb-1">{lecturer.name}</h3>
+                        <p className="text-sm text-primary font-medium mb-3">{lecturer.position}</p>
+                      </div>
+                      <p className="text-muted-foreground text-sm text-center mt-2">{lecturer.bio}</p>
+                      {lecturer.achievements && lecturer.achievements.length > 0 && (
+                        <ul className="mt-4 space-y-2">
+                          {lecturer.achievements.map((a, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <Award className="h-3.5 w-3.5 text-accent mt-0.5 flex-shrink-0" />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {course.guestSpeakerNote && (
+                  <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">
+                    <Users className="h-5 w-5 text-primary flex-shrink-0" />
+                    <p className="text-muted-foreground">{course.guestSpeakerNote}</p>
+                  </div>
+                )}
+
+                {/* CTA after lecturers */}
+                <div className="mt-10 text-center">
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
@@ -306,342 +503,232 @@ const CourseDetail = () => {
                   />
                 </div>
               </div>
-
-              {/* Pricing Card */}
-              <div className="bg-card rounded-2xl p-6 shadow-lg border border-border">
-                <div className="mb-2">
-                  {course.originalPrice && course.originalPrice > course.price && (
-                    <span className="text-lg text-muted-foreground line-through mr-2">
-                      {formatPrice(course.originalPrice)}
-                    </span>
-                  )}
-                  <span className="text-3xl font-bold text-primary">{formatPrice(course.price)}</span>
-                </div>
-                <div className="text-muted-foreground mb-6">{course.format}</div>
-                
-                {course.isComingSoon ? (
-                  <>
-                    <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" buttonLabel="Добавьте меня в лист ожидания" />
-                    <p className="text-sm text-muted-foreground text-center mb-3 mt-3">
-                      Как только новая дата курса будет согласована, мы сразу с вами свяжемся
-                    </p>
-                  </>
-                ) : (
-                  <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" />
-                )}
-
-                <div className="border-t border-border pt-4">
-                  <div className="text-sm font-medium mb-3">Включено в стоимость:</div>
-                  <ul className="space-y-2">
-                    {course.includes.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        {/* Course Goal */}
-        <div ref={goalRef} className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <Target className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h2 className="text-xl font-bold mb-2">
-                {course.format === 'Open Day' ? 'Цель встречи' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Цель мероприятия' : 'Цель курса'}
-              </h2>
-              <p className="text-muted-foreground text-lg">{course.goal}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Target Audience & Skills */}
-        <div ref={audienceRef} className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-card border border-border rounded-2xl p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center">
-                <UserCheck className="h-5 w-5 text-secondary-foreground" />
-              </div>
-              <h2 className="text-xl font-bold">
-                {course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Кому будет интересно' : 'Для кого этот курс'}
-              </h2>
-            </div>
-            <ul className="space-y-4">
-              {course.targetAudience.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                  </div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Skills as Grid Cards */}
-          <div className="bg-card border border-border rounded-2xl p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
-                <GraduationCap className="h-5 w-5 text-accent-foreground" />
-              </div>
-              <h2 className="text-xl font-bold">
-                {course.format === 'Open Day' ? 'Что вам даст встреча' : course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ? 'Что вы получите' : 'Чему вы научитесь'}
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {course.skills.map((skill, index) => {
-                const Icon = skillIcons[index % skillIcons.length];
-                return (
-                  <div key={index} className="flex items-start gap-3 bg-muted/50 rounded-xl p-3 border border-border/50">
-                    <div className="w-8 h-8 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Icon className="h-4 w-4 text-accent-foreground" />
-                    </div>
-                    <span className="text-sm leading-snug">{skill}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Lecturers Section */}
-        {course.lecturers.length > 0 && (
-          <div ref={lecturersRef} className="mb-12" id="course-lecturers">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-                <Users className="h-5 w-5 text-primary" />
-              </div>
-              <h2 className="text-2xl font-bold">
-                {course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча'
-                  ? course.lecturers.length === 1 ? 'Спикер' : 'Спикеры'
-                  : course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {course.lecturers.map((lecturer, index) => (
-                <div key={index} className="bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group/lecturer">
-                  <div className="flex items-start gap-4">
-                    <Avatar className="w-20 h-20 border-2 border-primary/20 transition-transform duration-300 group-hover/lecturer:scale-105">
-                      <AvatarImage src={lecturer.photo} alt={lecturer.name} />
-                      <AvatarFallback className="text-lg">{lecturer.name.split(' ').map((n) => n[0]).join('')}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg">{lecturer.name}</h3>
-                      <p className="text-sm text-primary mb-2">{lecturer.position}</p>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground text-sm mt-4">{lecturer.bio}</p>
-                  {lecturer.achievements && lecturer.achievements.length > 0 && (
-                    <ul className="mt-3 space-y-1">
-                      {lecturer.achievements.map((a, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <Award className="h-3.5 w-3.5 text-accent mt-0.5 flex-shrink-0" />
-                          {a}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-            {course.guestSpeakerNote && (
-              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">
-                <Users className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground">{course.guestSpeakerNote}</p>
-              </div>
-            )}
-
-            <div className="mt-8 text-center">
-              <CourseApplicationForm
-                courseName={course.title}
-                courseDate={course.date}
-                buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
-              />
-            </div>
-          </div>
+          </section>
         )}
 
-        {/* Program Section */}
-        <div ref={programRef} className="mb-12" id="course-program">
-          <h2 className="text-2xl font-bold mb-6">Программа курса</h2>
-          {course.program.length > 1 ? (
-            <Tabs defaultValue="day-1" className="w-full">
-              <TabsList className="w-full flex-wrap h-auto gap-2 bg-muted/50 p-2 mb-6">
-                {course.program.map((day) => (
-                  <TabsTrigger
-                    key={day.day}
-                    value={`day-${day.day}`}
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    День {day.day}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {course.program.map((day) => (
-                <TabsContent key={day.day} value={`day-${day.day}`} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-4">{day.title}</h3>
-                  {day.speaker}
-                  <ul className="space-y-3">
-                    {day.topics.map((topic, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span className={topic.startsWith('---') ? 'font-bold text-foreground' : 'text-foreground'}>{topic}</span>
-                      </li>
-                    ))}
-                  </ul>
+        {/* Program Section — White background */}
+        <section className="py-16" id="course-program">
+          <div className="container mx-auto px-4">
+            <div ref={programRef} className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                  <BookOpen className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <h2 className="text-3xl font-bold">Программа курса</h2>
+              </div>
 
-                  {/* Practice ticker for practical days */}
-                  {day.title.toLowerCase().includes('практик') && (
-                    <div className="mt-6 overflow-hidden rounded-lg bg-primary/5 py-2">
-                      <div className="animate-ticker whitespace-nowrap">
-                        <span className="text-primary/40 font-bold text-sm tracking-widest uppercase">
-                          {Array(10).fill("Практика • ").join("")}
-                        </span>
+              {course.program.length > 1 ? (
+                <Tabs defaultValue="day-1" className="w-full">
+                  <TabsList className="w-full flex-wrap h-auto gap-2 bg-primary/5 p-2 mb-8 rounded-xl border border-primary/10">
+                    {course.program.map((day) => (
+                      <TabsTrigger
+                        key={day.day}
+                        value={`day-${day.day}`}
+                        className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg rounded-lg px-6 py-2.5 font-semibold transition-all"
+                      >
+                        День {day.day}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                  {course.program.map((day) => (
+                    <TabsContent key={day.day} value={`day-${day.day}`}>
+                      {/* Dark contrast header */}
+                      <div className="bg-primary text-primary-foreground rounded-t-2xl px-8 py-5">
+                        <h3 className="text-xl font-bold">{day.title}</h3>
+                        {day.speaker && <p className="text-primary-foreground/70 text-sm mt-1">{day.speaker}</p>}
                       </div>
-                    </div>
-                  )}
-                </TabsContent>
-              ))}
-            </Tabs>
-          ) : (
-            <div className="bg-card border border-border rounded-xl p-6">
-              {course.programDescription && (
-                <div className="mb-6 text-muted-foreground whitespace-pre-line leading-relaxed">
-                  {course.programDescription}
+                      <div className="bg-card border border-t-0 border-border rounded-b-2xl p-8">
+                        <ul className="space-y-3">
+                          {day.topics.map((topic, idx) => (
+                            <li key={idx} className="flex items-start gap-3">
+                              {!topic.startsWith('---') && (
+                                <span className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold text-primary">
+                                  {idx + 1}
+                                </span>
+                              )}
+                              <span className={cn(
+                                "text-foreground",
+                                topic.startsWith('---') && 'font-bold text-primary text-lg mt-4'
+                              )}>
+                                {topic.startsWith('---') ? topic.replace(/^---\s*/, '').replace(/\s*---$/, '') : topic}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Practice ticker */}
+                        {day.title.toLowerCase().includes('практик') && (
+                          <div className="mt-8 overflow-hidden rounded-xl bg-primary/5 py-3 border border-primary/10">
+                            <div className="animate-ticker whitespace-nowrap">
+                              <span className="text-primary/30 font-extrabold text-lg tracking-[0.3em] uppercase">
+                                {Array(10).fill("Практика • ").join("")}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </TabsContent>
+                  ))}
+                </Tabs>
+              ) : (
+                <div>
+                  {/* Dark contrast header for single-day */}
+                  <div className="bg-primary text-primary-foreground rounded-t-2xl px-8 py-5">
+                    <h3 className="text-xl font-bold">{course.program[0]?.title || 'Программа'}</h3>
+                  </div>
+                  <div className="bg-card border border-t-0 border-border rounded-b-2xl p-8">
+                    {course.programDescription && (
+                      <div className="mb-8 text-muted-foreground whitespace-pre-line leading-relaxed border-b border-border pb-8">
+                        {course.programDescription}
+                      </div>
+                    )}
+                    
+                    <ul className="space-y-3">
+                      {course.program[0]?.topics.map((topic, idx) => {
+                        const isHeader = topic.startsWith('---');
+                        if (isHeader) {
+                          const headerText = topic.replace(/^---\s*/, '').replace(/\s*---$/, '');
+                          return (
+                            <li key={idx} className="mt-8 first:mt-0">
+                              <div className="bg-primary text-primary-foreground rounded-xl px-6 py-3 font-bold text-base shadow-md">
+                                {headerText}
+                              </div>
+                            </li>
+                          );
+                        }
+
+                        const isResult = topic.startsWith('✅');
+                        return (
+                          <li key={idx} className={cn(
+                            "flex items-start gap-3 pl-2",
+                            isResult && "bg-green-50 dark:bg-green-950/20 rounded-xl px-4 py-3 border border-green-200 dark:border-green-900/30"
+                          )}>
+                            {!isResult && (
+                              <span className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold text-primary">
+                                {idx + 1}
+                              </span>
+                            )}
+                            <span className={cn(
+                              "text-foreground whitespace-pre-line",
+                              isResult && "text-green-800 dark:text-green-300 text-sm font-medium"
+                            )}>
+                              {topic}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </div>
               )}
-              
-              <ul className="space-y-3">
-                {course.program[0]?.topics.map((topic, idx) => {
-                  const isHeader = topic.startsWith('---');
-                  if (isHeader) {
-                    const headerText = topic.replace(/^---\s*/, '').replace(/\s*---$/, '');
-                    return (
-                      <li key={idx} className="mt-6 first:mt-0">
-                        <div className="bg-primary text-primary-foreground rounded-lg px-4 py-2.5 font-bold text-sm">
-                          {headerText}
-                        </div>
-                      </li>
-                    );
-                  }
 
-                  const isResult = topic.startsWith('✅');
-                  return (
-                    <li key={idx} className={cn(
-                      "flex items-start gap-3 pl-2",
-                      isResult && "bg-green-50 dark:bg-green-950/20 rounded-lg px-3 py-2 border border-green-200 dark:border-green-900/30"
-                    )}>
-                      {!isResult && (
-                        <span className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold text-primary">
-                          {idx + 1}
-                        </span>
-                      )}
-                      <span className={cn(
-                        "text-foreground whitespace-pre-line",
-                        isResult && "text-green-800 dark:text-green-300 text-sm"
-                      )}>
-                        {topic}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
+              {/* CTA after program */}
+              <div className="mt-10 text-center">
+                <div className="animate-pulse-soft inline-block">
+                  <CourseApplicationForm
+                    courseName={course.title}
+                    courseDate={course.date}
+                    buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
+                  />
+                </div>
+              </div>
             </div>
-          )}
-
-          <div className="mt-8 text-center">
-            <CourseApplicationForm
-              courseName={course.title}
-              courseDate={course.date}
-              buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
-            />
           </div>
-        </div>
+        </section>
 
-        {/* FAQ Section */}
-        <div ref={faqRef} className="mb-12" id="course-faq">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-              <HelpCircle className="h-5 w-5 text-primary" />
+        {/* FAQ Section — Contrasting background */}
+        <section className="bg-muted/50 py-16" id="course-faq">
+          <div className="container mx-auto px-4">
+            <div ref={faqRef} className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                  <HelpCircle className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <h2 className="text-3xl font-bold">Часто задаваемые вопросы</h2>
+              </div>
+              <Accordion type="single" collapsible className="bg-card border border-border rounded-2xl shadow-sm overflow-hidden">
+                {course.faq.map((item, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border-b last:border-b-0">
+                    <AccordionTrigger className="px-8 py-5 hover:no-underline hover:bg-muted/30 text-base">
+                      <span className="text-left font-semibold">{item.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-8 pb-5 text-muted-foreground text-base leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-            <h2 className="text-2xl font-bold">Часто задаваемые вопросы</h2>
           </div>
-          <Accordion type="single" collapsible className="bg-card border border-border rounded-xl">
-            {course.faq.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b last:border-b-0">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-muted/30">
-                  <span className="text-left font-medium">{item.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        </section>
 
-        {/* CTA */}
-        <div ref={ctaRef} className="bg-primary/10 rounded-2xl p-8 text-center mb-12">
-          <h2 className="text-2xl font-bold mb-2">
-            {course.isComingSoon ? "Хотите попасть на этот курс?" : "Готовы начать обучение?"}
-          </h2>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            {course.isComingSoon
-              ? "Оставьте заявку, и мы свяжемся с вами, как только дата будет согласована."
-              : "Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации."}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {course.isComingSoon ? (
-              <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonLabel="Добавьте меня в лист ожидания" />
-            ) : (
-              <CourseApplicationForm courseName={course.title} courseDate={course.date} />
-            )}
-            <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline">Задать вопрос</Button>
-            </a>
+        {/* Final CTA — Dark dramatic block */}
+        <section className="py-20 gradient-primary relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-foreground rounded-full blur-[120px]" />
           </div>
-        </div>
+          <div className="container mx-auto px-4 relative">
+            <div ref={ctaRef} className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
+                {course.isComingSoon ? "Хотите попасть на этот курс?" : "Готовы начать обучение?"}
+              </h2>
+              <p className="text-primary-foreground/70 mb-8 text-lg max-w-md mx-auto">
+                {course.isComingSoon
+                  ? "Оставьте заявку, и мы свяжемся с вами, как только дата будет согласована."
+                  : "Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации."}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {course.isComingSoon ? (
+                  <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonLabel="Добавьте меня в лист ожидания" />
+                ) : (
+                  <div className="animate-pulse-soft">
+                    <CourseApplicationForm courseName={course.title} courseDate={course.date} />
+                  </div>
+                )}
+                <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">Задать вопрос</Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Related Courses */}
         {relatedCourses.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Похожие курсы</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {relatedCourses.map((relCourse) => (
-                <Link key={relCourse.id} to={`/education/course/${relCourse.id}`} className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all">
-                  {relCourse.coverImage && (
-                    <div className="h-32 overflow-hidden">
-                      <img src={relCourse.coverImage} alt={relCourse.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+          <section className="py-16">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-bold mb-8">Похожие курсы</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {relatedCourses.map((relCourse) => (
+                  <Link key={relCourse.id} to={`/education/course/${relCourse.id}`} className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    {relCourse.coverImage && (
+                      <div className="h-40 overflow-hidden">
+                        <img src={relCourse.coverImage} alt={relCourse.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <Badge className="text-xs mb-2">{relCourse.category}</Badge>
+                      <h3 className="font-bold text-lg line-clamp-2 group-hover:text-primary transition-colors">{relCourse.title}</h3>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-3">
+                        <Calendar className="h-4 w-4" /><span>{relCourse.date}</span>
+                      </div>
+                      <div className="font-bold text-primary text-lg mt-2">{formatPrice(relCourse.price)}</div>
                     </div>
-                  )}
-                  <div className="p-4">
-                    <Badge className="text-xs mb-2">{relCourse.category}</Badge>
-                    <h3 className="font-bold line-clamp-2 group-hover:text-primary transition-colors">{relCourse.title}</h3>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
-                      <Calendar className="h-4 w-4" /><span>{relCourse.date}</span>
-                    </div>
-                    <div className="font-bold text-primary mt-2">{formatPrice(relCourse.price)}</div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
+          </section>
         )}
       </div>
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 safe-area-bottom">
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-3">
           <div className="flex-1 min-w-0">
-            <div className="font-bold text-primary text-lg">{formatPrice(course.price)}</div>
+            <div className="font-extrabold text-primary text-xl">{formatPrice(course.price)}</div>
             <div className="text-xs text-muted-foreground truncate">{course.title}</div>
           </div>
           <CourseApplicationForm

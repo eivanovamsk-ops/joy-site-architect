@@ -7,6 +7,7 @@ import { EducationCategories } from "@/components/education/Categories";
 import { EducationAdvantages } from "@/components/education/Advantages";
 import { EducationOrthoSection } from "@/components/education/OrthoSection";
 import { EducationCTASection } from "@/components/education/CTASection";
+import { EducationSEOContentSection } from "@/components/education/SEOContentSection";
 
 const Education = () => {
   const structuredData = {
@@ -77,6 +78,7 @@ const Education = () => {
           content="курсы для стоматологов, обучение зубных техников, CAD/CAM курсы, цифровая ортодонтия, exocad обучение, цирконий обучение, стоматологические курсы Москва" 
         />
         <link rel="canonical" href="https://articon.pro/education" />
+        <meta name="robots" content="index, follow" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -102,6 +104,7 @@ const Education = () => {
       <EducationHeroSection />
       <EducationStatsSection />
       <EducationUpcomingCourses />
+      <EducationSEOContentSection />
       <EducationCategories />
       <EducationAdvantages />
       <EducationOrthoSection />

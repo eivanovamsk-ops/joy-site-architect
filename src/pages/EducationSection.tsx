@@ -85,6 +85,7 @@ const EducationSection = () => {
         <title>{config.metaTitle}</title>
         <meta name="description" content={config.metaDescription} />
         <link rel="canonical" href={`https://articon.pro/education/${section}`} />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-muted/30">

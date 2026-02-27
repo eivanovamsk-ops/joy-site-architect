@@ -127,6 +127,7 @@ const CourseCalendar = () => {
         <title>Календарь курсов | Учебный центр Артикон</title>
         <meta name="description" content="Расписание курсов Артикон: CAD/CAM, ортодонтия, эстетика, 3D-печать. Практическое обучение от ведущих специалистов. Записывайтесь онлайн." />
         <link rel="canonical" href="https://articon.pro/education/calendar" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="min-h-screen bg-muted/30">

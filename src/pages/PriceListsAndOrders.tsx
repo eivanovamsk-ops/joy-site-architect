@@ -8,38 +8,32 @@ const priceListFiles = [
   {
     id: "ortho-standard",
     name: "Ортопедический стандарт прайс-лист",
-    image: "https://static.wixstatic.com/media/526e65_939eed1db8e44ee8ab1ae85164236976~mv2.jpg/v1/crop/x_0,y_204,w_2482,h_3100/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%9F%D1%80%D0%B0%D0%B9%D1%81%20%D0%BE%D1%80%D1%82%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82.jpg",
-    url: "https://www.articondental.ru/_files/ugd/526e65_712057c4739349c2936e7224195b7e77.pdf",
+    url: "/docs/price-ortho-standard.pdf",
   },
   {
     id: "orthodontic-price",
     name: "Ортодонтический прайс-лист",
-    image: "https://static.wixstatic.com/media/526e65_d49c233e32e849a7a97799cee65a3f87~mv2.jpg/v1/crop/x_0,y_204,w_2482,h_3100/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%9E%D1%80%D1%82%D0%BE%D0%B4%D0%BE%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%20%D0%BF%D1%80%D0%B0%D0%B9%D1%81%2027_04_2020.jpg",
-    url: "https://www.articondental.ru/_files/ugd/526e65_32dd5ace765f4538b47fe49537c69f0b.pdf",
+    url: "/docs/price-orthodontic.pdf",
   },
   {
     id: "ortho-master",
     name: "Ортопедический мастер прайс-лист",
-    image: "https://static.wixstatic.com/media/526e65_6fa5fb02ef924e3e97b1f6aa7afd42f7~mv2.jpg/v1/crop/x_0,y_204,w_2482,h_3100/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%9F%D1%80%D0%B0%D0%B9%D1%81%20%D0%BE%D1%80%D1%82%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80.jpg",
-    url: "https://www.articondental.ru/_files/ugd/526e65_28d6676ad3f94f9aa4410a704bf321df.pdf",
+    url: "/docs/price-ortho-master.pdf",
   },
   {
     id: "milling-stl",
     name: "Фрезерный центр прайс-лист с STL файла",
-    image: "https://static.wixstatic.com/media/e92af1_e67e6adc66cb45a9a94fd92c62c86df0~mv2.jpg/v1/crop/x_0,y_208,w_2482,h_3093/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%A4%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%20STL.jpg",
-    url: "https://www.articondental.ru/_files/ugd/99c926_24fc31edc50d47a08580af9d1e7019c8.pdf",
+    url: "/docs/price-milling-stl.pdf",
   },
   {
     id: "surgical-templates",
     name: "Хирургические шаблоны прайс-лист",
-    image: "https://static.wixstatic.com/media/e92af1_727aa5b40b7a454682f8d041b275f1d0~mv2.jpg/v1/crop/x_0,y_208,w_2482,h_3093/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%A5%D0%B8%D1%80%20%D1%88%D0%B0%D0%B1.jpg",
-    url: "https://www.articondental.ru/_files/ugd/526e65_6418d39f455a4471ae13f635fa34ebee.pdf",
+    url: "/docs/price-surgical-templates.pdf",
   },
   {
     id: "milling-model",
     name: "Фрезерный центр прайс-лист с уровня модели",
-    image: "https://static.wixstatic.com/media/e92af1_c7ae0f154bf8418ba7965604a46a6f9b~mv2.jpg/v1/crop/x_0,y_208,w_2482,h_3093/fill/w_244,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%A4%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%20%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.jpg",
-    url: "https://www.articondental.ru/_files/ugd/99c926_7f6f801859a84b3897a30e9e692a1e93.pdf",
+    url: "/docs/price-milling-model.pdf",
   },
 ];
 
@@ -102,21 +96,27 @@ const orderFormFiles = [
 
 interface FileCardProps {
   name: string;
-  image: string;
+  image?: string;
   url: string;
 }
 
 const FileCard = ({ name, image, url }: FileCardProps) => (
   <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
-    <div className="aspect-[3/4] overflow-hidden bg-muted">
-      <img
-        src={image}
-        alt={name}
-        loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-      />
-    </div>
+    {image ? (
+      <div className="aspect-[3/4] overflow-hidden bg-muted">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    ) : (
+      <div className="aspect-[3/4] flex items-center justify-center bg-muted/50">
+        <Download className="h-12 w-12 text-muted-foreground/40" />
+      </div>
+    )}
     <div className="p-4">
       <h3 className="text-sm font-medium text-foreground mb-3 line-clamp-2 min-h-[2.5rem]">
         {name}

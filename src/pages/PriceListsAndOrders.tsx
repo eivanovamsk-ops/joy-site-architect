@@ -8,31 +8,37 @@ const priceListFiles = [
   {
     id: "ortho-standard",
     name: "Ортопедический стандарт прайс-лист",
+    image: "/images/docs/price-ortho-standard.jpg",
     url: "/docs/price-ortho-standard.pdf",
   },
   {
     id: "orthodontic-price",
     name: "Ортодонтический прайс-лист",
+    image: "/images/docs/price-orthodontic.jpg",
     url: "/docs/price-orthodontic.pdf",
   },
   {
     id: "ortho-master",
     name: "Ортопедический мастер прайс-лист",
+    image: "/images/docs/price-ortho-master.jpg",
     url: "/docs/price-ortho-master.pdf",
   },
   {
     id: "milling-stl",
     name: "Фрезерный центр прайс-лист с STL файла",
+    image: "/images/docs/price-milling-stl.jpg",
     url: "/docs/price-milling-stl.pdf",
   },
   {
     id: "surgical-templates",
     name: "Хирургические шаблоны прайс-лист",
+    image: "/images/docs/price-surgical-templates.jpg",
     url: "/docs/price-surgical-templates.pdf",
   },
   {
     id: "milling-model",
     name: "Фрезерный центр прайс-лист с уровня модели",
+    image: "/images/docs/price-milling-model.jpg",
     url: "/docs/price-milling-model.pdf",
   },
 ];
@@ -41,41 +47,49 @@ const orderFormFiles = [
   {
     id: "lab-order",
     name: "Лабораторный заказ-наряд",
+    image: "/images/docs/order-lab.jpg",
     url: "/docs/order-lab.pdf",
   },
   {
     id: "surgical-order",
     name: "Хирургические шаблоны заказ-наряд",
+    image: "/images/docs/order-surgical.jpg",
     url: "/docs/order-surgical.pdf",
   },
   {
     id: "removable-order",
     name: "Съемные аппараты заказ-наряд",
+    image: "/images/docs/order-removable.jpg",
     url: "/docs/order-removable.pdf",
   },
   {
     id: "esthetics-smilecloud",
     name: "Эстетика & SmileCloud заказ-наряд",
+    image: "/images/docs/order-esthetics-smilecloud.jpg",
     url: "/docs/order-esthetics-smilecloud.pdf",
   },
   {
     id: "tmj-order",
     name: "ВНЧС заказ-наряд",
+    image: "/images/docs/order-tmj.jpg",
     url: "/docs/order-tmj.pdf",
   },
   {
     id: "fixed-order",
     name: "Несъемные аппараты заказ-наряд",
+    image: "/images/docs/order-fixed.jpg",
     url: "/docs/order-fixed.pdf",
   },
   {
     id: "fixed-cortical-order",
     name: "Несъемные аппараты с кортикальной опорой заказ-наряд",
+    image: "/images/docs/order-fixed-cortical.jpg",
     url: "/docs/order-fixed-cortical.pdf",
   },
   {
     id: "aligners-order",
     name: "Элайнеры заказ-наряд",
+    image: "/images/docs/order-aligners.jpg",
     url: "/docs/order-aligners.pdf",
   },
 ];

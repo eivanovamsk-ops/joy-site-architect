@@ -36,6 +36,8 @@ const routeNames: Record<string, string> = {
   vacuums: "Пылесосы",
   sale: "Акции",
   delivery: "Доставка и оплата",
+  auth: "Авторизация",
+  profile: "Профиль",
   privacy: "Конфиденциальность",
   terms: "Согласие на обработку данных",
 };

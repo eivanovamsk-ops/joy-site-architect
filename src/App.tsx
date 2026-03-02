@@ -38,6 +38,7 @@ import PmmaDiscs from "./pages/PmmaDiscs";
 import CadcamDiscs from "./pages/CadcamDiscs";
 import Catalog from "./pages/Catalog";
 import Delivery from "./pages/Delivery";
+import ShopDelivery from "./pages/ShopDelivery";
 import Auth from "./pages/Auth";
 import ResetPassword from "./pages/ResetPassword";
 import Cart from "./pages/Cart";
@@ -85,6 +86,7 @@ const App = () => (
               <Route path="/shop/catalog/press-ceramic" element={<PressCeramic />} />
               <Route path="/shop/catalog/pmma-discs" element={<PmmaDiscs />} />
               <Route path="/shop/catalog/cadcam-discs" element={<CadcamDiscs />} />
+              <Route path="/shop/delivery" element={<ShopDelivery />} />
               <Route path="/shop/contacts" element={<Delivery />} />
               <Route path="/education" element={<Education />} />
               <Route path="/education/contacts" element={<EducationContacts />} />

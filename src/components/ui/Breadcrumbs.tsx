@@ -38,6 +38,7 @@ const routeNames: Record<string, string> = {
   delivery: "Доставка и оплата",
   auth: "Авторизация",
   profile: "Профиль",
+  "reset-password": "Восстановление пароля",
   privacy: "Конфиденциальность",
   terms: "Согласие на обработку данных",
 };

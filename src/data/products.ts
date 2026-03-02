@@ -3674,7 +3674,7 @@ Upcera A52 — это 5-осевой фрезерный станок сухог�
   // ==============================================
   {
     id: "upcera-gt1-pro",
-    name: "Зуботехническая печь для синтеризации циркония UPCERA GT1 Pro",
+    name: "Печь для синтеризации циркония Upcera GT1 Pro",
     category: "milling",
     subcategory: "furnaces",
     price: null,

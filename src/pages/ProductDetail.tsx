@@ -282,7 +282,7 @@ const ProductDetail = () => {
           
           <TabsContent value="description" className="prose max-w-none">
             {product.description ? (
-              <div className="text-muted-foreground whitespace-pre-line">
+              <div className="text-foreground whitespace-pre-line">
                 {product.description}
               </div>
             ) : (

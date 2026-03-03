@@ -100,6 +100,7 @@ import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
 import upceraB52 from "@/assets/products/upcera-b52.png";
 import upceraB42 from "@/assets/products/upcera-b42.png";
 import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
+import upceraGt1ProNew from "@/assets/products/upcera-gt1-pro-new.webp";
 import upceraGt1Pro1 from "@/assets/products/upcera-gt1-pro-1.jpg";
 import upceraGt1Pro2 from "@/assets/products/upcera-gt1-pro-2.jpg";
 import dekema674_1 from "@/assets/products/dekema-674-1.jpg";
@@ -3678,8 +3679,8 @@ Upcera A52 — это 5-осевой фрезерный станок сухог�
     category: "milling",
     subcategory: "furnaces",
     price: null,
-    image: upceraGt1Pro1,
-    gallery: [upceraGt1Pro1, upceraGt1Pro2],
+    image: upceraGt1ProNew,
+    gallery: [upceraGt1ProNew, upceraGt1Pro1, upceraGt1Pro2],
     brand: "Upcera",
     inStock: true,
     metaDescription: "Купить печь для синтеризации циркония Upcera GT1 Pro в Москве — максимальная температура 1550 °C, PID-контроль, до 200 программ, функция восстановления после сбоя. Articon, доставка по России.",

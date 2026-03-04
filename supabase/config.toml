@@ -1,7 +1,9 @@
 project_id = "minlrvrnprwcrgqfgsws"
 
-[functions.send-email-unisender]
-verify_jwt = false
-
-[functions.create-split-order]
-verify_jwt = false
+[functions]
+  [functions.auth-email-hook]
+    verify_jwt = false
+  [functions.create-split-order]
+    verify_jwt = false
+  [functions.send-email-unisender]
+    verify_jwt = false

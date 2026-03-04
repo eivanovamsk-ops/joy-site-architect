@@ -14,17 +14,24 @@ interface ProductImageSliderProps {
   isNew?: boolean;
   isSale?: boolean;
   video?: string;
+  videoPosition?: number;
 }
 
-const ProductImageSlider = ({ images, name, isNew, isSale, video }: ProductImageSliderProps) => {
+const ProductImageSlider = ({ images, name, isNew, isSale, video, videoPosition = -1 }: ProductImageSliderProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  // Build media array: images first, then video
-  const media: MediaItem[] = [
-    ...images.map((src): MediaItem => ({ type: "image", src })),
-    ...(video ? [{ type: "video" as const, src: video }] : []),
-  ];
+  // Build media array: insert video at videoPosition if specified, otherwise append
+  const media: MediaItem[] = (() => {
+    const imageItems: MediaItem[] = images.map((src) => ({ type: "image", src }));
+    if (!video) return imageItems;
+    const videoItem: MediaItem = { type: "video", src: video };
+    if (videoPosition >= 0 && videoPosition <= imageItems.length) {
+      imageItems.splice(videoPosition, 0, videoItem);
+      return imageItems;
+    }
+    return [...imageItems, videoItem];
+  })();
 
   const goTo = useCallback((index: number) => {
     setActiveIndex((index + media.length) % media.length);

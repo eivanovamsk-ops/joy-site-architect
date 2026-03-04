@@ -132,6 +132,12 @@ import bursUpceraB51B52Metal from "@/assets/products/burs-upcera-b51-b52-metal.j
 // Asiga tray image
 import asigaTray from "@/assets/products/asiga-tray.jpg";
 
+export interface DownloadFile {
+  name: string;
+  url: string;
+  size: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -151,6 +157,7 @@ export interface Product {
   metaDescription?: string;
   specifications?: Record<string, string>;
   externalUrl?: string;
+  downloadFiles?: DownloadFile[];
 }
 
 export interface Category {
@@ -3590,6 +3597,11 @@ Upcera A52 — это 5-осевой фрезерный станок сухог�
       "Вес брутто": "120 кг",
     },
     externalUrl: "https://articon.pro/product/cad-cam-upcera-a52/",
+    downloadFiles: [
+      { name: "Инструкция", url: "/docs/upcera-a52-instruction.pdf", size: "PDF" },
+      { name: "Информация о станке Upcera A52", url: "/docs/upcera-a52-info.pdf", size: "PDF" },
+      { name: "Обслуживание станка", url: "/docs/upcera-a52-maintenance.pdf", size: "PDF" },
+    ],
   },
   {
     id: "upcera-b52",

@@ -13,7 +13,8 @@ import {
   Truck,
   Shield,
   Phone,
-  Check
+  Check,
+  FileDown
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
@@ -327,6 +328,29 @@ const ProductDetail = () => {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Download Files */}
+        {product.downloadFiles && product.downloadFiles.length > 0 && (
+          <div className="mb-12">
+            <h3 className="text-lg font-semibold mb-4">Документы для скачивания</h3>
+            <div className="flex flex-col gap-3">
+              {product.downloadFiles.map((file, i) => (
+                <a
+                  key={i}
+                  href={file.url}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors"
+                >
+                  <FileDown className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="font-medium">{file.name}</span>
+                  <span className="text-xs text-muted-foreground ml-auto">{file.size}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (

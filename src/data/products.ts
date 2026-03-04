@@ -97,6 +97,7 @@ import ultrasonicW230_2 from "@/assets/products/ultrasonic-w230-2.png";
 // Milling machines images
 import upceraA52_1 from "@/assets/products/upcera-a52-1.jpg";
 import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
+import upceraA52Milling from "@/assets/products/upcera-a52-milling.png";
 import upceraB52 from "@/assets/products/upcera-b52.png";
 import upceraB42 from "@/assets/products/upcera-b42.png";
 import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
@@ -140,6 +141,7 @@ export interface Product {
   oldPrice?: number | null;
   image: string;
   gallery?: string[];
+  video?: string;
   brand: string;
   inStock: boolean;
   isNew?: boolean;
@@ -3494,7 +3496,8 @@ Uniformation GK3 Pro — профессиональный 3D-принтер дл
     subcategory: "machines",
     price: null,
     image: upceraA52_1,
-    gallery: [upceraA52_1, upceraA52_2],
+    gallery: [upceraA52_1, upceraA52_2, upceraA52Milling],
+    video: "/videos/upcera-a52.mp4",
     brand: "Upcera",
     inStock: true,
     metaDescription: "Купить фрезерный станок Upcera A52 в Москве — 5-осевой станок сухого фрезерования для циркония, PMMA и PEEK. Автосмена инструмента, встроенный компьютер, точность до 0.01 мм. Articon, доставка по России.",

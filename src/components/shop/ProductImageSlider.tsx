@@ -1,44 +1,70 @@
 import { useState, useCallback } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Play } from "lucide-react";
+
+interface MediaItem {
+  type: "image" | "video";
+  src: string;
+}
 
 interface ProductImageSliderProps {
   images: string[];
   name: string;
   isNew?: boolean;
   isSale?: boolean;
+  video?: string;
 }
 
-const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderProps) => {
+const ProductImageSlider = ({ images, name, isNew, isSale, video }: ProductImageSliderProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const goTo = useCallback((index: number) => {
-    setActiveIndex((index + images.length) % images.length);
-  }, [images.length]);
+  // Build media array: images first, then video
+  const media: MediaItem[] = [
+    ...images.map((src): MediaItem => ({ type: "image", src })),
+    ...(video ? [{ type: "video" as const, src: video }] : []),
+  ];
 
-  if (images.length === 0) return null;
+  const goTo = useCallback((index: number) => {
+    setActiveIndex((index + media.length) % media.length);
+  }, [media.length]);
+
+  if (media.length === 0) return null;
+
+  const current = media[activeIndex];
 
   return (
     <>
       <div className="min-w-0">
         <div className="relative">
-          {/* Main Image */}
+          {/* Main Media */}
           <div
             className="aspect-square bg-muted/30 rounded-2xl overflow-hidden border border-border cursor-zoom-in group"
             onClick={() => setLightboxOpen(true)}
           >
-            <img
-              src={images[activeIndex]}
-              alt={`${name} — фото ${activeIndex + 1}`}
-              loading="eager"
-              decoding="async"
-              className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <ZoomIn className="h-5 w-5 text-foreground" />
-            </div>
+            {current.type === "image" ? (
+              <img
+                src={current.src}
+                alt={`${name} — фото ${activeIndex + 1}`}
+                loading="eager"
+                decoding="async"
+                className="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-105"
+              />
+            ) : (
+              <video
+                src={current.src}
+                className="w-full h-full object-contain p-4"
+                controls
+                playsInline
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
+            {current.type === "image" && (
+              <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="h-5 w-5 text-foreground" />
+              </div>
+            )}
           </div>
 
           {/* Badges */}
@@ -48,7 +74,7 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
           </div>
 
           {/* Nav Arrows */}
-          {images.length > 1 && (
+          {media.length > 1 && (
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); goTo(activeIndex - 1); }}
@@ -69,22 +95,28 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
         </div>
 
         {/* Thumbnails */}
-        {images.length > 1 && (
+        {media.length > 1 && (
           <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
-            {images.map((img, i) => (
+            {media.map((item, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
+                className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden border-2 transition-colors relative ${
                   i === activeIndex ? "border-primary" : "border-border hover:border-primary/50"
                 }`}
               >
-                <img
-                  src={img}
-                  alt={`${name} — миниатюра ${i + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-contain p-1"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={`${name} — миниатюра ${i + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-contain p-1"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-muted flex items-center justify-center">
+                    <Play className="h-5 w-5 text-primary fill-primary" />
+                  </div>
+                )}
               </button>
             ))}
           </div>
@@ -95,11 +127,21 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none [&>button]:hidden">
           <div className="relative w-full h-[90vh] flex items-center justify-center">
-            <img
-              src={images[activeIndex]}
-              alt={`${name} — увеличенное фото ${activeIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-            />
+            {current.type === "image" ? (
+              <img
+                src={current.src}
+                alt={`${name} — увеличенное фото ${activeIndex + 1}`}
+                className="max-w-full max-h-full object-contain"
+              />
+            ) : (
+              <video
+                src={current.src}
+                className="max-w-full max-h-full"
+                controls
+                autoPlay
+                playsInline
+              />
+            )}
 
             <button
               onClick={() => setLightboxOpen(false)}
@@ -108,7 +150,7 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
               <X className="h-6 w-6 text-white" />
             </button>
 
-            {images.length > 1 && (
+            {media.length > 1 && (
               <>
                 <button
                   onClick={() => goTo(activeIndex - 1)}
@@ -127,7 +169,7 @@ const ProductImageSlider = ({ images, name, isNew, isSale }: ProductImageSliderP
 
             {/* Dots */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {images.map((_, i) => (
+              {media.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}

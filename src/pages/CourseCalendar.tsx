@@ -302,8 +302,14 @@ const CourseCalendar = () => {
                   to="/education/webinar/brackets-march-2026"
                   className="bg-card border-2 border-accent/40 rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative"
                 >
-                  <div className="gradient-education p-4">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src="/images/webinar/cover.jpg"
+                      alt="Непрямая фиксация брекетов"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                       <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
                         Бесплатный вебинар
                       </Badge>

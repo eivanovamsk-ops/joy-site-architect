@@ -49,6 +49,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
+import WebinarBrackets from "./pages/WebinarBrackets";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,7 @@ const App = () => (
               <Route path="/education/contacts" element={<EducationContacts />} />
               <Route path="/education/calendar" element={<CourseCalendar />} />
               <Route path="/education/course/:id" element={<CourseDetail />} />
+              <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
               <Route path="/education/:section" element={<EducationSection />} />
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<GeneralContacts />} />

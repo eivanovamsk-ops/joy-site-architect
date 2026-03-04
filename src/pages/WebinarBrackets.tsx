@@ -23,6 +23,10 @@ const caseImages = [
   { src: "/images/webinar/case-7.jpg", alt: "Нанесение композита" },
   { src: "/images/webinar/case-8.jpg", alt: "Непрямая фиксация — джиг" },
   { src: "/images/webinar/case-9.jpg", alt: "Брекеты с эластиками" },
+  { src: "/images/webinar/case-10.jpg", alt: "3D-модель черепа с брекетами — фронтальная" },
+  { src: "/images/webinar/case-11.jpg", alt: "3D-модель черепа с брекетами — боковая" },
+  { src: "/images/webinar/case-12.jpg", alt: "3D-модель — верхняя челюсть с брекетами" },
+  { src: "/images/webinar/case-13.jpg", alt: "3D-модель — нижняя челюсть с брекетами" },
 ];
 
 const programTopics = [

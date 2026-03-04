@@ -151,6 +151,7 @@ const ProductDetail = () => {
             name={product.name}
             isNew={product.isNew}
             isSale={product.isSale}
+            video={product.video}
           />
 
           {/* Product Info */}

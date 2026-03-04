@@ -518,7 +518,7 @@ UPCERA Explore Functional применяется для:
     gallery: [aevraMLHero, aevraMLd98, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
     basePrice: 0,
     downloadFiles: [
-      { name: "Инструкция по работе с цирконом Aevra", url: "/docs/aevra-ml-instructions.pdf", size: "PDF" },
+      { name: "Гайд по работе с цирконом", url: "/docs/aevra-ml-guide.pdf", size: "PDF" },
     ],
     description: `Заготовка из циркония Aevra ML D98 — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для цифровых зуботехнических лабораторий, которым необходим баланс прочности, эстетики и предсказуемого результата.
 

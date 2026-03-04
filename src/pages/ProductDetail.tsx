@@ -153,6 +153,7 @@ const ProductDetail = () => {
             isNew={product.isNew}
             isSale={product.isSale}
             video={product.video}
+            videoPosition={1}
           />
 
           {/* Product Info */}

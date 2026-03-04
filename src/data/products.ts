@@ -744,6 +744,7 @@ Uniformation GK3 Pro — профессиональный 3D-принтер дл
       rundeerV5_1, rundeerV5_2, rundeerV5_3, rundeerV5_4, rundeerV5_5,
       rundeerV5_6, rundeerV5_7, rundeerV5_8, rundeerV5_9,
     ],
+    video: "/videos/rundeer-v5.mp4",
     brand: "Rundeer",
     inStock: true,
     description: `Зона сканирования 25 мм обеспечивает захват каждой детали для качественного лечения.

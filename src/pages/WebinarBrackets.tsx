@@ -27,6 +27,8 @@ const caseImages = [
   { src: "/images/webinar/case-11.jpg", alt: "3D-модель черепа с брекетами — боковая" },
   { src: "/images/webinar/case-12.jpg", alt: "3D-модель — верхняя челюсть с брекетами" },
   { src: "/images/webinar/case-13.jpg", alt: "3D-модель — нижняя челюсть с брекетами" },
+  { src: "/images/webinar/case-14.jpg", alt: "Джиги для непрямой фиксации на модели" },
+  { src: "/images/webinar/case-15.jpg", alt: "Прозрачные капы с брекетами — верхняя и нижняя челюсть" },
 ];
 
 const programTopics = [

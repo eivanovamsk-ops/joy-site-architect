@@ -43,8 +43,15 @@ export function EducationOrthoSection() {
             </Button>
           </div>
           <div className="relative">
-            <div className="aspect-video rounded-2xl bg-ortho/10 flex items-center justify-center border border-ortho/20">
-              <span className="text-ortho/40">Видео о направлении Ortho</span>
+            <div className="aspect-video rounded-2xl overflow-hidden border border-ortho/20">
+              <video
+                src="/videos/orthodontics.mp4"
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster=""
+              />
             </div>
           </div>
         </div>

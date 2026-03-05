@@ -51,6 +51,7 @@ import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
 import WebinarBrackets from "./pages/WebinarBrackets";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
+import BrandUpcera from "./pages/BrandUpcera";
 const queryClient = new QueryClient();
 
 const App = () => (

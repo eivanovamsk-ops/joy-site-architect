@@ -51,6 +51,7 @@ import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
 import WebinarBrackets from "./pages/WebinarBrackets";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
+import BrandUpcera from "./pages/BrandUpcera";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -97,6 +98,7 @@ const App = () => (
               <Route path="/education/course/:id" element={<CourseDetail />} />
               <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
               <Route path="/education/:section" element={<EducationSection />} />
+              <Route path="/brands/upcera" element={<BrandUpcera />} />
               <Route path="/about" element={<About />} />
               <Route path="/contacts" element={<GeneralContacts />} />
               <Route path="/laboratory/contacts" element={<Contacts />} />

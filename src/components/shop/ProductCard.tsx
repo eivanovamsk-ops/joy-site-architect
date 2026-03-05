@@ -80,8 +80,17 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         <CardContent className="p-4">
-          <div className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
+          <div className="text-xs text-muted-foreground mb-1 uppercase tracking-wide flex items-center gap-1.5">
             {product.brand}
+            {product.brand === "Upcera" && (
+              <Link
+                to="/brands/upcera"
+                onClick={(e) => e.stopPropagation()}
+                className="text-primary hover:underline normal-case tracking-normal"
+              >
+                О бренде
+              </Link>
+            )}
           </div>
           
           <h3 className="font-medium text-sm leading-tight mb-3 line-clamp-2 min-h-[2.5rem] text-foreground">

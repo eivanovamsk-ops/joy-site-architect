@@ -18,7 +18,7 @@ const BrandUpcera = () => {
       { "@type": "ListItem", position: 1, name: "Главная", item: "https://articon.pro/" },
       { "@type": "ListItem", position: 2, name: "Магазин", item: "https://articon.pro/shop" },
       { "@type": "ListItem", position: 3, name: "Бренды", item: "https://articon.pro/shop/brands" },
-      { "@type": "ListItem", position: 4, name: "UPCERA", item: "https://articon.pro/brands/upcera" },
+      { "@type": "ListItem", position: 4, name: "UPCERA", item: "https://articon.pro/shop/brands/upcera" },
     ],
   };
 
@@ -30,11 +30,11 @@ const BrandUpcera = () => {
           name="description"
           content="UPCERA: фрезерные станки, печи синтеризации, циркониевые диски, литий-дисиликат и расходные материалы. Официальный поставщик Articon — 110+ стран, 120+ патентов, прочность до 1300 МПа."
         />
-        <link rel="canonical" href="https://articon.pro/brands/upcera" />
+        <link rel="canonical" href="https://articon.pro/shop/brands/upcera" />
         <meta property="og:title" content="UPCERA — CAD/CAM-решения для цифровой лаборатории | Артикон" />
         <meta property="og:description" content="Фрезерные станки, циркониевые диски, печи синтеризации и расходные материалы UPCERA. Официальный поставщик Articon." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://articon.pro/brands/upcera" />
+        <meta property="og:url" content="https://articon.pro/shop/brands/upcera" />
         <meta property="og:image" content="https://articon.pro/og-shop.jpg" />
         <meta property="og:locale" content="ru_RU" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

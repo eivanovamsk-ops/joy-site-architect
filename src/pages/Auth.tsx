@@ -120,6 +120,7 @@ const Auth = () => {
             description: "Добро пожаловать в Артикон!",
           });
           navigate("/profile");
+        }
       }
     } catch (err) {
       toast({

@@ -30,7 +30,7 @@ const BrandUpcera = () => {
           name="description"
           content="UPCERA: фрезерные станки, печи синтеризации, циркониевые диски, литий-дисиликат и расходные материалы. Официальный поставщик Articon — 110+ стран, 120+ патентов, прочность до 1300 МПа."
         />
-        <link rel="canonical" href="https://articon.pro/brands/upcera" />
+        <link rel="canonical" href="https://articon.pro/shop/brands/upcera" />
         <meta property="og:title" content="UPCERA — CAD/CAM-решения для цифровой лаборатории | Артикон" />
         <meta property="og:description" content="Фрезерные станки, циркониевые диски, печи синтеризации и расходные материалы UPCERA. Официальный поставщик Articon." />
         <meta property="og:type" content="website" />

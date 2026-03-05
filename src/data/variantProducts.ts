@@ -514,9 +514,10 @@ UPCERA Explore Functional применяется для:
     brand: "Aevra",
     category: "cad-cam-discs",
     subcategory: "zirconia-multilayer",
-    image: aevraMLHero,
-    gallery: [aevraMLHero, aevraMLd98, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
+    image: aevraMLd98,
+    gallery: [aevraMLd98, aevraMLHero, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
     basePrice: 0,
+    metaDescription: "Заготовка из циркония Aevra ML D98 для CAD/CAM — многослойный циркониевый диск 98 мм с прочностью 800–1050 МПа и высокой транслюцентностью. Articon, Москва, доставка по России.",
     downloadFiles: [
       { name: "Гайд по работе с цирконом", url: "/docs/aevra-ml-guide.pdf", size: "PDF" },
     ],

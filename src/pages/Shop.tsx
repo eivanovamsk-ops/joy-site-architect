@@ -66,6 +66,7 @@ const Shop = () => {
         products={newProducts} 
       />
       
+      <WhyArticon />
       <ShopAdvantages />
       <ShopBrands />
     </Layout>

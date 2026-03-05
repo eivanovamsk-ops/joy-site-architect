@@ -87,9 +87,11 @@ const BundleUpceraKit = () => {
               <Button
                 size="lg"
                 className="w-fit bg-primary hover:bg-primary/90"
-                onClick={() => window.open("https://t.me/articondental_bot", "_blank")}
+                asChild
               >
-                Запросить стоимость комплекта
+                <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
+                  Запросить стоимость комплекта
+                </a>
               </Button>
             </div>
             <div className="flex items-center justify-center p-4">
@@ -180,9 +182,11 @@ const BundleUpceraKit = () => {
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90"
-            onClick={() => window.open("https://t.me/articondental_bot", "_blank")}
+            asChild
           >
-            Запросить стоимость комплекта
+            <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
+              Запросить стоимость комплекта
+            </a>
           </Button>
         </div>
       </div>

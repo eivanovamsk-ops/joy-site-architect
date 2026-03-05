@@ -21,9 +21,8 @@ export function UpceraShopBanner() {
                   Фрезерные станки, циркониевые диски, печи синтеризации и расходные материалы. 110+ стран, 120+ патентов.
                 </p>
                 <Button
-                  variant="outline"
                   size="sm"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 group-hover:border-accent group-hover:text-accent transition-colors"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
                 >
                   Узнать о бренде <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>

@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext, ReactNode } from "react";
+import { useState, useEffect, useCallback, createContext, useContext, ReactNode } from "react";
 
 export interface CartItem {
   slug: string;
@@ -22,18 +22,68 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CART_STORAGE_KEY = "articon_cart";
 
-export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(CART_STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
+function readCartFromStorage(): CartItem[] {
+  try {
+    const saved = localStorage.getItem(CART_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
     }
-    return [];
-  });
+  } catch {
+    // ignore parse errors
+  }
+  return [];
+}
 
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [items, setItems] = useState<CartItem[]>(readCartFromStorage);
+
+  // Save to localStorage on every change, but skip writing empty array
+  // if localStorage already has items (prevents accidental wipe)
   useEffect(() => {
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    if (items.length > 0) {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+    } else {
+      // Only clear storage if it was an intentional clear (not an init race)
+      const stored = readCartFromStorage();
+      if (stored.length === 0) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+      }
+    }
   }, [items]);
+
+  // Re-sync from localStorage when window regains focus (e.g., after email confirmation redirect)
+  useEffect(() => {
+    const handleFocus = () => {
+      const stored = readCartFromStorage();
+      if (stored.length > 0) {
+        setItems(prev => {
+          if (prev.length === 0) return stored;
+          return prev;
+        });
+      }
+    };
+
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === CART_STORAGE_KEY && e.newValue) {
+        try {
+          const parsed = JSON.parse(e.newValue);
+          if (Array.isArray(parsed)) {
+            setItems(parsed);
+          }
+        } catch {}
+      }
+    };
+
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("storage", handleStorage);
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, []);
 
   const addItem = (item: Omit<CartItem, "quantity">) => {
     setItems((prev) => {
@@ -61,9 +111,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
-  const clearCart = () => {
+  const clearCart = useCallback(() => {
     setItems([]);
-  };
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+  }, []);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);

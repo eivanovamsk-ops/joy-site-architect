@@ -35,6 +35,8 @@ const routeNames: Record<string, string> = {
   compressors: "Компрессоры",
   vacuums: "Пылесосы",
   sale: "Акции",
+  bundle: "Акции",
+  "upcera-cadcam-kit": "Комплект UPCERA",
   delivery: "Доставка и оплата",
   auth: "Авторизация",
   profile: "Профиль",

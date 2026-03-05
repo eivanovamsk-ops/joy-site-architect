@@ -5,10 +5,10 @@ import bundleBanner from "@/assets/products/upcera-bundle-banner.png";
 
 export function BundleSection() {
   return (
-    <section className="mb-12">
-      <div className="flex items-center gap-3 mb-6">
-        <Package className="h-6 w-6 text-primary" />
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Комплекты</h2>
+    <section className="mb-8">
+      <div className="flex items-center gap-2 mb-4">
+        <Package className="h-5 w-5 text-primary" />
+        <h2 className="text-xl md:text-2xl font-bold text-foreground">Комплекты</h2>
       </div>
 
       <Link to="/shop/bundle/upcera-cadcam-kit" className="block">

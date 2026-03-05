@@ -50,7 +50,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
 import WebinarBrackets from "./pages/WebinarBrackets";
-
+import BundleUpceraKit from "./pages/BundleUpceraKit";
 const queryClient = new QueryClient();
 
 const App = () => (

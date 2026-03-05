@@ -1,0 +1,193 @@
+import { Layout } from "@/components/layout/Layout";
+import { Helmet } from "react-helmet-async";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CheckCircle2, Users, TrendingUp, Package } from "lucide-react";
+import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
+import upceraGT1 from "@/assets/products/upcera-gt1-pro-bundle.png";
+import upceraR412 from "@/assets/products/upcera-r412-bundle.png";
+import bundleBanner from "@/assets/products/upcera-bundle-banner.png";
+
+const bundleItems = [
+  {
+    image: upceraA52,
+    name: "Фрезеровочный станок UPCERA A52",
+    description: "Высокоточная 5-осевая система сухого фрезерования для работы с диоксидом циркония, PMMA, PEEK, воском и другими материалами.",
+  },
+  {
+    image: upceraGT1,
+    name: "Печь UPCERA GT1 Pro",
+    description: "Надёжная система синтеризации циркониевых конструкций с точным температурным контролем и стабильным результатом.",
+  },
+  {
+    image: upceraR412,
+    name: "Пылесос UPCERA R-412",
+    description: "Чистота производственного процесса и защита оборудования от пыли при фрезеровании.",
+  },
+];
+
+const benefits = [
+  "Экономия –8% по сравнению с покупкой оборудования по отдельности",
+  "Полная технологическая совместимость всех устройств",
+  "Единая сервисная поддержка",
+  "Быстрый запуск цифрового производства",
+  "Оптимальная настройка процессов «фрезеровка → синтеризация → чистота производства»",
+];
+
+const audience = [
+  "Владельцам стоматологических клиник",
+  "Руководителям зуботехнических лабораторий",
+  "Клиникам на этапе запуска",
+  "Лабораториям, переходящим на цифровой протокол",
+];
+
+const results = [
+  "Предсказуемое качество изделий",
+  "Снижение количества переделок",
+  "Оптимизация производственного цикла",
+  "Повышение маржинальности лаборатории",
+  "Быстрый возврат инвестиций за счёт комплексного подхода",
+];
+
+const BundleUpceraKit = () => {
+  return (
+    <Layout>
+      <Helmet>
+        <title>CAD/CAM-комплект UPCERA для цифровой лаборатории | Артикон</title>
+        <meta
+          name="description"
+          content="CAD/CAM-комплект UPCERA: фрезерный станок A52, печь GT1 Pro, пылесос R-412 со скидкой –8%. Комплексное решение для цифровой зуботехнической лаборатории. Articon, Москва, доставка по России."
+        />
+        <link rel="canonical" href="https://articon.pro/shop/bundle/upcera-cadcam-kit" />
+      </Helmet>
+
+      <div className="container mx-auto px-4 pt-4">
+        <Breadcrumbs />
+      </div>
+
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-[hsl(220,60%,95%)] to-[hsl(220,40%,98%)]">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-0 py-8 md:py-12">
+            <div className="flex flex-col justify-center">
+              <Badge className="w-fit mb-4 bg-accent text-accent-foreground text-sm px-3 py-1">
+                –8% при покупке комплектом
+              </Badge>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+                CAD/CAM-комплект UPCERA
+              </h1>
+              <p className="text-lg text-muted-foreground mb-4">
+                Комплексное решение для цифровой лаборатории
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-lg mb-6">
+                Запустите или модернизируйте цифровую зуботехническую лабораторию на базе оборудования UPCERA
+                и получите комплект выгоднее на 8% по сравнению с покупкой каждого устройства отдельно.
+              </p>
+              <Button
+                size="lg"
+                className="w-fit bg-primary hover:bg-primary/90"
+                onClick={() => window.open("https://t.me/articondental_bot", "_blank")}
+              >
+                Запросить стоимость комплекта
+              </Button>
+            </div>
+            <div className="flex items-center justify-center p-4">
+              <img
+                src={bundleBanner}
+                alt="CAD/CAM-комплект UPCERA: A52, GT1 Pro, R-412"
+                className="w-full max-w-lg object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-12">
+        {/* Bundle items */}
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Что входит в комплект</h2>
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
+          {bundleItems.map((item) => (
+            <div key={item.name} className="bg-secondary rounded-xl p-5 text-center">
+              <div className="aspect-square mb-4 flex items-center justify-center">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold mb-2">{item.name}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Benefits & audience */}
+        <div className="grid md:grid-cols-2 gap-10 mb-16">
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <CheckCircle2 className="h-5 w-5 text-primary" />
+              <h2 className="text-xl font-bold text-foreground">Почему выгодно приобретать комплектом</h2>
+            </div>
+            <ul className="space-y-3">
+              {benefits.map((b) => (
+                <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary mt-0.5">✓</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-5">
+              <Users className="h-5 w-5 text-primary" />
+              <h2 className="text-xl font-bold text-foreground">Для кого подойдёт</h2>
+            </div>
+            <ul className="space-y-3">
+              {audience.map((a) => (
+                <li key={a} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary mt-0.5">✓</span>
+                  <span>{a}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Results */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-5">
+            <TrendingUp className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold text-foreground">Результат для бизнеса</h2>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {results.map((r) => (
+              <Badge key={r} variant="secondary" className="text-sm font-normal py-2 px-4">
+                {r}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-secondary rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold mb-3">Готовы обсудить комплект?</h2>
+          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+            Свяжитесь с нами, чтобы получить персональное предложение и узнать точную стоимость комплекта с учётом скидки –8%.
+          </p>
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90"
+            onClick={() => window.open("https://t.me/articondental_bot", "_blank")}
+          >
+            Запросить стоимость комплекта
+          </Button>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default BundleUpceraKit;

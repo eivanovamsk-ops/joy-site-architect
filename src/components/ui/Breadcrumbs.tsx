@@ -35,6 +35,8 @@ const routeNames: Record<string, string> = {
   compressors: "Компрессоры",
   vacuums: "Пылесосы",
   sale: "Акции",
+  bundle: "Акции",
+  "upcera-cadcam-kit": "Комплект UPCERA",
   delivery: "Доставка и оплата",
   auth: "Авторизация",
   profile: "Профиль",
@@ -48,7 +50,7 @@ export function Breadcrumbs() {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   // Don't show on home, product detail, or course detail pages
-  if (pathnames.length === 0 || pathnames.includes("product") || pathnames.includes("course") || pathnames.includes("variant")) {
+  if (pathnames.length === 0 || pathnames.includes("product") || pathnames.includes("course") || pathnames.includes("variant") || pathnames.includes("bundle")) {
     return null;
   }
 

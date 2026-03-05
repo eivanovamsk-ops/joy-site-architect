@@ -6,6 +6,7 @@ import { ShopQuickLinks } from "@/components/shop/QuickLinks";
 import { ProductCarousel } from "@/components/shop/ProductCarousel";
 import { ShopAdvantages } from "@/components/shop/Advantages";
 import { ShopBrands } from "@/components/shop/Brands";
+import { WhyArticon } from "@/components/shop/WhyArticon";
 import { products } from "@/data/products";
 
 const Shop = () => {

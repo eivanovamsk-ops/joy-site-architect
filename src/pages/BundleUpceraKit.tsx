@@ -62,9 +62,30 @@ const BundleUpceraKit = () => {
         <link rel="canonical" href="https://articon.pro/shop/bundle/upcera-cadcam-kit" />
       </Helmet>
 
-      <div className="container mx-auto px-4 pt-4">
-        <Breadcrumbs />
-      </div>
+      <nav className="bg-secondary/50 border-b border-border" aria-label="Breadcrumb">
+        <div className="container mx-auto px-4 py-3">
+          <ol className="flex items-center gap-2 text-sm flex-wrap">
+            <li>
+              <Link to="/" className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+                <Home className="h-4 w-4" />
+                <span className="hidden sm:inline">Главная</span>
+              </Link>
+            </li>
+            <li className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-muted-foreground/50" />
+              <Link to="/shop" className="text-muted-foreground hover:text-primary transition-colors">Магазин</Link>
+            </li>
+            <li className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-muted-foreground/50" />
+              <Link to="/shop/catalog/sale" className="text-muted-foreground hover:text-primary transition-colors">Акции</Link>
+            </li>
+            <li className="flex items-center gap-2">
+              <ChevronRight className="h-4 w-4 text-muted-foreground/50" />
+              <span className="text-foreground font-medium">Комплект UPCERA</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Hero */}
       <div className="bg-gradient-to-br from-[hsl(220,60%,95%)] to-[hsl(220,40%,98%)]">

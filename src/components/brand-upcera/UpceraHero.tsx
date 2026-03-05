@@ -37,11 +37,10 @@ export function UpceraHero() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="bg-white text-foreground hover:bg-white/90"
                 asChild
               >
-                <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
+                <a href="/docs/upcera-catalog.pdf" download>
                   <Download className="mr-2 h-5 w-5" />
                   Скачать каталог 2025
                 </a>

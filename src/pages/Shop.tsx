@@ -67,6 +67,7 @@ const Shop = () => {
         products={newProducts} 
       />
       
+      <UpceraShopBanner />
       <WhyArticon />
       <ShopAdvantages />
       <ShopBrands />

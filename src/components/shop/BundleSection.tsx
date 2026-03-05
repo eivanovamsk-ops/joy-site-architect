@@ -5,31 +5,31 @@ import bundleBanner from "@/assets/products/upcera-bundle-banner.png";
 
 export function BundleSection() {
   return (
-    <section className="mb-12">
-      <div className="flex items-center gap-3 mb-6">
-        <Package className="h-6 w-6 text-primary" />
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Комплекты</h2>
+    <section className="mb-8">
+      <div className="flex items-center gap-2 mb-4">
+        <Package className="h-5 w-5 text-primary" />
+        <h2 className="text-xl md:text-2xl font-bold text-foreground">Комплекты</h2>
       </div>
 
       <Link to="/shop/bundle/upcera-cadcam-kit" className="block">
         <div className="bg-card border border-border/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
           <div className="relative overflow-hidden bg-gradient-to-br from-[hsl(220,60%,95%)] to-[hsl(220,40%,98%)]">
             <div className="grid lg:grid-cols-2 gap-0">
-              <div className="p-6 md:p-10 flex flex-col justify-center">
-                <Badge className="w-fit mb-4 bg-accent text-accent-foreground text-sm px-3 py-1">
+              <div className="p-4 md:p-6 flex flex-col justify-center">
+                <Badge className="w-fit mb-2 bg-accent text-accent-foreground text-xs px-2 py-0.5">
                   –8% при покупке комплектом
                 </Badge>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1">
                   CAD/CAM-комплект UPCERA
                 </h3>
-                <p className="text-lg text-muted-foreground mb-2">
+                <p className="text-sm text-muted-foreground mb-1">
                   для цифровой лаборатории
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
-                  Запустите или модернизируйте цифровую зуботехническую лабораторию на базе оборудования UPCERA
-                  и получите комплект выгоднее на 8% по сравнению с покупкой каждого устройства отдельно.
+                <p className="text-xs text-muted-foreground leading-relaxed max-w-lg">
+                  Запустите или модернизируйте лабораторию на базе UPCERA
+                  и сэкономьте 8% по сравнению с покупкой по отдельности.
                 </p>
-                <span className="mt-4 text-primary font-medium text-sm">Подробнее →</span>
+                <span className="mt-2 text-primary font-medium text-sm">Подробнее →</span>
               </div>
               <div className="flex items-center justify-center p-4">
                 <img

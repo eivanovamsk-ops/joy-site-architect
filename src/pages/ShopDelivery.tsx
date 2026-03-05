@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { Truck, CreditCard, Clock, Package, MapPin, RotateCcw, AlertCircle } from "lucide-react";
+import { Truck, CreditCard, Clock, Package, MapPin, RotateCcw, AlertCircle, ShieldCheck } from "lucide-react";
 
 const ShopDelivery = () => {
   return (

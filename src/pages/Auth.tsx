@@ -39,7 +39,7 @@ const Auth = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate("/profile");
     }
   }, [user, navigate]);
 
@@ -83,7 +83,7 @@ const Auth = () => {
             title: "Успешный вход",
             description: "Добро пожаловать!",
           });
-          navigate("/");
+          navigate("/profile");
         }
       } else {
         const result = signUpSchema.safeParse({ email, password, fullName, phone });
@@ -119,7 +119,7 @@ const Auth = () => {
             title: "Регистрация успешна",
             description: "Добро пожаловать в Артикон!",
           });
-          navigate("/");
+          navigate("/profile");
         }
       }
     } catch (err) {

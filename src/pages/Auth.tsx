@@ -118,8 +118,7 @@ const Auth = () => {
             title: "Регистрация успешна",
             description: "Добро пожаловать в Артикон!",
           });
-          navigate("/");
-        }
+          navigate("/profile");
       }
     } catch (err) {
       toast({

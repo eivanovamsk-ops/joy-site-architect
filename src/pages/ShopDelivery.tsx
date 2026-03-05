@@ -15,53 +15,51 @@ const ShopDelivery = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="py-12 lg:py-16 bg-secondary">
+      <section className="py-6 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Доставка и оплата</h1>
-            <p className="text-lg text-muted-foreground">
-              Условия доставки, оплаты и возврата товаров
-            </p>
-          </div>
+          <h1 className="text-3xl font-bold mb-1">Доставка и оплата</h1>
+          <p className="text-sm text-muted-foreground">
+            Условия доставки, оплаты и возврата товаров
+          </p>
         </div>
       </section>
 
       {/* Payment Section */}
-      <section className="py-12 lg:py-16 bg-background">
+      <section className="py-6 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <CreditCard className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
+                <CreditCard className="h-4 w-4 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl font-bold">Способы оплаты</h2>
+              <h2 className="text-2xl font-bold">Способы оплаты</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-secondary/50 rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <MapPin className="h-5 w-5 text-primary" />
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-secondary/50 rounded-xl p-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Наличными в офисе</h3>
-                <p className="text-muted-foreground text-sm mb-2">Доступно при самовывозе</p>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="font-bold mb-1">Наличными в офисе</h3>
+                <p className="text-muted-foreground text-sm mb-1">Доступно при самовывозе</p>
+                <p className="text-xs text-muted-foreground">
                   Адрес: Варшавское шоссе, 33, стр. 12.
                 </p>
               </div>
 
-              <div className="bg-secondary/50 rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <CreditCard className="h-5 w-5 text-primary" />
+              <div className="bg-secondary/50 rounded-xl p-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <CreditCard className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Безналичный расчёт</h3>
-                <ul className="space-y-2 text-muted-foreground text-sm">
+                <h3 className="font-bold mb-1">Безналичный расчёт</h3>
+                <ul className="space-y-1 text-muted-foreground text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
                     <span>Банковский перевод по счёту для юридических лиц.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>Отгрузка осуществляется после поступления денежных средств на расчётный счёт.</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>Отгрузка после поступления средств на расчётный счёт.</span>
                   </li>
                 </ul>
               </div>
@@ -71,41 +69,39 @@ const ShopDelivery = () => {
       </section>
 
       {/* Order Processing Section */}
-      <section className="py-12 lg:py-16 bg-secondary">
+      <section className="py-6 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <Clock className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
+                <Clock className="h-4 w-4 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl font-bold">Передача заказа в доставку</h2>
+              <h2 className="text-2xl font-bold">Передача заказа в доставку</h2>
             </div>
 
-            <div className="bg-background rounded-2xl p-6 md:p-8 space-y-5">
-              <p className="text-muted-foreground">
-                Обработка и передача заказов осуществляется:<br />
-                <strong className="text-foreground">понедельник–пятница с 10:00 до 18:00.</strong><br />
-                Суббота и воскресенье — выходные дни. Заказы, оформленные в выходные, обрабатываются в ближайший рабочий день.
+            <div className="bg-background rounded-xl p-4 md:p-6 space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Обработка и передача заказов: <strong className="text-foreground">пн–пт с 10:00 до 18:00.</strong> Заказы в выходные обрабатываются в ближайший рабочий день.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-secondary/50 rounded-xl">
-                  <h3 className="font-semibold mb-2">При наличной оплате</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Доставка осуществляется на следующий рабочий день после подтверждения заказа, если не согласованы иные сроки.
+              <div className="grid md:grid-cols-2 gap-3">
+                <div className="p-3 bg-secondary/50 rounded-lg">
+                  <h3 className="font-semibold text-sm mb-1">При наличной оплате</h3>
+                  <p className="text-xs text-muted-foreground">
+                    Доставка на следующий рабочий день после подтверждения заказа.
                   </p>
                 </div>
-                <div className="p-4 bg-secondary/50 rounded-xl">
-                  <h3 className="font-semibold mb-2">При безналичной оплате</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Отгрузка производится на следующий рабочий день после поступления денежных средств на расчётный счёт.
+                <div className="p-3 bg-secondary/50 rounded-lg">
+                  <h3 className="font-semibold text-sm mb-1">При безналичной оплате</h3>
+                  <p className="text-xs text-muted-foreground">
+                    Отгрузка на следующий рабочий день после поступления средств.
                   </p>
                 </div>
               </div>
 
-              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Важно:</strong> Возможность срочной доставки уточняйте у вашего менеджера.
+              <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+                <p className="text-xs text-muted-foreground">
+                  <strong className="text-foreground">Важно:</strong> Возможность срочной доставки уточняйте у менеджера.
                 </p>
               </div>
             </div>
@@ -114,63 +110,60 @@ const ShopDelivery = () => {
       </section>
 
       {/* Delivery Section */}
-      <section className="py-12 lg:py-16 bg-background">
+      <section className="py-6 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <Truck className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
+                <Truck className="h-4 w-4 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl font-bold">Способы доставки</h2>
+              <h2 className="text-2xl font-bold">Способы доставки</h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-secondary/50 rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Truck className="h-5 w-5 text-primary" />
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-secondary/50 rounded-xl p-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <Truck className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Москва (в пределах МКАД)</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Доставка осуществляется транспортом компании.
+                <h3 className="font-bold mb-1">Москва (в пределах МКАД)</h3>
+                <p className="text-muted-foreground text-xs mb-2">
+                  Доставка транспортом компании.
                 </p>
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-1 text-xs">
                   <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground">При заказе до 30 000 руб. — <strong className="text-foreground">950 руб.</strong></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">До 30 000 руб. — <strong className="text-foreground">950 руб.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground">При заказе от 30 000 руб. — <strong className="text-foreground">бесплатно</strong></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">От 30 000 руб. — <strong className="text-foreground">бесплатно</strong></span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-secondary/50 rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <MapPin className="h-5 w-5 text-primary" />
+              <div className="bg-secondary/50 rounded-xl p-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Самовывоз (Москва)</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Адрес: Варшавское шоссе, 33, стр. 12.
+                <h3 className="font-bold mb-1">Самовывоз (Москва)</h3>
+                <p className="text-muted-foreground text-xs mb-2">
+                  Варшавское шоссе, 33, стр. 12.
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Самовывоз возможен после подтверждения готовности заказа менеджером.
+                <p className="text-xs text-muted-foreground">
+                  После подтверждения готовности заказа менеджером.
                 </p>
               </div>
 
-              <div className="bg-secondary/50 rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Package className="h-5 w-5 text-primary" />
+              <div className="bg-secondary/50 rounded-xl p-4">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <Package className="h-4 w-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Регионы России</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Доставка осуществляется транспортными компаниями СДЭК и Деловые Линии по нашим договорам. При наличии договора у заказчика — оформление на заказчика.
+                <h3 className="font-bold mb-1">Регионы России</h3>
+                <p className="text-muted-foreground text-xs mb-2">
+                  СДЭК и Деловые Линии по нашим договорам. Стоимость оплачивается покупателем.
                 </p>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Стоимость услуг транспортной компании оплачивается покупателем.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Также вы можете самостоятельно оформить забор груза удобной для вас транспортной компанией.
+                <p className="text-xs text-muted-foreground">
+                  Также можно оформить забор груза своей ТК.
                 </p>
               </div>
             </div>
@@ -179,54 +172,54 @@ const ShopDelivery = () => {
       </section>
 
       {/* Return Policy Section */}
-      <section className="py-12 lg:py-16 bg-secondary">
+      <section className="py-6 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <RotateCcw className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
+                <RotateCcw className="h-4 w-4 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl font-bold">Условия возврата</h2>
+              <h2 className="text-2xl font-bold">Условия возврата</h2>
             </div>
 
-            <div className="bg-background rounded-2xl p-6 md:p-8 space-y-5">
-              <p className="text-muted-foreground">
-                Качество поставляемого товара должно соответствовать требованиям, действующим на территории Российской Федерации, и обеспечивать его использование по назначению.
+            <div className="bg-background rounded-xl p-4 md:p-6 space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Качество товара должно соответствовать требованиям РФ и обеспечивать использование по назначению.
               </p>
 
               <div>
-                <h3 className="font-semibold mb-3">При обнаружении недостатков покупатель обязан письменно уведомить поставщика. Уведомление должно содержать:</h3>
-                <ul className="space-y-2 text-muted-foreground text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>наименование и количество товара,</span>
+                <h3 className="font-semibold text-sm mb-2">При обнаружении недостатков уведомление должно содержать:</h3>
+                <ul className="grid grid-cols-2 gap-1 text-muted-foreground text-xs">
+                  <li className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>наименование и количество товара</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>описание выявленных недостатков,</span>
+                  <li className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>описание выявленных недостатков</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>реквизиты товаросопроводительных документов,</span>
+                  <li className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>реквизиты документов</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>иные необходимые сведения.</span>
+                  <li className="flex items-start gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    <span>иные необходимые сведения</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-secondary/50 rounded-xl flex gap-3">
-                  <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground">
-                    Претензия рассматривается в течение <strong className="text-foreground">10 рабочих дней</strong>. В случае подтверждения — замена товара в течение <strong className="text-foreground">5 рабочих дней</strong>.
+              <div className="grid md:grid-cols-2 gap-3">
+                <div className="p-3 bg-secondary/50 rounded-lg flex gap-2">
+                  <AlertCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-xs text-muted-foreground">
+                    Претензия рассматривается <strong className="text-foreground">10 рабочих дней</strong>. Замена — в течение <strong className="text-foreground">5 рабочих дней</strong>.
                   </p>
                 </div>
-                <div className="p-4 bg-secondary/50 rounded-xl flex gap-3">
-                  <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground">
-                    Претензии по скрытым дефектам принимаются в течение гарантийного срока производителя. Если гарантийный срок не установлен — в течение <strong className="text-foreground">3 месяцев</strong> с момента получения товара.
+                <div className="p-3 bg-secondary/50 rounded-lg flex gap-2">
+                  <AlertCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-xs text-muted-foreground">
+                    Скрытые дефекты — в течение гарантийного срока или <strong className="text-foreground">3 месяцев</strong> с момента получения.
                   </p>
                 </div>
               </div>
@@ -236,25 +229,22 @@ const ShopDelivery = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-12 lg:py-16 bg-background">
+      <section className="py-6 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
-                <ShieldCheck className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
+                <ShieldCheck className="h-4 w-4 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl font-bold">Гарантия</h2>
+              <h2 className="text-2xl font-bold">Гарантия</h2>
             </div>
 
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Компания Articon (Артикон) гарантирует, что вся продукция, представленная на нашем сайте, является 100% оригинальной и поставляется напрямую от официальных производителей и дистрибьюторов.
+                Articon гарантирует 100% оригинальность продукции — поставки напрямую от производителей и дистрибьюторов.
               </p>
               <p>
-                Все товары сертифицированы и соответствуют требованиям законодательства Российской Федерации. По запросу мы предоставляем необходимые регистрационные удостоверения, сертификаты соответствия и сопроводительные документы.
-              </p>
-              <p>
-                Мы обеспечиваем прозрачность поставок, контроль качества и стабильное наличие оригинальной продукции для зуботехнических лабораторий и стоматологических клиник в Москве и по всей России.
+                Все товары сертифицированы. По запросу предоставляем регистрационные удостоверения и сертификаты соответствия.
               </p>
             </div>
           </div>

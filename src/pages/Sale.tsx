@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/shop/ProductCard";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { Tag } from "lucide-react";
+import { BundleSection } from "@/components/shop/BundleSection";
 
 const Sale = () => {
   // Фильтруем товары со скидкой из общего каталога

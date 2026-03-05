@@ -18,7 +18,7 @@ const BrandUpcera = () => {
       { "@type": "ListItem", position: 1, name: "Главная", item: "https://articon.pro/" },
       { "@type": "ListItem", position: 2, name: "Магазин", item: "https://articon.pro/shop" },
       { "@type": "ListItem", position: 3, name: "Бренды", item: "https://articon.pro/shop/brands" },
-      { "@type": "ListItem", position: 4, name: "UPCERA", item: "https://articon.pro/brands/upcera" },
+      { "@type": "ListItem", position: 4, name: "UPCERA", item: "https://articon.pro/shop/brands/upcera" },
     ],
   };
 

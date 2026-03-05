@@ -7,7 +7,7 @@ export function UpceraShopBanner() {
   return (
     <section className="py-8">
       <div className="container mx-auto px-4">
-        <Link to="/brands/upcera" className="block group">
+        <Link to="/shop/brands/upcera" className="block group">
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[hsl(218,55%,18%)] to-[hsl(218,45%,28%)] p-6 md:p-8">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-1">

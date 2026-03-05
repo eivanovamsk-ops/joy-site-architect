@@ -84,7 +84,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             {product.brand}
             {product.brand === "Upcera" && (
               <Link
-                to="/brands/upcera"
+                to="/shop/brands/upcera"
                 onClick={(e) => e.stopPropagation()}
                 className="text-primary hover:underline normal-case tracking-normal"
               >

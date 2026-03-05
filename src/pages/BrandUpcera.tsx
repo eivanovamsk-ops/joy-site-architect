@@ -34,7 +34,7 @@ const BrandUpcera = () => {
         <meta property="og:title" content="UPCERA — CAD/CAM-решения для цифровой лаборатории | Артикон" />
         <meta property="og:description" content="Фрезерные станки, циркониевые диски, печи синтеризации и расходные материалы UPCERA. Официальный поставщик Articon." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://articon.pro/brands/upcera" />
+        <meta property="og:url" content="https://articon.pro/shop/brands/upcera" />
         <meta property="og:image" content="https://articon.pro/og-shop.jpg" />
         <meta property="og:locale" content="ru_RU" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/shop/ProductCard";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { Tag } from "lucide-react";
+import { BundleSection } from "@/components/shop/BundleSection";
 
 const Sale = () => {
   // Фильтруем товары со скидкой из общего каталога
@@ -41,6 +42,7 @@ const Sale = () => {
       </div>
 
       <div className="container mx-auto px-4 py-12">
+        <BundleSection />
         {saleProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {saleProducts.map((product) => (

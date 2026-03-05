@@ -234,6 +234,32 @@ const ShopDelivery = () => {
           </div>
         </div>
       </section>
+
+      {/* Guarantee Section */}
+      <section className="py-12 lg:py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
+                <ShieldCheck className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <h2 className="text-3xl font-bold">Гарантия</h2>
+            </div>
+
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Компания Articon (Артикон) гарантирует, что вся продукция, представленная на нашем сайте, является 100% оригинальной и поставляется напрямую от официальных производителей и дистрибьюторов.
+              </p>
+              <p>
+                Все товары сертифицированы и соответствуют требованиям законодательства Российской Федерации. По запросу мы предоставляем необходимые регистрационные удостоверения, сертификаты соответствия и сопроводительные документы.
+              </p>
+              <p>
+                Мы обеспечиваем прозрачность поставок, контроль качества и стабильное наличие оригинальной продукции для зуботехнических лабораторий и стоматологических клиник в Москве и по всей России.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

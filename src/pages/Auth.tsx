@@ -84,6 +84,7 @@ const Auth = () => {
             description: "Добро пожаловать!",
           });
           navigate("/profile");
+        }
       } else {
         const result = signUpSchema.safeParse({ email, password, fullName, phone });
         if (!result.success) {

@@ -1,3 +1,4 @@
+import course4Banner from "@/assets/courses/course-4-banner.png";
 import course16Banner from "@/assets/courses/course-16-banner.jpg";
 import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";

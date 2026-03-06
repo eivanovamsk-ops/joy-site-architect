@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -35,6 +36,57 @@ function useReveal<T extends HTMLElement = HTMLDivElement>() {
 }
 
 const skillIcons = [BookOpen, Wrench, Beaker, Monitor, Cpu, Layers, GraduationCap, Lightbulb, Target, CheckCircle2];
+
+function CourseVideoSlider({ videos }: { videos: string[] }) {
+  const [current, setCurrent] = useState(0);
+  const total = videos.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  return (
+    <div className="mt-10">
+      <h3 className="text-xl font-bold mb-4">Видео с курса</h3>
+      <div className="relative rounded-2xl overflow-hidden bg-black aspect-video">
+        <video
+          key={videos[current]}
+          src={videos[current]}
+          controls
+          playsInline
+          className="w-full h-full object-contain"
+        />
+        {total > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-background transition-colors shadow-lg"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-background/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-background transition-colors shadow-lg"
+            >
+              <ChevronRightIcon className="h-5 w-5" />
+            </button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              {videos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={cn(
+                    "w-2.5 h-2.5 rounded-full transition-all",
+                    i === current ? "bg-primary w-6" : "bg-background/60"
+                  )}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -632,8 +684,13 @@ const CourseDetail = () => {
                     buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
                   />
                 </div>
+                </div>
               </div>
-            </div>
+
+              {/* Video Slider */}
+              {course.videos && course.videos.length > 0 && (
+                <CourseVideoSlider videos={course.videos} />
+              )}
           </div>
         </section>
 

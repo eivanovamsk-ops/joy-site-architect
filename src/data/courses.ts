@@ -65,6 +65,7 @@ export interface Course {
   isComingSoon?: boolean;
   comingSoonLabel?: string;
   programDescription?: string;
+  videos?: string[];
 }
 
 export const courses: Course[] = [
@@ -144,7 +145,13 @@ export const courses: Course[] = [
     metaDescription: "Однодневный курс: моделирование окклюзионных сплинтов в exocad, работа с виртуальным артикулятором. Москва, Артикон. 15 000₽.",
     category: "3D-моделирование",
     tags: ["сплинты", "гнатология", "exocad", "артикулятор"],
-    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"]
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"],
+    videos: [
+      "/videos/course-4-1.mp4",
+      "/videos/course-4-2.mp4",
+      "/videos/course-4-3.mp4",
+      "/videos/course-4-4.mp4",
+    ],
   },
   {
     id: 5,

@@ -44,7 +44,7 @@ export function LaboratoryHeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-lab-foreground/20 text-lab-foreground hover:bg-lab-foreground/30 px-8 transition-transform duration-200 hover:scale-105"
+              className="bg-white/20 text-white hover:bg-white/30 px-8 transition-transform duration-200 hover:scale-105"
             >
               <a href="https://t.me/articon1" target="_blank" rel="noopener noreferrer">Вызвать курьера</a>
             </Button>

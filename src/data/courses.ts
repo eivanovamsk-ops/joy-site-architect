@@ -8,6 +8,7 @@ import course20Banner from "@/assets/courses/course-20-banner.jpg";
 import course12Banner from "@/assets/courses/course-12-banner.png";
 import course5Banner from "@/assets/courses/course-5-banner.png";
 import course14Banner from "@/assets/courses/course-14-banner.png";
+import course6Banner from "@/assets/courses/course-6-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -242,7 +243,8 @@ export const courses: Course[] = [
     format: "Практика",
     price: 35000,
     isAccredited: true,
-    coverImage: "https://static.wixstatic.com/media/526e65_5988e63c8c5d4cad9cebbce6564adb2e~mv2.png/v1/fill/w_1904,h_503,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/526e65_5988e63c8c5d4cad9cebbce6564adb2e~mv2.png",
+    lightBanner: true,
+    coverImage: course6Banner,
     description: "Научитесь планировать позицию ортодонтических мини-имплантатов и моделировать аппараты с кортикальной опорой: MARPE c опорой на 2 мини-имплантата (HDC Spider), Distalslider с опорой на 2 мини-винта.",
     shortDescription: "Планирование мини-имплантатов для ортодонтического лечения",
     goal: "Освоить цифровое планирование установки мини-имплантатов и моделирование аппаратов с кортикальной опорой по концепции pin-first.",

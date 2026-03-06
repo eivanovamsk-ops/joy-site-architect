@@ -335,15 +335,15 @@ const CourseDetail = () => {
                   )}
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white")} style={{ animationDelay: '0.2s' }}>
                   {course.title}
                 </h1>
                 {course.subtitle && (
-                  <p className="text-xl md:text-2xl text-white/80 mb-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <p className={cn("text-xl md:text-2xl mb-4 animate-fade-in-up", course.lightBanner ? "text-muted-foreground" : "text-white/80")} style={{ animationDelay: '0.3s' }}>
                     {course.subtitle}
                   </p>
                 )}
-                <p className="text-lg text-white/60 mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <p className={cn("text-lg mb-8 max-w-2xl animate-fade-in-up", course.lightBanner ? "text-muted-foreground" : "text-white/60")} style={{ animationDelay: '0.4s' }}>
                   {course.shortDescription}
                 </p>
                 

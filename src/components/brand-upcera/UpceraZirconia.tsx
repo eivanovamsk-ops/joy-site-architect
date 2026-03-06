@@ -58,29 +58,32 @@ export function UpceraZirconia() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {series.map((s) => (
-            <div
+            <Link
               key={s.name}
-              className="bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+              to={s.link}
+              className="block group"
             >
-              <div className="aspect-square bg-muted/20 flex items-center justify-center p-4">
-                <img src={s.image} alt={s.name} className="w-full h-full object-contain" loading="lazy" />
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-foreground text-sm mb-2">{s.name}</h3>
-                <div className="flex gap-2 mb-2">
-                  <span className="text-xs bg-accent/15 text-accent-foreground px-2 py-0.5 rounded-full font-medium">
-                    {s.strength}
-                  </span>
-                  <span className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full">
-                    {s.transparency}
-                  </span>
+              <div className="bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-md transition-shadow h-full">
+                <div className="aspect-square bg-muted/20 flex items-center justify-center p-4">
+                  <img src={s.image} alt={s.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-2">{s.desc}</p>
-                <p className="text-xs text-muted-foreground">
-                  <span className="font-medium text-foreground">Показания:</span> {s.indications}
-                </p>
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{s.name}</h3>
+                  <div className="flex gap-2 mb-2">
+                    <span className="text-xs bg-accent/15 text-accent-foreground px-2 py-0.5 rounded-full font-medium">
+                      {s.strength}
+                    </span>
+                    <span className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full">
+                      {s.transparency}
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-2">{s.desc}</p>
+                  <p className="text-xs text-muted-foreground">
+                    <span className="font-medium text-foreground">Показания:</span> {s.indications}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

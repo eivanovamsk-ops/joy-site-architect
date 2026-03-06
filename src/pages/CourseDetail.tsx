@@ -379,7 +379,7 @@ const CourseDetail = () => {
                   </div>
                   <button
                     onClick={() => scrollToSection('course-program')}
-                    className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
+                    className={cn("flex items-center gap-2 transition-colors text-sm", course.lightBanner ? "text-muted-foreground hover:text-foreground" : "text-white/60 hover:text-white")}
                   >
                     Подробнее <ArrowDown className="h-4 w-4 animate-bounce" />
                   </button>

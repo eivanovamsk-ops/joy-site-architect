@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
 import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg";

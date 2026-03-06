@@ -309,7 +309,7 @@ const CourseDetail = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
             )}
             {course.lightBanner && (
-              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30" />
             )}
           </div>
         ) : (

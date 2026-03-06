@@ -474,7 +474,7 @@ Uniformation GK3 Pro — профессиональный 3D-принтер дл
 
   {
     id: "magnum-dental-flash",
-    name: "Камера УФ-полимеризации Magnum Dental Flash",
+    name: "Камера УФ-полимеризации Magnum Dental Flash PRO",
     category: "3d-print",
     subcategory: "3d-printers",
     price: null,

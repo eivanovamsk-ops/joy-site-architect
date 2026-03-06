@@ -7,6 +7,7 @@ import course19Banner from "@/assets/courses/course-19-banner.jpg";
 import course20Banner from "@/assets/courses/course-20-banner.jpg";
 import course12Banner from "@/assets/courses/course-12-banner.png";
 import course5Banner from "@/assets/courses/course-5-banner.png";
+import course14Banner from "@/assets/courses/course-14-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -1078,7 +1079,8 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 30000,
-    coverImage: "https://static.wixstatic.com/media/99c926_3ca7bd3416b54775af93c95727f8ed4a~mv2.png/v1/fill/w_1200,h_600,al_c,q_85,enc_avif,quality_auto/photo_2025-07-28%2016_35.png",
+    lightBanner: true,
+    coverImage: course14Banner,
     description: "Практический курс по освоению цифрового протокола непрямой фиксации брекетов. Вы научитесь работать с программой Maestro 3D, позиционировать брекеты с учетом КТ-снимков, создавать трансферные каппы и проводить их 3D-печать.",
     shortDescription: "Теория и практика непрямой фиксации брекетов",
     goal: "Освоить полный цифровой протокол непрямой фиксации брекетов: от диагностики и сканирования до 3D-печати капп и практической фиксации на модели.",

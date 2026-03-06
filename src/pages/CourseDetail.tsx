@@ -633,8 +633,13 @@ const CourseDetail = () => {
                     buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
                   />
                 </div>
+                </div>
               </div>
-            </div>
+
+              {/* Video Slider */}
+              {course.videos && course.videos.length > 0 && (
+                <CourseVideoSlider videos={course.videos} />
+              )}
           </div>
         </section>
 

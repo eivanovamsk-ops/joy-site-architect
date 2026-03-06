@@ -69,6 +69,7 @@ export interface Course {
   comingSoonLabel?: string;
   programDescription?: string;
   videos?: string[];
+  lightBanner?: boolean;
 }
 
 export const courses: Course[] = [
@@ -735,6 +736,7 @@ export const courses: Course[] = [
     format: "Практика",
     price: 35000,
     coverImage: course12Banner,
+    lightBanner: true,
     description: "Практический курс по планированию лечения на элайнерах с использованием Maestro 3D Ortho Studio V6. Каждый ученик работает за индивидуальным компьютером.",
     shortDescription: "Практический курс по работе с элайнерами в Maestro 3D V6",
     goal: "Научиться самостоятельно планировать лечение на элайнерах с использованием Maestro 3D Ortho Studio V6.",

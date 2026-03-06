@@ -305,7 +305,12 @@ const CourseDetail = () => {
         {course.coverImage ? (
           <div className="absolute inset-0">
             <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+            {!course.lightBanner && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+            )}
+            {course.lightBanner && (
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+            )}
           </div>
         ) : (
           <div className="absolute inset-0 gradient-primary" />
@@ -330,20 +335,20 @@ const CourseDetail = () => {
                   )}
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white")} style={{ animationDelay: '0.2s' }}>
                   {course.title}
                 </h1>
                 {course.subtitle && (
-                  <p className="text-xl md:text-2xl text-white/80 mb-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <p className={cn("text-xl md:text-2xl mb-4 animate-fade-in-up", course.lightBanner ? "text-muted-foreground" : "text-white/80")} style={{ animationDelay: '0.3s' }}>
                     {course.subtitle}
                   </p>
                 )}
-                <p className="text-lg text-white/60 mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <p className={cn("text-lg mb-8 max-w-2xl animate-fade-in-up", course.lightBanner ? "text-muted-foreground" : "text-white/60")} style={{ animationDelay: '0.4s' }}>
                   {course.shortDescription}
                 </p>
                 
-                <div className="flex flex-wrap gap-6 mb-8 text-white/90 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <div className={cn("flex flex-wrap gap-6 mb-8 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/90")} style={{ animationDelay: '0.5s' }}>
+                  <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <Calendar className="h-5 w-5 text-accent" />
                     {course.isComingSoon ? (
                       <span className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</span>
@@ -351,12 +356,12 @@ const CourseDetail = () => {
                       <span className="text-sm font-medium">{course.date}</span>
                     )}
                   </div>
-                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                  <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <MapPin className="h-5 w-5 text-accent" />
                     <span className="text-sm font-medium">{course.location}</span>
                   </div>
                   {!course.isComingSoon && (
-                    <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                    <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                       <Clock className="h-5 w-5 text-accent" />
                       <span className="text-sm font-medium">{getDuration()}</span>
                     </div>
@@ -374,7 +379,7 @@ const CourseDetail = () => {
                   </div>
                   <button
                     onClick={() => scrollToSection('course-program')}
-                    className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm"
+                    className={cn("flex items-center gap-2 transition-colors text-sm", course.lightBanner ? "text-muted-foreground hover:text-foreground" : "text-white/60 hover:text-white")}
                   >
                     Подробнее <ArrowDown className="h-4 w-4 animate-bounce" />
                   </button>

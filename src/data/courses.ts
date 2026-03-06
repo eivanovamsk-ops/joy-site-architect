@@ -65,6 +65,7 @@ export interface Course {
   isComingSoon?: boolean;
   comingSoonLabel?: string;
   programDescription?: string;
+  videos?: string[];
 }
 
 export const courses: Course[] = [

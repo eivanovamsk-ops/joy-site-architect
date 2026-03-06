@@ -90,6 +90,13 @@ import heygearsA2dHd2 from "@/assets/products/heygears-a2d-hd-2.png";
 import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
 import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
 
+// Magnum Dental Flash images
+import magnumFlash1 from "@/assets/products/magnum-dental-flash-1.png";
+import magnumFlash2 from "@/assets/products/magnum-dental-flash-2.png";
+import magnumFlash3 from "@/assets/products/magnum-dental-flash-3.png";
+import magnumFlashBanner from "@/assets/products/magnum-dental-flash-banner.webp";
+import magnumFlashSpectrum from "@/assets/products/magnum-dental-flash-spectrum.webp";
+
 // Ultrasonic W230 images
 import ultrasonicW230_1 from "@/assets/products/ultrasonic-w230-1.png";
 import ultrasonicW230_2 from "@/assets/products/ultrasonic-w230-2.png";

@@ -1,3 +1,4 @@
+import course4Banner from "@/assets/courses/course-4-banner.png";
 import course16Banner from "@/assets/courses/course-16-banner.jpg";
 import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";
@@ -79,7 +80,7 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,
-    coverImage: "https://static.wixstatic.com/media/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg/v1/fill/w_1200,h_600,al_c,q_85,enc_avif,quality_auto/526e65_e58ffa5405eb43a4bd1e9e20ea3c50b1~mv2.jpg",
+    coverImage: course4Banner,
     description: "Однодневный интенсив по цифровому моделированию окклюзионных сплинтов с использованием виртуального артикулятора. Научитесь настраивать параметры артикуляции и создавать функциональные сплинты.",
     shortDescription: "Теория и практика работы с виртуальным артикулятором",
     goal: "Научиться моделировать окклюзионные сплинты в цифровой среде с использованием виртуального артикулятора.",

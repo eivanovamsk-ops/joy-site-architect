@@ -69,6 +69,7 @@ export interface Course {
   comingSoonLabel?: string;
   programDescription?: string;
   videos?: string[];
+  lightBanner?: boolean;
 }
 
 export const courses: Course[] = [

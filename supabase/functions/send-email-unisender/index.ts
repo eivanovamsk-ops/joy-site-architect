@@ -374,20 +374,73 @@ interface OrderItem {
          </html>
        `;
 
-       const adminEmails = ["event@articon.pro", "e.ivanova@articon.pro"];
-       const subject = `🎓 Заявка на курс: ${course.courseName} — ${course.name} ${course.lastName}`;
+        // Send confirmation to client if email provided
+        if (course.email) {
+          const clientEmailHtml = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+                .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
+                .info-block { background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 15px 0; }
+                .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="header">
+                  <h1 style="margin: 0;">Спасибо за запись!</h1>
+                </div>
+                <div class="content">
+                  <p>Уважаемый(ая) <strong>${course.name} ${course.lastName}</strong>,</p>
+                  <p>Ваша заявка на курс <strong>«${course.courseName}»</strong> успешно оформлена.</p>
+                  ${course.courseDate ? `<p><strong>Дата проведения:</strong> ${course.courseDate}</p>` : ""}
+                  <div class="info-block">
+                    📞 Куратор Учебного центра свяжется с вами в ближайшее время для подтверждения записи и уточнения деталей.
+                  </div>
+                  <p>Если у вас есть вопросы, свяжитесь с нами:</p>
+                  <p>📧 Email: event@articon.pro<br>
+                  📱 Телефон: +7 (495) 128-50-28</p>
+                </div>
+                <div class="footer">
+                  <p>С уважением,<br>Учебный центр Articon</p>
+                  <p>articon.pro</p>
+                </div>
+              </div>
+            </body>
+            </html>
+          `;
 
-       for (const email of adminEmails) {
-         const result = await sendEmail(
-           UNISENDER_API_KEY,
-           email,
-           subject,
-           emailHtml,
-           "Articon Education",
-           "noreply@articon.pro"
-         );
-         results.push({ recipient: email, result });
-       }
+          const clientResult = await sendEmail(
+            UNISENDER_API_KEY,
+            course.email,
+            `Запись на курс «${course.courseName}» подтверждена — Articon`,
+            clientEmailHtml,
+            "Articon Education",
+            "event@articon.pro"
+          );
+          results.push({ recipient: "client", result: clientResult });
+        }
+
+        // Send notification to admins
+        const adminEmails = ["event@articon.pro", "e.ivanova@articon.pro"];
+        const subject = `🎓 Заявка на курс: ${course.courseName} — ${course.name} ${course.lastName}`;
+
+        for (const email of adminEmails) {
+          const result = await sendEmail(
+            UNISENDER_API_KEY,
+            email,
+            subject,
+            emailHtml,
+            "Articon Education",
+            "noreply@articon.pro"
+          );
+          results.push({ recipient: email, result });
+        }
 
        return new Response(JSON.stringify({ success: true, results }), {
          status: 200,

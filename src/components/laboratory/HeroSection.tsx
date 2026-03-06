@@ -16,10 +16,10 @@ export function LaboratoryHeroSection() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-lab-foreground mb-6 uppercase tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase tracking-tight">
             Цифровая зуботехническая лаборатория
           </h1>
-          <p className="text-xl text-lab-foreground/80 mb-8 leading-relaxed">
+          <p className="text-xl text-white/80 mb-8 leading-relaxed">
             Передовые технологии CAD/CAM и квалифицированные специалисты.
             Более 15 лет на рынке мы делаем цифровую стоматологию эффективной,
             качественной и удобной.

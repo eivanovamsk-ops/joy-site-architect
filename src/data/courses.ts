@@ -9,6 +9,7 @@ import course12Banner from "@/assets/courses/course-12-banner.png";
 import course5Banner from "@/assets/courses/course-5-banner.png";
 import course14Banner from "@/assets/courses/course-14-banner.png";
 import course6Banner from "@/assets/courses/course-6-banner.png";
+import course15Banner from "@/assets/courses/course-15-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -1175,7 +1176,7 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33к12",
     format: "Практика",
     price: 90000,
-    coverImage: "https://static.wixstatic.com/media/526e65_61d9ef1443ef483aa0a32cfd725fd3c8~mv2.jpg/v1/fill/w_960,h_451,al_c,q_85,enc_avif,quality_auto/526e65_61d9ef1443ef483aa0a32cfd725fd3c8~mv2.jpg",
+    coverImage: course15Banner,
     description: "Практический курс на производстве Артикон. Трехдневное погружение во все этапы изготовления протяженных конструкций в цифровом протоколе: моделирование, фрезерование, карвинг и окрашивание.",
     shortDescription: "От новичка до ПРО всего за 3 дня",
     goal: "Перейти на новый уровень мастерства и освоить все этапы изготовления протяженных конструкций в цифровом протоколе.",

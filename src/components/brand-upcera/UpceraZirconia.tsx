@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
 import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg";
@@ -14,6 +14,7 @@ const series = [
     transparency: "43%",
     desc: "Высокопрочный цирконий для жевательной группы и мостовидных конструкций. Совместим с Open CAD/CAM, Zirkonzahn, AG, CEREC.",
     indications: "Коронки, мосты, каркасы, абатменты",
+    link: "/shop/variant/upcera-st-color",
   },
   {
     image: upceraExploreFunctional,
@@ -22,6 +23,7 @@ const series = [
     transparency: "до 45%",
     desc: "Градиентный цирконий с переходом от опакового дентина к прозрачному режущему краю. Баланс прочности и эстетики.",
     indications: "Полноанатомические коронки, мосты до 14 единиц",
+    link: "/shop/variant/upcera-explore-functional",
   },
   {
     image: upceraExploreEsthetic,
@@ -30,6 +32,7 @@ const series = [
     transparency: "до 49%",
     desc: "Повышенная светопроницаемость для реставраций фронтальной зоны с естественным градиентом цвета.",
     indications: "Виниры, коронки фронтальной группы",
+    link: "/shop/variant/upcera-explore-esthetic",
   },
   {
     image: upceraStMl,
@@ -38,6 +41,7 @@ const series = [
     transparency: "до 46%",
     desc: "Многослойная структура для полноанатомических реставраций без окрашивания. Эффект натурального зуба.",
     indications: "Полноанатомические реставрации",
+    link: "/shop/variant/upcera-st-ml",
   },
 ];
 
@@ -54,29 +58,32 @@ export function UpceraZirconia() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {series.map((s) => (
-            <div
+            <Link
               key={s.name}
-              className="bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+              to={s.link}
+              className="block group"
             >
-              <div className="aspect-square bg-muted/20 flex items-center justify-center p-4">
-                <img src={s.image} alt={s.name} className="w-full h-full object-contain" loading="lazy" />
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-foreground text-sm mb-2">{s.name}</h3>
-                <div className="flex gap-2 mb-2">
-                  <span className="text-xs bg-accent/15 text-accent-foreground px-2 py-0.5 rounded-full font-medium">
-                    {s.strength}
-                  </span>
-                  <span className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full">
-                    {s.transparency}
-                  </span>
+              <div className="bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-md transition-shadow h-full">
+                <div className="aspect-square bg-muted/20 flex items-center justify-center p-4">
+                  <img src={s.image} alt={s.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-2">{s.desc}</p>
-                <p className="text-xs text-muted-foreground">
-                  <span className="font-medium text-foreground">Показания:</span> {s.indications}
-                </p>
+                <div className="p-4">
+                  <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{s.name}</h3>
+                  <div className="flex gap-2 mb-2">
+                    <span className="text-xs bg-accent/15 text-accent-foreground px-2 py-0.5 rounded-full font-medium">
+                      {s.strength}
+                    </span>
+                    <span className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full">
+                      {s.transparency}
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-2">{s.desc}</p>
+                  <p className="text-xs text-muted-foreground">
+                    <span className="font-medium text-foreground">Показания:</span> {s.indications}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

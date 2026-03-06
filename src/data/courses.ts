@@ -6,6 +6,7 @@ import course17Preview from "@/assets/courses/course-17-preview.jpg";
 import course19Banner from "@/assets/courses/course-19-banner.jpg";
 import course20Banner from "@/assets/courses/course-20-banner.jpg";
 import course12Banner from "@/assets/courses/course-12-banner.png";
+import course5Banner from "@/assets/courses/course-5-banner.png";
 
 export interface Lecturer {
   name: string;

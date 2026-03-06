@@ -305,7 +305,12 @@ const CourseDetail = () => {
         {course.coverImage ? (
           <div className="absolute inset-0">
             <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+            {!course.lightBanner && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+            )}
+            {course.lightBanner && (
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+            )}
           </div>
         ) : (
           <div className="absolute inset-0 gradient-primary" />

@@ -20,7 +20,7 @@ const series = [
     image: upceraExploreFunctional,
     name: "Explore Functional — градиентная структура",
     strength: "1300 МПа",
-    transparency: "до 45%",
+    transparency: "до 43%",
     desc: "Градиентный цирконий с переходом от опакового дентина к прозрачному режущему краю. Баланс прочности и эстетики.",
     indications: "Полноанатомические коронки, мосты до 14 единиц",
     link: "/shop/variant/upcera-explore-functional",

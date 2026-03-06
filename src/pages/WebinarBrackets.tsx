@@ -159,14 +159,25 @@ export default function WebinarBrackets() {
               </div>
             </div>
 
-            <Button
-              onClick={scrollToReg}
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft"
-            >
-              Зарегистрироваться бесплатно
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                onClick={scrollToReg}
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft"
+              >
+                Зарегистрироваться бесплатно
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg px-10 py-6 rounded-xl font-bold backdrop-blur-sm"
+              >
+                <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
+                  Связаться с менеджером
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 

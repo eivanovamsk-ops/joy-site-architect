@@ -10,6 +10,7 @@ import course5Banner from "@/assets/courses/course-5-banner.png";
 import course14Banner from "@/assets/courses/course-14-banner.png";
 import course6Banner from "@/assets/courses/course-6-banner.png";
 import course15Banner from "@/assets/courses/course-15-banner.png";
+import course18Banner from "@/assets/courses/course-18-banner.jpg";
 
 export interface Lecturer {
   name: string;
@@ -1449,7 +1450,7 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Воркшоп",
     price: 7000,
-    coverImage: "https://static.wixstatic.com/media/99c926_80270c5292b84c15bf6082630800c545~mv2.png/v1/crop/x_0,y_108,w_1136,h_1028/fill/w_412,h_373,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Kurg_disk_16_ottenkov_belogo.png",
+    coverImage: course18Banner,
     description: "Воркшоп в Артикон — это интерактивные мастер-классы, на которых участники получают практические навыки и знания. Мы делаем акцент на активное участие, обсуждение и применение теории на практике.",
     shortDescription: "Мастер-классы по окрашиванию и нанесению от сертифицированных тренеров",
     goal: "Не только передать информацию, но и помочь участникам развить практические навыки, которые они смогут использовать в своей профессиональной деятельности.",

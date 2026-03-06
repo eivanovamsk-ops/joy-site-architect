@@ -14,6 +14,7 @@ const series = [
     transparency: "43%",
     desc: "Высокопрочный цирконий для жевательной группы и мостовидных конструкций. Совместим с Open CAD/CAM, Zirkonzahn, AG, CEREC.",
     indications: "Коронки, мосты, каркасы, абатменты",
+    link: "/shop/variant/upcera-st-color",
   },
   {
     image: upceraExploreFunctional,
@@ -22,6 +23,7 @@ const series = [
     transparency: "до 45%",
     desc: "Градиентный цирконий с переходом от опакового дентина к прозрачному режущему краю. Баланс прочности и эстетики.",
     indications: "Полноанатомические коронки, мосты до 14 единиц",
+    link: "/shop/variant/upcera-explore-functional",
   },
   {
     image: upceraExploreEsthetic,
@@ -30,6 +32,7 @@ const series = [
     transparency: "до 49%",
     desc: "Повышенная светопроницаемость для реставраций фронтальной зоны с естественным градиентом цвета.",
     indications: "Виниры, коронки фронтальной группы",
+    link: "/shop/variant/upcera-explore-esthetic",
   },
   {
     image: upceraStMl,
@@ -38,6 +41,7 @@ const series = [
     transparency: "до 46%",
     desc: "Многослойная структура для полноанатомических реставраций без окрашивания. Эффект натурального зуба.",
     indications: "Полноанатомические реставрации",
+    link: "/shop/variant/upcera-st-ml",
   },
 ];
 

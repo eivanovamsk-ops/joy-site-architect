@@ -5,6 +5,7 @@ import course17Banner from "@/assets/courses/course-17-banner.jpg";
 import course17Preview from "@/assets/courses/course-17-preview.jpg";
 import course19Banner from "@/assets/courses/course-19-banner.jpg";
 import course20Banner from "@/assets/courses/course-20-banner.jpg";
+import course12Banner from "@/assets/courses/course-12-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -733,7 +734,7 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 35000,
-    coverImage: "https://static.wixstatic.com/media/99c926_b00506e28a294ad998015109c0472773~mv2.png/v1/fill/w_1904,h_727,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/99c926_b00506e28a294ad998015109c0472773~mv2.png",
+    coverImage: course12Banner,
     description: "Практический курс по планированию лечения на элайнерах с использованием Maestro 3D Ortho Studio V6. Каждый ученик работает за индивидуальным компьютером.",
     shortDescription: "Практический курс по работе с элайнерами в Maestro 3D V6",
     goal: "Научиться самостоятельно планировать лечение на элайнерах с использованием Maestro 3D Ortho Studio V6.",

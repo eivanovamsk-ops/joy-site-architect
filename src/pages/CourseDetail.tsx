@@ -348,7 +348,7 @@ const CourseDetail = () => {
                 </p>
                 
                 <div className={cn("flex flex-wrap gap-6 mb-8 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/90")} style={{ animationDelay: '0.5s' }}>
-                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                  <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <Calendar className="h-5 w-5 text-accent" />
                     {course.isComingSoon ? (
                       <span className="text-sm font-medium">{course.comingSoonLabel || "Дата уточняется"}</span>

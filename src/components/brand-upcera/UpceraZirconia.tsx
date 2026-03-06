@@ -11,7 +11,7 @@ const series = [
     image: upceraStColor,
     name: "ST Series — универсальный цирконий",
     strength: "1300 МПа",
-    transparency: "43%",
+    transparency: "до 43%",
     desc: "Высокопрочный цирконий для жевательной группы и мостовидных конструкций. Совместим с Open CAD/CAM, Zirkonzahn, AG, CEREC.",
     indications: "Коронки, мосты, каркасы, абатменты",
     link: "/shop/variant/upcera-st-color",

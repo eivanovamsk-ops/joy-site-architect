@@ -4,6 +4,7 @@ import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";
 import course17Preview from "@/assets/courses/course-17-preview.jpg";
 import course19Banner from "@/assets/courses/course-19-banner.jpg";
+import course20Banner from "@/assets/courses/course-20-banner.jpg";
 
 export interface Lecturer {
   name: string;
@@ -1634,7 +1635,7 @@ export const courses: Course[] = [
     location: "Москва",
     price: 25000,
     format: "Теория + Практика",
-    coverImage: "https://static.wixstatic.com/media/99c926_8b624071a3854c1a8325f0c7ba125442~mv2.jpeg/v1/crop/x_200,y_0,w_800,h_800/fill/w_359,h_359,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/photo_2025-05-07%2013_36_47.jpeg",
+    coverImage: course20Banner,
     description: "Интенсивный однодневный курс по дентальной фотографии: от выбора оборудования до постобработки. Освойте полный цикл работы с дентальной фотографией за один день.",
     shortDescription: "Интенсивный курс по дентальной фотографии для стоматологов. От съёмки до постобработки.",
     goal: "Дентальная фотография — must-have для современного стоматолога. Она обеспечивает документирование клинических случаев с точной фиксацией до/после, повышает доверие пациентов через наглядную визуализацию плана лечения, служит юридической защитой как часть медицинской документации, а также помогает в маркетинге клиники — профессиональные фото для соцсетей и сайта.",

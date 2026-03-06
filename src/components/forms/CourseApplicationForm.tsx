@@ -179,8 +179,11 @@ export function CourseApplicationForm({
             <DialogHeader>
               <DialogTitle className="text-xl mb-2">Спасибо, что выбрали Артикон!</DialogTitle>
             </DialogHeader>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-2">
               Куратор Учебного центра свяжется с вами в ближайшее время!
+            </p>
+            <p className="text-sm text-muted-foreground mb-6">
+              Если вы не увидели письмо на почте, пожалуйста, проверьте папку СПАМ
             </p>
             <Button onClick={() => { setOpen(false); setIsSubmitted(false); }}>Закрыть</Button>
           </div>

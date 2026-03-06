@@ -3761,6 +3761,7 @@ Upcera A52 — это 5-осевой фрезерный станок сухог�
     id: "upcera-e52-hybrid",
     name: "Фрезерный станок UPCERA E52 Hybrid",
     category: "milling",
+    subcategory: "machines",
     price: null,
     image: upceraE52Hybrid,
     gallery: [upceraE52Hybrid],

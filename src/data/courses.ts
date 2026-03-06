@@ -6,6 +6,7 @@ import course17Preview from "@/assets/courses/course-17-preview.jpg";
 import course19Banner from "@/assets/courses/course-19-banner.jpg";
 import course20Banner from "@/assets/courses/course-20-banner.jpg";
 import course12Banner from "@/assets/courses/course-12-banner.png";
+import course5Banner from "@/assets/courses/course-5-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -162,14 +163,14 @@ export const courses: Course[] = [
     slug: "expanding-appliances",
     title: "Цифровое моделирование расширяющих несъёмных аппаратов",
     subtitle: "Без опоры на мини-имплантаты",
-    date: "Уже скоро",
-    dateStart: new Date(2099, 0, 1),
-    isComingSoon: true,
+    date: "5 мая 2026",
+    dateStart: new Date(2026, 4, 5),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,
     isAccredited: true,
-    coverImage: "https://static.wixstatic.com/media/526e65_874a58bfe77c4e4bb4076fe60057a65a~mv2.png/v1/fill/w_1200,h_600,al_c,q_90,enc_avif,quality_auto/526e65_874a58bfe77c4e4bb4076fe60057a65a~mv2.png",
+    lightBanner: true,
+    coverImage: course5Banner,
     description: "Освойте цифровое моделирование расширяющих ортодонтических аппаратов в EXOCAD: Марко Роса/ХААС, быстрый небный расширитель (аппарат Дерихсвайлера), кольцо с держателем места.",
     shortDescription: "Моделирование ортодонтических расширяющих аппаратов",
     goal: "Освоить цифровое моделирование несъемных расширяющих ортодонтических аппаратов в EXOCAD.",

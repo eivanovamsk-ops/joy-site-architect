@@ -18,7 +18,7 @@ export function UpceraColoring() {
             <div className="aspect-[16/10] bg-muted/20 flex items-center justify-center p-6">
               <img
                 src={upceraUpcadHt}
-                alt="Литий-дисиликат UP.CAD UPCERA"
+                alt="Дисиликат лития UP.CAD UPCERA"
                 className="w-full h-full object-contain"
                 loading="lazy"
               />

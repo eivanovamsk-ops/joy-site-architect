@@ -36,6 +36,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://articon.pro/shop/catalog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://articon.pro/shop/catalog/intraoral-scanners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -106,12 +111,298 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://articon.pro/shop/catalog/cadcam-discs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://articon.pro/shop/catalog/sale</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://articon.pro/shop/contacts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/delivery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Бренды -->
+  <url>
+    <loc>https://articon.pro/shop/brands/upcera</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Бандлы -->
+  <url>
+    <loc>https://articon.pro/shop/bundle/upcera-cadcam-kit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Товары: оборудование -->
+  <url>
+    <loc>https://articon.pro/shop/product/ultracraft-a2d-hd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/uniformation-gk3-ultra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/uniformation-gk3-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/cure-3-ultra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/ultrasonic-w230</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/magnum-dental-flash</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/rundeer-3ds-v5</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/rundeer-3ds-v6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/medit-t310</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-a52</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-a52dw</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-b42</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-b52</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-e52-hybrid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-gt1-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/dekema-674</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-vacuum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/remeza-km50</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Товары: фотополимеры -->
+  <url>
+    <loc>https://articon.pro/shop/product/harz-dental-cast-cherry</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/harz-dental-model-light-grey</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/harz-dental-sand-a1-a2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/harz-dental-tray-v2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/harz-dental-yellow-clear-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-composite-a1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-composite-a2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-composite-a3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-composite-bleach</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-model</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-model-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-pink</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-pink-base</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/topcore-sg</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Товары: аксессуары -->
+  <url>
+    <loc>https://articon.pro/shop/product/antiglare-spray-helling</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/asiga-max-tray-10l</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/asiga-max-tray-2l</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/asiga-max-tray-5l</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Товары: краски и глазурь -->
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-realism-20-colors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-realism-7-colors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-realism-single</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-realism-glaze</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/product/upcera-realism-liquid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Вариантные товары: циркониевые диски -->
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-st-color</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-ht-white</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-explore-functional</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-explore-esthetic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-st-ml</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-duo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/aevra-ml-d98</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Вариантные товары: PMMA диски -->
+  <url>
+    <loc>https://articon.pro/shop/variant/upcera-pmma-flnt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/shop/variant/lima-pmma</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,11 +424,130 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Курсы -->
+  <url>
+    <loc>https://articon.pro/education/course/splints-virtual-articulator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/expanding-appliances</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/mini-implants-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/sarpe-marpe-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/digital-orthopedic-protocol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/color-and-shape</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/millbox-sum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/3d-print-open-day</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/maestro3d-aligners</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/ortho-skills-march</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/navigational-surgery-for-orthopedists</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/indirect-bracket-bonding</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/cad-cam-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/lab-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/runyes-scanner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/workshop-16-shades</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/ortho-conference-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/dental-photo-protocol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/business-meetup</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/cad-cam-school</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/education/course/conference-digital-orthodontics-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Вебинары -->
+  <url>
+    <loc>https://articon.pro/education/webinar/brackets-march-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- О компании -->
   <url>
     <loc>https://articon.pro/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://articon.pro/contacts</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Правовая информация -->

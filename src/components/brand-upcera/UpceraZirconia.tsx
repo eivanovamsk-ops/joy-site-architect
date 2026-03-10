@@ -37,7 +37,7 @@ const series = [
   {
     image: upceraStMl,
     name: "ST Multilayer — многослойный",
-    strength: "1100 МПа",
+    strength: "1300 МПа",
     transparency: "до 46%",
     desc: "Многослойная структура для полноанатомических реставраций без окрашивания. Эффект натурального зуба.",
     indications: "Полноанатомические реставрации",

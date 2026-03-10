@@ -14,7 +14,7 @@ const reasons = [
   {
     icon: Cog,
     title: "Совместимость с CAD/CAM системами",
-    desc: "Диски D98 доступны для Open CAD/CAM, Zirkonzahn, Amann Girrbach, CEREC inLab.",
+    desc: "Диски D98 доступны для Open CAD/CAM, Amann Girrbach, CEREC inLab.",
   },
   {
     icon: Layers,

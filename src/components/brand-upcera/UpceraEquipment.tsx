@@ -15,7 +15,7 @@ const equipment = [
   },
   {
     image: upceraGt1,
-    name: "Печь синтеризации UPCERA GT1 Pro",
+    name: "Печь для синтеризации UPCERA GT1 Pro",
     desc: "Интеллектуальная PID-система контроля температуры до 1550 °C. Функция памяти при отключении питания, нагревательные элементы MoSi₂.",
     specs: ["до 1550 °C", "PID-контроль", "MoSi₂ элементы"],
     link: "/shop/product/upcera-gt1-pro",

@@ -9,7 +9,7 @@ export function UpceraColoring() {
     <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-          Литий-дисиликат и система окрашивания
+          Дисиликат лития и система окрашивания
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -18,13 +18,13 @@ export function UpceraColoring() {
             <div className="aspect-[16/10] bg-muted/20 flex items-center justify-center p-6">
               <img
                 src={upceraUpcadHt}
-                alt="Литий-дисиликат UP.CAD UPCERA"
+                alt="Дисиликат лития UP.CAD UPCERA"
                 className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
             <div className="p-6">
-              <h3 className="font-bold text-foreground mb-2">Литий-дисиликат UP.CAD</h3>
+              <h3 className="font-bold text-foreground mb-2">Дисиликат лития UP.CAD</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                 Блоки литий-дисиликатной стеклокерамики для фрезерования виниров, вкладок, накладок и одиночных коронок.
                 Высокая эстетика и прочность до 530 МПа. Доступны в оттенках HT и LT.

@@ -37,7 +37,7 @@ export function UpceraEquipment() {
           Оборудование UPCERA для цифровой лаборатории
         </h2>
         <p className="text-muted-foreground mb-10 max-w-2xl">
-          Фрезерные станки и печи синтеризации, обеспечивающие полный производственный цикл.
+          Фрезерные станки и печи для синтеризации, обеспечивающие полный производственный цикл.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">

@@ -5,6 +5,22 @@ import { Calendar, MapPin, Clock, Users, Award, CheckCircle2, ChevronDown, Spark
 import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { cn } from "@/lib/utils";
+
+/* ─── FAQ Item component ─── */
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-[#333] rounded-xl overflow-hidden hover:border-[#D4AF37]/30 transition-colors duration-300">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between p-6 text-left">
+        <span className="font-semibold pr-4">{question}</span>
+        <ChevronDown className={cn("h-5 w-5 flex-shrink-0 transition-transform duration-300", open && "rotate-180")} style={{ color: "#D4AF37" }} />
+      </button>
+      <div className={cn("overflow-hidden transition-all duration-300", open ? "max-h-40 pb-6 px-6" : "max-h-0")}>
+        <p className="text-[#F5F5F5]/50 text-sm leading-relaxed">{answer}</p>
+      </div>
+    </div>
+  );
+}
 import { courses } from "@/data/courses";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
 

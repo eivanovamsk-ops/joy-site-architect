@@ -171,6 +171,8 @@ export default function WebinarZirconMarch2026() {
     if (!form.name.trim()) errs.name = "Введите имя";
     if (!form.phone.trim()) errs.phone = "Введите телефон";
     if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (!form.email.trim()) errs.email = "Введите Email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Некорректный Email";
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
     setIsLoading(true);
@@ -484,8 +486,9 @@ export default function WebinarZirconMarch2026() {
                   {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                  <Label htmlFor="w-email" className="text-white/90">Email *</Label>
+                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
+                  {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>

@@ -158,7 +158,7 @@ export default function WebinarZirconMarch2026() {
     script.async = true;
     document.body.appendChild(script);
 
-    script.onload = () => {
+    const initBizon = () => {
       const w = window as any;
       // Embedded form in the registration section
       if (w.bizon_createForm) {
@@ -168,6 +168,11 @@ export default function WebinarZirconMarch2026() {
       if (w.bizon_createFormButton) {
         w.bizon_createFormButton({ button: ".btnFormReg", page: "206008:victoria", style: "red", phone: 0 });
       }
+    };
+
+    script.onload = () => {
+      // Delay to ensure React has rendered .btnFormReg buttons into the DOM
+      setTimeout(initBizon, 500);
     };
 
     return () => {

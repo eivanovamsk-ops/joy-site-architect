@@ -171,6 +171,8 @@ export default function WebinarZirconMarch2026() {
     if (!form.name.trim()) errs.name = "Введите имя";
     if (!form.phone.trim()) errs.phone = "Введите телефон";
     if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (!form.email.trim()) errs.email = "Введите Email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Некорректный Email";
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
     setIsLoading(true);

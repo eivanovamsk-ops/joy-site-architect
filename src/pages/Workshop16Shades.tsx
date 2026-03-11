@@ -475,23 +475,9 @@ const Workshop16Shades = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12">Часто задаваемые вопросы</h2>
           <div className="space-y-4">
-            {course.faq.map((item, i) => {
-              const [open, setOpen] = useState(false);
-              return (
-                <div key={i} className="border border-[#333] rounded-xl overflow-hidden hover:border-[#D4AF37]/30 transition-colors duration-300">
-                  <button
-                    onClick={() => setOpen(!open)}
-                    className="w-full flex items-center justify-between p-6 text-left"
-                  >
-                    <span className="font-semibold pr-4">{item.question}</span>
-                    <ChevronDown className={cn("h-5 w-5 flex-shrink-0 transition-transform duration-300", open && "rotate-180")} style={{ color: GOLD }} />
-                  </button>
-                  <div className={cn("overflow-hidden transition-all duration-300", open ? "max-h-40 pb-6 px-6" : "max-h-0")}>
-                    <p className="text-[#F5F5F5]/50 text-sm leading-relaxed">{item.answer}</p>
-                  </div>
-                </div>
-              );
-            })}
+            {course.faq.map((item, i) => (
+              <FaqItem key={i} question={item.question} answer={item.answer} />
+            ))}
           </div>
         </div>
       </section>

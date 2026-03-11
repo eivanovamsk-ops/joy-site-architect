@@ -8,10 +8,6 @@ import {
   Calendar, Clock, Monitor, CheckCircle2,
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
 } from "lucide-react";
-import {
-  Calendar, Clock, Monitor, CheckCircle2, Loader2,
-  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
-} from "lucide-react";
 
 const caseImages = [
   { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },

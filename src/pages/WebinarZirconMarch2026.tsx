@@ -154,7 +154,7 @@ export default function WebinarZirconMarch2026() {
   // Load Bizon365 form script
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "//static.bizon365.ru/form/form.min.js";
+    script.src = "https://static.bizon365.ru/form/form.min.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -171,14 +171,21 @@ export default function WebinarZirconMarch2026() {
     };
 
     script.onload = () => {
-      // Delay to ensure React has rendered .btnFormReg buttons into the DOM
       setTimeout(initBizon, 500);
+      setTimeout(initBizon, 1500);
     };
 
     return () => {
       if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, []);
+
+  const scrollToForm = () => {
+    const el = document.getElementById("b1i0aduf");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <Layout>
@@ -246,6 +253,7 @@ export default function WebinarZirconMarch2026() {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <button
                 type="button"
+                onClick={scrollToForm}
                 className="btnFormReg inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft transition-colors"
               >
                 Зарегистрироваться бесплатно

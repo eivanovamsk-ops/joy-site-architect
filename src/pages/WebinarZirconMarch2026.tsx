@@ -410,57 +410,15 @@ export default function WebinarZirconMarch2026() {
         </div>
       </section>
 
-      {/* REGISTRATION FORM */}
+      {/* REGISTRATION */}
       <section id="registration" className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
         <div className="container mx-auto px-4">
-          <div className="max-w-lg mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">26 марта в 16:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-accent font-semibold mb-8">26 марта в 16:00 · Онлайн · Бесплатно</p>
+              <div id="b1i0aduf" className="min-h-[100px]" />
             </div>
-
-            {isSubmitted ? (
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
-                <div className="w-16 h-16 bg-[hsl(155,60%,40%)]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="h-8 w-8 text-[hsl(155,80%,65%)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 26 марта!</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
-                  <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
-                  {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
-                  <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
-                  {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-tg" className="text-white/90">Telegram *</Label>
-                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.telegram ? "border-destructive" : ""}`} />
-                  {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
-                  <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Зубной техник, керамист..." className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                </div>
-                <Button type="submit" disabled={isLoading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 rounded-xl font-bold mt-2">
-                  {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Отправка...</> : <>Зарегистрироваться бесплатно <ArrowRight className="ml-2 h-5 w-5" /></>}
-                </Button>
-                <p className="text-xs text-white/40 text-center">
-                  Нажимая «Зарегистрироваться», вы соглашаетесь с{" "}
-                  <a href="/privacy" className="underline hover:text-white/60">политикой конфиденциальности</a>
-                </p>
-              </form>
-            )}
           </div>
         </div>
       </section>

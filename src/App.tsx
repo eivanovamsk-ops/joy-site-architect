@@ -53,6 +53,7 @@ import WebinarBrackets from "./pages/WebinarBrackets";
 import WebinarZirconMarch2026 from "./pages/WebinarZirconMarch2026";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
+import Workshop16Shades from "./pages/Workshop16Shades";
 const queryClient = new QueryClient();
 
 const App = () => (

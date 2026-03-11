@@ -226,16 +226,19 @@ export default function WebinarZirconMarch2026() {
       </Helmet>
 
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-accent/15 rounded-full blur-[120px]" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[hsl(35,70%,45%)]/15 rounded-full blur-[120px]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[150px]" />
+          <img
+            src="/images/webinar/cover-zircon-banner.png"
+            alt="Вебинар: Лайфхаки в работе с цирконом — Артикон"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <div className="max-w-2xl text-left">
+            <div className="flex flex-wrap items-start gap-3 mb-8">
               <Badge className="bg-accent/20 text-accent border-accent/30 text-sm px-4 py-1.5 font-semibold">
                 <Monitor className="w-4 h-4 mr-1.5" /> ОНЛАЙН
               </Badge>
@@ -259,11 +262,11 @@ export default function WebinarZirconMarch2026() {
               на примере Upcera Functional
             </p>
 
-            <p className="text-base md:text-lg text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-white/50 mb-10 max-w-2xl leading-relaxed">
               Как получать стабильный результат при работе с цирконом и&nbsp;избегать типичных ошибок при фрезеровке, окрашивании и&nbsp;финальной эстетике
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
+            <div className="flex flex-wrap items-start gap-6 mb-10">
               <div className="flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5 text-accent" />
                 <span className="font-semibold">26 марта 2026</span>
@@ -278,7 +281,7 @@ export default function WebinarZirconMarch2026() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
               <Button
                 onClick={scrollToReg}
                 size="lg"

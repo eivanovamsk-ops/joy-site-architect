@@ -486,8 +486,9 @@ export default function WebinarZirconMarch2026() {
                   {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                  <Label htmlFor="w-email" className="text-white/90">Email *</Label>
+                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
+                  {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>

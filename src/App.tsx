@@ -50,6 +50,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
 import WebinarBrackets from "./pages/WebinarBrackets";
+import WebinarZirconMarch2026 from "./pages/WebinarZirconMarch2026";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
 const queryClient = new QueryClient();
@@ -97,6 +98,7 @@ const App = () => (
               <Route path="/education/calendar" element={<CourseCalendar />} />
               <Route path="/education/course/:id" element={<CourseDetail />} />
               <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
+              <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />
               <Route path="/education/:section" element={<EducationSection />} />
               <Route path="/shop/brands/upcera" element={<BrandUpcera />} />
               <Route path="/about" element={<About />} />

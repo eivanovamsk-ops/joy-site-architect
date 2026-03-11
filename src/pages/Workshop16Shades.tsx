@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin, Clock, Users, Award, CheckCircle2, ChevronDown, Sparkles, Wine, MessageCircle, UtensilsCrossed, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
+import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 
 /* ─── FAQ Item component ─── */

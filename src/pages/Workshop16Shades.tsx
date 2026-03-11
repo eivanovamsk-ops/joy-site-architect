@@ -614,6 +614,7 @@ const Workshop16Shades = () => {
         }
       `}</style>
     </div>
+    </Layout>
   );
 };
 

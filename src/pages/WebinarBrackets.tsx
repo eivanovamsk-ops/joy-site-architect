@@ -114,6 +114,17 @@ export default function WebinarBrackets() {
         <meta name="description" content="Бесплатный онлайн-вебинар по непрямой фиксации брекетов. Разберем топ-5 проблем при позиционировании. 11 марта, 17:00. Регистрация." />
       </Helmet>
 
+      {/* Past event banner */}
+      <div className="bg-muted border-b border-border py-4 text-center">
+        <div className="container mx-auto px-4 flex items-center justify-center gap-3">
+          <Badge className="bg-muted-foreground text-white text-sm px-3 py-1">УЖЕ ПРОШЕЛ</Badge>
+          <p className="text-muted-foreground text-sm md:text-base">
+            Этот вебинар состоялся 11 марта 2026. Следите за новыми событиями в{" "}
+            <a href="/education/calendar" className="text-primary underline hover:no-underline">календаре</a>.
+          </p>
+        </div>
+      </div>
+
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[hsl(222,30%,7%)] via-[hsl(218,55%,12%)] to-[hsl(270,40%,15%)]">
         <div className="absolute inset-0">

@@ -156,40 +156,66 @@ const mentors = [
 ];
 
 export default function WebinarZirconMarch2026() {
-  // Load Bizon365 form script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.bizon365.ru/form/form.min.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const { toast } = useToast();
+  const { user } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-    const initBizon = () => {
-      const w = window as any;
-      // Embedded form in the registration section
-      if (w.bizon_createForm) {
-        w.bizon_createForm({ div: "#b1i0aduf", page: "206008:victoria", style: "red", phone: 0 });
-      }
-      // Button-triggered popup for all CTA buttons
-      if (w.bizon_createFormButton) {
-        w.bizon_createFormButton({ button: ".btnFormReg", page: "206008:victoria", style: "red", phone: 0 });
-      }
-    };
+  const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
 
-    script.onload = () => {
-      setTimeout(initBizon, 500);
-      setTimeout(initBizon, 1500);
-    };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs: Record<string, string> = {};
+    if (!form.name.trim()) errs.name = "Введите имя";
+    if (!form.phone.trim()) errs.phone = "Введите телефон";
+    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setErrors({});
+    setIsLoading(true);
 
-    return () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
-    };
-  }, []);
+    try {
+      const { error } = await supabase.from("course_applications").insert({
+        user_id: user?.id || null,
+        name: form.name,
+        email: form.email || null,
+        phone: form.phone,
+        telegram: form.telegram,
+        specialization: form.specialization || null,
+        course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
+        course_date: "2026-03-26",
+      } as any);
+      if (error) throw error;
 
-  const scrollToForm = () => {
-    const el = document.getElementById("b1i0aduf");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      try {
+        await supabase.functions.invoke("send-email-unisender", {
+          body: {
+            type: "course_application",
+            courseData: {
+              courseName: "Вебинар: Лайфхаки в работе с цирконом",
+              courseDate: "26 марта 2026, 16:00",
+              name: form.name,
+              phone: form.phone,
+              telegram: form.telegram,
+              email: form.email || undefined,
+              specialization: form.specialization || undefined,
+            },
+          },
+        });
+      } catch {}
+
+      setIsSubmitted(true);
+    } catch {
+      toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const updateField = (f: string, v: string) => {
+    setForm(p => ({ ...p, [f]: v }));
+    if (errors[f]) setErrors(p => { const n = { ...p }; delete n[f]; return n; });
   };
 
   return (

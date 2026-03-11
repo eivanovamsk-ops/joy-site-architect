@@ -1,11 +1,16 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import {
-  Calendar, Clock, Monitor, CheckCircle2,
+  Calendar, Clock, Monitor, CheckCircle2, Loader2,
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
 } from "lucide-react";
 
@@ -151,40 +156,66 @@ const mentors = [
 ];
 
 export default function WebinarZirconMarch2026() {
-  // Load Bizon365 form script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.bizon365.ru/form/form.min.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const { toast } = useToast();
+  const { user } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-    const initBizon = () => {
-      const w = window as any;
-      // Embedded form in the registration section
-      if (w.bizon_createForm) {
-        w.bizon_createForm({ div: "#b1i0aduf", page: "206008:victoria", style: "red", phone: 0 });
-      }
-      // Button-triggered popup for all CTA buttons
-      if (w.bizon_createFormButton) {
-        w.bizon_createFormButton({ button: ".btnFormReg", page: "206008:victoria", style: "red", phone: 0 });
-      }
-    };
+  const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
 
-    script.onload = () => {
-      setTimeout(initBizon, 500);
-      setTimeout(initBizon, 1500);
-    };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs: Record<string, string> = {};
+    if (!form.name.trim()) errs.name = "Введите имя";
+    if (!form.phone.trim()) errs.phone = "Введите телефон";
+    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setErrors({});
+    setIsLoading(true);
 
-    return () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
-    };
-  }, []);
+    try {
+      const { error } = await supabase.from("course_applications").insert({
+        user_id: user?.id || null,
+        name: form.name,
+        email: form.email || null,
+        phone: form.phone,
+        telegram: form.telegram,
+        specialization: form.specialization || null,
+        course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
+        course_date: "2026-03-26",
+      } as any);
+      if (error) throw error;
 
-  const scrollToForm = () => {
-    const el = document.getElementById("b1i0aduf");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      try {
+        await supabase.functions.invoke("send-email-unisender", {
+          body: {
+            type: "course_application",
+            courseData: {
+              courseName: "Вебинар: Лайфхаки в работе с цирконом",
+              courseDate: "26 марта 2026, 16:00",
+              name: form.name,
+              phone: form.phone,
+              telegram: form.telegram,
+              email: form.email || undefined,
+              specialization: form.specialization || undefined,
+            },
+          },
+        });
+      } catch {}
+
+      setIsSubmitted(true);
+    } catch {
+      toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const updateField = (f: string, v: string) => {
+    setForm(p => ({ ...p, [f]: v }));
+    if (errors[f]) setErrors(p => { const n = { ...p }; delete n[f]; return n; });
   };
 
   return (
@@ -251,14 +282,14 @@ export default function WebinarZirconMarch2026() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <button
-                type="button"
-                onClick={scrollToForm}
-                className="btnFormReg inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft transition-colors"
+              <Button
+                onClick={scrollToReg}
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft"
               >
                 Зарегистрироваться бесплатно
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
+              </Button>
               <Button
                 asChild
                 size="lg"
@@ -418,15 +449,58 @@ export default function WebinarZirconMarch2026() {
         </div>
       </section>
 
-      {/* REGISTRATION */}
+      {/* REGISTRATION FORM */}
       <section id="registration" className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold mb-8">26 марта в 16:00 · Онлайн · Бесплатно</p>
-              <div id="b1i0aduf" className="min-h-[100px]" />
+              <p className="text-xl text-accent font-semibold">26 марта в 16:00 · Онлайн · Бесплатно</p>
             </div>
+
+            {isSubmitted ? (
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="h-8 w-8 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
+                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 26 марта!</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
+                <div className="space-y-1.5">
+                  <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
+                  <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
+                  {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
+                  <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
+                  {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="w-tg" className="text-white/90">Telegram *</Label>
+                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.telegram ? "border-destructive" : ""}`} />
+                  {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="w-email" className="text-white/90">Email</Label>
+                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
+                  <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Зубной техник" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                </div>
+                <Button type="submit" disabled={isLoading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-bold rounded-xl shadow-[0_0_30px_hsl(42,82%,52%,0.3)]">
+                  {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                  Зарегистрироваться бесплатно
+                </Button>
+                <p className="text-xs text-white/40 text-center">
+                  Нажимая кнопку, вы соглашаетесь с{" "}
+                  <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </section>

@@ -154,12 +154,14 @@ export default function WebinarZirconMarch2026() {
   // Load Bizon365 form script
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "//static.bizon365.ru/form/form.min.js";
+    script.src = "https://static.bizon365.ru/form/form.min.js";
     script.async = true;
     document.body.appendChild(script);
 
     const initBizon = () => {
       const w = window as any;
+      console.log("[Bizon365] initBizon called, bizon_createForm:", !!w.bizon_createForm, "bizon_createFormButton:", !!w.bizon_createFormButton);
+      console.log("[Bizon365] .btnFormReg elements found:", document.querySelectorAll(".btnFormReg").length);
       // Embedded form in the registration section
       if (w.bizon_createForm) {
         w.bizon_createForm({ div: "#b1i0aduf", page: "206008:victoria", style: "red", phone: 0 });
@@ -171,8 +173,15 @@ export default function WebinarZirconMarch2026() {
     };
 
     script.onload = () => {
-      // Delay to ensure React has rendered .btnFormReg buttons into the DOM
+      console.log("[Bizon365] Script loaded successfully");
+      // Try multiple times to ensure DOM is ready
       setTimeout(initBizon, 500);
+      setTimeout(initBizon, 1500);
+      setTimeout(initBizon, 3000);
+    };
+
+    script.onerror = (e) => {
+      console.error("[Bizon365] Script failed to load", e);
     };
 
     return () => {

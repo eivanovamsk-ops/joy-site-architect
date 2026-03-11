@@ -160,8 +160,6 @@ export default function WebinarZirconMarch2026() {
 
     const initBizon = () => {
       const w = window as any;
-      console.log("[Bizon365] initBizon called, bizon_createForm:", !!w.bizon_createForm, "bizon_createFormButton:", !!w.bizon_createFormButton);
-      console.log("[Bizon365] .btnFormReg elements found:", document.querySelectorAll(".btnFormReg").length);
       // Embedded form in the registration section
       if (w.bizon_createForm) {
         w.bizon_createForm({ div: "#b1i0aduf", page: "206008:victoria", style: "red", phone: 0 });
@@ -173,21 +171,21 @@ export default function WebinarZirconMarch2026() {
     };
 
     script.onload = () => {
-      console.log("[Bizon365] Script loaded successfully");
-      // Try multiple times to ensure DOM is ready
       setTimeout(initBizon, 500);
       setTimeout(initBizon, 1500);
-      setTimeout(initBizon, 3000);
-    };
-
-    script.onerror = (e) => {
-      console.error("[Bizon365] Script failed to load", e);
     };
 
     return () => {
       if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, []);
+
+  const scrollToForm = () => {
+    const el = document.getElementById("b1i0aduf");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <Layout>

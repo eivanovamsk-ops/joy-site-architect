@@ -50,6 +50,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import EducationSection from "./pages/EducationSection";
 import WebinarBrackets from "./pages/WebinarBrackets";
+import WebinarZirconMarch2026 from "./pages/WebinarZirconMarch2026";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
 const queryClient = new QueryClient();

@@ -164,19 +164,19 @@ export default function WebinarZirconMarch2026() {
     document.body.appendChild(script);
 
     script.onload = () => {
-      // Initialize button-triggered form for all .btnFormReg elements
-      if ((window as any).bizon_createFormButton) {
-        (window as any).bizon_createFormButton({
-          button: ".btnFormReg",
-          page: "206008:victoria",
-          style: "red",
-          phone: 0,
-        });
+      const w = window as any;
+      // Embedded form in the registration section
+      if (w.bizon_createForm) {
+        w.bizon_createForm({ div: "#b1i0aduf", page: "206008:victoria", style: "red", phone: 0 });
+      }
+      // Button-triggered popup for all CTA buttons
+      if (w.bizon_createFormButton) {
+        w.bizon_createFormButton({ button: ".btnFormReg", page: "206008:victoria", style: "red", phone: 0 });
       }
     };
 
     return () => {
-      document.body.removeChild(script);
+      if (script.parentNode) script.parentNode.removeChild(script);
     };
   }, []);
 

@@ -158,7 +158,7 @@ export default function WebinarZirconMarch2026() {
     script.async = true;
     document.body.appendChild(script);
 
-    script.onload = () => {
+    const initBizon = () => {
       const w = window as any;
       // Embedded form in the registration section
       if (w.bizon_createForm) {
@@ -168,6 +168,11 @@ export default function WebinarZirconMarch2026() {
       if (w.bizon_createFormButton) {
         w.bizon_createFormButton({ button: ".btnFormReg", page: "206008:victoria", style: "red", phone: 0 });
       }
+    };
+
+    script.onload = () => {
+      // Delay to ensure React has rendered .btnFormReg buttons into the DOM
+      setTimeout(initBizon, 500);
     };
 
     return () => {
@@ -239,13 +244,13 @@ export default function WebinarZirconMarch2026() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Button
-                size="lg"
-                className="btnFormReg bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft"
+              <button
+                type="button"
+                className="btnFormReg inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft transition-colors"
               >
                 Зарегистрироваться бесплатно
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              </button>
               <Button
                 asChild
                 size="lg"

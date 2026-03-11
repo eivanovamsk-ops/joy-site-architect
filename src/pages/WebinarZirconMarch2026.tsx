@@ -156,67 +156,29 @@ const mentors = [
 ];
 
 export default function WebinarZirconMarch2026() {
-  const { toast } = useToast();
-  const { user } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  // Load Bizon365 form script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//static.bizon365.ru/form/form.min.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const errs: Record<string, string> = {};
-    if (!form.name.trim()) errs.name = "Введите имя";
-    if (!form.phone.trim()) errs.phone = "Введите телефон";
-    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
-    if (Object.keys(errs).length) { setErrors(errs); return; }
-    setErrors({});
-    setIsLoading(true);
-
-    try {
-      const { error } = await supabase.from("course_applications").insert({
-        user_id: user?.id || null,
-        name: form.name,
-        email: form.email || null,
-        phone: form.phone,
-        telegram: form.telegram,
-        specialization: form.specialization || null,
-        course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
-        course_date: "2026-03-26",
-      } as any);
-      if (error) throw error;
-
-      try {
-        await supabase.functions.invoke("send-email-unisender", {
-          body: {
-            type: "course_application",
-            courseData: {
-              courseName: "Вебинар: Лайфхаки в работе с цирконом",
-              courseDate: "26 марта 2026, 16:00",
-              name: form.name,
-              phone: form.phone,
-              telegram: form.telegram,
-              email: form.email || undefined,
-              specialization: form.specialization || undefined,
-            },
-          },
+    script.onload = () => {
+      // Initialize button-triggered form for all .btnFormReg elements
+      if ((window as any).bizon_createFormButton) {
+        (window as any).bizon_createFormButton({
+          button: ".btnFormReg",
+          page: "206008:victoria",
+          style: "red",
+          phone: 0,
         });
-      } catch {}
+      }
+    };
 
-      setIsSubmitted(true);
-    } catch {
-      toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const updateField = (f: string, v: string) => {
-    setForm(p => ({ ...p, [f]: v }));
-    if (errors[f]) setErrors(p => { const n = { ...p }; delete n[f]; return n; });
-  };
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <Layout>

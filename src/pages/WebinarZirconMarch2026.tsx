@@ -1,17 +1,128 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Calendar, Clock, Monitor, CheckCircle2, Loader2,
-  ArrowRight, ChevronDown, Sparkles, Target, Palette, Wrench,
+  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
 } from "lucide-react";
+
+const caseImages = [
+  { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },
+  { src: "/images/webinar/zircon-case-2.jpg", alt: "Работа из циркония — окклюзионный вид коронок" },
+  { src: "/images/webinar/zircon-case-3.jpg", alt: "Работа из циркония — боковая группа зубов" },
+  { src: "/images/webinar/zircon-case-4.jpg", alt: "Работа из циркония — фронтальная группа" },
+  { src: "/images/webinar/zircon-case-5.jpg", alt: "Работа из циркония — коронки с розовой керамикой" },
+];
+
+function CasesSlider() {
+  const [active, setActive] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+
+  const go = useCallback((dir: number) => {
+    setActive((p) => (p + dir + caseImages.length) % caseImages.length);
+  }, []);
+
+  return (
+    <>
+      <div className="relative group">
+        {/* Main strip — shows 3 images with center focus */}
+        <div className="flex items-center justify-center gap-4 md:gap-6 px-4">
+          {caseImages.map((img, i) => {
+            const offset = (i - active + caseImages.length) % caseImages.length;
+            const centered = offset === 0;
+            const adjacent = offset === 1 || offset === caseImages.length - 1;
+            if (!centered && !adjacent) return null;
+
+            return (
+              <div
+                key={i}
+                onClick={() => centered ? setLightbox(true) : setActive(i)}
+                className={`relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer ${
+                  centered
+                    ? "w-full max-w-3xl aspect-[16/10] shadow-2xl ring-2 ring-accent/20"
+                    : "hidden md:block w-64 lg:w-80 aspect-[16/10] opacity-50 hover:opacity-75 scale-90"
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover"
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+                {centered && (
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-70 transition-opacity drop-shadow-lg" />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Arrows */}
+        <button
+          onClick={() => go(-1)}
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-background transition-colors z-10"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          onClick={() => go(1)}
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-background transition-colors z-10"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-6">
+          {caseImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                i === active ? "bg-accent w-8" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <Dialog open={lightbox} onOpenChange={setLightbox}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none [&>button]:hidden">
+          <div className="relative w-full h-[90vh] flex items-center justify-center">
+            <img
+              src={caseImages[active].src}
+              alt={caseImages[active].alt}
+              className="max-w-full max-h-full object-contain"
+            />
+            <button onClick={() => setLightbox(false)} className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors">
+              <X className="h-6 w-6 text-white" />
+            </button>
+            {caseImages.length > 1 && (
+              <>
+                <button onClick={() => go(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+                  <ChevronLeft className="h-6 w-6 text-white" />
+                </button>
+                <button onClick={() => go(1)} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+                  <ChevronRight className="h-6 w-6 text-white" />
+                </button>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
 
 const programTopics = [
   { icon: "🔬", title: "Секреты окрашивания", desc: "Как добиться стабильного оттенка и естественной глубины при работе с цирконом" },
@@ -230,8 +341,17 @@ export default function WebinarZirconMarch2026() {
         </div>
       </section>
 
+      {/* CASES GALLERY */}
+      <section className="py-20 bg-secondary overflow-hidden">
+        <div className="container mx-auto px-4 mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">Примеры работ</h2>
+          <p className="text-muted-foreground text-center">Работы, выполненные с использованием Upcera Functional</p>
+        </div>
+        <CasesSlider />
+      </section>
+
       {/* AUDIENCE */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Кому будет полезен вебинар?</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">

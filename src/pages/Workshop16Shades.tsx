@@ -161,7 +161,7 @@ const Workshop16Shades = () => {
       </Helmet>
 
       {/* ═══════ HERO ═══════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
         {/* Parallax BG image */}
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img src={course18Banner} alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />

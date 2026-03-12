@@ -99,6 +99,7 @@ const App = () => (
               <Route path="/education/contacts" element={<EducationContacts />} />
               <Route path="/education/calendar" element={<CourseCalendar />} />
               <Route path="/education/course/18" element={<Workshop16Shades />} />
+              <Route path="/education/course/20" element={<DentalPhotoProtocol />} />
               <Route path="/education/course/:id" element={<CourseDetail />} />
               <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
               <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />

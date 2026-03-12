@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { X, Play } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Clock, Users, Award, CheckCircle2, ChevronDown, Sparkles, Wine, MessageCircle, UtensilsCrossed, ArrowRight, Monitor, UserCheck, Lightbulb } from "lucide-react";

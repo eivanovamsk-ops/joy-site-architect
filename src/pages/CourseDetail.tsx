@@ -733,10 +733,6 @@ const CourseDetail = () => {
                     </div>
                   ))}
 
-                  {/* Gallery slider card next to lecturers */}
-                  {course.galleryImages && course.galleryImages.length > 0 && (
-                    <CourseGalleryCard images={course.galleryImages} />
-                  )}
                 </div>
                 {course.guestSpeakerNote && (
                   <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">

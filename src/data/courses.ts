@@ -1723,7 +1723,16 @@ export const courses: Course[] = [
     metaDescription: "Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. 23 апреля 2026, Москва. Теория + практика за 1 день.",
     category: "Ортопедия",
     tags: ["фотография", "фотопротокол", "документирование", "Lightroom", "Photoshop"],
-    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"]
+    sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"],
+    galleryImages: [
+      "/images/courses/course-20-gallery-1.jpg",
+      "/images/courses/course-20-gallery-2.jpg",
+      "/images/courses/course-20-gallery-3.jpg",
+      "/images/courses/course-20-gallery-4.jpg",
+      "/images/courses/course-20-gallery-5.jpg",
+      "/images/courses/course-20-gallery-6.jpg",
+      "/images/courses/course-20-gallery-7.jpg",
+    ]
   },
   {
     id: 21,

@@ -7,3 +7,5 @@ project_id = "minlrvrnprwcrgqfgsws"
     verify_jwt = false
   [functions.send-email-unisender]
     verify_jwt = false
+  [functions.subscribe-unisender]
+    verify_jwt = false

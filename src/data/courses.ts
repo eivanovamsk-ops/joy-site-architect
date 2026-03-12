@@ -1280,7 +1280,11 @@ export const courses: Course[] = [
     sectionTags: ["для техников", "CAD/CAM"],
     galleryImages: [
       "/images/courses/course-15-gallery-1.jpg",
-      "/images/courses/course-15-gallery-2.jpg"
+      "/images/courses/course-15-gallery-2.jpg",
+      "/images/courses/course-15-gallery-3.jpg",
+      "/images/courses/course-15-gallery-4.jpg",
+      "/images/courses/course-15-gallery-5.jpg",
+      "/images/courses/course-15-gallery-6.jpg"
     ]
   },
   {

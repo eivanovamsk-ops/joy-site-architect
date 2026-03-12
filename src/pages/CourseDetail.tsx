@@ -132,9 +132,6 @@ function CourseGalleryCard({ images }: { images: string[] }) {
           </>
         )}
       </div>
-      <div className="p-4 text-center">
-        <p className="text-sm font-medium text-muted-foreground">Примеры работ с курса</p>
-      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
-import { ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight as ChevronRightIcon, X, ZoomIn, Camera } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

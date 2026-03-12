@@ -622,6 +622,11 @@ const CourseDetail = () => {
           </section>
         )}
 
+        {/* ===== Photo Gallery Section ===== */}
+        {course.galleryImages && course.galleryImages.length > 0 && (
+          <CoursePhotoGallery images={course.galleryImages} />
+        )}
+
         {/* Program Section — White background */}
         <section className="py-16" id="course-program">
           <div className="container mx-auto px-4">

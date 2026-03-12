@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
-import { ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight as ChevronRightIcon, X, ZoomIn, Camera } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -133,6 +133,142 @@ function CourseGalleryCard({ images }: { images: string[] }) {
         )}
       </div>
     </div>
+  );
+}
+
+function CoursePhotoGallery({ images }: { images: string[] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const galleryRef = useReveal();
+
+  const goTo = useCallback((index: number) => {
+    setActiveIndex((index + images.length) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') goTo(activeIndex - 1);
+      else if (e.key === 'ArrowRight') goTo(activeIndex + 1);
+      else if (e.key === 'Escape') setLightboxOpen(false);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen, activeIndex, goTo]);
+
+  return (
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div ref={galleryRef} className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+              <Camera className="h-6 w-6 text-primary-foreground" />
+            </div>
+            <h2 className="text-3xl font-bold">Фото с курса</h2>
+          </div>
+
+          {/* Main Image */}
+          <div
+            className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-muted cursor-zoom-in group mb-4 shadow-lg border border-border"
+            onClick={() => setLightboxOpen(true)}
+          >
+            <img
+              src={images[activeIndex]}
+              alt={`Фото с курса ${activeIndex + 1}`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm rounded-full p-2.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+              <ZoomIn className="h-5 w-5 text-foreground" />
+            </div>
+            <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-sm rounded-full px-3 py-1.5 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              {activeIndex + 1} / {images.length}
+            </div>
+
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goTo(activeIndex - 1); }}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-background transition-all shadow-lg opacity-0 group-hover:opacity-100"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goTo(activeIndex + 1); }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-background transition-all shadow-lg opacity-0 group-hover:opacity-100"
+                >
+                  <ChevronRightIcon className="h-5 w-5" />
+                </button>
+              </>
+            )}
+          </div>
+
+          {/* Thumbnails */}
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {images.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={cn(
+                  "flex-shrink-0 w-20 h-14 md:w-28 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-300",
+                  i === activeIndex
+                    ? "border-primary ring-2 ring-primary/30 scale-105"
+                    : "border-border hover:border-primary/50 opacity-70 hover:opacity-100"
+                )}
+              >
+                <img src={img} alt={`Миниатюра ${i + 1}`} className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center" onClick={() => setLightboxOpen(false)}>
+          <img
+            src={images[activeIndex]}
+            alt={`Фото ${activeIndex + 1}`}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full p-2.5 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); goTo(activeIndex - 1); }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors"
+              >
+                <ChevronLeft className="h-7 w-7 text-white" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); goTo(activeIndex + 1); }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors"
+              >
+                <ChevronRightIcon className="h-7 w-7 text-white" />
+              </button>
+            </>
+          )}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={(e) => { e.stopPropagation(); setActiveIndex(i); }}
+                className={cn(
+                  "w-2.5 h-2.5 rounded-full transition-all",
+                  i === activeIndex ? "bg-white w-7" : "bg-white/40 hover:bg-white/60"
+                )}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
 
@@ -620,6 +756,11 @@ const CourseDetail = () => {
               </div>
             </div>
           </section>
+        )}
+
+        {/* ===== Photo Gallery Section ===== */}
+        {course.galleryImages && course.galleryImages.length > 0 && (
+          <CoursePhotoGallery images={course.galleryImages} />
         )}
 
         {/* Program Section — White background */}

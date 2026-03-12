@@ -137,6 +137,7 @@ function CourseGalleryCard({ images }: { images: string[] }) {
       </div>
     </div>
   );
+}
 
 const CourseDetail = () => {
   const { id } = useParams();

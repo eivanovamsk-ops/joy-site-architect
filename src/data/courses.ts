@@ -75,6 +75,7 @@ export interface Course {
   programDescription?: string;
   videos?: string[];
   lightBanner?: boolean;
+  galleryImages?: string[];
 }
 
 export const courses: Course[] = [

@@ -322,20 +322,20 @@ const DentalPhotoProtocol = () => {
             </p>
 
             <div className={cn(
-              "flex flex-wrap justify-center gap-6 text-sm text-[#F5F5F5]/50 mb-10 transition-all duration-1000 delay-700 ease-out",
+              "flex flex-wrap justify-center gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 bg-[#00BCD4]/20 backdrop-blur-sm border border-[#00BCD4]/40 rounded-full px-5 py-2.5">
                 <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span>23 апреля 2026</span>
+                <span className="font-bold text-[#F5F5F5]">23 апреля 2026</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
-                <span>Москва</span>
+                <span className="text-[#F5F5F5]/80">Москва</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <Clock className="h-4 w-4" style={{ color: ACCENT }} />
-                <span>10:00 — 20:00</span>
+                <span className="text-[#F5F5F5]/80">10:00 — 20:00</span>
               </div>
             </div>
 

@@ -54,6 +54,7 @@ import WebinarZirconMarch2026 from "./pages/WebinarZirconMarch2026";
 import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
 import Workshop16Shades from "./pages/Workshop16Shades";
+import DentalPhotoProtocol from "./pages/DentalPhotoProtocol";
 const queryClient = new QueryClient();
 
 const App = () => (

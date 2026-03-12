@@ -88,6 +88,56 @@ function CourseVideoSlider({ videos }: { videos: string[] }) {
   );
 }
 
+function CourseGalleryCard({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+  const total = images.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  return (
+    <div className="bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
+      <div className="relative flex-1 min-h-[280px]">
+        <img
+          src={images[current]}
+          alt={`Работа ${current + 1}`}
+          className="w-full h-full object-cover absolute inset-0"
+        />
+        {total > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-background transition-colors shadow-md"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-background/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-background transition-colors shadow-md"
+            >
+              <ChevronRightIcon className="h-4 w-4" />
+            </button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={cn(
+                    "w-2 h-2 rounded-full transition-all",
+                    i === current ? "bg-primary-foreground w-5" : "bg-primary-foreground/50"
+                  )}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="p-4 text-center">
+        <p className="text-sm font-medium text-muted-foreground">Примеры работ с курса</p>
+      </div>
+    </div>
+  );
+
 const CourseDetail = () => {
   const { id } = useParams();
   const course = courses.find((c) => c.id === Number(id));

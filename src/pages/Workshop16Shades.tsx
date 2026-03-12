@@ -605,6 +605,32 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
+      {/* ═══════ PAST EVENTS VIDEO ═══════ */}
+      <section className="py-24 lg:py-32 relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Атмосфера</span>
+            <h2 className="text-4xl md:text-5xl font-bold">Видео с прошлых мероприятий</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              "/videos/workshop-18-past-1.mp4",
+              "/videos/workshop-18-past-2.mp4",
+            ].map((src, i) => (
+              <div key={i} className="rounded-2xl overflow-hidden border border-[#333] bg-[#222]/60 hover:border-[#D4AF37]/30 transition-colors duration-300">
+                <video
+                  src={src}
+                  className="w-full aspect-video object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════ BACK LINK ═══════ */}
       <div className="border-t border-[#2A2A2A] py-8">
         <div className="container mx-auto px-4 text-center">

@@ -519,7 +519,12 @@ const CourseDetail = () => {
                       : course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
                   </h2>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className={cn(
+                  "grid gap-6",
+                  course.galleryImages && course.galleryImages.length > 0
+                    ? "md:grid-cols-2 lg:grid-cols-3"
+                    : "md:grid-cols-2 lg:grid-cols-3"
+                )}>
                   {course.lecturers.map((lecturer, index) => (
                     <div key={index} className="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group/lecturer">
                       <div className="flex flex-col items-center text-center">
@@ -543,6 +548,11 @@ const CourseDetail = () => {
                       )}
                     </div>
                   ))}
+
+                  {/* Gallery slider card next to lecturers */}
+                  {course.galleryImages && course.galleryImages.length > 0 && (
+                    <CourseGalleryCard images={course.galleryImages} />
+                  )}
                 </div>
                 {course.guestSpeakerNote && (
                   <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">

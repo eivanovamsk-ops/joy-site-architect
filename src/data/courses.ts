@@ -1277,7 +1277,11 @@ export const courses: Course[] = [
     metaDescription: "3-дневный практический курс: моделирование, фрезерование и окрашивание протяженных конструкций из циркония. Москва, Артикон. 90 000₽.",
     category: "CAD/CAM",
     tags: ["CAD/CAM", "цирконий", "exocad", "MIYO", "фрезерование"],
-    sectionTags: ["для техников", "CAD/CAM"]
+    sectionTags: ["для техников", "CAD/CAM"],
+    galleryImages: [
+      "/images/courses/course-15-gallery-1.jpg",
+      "/images/courses/course-15-gallery-2.jpg"
+    ]
   },
   {
     id: 23,

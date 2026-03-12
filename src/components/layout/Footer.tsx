@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send, Loader2, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import articonLogo from "@/assets/articon-logo.png";
+
 const footerLinks = {
   navigation: [{
     label: "Лаборатория",
@@ -28,7 +32,36 @@ const footerLinks = {
     href: "/education/calendar"
   }]
 };
+
 export function Footer() {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !email.includes("@")) {
+      toast({ variant: "destructive", title: "Введите корректный email" });
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("subscribe-unisender", {
+        body: { email: email.trim() },
+      });
+      if (error) throw error;
+      if (data?.error) throw new Error(data.error);
+      setIsSubscribed(true);
+      setEmail("");
+      toast({ title: "Вы подписаны!", description: "Спасибо за подписку на рассылку" });
+    } catch (err: any) {
+      toast({ variant: "destructive", title: "Ошибка подписки", description: "Попробуйте позже" });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -100,12 +133,26 @@ export function Footer() {
             <p className="text-background/70 text-sm mb-4">
               Подпишитесь на рассылку и получайте новости о курсах и акциях.
             </p>
-            <form className="flex gap-2" onSubmit={e => e.preventDefault()}>
-              <Input type="email" placeholder="Ваш email" className="bg-background/10 border-background/20 text-background placeholder:text-background/50 flex-1" />
-              <Button type="submit" size="icon" className="gradient-accent flex-shrink-0">
-                <Send className="h-4 w-4" />
-              </Button>
-            </form>
+            {isSubscribed ? (
+              <div className="flex items-center gap-2 text-accent">
+                <Check className="h-5 w-5" />
+                <span className="text-sm">Вы подписаны!</span>
+              </div>
+            ) : (
+              <form className="flex gap-2" onSubmit={handleSubscribe}>
+                <Input
+                  type="email"
+                  placeholder="Ваш email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-background/10 border-background/20 text-background placeholder:text-background/50 flex-1"
+                  disabled={isLoading}
+                />
+                <Button type="submit" size="icon" className="gradient-accent flex-shrink-0" disabled={isLoading}>
+                  {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
 

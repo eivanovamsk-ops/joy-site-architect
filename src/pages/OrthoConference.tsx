@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle } from "lucide-react";
+import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";

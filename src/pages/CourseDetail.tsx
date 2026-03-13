@@ -759,6 +759,37 @@ const CourseDetail = () => {
           <CoursePhotoGallery images={course.galleryImages} />
         )}
 
+        {/* Partners / При поддержке */}
+        {course.partners && course.partners.length > 0 && (
+          <section className="py-16 bg-background border-t border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-10">При поддержке</p>
+                <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+                  {course.partners.map((partner, idx) => (
+                    <a
+                      key={idx}
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-3 group max-w-[200px]"
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-20 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                      <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed text-center">
+                        {partner.name}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Program Section — White background */}
         <section className="py-16" id="course-program">
           <div className="container mx-auto px-4">
@@ -919,37 +950,6 @@ const CourseDetail = () => {
             </div>
           </div>
         </section>
-
-        {/* Partners / При поддержке */}
-        {course.partners && course.partners.length > 0 && (
-          <section className="py-16 bg-background border-t border-border">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-10">При поддержке</p>
-                <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
-                  {course.partners.map((partner, idx) => (
-                    <a
-                      key={idx}
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-3 group max-w-[200px]"
-                    >
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="h-20 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                      />
-                      <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed text-center">
-                        {partner.name}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Final CTA — Dark dramatic block */}
         <section className="py-20 gradient-primary relative overflow-hidden">

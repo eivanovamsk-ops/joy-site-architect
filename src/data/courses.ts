@@ -1807,7 +1807,19 @@ export const courses: Course[] = [
     metaDescription: "Бизнес-встреча для владельцев и руководителей зуботехнических лабораторий. 14 мая 2026, Москва. Стратегии роста, финансы, маркетинг.",
     category: "Менеджмент",
     tags: ["бизнес", "менеджмент", "руководители", "лаборатории", "нетворкинг"],
-    sectionTags: ["для техников", "CAD/CAM"]
+    sectionTags: ["для техников", "CAD/CAM"],
+    partners: [
+      {
+        name: "Ассоциация организаций, экспертов и специалистов по защите прав в сфере здравоохранения",
+        logo: "/images/partners/health-rights-association.png",
+        url: "https://xn-----8kcnbtiic3bbbfhn4ak8j.xn--p1ai/"
+      },
+      {
+        name: "Московская торгово-промышленная палата",
+        logo: "/images/partners/moscow-chamber.png",
+        url: "https://mostpp.ru/"
+      }
+    ]
   },
   {
     id: 3,

@@ -34,6 +34,7 @@ interface CourseApplicationFormProps {
   onSuccess?: () => void;
   buttonVariant?: "default" | "card";
   buttonLabel?: string;
+  cityOptions?: string[];
 }
 
 export function CourseApplicationForm({

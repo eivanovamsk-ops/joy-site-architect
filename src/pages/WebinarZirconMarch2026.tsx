@@ -160,7 +160,7 @@ export default function WebinarZirconMarch2026() {
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
@@ -170,7 +170,7 @@ export default function WebinarZirconMarch2026() {
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "Введите имя";
     if (!form.phone.trim()) errs.phone = "Введите телефон";
-    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (!form.email.trim()) errs.email = "Введите Email";
     if (!form.email.trim()) errs.email = "Введите Email";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errs.email = "Некорректный Email";
     if (Object.keys(errs).length) { setErrors(errs); return; }
@@ -183,7 +183,7 @@ export default function WebinarZirconMarch2026() {
         name: form.name,
         email: form.email || null,
         phone: form.phone,
-        telegram: form.telegram,
+        telegram: "",
         specialization: form.specialization || null,
         course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
         course_date: "2026-03-26",
@@ -199,7 +199,7 @@ export default function WebinarZirconMarch2026() {
               courseDate: "26 марта 2026, 16:00 МСК",
               name: form.name,
               phone: form.phone,
-              telegram: form.telegram,
+              telegram: "",
               email: form.email || undefined,
               specialization: form.specialization || undefined,
               isWebinar: true,
@@ -481,11 +481,6 @@ export default function WebinarZirconMarch2026() {
                   <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
                   <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
                   {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-tg" className="text-white/90">Telegram *</Label>
-                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.telegram ? "border-destructive" : ""}`} />
-                  {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="w-email" className="text-white/90">Email *</Label>

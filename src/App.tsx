@@ -55,6 +55,7 @@ import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
 import Workshop16Shades from "./pages/Workshop16Shades";
 import DentalPhotoProtocol from "./pages/DentalPhotoProtocol";
+import OrthoConference from "./pages/OrthoConference";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -99,6 +100,7 @@ const App = () => (
               <Route path="/education/contacts" element={<EducationContacts />} />
               <Route path="/education/calendar" element={<CourseCalendar />} />
               <Route path="/education/course/18" element={<Workshop16Shades />} />
+              <Route path="/education/course/19" element={<OrthoConference />} />
               <Route path="/education/course/20" element={<DentalPhotoProtocol />} />
               <Route path="/education/course/:id" element={<CourseDetail />} />
               <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />

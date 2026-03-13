@@ -257,13 +257,28 @@ export function CourseApplicationForm({
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
               <Label htmlFor="app-city">Город *</Label>
-              <Input
-                id="app-city"
-                value={formData.city}
-                onChange={(e) => updateField("city", e.target.value)}
-                placeholder="Москва"
-                className={errors.city ? "border-destructive" : ""}
-              />
+              {cityOptions ? (
+                <RadioGroup
+                  value={formData.city}
+                  onValueChange={(val) => updateField("city", val)}
+                  className="flex flex-wrap gap-3"
+                >
+                  {cityOptions.map((city) => (
+                    <div key={city} className="flex items-center space-x-2">
+                      <RadioGroupItem value={city} id={`city-${city}`} />
+                      <Label htmlFor={`city-${city}`} className="font-normal cursor-pointer">{city}</Label>
+                    </div>
+                  ))}
+                </RadioGroup>
+              ) : (
+                <Input
+                  id="app-city"
+                  value={formData.city}
+                  onChange={(e) => updateField("city", e.target.value)}
+                  placeholder="Москва"
+                  className={errors.city ? "border-destructive" : ""}
+                />
+              )}
               {errors.city && <p className="text-xs text-destructive">{errors.city}</p>}
             </div>
             <div className="space-y-1.5">

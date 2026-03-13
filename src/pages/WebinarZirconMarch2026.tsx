@@ -183,7 +183,7 @@ export default function WebinarZirconMarch2026() {
         name: form.name,
         email: form.email || null,
         phone: form.phone,
-        telegram: form.telegram,
+        telegram: "",
         specialization: form.specialization || null,
         course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
         course_date: "2026-03-26",

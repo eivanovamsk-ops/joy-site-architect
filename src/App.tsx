@@ -55,6 +55,7 @@ import BundleUpceraKit from "./pages/BundleUpceraKit";
 import BrandUpcera from "./pages/BrandUpcera";
 import Workshop16Shades from "./pages/Workshop16Shades";
 import DentalPhotoProtocol from "./pages/DentalPhotoProtocol";
+import OrthoConference from "./pages/OrthoConference";
 const queryClient = new QueryClient();
 
 const App = () => (

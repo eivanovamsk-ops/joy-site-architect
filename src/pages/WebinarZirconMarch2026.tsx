@@ -199,7 +199,7 @@ export default function WebinarZirconMarch2026() {
               courseDate: "26 марта 2026, 16:00 МСК",
               name: form.name,
               phone: form.phone,
-              telegram: form.telegram,
+              telegram: "",
               email: form.email || undefined,
               specialization: form.specialization || undefined,
               isWebinar: true,

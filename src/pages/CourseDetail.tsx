@@ -12,7 +12,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
-import healthRightsLogo from "@/assets/partners/health-rights-association.png";
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -750,28 +749,6 @@ const CourseDetail = () => {
                     buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"}
                   />
                 </div>
-
-                {/* При поддержке — only for course 21 */}
-                {course.id === 21 && (
-                  <div className="mt-12 pt-10 border-t border-border">
-                    <p className="text-center text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">При поддержке</p>
-                    <a
-                      href="https://xn-----8kcnbtiic3bbbfhn4ak8j.xn--p1ai/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col items-center gap-4 group"
-                    >
-                      <img
-                        src={healthRightsLogo}
-                        alt="Ассоциация по защите прав в сфере здравоохранения"
-                        className="h-24 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                      />
-                      <span className="text-sm text-center text-muted-foreground group-hover:text-foreground transition-colors duration-300 max-w-md leading-relaxed">
-                        Ассоциация организаций, экспертов и специалистов по защите прав в сфере здравоохранения
-                      </span>
-                    </a>
-                  </div>
-                )}
               </div>
             </div>
           </section>

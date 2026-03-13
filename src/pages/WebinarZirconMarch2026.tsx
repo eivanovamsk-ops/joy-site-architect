@@ -160,7 +160,7 @@ export default function WebinarZirconMarch2026() {
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });

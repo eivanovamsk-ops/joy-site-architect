@@ -11,6 +11,70 @@ import course19Banner from "@/assets/courses/course-19-banner.jpg";
 
 const ACCENT = "#FF6B35"; // Vibrant orange for ortho energy
 
+/* ─── Floating Video Widget ─── */
+function FloatingVideoWidget({ videos }: { videos: string[] }) {
+  const [visible, setVisible] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!visible) return null;
+
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => videoRef.current?.play(), 50);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((i) => (i + 1) % videos.length);
+    setPlaying(false);
+  };
+
+  return (
+    <div className={cn(
+      "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
+      visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    )}>
+      <div className="relative w-[220px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
+        <button
+          onClick={() => setVisible(false)}
+          className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 rounded-full p-1 transition-colors"
+        >
+          <X className="h-3.5 w-3.5 text-white" />
+        </button>
+
+        {!playing ? (
+          <div className="relative cursor-pointer group" onClick={handlePlay}>
+            <video src={videos[currentIndex]} className="w-full" preload="metadata" muted playsInline />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                <Play className="h-6 w-6 text-white fill-white" />
+              </div>
+            </div>
+            <div className="absolute bottom-2 left-2 right-8">
+              <span className="text-[10px] text-white/70 uppercase tracking-wider">Промо конференции</span>
+            </div>
+          </div>
+        ) : (
+          <video
+            ref={videoRef}
+            src={videos[currentIndex]}
+            className="w-full"
+            controls
+            playsInline
+            onEnded={handleNext}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
 /* ─── useReveal ─── */
 function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.12) {
   const ref = useRef<T>(null);

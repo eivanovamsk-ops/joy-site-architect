@@ -195,13 +195,15 @@ export default function WebinarZirconMarch2026() {
           body: {
             type: "course_application",
             courseData: {
-              courseName: "Вебинар: Лайфхаки в работе с цирконом",
-              courseDate: "26 марта 2026, 16:00",
+              courseName: "Лайфхаки в работе с цирконом",
+              courseDate: "26 марта 2026, 16:00 МСК",
               name: form.name,
               phone: form.phone,
               telegram: form.telegram,
               email: form.email || undefined,
               specialization: form.specialization || undefined,
+              isWebinar: true,
+              telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
             },
           },
         });

@@ -378,49 +378,97 @@ interface OrderItem {
 
         // Send confirmation to client if email provided
         if (course.email) {
-          const clientEmailHtml = `
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <meta charset="utf-8">
-              <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-                .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
-                .info-block { background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 15px 0; }
-                .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
-              </style>
-            </head>
-            <body>
-              <div class="container">
-                <div class="header">
-                  <h1 style="margin: 0;">Спасибо за запись!</h1>
-                </div>
-                <div class="content">
-                  <p>Уважаемый(ая) <strong>${course.name} ${course.lastName}</strong>,</p>
-                  <p>Ваша заявка на курс <strong>«${course.courseName}»</strong> успешно оформлена.</p>
-                  ${course.courseDate ? `<p><strong>Дата проведения:</strong> ${course.courseDate}</p>` : ""}
-                  <div class="info-block">
-                    📞 Куратор Учебного центра свяжется с вами в ближайшее время для подтверждения записи и уточнения деталей.
+          let clientEmailSubject: string;
+          let clientEmailHtml: string;
+
+          if (course.isWebinar && course.telegramChatUrl) {
+            // Специальный шаблон для вебинаров
+            clientEmailSubject = `Вы успешно зарегистрировались на вебинар «${course.courseName}»`;
+            clientEmailHtml = `
+              <!DOCTYPE html>
+              <html>
+              <head>
+                <meta charset="utf-8">
+                <style>
+                  body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                  .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                  .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 24px; text-align: center; border-radius: 8px 8px 0 0; }
+                  .content { background: #f9fafb; padding: 24px; border: 1px solid #e5e7eb; }
+                  .info-block { background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 15px 0; }
+                  .cta-btn { display: inline-block; background: #2563eb; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: bold; font-size: 16px; margin: 10px 0; }
+                  .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <div class="header">
+                    <h1 style="margin: 0; font-size: 22px;">🎉 Регистрация подтверждена!</h1>
                   </div>
-                  <p>Если у вас есть вопросы, свяжитесь с нами:</p>
-                  <p>📧 Email: event@articon.pro<br>
-                  📱 Телефон: +7 (495) 128-50-28</p>
+                  <div class="content">
+                    <p>Здравствуйте, <strong>${course.name}</strong>!</p>
+                    <p>Вы успешно зарегистрировались на бесплатный онлайн-вебинар <strong>«${course.courseName}»</strong>.</p>
+                    ${course.courseDate ? `<div class="info-block">📅 <strong>Дата:</strong> ${course.courseDate}</div>` : ""}
+                    <p>Чтобы не пропустить вебинар, вступите в <strong>Telegram-чат участников</strong>. Именно там мы пришлём ссылку на трансляцию и напомним о начале.</p>
+                    <p style="text-align: center; margin: 20px 0;">
+                      <a href="${course.telegramChatUrl}" class="cta-btn">Перейти в чат участников</a>
+                    </p>
+                    <p>Если у вас возникнут вопросы — пишите нам: <a href="mailto:event@articon.pro">event@articon.pro</a></p>
+                  </div>
+                  <div class="footer">
+                    <p>Команда Articon</p>
+                    <p><a href="https://articon.pro" style="color: #2563eb; text-decoration: none;">articon.pro</a></p>
+                  </div>
                 </div>
-                <div class="footer">
-                  <p>С уважением,<br>Учебный центр Articon</p>
-                  <p>articon.pro</p>
+              </body>
+              </html>
+            `;
+          } else {
+            // Стандартный шаблон для курсов
+            clientEmailSubject = `Запись на курс «${course.courseName}» подтверждена — Articon`;
+            clientEmailHtml = `
+              <!DOCTYPE html>
+              <html>
+              <head>
+                <meta charset="utf-8">
+                <style>
+                  body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                  .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                  .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+                  .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
+                  .info-block { background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 15px 0; }
+                  .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+                </style>
+              </head>
+              <body>
+                <div class="container">
+                  <div class="header">
+                    <h1 style="margin: 0;">Спасибо за запись!</h1>
+                  </div>
+                  <div class="content">
+                    <p>Уважаемый(ая) <strong>${course.name} ${course.lastName}</strong>,</p>
+                    <p>Ваша заявка на курс <strong>«${course.courseName}»</strong> успешно оформлена.</p>
+                    ${course.courseDate ? `<p><strong>Дата проведения:</strong> ${course.courseDate}</p>` : ""}
+                    <div class="info-block">
+                      📞 Куратор Учебного центра свяжется с вами в ближайшее время для подтверждения записи и уточнения деталей.
+                    </div>
+                    <p>Если у вас есть вопросы, свяжитесь с нами:</p>
+                    <p>📧 Email: event@articon.pro<br>
+                    📱 Телефон: +7 (495) 128-50-28</p>
+                  </div>
+                  <div class="footer">
+                    <p>С уважением,<br>Учебный центр Articon</p>
+                    <p>articon.pro</p>
+                  </div>
                 </div>
-              </div>
-            </body>
-            </html>
-          `;
+              </body>
+              </html>
+            `;
+          }
 
           const clientResult = await sendEmail(
             UNISENDER_API_KEY,
             course.email,
-            `Запись на курс «${course.courseName}» подтверждена — Articon`,
+            clientEmailSubject,
             clientEmailHtml,
             "Articon Education",
             "event@articon.pro"

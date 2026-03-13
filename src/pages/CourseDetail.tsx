@@ -713,7 +713,7 @@ const CourseDetail = () => {
                     <div key={index} className="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group/lecturer">
                       <div className="flex flex-col items-center text-center">
                         <Avatar className="w-28 h-28 border-4 border-primary/20 transition-transform duration-300 group-hover/lecturer:scale-110 mb-5 shadow-lg">
-                          <AvatarImage src={lecturer.photo} alt={lecturer.name} />
+                          <AvatarImage src={lecturer.photo} alt={lecturer.name} className="object-cover" />
                           <AvatarFallback className="text-2xl">{lecturer.name.split(' ').map((n) => n[0]).join('')}</AvatarFallback>
                         </Avatar>
                         <h3 className="font-bold text-xl mb-1">{lecturer.name}</h3>

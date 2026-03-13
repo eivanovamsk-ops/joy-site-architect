@@ -1818,6 +1818,11 @@ export const courses: Course[] = [
         name: "Московская торгово-промышленная палата",
         logo: "/images/partners/moscow-chamber.png",
         url: "https://mostpp.ru/"
+      },
+      {
+        name: "Первая ассоциация зуботехнических лабораторий",
+        logo: "/images/partners/pazl-association.png",
+        url: ""
       }
     ]
   },

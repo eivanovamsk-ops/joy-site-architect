@@ -681,6 +681,9 @@ const OrthoConference = () => {
           </div>
         </section>
 
+        {/* ═══════ FLOATING VIDEO WIDGET ═══════ */}
+        <FloatingVideoWidget videos={["/videos/ortho-conference-promo.mp4"]} />
+
         {/* ═══════ BACK LINK ═══════ */}
         <div className="border-t border-[#2A2A2A] py-8">
           <div className="container mx-auto px-4 text-center">

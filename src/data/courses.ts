@@ -1824,7 +1824,6 @@ export const courses: Course[] = [
         logo: "/images/partners/pazl-association.png",
         url: ""
       }
-      }
     ]
   },
   {

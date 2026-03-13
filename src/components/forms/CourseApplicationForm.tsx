@@ -43,6 +43,7 @@ export function CourseApplicationForm({
   onSuccess,
   buttonVariant = "default",
   buttonLabel = "Записаться на курс",
+  cityOptions,
 }: CourseApplicationFormProps) {
   const { toast } = useToast();
   const { user } = useAuth();

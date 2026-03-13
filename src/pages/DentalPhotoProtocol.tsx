@@ -528,25 +528,6 @@ const DentalPhotoProtocol = () => {
               </div>
             </div>
 
-            {/* При поддержке */}
-            <div className="max-w-4xl mx-auto mt-16 pt-12 border-t border-[#2A2A2A]">
-              <p className="text-center text-sm tracking-[0.2em] uppercase text-[#F5F5F5]/40 mb-6">При поддержке</p>
-              <a
-                href="https://xn-----8kcnbtiic3bbbfhn4ak8j.xn--p1ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 group"
-              >
-                <img
-                  src={healthRightsLogo}
-                  alt="Ассоциация по защите прав в сфере здравоохранения"
-                  className="h-24 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <span className="text-sm text-center text-[#F5F5F5]/50 group-hover:text-[#F5F5F5]/80 transition-colors duration-300 max-w-md leading-relaxed">
-                  Ассоциация организаций, экспертов и специалистов по защите прав в сфере здравоохранения
-                </span>
-              </a>
-            </div>
           </div>
         </section>
 

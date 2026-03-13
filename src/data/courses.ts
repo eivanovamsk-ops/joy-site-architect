@@ -693,7 +693,7 @@ export const courses: Course[] = [
       },
       {
         name: "Виктор Артемов",
-        photo: "https://static.wixstatic.com/media/526e65_654ab06a9b9f4b83befaef68b8ac18cd~mv2.png/v1/crop/x_0,y_0,w_1134,h_1134/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80.png",
+        photo: "/images/lecturers/viktor-artemov.png",
         position: "Основатель группы компаний Артикон",
         bio: "Основатель и руководитель группы компаний Артикон."
       },

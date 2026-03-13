@@ -41,6 +41,8 @@ interface OrderItem {
    email?: string;
    organization?: string;
    paymentType: string;
+   isWebinar?: boolean;
+   telegramChatUrl?: string;
  }
 
  interface EmailRequest {

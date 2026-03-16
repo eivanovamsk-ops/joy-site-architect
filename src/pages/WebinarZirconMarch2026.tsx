@@ -316,13 +316,34 @@ export default function WebinarZirconMarch2026() {
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">О чём этот вебинар?</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Циркон — один из самых востребованных материалов в современной зуботехнической практике. 
-              Но даже опытные техники регулярно сталкиваются с проблемами: оттенок получается не тем, 
-              работа выглядит «плоско», возникает необходимость корректировок или переделок.
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">О чём этот вебинар?</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Даже опытные техники регулярно сталкиваются с проблемами:
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mt-4">
+
+            {/* Infographic cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-card border border-border">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Palette className="h-6 w-6 text-accent" />
+                </div>
+                <p className="text-foreground font-medium">Оттенок получается не таким</p>
+              </div>
+              <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-card border border-border">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Target className="h-6 w-6 text-accent" />
+                </div>
+                <p className="text-foreground font-medium">Работа выглядит «плоско»</p>
+              </div>
+              <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-card border border-border">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <Wrench className="h-6 w-6 text-accent" />
+                </div>
+                <p className="text-foreground font-medium">Возникает необходимость корректировок или переделок</p>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-lg leading-relaxed">
               На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
               <strong className="text-foreground"> Upcera Functional</strong> и узнаете, как добиться более предсказуемого 
               результата уже на этапе планирования и производства.

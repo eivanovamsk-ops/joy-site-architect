@@ -532,6 +532,9 @@ export default function WebinarZirconMarch2026() {
           </div>
         </div>
       </section>
+
+      {/* Floating Video Widget */}
+      <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" />
     </Layout>
   );
 }

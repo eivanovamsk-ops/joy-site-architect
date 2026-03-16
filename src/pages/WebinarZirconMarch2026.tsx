@@ -72,7 +72,7 @@ function FloatingVideoWidget({ video }: { video: string }) {
   );
 }
 
-
+const caseImages = [
   { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },
   { src: "/images/webinar/zircon-case-2.jpg", alt: "Работа из циркония — окклюзионный вид коронок" },
   { src: "/images/webinar/zircon-case-3.jpg", alt: "Работа из циркония — боковая группа зубов" },

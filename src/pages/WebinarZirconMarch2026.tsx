@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -11,8 +11,66 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Calendar, Clock, Monitor, CheckCircle2, Loader2,
-  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
+  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn, Play,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+/* ─── Floating Video Widget ─── */
+function FloatingVideoWidget({ video }: { video: string }) {
+  const [visible, setVisible] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!visible) return null;
+
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => videoRef.current?.play(), 50);
+  };
+
+  return (
+    <div className={cn(
+      "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
+      visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    )}>
+      <div className="relative w-[220px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
+        <button
+          onClick={() => setVisible(false)}
+          className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 rounded-full p-1 transition-colors"
+        >
+          <X className="h-3.5 w-3.5 text-white" />
+        </button>
+
+        {!playing ? (
+          <div className="relative cursor-pointer group" onClick={handlePlay}>
+            <video src={video} className="w-full" preload="metadata" muted playsInline poster="/images/webinar/cover-zircon.jpg" />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                <Play className="h-6 w-6 text-white fill-white" />
+              </div>
+            </div>
+            <div className="absolute bottom-2 left-2 right-8">
+              <span className="text-[10px] text-white/70 uppercase tracking-wider">Смотреть превью</span>
+            </div>
+          </div>
+        ) : (
+          <video
+            ref={videoRef}
+            src={video}
+            className="w-full"
+            controls
+            playsInline
+          />
+        )}
+      </div>
+    </div>
+  );
+}
 
 const caseImages = [
   { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },
@@ -343,19 +401,11 @@ export default function WebinarZirconMarch2026() {
               </div>
             </div>
 
-            {/* Video widget */}
-            <div className="max-w-md mx-auto mb-8">
-              <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
-                <video
-                  src="/videos/zircon-webinar-preview.mp4"
-                  className="w-full aspect-video object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/webinar/cover-zircon.jpg"
-                />
-              </div>
-            </div>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
+              <strong className="text-foreground"> Upcera Functional</strong> и узнаете, как добиться более предсказуемого 
+              результата уже на этапе планирования и производства.
+            </p>
 
             <p className="text-muted-foreground text-lg leading-relaxed">
               На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
@@ -539,6 +589,9 @@ export default function WebinarZirconMarch2026() {
           </div>
         </div>
       </section>
+
+      {/* Floating Video Widget */}
+      <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" />
     </Layout>
   );
 }

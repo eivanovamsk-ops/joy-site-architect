@@ -357,7 +357,7 @@ export default function WebinarZirconMarch2026() {
                 size="lg"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg px-10 py-6 rounded-xl font-bold backdrop-blur-sm"
               >
-                <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
+                <a href="https://max.ru/u/f9LHodD0cOLbvY06_im8-az-CFsFCzoIyQqfpQeg6Gvg3TenyDo9K2g83po" target="_blank" rel="noopener noreferrer">
                   Связаться с менеджером
                 </a>
               </Button>

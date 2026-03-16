@@ -228,12 +228,21 @@
   100% { transform: translateX(-50%); }
 }
 
-/* JivoSite: hide default widget button on all screens */
-jdiv[class*="wrap"],
+/* JivoSite: hide only the launcher button, keep chat window functional */
 jdiv.__jivoMobileButton,
 jdiv[class*="label"],
 jdiv[class*="agentMessage"],
-jdiv[class*="contentTransitionWrap"],
-jdiv[class*="button"] {
+jdiv[class*="contentTransitionWrap"] {
   display: none !important;
+}
+jdiv[class*="wrap"]:not([class*="chatWindow"]):not([class*="chat_"]):not([class*="Chat"]) > jdiv[class*="button"] {
+  display: none !important;
+}
+/* Hide the default round Jivo button */
+jdiv[class*="globalClass"] > jdiv:first-child {
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }

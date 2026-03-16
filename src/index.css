@@ -228,23 +228,12 @@
   100% { transform: translateX(-50%); }
 }
 
-/* JivoSite mobile: compact circle icon */
-@media (max-width: 767px) {
-  jdiv[class*="wrap"] {
-    max-width: 44px !important;
-    max-height: 44px !important;
-    overflow: hidden !important;
-    border-radius: 50% !important;
-  }
-  jdiv.__jivoMobileButton {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-  }
-  /* Hide the proactive chat bubble on mobile */
-  jdiv[class*="label"],
-  jdiv[class*="agentMessage"],
-  jdiv[class*="contentTransitionWrap"] {
-    display: none !important;
-  }
+/* JivoSite: hide default widget button on all screens */
+jdiv[class*="wrap"],
+jdiv.__jivoMobileButton,
+jdiv[class*="label"],
+jdiv[class*="agentMessage"],
+jdiv[class*="contentTransitionWrap"],
+jdiv[class*="button"] {
+  display: none !important;
 }

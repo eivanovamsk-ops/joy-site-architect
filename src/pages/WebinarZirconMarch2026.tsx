@@ -343,6 +343,20 @@ export default function WebinarZirconMarch2026() {
               </div>
             </div>
 
+            {/* Video widget */}
+            <div className="max-w-md mx-auto mb-8">
+              <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
+                <video
+                  src="/videos/zircon-webinar-preview.mp4"
+                  className="w-full aspect-video object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/webinar/cover-zircon.jpg"
+                />
+              </div>
+            </div>
+
             <p className="text-muted-foreground text-lg leading-relaxed">
               На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
               <strong className="text-foreground"> Upcera Functional</strong> и узнаете, как добиться более предсказуемого 

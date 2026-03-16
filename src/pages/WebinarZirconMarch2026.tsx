@@ -38,7 +38,7 @@ function FloatingVideoWidget({ video }: { video: string }) {
       "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
     )}>
-      <div className="relative w-[220px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
+      <div className="relative w-[80px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
         <button
           onClick={() => setVisible(false)}
           className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 rounded-full p-1 transition-colors"
@@ -50,12 +50,12 @@ function FloatingVideoWidget({ video }: { video: string }) {
           <div className="relative cursor-pointer group" onClick={handlePlay}>
             <video src={video} className="w-full" preload="metadata" muted playsInline poster="/images/webinar/cover-zircon.jpg" />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                <Play className="h-6 w-6 text-white fill-white" />
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5 md:p-3">
+                <Play className="h-3 w-3 md:h-6 md:w-6 text-white fill-white" />
               </div>
             </div>
-            <div className="absolute bottom-2 left-2 right-8">
-              <span className="text-[10px] text-white/70 uppercase tracking-wider">Смотреть превью</span>
+            <div className="absolute bottom-1 left-1 right-4 md:bottom-2 md:left-2 md:right-8">
+              <span className="text-[7px] md:text-[10px] text-white/70 uppercase tracking-wider hidden md:block">Смотреть превью</span>
             </div>
           </div>
         ) : (

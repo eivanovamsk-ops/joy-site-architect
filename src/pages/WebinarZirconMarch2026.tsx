@@ -54,8 +54,8 @@ function FloatingVideoWidget({ video }: { video: string }) {
                 <Play className="h-3 w-3 md:h-6 md:w-6 text-white fill-white" />
               </div>
             </div>
-            <div className="absolute bottom-2 left-2 right-8">
-              <span className="text-[10px] text-white/70 uppercase tracking-wider">Смотреть превью</span>
+            <div className="absolute bottom-1 left-1 right-4 md:bottom-2 md:left-2 md:right-8">
+              <span className="text-[7px] md:text-[10px] text-white/70 uppercase tracking-wider hidden md:block">Смотреть превью</span>
             </div>
           </div>
         ) : (

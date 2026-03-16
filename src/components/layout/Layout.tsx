@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import JivoChatButton from "@/components/JivoChatButton";
 
 interface LayoutProps {
   children: ReactNode;

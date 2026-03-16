@@ -306,7 +306,7 @@ const CourseCalendar = () => {
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
-                        src="/images/webinar/cover-zircon.jpg"
+                        src="/images/webinar/cover-zircon-banner.png"
                         alt="Лайфхаки в работе с цирконом"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />

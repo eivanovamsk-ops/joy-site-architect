@@ -11,8 +11,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Calendar, Clock, Monitor, CheckCircle2, Loader2,
-  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn,
+  ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn, Play,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const caseImages = [
   { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },

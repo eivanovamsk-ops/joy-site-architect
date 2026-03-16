@@ -285,6 +285,12 @@ export default function WebinarZirconMarch2026() {
       <Helmet>
         <title>Вебинар: Лайфхаки в работе с цирконом — 26 марта | Articon</title>
         <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом на примере Upcera Functional. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00. Регистрация." />
+        <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 26 марта | Articon" />
+        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом на примере Upcera Functional. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00." />
+        <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
       </Helmet>
 
       {/* HERO */}

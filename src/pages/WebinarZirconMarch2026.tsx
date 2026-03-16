@@ -50,8 +50,8 @@ function FloatingVideoWidget({ video }: { video: string }) {
           <div className="relative cursor-pointer group" onClick={handlePlay}>
             <video src={video} className="w-full" preload="metadata" muted playsInline poster="/images/webinar/cover-zircon.jpg" />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                <Play className="h-6 w-6 text-white fill-white" />
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5 md:p-3">
+                <Play className="h-3 w-3 md:h-6 md:w-6 text-white fill-white" />
               </div>
             </div>
             <div className="absolute bottom-2 left-2 right-8">

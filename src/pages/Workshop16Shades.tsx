@@ -616,7 +616,7 @@ const Workshop16Shades = () => {
                 <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Развлечения</span>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Живое выступление кавер-группы</h2>
                 <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
-                  Завершите вечер под живую музыку! Профессиональная кавер-группа создаст невероятную атмосферу на вечеринке после основной программы.
+                  Профессиональная кавер-группа будет играть на протяжении всего мероприятия, создавая невероятную атмосферу и заряжая энергией весь вечер.
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">

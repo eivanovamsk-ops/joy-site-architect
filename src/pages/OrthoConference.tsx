@@ -40,20 +40,20 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
       "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
     )}>
-      <div className="relative w-[220px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
+      <div className="relative w-[110px] md:w-[140px] rounded-lg overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
         <button
           onClick={() => setVisible(false)}
-          className="absolute top-2 right-2 z-10 bg-black/60 hover:bg-black/80 rounded-full p-1 transition-colors"
+          className="absolute top-1 right-1 z-10 bg-black/60 hover:bg-black/80 rounded-full p-0.5 transition-colors"
         >
-          <X className="h-3.5 w-3.5 text-white" />
+          <X className="h-2.5 w-2.5 text-white" />
         </button>
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
             <video src={videos[currentIndex]} className="w-full" preload="metadata" muted playsInline />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                <Play className="h-6 w-6 text-white fill-white" />
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5">
+                <Play className="h-3 w-3 text-white fill-white" />
               </div>
             </div>
             <div className="absolute bottom-2 left-2 right-8">

@@ -416,7 +416,7 @@ export default function WebinarZirconMarch2026() {
 
           {/* Learning points */}
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold mb-6 text-center">На вебинаре вы узнаете:</h3>
+            <h3 className="text-xl font-bold mb-6 text-center">Вы узнаете:</h3>
             <div className="space-y-3">
               {learningPoints.map((point, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">

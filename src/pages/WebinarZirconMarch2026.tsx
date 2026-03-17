@@ -319,12 +319,12 @@ export default function WebinarZirconMarch2026() {
               Вебинар для зубных техников
             </h1>
 
-            <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Лайфхаки в работе{" "}
               <span className="bg-gradient-to-r from-accent via-[hsl(40,90%,65%)] to-accent bg-clip-text text-transparent">
                 с цирконом
               </span>
-            </p>
+            </h2>
 
             <p className="text-lg md:text-xl text-white/60 mb-2 font-medium">
               на примере Upcera Functional

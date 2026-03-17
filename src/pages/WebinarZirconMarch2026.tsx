@@ -315,16 +315,16 @@ export default function WebinarZirconMarch2026() {
               </Badge>
             </div>
 
-            <p className="text-sm md:text-base text-accent/80 uppercase tracking-widest font-semibold mb-4">
+            <h1 className="text-sm md:text-base text-accent/80 uppercase tracking-widest font-semibold mb-4">
               Вебинар для зубных техников
-            </p>
+            </h1>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Лайфхаки в работе{" "}
               <span className="bg-gradient-to-r from-accent via-[hsl(40,90%,65%)] to-accent bg-clip-text text-transparent">
                 с цирконом
               </span>
-            </h1>
+            </p>
 
             <p className="text-lg md:text-xl text-white/60 mb-2 font-medium">
               на примере Upcera Functional

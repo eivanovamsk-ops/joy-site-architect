@@ -604,6 +604,33 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
+      {/* ═══════ LIVE BAND ═══════ */}
+      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+        <div className="container mx-auto px-4">
+          {(() => { const reveal = useReveal(); return (
+            <div ref={reveal.ref} className={cn(
+              "max-w-5xl mx-auto transition-all duration-1000",
+              reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            )}>
+              <div className="text-center mb-12">
+                <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Развлечения</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Живое выступление кавер-группы</h2>
+                <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
+                  Завершите вечер под живую музыку! Профессиональная кавер-группа создаст невероятную атмосферу на вечеринке после основной программы.
+                </p>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
+                <img
+                  src="/images/courses/course-18-band.jpg"
+                  alt="Живое выступление кавер-группы на мероприятии Артикон"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          ); })()}
+        </div>
+      </section>
+
       {/* ═══════ PRICING ═══════ */}
       <section className="py-24 lg:py-32 relative">
         <div className="container mx-auto px-4">

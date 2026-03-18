@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import JivoChatButton from "@/components/JivoChatButton";
+import { RouteSeo } from "@/components/seo/RouteSeo";
 
 interface LayoutProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ export function Layout({ children }: LayoutProps) {
       <main className={`flex-1 ${paddingClass}`}>
         <Breadcrumbs />
         {children}
+        <RouteSeo />
       </main>
       <Footer />
       <JivoChatButton />

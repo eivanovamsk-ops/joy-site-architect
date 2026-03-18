@@ -552,8 +552,8 @@ export default function WebinarZirconMarch2026() {
                 <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 26 марта!</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Спасибо за регистрацию!</h3>
+                <p className="text-white/70">На почту вам придет ссылка на чат в Телеграм. Добавляйтесь и до встречи 26 марта! (Если письма нет, пожалуйста, проверьте папку &quot;спам&quot;)</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">

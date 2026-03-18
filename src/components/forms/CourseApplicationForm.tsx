@@ -23,7 +23,7 @@ const applicationSchema = z.object({
   telegram: z.string().trim().min(2, "Введите ник в Telegram").max(100),
   city: z.string().trim().min(2, "Введите город").max(100),
   specialization: z.string().trim().min(2, "Введите специализацию").max(200),
-  email: z.string().trim().email("Введите корректный email").max(255).optional().or(z.literal("")),
+  email: z.string().trim().email("Введите корректный email").max(255),
   organization: z.string().trim().max(200).optional(),
   payment_type: z.enum(["private", "company"]),
 });
@@ -114,7 +114,7 @@ export function CourseApplicationForm({
       const { error } = await supabase.from("course_applications").insert({
         user_id: user?.id || null,
         name: formData.name,
-        email: formData.email || null,
+        email: formData.email,
         phone: formData.phone,
         course_name: courseName,
         course_date: null,
@@ -142,7 +142,7 @@ export function CourseApplicationForm({
               telegram: showTelegramField ? formData.telegram : undefined,
               city: formData.city,
               specialization: formData.specialization,
-              email: formData.email || undefined,
+              email: formData.email,
               organization: formData.organization || undefined,
               paymentType: formData.payment_type,
             },
@@ -323,7 +323,7 @@ export function CourseApplicationForm({
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="app-email">Email</Label>
+                <Label htmlFor="app-email">Email *</Label>
                 <Input
                   id="app-email"
                   type="email"

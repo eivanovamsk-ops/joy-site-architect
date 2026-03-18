@@ -55,7 +55,7 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
       "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
     )}>
-      <div className="relative w-[220px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
+      <div className="relative w-[147px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
         {/* Close button */}
         <button
           onClick={() => setVisible(false)}

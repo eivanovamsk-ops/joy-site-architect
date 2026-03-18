@@ -28,6 +28,10 @@ const applicationSchema = z.object({
   payment_type: z.enum(["private", "company"]),
 });
 
+const applicationSchemaWithoutTelegram = applicationSchema.extend({
+  telegram: z.string().trim().max(100).optional(),
+});
+
 interface CourseApplicationFormProps {
   courseName: string;
   courseDate?: string;
@@ -35,6 +39,7 @@ interface CourseApplicationFormProps {
   buttonVariant?: "default" | "card";
   buttonLabel?: string;
   cityOptions?: string[];
+  showTelegramField?: boolean;
 }
 
 export function CourseApplicationForm({
@@ -44,6 +49,7 @@ export function CourseApplicationForm({
   buttonVariant = "default",
   buttonLabel = "Записаться на курс",
   cityOptions,
+  showTelegramField = true,
 }: CourseApplicationFormProps) {
   const { toast } = useToast();
   const { user } = useAuth();
@@ -78,7 +84,8 @@ export function CourseApplicationForm({
     e.preventDefault();
     setErrors({});
 
-    const result = applicationSchema.safeParse(formData);
+    const validationSchema = showTelegramField ? applicationSchema : applicationSchemaWithoutTelegram;
+    const result = validationSchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -102,7 +109,7 @@ export function CourseApplicationForm({
         course_date: null,
         message: null,
         last_name: formData.last_name,
-        telegram: formData.telegram,
+        telegram: showTelegramField ? formData.telegram : null,
         city: formData.city,
         specialization: formData.specialization,
         organization: formData.organization || null,
@@ -111,7 +118,6 @@ export function CourseApplicationForm({
 
       if (error) throw error;
 
-      // Send email notification
       try {
         await supabase.functions.invoke("send-email-unisender", {
           body: {
@@ -122,7 +128,7 @@ export function CourseApplicationForm({
               name: formData.name,
               lastName: formData.last_name,
               phone: formData.phone,
-              telegram: formData.telegram,
+              telegram: showTelegramField ? formData.telegram : undefined,
               city: formData.city,
               specialization: formData.specialization,
               email: formData.email || undefined,
@@ -158,101 +164,20 @@ export function CourseApplicationForm({
       setIsLoading(false);
     }
   };
-
-  return (
-    <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) setIsSubmitted(false); }}>
-      <DialogTrigger asChild>
-        {buttonVariant === "card" ? (
-          <Button size="lg" className="w-full gradient-primary text-primary-foreground">
-            {buttonLabel}
-          </Button>
-        ) : (
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            {buttonLabel}
-          </Button>
-        )}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto" onOpenAutoFocus={(e) => { if (isSubmitted) e.preventDefault(); }}>
-        {isSubmitted ? (
-          <div className="flex flex-col items-center justify-center py-8 text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle2 className="h-8 w-8 text-primary" />
-            </div>
-            <DialogHeader>
-              <DialogTitle className="text-xl mb-2">Спасибо, что выбрали Артикон!</DialogTitle>
-            </DialogHeader>
-            <p className="text-muted-foreground mb-2">
-              Куратор Учебного центра свяжется с вами в ближайшее время!
-            </p>
-            <p className="text-sm text-muted-foreground mb-6">
-              Если вы не увидели письмо на почте, пожалуйста, проверьте папку СПАМ
-            </p>
-            <Button onClick={() => { setOpen(false); setIsSubmitted(false); }}>Закрыть</Button>
-          </div>
-        ) : (
-        <>
-        <DialogHeader>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-              <GraduationCap className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <div>
-              <DialogTitle>Запись на курс</DialogTitle>
-              <p className="text-sm text-muted-foreground mt-0.5">{courseName}</p>
-            </div>
-          </div>
-        </DialogHeader>
-
-        <form onSubmit={handleSubmit} className="space-y-4 mt-2">
-          <div className="grid grid-cols-2 gap-3">
+...
+          {showTelegramField && (
             <div className="space-y-1.5">
-              <Label htmlFor="app-name">Имя *</Label>
+              <Label htmlFor="app-telegram">Ник в Telegram *</Label>
               <Input
-                id="app-name"
-                value={formData.name}
-                onChange={(e) => updateField("name", e.target.value)}
-                placeholder="Иван"
-                className={errors.name ? "border-destructive" : ""}
+                id="app-telegram"
+                value={formData.telegram}
+                onChange={(e) => updateField("telegram", e.target.value)}
+                placeholder="@username"
+                className={errors.telegram ? "border-destructive" : ""}
               />
-              {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
+              {errors.telegram && <p className="text-xs text-destructive">{errors.telegram}</p>}
             </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="app-last-name">Фамилия *</Label>
-              <Input
-                id="app-last-name"
-                value={formData.last_name}
-                onChange={(e) => updateField("last_name", e.target.value)}
-                placeholder="Иванов"
-                className={errors.last_name ? "border-destructive" : ""}
-              />
-              {errors.last_name && <p className="text-xs text-destructive">{errors.last_name}</p>}
-            </div>
-          </div>
-
-          <div className="space-y-1.5">
-            <Label htmlFor="app-phone">Телефон *</Label>
-            <Input
-              id="app-phone"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => updateField("phone", e.target.value)}
-              placeholder="+7 (999) 123-45-67"
-              className={errors.phone ? "border-destructive" : ""}
-            />
-            {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
-          </div>
-
-          <div className="space-y-1.5">
-            <Label htmlFor="app-telegram">Ник в Telegram *</Label>
-            <Input
-              id="app-telegram"
-              value={formData.telegram}
-              onChange={(e) => updateField("telegram", e.target.value)}
-              placeholder="@username"
-              className={errors.telegram ? "border-destructive" : ""}
-            />
-            {errors.telegram && <p className="text-xs text-destructive">{errors.telegram}</p>}
-          </div>
+          )}
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">

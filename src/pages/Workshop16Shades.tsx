@@ -300,7 +300,7 @@ const Workshop16Shades = () => {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" style={{ color: GOLD }} />
-              <span>15:00 — 20:30</span>
+              <span>15:00 — 22:00</span>
             </div>
           </div>
 

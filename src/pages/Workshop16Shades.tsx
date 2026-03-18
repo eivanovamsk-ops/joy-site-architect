@@ -727,20 +727,22 @@ const Workshop16Shades = () => {
 
       {/* ═══════ MOBILE STICKY CTA ═══════ */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
-        <div className="flex items-center gap-3">
-          <div className="flex-1 min-w-0">
-            <div className="font-extrabold text-xl" style={{ color: GOLD }}>7 000 ₽</div>
-            <div className="text-xs text-[#F5F5F5]/40 truncate">Шестнадцать оттенков белого</div>
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+          <div className="min-w-0 text-left">
+            <div className="font-extrabold text-2xl leading-none sm:text-xl" style={{ color: GOLD }}>7 000 ₽</div>
+            <div className="text-xs text-[#F5F5F5]/40">Шестнадцать оттенков белого</div>
           </div>
-          <CourseApplicationForm
-            courseName={course.title}
-            courseDate={course.date}
-            buttonVariant="card"
-            buttonLabel="Забронировать"
-          />
+          <div className="w-full sm:w-auto sm:min-w-[220px] sm:shrink-0">
+            <CourseApplicationForm
+              courseName={course.title}
+              courseDate={course.date}
+              buttonVariant="card"
+              buttonLabel="Забронировать"
+            />
+          </div>
         </div>
       </div>
-      <div className="h-20 lg:hidden" />
+      <div className="h-24 lg:hidden" />
 
       {/* ═══════ SCOPED STYLES ═══════ */}
       <style>{`

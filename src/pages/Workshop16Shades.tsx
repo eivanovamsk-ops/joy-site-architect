@@ -280,10 +280,10 @@ const Workshop16Shades = () => {
       </Helmet>
 
       {/* ═══════ HERO ═══════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img src={course18Banner} alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 via-[#1A1A1A]/50 to-[#1A1A1A]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/90 via-[#1A1A1A]/70 to-[#1A1A1A]/30" />
         </div>
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -292,67 +292,79 @@ const Workshop16Shades = () => {
           <div className="w16s-orb w16s-orb-3" />
         </div>
 
-        <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className={cn(
-            "transition-all duration-1000 ease-out",
-            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent" style={{ backgroundImage: `linear-gradient(to right, transparent, ${GOLD})` }} />
-              <span className="text-sm tracking-[0.3em] uppercase" style={{ color: GOLD }}>Воркшоп</span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent" style={{ backgroundImage: `linear-gradient(to left, transparent, ${GOLD})` }} />
+        <div ref={heroReveal.ref} className="relative z-10 px-4 container mx-auto">
+          <div className="max-w-2xl">
+            <div className={cn(
+              "transition-all duration-1000 ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <span className="text-sm tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
             </div>
-          </div>
 
-          <h1 className={cn(
-            "text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 transition-all duration-1000 delay-200 ease-out",
-            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <span className="w16s-text-reveal inline-block">Шестнадцать</span>
-            <br />
-            <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.3s" }}>оттенков</span>{" "}
-            <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.5s", color: GOLD }}>белого</span>
-          </h1>
+            <h1 className={cn(
+              "text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 transition-all duration-1000 delay-200 ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <span className="w16s-text-reveal inline-block">«Шестнадцать</span>
+              <br />
+              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.3s" }}>оттенков</span>{" "}
+              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.5s", color: GOLD }}>белого»</span>
+            </h1>
 
-          <p className={cn(
-            "text-lg md:text-xl text-[#F5F5F5]/60 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ease-out",
-            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            Практика от звездных мастеров по эстетике, которые научат вас стабильно попадать в оттенок и сдавать самые сложные работы с первого раза. Объединяем классическую школу и цифровые технологии, чтобы вы стали универсальным специалистом.
-          </p>
+            <p className={cn(
+              "text-base md:text-lg text-[#F5F5F5]/70 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-[400ms] ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              4 часа живых демонстраций. Мост между классикой и цифрой, чтобы сдать сложные работы с первого раза без переделок.
+            </p>
 
-          <div className={cn(
-            "flex flex-wrap justify-center gap-6 text-sm text-[#F5F5F5]/50 mb-10 transition-all duration-1000 delay-700 ease-out",
-            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" style={{ color: GOLD }} />
-              <span>10 апреля 2026</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" style={{ color: GOLD }} />
-              <span>Москва</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" style={{ color: GOLD }} />
-              <span>15:00 — 22:00</span>
-            </div>
-          </div>
+            <ul className={cn(
+              "space-y-2 text-[#F5F5F5]/80 text-sm md:text-base mb-8 transition-all duration-1000 delay-500 ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <li>— Чёткий алгоритм работы</li>
+              <li>— Разбор реальных кейсов и типичных ошибок</li>
+              <li>— Нетворкинг, фуршет</li>
+              <li>— Кавер группа + крутой розыгрыш</li>
+            </ul>
 
-          <div className={cn(
-            "flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-900 ease-out",
-            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          )}>
-            <div className="w16s-cta-glow">
-              <CourseApplicationForm
-                courseName={course.title}
-                courseDate={course.date}
-                buttonLabel="Забронировать место"
-              />
+            <div className={cn(
+              "flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#F5F5F5]/60 mb-8 transition-all duration-1000 delay-[600ms] ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" style={{ color: GOLD }} />
+                <span>Москва</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" style={{ color: GOLD }} />
+                <span>10 апреля</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" style={{ color: GOLD }} />
+                <span>15:00–22:00</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4" style={{ color: GOLD }} />
+                <span>Всего 200 мест</span>
+              </div>
             </div>
-            <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
-              Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
-            </button>
+
+            <div className={cn(
+              "flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-700 ease-out",
+              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}>
+              <div className="w16s-cta-glow">
+                <CourseApplicationForm
+                  courseName={course.title}
+                  courseDate={course.date}
+                  buttonLabel="Забронировать место"
+                />
+              </div>
+              <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 mt-2">
+                Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
+              </button>
+            </div>
           </div>
         </div>
 

@@ -741,7 +741,7 @@ const Workshop16Shades = () => {
                   className="bg-[#222]/60 border border-[#333] rounded-3xl px-6 py-8 md:px-10 md:py-10 hover:border-[#D4AF37]/30 transition-all duration-500"
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
-                  <div className="bg-white rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center p-6 md:p-8">
+                  <div className="rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center p-6 md:p-8">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} — логотип партнёра мероприятия`}

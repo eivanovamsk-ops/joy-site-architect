@@ -276,9 +276,9 @@ export default function WebinarZirconMarch2026() {
     <Layout>
       <Helmet>
         <title>Зуботехническая лаборатория Артикон | Курс для зубных техников и керамистов</title>
-        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом на примере Upcera Functional. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00. Регистрация." />
+        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00. Регистрация." />
         <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 26 марта | Articon" />
-        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом на примере Upcera Functional. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00." />
+        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00." />
         <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -318,9 +318,6 @@ export default function WebinarZirconMarch2026() {
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl text-white/60 mb-2 font-medium">
-              на примере Upcera Functional
-            </p>
 
             <p className="text-base md:text-lg text-white/50 mb-10 max-w-2xl leading-relaxed">
               Как получать стабильный результат при работе с цирконом и&nbsp;избегать типичных ошибок при фрезеровке, окрашивании и&nbsp;финальной эстетике
@@ -400,8 +397,7 @@ export default function WebinarZirconMarch2026() {
             </div>
 
             <p className="text-muted-foreground text-lg leading-relaxed">
-              На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
-              <strong className="text-foreground"> Upcera Functional</strong> и узнаете, как добиться более предсказуемого 
+              На вебинаре вы разберёте практические лайфхаки работы с цирконием и узнаете, как добиться более предсказуемого 
               результата уже на этапе планирования и производства.
             </p>
           </div>
@@ -429,7 +425,7 @@ export default function WebinarZirconMarch2026() {
       <section className="py-20 bg-secondary overflow-hidden">
         <div className="container mx-auto px-4 mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">Примеры работ</h2>
-          <p className="text-muted-foreground text-center">Работы, выполненные с использованием Upcera Functional</p>
+          <p className="text-muted-foreground text-center">Работы, выполненные нашими специалистами</p>
         </div>
         <CasesSlider />
       </section>
@@ -513,7 +509,7 @@ export default function WebinarZirconMarch2026() {
               <div className="p-4 rounded-xl bg-card border border-border">
                 <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />
                 <p className="font-medium">Практический разбор</p>
-                <p className="text-sm text-muted-foreground mt-1">работы с цирконом Upcera Functional</p>
+                <p className="text-sm text-muted-foreground mt-1">работы с цирконом</p>
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <Target className="w-8 h-8 text-accent mx-auto mb-3" />

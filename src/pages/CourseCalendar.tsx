@@ -330,7 +330,7 @@ const CourseCalendar = () => {
                         Лайфхаки в работе с цирконом
                       </h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                        На примере Upcera Functional — секреты окрашивания, обжига и стабильной эстетики
+                        Секреты окрашивания, обжига и стабильной эстетики
                       </p>
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">

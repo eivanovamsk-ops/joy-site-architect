@@ -237,21 +237,7 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
         await supabase.functions.invoke("send-email-unisender", {
           body: {
             type: "order_confirmation",
-            orderData: {
-              orderId: order.id,
-              customerName: shippingName,
-              customerPhone: shippingPhone,
-              customerEmail: email,
-              telegram: telegram || undefined,
-              items: items.map(i => ({ name: i.name, quantity: i.quantity, price: i.price, slug: i.slug })),
-              total: totalPrice,
-              deliveryMethod,
-              city: deliveryMethod === "russia_delivery" ? city : "Москва",
-              address: deliveryMethod !== "pickup" ? shippingAddress : undefined,
-              paymentType,
-              companyDetails: paymentType === "company" ? companyDetails : undefined,
-              notes: notes || undefined,
-            },
+            orderId: order.id,
           },
         });
       } catch (emailError) {

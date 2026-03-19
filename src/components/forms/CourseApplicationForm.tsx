@@ -111,7 +111,9 @@ export function CourseApplicationForm({
     setIsLoading(true);
 
     try {
+      const applicationId = crypto.randomUUID();
       const { error } = await supabase.from("course_applications").insert({
+        id: applicationId,
         user_id: user?.id || null,
         name: formData.name,
         email: formData.email,
@@ -133,19 +135,7 @@ export function CourseApplicationForm({
         await supabase.functions.invoke("send-email-unisender", {
           body: {
             type: "course_application",
-            courseData: {
-              courseName,
-              courseDate: courseDate || undefined,
-              name: formData.name,
-              lastName: formData.last_name,
-              phone: formData.phone,
-              telegram: showTelegramField ? formData.telegram : undefined,
-              city: formData.city,
-              specialization: formData.specialization,
-              email: formData.email,
-              organization: formData.organization || undefined,
-              paymentType: formData.payment_type,
-            },
+            courseApplicationId: applicationId,
           },
         });
       } catch (emailError) {

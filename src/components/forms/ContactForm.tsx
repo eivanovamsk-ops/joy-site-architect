@@ -53,7 +53,9 @@ export function ContactForm({
     setIsLoading(true);
 
     try {
+      const feedbackId = crypto.randomUUID();
       const { error } = await supabase.from("feedback").insert({
+        id: feedbackId,
         name,
         email,
         phone: phone || null,
@@ -62,22 +64,13 @@ export function ContactForm({
 
       if (error) throw error;
 
-      // Send email notification if configured
       if (notifyEmail) {
         try {
           await supabase.functions.invoke("send-email-unisender", {
             body: {
-              type: "legacy",
-              to: notifyEmail,
-              subject: `📩 Новое сообщение с сайта от ${name}`,
-              body: `<h3>Новое сообщение с формы обратной связи</h3>
-                <p><strong>Имя:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                ${phone ? `<p><strong>Телефон:</strong> ${phone}</p>` : ""}
-                <p><strong>Сообщение:</strong></p>
-                <p>${message}</p>`,
-              senderName: "Articon",
-              senderEmail: "noreply@articon.pro",
+              type: "feedback_notification",
+              feedbackId,
+              notifyEmail,
             },
           });
         } catch (emailError) {

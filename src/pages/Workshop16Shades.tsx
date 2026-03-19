@@ -550,7 +550,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative">
+      <section className="py-16 lg:py-20 relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: `${GOLD}08` }} />
         </div>

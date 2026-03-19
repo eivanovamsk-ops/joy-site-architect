@@ -761,7 +761,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full blur-[250px]" style={{ background: `${GOLD}0A` }} />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[200px]" style={{ background: `${GOLD}06` }} />

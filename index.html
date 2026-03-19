@@ -2,15 +2,30 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      window.__PRERENDER__ = /ReactSnap/i.test(navigator.userAgent);
+    </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NT325H7W');</script>
+    <script>
+      if (!window.__PRERENDER__) {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NT325H7W');
+      }
+    </script>
     <!-- End Google Tag Manager -->
     <!-- Voicia -->
-    <script src="https://returnal.pro/sync" async charset="UTF-8"></script>
+    <script>
+      if (!window.__PRERENDER__) {
+        var voiciaScript = document.createElement('script');
+        voiciaScript.src = 'https://returnal.pro/sync';
+        voiciaScript.async = true;
+        voiciaScript.charset = 'UTF-8';
+        document.head.appendChild(voiciaScript);
+      }
+    </script>
     <!-- /Voicia -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Артикон — Экосистема цифровых решений для стоматологии</title>
@@ -24,31 +39,42 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
 
     <!-- JivoSite -->
-    <script src="//code.jivo.ru/widget/hTS1L3z6NU" async></script>
+    <script>
+      if (!window.__PRERENDER__) {
+        var jivoScript = document.createElement('script');
+        jivoScript.src = '//code.jivo.ru/widget/hTS1L3z6NU';
+        jivoScript.async = true;
+        document.head.appendChild(jivoScript);
+      }
+    </script>
     <!-- /JivoSite -->
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-      ym(95632694,"init",{webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+      if (!window.__PRERENDER__) {
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+        ym(95632694,"init",{webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});
+      }
     </script>
     <!-- /Yandex.Metrika counter -->
 
     <!-- Top.Mail.Ru counter -->
     <script type="text/javascript">
-    var _tmr = window._tmr || (window._tmr = []);
-    _tmr.push({id: "3749351", type: "pageView", start: (new Date()).getTime()});
-    (function (d, w, id) {
-      if (d.getElementById(id)) return;
-      var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-      ts.src = "https://top-fwz1.mail.ru/js/code.js";
-      var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-      if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-    })(document, window, "tmr-code");
+      if (!window.__PRERENDER__) {
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3749351", type: "pageView", start: (new Date()).getTime()});
+        (function (d, w, id) {
+          if (d.getElementById(id)) return;
+          var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+          ts.src = "https://top-fwz1.mail.ru/js/code.js";
+          var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+          if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+        })(document, window, "tmr-code");
+      }
     </script>
     <!-- /Top.Mail.Ru counter -->
   </head>

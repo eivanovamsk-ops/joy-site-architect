@@ -81,11 +81,13 @@
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT325H7W"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/95632694" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
-    <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3749351;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+    <script>
+      if (!window.__PRERENDER__) {
+        document.write('<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT325H7W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>');
+        document.write('<noscript><div><img src="https://mc.yandex.ru/watch/95632694" style="position:absolute;left:-9999px;" alt="" /></div></noscript>');
+        document.write('<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3749351;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>');
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

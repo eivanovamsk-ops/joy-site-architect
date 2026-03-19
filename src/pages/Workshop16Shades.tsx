@@ -634,20 +634,22 @@ const Workshop16Shades = () => {
               </p>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
               {prizes.map((prize, index) => (
                 <div
                   key={prize.title}
                   className="group rounded-3xl border border-[#333] bg-[#222]/70 overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_0_40px_-10px_#D4AF3740]"
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
-                  <div className="bg-white p-6 md:p-8 min-h-[260px] flex items-center justify-center">
-                    <img
-                      src={prize.image}
-                      alt={prize.title}
-                      className="max-h-[220px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                  <div className="bg-white px-6 py-8 md:px-8 md:py-10 min-h-[260px] flex items-center justify-center">
+                    <div className="flex h-[180px] md:h-[200px] w-full items-center justify-center">
+                      <img
+                        src={prize.image}
+                        alt={prize.title}
+                        className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                   <div className="p-6 md:p-8">
                     <div className="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: GOLD }}>

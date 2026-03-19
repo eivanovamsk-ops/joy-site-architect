@@ -108,6 +108,7 @@ const Education = () => {
       <EducationSEOContentSection />
       <EducationCategories />
       <EducationAdvantages />
+      <EducationDigitalPartnersSection />
       <EducationOrthoSection />
       <EducationCTASection />
     </Layout>

@@ -88,7 +88,7 @@
   },
   "reactSnap": {
     "source": "dist",
-    "inlineCss": true,
+    "inlineCss": false,
     "concurrency": 1,
     "skipThirdPartyRequests": true,
     "viewport": {

@@ -397,8 +397,7 @@ export default function WebinarZirconMarch2026() {
             </div>
 
             <p className="text-muted-foreground text-lg leading-relaxed">
-              На вебинаре вы разберёте практические лайфхаки работы с цирконием на примере материала 
-              <strong className="text-foreground"> Upcera Functional</strong> и узнаете, как добиться более предсказуемого 
+              На вебинаре вы разберёте практические лайфхаки работы с цирконием и узнаете, как добиться более предсказуемого 
               результата уже на этапе планирования и производства.
             </p>
           </div>

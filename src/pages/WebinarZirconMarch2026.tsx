@@ -425,7 +425,7 @@ export default function WebinarZirconMarch2026() {
       <section className="py-20 bg-secondary overflow-hidden">
         <div className="container mx-auto px-4 mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">Примеры работ</h2>
-          <p className="text-muted-foreground text-center">Работы, выполненные с использованием Upcera Functional</p>
+          <p className="text-muted-foreground text-center">Работы, выполненные нашими специалистами</p>
         </div>
         <CasesSlider />
       </section>

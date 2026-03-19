@@ -88,7 +88,7 @@
   },
   "reactSnap": {
     "source": "dist",
-    "inlineCss": true,
+    "inlineCss": false,
     "concurrency": 1,
     "skipThirdPartyRequests": true,
     "viewport": {
@@ -100,10 +100,7 @@
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
-      "--disable-gpu",
-      "--no-zygote",
-      "--single-process",
-      "--disable-software-rasterizer"
+      "--disable-gpu"
     ]
   }
 }

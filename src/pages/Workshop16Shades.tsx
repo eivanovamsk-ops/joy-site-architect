@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
+import { courses } from "@/data/courses";
+import course18Banner from "@/assets/courses/course-18-banner.jpg";
+import eonLogo from "@/assets/partners/eon-logo.png";
+import heygearsLogo from "@/assets/partners/heygears-logo.png";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -23,8 +27,6 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
     </div>
   );
 }
-import { courses } from "@/data/courses";
-import course18Banner from "@/assets/courses/course-18-banner.jpg";
 
 /* ─── Floating Video Widget ─── */
 function FloatingVideoWidget({ videos }: { videos: string[] }) {
@@ -169,6 +171,17 @@ const speakers = [
   },
 ];
 
+const partners = [
+  {
+    name: "EON",
+    logo: eonLogo,
+  },
+  {
+    name: "HeyGears",
+    logo: heygearsLogo,
+  },
+];
+
 const timeline = [
   { time: "15:00", title: "Регистрация и Welcome Drink", speaker: "", desc: "Встреча гостей, знакомство с коллегами в неформальной обстановке. Хорошее начало дня — залог продуктивного обучения." },
   { time: "16:00", title: "Noritake — фронтальная эстетика", speaker: "Дмитрий Никоненко", desc: "Виниры на рефракторном материале. Мастер-класс по послойной технике нанесения: как «оживить» работу и добиться глубины, которую не даст ни один цифровой инструмент." },
@@ -192,6 +205,7 @@ const Workshop16Shades = () => {
   const timelineReveal = useReveal();
   const perksReveal = useReveal();
   const innovationsReveal = useReveal();
+  const partnersReveal = useReveal();
   const ctaReveal = useReveal();
 
   /* smooth scroll */
@@ -600,6 +614,40 @@ const Workshop16Shades = () => {
             <p className="text-[#F5F5F5]/60 leading-relaxed text-lg max-w-3xl mx-auto">
               На протяжении всего мероприятия в зале будут расположены стенды с инновационными материалами и оборудованием от ведущих мировых брендов. Вы сможете не просто посмотреть на них издалека, а подойти, потрогать, изучить и получить исчерпывающую консультацию от представителей компаний. Это ваш шанс быть в курсе последних новинок и найти решения для своей лаборатории.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ PARTNERS ═══════ */}
+      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+        <div className="container mx-auto px-4">
+          <div ref={partnersReveal.ref} className={cn(
+            "max-w-5xl mx-auto transition-all duration-1000",
+            partnersReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          )}>
+            <div className="text-center mb-12">
+              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Партнёры</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+              {partners.map((partner, index) => (
+                <div
+                  key={partner.name}
+                  className="bg-[#222]/60 border border-[#333] rounded-3xl px-6 py-8 md:px-10 md:py-10 hover:border-[#D4AF37]/30 transition-all duration-500"
+                  style={{ transitionDelay: `${index * 120}ms` }}
+                >
+                  <div className="bg-white rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center p-6 md:p-8">
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} — логотип партнёра мероприятия`}
+                      className="max-h-20 md:max-h-24 w-auto max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

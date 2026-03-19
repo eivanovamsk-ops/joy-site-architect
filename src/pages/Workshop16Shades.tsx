@@ -683,7 +683,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative">
+      <section className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto text-center">
             <div className="bg-[#222]/80 border border-[#333] rounded-3xl p-10 hover:border-[#D4AF37]/30 transition-all duration-500">

@@ -68,7 +68,7 @@ export function EducationUpcomingCourses() {
                 </h3>
 
                 <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                  Практические приемы окрашивания, обжига и стабильной эстетики на примере материала Upcera Functional.
+                  Практические приемы окрашивания, обжига и стабильной эстетики.
                 </p>
 
                 <div className="space-y-2 mb-4">

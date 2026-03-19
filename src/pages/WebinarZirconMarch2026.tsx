@@ -509,7 +509,7 @@ export default function WebinarZirconMarch2026() {
               <div className="p-4 rounded-xl bg-card border border-border">
                 <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />
                 <p className="font-medium">Практический разбор</p>
-                <p className="text-sm text-muted-foreground mt-1">работы с цирконом Upcera Functional</p>
+                <p className="text-sm text-muted-foreground mt-1">работы с цирконом</p>
               </div>
               <div className="p-4 rounded-xl bg-card border border-border">
                 <Target className="w-8 h-8 text-accent mx-auto mb-3" />

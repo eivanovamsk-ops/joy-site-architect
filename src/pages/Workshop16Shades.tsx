@@ -12,8 +12,8 @@ import course18Banner from "@/assets/courses/course-18-banner.jpg";
 import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";
 import pantherPrize from "@/assets/courses/course-18-prize-panther.png";
 import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
-import eonLogo from "@/assets/partners/eon-logo-transparent.png";
-import heygearsLogo from "@/assets/partners/heygears-logo-transparent.png";
+import eonLogo from "@/assets/partners/eon-logo.png";
+import heygearsLogo from "@/assets/partners/heygears-logo.png";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {

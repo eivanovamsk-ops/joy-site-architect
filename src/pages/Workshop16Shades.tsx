@@ -417,28 +417,26 @@ const Workshop16Shades = () => {
                   key={i}
                   ref={reveal.ref}
                   className={cn(
-                    "group relative bg-[#222]/80 rounded-2xl overflow-hidden border border-[#333] transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-[0_0_40px_-10px_#D4AF3740]",
+                    "group bg-[#222]/80 rounded-2xl overflow-hidden border border-[#333] transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-[0_0_40px_-10px_#D4AF3740] flex flex-col",
                     reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12",
                   )}
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
-                  <div className="absolute top-4 right-4 z-10 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD, background: "#1A1A1A90" }}>
-                    {s.tag}
-                  </div>
-
-                  <div className="aspect-[3/4] overflow-hidden relative">
+                  <div className="relative aspect-[3/4] overflow-hidden flex-shrink-0">
+                    <div className="absolute top-4 right-4 z-10 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD, background: "#1A1A1A90" }}>
+                      {s.tag}
+                    </div>
                     <img
                       src={s.photo}
                       alt={s.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
                   </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="p-6">
                     <h3 className="text-xl font-bold mb-1">{s.name}</h3>
                     <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-[#F5F5F5]/80 leading-relaxed">
+                    <p className="text-sm text-[#F5F5F5]/70 leading-relaxed">
                       {s.short}
                     </p>
                   </div>

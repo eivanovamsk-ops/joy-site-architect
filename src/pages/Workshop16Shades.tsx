@@ -9,6 +9,9 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
+import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";
+import pantherPrize from "@/assets/courses/course-18-prize-panther.png";
+import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
 import eonLogo from "@/assets/partners/eon-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
 
@@ -108,7 +111,6 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
   );
 }
 
-
 function useReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.12) {
   const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
@@ -182,6 +184,27 @@ const partners = [
   },
 ];
 
+const prizes = [
+  {
+    place: "🏆 1 место",
+    title: "Бинокуляр UPCERA DFL",
+    description: "Стоимостью 165 000 ₽",
+    image: binocularsPrize,
+  },
+  {
+    place: "🥈 2 место",
+    title: "Dental Direkt Panther Starter Kit",
+    description: "Набор для обработки циркона",
+    image: pantherPrize,
+  },
+  {
+    place: "🥉 3 место",
+    title: "LeBrush Lab Harmony",
+    description: "Набор кистей",
+    image: brushesPrize,
+  },
+];
+
 const timeline = [
   { time: "15:00", title: "Регистрация и Welcome Drink", speaker: "", desc: "Встреча гостей, знакомство с коллегами в неформальной обстановке. Хорошее начало дня — залог продуктивного обучения." },
   { time: "16:00", title: "Noritake — фронтальная эстетика", speaker: "Дмитрий Никоненко", desc: "Виниры на рефракторном материале. Мастер-класс по послойной технике нанесения: как «оживить» работу и добиться глубины, которую не даст ни один цифровой инструмент." },
@@ -206,6 +229,7 @@ const Workshop16Shades = () => {
   const perksReveal = useReveal();
   const innovationsReveal = useReveal();
   const partnersReveal = useReveal();
+  const prizesReveal = useReveal();
   const ctaReveal = useReveal();
 
   /* smooth scroll */
@@ -257,20 +281,17 @@ const Workshop16Shades = () => {
 
       {/* ═══════ HERO ═══════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
-        {/* Parallax BG image */}
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img src={course18Banner} alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 via-[#1A1A1A]/50 to-[#1A1A1A]" />
         </div>
 
-        {/* Animated light orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="w16s-orb w16s-orb-1" />
           <div className="w16s-orb w16s-orb-2" />
           <div className="w16s-orb w16s-orb-3" />
         </div>
 
-        {/* Content */}
         <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className={cn(
             "transition-all duration-1000 ease-out",
@@ -335,13 +356,11 @@ const Workshop16Shades = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#F5F5F5]/30">
           <div className="w-px h-12 bg-gradient-to-b from-transparent" style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${GOLD}40)` }} />
         </div>
       </section>
 
-      {/* ═══════ FORMAT — Как проходит мероприятие? ═══════ */}
       <section id="w16s-format" className="py-24 lg:py-32 relative">
         <div className="container mx-auto px-4">
           <div ref={formatReveal.ref} className={cn(
@@ -355,7 +374,6 @@ const Workshop16Shades = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              {/* Left card */}
               <div className="bg-[#222]/60 border border-[#333] rounded-2xl p-8 hover:border-[#D4AF37]/30 transition-all duration-300">
                 <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
                   <Monitor className="h-7 w-7" style={{ color: GOLD }} />
@@ -365,7 +383,6 @@ const Workshop16Shades = () => {
                 </p>
               </div>
 
-              {/* Right card */}
               <div className="bg-[#222]/60 border border-[#333] rounded-2xl p-8 hover:border-[#D4AF37]/30 transition-all duration-300">
                 <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
                   <UserCheck className="h-7 w-7" style={{ color: GOLD }} />
@@ -379,7 +396,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ SPEAKERS ═══════ */}
       <section id="w16s-speakers" className="py-24 lg:py-32 relative">
         <div className="container mx-auto px-4">
           <div ref={speakersReveal.ref} className={cn(
@@ -406,12 +422,10 @@ const Workshop16Shades = () => {
                   )}
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
-                  {/* Tag */}
                   <div className="absolute top-4 right-4 z-10 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD, background: "#1A1A1A90" }}>
                     {s.tag}
                   </div>
 
-                  {/* Photo */}
                   <div className="aspect-[3/4] overflow-hidden">
                     <img
                       src={s.photo}
@@ -421,7 +435,6 @@ const Workshop16Shades = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
                   </div>
 
-                  {/* Info overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-xl font-bold mb-1">{s.name}</h3>
                     <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
@@ -436,7 +449,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ SYNERGY ═══════ */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div ref={synergyReveal.ref} className={cn(
@@ -449,7 +461,6 @@ const Workshop16Shades = () => {
               <p className="text-xl font-semibold" style={{ color: GOLD }}>Синергия опыта и инноваций.</p>
             </div>
 
-            {/* Description text */}
             <div className="max-w-3xl mx-auto mb-12 space-y-6 text-[#F5F5F5]/60 leading-relaxed text-center">
               <p>
                 На этом мероприятии мы не просто показываем отдельные методики. Мы создаем мост между поколениями и технологиями. Вы увидите, как классические подходы «старой школы» и многолетний мануальный опыт Дмитрия Никоненко обогащаются цифровыми возможностями Дмитрия Филинова.
@@ -459,9 +470,7 @@ const Workshop16Shades = () => {
               </p>
             </div>
 
-            {/* Split section */}
             <div className="grid lg:grid-cols-2 gap-0 max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#333]">
-              {/* Left — Manual */}
               <div className="relative bg-[#1E1E1E] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
                 <div className="absolute top-6 left-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border border-[#555] text-[#888]">
                   MANUAL
@@ -475,7 +484,6 @@ const Workshop16Shades = () => {
                 </p>
               </div>
 
-              {/* Right — Digital */}
               <div className="relative bg-[#161616] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
                 <div className="absolute top-6 right-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD }}>
                   DIGITAL
@@ -490,7 +498,6 @@ const Workshop16Shades = () => {
               </div>
             </div>
 
-            {/* Center connector */}
             <div className="flex flex-col items-center -mt-1">
               <div className="w-px h-16" style={{ background: `linear-gradient(to bottom, ${GOLD}60, ${GOLD}00)` }} />
               <div className="px-8 py-4 rounded-2xl border text-center" style={{ borderColor: `${GOLD}30`, background: "#1A1A1A" }}>
@@ -503,7 +510,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ TIMELINE / PROGRAM ═══════ */}
       <section id="w16s-program" className="py-24 lg:py-32 relative">
         <div className="container mx-auto px-4">
           <div ref={timelineReveal.ref} className={cn(
@@ -517,9 +523,7 @@ const Workshop16Shades = () => {
             </p>
           </div>
 
-          {/* Timeline */}
           <div ref={timelineLineRef} className="relative max-w-3xl mx-auto mt-12">
-            {/* Animated line */}
             <div className="absolute left-[28px] md:left-[40px] top-0 bottom-0 w-px bg-[#333]">
               <div className="absolute top-0 left-0 w-full bg-gradient-to-b transition-all duration-100" style={{ height: "var(--line-progress, 0%)", backgroundImage: `linear-gradient(to bottom, ${GOLD}, ${GOLD}40)` }} />
             </div>
@@ -537,13 +541,10 @@ const Workshop16Shades = () => {
                     )}
                     style={{ transitionDelay: `${i * 100}ms` }}
                   >
-                    {/* Dot */}
                     <div className="absolute left-[22px] md:left-[34px] top-1 w-3 h-3 rounded-full border-2 transition-colors duration-500" style={{ borderColor: reveal.visible ? GOLD : "#555", background: reveal.visible ? GOLD : "transparent" }} />
 
-                    {/* Time */}
                     <div className="text-sm font-bold tracking-wider mb-1" style={{ color: GOLD }}>{item.time}</div>
 
-                    {/* Card */}
                     <div className="bg-[#222]/60 border border-[#333] rounded-xl p-6 hover:border-[#D4AF37]/30 transition-all duration-300">
                       <h3 className="text-xl font-bold mb-1">{item.title}</h3>
                       {item.speaker && <p className="text-sm text-[#F5F5F5]/40 mb-2">{item.speaker}</p>}
@@ -557,7 +558,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ MORE THAN LEARNING ═══════ */}
       <section className="py-24 lg:py-32 relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: `${GOLD}08` }} />
@@ -599,7 +599,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ INNOVATIONS ═══════ */}
       <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           <div ref={innovationsReveal.ref} className={cn(
@@ -618,7 +617,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ PARTNERS ═══════ */}
       <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           <div ref={partnersReveal.ref} className={cn(
@@ -652,7 +650,52 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ LIVE BAND ═══════ */}
+      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full blur-[140px]" style={{ background: `${GOLD}12` }} />
+        </div>
+        <div className="container mx-auto px-4 relative">
+          <div ref={prizesReveal.ref} className={cn(
+            "max-w-6xl mx-auto transition-all duration-1000",
+            prizesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          )}>
+            <div className="text-center mb-12">
+              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Розыгрыш призов</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Подарки для участников мероприятия</h2>
+              <p className="text-[#F5F5F5]/50 max-w-3xl mx-auto text-lg">
+                Среди участников мероприятия мы разыграем ценные призы от партнёров — профессиональные инструменты и аксессуары для ежедневной практики.
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              {prizes.map((prize, index) => (
+                <div
+                  key={prize.title}
+                  className="group rounded-3xl border border-[#333] bg-[#222]/70 overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_0_40px_-10px_#D4AF3740]"
+                  style={{ transitionDelay: `${index * 120}ms` }}
+                >
+                  <div className="bg-white p-6 md:p-8 min-h-[260px] flex items-center justify-center">
+                    <img
+                      src={prize.image}
+                      alt={prize.title}
+                      className="max-h-[220px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8">
+                    <div className="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: GOLD }}>
+                      {prize.place}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{prize.title}</h3>
+                    <p className="text-[#F5F5F5]/60 leading-relaxed">{prize.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           {(() => { const reveal = useReveal(); return (
@@ -679,7 +722,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ PRICING ═══════ */}
       <section className="py-24 lg:py-32 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto text-center">
@@ -714,7 +756,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ FAQ ═══════ */}
       <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12">Часто задаваемые вопросы</h2>
@@ -726,7 +767,6 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ FINAL CTA ═══════ */}
       <section className="py-24 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full blur-[250px]" style={{ background: `${GOLD}0A` }} />
@@ -761,10 +801,8 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      {/* ═══════ FLOATING VIDEO WIDGET ═══════ */}
       <FloatingVideoWidget videos={["/videos/workshop-18-past-1.mp4", "/videos/workshop-18-past-2.mp4"]} />
 
-      {/* ═══════ BACK LINK ═══════ */}
       <div className="border-t border-[#2A2A2A] py-8">
         <div className="container mx-auto px-4 text-center">
           <Link to="/education/calendar" className="text-sm text-[#F5F5F5]/40 hover:text-[#F5F5F5]/70 transition-colors inline-flex items-center gap-2">
@@ -773,7 +811,6 @@ const Workshop16Shades = () => {
         </div>
       </div>
 
-      {/* ═══════ MOBILE STICKY CTA ═══════ */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <div className="min-w-0 text-left">
@@ -792,13 +829,11 @@ const Workshop16Shades = () => {
       </div>
       <div className="h-24 lg:hidden" />
 
-      {/* ═══════ SCOPED STYLES ═══════ */}
       <style>{`
         .w16s-page {
           scroll-behavior: smooth;
         }
 
-        /* Orbs */
         .w16s-orb {
           position: absolute;
           border-radius: 50%;
@@ -831,7 +866,6 @@ const Workshop16Shades = () => {
           66% { transform: translate(-20px, 15px) scale(0.95); }
         }
 
-        /* Text reveal */
         .w16s-text-reveal {
           animation: w16s-reveal 0.8s ease-out forwards;
           opacity: 0;
@@ -841,7 +875,6 @@ const Workshop16Shades = () => {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        /* CTA glow */
         .w16s-cta-glow button {
           background: ${GOLD} !important;
           color: #1A1A1A !important;
@@ -854,7 +887,6 @@ const Workshop16Shades = () => {
           transform: translateY(-2px) !important;
         }
 
-        /* Override dialog trigger gradient-primary inside this page */
         .w16s-page .gradient-primary {
           background: ${GOLD} !important;
           color: #1A1A1A !important;

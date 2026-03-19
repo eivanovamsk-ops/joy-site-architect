@@ -65,7 +65,9 @@ export default function WebinarBrackets() {
     setIsLoading(true);
 
     try {
+      const applicationId = crypto.randomUUID();
       const { error } = await supabase.from("course_applications").insert({
+        id: applicationId,
         user_id: user?.id || null,
         name: form.name,
         email: form.email || null,
@@ -81,15 +83,7 @@ export default function WebinarBrackets() {
         await supabase.functions.invoke("send-email-unisender", {
           body: {
             type: "course_application",
-            courseData: {
-              courseName: "Вебинар: Непрямая фиксация брекетов",
-              courseDate: "11 марта 2026, 17:00",
-              name: form.name,
-              phone: form.phone,
-              telegram: form.telegram,
-              email: form.email || undefined,
-              specialization: form.specialization || undefined,
-            },
+            courseApplicationId: applicationId,
           },
         });
       } catch {}

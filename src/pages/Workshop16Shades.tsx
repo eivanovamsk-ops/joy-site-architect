@@ -657,7 +657,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           {(() => { const reveal = useReveal(); return (
             <div ref={reveal.ref} className={cn(

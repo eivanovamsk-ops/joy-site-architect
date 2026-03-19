@@ -6,6 +6,7 @@ import { EducationUpcomingCourses } from "@/components/education/UpcomingCourses
 import { EducationCategories } from "@/components/education/Categories";
 import { EducationAdvantages } from "@/components/education/Advantages";
 import { EducationOrthoSection } from "@/components/education/OrthoSection";
+import { EducationDigitalPartnersSection } from "@/components/education/DigitalPartnersSection";
 import { EducationCTASection } from "@/components/education/CTASection";
 import { EducationSEOContentSection } from "@/components/education/SEOContentSection";
 
@@ -107,6 +108,7 @@ const Education = () => {
       <EducationSEOContentSection />
       <EducationCategories />
       <EducationAdvantages />
+      <EducationDigitalPartnersSection />
       <EducationOrthoSection />
       <EducationCTASection />
     </Layout>

@@ -583,7 +583,7 @@ const Workshop16Shades = () => {
                     <p.icon className="h-7 w-7" style={{ color: GOLD }} />
                   </div>
                   <h3 className="text-lg font-bold mb-3">{p.title}</h3>
-                  <p className="text-sm text-[#F5F5F5]/50 leading-relaxed">{p.desc}</p>
+                  <p className="text-sm text-[#F5F5F5] leading-relaxed">{p.desc}</p>
                 </div>
               );
             })}

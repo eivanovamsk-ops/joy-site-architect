@@ -614,6 +614,9 @@ const Workshop16Shades = () => {
             <p className="text-[#F5F5F5]/60 leading-relaxed text-lg max-w-3xl mx-auto">
               На протяжении всего мероприятия в зале будут расположены стенды с инновационными материалами и оборудованием от ведущих мировых брендов. Вы сможете не просто посмотреть на них издалека, а подойти, потрогать, изучить и получить исчерпывающую консультацию от представителей компаний. Это ваш шанс быть в курсе последних новинок и найти решения для своей лаборатории.
             </p>
+            <div className="mt-10 max-w-4xl mx-auto rounded-2xl overflow-hidden">
+              <img src="/images/courses/course-18-innovations.jpg" alt="Инновации, к которым можно прикоснуться" className="w-full h-auto object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>

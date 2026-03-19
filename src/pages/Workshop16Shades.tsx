@@ -396,7 +396,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-speakers" className="py-24 lg:py-32 relative">
+      <section id="w16s-speakers" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={speakersReveal.ref} className={cn(
             "text-center mb-6 transition-all duration-700",

@@ -361,7 +361,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-format" className="py-24 lg:py-32 relative">
+      <section id="w16s-format" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={formatReveal.ref} className={cn(
             "max-w-4xl mx-auto transition-all duration-1000",
@@ -396,7 +396,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-speakers" className="py-24 lg:py-32 relative">
+      <section id="w16s-speakers" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={speakersReveal.ref} className={cn(
             "text-center mb-6 transition-all duration-700",
@@ -426,11 +426,11 @@ const Workshop16Shades = () => {
                     {s.tag}
                   </div>
 
-                  <div className="aspect-[3/4] overflow-hidden">
+                  <div className="aspect-[3/4] overflow-hidden relative">
                     <img
                       src={s.photo}
                       alt={s.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
                   </div>
@@ -438,7 +438,7 @@ const Workshop16Shades = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-xl font-bold mb-1">{s.name}</h3>
                     <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-[#F5F5F5]/50 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-40 overflow-hidden">
+                    <p className="text-sm text-[#F5F5F5]/80 leading-relaxed">
                       {s.short}
                     </p>
                   </div>
@@ -449,7 +449,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 lg:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div ref={synergyReveal.ref} className={cn(
             "transition-all duration-1000",
@@ -498,19 +498,11 @@ const Workshop16Shades = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center -mt-1">
-              <div className="w-px h-16" style={{ background: `linear-gradient(to bottom, ${GOLD}60, ${GOLD}00)` }} />
-              <div className="px-8 py-4 rounded-2xl border text-center" style={{ borderColor: `${GOLD}30`, background: "#1A1A1A" }}>
-                <Sparkles className="h-5 w-5 mx-auto mb-2" style={{ color: GOLD }} />
-                <p className="text-lg font-bold">Синергия опыта и инноваций</p>
-                <p className="text-sm text-[#F5F5F5]/40 mt-1">Два мира в одном воркшопе</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="w16s-program" className="py-24 lg:py-32 relative">
+      <section id="w16s-program" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={timelineReveal.ref} className={cn(
             "text-center mb-6 transition-all duration-700",
@@ -558,7 +550,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative">
+      <section className="py-16 lg:py-20 relative">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: `${GOLD}08` }} />
         </div>
@@ -591,7 +583,7 @@ const Workshop16Shades = () => {
                     <p.icon className="h-7 w-7" style={{ color: GOLD }} />
                   </div>
                   <h3 className="text-lg font-bold mb-3">{p.title}</h3>
-                  <p className="text-sm text-[#F5F5F5]/50 leading-relaxed">{p.desc}</p>
+                  <p className="text-sm text-[#F5F5F5] leading-relaxed">{p.desc}</p>
                 </div>
               );
             })}
@@ -599,7 +591,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           <div ref={innovationsReveal.ref} className={cn(
             "max-w-4xl mx-auto text-center transition-all duration-1000",
@@ -617,7 +609,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A] overflow-hidden">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full blur-[140px]" style={{ background: `${GOLD}12` }} />
         </div>
@@ -665,7 +657,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           {(() => { const reveal = useReveal(); return (
             <div ref={reveal.ref} className={cn(
@@ -691,7 +683,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative">
+      <section className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto text-center">
             <div className="bg-[#222]/80 border border-[#333] rounded-3xl p-10 hover:border-[#D4AF37]/30 transition-all duration-500">
@@ -725,7 +717,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
           <div ref={partnersReveal.ref} className={cn(
             "max-w-5xl mx-auto transition-all duration-1000",
@@ -758,7 +750,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
+      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12">Часто задаваемые вопросы</h2>
           <div className="space-y-4">
@@ -769,7 +761,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full blur-[250px]" style={{ background: `${GOLD}0A` }} />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[200px]" style={{ background: `${GOLD}06` }} />

@@ -23,12 +23,12 @@ export function EducationDigitalPartnersSection() {
               target="_blank"
               rel="noreferrer"
               aria-label="Перейти к EXOCAD'ER STORE во ВКонтакте"
-              className="group flex min-h-[220px] items-center justify-center rounded-[1.75rem] border border-background/10 bg-background/8 p-6 transition-transform duration-300 hover:-translate-y-1 hover:bg-background/12"
+              className="group flex min-h-[220px] items-center justify-center rounded-[1.75rem] border border-background/10 bg-background/8 p-3 transition-transform duration-300 hover:-translate-y-1 hover:bg-background/12 md:min-h-[260px]"
             >
               <img
                 src={exocadErStoreLogo}
                 alt="EXOCAD'ER STORE"
-                className="h-auto max-h-40 w-full max-w-[420px] object-contain"
+                className="h-auto max-h-full w-full max-w-full object-contain"
                 loading="lazy"
               />
             </a>

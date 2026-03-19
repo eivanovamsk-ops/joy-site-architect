@@ -449,7 +449,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 lg:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div ref={synergyReveal.ref} className={cn(
             "transition-all duration-1000",

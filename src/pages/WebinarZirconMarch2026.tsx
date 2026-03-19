@@ -318,9 +318,6 @@ export default function WebinarZirconMarch2026() {
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl text-white/60 mb-2 font-medium">
-              на примере Upcera Functional
-            </p>
 
             <p className="text-base md:text-lg text-white/50 mb-10 max-w-2xl leading-relaxed">
               Как получать стабильный результат при работе с цирконом и&nbsp;избегать типичных ошибок при фрезеровке, окрашивании и&nbsp;финальной эстетике

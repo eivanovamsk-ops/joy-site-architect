@@ -438,7 +438,7 @@ const Workshop16Shades = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="text-xl font-bold mb-1">{s.name}</h3>
                     <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-[#F5F5F5]/50 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-40 overflow-hidden">
+                    <p className="text-sm text-[#F5F5F5]/80 leading-relaxed">
                       {s.short}
                     </p>
                   </div>

@@ -361,7 +361,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-format" className="py-24 lg:py-32 relative">
+      <section id="w16s-format" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={formatReveal.ref} className={cn(
             "max-w-4xl mx-auto transition-all duration-1000",

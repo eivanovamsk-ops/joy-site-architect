@@ -498,14 +498,6 @@ const Workshop16Shades = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center -mt-1">
-              <div className="w-px h-16" style={{ background: `linear-gradient(to bottom, ${GOLD}60, ${GOLD}00)` }} />
-              <div className="px-8 py-4 rounded-2xl border text-center" style={{ borderColor: `${GOLD}30`, background: "#1A1A1A" }}>
-                <Sparkles className="h-5 w-5 mx-auto mb-2" style={{ color: GOLD }} />
-                <p className="text-lg font-bold">Синергия опыта и инноваций</p>
-                <p className="text-sm text-[#F5F5F5]/40 mt-1">Два мира в одном воркшопе</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

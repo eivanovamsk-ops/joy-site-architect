@@ -797,6 +797,7 @@ const Workshop16Shades = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Забронировать место"
+                  showTelegramField={false}
                 />
               </div>
               <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">

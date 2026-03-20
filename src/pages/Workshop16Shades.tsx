@@ -359,6 +359,7 @@ const Workshop16Shades = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Забронировать место"
+                  showTelegramField={false}
                 />
               </div>
               <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 mt-2">

@@ -3,7 +3,11 @@ import { HelpCircle } from "lucide-react";
 
 declare global {
   interface Window {
-    jivo_api?: { open: () => void };
+    jivo_api?: {
+      open: () => void;
+      setContactInfo: (info: { name?: string; phone?: string; email?: string }) => void;
+      sendMessage: (msg: { text: string }) => void;
+    };
   }
 }
 

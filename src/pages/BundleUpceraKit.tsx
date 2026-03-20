@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import BundleRequestForm from "@/components/bundle/BundleRequestForm";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home } from "lucide-react";
 import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
@@ -108,15 +108,7 @@ const BundleUpceraKit = () => {
                 Запустите или модернизируйте цифровую зуботехническую лабораторию на базе оборудования UPCERA
                 и получите комплект выгоднее на 8% по сравнению с покупкой каждого устройства отдельно.
               </p>
-              <Button
-                size="lg"
-                className="w-fit bg-primary hover:bg-primary/90"
-                asChild
-              >
-                <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
-                  Запросить стоимость комплекта
-                </a>
-              </Button>
+              <BundleRequestForm triggerClassName="w-fit bg-primary hover:bg-primary/90" />
             </div>
             <div className="flex items-center justify-center p-4">
               <img
@@ -203,15 +195,7 @@ const BundleUpceraKit = () => {
           <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
             Свяжитесь с нами, чтобы получить персональное предложение и узнать точную стоимость комплекта с учётом скидки –8%.
           </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-            asChild
-          >
-            <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
-              Запросить стоимость комплекта
-            </a>
-          </Button>
+          <BundleRequestForm triggerClassName="bg-primary hover:bg-primary/90" />
         </div>
       </div>
     </Layout>

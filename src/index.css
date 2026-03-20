@@ -228,12 +228,13 @@
   100% { transform: translateX(-50%); }
 }
 
-/* JivoSite: hide only default launcher, keep chat window fully functional */
-jdiv.__jivoMobileButton,
-jdiv[class*="globalClass"] > jdiv:first-child {
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+/* JivoSite: hide only default launcher on tablet/desktop; mobile keeps native launcher */
+@media (min-width: 768px) {
+  jdiv.__jivoMobileButton {
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }

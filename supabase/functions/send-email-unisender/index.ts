@@ -860,6 +860,40 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
+    if (requestData.type === "bundle_request") {
+      if (!requestData.bundleRequestId || !isUuid(requestData.bundleRequestId)) {
+        throw new HttpError(400, "A valid bundleRequestId is required");
+      }
+
+      const { data: bundle, error: bundleError } = await serviceClient
+        .from("bundle_requests")
+        .select("name, phone, created_at")
+        .eq("id", requestData.bundleRequestId)
+        .maybeSingle();
+
+      if (bundleError) {
+        throw new HttpError(500, "Failed to load bundle request");
+      }
+
+      if (!bundle) {
+        throw new HttpError(404, "Bundle request not found");
+      }
+
+      const result = await sendEmail(
+        UNISENDER_API_KEY,
+        "marketing@articon.pro",
+        `📦 Запрос стоимости CAD/CAM-комплекта — ${bundle.name}`,
+        buildBundleRequestEmailHtml(bundle),
+        "Articon",
+        "marketing@articon.pro",
+      );
+
+      return new Response(JSON.stringify({ success: true, result }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
     throw new HttpError(410, "Legacy email mode is disabled");
   } catch (error: unknown) {
     console.error("Error in send-email-unisender function:", error);

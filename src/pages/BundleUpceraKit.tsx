@@ -108,15 +108,7 @@ const BundleUpceraKit = () => {
                 Запустите или модернизируйте цифровую зуботехническую лабораторию на базе оборудования UPCERA
                 и получите комплект выгоднее на 8% по сравнению с покупкой каждого устройства отдельно.
               </p>
-              <Button
-                size="lg"
-                className="w-fit bg-primary hover:bg-primary/90"
-                asChild
-              >
-                <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
-                  Запросить стоимость комплекта
-                </a>
-              </Button>
+              <BundleRequestForm triggerClassName="w-fit bg-primary hover:bg-primary/90" />
             </div>
             <div className="flex items-center justify-center p-4">
               <img

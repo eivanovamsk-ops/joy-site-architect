@@ -62,10 +62,16 @@ interface FeedbackNotificationRequest {
   notifyEmail: string;
 }
 
+interface BundleRequestNotification {
+  type: "bundle_request";
+  bundleRequestId: string;
+}
+
 type EmailRequest =
   | OrderConfirmationRequest
   | CourseApplicationRequest
   | FeedbackNotificationRequest
+  | BundleRequestNotification
   | { type: "legacy" };
 
 interface AuthContext {
@@ -466,6 +472,45 @@ const buildFeedbackEmailHtml = (feedback: { name: string; email: string; phone?:
   `;
 };
 
+const buildBundleRequestEmailHtml = (bundle: { name: string; phone: string; created_at: string }): string => {
+  const date = new Date(bundle.created_at).toLocaleString("ru-RU", { timeZone: "Europe/Moscow" });
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #1a365d, #2563eb); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { background: #f9fafb; padding: 20px; border: 1px solid #e5e7eb; }
+        .card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-top: 16px; }
+        .footer { text-align: center; padding: 15px; color: #6b7280; font-size: 13px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h2 style="margin: 0;">📦 Запрос стоимости CAD/CAM-комплекта UPCERA</h2>
+        </div>
+        <div class="content">
+          <p>Новый лид с посадочной страницы комплекта UPCERA (A52 + GT1 Pro + R-412).</p>
+          <div class="card">
+            <p><strong>Имя:</strong> ${bundle.name}</p>
+            <p><strong>Телефон:</strong> ${bundle.phone}</p>
+            <p><strong>Дата заявки:</strong> ${date}</p>
+          </div>
+          <p style="margin-top: 16px; color: #6b7280; font-size: 13px;">Свяжитесь с клиентом в ближайшее время.</p>
+        </div>
+        <div class="footer">
+          <p>Articon — articon.pro</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
+};
+
 const sendEmail = async (
   apiKey: string,
   to: string,
@@ -808,6 +853,40 @@ const handler = async (req: Request): Promise<Response> => {
         buildFeedbackEmailHtml(feedback),
         "Articon",
         "info@articon.pro",
+      );
+
+      return new Response(JSON.stringify({ success: true, result }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    if (requestData.type === "bundle_request") {
+      if (!requestData.bundleRequestId || !isUuid(requestData.bundleRequestId)) {
+        throw new HttpError(400, "A valid bundleRequestId is required");
+      }
+
+      const { data: bundle, error: bundleError } = await serviceClient
+        .from("bundle_requests")
+        .select("name, phone, created_at")
+        .eq("id", requestData.bundleRequestId)
+        .maybeSingle();
+
+      if (bundleError) {
+        throw new HttpError(500, "Failed to load bundle request");
+      }
+
+      if (!bundle) {
+        throw new HttpError(404, "Bundle request not found");
+      }
+
+      const result = await sendEmail(
+        UNISENDER_API_KEY,
+        "marketing@articon.pro",
+        `📦 Запрос стоимости CAD/CAM-комплекта — ${bundle.name}`,
+        buildBundleRequestEmailHtml(bundle),
+        "Articon",
+        "marketing@articon.pro",
       );
 
       return new Response(JSON.stringify({ success: true, result }), {

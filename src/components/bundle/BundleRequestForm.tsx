@@ -11,16 +11,6 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 
-declare global {
-  interface Window {
-    jivo_api?: {
-      open: () => void;
-      setContactInfo: (info: { name?: string; phone?: string }) => void;
-      sendMessage: (msg: { text: string }) => void;
-    };
-  }
-}
-
 interface BundleRequestFormProps {
   triggerClassName?: string;
   triggerSize?: "default" | "sm" | "lg" | "icon";

@@ -466,7 +466,7 @@ const ProductDetailVariant = () => {
             </div>
 
             {product.id === "aevra-ml-d98" && (
-              <Button variant="outline" className="w-full gap-2" asChild>
+              <Button className="w-full gap-2 bg-primary hover:bg-primary/90" asChild>
                 <a href="https://www.articon-consulting.ru/guide-to-working-with-zircon" target="_blank" rel="noopener noreferrer">
                   <FileDown className="h-4 w-4" />
                   Скачать гайд по работе с цирконом

@@ -231,11 +231,10 @@
 /* JivoSite: hide only the launcher button, keep chat window functional */
 jdiv.__jivoMobileButton,
 jdiv[class*="label"],
-jdiv[class*="agentMessage"],
-jdiv[class*="contentTransitionWrap"] {
+jdiv[class*="agentMessage"] {
   display: none !important;
 }
-jdiv[class*="wrap"]:not([class*="chatWindow"]):not([class*="chat_"]):not([class*="Chat"]) > jdiv[class*="button"] {
+jdiv[class*="wrap"]:not([class*="chatWindow"]):not([class*="chat_"]):not([class*="Chat"]):not([class*="contentTransition"]) > jdiv[class*="button"] {
   display: none !important;
 }
 /* Hide the default round Jivo button */

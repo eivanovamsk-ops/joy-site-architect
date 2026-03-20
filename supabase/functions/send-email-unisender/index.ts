@@ -62,10 +62,16 @@ interface FeedbackNotificationRequest {
   notifyEmail: string;
 }
 
+interface BundleRequestNotification {
+  type: "bundle_request";
+  bundleRequestId: string;
+}
+
 type EmailRequest =
   | OrderConfirmationRequest
   | CourseApplicationRequest
   | FeedbackNotificationRequest
+  | BundleRequestNotification
   | { type: "legacy" };
 
 interface AuthContext {

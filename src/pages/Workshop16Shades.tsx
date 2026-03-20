@@ -359,6 +359,7 @@ const Workshop16Shades = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Забронировать место"
+                  showTelegramField={false}
                 />
               </div>
               <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 mt-2">
@@ -718,6 +719,7 @@ const Workshop16Shades = () => {
                   courseDate={course.date}
                   buttonVariant="card"
                   buttonLabel="Забронировать место"
+                  showTelegramField={false}
                 />
               </div>
 
@@ -795,6 +797,7 @@ const Workshop16Shades = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Забронировать место"
+                  showTelegramField={false}
                 />
               </div>
               <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
@@ -829,6 +832,7 @@ const Workshop16Shades = () => {
               courseDate={course.date}
               buttonVariant="card"
               buttonLabel="Забронировать"
+              showTelegramField={false}
             />
           </div>
         </div>

@@ -832,6 +832,7 @@ const Workshop16Shades = () => {
               courseDate={course.date}
               buttonVariant="card"
               buttonLabel="Забронировать"
+              showTelegramField={false}
             />
           </div>
         </div>

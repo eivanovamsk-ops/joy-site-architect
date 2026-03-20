@@ -195,15 +195,7 @@ const BundleUpceraKit = () => {
           <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
             Свяжитесь с нами, чтобы получить персональное предложение и узнать точную стоимость комплекта с учётом скидки –8%.
           </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-            asChild
-          >
-            <a href="https://t.me/articon_zakaz" target="_blank" rel="noopener noreferrer">
-              Запросить стоимость комплекта
-            </a>
-          </Button>
+          <BundleRequestForm triggerClassName="bg-primary hover:bg-primary/90" />
         </div>
       </div>
     </Layout>

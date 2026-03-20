@@ -14,16 +14,19 @@ const bundleItems = [
     image: upceraA52,
     name: "Фрезеровочный станок UPCERA A52",
     description: "Высокоточная 5-осевая система сухого фрезерования для работы с диоксидом циркония, PMMA, PEEK, воском и другими материалами.",
+    link: "/shop/product/upcera-a52",
   },
   {
     image: upceraGT1,
     name: "Печь UPCERA GT1 Pro",
     description: "Надёжная система синтеризации циркониевых конструкций с точным температурным контролем и стабильным результатом.",
+    link: "/shop/product/upcera-gt1-pro",
   },
   {
     image: upceraR412,
     name: "Пылесос UPCERA R-412",
     description: "Чистота производственного процесса и защита оборудования от пыли при фрезеровании.",
+    link: "/shop/product/upcera-r-412",
   },
 ];
 

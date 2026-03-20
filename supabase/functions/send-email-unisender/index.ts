@@ -509,6 +509,7 @@ const buildBundleRequestEmailHtml = (bundle: { name: string; phone: string; crea
     </body>
     </html>
   `;
+};
 
 const sendEmail = async (
   apiKey: string,

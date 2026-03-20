@@ -14,16 +14,19 @@ const bundleItems = [
     image: upceraA52,
     name: "Фрезеровочный станок UPCERA A52",
     description: "Высокоточная 5-осевая система сухого фрезерования для работы с диоксидом циркония, PMMA, PEEK, воском и другими материалами.",
+    link: "/shop/product/upcera-a52",
   },
   {
     image: upceraGT1,
     name: "Печь UPCERA GT1 Pro",
     description: "Надёжная система синтеризации циркониевых конструкций с точным температурным контролем и стабильным результатом.",
+    link: "/shop/product/upcera-gt1-pro",
   },
   {
     image: upceraR412,
     name: "Пылесос UPCERA R-412",
     description: "Чистота производственного процесса и защита оборудования от пыли при фрезеровании.",
+    link: "/shop/product/upcera-r-412",
   },
 ];
 
@@ -131,18 +134,18 @@ const BundleUpceraKit = () => {
         <h2 className="text-2xl font-bold mb-6 text-foreground">Что входит в комплект</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {bundleItems.map((item) => (
-            <div key={item.name} className="bg-secondary rounded-xl p-5 text-center">
+            <Link key={item.name} to={item.link} className="bg-secondary rounded-xl p-5 text-center group hover:shadow-lg transition-all duration-200">
               <div className="aspect-square mb-4 flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <h3 className="font-semibold mb-2">{item.name}</h3>
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{item.name}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
 

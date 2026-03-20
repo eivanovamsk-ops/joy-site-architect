@@ -134,18 +134,18 @@ const BundleUpceraKit = () => {
         <h2 className="text-2xl font-bold mb-6 text-foreground">Что входит в комплект</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {bundleItems.map((item) => (
-            <div key={item.name} className="bg-secondary rounded-xl p-5 text-center">
+            <Link key={item.name} to={item.link} className="bg-secondary rounded-xl p-5 text-center group hover:shadow-lg transition-all duration-200">
               <div className="aspect-square mb-4 flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <h3 className="font-semibold mb-2">{item.name}</h3>
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{item.name}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
 

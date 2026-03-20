@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface BundleRequestFormProps {
   triggerClassName?: string;
@@ -22,7 +23,7 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name.trim() || !phone.trim()) {
@@ -33,16 +34,27 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
     setSubmitting(true);
 
     try {
+      // Save to DB
+      const { data, error } = await supabase
+        .from("bundle_requests" as any)
+        .insert({ name: name.trim(), phone: phone.trim() } as any)
+        .select("id")
+        .single();
+
+      if (error) throw error;
+
+      // Send email notification to marketing
+      supabase.functions.invoke("send-email-unisender", {
+        body: { type: "bundle_request", bundleRequestId: (data as any).id },
+      }).catch((err) => console.error("Email send error:", err));
+
+      // Also push to Jivo if available
       if (window.jivo_api) {
         window.jivo_api.setContactInfo({ name: name.trim(), phone: phone.trim() });
         window.jivo_api.open();
         window.jivo_api.sendMessage({
           text: `Запрос стоимости CAD/CAM-комплекта UPCERA\nИмя: ${name.trim()}\nТелефон: ${phone.trim()}`,
         });
-      } else {
-        // Fallback: try clicking Jivo launcher
-        const launcher = document.querySelector<HTMLElement>("jdiv[class*='button']");
-        if (launcher) launcher.click();
       }
 
       toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");

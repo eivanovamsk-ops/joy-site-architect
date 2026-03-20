@@ -518,9 +518,7 @@ UPCERA Explore Functional применяется для:
     gallery: [aevraMLd98, aevraMLHero, aevraMLStructure, aevraMLShades, aevraMLIndications, aevraMLWorkflow, aevraMLDimensions, aevraMLSpecs, aevraMLPhysical, aevraMLSinteringCurve, aevraMLSinteringProgram],
     basePrice: 0,
     metaDescription: "Заготовка из циркония Aevra ML D98 для CAD/CAM — многослойный циркониевый диск 98 мм с прочностью 800–1050 МПа и высокой транслюцентностью. Articon, Москва, доставка по России.",
-    downloadFiles: [
-      { name: "Гайд по работе с цирконом", url: "/docs/aevra-ml-guide.pdf", size: "PDF" },
-    ],
+    downloadFiles: [],
     description: `Заготовка из циркония Aevra ML D98 — это многослойный циркониевый диск для CAD/CAM фрезеровки, разработанный для цифровых зуботехнических лабораторий, которым необходим баланс прочности, эстетики и предсказуемого результата.
 
 Aevra ML сочетает в себе технологии 4Y–5Y диоксида циркония и обеспечивает высокую механическую устойчивость при сохранении естественной прозрачности. Прочность на изгиб 800–1050 МПа позволяет использовать данный циркониевый диск для изготовления как одиночных коронок, так и мостовидных протезов различной протяженности.

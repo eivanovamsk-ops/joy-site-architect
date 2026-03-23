@@ -182,7 +182,6 @@ const programItems = [
 const stats = [
   { value: 4, suffix: "", label: "Топ-спикера" },
   { value: 200, suffix: "+", label: "Клинических кейсов" },
-  { value: 2, suffix: "", label: "Города" },
   { value: 1, suffix: "", label: "День — максимум знаний" },
 ];
 

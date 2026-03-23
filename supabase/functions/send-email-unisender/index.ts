@@ -54,6 +54,7 @@ interface OrderConfirmationRequest {
 interface CourseApplicationRequest {
   type: "course_application";
   courseApplicationId: string;
+  emailTemplate?: "zircon_webinar_2026";
 }
 
 interface FeedbackNotificationRequest {
@@ -108,6 +109,12 @@ const WEBINAR_CONFIGS: Record<string, { courseName: string; courseDate: string; 
     courseDate: "26 марта 2026, 16:00 МСК",
     telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
   },
+};
+
+const ZIRCON_WEBINAR_CONFIG = {
+  courseName: "Лайфхаки в работе с цирконом",
+  courseDate: "26 марта 2026, 16:00 МСК",
+  telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
 };
 
 const formatPrice = (price: number): string => {
@@ -864,7 +871,18 @@ const handler = async (req: Request): Promise<Response> => {
         throw new HttpError(400, "A valid courseApplicationId is required");
       }
 
-      const course = await loadCourseEmailData(serviceClient, requestData.courseApplicationId);
+      let course = await loadCourseEmailData(serviceClient, requestData.courseApplicationId);
+
+      if (requestData.emailTemplate === "zircon_webinar_2026") {
+        course = {
+          ...course,
+          courseName: ZIRCON_WEBINAR_CONFIG.courseName,
+          courseDate: ZIRCON_WEBINAR_CONFIG.courseDate,
+          isWebinar: true,
+          telegramChatUrl: ZIRCON_WEBINAR_CONFIG.telegramChatUrl,
+        };
+      }
+
       const results: Array<{ recipient: string; result: unknown; error?: string }> = [];
 
       if (course.email) {

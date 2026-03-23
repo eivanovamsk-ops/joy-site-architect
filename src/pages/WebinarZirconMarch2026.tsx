@@ -265,6 +265,7 @@ export default function WebinarZirconMarch2026() {
           body: {
             type: "course_application",
             courseApplicationId: applicationId,
+            emailTemplate: "zircon_webinar_2026",
           },
         });
         if (fnError) console.error("Email function error:", fnError);

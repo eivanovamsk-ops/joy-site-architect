@@ -298,7 +298,7 @@ const Workshop16Shades = () => {
               "transition-all duration-1000 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
+              <span className="text-base md:text-lg font-bold tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
             </div>
 
             <h1 className={cn(

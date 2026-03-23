@@ -319,7 +319,7 @@ const Workshop16Shades = () => {
             </p>
 
             <ul className={cn(
-              "space-y-2 text-[#F5F5F5]/80 text-sm md:text-base mb-8 transition-all duration-1000 delay-500 ease-out",
+              "space-y-2 text-white font-medium text-sm md:text-base mb-8 transition-all duration-1000 delay-500 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <li>— Чёткий алгоритм работы</li>

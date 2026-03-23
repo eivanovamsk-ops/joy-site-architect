@@ -390,48 +390,25 @@ const OrthoConference = () => {
         </section>
 
         {/* ═══════ CITIES ═══════ */}
+        {/* ═══════ CITY INFO ═══════ */}
         <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
           <div className="container mx-auto px-4">
             <div ref={citiesReveal.ref} className={cn(
-              "max-w-4xl mx-auto transition-all duration-1000",
+              "max-w-lg mx-auto text-center transition-all duration-1000",
               citiesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               <div className="text-center mb-12">
                 <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>География</span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Два города — одна программа</h2>
-                <p className="text-[#F5F5F5]/50 text-lg">Выберите удобный город и дату</p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Казань</h2>
+                <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {cities.map((city, i) => {
-                  const r = useReveal();
-                  return (
-                    <div
-                      key={i}
-                      ref={r.ref}
-                      className={cn(
-                        "relative bg-[#222]/80 rounded-3xl overflow-hidden border border-[#333] p-10 text-center hover:border-[#FF6B35]/50 hover:shadow-[0_0_40px_-10px_#FF6B3540] transition-all duration-500 group",
-                        r.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                      )}
-                      style={{ transitionDelay: `${i * 150}ms` }}
-                    >
-                      <div className="text-6xl mb-6">{city.emoji}</div>
-                      <h3 className="text-3xl font-bold mb-3">{city.name}</h3>
-                      <div className="flex items-center justify-center gap-2 mb-6">
-                        <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                        <span className="font-semibold" style={{ color: ACCENT }}>{city.date}</span>
-                      </div>
-                      <div className="oc-cta-glow">
-                        <CourseApplicationForm
-                          courseName={`${course.title} — ${city.name}`}
-                          courseDate={city.date}
-                          buttonLabel={`Записаться (${city.name})`}
-                          
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="oc-cta-glow">
+                <CourseApplicationForm
+                  courseName={course.title}
+                  courseDate="15 апреля 2026"
+                  buttonLabel="Записаться на конференцию"
+                />
               </div>
             </div>
           </div>

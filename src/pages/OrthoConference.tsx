@@ -131,7 +131,6 @@ const course = courses.find(c => c.id === 19)!;
 
 const cities = [
   { name: "Казань", date: "15 апреля 2026", emoji: "🕌" },
-  { name: "Самара", date: "17 апреля 2026", emoji: "🌉" },
 ];
 
 const whyItems = [
@@ -183,7 +182,6 @@ const programItems = [
 const stats = [
   { value: 4, suffix: "", label: "Топ-спикера" },
   { value: 200, suffix: "+", label: "Клинических кейсов" },
-  { value: 2, suffix: "", label: "Города" },
   { value: 1, suffix: "", label: "День — максимум знаний" },
 ];
 
@@ -286,11 +284,11 @@ const OrthoConference = () => {
             )}>
               <div className="flex items-center gap-2.5 bg-[#FF6B35]/20 backdrop-blur-sm border border-[#FF6B35]/40 rounded-full px-5 py-2.5">
                 <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="font-bold text-[#F5F5F5]">15 и 17 апреля 2026</span>
+                <span className="font-bold text-[#F5F5F5]">15 апреля 2026</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="text-[#F5F5F5]/80">Казань / Самара</span>
+                <span className="text-[#F5F5F5]/80">Казань</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <Clock className="h-4 w-4" style={{ color: ACCENT }} />
@@ -307,7 +305,7 @@ const OrthoConference = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Забронировать место"
-                  cityOptions={["Казань", "Самара"]}
+                  
                 />
               </div>
               <button onClick={() => scrollTo("oc-why")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
@@ -325,7 +323,7 @@ const OrthoConference = () => {
         <section className="py-16 relative border-b border-[#2A2A2A]">
           <div className="container mx-auto px-4">
             <div ref={statsReveal.ref} className={cn(
-              "grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto transition-all duration-1000",
+              "grid grid-cols-3 gap-8 max-w-3xl mx-auto transition-all duration-1000",
               statsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               {stats.map((s, i) => (
@@ -383,7 +381,7 @@ const OrthoConference = () => {
                     courseName={course.title}
                     courseDate={course.date}
                     buttonLabel="Записаться на конференцию"
-                    cityOptions={["Казань", "Самара"]}
+                    
                   />
                 </div>
               </div>
@@ -392,48 +390,25 @@ const OrthoConference = () => {
         </section>
 
         {/* ═══════ CITIES ═══════ */}
+        {/* ═══════ CITY INFO ═══════ */}
         <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
           <div className="container mx-auto px-4">
             <div ref={citiesReveal.ref} className={cn(
-              "max-w-4xl mx-auto transition-all duration-1000",
+              "max-w-lg mx-auto text-center transition-all duration-1000",
               citiesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               <div className="text-center mb-12">
                 <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>География</span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Два города — одна программа</h2>
-                <p className="text-[#F5F5F5]/50 text-lg">Выберите удобный город и дату</p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Казань</h2>
+                <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {cities.map((city, i) => {
-                  const r = useReveal();
-                  return (
-                    <div
-                      key={i}
-                      ref={r.ref}
-                      className={cn(
-                        "relative bg-[#222]/80 rounded-3xl overflow-hidden border border-[#333] p-10 text-center hover:border-[#FF6B35]/50 hover:shadow-[0_0_40px_-10px_#FF6B3540] transition-all duration-500 group",
-                        r.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                      )}
-                      style={{ transitionDelay: `${i * 150}ms` }}
-                    >
-                      <div className="text-6xl mb-6">{city.emoji}</div>
-                      <h3 className="text-3xl font-bold mb-3">{city.name}</h3>
-                      <div className="flex items-center justify-center gap-2 mb-6">
-                        <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                        <span className="font-semibold" style={{ color: ACCENT }}>{city.date}</span>
-                      </div>
-                      <div className="oc-cta-glow">
-                        <CourseApplicationForm
-                          courseName={`${course.title} — ${city.name}`}
-                          courseDate={city.date}
-                          buttonLabel={`Записаться (${city.name})`}
-                          cityOptions={["Казань", "Самара"]}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="oc-cta-glow">
+                <CourseApplicationForm
+                  courseName={course.title}
+                  courseDate="15 апреля 2026"
+                  buttonLabel="Записаться на конференцию"
+                />
               </div>
             </div>
           </div>
@@ -496,7 +471,7 @@ const OrthoConference = () => {
                   courseName={course.title}
                   courseDate={course.date}
                   buttonLabel="Записаться на конференцию"
-                  cityOptions={["Казань", "Самара"]}
+                  
                 />
               </div>
             </div>
@@ -592,8 +567,8 @@ const OrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
-                    buttonLabel="Выбрать город и записаться"
-                    cityOptions={["Казань", "Самара"]}
+                    buttonLabel="Записаться на конференцию"
+                    
                   />
                 </div>
               </div>
@@ -620,7 +595,7 @@ const OrthoConference = () => {
                   <span className="text-2xl text-[#F5F5F5]/30 line-through">15 000 ₽</span>
                   <span className="text-5xl md:text-6xl font-extrabold">5 000 ₽</span>
                 </div>
-                <p className="text-[#F5F5F5]/40 text-sm mb-8">Конференция • 1 день • Казань или Самара</p>
+                <p className="text-[#F5F5F5]/40 text-sm mb-8">Конференция • 1 день • Казань</p>
 
                 <div className="space-y-3 text-left mb-8">
                   {course.includes.map((item, i) => (
@@ -637,7 +612,7 @@ const OrthoConference = () => {
                     courseDate={course.date}
                     buttonVariant="card"
                     buttonLabel="Забронировать место"
-                    cityOptions={["Казань", "Самара"]}
+                    
                   />
                 </div>
 
@@ -688,7 +663,7 @@ const OrthoConference = () => {
                     courseName={course.title}
                     courseDate={course.date}
                     buttonLabel="Записаться на конференцию"
-                    cityOptions={["Казань", "Самара"]}
+                    
                   />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
@@ -724,7 +699,7 @@ const OrthoConference = () => {
                     courseName={course.title}
                     courseDate={course.date}
                     buttonLabel="Забронировать место"
-                    cityOptions={["Казань", "Самара"]}
+                    
                   />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
@@ -765,14 +740,14 @@ const OrthoConference = () => {
                 <span className="text-lg text-[#F5F5F5]/30 line-through">15 000 ₽</span>
                 <span className="font-extrabold text-xl" style={{ color: ACCENT }}>5 000 ₽</span>
               </div>
-              <div className="text-xs text-[#F5F5F5]/40 truncate">Точка опоры • Казань / Самара</div>
+              <div className="text-xs text-[#F5F5F5]/40 truncate">Точка опоры • Казань</div>
             </div>
             <CourseApplicationForm
               courseName={course.title}
               courseDate={course.date}
               buttonVariant="card"
               buttonLabel="Записаться"
-              cityOptions={["Казань", "Самара"]}
+              
             />
           </div>
         </div>

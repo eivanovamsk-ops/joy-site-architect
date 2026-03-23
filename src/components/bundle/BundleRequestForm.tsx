@@ -48,16 +48,7 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
         body: { type: "bundle_request", bundleRequestId: (data as any).id },
       }).catch((err) => console.error("Email send error:", err));
 
-      // Also push to Jivo if available
-      if (window.jivo_api) {
-        window.jivo_api.setContactInfo({ name: name.trim(), phone: phone.trim() });
-        window.jivo_api.open();
-        window.jivo_api.sendMessage({
-          text: `Запрос стоимости CAD/CAM-комплекта UPCERA\nИмя: ${name.trim()}\nТелефон: ${phone.trim()}`,
-        });
-      }
-
-      toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
+      toast.success("Уже получили вашу заявку, свяжемся с вами в ближайшее время!");
       setName("");
       setPhone("");
       setOpen(false);

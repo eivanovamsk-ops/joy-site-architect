@@ -261,13 +261,16 @@ export default function WebinarZirconMarch2026() {
       if (error) throw error;
 
       try {
-        await supabase.functions.invoke("send-email-unisender", {
+        const { error: fnError } = await supabase.functions.invoke("send-email-unisender", {
           body: {
             type: "course_application",
             courseApplicationId: applicationId,
           },
         });
-      } catch {}
+        if (fnError) console.error("Email function error:", fnError);
+      } catch (emailErr) {
+        console.error("Email invocation failed:", emailErr);
+      }
 
       setIsSubmitted(true);
     } catch {

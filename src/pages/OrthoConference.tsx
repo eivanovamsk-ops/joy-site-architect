@@ -323,7 +323,7 @@ const OrthoConference = () => {
         <section className="py-16 relative border-b border-[#2A2A2A]">
           <div className="container mx-auto px-4">
             <div ref={statsReveal.ref} className={cn(
-              "grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto transition-all duration-1000",
+              "grid grid-cols-3 gap-8 max-w-3xl mx-auto transition-all duration-1000",
               statsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               {stats.map((s, i) => (

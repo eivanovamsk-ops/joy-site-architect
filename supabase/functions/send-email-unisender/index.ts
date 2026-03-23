@@ -529,6 +529,16 @@ const buildBundleRequestEmailHtml = (bundle: { name: string; phone: string; crea
   `;
 };
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const isRetryableEmailError = (error: unknown): boolean => {
+  if (error instanceof HttpError) {
+    return error.status >= 500 || error.status === 429;
+  }
+
+  return error instanceof TypeError;
+};
+
 const sendEmail = async (
   apiKey: string,
   to: string,
@@ -537,34 +547,65 @@ const sendEmail = async (
   senderName = "Articon",
   senderEmail = "moscow@articon.pro",
 ): Promise<unknown> => {
-  const formData = new URLSearchParams();
-  formData.append("format", "json");
-  formData.append("api_key", apiKey);
-  formData.append("email", to);
-  formData.append("sender_name", senderName);
-  formData.append("sender_email", senderEmail);
-  formData.append("subject", subject);
-  formData.append("body", body);
-  formData.append("list_id", "1");
+  const maxAttempts = 3;
 
-  console.log(`Sending email to ${to} with subject: ${subject}`);
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const formData = new URLSearchParams();
+      formData.append("format", "json");
+      formData.append("api_key", apiKey);
+      formData.append("email", to);
+      formData.append("sender_name", senderName);
+      formData.append("sender_email", senderEmail);
+      formData.append("subject", subject);
+      formData.append("body", body);
+      formData.append("list_id", "1");
 
-  const response = await fetch("https://api.unisender.com/ru/api/sendEmail", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: formData.toString(),
-  });
+      console.log(`Sending email to ${to} with subject: ${subject}. Attempt ${attempt}/${maxAttempts}`);
 
-  const result = await response.json();
-  console.log(`Unisender response for ${to}:`, JSON.stringify(result));
+      const response = await fetch("https://api.unisender.com/ru/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+      });
 
-  if (result?.error) {
-    throw new HttpError(502, `Unisender error: ${result.error}`);
+      const rawResponse = await response.text();
+      let result: Record<string, unknown> | null = null;
+
+      try {
+        result = JSON.parse(rawResponse);
+      } catch {
+        result = null;
+      }
+
+      if (!response.ok) {
+        const statusMessage = `Unisender HTTP ${response.status}`;
+        const details = result?.error || rawResponse || "No details";
+        throw new HttpError(502, `${statusMessage}: ${String(details)}`);
+      }
+
+      console.log(`Unisender response for ${to}:`, result ? JSON.stringify(result) : rawResponse);
+
+      if (result?.error) {
+        throw new HttpError(502, `Unisender error: ${String(result.error)}`);
+      }
+
+      return result ?? { raw: rawResponse };
+    } catch (error) {
+      const isLastAttempt = attempt === maxAttempts;
+      if (isLastAttempt || !isRetryableEmailError(error)) {
+        throw error;
+      }
+
+      const delayMs = attempt * 700;
+      console.warn(`Retrying email to ${to} in ${delayMs}ms due to temporary error`, error);
+      await sleep(delayMs);
+    }
   }
 
-  return result;
+  throw new HttpError(500, "Unexpected email retry flow error");
 };
 
 const createServiceClient = () => {

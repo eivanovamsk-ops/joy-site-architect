@@ -580,8 +580,8 @@ const getAuthContext = async (req: Request, serviceClient: ReturnType<typeof cre
     global: { headers: { Authorization: authHeader } },
   });
 
-  const { data, error } = await authClient.auth.getClaims(token);
-  if (error || !data?.claims?.sub) {
+  const { data: { user }, error: userError } = await authClient.auth.getUser(token);
+  if (userError || !user?.id) {
     throw new HttpError(401, "Unauthorized");
   }
 

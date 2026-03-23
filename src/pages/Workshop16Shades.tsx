@@ -283,7 +283,7 @@ const Workshop16Shades = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img src="/images/courses/course-18-hero.jpg" alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/90 via-[#1A1A1A]/70 to-[#1A1A1A]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#1A1A1A]/85 to-[#1A1A1A]/50" />
         </div>
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">

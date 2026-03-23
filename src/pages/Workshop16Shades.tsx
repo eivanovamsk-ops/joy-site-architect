@@ -25,7 +25,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         <ChevronDown className={cn("h-5 w-5 flex-shrink-0 transition-transform duration-300", open && "rotate-180")} style={{ color: "#D4AF37" }} />
       </button>
       <div className={cn("overflow-hidden transition-all duration-300", open ? "max-h-40 pb-6 px-6" : "max-h-0")}>
-        <p className="text-[#F5F5F5]/50 text-sm leading-relaxed">{answer}</p>
+        <p className="text-[#F5F5F5]/80 text-sm leading-relaxed">{answer}</p>
       </div>
     </div>
   );
@@ -312,7 +312,7 @@ const Workshop16Shades = () => {
             </h1>
 
             <p className={cn(
-              "text-base md:text-lg text-[#F5F5F5]/70 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-[400ms] ease-out",
+              "text-base md:text-lg text-white/90 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-[400ms] ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               4 часа живых демонстраций — чтобы ваши работы принимались с первого раза без переделок
@@ -329,7 +329,7 @@ const Workshop16Shades = () => {
             </ul>
 
             <div className={cn(
-              "flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#F5F5F5]/60 mb-8 transition-all duration-1000 delay-[600ms] ease-out",
+              "flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#F5F5F5]/90 mb-8 transition-all duration-1000 delay-[600ms] ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <div className="flex items-center gap-2">
@@ -362,14 +362,14 @@ const Workshop16Shades = () => {
                   showTelegramField={false}
                 />
               </div>
-              <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 mt-2">
+              <button onClick={() => scrollTo("w16s-format")} className="text-[#F5F5F5]/80 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 mt-2">
                 Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#F5F5F5]/30">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#F5F5F5]/90">
           <div className="w-px h-12 bg-gradient-to-b from-transparent" style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${GOLD}40)` }} />
         </div>
       </section>
@@ -391,7 +391,7 @@ const Workshop16Shades = () => {
                 <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
                   <Monitor className="h-7 w-7" style={{ color: GOLD }} />
                 </div>
-                <p className="text-[#F5F5F5]/70 leading-relaxed">
+                <p className="text-white/90 leading-relaxed">
                   Мы создали уникальный формат, который сочетает в себе наглядность масштабной презентации и камерность личного общения. Все техники и методики демонстрируются в режиме реального времени на большом экране, что позволяет рассмотреть каждую деталь с любого ракурса.
                 </p>
               </div>
@@ -400,7 +400,7 @@ const Workshop16Shades = () => {
                 <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
                   <UserCheck className="h-7 w-7" style={{ color: GOLD }} />
                 </div>
-                <p className="text-[#F5F5F5]/70 leading-relaxed">
+                <p className="text-white/90 leading-relaxed">
                   Главное преимущество — вы не просто пассивный слушатель. После каждого выступления вы можете подойти к спикеру, задать вопросы и получить персональную обратную связь напрямую от мастера. Такой формат позволяет не просто посмотреть на демонстрацию, но и разобраться в нюансах, которые важны именно вам.
                 </p>
               </div>
@@ -417,7 +417,7 @@ const Workshop16Shades = () => {
           )}>
             <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Эксперты</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Спикеры: три кита современной стоматологии</h2>
-            <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
+            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
               Мы собрали команду из трех звездных техников, каждый из которых является признанным экспертом в своей области. Это уникальная возможность перенять опыт у лучших из лучших.
             </p>
           </div>
@@ -449,7 +449,7 @@ const Workshop16Shades = () => {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-1">{s.name}</h3>
                     <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-[#F5F5F5]/70 leading-relaxed">
+                    <p className="text-sm text-white/90 leading-relaxed">
                       {s.short}
                     </p>
                   </div>
@@ -471,7 +471,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Что делает этот воркшоп особенным?</h2>
             </div>
 
-            <div className="max-w-3xl mx-auto mb-12 space-y-6 text-[#F5F5F5]/60 leading-relaxed text-center">
+            <div className="max-w-3xl mx-auto mb-12 space-y-6 text-[#F5F5F5]/90 leading-relaxed text-center">
               <p>
                 Классические подходы «старой школы» высокой эстетики и более чем 30-летний мануальный опыт Дмитрия Никоненко + цифровые возможности Cad/Cam и новинки Exocad 2026 от Дмитрия Филинова.
               </p>
@@ -482,14 +482,14 @@ const Workshop16Shades = () => {
 
             <div className="grid lg:grid-cols-2 gap-0 max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#333]">
               <div className="relative bg-[#1E1E1E] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
-                <div className="absolute top-6 left-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border border-[#555] text-[#888]">
+                <div className="absolute top-6 left-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border border-[#555] text-[#BBB]">
                   MANUAL
                 </div>
                 <div className="text-6xl lg:text-8xl font-extrabold text-[#2A2A2A] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
                   01
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Мануальное<br />мастерство</h3>
-                <p className="text-[#F5F5F5]/50 relative z-10 leading-relaxed">
+                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
                   Послойная техника нанесения, работа с кистью и керамикой — классическое искусство, отточенное десятилетиями.
                 </p>
               </div>
@@ -502,7 +502,7 @@ const Workshop16Shades = () => {
                   02
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Цифровая<br />точность</h3>
-                <p className="text-[#F5F5F5]/50 relative z-10 leading-relaxed">
+                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
                   CAD/CAM планирование, фрезерованная стеклокерамика — технологии, которые задают новые стандарты.
                 </p>
               </div>
@@ -520,7 +520,7 @@ const Workshop16Shades = () => {
           )}>
             <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Программа</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Программа курса</h2>
-            <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
+            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
               Симбиоз цифровой точности и мануального искусства для создания тотальных работ, которые не отличить от живых зубов.
             </p>
           </div>
@@ -549,8 +549,8 @@ const Workshop16Shades = () => {
 
                     <div className="bg-[#222]/60 border border-[#333] rounded-xl p-6 hover:border-[#D4AF37]/30 transition-all duration-300">
                       <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                      {item.speaker && <p className="text-sm text-[#F5F5F5]/40 mb-2">{item.speaker}</p>}
-                      <p className="text-[#F5F5F5]/60 text-sm leading-relaxed">{item.desc}</p>
+                      {item.speaker && <p className="text-sm text-white/90 mb-2">{item.speaker}</p>}
+                      <p className="text-[#F5F5F5]/90 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 );
@@ -571,7 +571,7 @@ const Workshop16Shades = () => {
           )}>
             <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Атмосфера</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Больше, чем просто обучение</h2>
-            <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
+            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
               Мы убеждены, что профессиональный рост невозможен без неформального общения и обмена опытом. Поэтому мы позаботились не только о насыщенной образовательной программе, но и о вашем комфорте.
             </p>
           </div>
@@ -612,7 +612,7 @@ const Workshop16Shades = () => {
             </div>
             <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Стенды</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Инновации, к которым можно прикоснуться</h2>
-            <p className="text-[#F5F5F5]/60 leading-relaxed text-lg max-w-3xl mx-auto">
+            <p className="text-[#F5F5F5]/90 leading-relaxed text-lg max-w-3xl mx-auto">
               На протяжении всего мероприятия в зале будут расположены стенды с инновационными материалами и оборудованием от ведущих мировых брендов. Вы сможете не просто посмотреть на них издалека, а подойти, потрогать, изучить и получить исчерпывающую консультацию от представителей компаний. Это ваш шанс быть в курсе последних новинок и найти решения для своей лаборатории.
             </p>
             <div className="mt-10 max-w-4xl mx-auto rounded-2xl overflow-hidden">
@@ -634,7 +634,7 @@ const Workshop16Shades = () => {
             <div className="text-center mb-12">
               <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Розыгрыш призов</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Подарки для участников мероприятия</h2>
-              <p className="text-[#F5F5F5]/50 max-w-3xl mx-auto text-lg">
+              <p className="text-[#F5F5F5]/80 max-w-3xl mx-auto text-lg">
                 Среди участников мероприятия мы разыграем ценные призы от партнёров — профессиональные инструменты и аксессуары для ежедневной практики.
               </p>
             </div>
@@ -661,7 +661,7 @@ const Workshop16Shades = () => {
                       {prize.place}
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{prize.title}</h3>
-                    <p className="text-[#F5F5F5]/60 leading-relaxed">{prize.description}</p>
+                    <p className="text-[#F5F5F5]/90 leading-relaxed">{prize.description}</p>
                   </div>
                 </div>
               ))}
@@ -680,7 +680,7 @@ const Workshop16Shades = () => {
               <div className="text-center mb-12">
                 <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Развлечения</span>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Живое выступление кавер-группы</h2>
-                <p className="text-[#F5F5F5]/50 max-w-2xl mx-auto text-lg">
+                <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
                   Профессиональная кавер-группа будет играть на протяжении всего мероприятия, создавая невероятную атмосферу и заряжая энергией весь вечер.
                 </p>
               </div>
@@ -702,11 +702,11 @@ const Workshop16Shades = () => {
             <div className="bg-[#222]/80 border border-[#333] rounded-3xl p-10 hover:border-[#D4AF37]/30 transition-all duration-500">
               <span className="text-sm tracking-[0.3em] uppercase mb-6 block" style={{ color: GOLD }}>Стоимость</span>
               <div className="text-5xl md:text-6xl font-extrabold mb-2">7 000 ₽</div>
-              <p className="text-[#F5F5F5]/40 text-sm mb-8">Включено: мастер-классы, нетворкинг, фуршет</p>
+              <p className="text-white/90 text-sm mb-8">Включено: мастер-классы, нетворкинг, фуршет</p>
 
               <div className="space-y-3 text-left mb-8">
                 {course.includes.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm text-[#F5F5F5]/60">
+                  <div key={i} className="flex items-center gap-3 text-sm text-[#F5F5F5]/90">
                     <CheckCircle2 className="h-4 w-4 flex-shrink-0" style={{ color: GOLD }} />
                     {item}
                   </div>
@@ -723,7 +723,7 @@ const Workshop16Shades = () => {
                 />
               </div>
 
-              <p className="text-xs text-[#F5F5F5]/30 mt-4">
+              <p className="text-xs text-[#F5F5F5]/90 mt-4">
                 Для оплаты от юрлица пришлите нам свои реквизиты.
               </p>
             </div>
@@ -788,7 +788,7 @@ const Workshop16Shades = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Готовы начать обучение?
             </h2>
-            <p className="text-[#F5F5F5]/50 mb-10 text-lg">
+            <p className="text-[#F5F5F5]/80 mb-10 text-lg">
               Запишитесь на курс сейчас или свяжитесь с нами для получения дополнительной информации.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -814,7 +814,7 @@ const Workshop16Shades = () => {
 
       <div className="border-t border-[#2A2A2A] py-8">
         <div className="container mx-auto px-4 text-center">
-          <Link to="/education/calendar" className="text-sm text-[#F5F5F5]/40 hover:text-[#F5F5F5]/70 transition-colors inline-flex items-center gap-2">
+          <Link to="/education/calendar" className="text-sm text-white/90 hover:text-white/90 transition-colors inline-flex items-center gap-2">
             <ArrowRight className="h-4 w-4 rotate-180" /> Все курсы и мероприятия
           </Link>
         </div>
@@ -824,7 +824,7 @@ const Workshop16Shades = () => {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
           <div className="min-w-0 text-left">
             <div className="font-extrabold text-2xl leading-none sm:text-xl" style={{ color: GOLD }}>7 000 ₽</div>
-            <div className="text-xs text-[#F5F5F5]/40">Шестнадцать оттенков белого</div>
+            <div className="text-xs text-white/90">Шестнадцать оттенков белого</div>
           </div>
           <div className="w-full sm:w-auto sm:min-w-[220px] sm:shrink-0">
             <CourseApplicationForm

@@ -537,7 +537,7 @@ export default function WebinarZirconMarch2026() {
       </section>
 
       {/* REGISTRATION FORM */}
-      <section id="registration" className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
+      <section id="registration" ref={regRef} className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">

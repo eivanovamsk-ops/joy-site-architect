@@ -315,7 +315,7 @@ const Workshop16Shades = () => {
               "text-base md:text-lg text-[#F5F5F5]/70 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-[400ms] ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              4 часа живых демонстраций. Мост между классикой и цифрой, чтобы сдать сложные работы с первого раза без переделок.
+              4 часа живых демонстраций — чтобы ваши работы принимались с первого раза без переделок
             </p>
 
             <ul className={cn(

@@ -824,7 +824,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
 
       const course = await loadCourseEmailData(serviceClient, requestData.courseApplicationId);
-      const results: Array<{ recipient: string; result: unknown }> = [];
+      const results: Array<{ recipient: string; result: unknown; error?: string }> = [];
 
       if (course.email) {
         const clientSubject = course.isWebinar
@@ -834,15 +834,20 @@ const handler = async (req: Request): Promise<Response> => {
           ? buildWebinarClientEmailHtml(course)
           : buildStandardCourseClientEmailHtml(course);
 
-        const clientResult = await sendEmail(
-          UNISENDER_API_KEY,
-          course.email,
-          clientSubject,
-          clientHtml,
-          "Articon Education",
-          "event@articon.pro",
-        );
-        results.push({ recipient: "client", result: clientResult });
+        try {
+          const clientResult = await sendEmail(
+            UNISENDER_API_KEY,
+            course.email,
+            clientSubject,
+            clientHtml,
+            "Articon Education",
+            "event@articon.pro",
+          );
+          results.push({ recipient: "client", result: clientResult });
+        } catch (clientErr) {
+          console.error(`Failed to send client email to ${course.email}:`, clientErr);
+          results.push({ recipient: "client", result: null, error: clientErr instanceof Error ? clientErr.message : "Unknown error" });
+        }
       }
 
       const adminEmails = ["event@articon.pro", "e.ivanova@articon.pro"];
@@ -850,18 +855,24 @@ const handler = async (req: Request): Promise<Response> => {
       const adminHtml = buildCourseAdminEmailHtml(course);
 
       for (const email of adminEmails) {
-        const result = await sendEmail(
-          UNISENDER_API_KEY,
-          email,
-          adminSubject,
-          adminHtml,
-          "Articon Education",
-          "event@articon.pro",
-        );
-        results.push({ recipient: email, result });
+        try {
+          const result = await sendEmail(
+            UNISENDER_API_KEY,
+            email,
+            adminSubject,
+            adminHtml,
+            "Articon Education",
+            "event@articon.pro",
+          );
+          results.push({ recipient: email, result });
+        } catch (adminErr) {
+          console.error(`Failed to send admin email to ${email}:`, adminErr);
+          results.push({ recipient: email, result: null, error: adminErr instanceof Error ? adminErr.message : "Unknown error" });
+        }
       }
 
-      return new Response(JSON.stringify({ success: true, results }), {
+      const anySuccess = results.some(r => !r.error);
+      return new Response(JSON.stringify({ success: anySuccess, results }), {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });

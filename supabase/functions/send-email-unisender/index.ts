@@ -79,6 +79,11 @@ interface AuthContext {
   isAdmin: boolean;
 }
 
+interface JwtPayload {
+  role?: string;
+  sub?: string;
+}
+
 class HttpError extends Error {
   status: number;
 
@@ -143,6 +148,19 @@ const formatCourseDisplayName = (course: CourseEmailData): string => {
 
 const isUuid = (value: string): boolean => {
   return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+};
+
+const parseJwtPayload = (token: string): JwtPayload | null => {
+  try {
+    const [, payload = ""] = token.split(".");
+    if (!payload) return null;
+
+    const normalized = payload.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
+    return JSON.parse(atob(padded));
+  } catch {
+    return null;
+  }
 };
 
 const buildCustomerEmailHtml = (order: OrderEmailData): string => {
@@ -568,31 +586,44 @@ const getAuthContext = async (req: Request, serviceClient: ReturnType<typeof cre
     return null;
   }
 
+  const token = authHeader.replace("Bearer ", "");
+  const tokenPayload = parseJwtPayload(token);
+  if (!tokenPayload) {
+    return null;
+  }
+
+  // Public forms invoke this function with the publishable key token (role=anon, no sub).
+  // This is not a user session and must be treated as unauthenticated, not as an error.
+  if (!tokenPayload.sub && ["anon", "service_role"].includes(tokenPayload.role ?? "")) {
+    return null;
+  }
+
   const url = Deno.env.get("SUPABASE_URL");
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
   if (!url || !anonKey) {
     throw new Error("Public backend credentials are not configured");
   }
 
-  const token = authHeader.replace("Bearer ", "");
   const authClient = createClient(url, anonKey, {
     auth: { persistSession: false, autoRefreshToken: false },
     global: { headers: { Authorization: authHeader } },
   });
 
-  const { data: { user }, error: userError } = await authClient.auth.getUser(token);
-  if (userError || !user?.id) {
-    throw new HttpError(401, "Unauthorized");
+  const { data: claimData, error: claimsError } = await authClient.auth.getClaims(token);
+  const userId = claimData?.claims?.sub;
+
+  if (claimsError || typeof userId !== "string" || !isUuid(userId)) {
+    return null;
   }
 
   const { data: profile } = await serviceClient
     .from("profiles")
     .select("role")
-    .eq("id", user.id)
+    .eq("id", userId)
     .maybeSingle();
 
   return {
-    userId: user.id,
+    userId,
     isAdmin: profile?.role === "admin",
   };
 };

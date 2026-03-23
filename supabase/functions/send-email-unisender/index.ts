@@ -588,11 +588,11 @@ const getAuthContext = async (req: Request, serviceClient: ReturnType<typeof cre
   const { data: profile } = await serviceClient
     .from("profiles")
     .select("role")
-    .eq("id", data.claims.sub)
+    .eq("id", user.id)
     .maybeSingle();
 
   return {
-    userId: data.claims.sub,
+    userId: user.id,
     isAdmin: profile?.role === "admin",
   };
 };

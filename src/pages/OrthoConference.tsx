@@ -131,7 +131,6 @@ const course = courses.find(c => c.id === 19)!;
 
 const cities = [
   { name: "Казань", date: "15 апреля 2026", emoji: "🕌" },
-  { name: "Самара", date: "17 апреля 2026", emoji: "🌉" },
 ];
 
 const whyItems = [

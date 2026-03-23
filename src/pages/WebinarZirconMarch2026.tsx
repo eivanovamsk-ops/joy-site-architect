@@ -16,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 
 /* ─── Floating Video Widget ─── */
-function FloatingVideoWidget({ video }: { video: string }) {
+function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hideWhenRegVisible: boolean }) {
   const [visible, setVisible] = useState(false);
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,7 +26,7 @@ function FloatingVideoWidget({ video }: { video: string }) {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!visible) return null;
+  if (!visible || hideWhenRegVisible) return null;
 
   const handlePlay = () => {
     setPlaying(true);

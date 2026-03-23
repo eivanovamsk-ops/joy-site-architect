@@ -55,6 +55,7 @@ interface CourseApplicationRequest {
   type: "course_application";
   courseApplicationId: string;
   emailTemplate?: "zircon_webinar_2026";
+  expectedCourseKeyword?: string;
 }
 
 interface FeedbackNotificationRequest {
@@ -116,6 +117,8 @@ const ZIRCON_WEBINAR_CONFIG = {
   courseDate: "26 марта 2026, 16:00 МСК",
   telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
 };
+
+const normalizeText = (value: string | undefined | null) => (value ?? "").trim().toLowerCase();
 
 const formatPrice = (price: number): string => {
   return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
@@ -873,7 +876,10 @@ const handler = async (req: Request): Promise<Response> => {
 
       let course = await loadCourseEmailData(serviceClient, requestData.courseApplicationId);
 
-      if (requestData.emailTemplate === "zircon_webinar_2026") {
+      const shouldForceZirconTemplate =
+        requestData.emailTemplate === "zircon_webinar_2026" || normalizeText(course.courseName).includes("циркон");
+
+      if (shouldForceZirconTemplate) {
         course = {
           ...course,
           courseName: ZIRCON_WEBINAR_CONFIG.courseName,
@@ -881,6 +887,13 @@ const handler = async (req: Request): Promise<Response> => {
           isWebinar: true,
           telegramChatUrl: ZIRCON_WEBINAR_CONFIG.telegramChatUrl,
         };
+      }
+
+      if (requestData.expectedCourseKeyword) {
+        const expected = normalizeText(requestData.expectedCourseKeyword);
+        if (expected && !normalizeText(course.courseName).includes(expected)) {
+          throw new HttpError(409, "Course mismatch for requested email template");
+        }
       }
 
       const results: Array<{ recipient: string; result: unknown; error?: string }> = [];

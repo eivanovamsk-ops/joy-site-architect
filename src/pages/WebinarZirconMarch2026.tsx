@@ -16,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 
 /* ─── Floating Video Widget ─── */
-function FloatingVideoWidget({ video }: { video: string }) {
+function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hideWhenRegVisible: boolean }) {
   const [visible, setVisible] = useState(false);
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,7 +26,7 @@ function FloatingVideoWidget({ video }: { video: string }) {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!visible) return null;
+  if (!visible || hideWhenRegVisible) return null;
 
   const handlePlay = () => {
     setPlaying(true);
@@ -220,6 +220,16 @@ export default function WebinarZirconMarch2026() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [regVisible, setRegVisible] = useState(false);
+  const regRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = regRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => setRegVisible(e.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
 
@@ -527,7 +537,7 @@ export default function WebinarZirconMarch2026() {
       </section>
 
       {/* REGISTRATION FORM */}
-      <section id="registration" className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
+      <section id="registration" ref={regRef} className="py-20 bg-gradient-to-br from-[hsl(30,20%,8%)] via-[hsl(35,30%,12%)] to-[hsl(40,25%,10%)]">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
@@ -579,7 +589,7 @@ export default function WebinarZirconMarch2026() {
       </section>
 
       {/* Floating Video Widget */}
-      <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" />
+      <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" hideWhenRegVisible={regVisible} />
     </Layout>
   );
 }

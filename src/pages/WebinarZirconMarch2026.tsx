@@ -220,6 +220,16 @@ export default function WebinarZirconMarch2026() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [regVisible, setRegVisible] = useState(false);
+  const regRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = regRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => setRegVisible(e.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const scrollToReg = () => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
 

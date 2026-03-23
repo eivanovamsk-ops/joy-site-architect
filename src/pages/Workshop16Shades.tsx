@@ -283,7 +283,7 @@ const Workshop16Shades = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img src="/images/courses/course-18-hero.jpg" alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/90 via-[#1A1A1A]/70 to-[#1A1A1A]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#1A1A1A]/85 to-[#1A1A1A]/50" />
         </div>
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -298,7 +298,7 @@ const Workshop16Shades = () => {
               "transition-all duration-1000 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
+              <span className="text-base md:text-lg font-bold tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
             </div>
 
             <h1 className={cn(
@@ -315,11 +315,11 @@ const Workshop16Shades = () => {
               "text-base md:text-lg text-[#F5F5F5]/70 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-[400ms] ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              4 часа живых демонстраций. Мост между классикой и цифрой, чтобы сдать сложные работы с первого раза без переделок.
+              4 часа живых демонстраций — чтобы ваши работы принимались с первого раза без переделок
             </p>
 
             <ul className={cn(
-              "space-y-2 text-[#F5F5F5]/80 text-sm md:text-base mb-8 transition-all duration-1000 delay-500 ease-out",
+              "space-y-2 text-white font-medium text-sm md:text-base mb-8 transition-all duration-1000 delay-500 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <li>— Чёткий алгоритм работы</li>

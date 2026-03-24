@@ -15,6 +15,7 @@ import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
 import eonLogo from "@/assets/partners/eon-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
 import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
+import stidentLogo from "@/assets/partners/stident-logo.png";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -189,6 +190,11 @@ const partners = [
     name: "Ультрастом",
     logo: ultrastomLogo,
     url: "https://ultrastom.shop/",
+  },
+  {
+    name: "S.T.I.Dent",
+    logo: stidentLogo,
+    url: "https://stident.ru/",
   },
 ];
 
@@ -752,7 +758,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+            <div className="grid gap-6 grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
                   <div className="rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center border border-white/10 bg-white p-6 md:p-8">

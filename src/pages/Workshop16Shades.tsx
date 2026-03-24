@@ -191,6 +191,11 @@ const partners = [
     logo: ultrastomLogo,
     url: "https://ultrastom.shop/",
   },
+  {
+    name: "S.T.I.Dent",
+    logo: stidentLogo,
+    url: "https://stident.ru/",
+  },
 ];
 
 const prizes = [

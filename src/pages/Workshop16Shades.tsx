@@ -197,6 +197,11 @@ const partners = [
     logo: stidentLogo,
     url: "https://stident.ru/",
   },
+  {
+    name: "Зубной техник",
+    logo: zubtexLogo,
+    url: "https://zubtex.ru/magazine/",
+  },
 ];
 
 const prizes = [

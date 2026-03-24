@@ -105,7 +105,7 @@ export const CatalogSidebar = () => {
   };
 
   return (
-    <div className="bg-card rounded-lg border border-border p-4 sticky top-24">
+    <div className="bg-card rounded-lg border border-border p-4">
       <h3 className="font-semibold text-foreground mb-4 text-lg">Категории</h3>
 
       <div className="space-y-1">

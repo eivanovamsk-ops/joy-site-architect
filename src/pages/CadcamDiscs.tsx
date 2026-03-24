@@ -218,9 +218,11 @@ const CadcamDiscs = () => {
           </div>
 
           {/* Desktop sidebar */}
-          <div className="hidden lg:flex lg:w-64 flex-shrink-0 flex-col gap-6">
-            <CatalogSidebar />
-            <CadcamFilters filters={filters} onChange={setFilters} />
+          <div className="hidden lg:block lg:w-64 flex-shrink-0">
+            <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto space-y-6 pr-1">
+              <CatalogSidebar />
+              <CadcamFilters filters={filters} onChange={setFilters} />
+            </div>
           </div>
 
           <div className="flex-1">

@@ -14,8 +14,9 @@ const Photopolymers = () => {
   // Группируем по бренду
   const topcoreProducts = photopolymers.filter((p) => p.brand === "TOPCORE");
   const harzLabsProducts = photopolymers.filter((p) => p.brand === "HARZ Labs");
+  const heygearsProducts = photopolymers.filter((p) => p.brand === "HeyGears");
   const otherProducts = photopolymers.filter(
-    (p) => p.brand !== "TOPCORE" && p.brand !== "HARZ Labs"
+    (p) => p.brand !== "TOPCORE" && p.brand !== "HARZ Labs" && p.brand !== "HeyGears"
   );
 
   return (

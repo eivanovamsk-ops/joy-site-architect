@@ -178,10 +178,17 @@ const partners = [
   {
     name: "EON",
     logo: eonLogo,
+    url: "",
   },
   {
     name: "HeyGears",
     logo: heygearsLogo,
+    url: "",
+  },
+  {
+    name: "Ультрастом",
+    logo: ultrastomLogo,
+    url: "https://ultrastom.shop/",
   },
 ];
 

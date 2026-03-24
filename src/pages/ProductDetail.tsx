@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
 import { useToast } from "@/hooks/use-toast";
 import { YandexSplitButton, SPLIT_ELIGIBLE_PRODUCTS } from "@/components/shop/YandexSplitButton";
+import { ProductDescription } from "@/components/shop/ProductDescription";
 
 const ProductDetail = () => {
   const { id } = useParams();

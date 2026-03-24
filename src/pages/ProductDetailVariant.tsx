@@ -566,6 +566,9 @@ const ProductDetailVariant = () => {
             </div>
           </div>
         )}
+
+        {/* Сопутствующие товары */}
+        <RelatedProducts productId={product.id} />
       </div>
     </Layout>
   );

@@ -353,6 +353,9 @@ const ProductDetail = () => {
           </div>
         )}
 
+        {/* Сопутствующие товары */}
+        <RelatedProducts productId={product.id} />
+
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div>

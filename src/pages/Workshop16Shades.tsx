@@ -764,14 +764,14 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto">
+            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
-                  <div className="rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center border border-white/10 bg-white p-6 md:p-8">
+                  <div className="rounded-2xl aspect-[3/2] flex items-center justify-center bg-white p-5">
                     <img
                       src={partner.logo}
                       alt={`${partner.name} — логотип партнёра мероприятия`}
-                      className="max-h-20 md:max-h-24 w-auto max-w-full object-contain"
+                      className="max-h-[80%] w-auto max-w-[85%] object-contain"
                       loading="lazy"
                     />
                   </div>
@@ -779,7 +779,7 @@ const Workshop16Shades = () => {
                 return (
                   <div
                     key={partner.name}
-                    className="bg-[#222]/60 border border-[#333] rounded-3xl px-6 py-8 md:px-10 md:py-10 hover:border-[#D4AF37]/30 transition-all duration-500"
+                    className="rounded-2xl overflow-hidden hover:ring-2 hover:ring-[#D4AF37]/40 transition-all duration-500"
                     style={{ transitionDelay: `${index * 120}ms` }}
                   >
                     {partner.url ? (

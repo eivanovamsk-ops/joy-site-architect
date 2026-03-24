@@ -38,6 +38,11 @@ import gk3Pro5 from "@/assets/products/gk3-pro-5.png";
 import gk3ProUvCompare from "@/assets/products/gk3-pro-uv-compare.png";
 import gk3ProCuringChart from "@/assets/products/gk3-pro-curing-chart.png";
 
+// HeyGears photopolymers
+import heygearsModelGpCaramel from "@/assets/products/heygears-model-gp-caramel.png";
+import heygearsModelGpGrey from "@/assets/products/heygears-model-gp-grey.png";
+import heygearsModelGpSamples from "@/assets/products/heygears-model-gp-samples.png";
+
 // TOPCORE images
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";

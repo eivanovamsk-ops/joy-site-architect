@@ -25,6 +25,7 @@ import { useCart } from "@/hooks/useCart";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { ProductDescription } from "@/components/shop/ProductDescription";
+import { RelatedProducts } from "@/components/shop/RelatedProducts";
 
 const ProductDetailVariant = () => {
   const { id } = useParams();
@@ -565,6 +566,9 @@ const ProductDetailVariant = () => {
             </div>
           </div>
         )}
+
+        {/* Сопутствующие товары */}
+        <RelatedProducts productId={product.id} />
       </div>
     </Layout>
   );

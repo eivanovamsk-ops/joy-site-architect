@@ -622,7 +622,7 @@ export const courses: Course[] = [
         name: "Шкультецкий Григорий",
         photo: "/images/lecturers/shkultsetsky-grigoriy.png",
         position: "Инженер компании Upcera. Технолог ЗТЛ \"Атлас\".",
-        bio: "В Стоматологии более 8 лет."
+        bio: "Инженер компании Upcera. Технолог ЗТЛ «Атлас». В Стоматологии более 8 лет."
       }
     ],
     includes: [

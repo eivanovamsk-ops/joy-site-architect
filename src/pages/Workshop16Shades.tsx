@@ -16,6 +16,7 @@ import eonLogo from "@/assets/partners/eon-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
 import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
 import stidentLogo from "@/assets/partners/stident-logo.png";
+import zubtexLogo from "@/assets/partners/zubtex-logo.jpg";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -195,6 +196,11 @@ const partners = [
     name: "S.T.I.Dent",
     logo: stidentLogo,
     url: "https://stident.ru/",
+  },
+  {
+    name: "Зубной техник",
+    logo: zubtexLogo,
+    url: "https://zubtex.ru/magazine/",
   },
 ];
 
@@ -758,7 +764,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-6 grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto">
+            <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
                   <div className="rounded-2xl min-h-[170px] md:min-h-[200px] flex items-center justify-center border border-white/10 bg-white p-6 md:p-8">

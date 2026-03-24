@@ -77,6 +77,7 @@ export interface Course {
   lightBanner?: boolean;
   galleryImages?: string[];
   partners?: { name: string; logo: string; url: string }[];
+  upcomingDates?: { date: string; dateStart: Date }[];
 }
 
 export const courses: Course[] = [
@@ -169,8 +170,13 @@ export const courses: Course[] = [
     slug: "expanding-appliances",
     title: "Цифровое моделирование расширяющих несъёмных аппаратов",
     subtitle: "Без опоры на мини-имплантаты",
-    date: "2 июля 2026",
-    dateStart: new Date(2026, 6, 2),
+    date: "29 мая 2026",
+    dateStart: new Date(2026, 4, 29),
+    upcomingDates: [
+      { date: "2 июля 2026", dateStart: new Date(2026, 6, 2) },
+      { date: "3 сентября 2026", dateStart: new Date(2026, 8, 3) },
+      { date: "16 декабря 2026", dateStart: new Date(2026, 11, 16) },
+    ],
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,
@@ -241,8 +247,13 @@ export const courses: Course[] = [
     slug: "mini-implants-planning",
     title: "Цифровое планирование ортодонтических мини-имплантатов и моделирование аппаратов с кортикальной опорой",
     subtitle: "По концепции pin-first",
-    date: "3 июля 2026",
-    dateStart: new Date(2026, 6, 3),
+    date: "30 мая 2026",
+    dateStart: new Date(2026, 4, 30),
+    upcomingDates: [
+      { date: "3 июля 2026", dateStart: new Date(2026, 6, 3) },
+      { date: "4 сентября 2026", dateStart: new Date(2026, 8, 4) },
+      { date: "17 декабря 2026", dateStart: new Date(2026, 11, 17) },
+    ],
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 35000,
@@ -735,8 +746,13 @@ export const courses: Course[] = [
     slug: "maestro3d-aligners",
     title: "Элайнеры | Maestro 3D V6 в практике врача-ортодонта и зубного техника",
     subtitle: "Практический курс",
-    date: "17 июня 2026",
-    dateStart: new Date(2026, 5, 17),
+    date: "22 мая 2026",
+    dateStart: new Date(2026, 4, 22),
+    upcomingDates: [
+      { date: "17 июня 2026", dateStart: new Date(2026, 5, 17) },
+      { date: "18 июля 2026", dateStart: new Date(2026, 6, 18) },
+      { date: "25 ноября 2026", dateStart: new Date(2026, 10, 25) },
+    ],
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 35000,
@@ -1078,8 +1094,13 @@ export const courses: Course[] = [
     slug: "indirect-bracket-bonding",
     title: "Непрямая фиксация брекетов",
     subtitle: "Теория и практика",
-    date: "23 июня 2026",
-    dateStart: new Date(2026, 5, 23),
+    date: "7 мая 2026",
+    dateStart: new Date(2026, 4, 7),
+    upcomingDates: [
+      { date: "23 июня 2026", dateStart: new Date(2026, 5, 23) },
+      { date: "21 августа 2026", dateStart: new Date(2026, 7, 21) },
+      { date: "1 декабря 2026", dateStart: new Date(2026, 11, 1) },
+    ],
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 30000,

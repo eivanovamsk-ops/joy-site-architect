@@ -619,10 +619,10 @@ export const courses: Course[] = [
     ],
     lecturers: [
       {
-        name: "Григорий Сулима",
+        name: "Шкультецкий Григорий",
         photo: "https://static.wixstatic.com/media/526e65_62aa4334df2048009148815303d34f22~mv2.jpg/v1/crop/x_798,y_781,w_3128,h_3124/fill/w_253,h_253,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/089_JPG.jpg",
-        position: "Ведущий специалист фрезерного центра Артикон",
-        bio: "Зубной техник, тренер SUM3D, MillBox, инженер по запуску и ремонту оборудования imes-icore."
+        position: "Инженер компании Upcera. Технолог ЗТЛ \"Атлас\".",
+        bio: "В Стоматологии более 8 лет."
       }
     ],
     includes: [

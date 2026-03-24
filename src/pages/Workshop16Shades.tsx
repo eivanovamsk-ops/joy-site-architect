@@ -16,6 +16,7 @@ import eonLogo from "@/assets/partners/eon-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
 import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
 import stidentLogo from "@/assets/partners/stident-logo.png";
+import zubtexLogo from "@/assets/partners/zubtex-logo.jpg";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {

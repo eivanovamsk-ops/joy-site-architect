@@ -14,8 +14,9 @@ const Photopolymers = () => {
   // Группируем по бренду
   const topcoreProducts = photopolymers.filter((p) => p.brand === "TOPCORE");
   const harzLabsProducts = photopolymers.filter((p) => p.brand === "HARZ Labs");
+  const heygearsProducts = photopolymers.filter((p) => p.brand === "HeyGears");
   const otherProducts = photopolymers.filter(
-    (p) => p.brand !== "TOPCORE" && p.brand !== "HARZ Labs"
+    (p) => p.brand !== "TOPCORE" && p.brand !== "HARZ Labs" && p.brand !== "HeyGears"
   );
 
   return (
@@ -85,6 +86,21 @@ const Photopolymers = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {harzLabsProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* HeyGears Section */}
+            {heygearsProducts.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">HeyGears</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {heygearsProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>

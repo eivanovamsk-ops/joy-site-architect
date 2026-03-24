@@ -38,6 +38,11 @@ import gk3Pro5 from "@/assets/products/gk3-pro-5.png";
 import gk3ProUvCompare from "@/assets/products/gk3-pro-uv-compare.png";
 import gk3ProCuringChart from "@/assets/products/gk3-pro-curing-chart.png";
 
+// HeyGears photopolymers
+import heygearsModelGpCaramel from "@/assets/products/heygears-model-gp-caramel.png";
+import heygearsModelGpGrey from "@/assets/products/heygears-model-gp-grey.png";
+import heygearsModelGpSamples from "@/assets/products/heygears-model-gp-samples.png";
+
 // TOPCORE images
 import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
 import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
@@ -877,6 +882,93 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     sku: "TOPCORE SG",
     description: "Биосовместимый фотополимер для 3D-печати хирургических шаблонов.",
     externalUrl: "https://articon.pro/product/fotopolimer-topcore-sg/",
+  },
+
+  // ==============================================
+  // ФОТОПОЛИМЕРЫ - HEYGEARS
+  // ==============================================
+  {
+    id: "heygears-model-gp-caramel",
+    name: "Фотополимер HeyGears UltraPrint-D Model GP Caramel",
+    category: "3d-print",
+    subcategory: "photopolymers",
+    price: null,
+    image: heygearsModelGpCaramel,
+    gallery: [heygearsModelGpCaramel, heygearsModelGpGrey, heygearsModelGpSamples],
+    brand: "HeyGears",
+    inStock: true,
+    isNew: true,
+    metaDescription: "Фотополимер HeyGears UltraPrint-D Model GP Caramel для 3D-печати стоматологических моделей. Высокая точность, стабильность размеров, гладкая поверхность и экономичный расход. Подходит для принтера A2D HD. Купить смолу для стоматологических моделей карамель с доставкой по России.",
+    description: `HeyGears UltraPrint-D Model GP Caramel — профессиональный фотополимер для 3D-печати высокоточных стоматологических моделей с улучшенной визуализацией деталей. Карамельный оттенок обеспечивает более контрастное восприятие анатомии и удобство работы при моделировании и контроле качества.
+
+Материал разработан для работы на принтерах HeyGears A2D HD и подходит для изготовления диагностических, ортодонтических и базовых моделей. Смола с длиной волны 405 нм сочетает высокую скорость печати, стабильность размеров и отличное качество поверхности.
+
+Низкая вязкость упрощает очистку изделий и снижает расход материала, делая работу лаборатории более эффективной.
+
+Купить фотополимер HeyGears Model GP Caramel в Москве можно с доставкой по всей России.
+
+
+Преимущества фотополимера HeyGears Model GP Caramel
+
+Улучшенная визуализация моделей
+Карамельный цвет повышает контраст и облегчает контроль анатомических деталей.
+
+Высокая скорость печати
+Оптимизирован для быстрого производства моделей без потери качества.
+
+Высокая точность
+Позволяет точно воспроизводить мельчайшие элементы.
+
+Гладкая поверхность
+Минимизирует необходимость дополнительной обработки.
+
+Высокая твердость
+Обеспечивает устойчивость к механическим нагрузкам.
+
+Стабильность размеров
+Минимальная усадка гарантирует точность моделей.
+
+Низкая вязкость
+Упрощает работу и снижает расход материала.
+
+Экономическая эффективность
+Оптимальный баланс стоимости и производительности.
+
+
+Применение фотополимера
+
+HeyGears UltraPrint-D Model GP Caramel используется для:
+• стоматологических моделей
+• диагностических моделей
+• ортодонтических моделей
+• базовых моделей
+• нивелирующих платформ
+
+
+Почему стоит купить HeyGears Model GP Caramel
+
+Фотополимер HeyGears Model GP Caramel — это решение для лабораторий, которым важны точность, скорость и удобство работы.
+
+Материал обеспечивает:
+• четкую визуализацию моделей
+• стабильные результаты печати
+• снижение расхода материала
+• удобство постобработки
+
+Купить фотополимер для 3D-печати стоматологических моделей HeyGears Model GP Caramel можно с консультацией специалистов и доставкой по всей России.`,
+    specifications: {
+      "Тип материала": "фотополимер для 3D-печати",
+      "Модель": "Model GP",
+      "Цвет": "Карамель (Caramel)",
+      "Объем": "1000 г",
+      "Длина волны": "405 нм",
+      "Совместимость": "HeyGears A2D HD",
+      "Сертификация": "NMPA, CE, TGA",
+      "Прочность на изгиб": "91–97 МПа",
+      "Модуль упругости": "2785–2895 МПа",
+      "Твердость": "Shore D 84",
+      "Ударная вязкость": "10–13 Дж/м",
+    },
   },
 
   // ==============================================

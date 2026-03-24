@@ -15,6 +15,7 @@ import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
 import eonLogo from "@/assets/partners/eon-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
 import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
+import stidentLogo from "@/assets/partners/stident-logo.png";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {

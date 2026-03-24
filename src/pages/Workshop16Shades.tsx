@@ -63,7 +63,7 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
       "fixed bottom-20 lg:bottom-6 right-4 z-50 transition-all duration-500",
       visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
     )}>
-      <div className="relative w-[147px] md:w-[280px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
+      <div className="relative w-[125px] md:w-[238px] rounded-xl overflow-hidden shadow-2xl border border-[#333] bg-[#1A1A1A]">
         {/* Close button */}
         <button
           onClick={() => setVisible(false)}
@@ -841,7 +841,7 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <FloatingVideoWidget videos={["/videos/workshop-18-past-1.mp4", "/videos/workshop-18-past-2.mp4"]} />
+      <FloatingVideoWidget videos={["/videos/16-shades-preview.mp4"]} />
 
       <div className="border-t border-[#2A2A2A] py-8">
         <div className="container mx-auto px-4 text-center">

@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/hooks/useCart";
 import { useToast } from "@/hooks/use-toast";
 import { YandexSplitButton, SPLIT_ELIGIBLE_PRODUCTS } from "@/components/shop/YandexSplitButton";
+import { ProductDescription } from "@/components/shop/ProductDescription";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -285,9 +286,7 @@ const ProductDetail = () => {
           
           <TabsContent value="description" className="prose max-w-none">
             {product.description ? (
-              <div className="text-foreground whitespace-pre-line">
-                {product.description}
-              </div>
+              <ProductDescription text={product.description} productName={product.name} />
             ) : (
               <>
                 <p className="text-muted-foreground">

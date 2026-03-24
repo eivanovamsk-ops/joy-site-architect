@@ -407,7 +407,7 @@ const CourseCalendar = () => {
 
                   {/* Content */}
                   <div className="p-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                       <Calendar className="h-4 w-4" />
                       {course.isComingSoon ? (
                         <Badge variant="secondary" className="text-xs font-medium">{course.comingSoonLabel || "Уже скоро"}</Badge>
@@ -415,6 +415,15 @@ const CourseCalendar = () => {
                         course.date
                       )}
                     </div>
+                    {course.upcomingDates && course.upcomingDates.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mb-2 ml-6">
+                        {course.upcomingDates.map((ud, i) => (
+                          <span key={i} className="text-xs text-muted-foreground bg-muted rounded-full px-2 py-0.5">
+                            {ud.date}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     
                     <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
                       {course.title}

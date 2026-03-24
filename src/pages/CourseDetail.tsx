@@ -532,7 +532,7 @@ const CourseDetail = () => {
                   {course.shortDescription}
                 </p>
                 
-                <div className={cn("flex flex-wrap gap-6 mb-8 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/90")} style={{ animationDelay: '0.5s' }}>
+                <div className={cn("flex flex-wrap gap-6 mb-4 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/90")} style={{ animationDelay: '0.5s' }}>
                   <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <Calendar className="h-5 w-5 text-accent" />
                     {course.isComingSoon ?
@@ -552,6 +552,17 @@ const CourseDetail = () => {
                     </div>
                   }
                 </div>
+
+                {course.upcomingDates && course.upcomingDates.length > 0 && (
+                  <div className={cn("flex flex-wrap items-center gap-2 mb-8 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/80")} style={{ animationDelay: '0.55s' }}>
+                    <span className="text-sm text-muted-foreground">Также:</span>
+                    {course.upcomingDates.map((ud, i) => (
+                      <span key={i} className={cn("text-sm backdrop-blur-sm rounded-full px-3 py-1", course.lightBanner ? "bg-foreground/5 text-foreground/80" : "bg-white/10 text-white/70")}>
+                        {ud.date}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Hero CTA with pulse */}
                 <div className="hidden lg:flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>

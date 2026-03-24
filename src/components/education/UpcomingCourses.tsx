@@ -104,6 +104,15 @@ export function EducationUpcomingCourses() {
                     <Calendar className="h-4 w-4" />
                     {course.date}
                   </div>
+                  {course.upcomingDates && course.upcomingDates.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {course.upcomingDates.map((ud, i) => (
+                        <span key={i} className="text-xs bg-education-foreground/10 text-education-foreground/70 rounded-full px-2 py-0.5">
+                          {ud.date}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <span className="text-xs bg-education-foreground/20 text-education-foreground px-2 py-1 rounded-full">
                     {course.category}
                   </span>

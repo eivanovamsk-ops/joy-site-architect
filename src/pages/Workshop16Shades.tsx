@@ -700,26 +700,26 @@ const Workshop16Shades = () => {
                   Профессиональная кавер-группа будет играть на протяжении всего мероприятия, создавая невероятную атмосферу и заряжая энергией весь вечер.
                 </p>
               </div>
-              <div className="grid grid-cols-[auto_1fr_auto] gap-4 items-center justify-center">
-                <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
+              <div className="flex gap-4 items-stretch">
+                <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
                     src="/images/courses/course-18-band-4.jpg"
                     alt="Выступление вокалистки кавер-группы"
-                    className="h-[320px] md:h-[400px] w-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
+                <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
                     src="/images/courses/course-18-band-1.jpg"
                     alt="Кавер-группа на мероприятии Артикон"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
+                <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
                     src="/images/courses/course-18-band-3.jpg"
                     alt="Живое выступление кавер-группы"
-                    className="h-[320px] md:h-[400px] w-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>

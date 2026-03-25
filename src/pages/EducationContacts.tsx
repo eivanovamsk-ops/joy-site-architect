@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 
-import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const EducationContacts = () => {
@@ -68,6 +68,17 @@ const EducationContacts = () => {
                       {phone}
                     </a>
                   ))}
+                </div>
+
+                {/* Email */}
+                <div className="mt-6 pt-6 border-t border-border">
+                  <a
+                    href="mailto:edu@articon.pro"
+                    className="flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    <Mail className="h-5 w-5 text-primary" />
+                    edu@articon.pro
+                  </a>
                 </div>
 
                 {/* Telegram Button */}

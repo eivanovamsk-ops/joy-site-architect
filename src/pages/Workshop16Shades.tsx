@@ -403,7 +403,11 @@ const Workshop16Shades = () => {
             <div className="text-center mb-12">
               <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Формат</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Как проходит мероприятие?</h2>
-              <p className="text-xl md:text-2xl font-semibold" style={{ color: GOLD }}>В формате живых демонстраций на огромном экране.</p>
+              <ul className="text-lg md:text-xl text-left inline-block space-y-3 mt-4">
+                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Формат: Демонстрация на большом экране</li>
+                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Персональная обратная связь напрямую от мастера</li>
+                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Презентация новейших материалов и оборудования</li>
+              </ul>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 items-start">

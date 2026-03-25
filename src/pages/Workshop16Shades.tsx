@@ -410,25 +410,6 @@ const Workshop16Shades = () => {
               </ul>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="bg-[#222]/60 border border-[#333] rounded-2xl p-8 hover:border-[#D4AF37]/30 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
-                  <Monitor className="h-7 w-7" style={{ color: GOLD }} />
-                </div>
-                <p className="text-white/90 leading-relaxed">
-                  Мы создали уникальный формат, который сочетает в себе наглядность масштабной презентации и камерность личного общения. Все техники и методики демонстрируются в режиме реального времени на большом экране, что позволяет рассмотреть каждую деталь с любого ракурса.
-                </p>
-              </div>
-
-              <div className="bg-[#222]/60 border border-[#333] rounded-2xl p-8 hover:border-[#D4AF37]/30 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center" style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30` }}>
-                  <UserCheck className="h-7 w-7" style={{ color: GOLD }} />
-                </div>
-                <p className="text-white/90 leading-relaxed">
-                  Главное преимущество — вы не просто пассивный слушатель. После каждого выступления вы можете подойти к спикеру, задать вопросы и получить персональную обратную связь напрямую от мастера. Такой формат позволяет не просто посмотреть на демонстрацию, но и разобраться в нюансах, которые важны именно вам.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

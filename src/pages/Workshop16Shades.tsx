@@ -203,6 +203,11 @@ const partners = [
     logo: zubtexLogo,
     url: "https://zubtex.ru/magazine/",
   },
+  {
+    name: "Green Dent",
+    logo: greendentLogo,
+    url: "",
+  },
 ];
 
 const prizes = [

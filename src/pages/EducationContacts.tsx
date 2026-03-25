@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const EducationContacts = () => {
   const phones = [
     "+7 (906) 045-75-37",
-    "+7 (905) 717-20-61",
+    "+7 (903) 250-01-81",
   ];
 
   const directions = [

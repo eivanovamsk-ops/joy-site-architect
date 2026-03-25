@@ -555,7 +555,7 @@ const sendEmail = async (
   subject: string,
   body: string,
   senderName = "Articon",
-  senderEmail = "moscow@articon.pro",
+  senderEmail = "noreply@articon.pro",
 ): Promise<unknown> => {
   const maxAttempts = 3;
 

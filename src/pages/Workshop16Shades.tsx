@@ -700,19 +700,26 @@ const Workshop16Shades = () => {
                   Профессиональная кавер-группа будет играть на протяжении всего мероприятия, создавая невероятную атмосферу и заряжая энергией весь вечер.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-[auto_1fr_auto] gap-4 items-center justify-center">
                 <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
-                    src="/images/courses/course-18-band-1.jpg"
-                    alt="Кавер-группа на мероприятии Артикон"
-                    className="w-full h-64 md:h-80 object-cover"
+                    src="/images/courses/course-18-band-4.jpg"
+                    alt="Выступление вокалистки кавер-группы"
+                    className="h-[320px] md:h-[400px] w-auto object-contain"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
-                    src="/images/courses/course-18-band-2.jpg"
-                    alt="Живое выступление на мероприятии Артикон"
-                    className="w-full h-64 md:h-80 object-cover"
+                    src="/images/courses/course-18-band-1.jpg"
+                    alt="Кавер-группа на мероприятии Артикон"
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
+                  <img
+                    src="/images/courses/course-18-band-3.jpg"
+                    alt="Живое выступление кавер-группы"
+                    className="h-[320px] md:h-[400px] w-auto object-contain"
                   />
                 </div>
               </div>

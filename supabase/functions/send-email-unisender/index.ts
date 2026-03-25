@@ -922,7 +922,7 @@ const handler = async (req: Request): Promise<Response> => {
         }
       }
 
-      const adminEmails = ["event@articon.pro", "e.ivanova@articon.pro"];
+      const adminEmails = ["event@articon.pro", "edu@articon.pro"];
       const adminSubject = `🎓 Заявка на курс: ${course.courseName} — ${formatCourseDisplayName(course)}`;
       const adminHtml = buildCourseAdminEmailHtml(course);
 

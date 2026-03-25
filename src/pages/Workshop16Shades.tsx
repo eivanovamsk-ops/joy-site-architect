@@ -17,6 +17,7 @@ import heygearsLogo from "@/assets/partners/heygears-logo.png";
 import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
 import stidentLogo from "@/assets/partners/stident-logo.png";
 import zubtexLogo from "@/assets/partners/zubtex-logo.jpg";
+import greendentLogo from "@/assets/partners/greendent-logo.jpg";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {

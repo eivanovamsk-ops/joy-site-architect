@@ -780,7 +780,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto">
+            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
                   <div className="rounded-2xl aspect-[3/2] flex items-center justify-center bg-white p-5">

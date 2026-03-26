@@ -405,14 +405,19 @@ const Workshop16Shades = () => {
             "max-w-4xl mx-auto transition-all duration-1000",
             formatReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           )}>
-            <div className="text-center mb-12">
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Формат</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Как проходит мероприятие?</h2>
-              <ul className="text-lg md:text-xl text-left inline-block space-y-3 mt-4">
-                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Формат: Демонстрация на большом экране</li>
-                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Персональная обратная связь напрямую от мастера</li>
-                <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Презентация новейших материалов и оборудования</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="text-left">
+                <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Формат</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">Как проходит мероприятие?</h2>
+                <ul className="text-lg md:text-xl space-y-3">
+                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Формат: Демонстрация на большом экране</li>
+                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Персональная обратная связь напрямую от мастера</li>
+                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Презентация новейших материалов и оборудования</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-[#333]">
+                <img src="/images/courses/course-18-format.jpg" alt="Как проходит мероприятие" className="w-full h-auto object-cover" loading="lazy" />
+              </div>
             </div>
 
           </div>

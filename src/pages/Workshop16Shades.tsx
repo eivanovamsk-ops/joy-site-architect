@@ -617,14 +617,6 @@ const Workshop16Shades = () => {
             })}
           </div>
 
-          <div className="max-w-5xl mx-auto mt-10 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
-            <img
-              src="/images/courses/course-18-catering.jpg"
-              alt="Фуршет и угощения на мероприятии Артикон"
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-          </div>
         </div>
       </section>
 

@@ -402,22 +402,30 @@ const Workshop16Shades = () => {
       <section id="w16s-format" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
           <div ref={formatReveal.ref} className={cn(
-            "max-w-4xl mx-auto transition-all duration-1000",
+            "max-w-5xl mx-auto transition-all duration-1000",
             formatReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           )}>
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div className="text-left">
-                <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Формат</span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Как проходит мероприятие?</h2>
-                <ul className="text-lg md:text-xl space-y-3">
-                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Формат: Демонстрация на большом экране</li>
-                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Персональная обратная связь напрямую от мастера</li>
-                  <li className="flex items-start gap-3"><span style={{ color: GOLD }}>•</span> Презентация новейших материалов и оборудования</li>
-                </ul>
-              </div>
-              <div className="rounded-2xl overflow-hidden border border-[#333]">
-                <img src="/images/courses/course-18-format.jpg" alt="Как проходит мероприятие" className="w-full h-auto object-cover" loading="lazy" />
-              </div>
+            <div className="text-center mb-10">
+              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Формат</span>
+              <h2 className="text-4xl md:text-5xl font-bold">Как проходит мероприятие?</h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { text: "Демонстрация на большом экране", image: "/images/courses/course-18-format-demo.jpg" },
+                { text: "Персональная обратная связь напрямую от мастера", image: "/images/courses/course-18-format-feedback.jpg" },
+                { text: "Презентация новейших материалов и оборудования", image: "/images/courses/course-18-format-equipment.jpg" },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col">
+                  <p className="text-lg font-medium mb-4 flex items-start gap-3">
+                    <span className="flex-shrink-0" style={{ color: GOLD }}>•</span>
+                    {item.text}
+                  </p>
+                  <div className="rounded-2xl overflow-hidden border border-[#333] mt-auto">
+                    <img src={item.image} alt={item.text} className="w-full h-48 object-cover" loading="lazy" />
+                  </div>
+                </div>
+              ))}
             </div>
 
           </div>

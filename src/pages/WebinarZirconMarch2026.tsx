@@ -380,6 +380,22 @@ export default function WebinarZirconMarch2026() {
         </button>
       </section>
 
+      {/* JOIN WEBINAR CTA */}
+      <section className="py-8 bg-accent">
+        <div className="container mx-auto px-4 text-center">
+          <Button
+            asChild
+            size="lg"
+            className="bg-foreground hover:bg-foreground/90 text-background text-lg px-12 py-6 rounded-xl font-bold shadow-lg"
+          >
+            <a href="https://start.bizon365.ru/room/206008/8386800fae48" target="_blank" rel="noopener noreferrer">
+              Зайти на вебинар
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </section>
+
       {/* ABOUT SECTION */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">

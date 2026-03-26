@@ -594,7 +594,7 @@ const Workshop16Shades = () => {
                   key={i}
                   ref={reveal.ref}
                   className={cn(
-                    "text-center p-8 rounded-2xl border border-[#333] bg-[#222]/50 hover:border-[#D4AF37]/40 transition-all duration-500 group",
+                    "flex flex-col text-center p-8 rounded-2xl border border-[#333] bg-[#222]/50 hover:border-[#D4AF37]/40 transition-all duration-500 group",
                     reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
                   )}
                   style={{ transitionDelay: `${i * 150}ms` }}
@@ -603,8 +603,8 @@ const Workshop16Shades = () => {
                     <p.icon className="h-7 w-7" style={{ color: GOLD }} />
                   </div>
                   <h3 className="text-lg font-bold mb-3">{p.title}</h3>
-                  <p className="text-sm text-[#F5F5F5] leading-relaxed mb-4">{p.desc}</p>
-                  <div className="rounded-xl overflow-hidden">
+                  <p className="text-sm text-[#F5F5F5] leading-relaxed mb-4 flex-1">{p.desc}</p>
+                  <div className="rounded-xl overflow-hidden mt-auto">
                     <img src={p.image} alt={p.title} className="w-full h-40 object-cover" loading="lazy" />
                   </div>
                 </div>

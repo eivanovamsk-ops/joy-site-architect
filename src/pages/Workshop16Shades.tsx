@@ -296,7 +296,7 @@ const Workshop16Shades = () => {
     <Layout>
     <div className="w16s-page bg-[#1A1A1A] text-[#F5F5F5] min-h-screen overflow-hidden -mt-[116px] lg:-mt-[164px]" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <Helmet>
-        <title>{course.metaTitle} | Учебный центр Артикон</title>
+        <title>Зуботехническая лаборатория Артикон | Обучение зубных техников и керамистов | Курсы</title>
         <meta name="description" content={course.metaDescription} />
         <link rel="canonical" href="https://articon.pro/education/course/18" />
         <meta property="og:title" content="Шестнадцать оттенков белого — Воркшоп | Артикон" />
@@ -324,17 +324,16 @@ const Workshop16Shades = () => {
               "transition-all duration-1000 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <span className="text-base md:text-lg font-bold tracking-[0.3em] uppercase mb-4 inline-block" style={{ color: GOLD }}>Воркшоп для зубных техников</span>
             </div>
 
             <h1 className={cn(
               "text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 transition-all duration-1000 delay-200 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
-              <span className="w16s-text-reveal inline-block">«Шестнадцать</span>
+              <span className="w16s-text-reveal inline-block">Воркшоп для</span>
               <br />
-              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.3s" }}>оттенков</span>{" "}
-              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.5s", color: GOLD }}>белого»</span>
+              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.3s" }}>зубных</span>{" "}
+              <span className="w16s-text-reveal inline-block" style={{ animationDelay: "0.5s", color: GOLD }}>техников</span>
             </h1>
 
             <p className={cn(

@@ -326,7 +326,6 @@ HeyGears UltraCraft A2D HD — это решение для зуботехнич
       "Повторяемость": "95% (±5%)",
       "Точность реконструкции": "более 96%",
     },
-    externalUrl: "https://articon.pro/product/3d-printer-ultracraft-a2d-hd-heygears/",
   },
   {
     id: "uniformation-gk3-ultra",
@@ -421,7 +420,6 @@ Uniformation GK3 Ultra отличается от GK3 Pro увеличенной 
       "Габариты": "455×400×575 мм",
       "Вес": "30 кг",
     },
-    externalUrl: "https://articon.pro/product/uniformation-gk3-ultra/",
   },
   {
     id: "uniformation-gk3-pro",
@@ -524,7 +522,6 @@ Uniformation GK3 Pro — профессиональный 3D-принтер дл
       "Мощность сушки": "300 Вт",
       "Вес": "15,1 кг",
     },
-    externalUrl: "https://articon.pro/product/cure-3-ultra/",
   },
   {
     id: "ultrasonic-w230",
@@ -552,7 +549,6 @@ Uniformation GK3 Pro — профессиональный 3D-принтер дл
       "Габариты": "382×202×330 мм",
       "Вес": "8,5 кг",
     },
-    externalUrl: "https://articon.pro/product/ultrasonic-resin-cleaner-w230/",
   },
 
   {
@@ -642,7 +638,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Цвет": "Прозрачный",
       "Вес": "335 г",
     },
-    externalUrl: "https://articon.pro/product/build-tray-asiga-10l-max/",
   },
   {
     id: "asiga-max-tray-2l",
@@ -657,7 +652,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     isSale: true,
     sku: "PN/02500",
     description: "Встраиваемый лоток Build Tray объёмом 2 литра для 3D-принтера Asiga MAX.",
-    externalUrl: "https://articon.pro/product/build-tray-asiga-2l-max/",
   },
   {
     id: "asiga-max-tray-5l",
@@ -672,7 +666,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     isSale: true,
     sku: "PN/02501",
     description: "Встраиваемый лоток Build Tray объёмом 5 литров для 3D-принтера Asiga MAX.",
-    externalUrl: "https://articon.pro/product/build-tray-asiga-5l-max/",
   },
 
   // ==============================================
@@ -693,7 +686,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Цвет": "Cherry (вишневый)",
       "Зольный остаток": "< 0,1%",
     },
-    externalUrl: "https://articon.pro/product/harz-labs-dental-cast-cherry/",
   },
   {
     id: "harz-dental-model-light-grey",
@@ -709,7 +701,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Объём": "1 кг",
       "Цвет": "Светло-серый",
     },
-    externalUrl: "https://articon.pro/product/harz-labs-dental-model-light-grey/",
   },
   {
     id: "harz-dental-sand-a1-a2",
@@ -725,7 +716,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Объём": "1 кг",
       "Цвет": "A1-A2",
     },
-    externalUrl: "https://articon.pro/product/harz-labs-dental-sand-a1-a2/",
   },
   {
     id: "harz-dental-tray-v2",
@@ -741,7 +731,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Объём": "1 кг",
       "Толщина слоя": "до 200 мкм",
     },
-    externalUrl: "https://articon.pro/product/harz-labs-dental-tray-v2/",
   },
   {
     id: "harz-dental-yellow-clear-pro",
@@ -758,7 +747,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
       "Цвет": "Жёлтый прозрачный",
       "Автоклавируемость": "Да",
     },
-    externalUrl: "https://articon.pro/product/harzlabs-dental-yellow-clear-pro/",
   },
 
   // ==============================================
@@ -775,7 +763,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Composite A1",
     description: "Профессиональный фотополимер для 3D-печати временных реставраций цвета A1.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a1/",
   },
   {
     id: "topcore-composite-a2",
@@ -788,7 +775,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Composite A2",
     description: "Профессиональный фотополимер для 3D-печати временных реставраций цвета A2.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a2/",
   },
   {
     id: "topcore-composite-a3",
@@ -801,7 +787,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Composite A3",
     description: "Профессиональный фотополимер для 3D-печати временных реставраций цвета A3.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-a3/",
   },
   {
     id: "topcore-composite-bleach",
@@ -814,7 +799,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Composite Bleach",
     description: "Профессиональный фотополимер для 3D-печати временных реставраций оттенка Bleach.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-composite-bleach/",
   },
   {
     id: "topcore-model",
@@ -827,7 +811,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Model",
     description: "Профессиональный фотополимер для 3D-печати стоматологических моделей.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-model/",
   },
   {
     id: "topcore-model-pro",
@@ -842,7 +825,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     isSale: true,
     sku: "TOPCORE Model Pro",
     description: "Профессиональный фотополимер повышенной прочности для 3D-печати стоматологических моделей.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-model-pro/",
   },
   {
     id: "topcore-pink",
@@ -855,7 +837,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Pink",
     description: "Розовый фотополимер для 3D-печати десневых масок и элементов протезов.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink/",
   },
   {
     id: "topcore-pink-base",
@@ -868,7 +849,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE Pink Base",
     description: "Фотополимер для 3D-печати базисов съёмных протезов.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-pink-base/",
   },
   {
     id: "topcore-sg",
@@ -881,7 +861,6 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     inStock: true,
     sku: "TOPCORE SG",
     description: "Биосовместимый фотополимер для 3D-печати хирургических шаблонов.",
-    externalUrl: "https://articon.pro/product/fotopolimer-topcore-sg/",
   },
 
   // ==============================================
@@ -1005,7 +984,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
       "Сканирование дуги": "25 сек",
       "Форматы": "STL, OBJ, PLY",
     },
-    externalUrl: "https://articon.pro/product/runyes-3ds-v5/",
   },
   {
     id: "rundeer-3ds-v6",
@@ -1036,7 +1014,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
       "Режимы": "Проводной/беспроводной",
       "Форматы": "STL, OBJ, PLY",
     },
-    externalUrl: "https://articon.pro/product/runyes-3ds-v6/",
   },
 
   // ==============================================
@@ -1056,7 +1033,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     specifications: {
       "Объём": "400 мл",
     },
-    externalUrl: "https://articon.pro/product/antiblikovyy-sprey-3-d-400-ml-helling/",
   },
   {
     id: "medit-t310",
@@ -1084,7 +1060,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
       "Камеры": "2× 5Мп",
       "Система": "Открытая (STL)",
     },
-    externalUrl: "https://articon.pro/product/medit-t310-scanner/",
   },
 
   // ==============================================
@@ -1101,7 +1076,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-10",
     description: "Циркониевые диски Upcera ST-Color – идеальное решение для изготовления полноанатомических коронок и мостовидных протезов. Высокая прозрачность 43% и прочность 1300 МПа.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x10-a1/",
   },
   {
     id: "upcera-st-color-98x10-a2",
@@ -1114,7 +1088,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-10",
     description: "Циркониевые диски Upcera ST-Color – идеальное решение для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-10-a2/",
   },
   {
     id: "upcera-st-color-98x10-a35",
@@ -1127,7 +1100,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3.5 98-10",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-10-a3-5/",
   },
   {
     id: "upcera-st-color-98x12-a2",
@@ -1140,7 +1112,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-12",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-12-a2/",
   },
   {
     id: "upcera-st-color-98x12-a3",
@@ -1153,7 +1124,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-12",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-12-a3/",
   },
   {
     id: "upcera-st-color-98x12-a35",
@@ -1166,7 +1136,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3.5 98-12",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-12-a3-5/",
   },
   {
     id: "upcera-st-color-98x14-a1",
@@ -1179,7 +1148,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-14",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-14-a1/",
   },
   {
     id: "upcera-st-color-98x14-a2",
@@ -1192,7 +1160,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-14",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-14-a2/",
   },
   {
     id: "upcera-st-color-98x14-a3",
@@ -1205,7 +1172,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-14",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-14-a3/",
   },
   {
     id: "upcera-st-color-98x14-a35",
@@ -1218,7 +1184,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3.5 98-14",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-14-a3-5/",
   },
   {
     id: "upcera-st-color-98x16-a1",
@@ -1231,7 +1196,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-16",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-16-a1/",
   },
   {
     id: "upcera-st-color-98x16-a2",
@@ -1244,7 +1208,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-16",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-16-a2/",
   },
   {
     id: "upcera-st-color-98x16-a3",
@@ -1257,7 +1220,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-16",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-16-a3/",
   },
   {
     id: "upcera-st-color-98x16-a35",
@@ -1270,7 +1232,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3.5 98-16",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98-x-16-a3-5/",
   },
   {
     id: "upcera-st-color-98x18-a1",
@@ -1283,7 +1244,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-18",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x18-a1/",
   },
   {
     id: "upcera-st-color-98x18-a2",
@@ -1296,7 +1256,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-18",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x18-a2/",
   },
   {
     id: "upcera-st-color-98x18-a3",
@@ -1309,7 +1268,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-18",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x18-a3/",
   },
   {
     id: "upcera-st-color-98x18-a35",
@@ -1322,7 +1280,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3,5 98-18",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x18-a3-5/",
   },
   {
     id: "upcera-st-color-98x20-a1",
@@ -1335,7 +1292,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-20",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x20-a1/",
   },
   {
     id: "upcera-st-color-98x20-a2",
@@ -1348,7 +1304,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-20",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x20-a2/",
   },
   {
     id: "upcera-st-color-98x20-a3",
@@ -1361,7 +1316,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-20",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x20-a3/",
   },
   {
     id: "upcera-st-color-98x20-a35",
@@ -1374,7 +1328,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3,5 98-20",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x20-a3-5/",
   },
   {
     id: "upcera-st-color-98x22-a1",
@@ -1387,7 +1340,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-22",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x22-a1/",
   },
   {
     id: "upcera-st-color-98x22-a2",
@@ -1400,7 +1352,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-22",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x22-a2/",
   },
   {
     id: "upcera-st-color-98x22-a3",
@@ -1413,7 +1364,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-22",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x22-a3/",
   },
   {
     id: "upcera-st-color-98x22-a35",
@@ -1426,7 +1376,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3,5 98-22",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x22-a3-5/",
   },
   {
     id: "upcera-st-color-98x25-a1",
@@ -1439,7 +1388,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A1 98-25",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x25-a1/",
   },
   {
     id: "upcera-st-color-98x25-a2",
@@ -1452,7 +1400,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A2 98-25",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x25-a2/",
   },
   {
     id: "upcera-st-color-98x25-a3",
@@ -1465,7 +1412,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3 98-25",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x25-a3/",
   },
   {
     id: "upcera-st-color-98x25-a35",
@@ -1478,7 +1424,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "ST Color A3,5 98-25",
     description: "Циркониевые диски Upcera ST-Color для полноанатомических коронок и мостовидных протезов.",
-    externalUrl: "https://articon.pro/product/upcera-st-color-98x25-a3-5/",
   },
 
   // ==============================================
@@ -1495,7 +1440,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009810540900",
     description: "Upcera HT White циркониевые диски, 98 x 10 мм, цвет Белый, высокопрочный диоксид циркония. Рекомендуется для каркасов с нанесением керамики.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-10/",
   },
   {
     id: "upcera-ht-98x12",
@@ -1508,7 +1452,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009812540903",
     description: "Upcera HT White циркониевые диски, 98 x 12 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-12/",
   },
   {
     id: "upcera-ht-98x14",
@@ -1521,7 +1464,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009814540903",
     description: "Upcera HT White циркониевые диски, 98 x 14 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-14/",
   },
   {
     id: "upcera-ht-98x16",
@@ -1533,7 +1475,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     brand: "Upcera",
     inStock: true,
     description: "Upcera HT White циркониевые диски, 98 x 16 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-16/",
   },
   {
     id: "upcera-ht-98x18",
@@ -1546,7 +1487,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009818540903",
     description: "Upcera HT White циркониевые диски, 98 x 18 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-18/",
   },
   {
     id: "upcera-ht-98x20",
@@ -1559,7 +1499,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009820540903",
     description: "Upcera HT White циркониевые диски, 98 x 20 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-20/",
   },
   {
     id: "upcera-ht-98x22",
@@ -1572,7 +1511,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009822540903",
     description: "Upcera HT White циркониевые диски, 98 x 22 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-22/",
   },
   {
     id: "upcera-ht-98x25",
@@ -1585,7 +1523,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     inStock: true,
     sku: "6.2.3.009825540903",
     description: "Upcera HT White циркониевые диски, 98 x 25 мм, цвет Белый.",
-    externalUrl: "https://articon.pro/product/upcera-ht-d-98-25/",
   },
 
   // ==============================================
@@ -3838,7 +3775,6 @@ Upcera A52 — это 5-осевой фрезерный станок сухог�
       "Вес нетто": "110 кг",
       "Вес брутто": "120 кг",
     },
-    externalUrl: "https://articon.pro/product/cad-cam-upcera-a52/",
     downloadFiles: [
       { name: "Инструкция", url: "/docs/upcera-a52-instruction.pdf", size: "PDF" },
       { name: "Информация о станке Upcera A52", url: "/docs/upcera-a52-info.pdf", size: "PDF" },
@@ -3939,7 +3875,6 @@ UPCERA B52 используется для изготовления:
       "Вес": "400 кг",
       "Компрессор": "0,55–0,8 МПа",
     },
-    externalUrl: "https://articon.pro/product/frezernii-stanok-upcera-b52/",
   },
   {
     id: "upcera-b42",
@@ -3987,7 +3922,6 @@ UPCERA B52 используется для изготовления:
       "Тип обработки": "Сухая / влажная",
       "Материалы": "Цирконий, стеклокерамика, Ti base, PEEK, PMMA, воск",
     },
-    externalUrl: "https://articon.pro/product/upcera-a52dw/",
   },
   {
     id: "upcera-e52-hybrid",
@@ -4120,7 +4054,6 @@ Upcera GT1 Pro — это надежная печь для синтеризац�
       "Вес": "47 кг",
       "Размеры": "42 × 46,5 × 80 см",
     },
-    externalUrl: "https://articon.pro/product/gt1-pro-upcera/",
   },
   {
     id: "dekema-austromat-674",
@@ -4147,7 +4080,6 @@ Upcera GT1 Pro — это надежная печь для синтеризац�
       "Корпус": "Алюминий анодированный",
       "USB": "Передача программ, данных, QM файлов",
     },
-    externalUrl: "https://articon.pro/product/dekema-austromat-674/",
   },
 
   // ==============================================
@@ -4187,7 +4119,6 @@ Upcera GT1 Pro — это надежная печь для синтеризац�
       "Габариты": "475×465×845 мм",
       "Гарантия": "12 мес",
     },
-    externalUrl: "https://articon.pro/product/remeza-km-50old20/",
   },
 
   // ==============================================
@@ -4220,7 +4151,6 @@ Upcera GT1 Pro — это надежная печь для синтеризац�
       "Габариты": "42×40×60 см",
       "Подключение": "2 ед.",
     },
-    externalUrl: "https://articon.pro/product/pylesos-dlya-stankov-sukhoy-obrabotki/",
   },
   {
     id: "upcera-r-412",
@@ -4249,7 +4179,6 @@ Upcera GT1 Pro — это надежная печь для синтеризац�
       "Габариты": "42×40×60 см",
       "Подключение": "2 ед.",
     },
-    externalUrl: "https://articon.pro/product/pylesos-dlya-stankov-sukhoy-obrabotki/",
   },
 
   // ==============================================

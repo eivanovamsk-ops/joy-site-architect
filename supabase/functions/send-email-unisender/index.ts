@@ -454,7 +454,7 @@ const buildStandardCourseClientEmailHtml = (course: CourseEmailData): string => 
           </div>
           <p>Если у вас есть вопросы, свяжитесь с нами:</p>
           <p>📧 Email: event@articon.pro<br>
-          📱 Телефон: +7 (495) 128-50-28</p>
+          📱 Телефон: +7 (906) 045-75-37</p>
         </div>
         <div class="footer">
           <p>С уважением,<br>Учебный центр Articon</p>

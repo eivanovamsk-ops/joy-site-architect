@@ -442,12 +442,6 @@ const ImplantProtocol = () => {
                   <FaqItem key={i} question={f.question} answer={f.answer} />
                 ))}
               </div>
-              <div className="text-center mt-8 text-[#F5F5F5]/50 text-sm">
-                <p>Звоните: <a href="tel:+79057172061" className="hover:text-[#F5F5F5] transition-colors" style={{ color: ACCENT }}>8 (905) 717-20-61</a> или <a href="tel:+79060457537" className="hover:text-[#F5F5F5] transition-colors" style={{ color: ACCENT }}>8 (906) 045-75-37</a></p>
-                <a href="https://wa.me/79057172061" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 hover:text-[#F5F5F5] transition-colors" style={{ color: ACCENT }}>
-                  Написать в WhatsApp
-                </a>
-              </div>
             </div>
           </div>
         </section>

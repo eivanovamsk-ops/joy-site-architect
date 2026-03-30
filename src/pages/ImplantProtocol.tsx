@@ -165,67 +165,79 @@ const ImplantProtocol = () => {
         </Helmet>
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
+        <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <img src="/images/courses/course-21-hero.png" alt="Rundeer V5 и UltraFitScan UF-B" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 via-[#1A1A1A]/50 to-[#1A1A1A]" />
+            <div className="absolute inset-0 bg-[#1A1A1A]" />
           </div>
 
-          <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
-                <span className="text-sm tracking-[0.3em] uppercase" style={{ color: ACCENT }}>Бизнес-встреча</span>
-                <div className="h-px w-12" style={{ background: `linear-gradient(to left, transparent, ${ACCENT})` }} />
-              </div>
-            </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Left — text */}
+              <div ref={heroReveal.ref} className="text-left">
+                <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
+                    <span className="text-sm tracking-[0.3em] uppercase" style={{ color: ACCENT }}>Бизнес-встреча</span>
+                  </div>
+                </div>
 
-            <h1 className={cn(
-              "text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 transition-all duration-1000 delay-200 ease-out leading-tight",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              Новый <span style={{ color: ACCENT }}>протокол</span>
-              <br />
-              <span className="text-3xl md:text-5xl lg:text-6xl">для протезирования на имплантатах</span>
-            </h1>
+                <h1 className={cn(
+                  "text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 transition-all duration-1000 delay-200 ease-out leading-tight",
+                  heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                )}>
+                  Новый <span style={{ color: ACCENT }}>протокол</span>
+                  <br />
+                  <span className="text-2xl md:text-4xl lg:text-5xl">для протезирования на имплантатах</span>
+                </h1>
 
-            <p className={cn(
-              "text-lg md:text-xl text-[#F5F5F5]/60 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              Разберём полный цифровой путь — от сканирования и планирования до точной реализации конструкции
-            </p>
+                <p className={cn(
+                  "text-lg md:text-xl text-[#F5F5F5]/60 mb-6 max-w-xl leading-relaxed transition-all duration-1000 delay-500 ease-out",
+                  heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                )}>
+                  Разберём полный цифровой путь — от сканирования и планирования до точной реализации конструкции
+                </p>
 
-            <div className={cn(
-              "flex flex-wrap justify-center gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              <div className="flex items-center gap-2.5 backdrop-blur-sm border rounded-full px-5 py-2.5" style={{ background: `${ACCENT}20`, borderColor: `${ACCENT}40` }}>
-                <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="font-bold text-[#F5F5F5]">8 апреля 2026</span>
-              </div>
-              <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
-                <Clock className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="text-[#F5F5F5]/80">15:00 — 19:00</span>
-              </div>
-              <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
-                <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="text-[#F5F5F5]/80">Москва, Megapolis Hall</span>
-              </div>
-            </div>
+                <div className={cn(
+                  "flex flex-wrap gap-3 text-sm mb-8 transition-all duration-1000 delay-700 ease-out",
+                  heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                )}>
+                  <div className="flex items-center gap-2.5 backdrop-blur-sm border rounded-full px-5 py-2.5" style={{ background: `${ACCENT}20`, borderColor: `${ACCENT}40` }}>
+                    <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
+                    <span className="font-bold text-[#F5F5F5]">8 апреля 2026</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
+                    <Clock className="h-4 w-4" style={{ color: ACCENT }} />
+                    <span className="text-[#F5F5F5]/80">15:00 — 19:00</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
+                    <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
+                    <span className="text-[#F5F5F5]/80">Москва, Megapolis Hall</span>
+                  </div>
+                </div>
 
-            <div className={cn(
-              "flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-900 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              <CourseApplicationForm
-                courseName={course.title}
-                courseDate={course.date}
-                buttonLabel="Стать участником события"
-              />
-              <button onClick={() => scrollTo("ip-topics")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
-                Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
-              </button>
+                <div className={cn(
+                  "flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-900 ease-out",
+                  heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                )}>
+                  <CourseApplicationForm
+                    courseName={course.title}
+                    courseDate={course.date}
+                    buttonLabel="Стать участником события"
+                  />
+                  <button onClick={() => scrollTo("ip-topics")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2 py-3">
+                    Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right — image */}
+              <div className="hidden lg:flex justify-end">
+                <img
+                  src="/images/courses/course-21-hero.png"
+                  alt="Rundeer V5 и UltraFitScan UF-B"
+                  className="w-full max-w-lg object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -34,64 +34,6 @@ export function EducationUpcomingCourses() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link
-            to="/education/webinar/zircon-march-2026"
-            className="bg-card border-2 border-accent/40 rounded-2xl overflow-hidden hover-lift group"
-          >
-            <div className="relative h-full flex flex-col">
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src="/images/webinar/cover-zircon-banner.png"
-                  alt="Баннер вебинара Лайфхаки в работе с цирконом"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute top-4 left-4 right-4 flex items-start justify-between gap-3">
-                  <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
-                    Бесплатный вебинар
-                  </Badge>
-                  <Badge className="bg-destructive text-destructive-foreground text-xs">
-                    LIVE
-                  </Badge>
-                </div>
-              </div>
-
-              <div className="p-4 flex-1 flex flex-col">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="h-4 w-4 flex-shrink-0" />
-                  26 марта 2026 | 16:00
-                </div>
-
-                <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                  Лайфхаки в работе с цирконом
-                </h3>
-
-                <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                  Практические приемы окрашивания, обжига и стабильной эстетики.
-                </p>
-
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Monitor className="h-4 w-4 flex-shrink-0" />
-                    Онлайн
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Users className="h-4 w-4 flex-shrink-0" />
-                    Виктория Никулина
-                  </div>
-                </div>
-
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-xl font-bold text-primary">Бесплатно</span>
-                  <Button size="sm" className="gradient-primary text-primary-foreground">
-                    Подробнее
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </Link>
-
           {regularCourses.map((course) => (
             <div
               key={course.id}

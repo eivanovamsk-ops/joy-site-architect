@@ -230,13 +230,19 @@ const ImplantProtocol = () => {
                 </div>
               </div>
 
-              {/* Right — image */}
-              <div className="hidden lg:flex justify-end">
-                <img
-                  src="/images/courses/course-21-hero.png"
-                  alt="Rundeer V5 и UltraFitScan UF-B"
-                  className="w-full max-w-lg object-contain"
-                />
+              {/* Right — image with faded edges */}
+              <div className="hidden lg:flex justify-end items-center relative">
+                <div className="relative w-full max-w-2xl">
+                  <img
+                    src="/images/courses/course-21-hero.png"
+                    alt="Rundeer V5 и UltraFitScan UF-B"
+                    className="w-full object-contain scale-110"
+                    style={{
+                      maskImage: "radial-gradient(ellipse 75% 70% at center, black 40%, transparent 100%)",
+                      WebkitMaskImage: "radial-gradient(ellipse 75% 70% at center, black 40%, transparent 100%)",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

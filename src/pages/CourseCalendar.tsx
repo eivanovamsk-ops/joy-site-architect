@@ -297,61 +297,6 @@ const CourseCalendar = () => {
           {/* Course List */}
           {filteredCourses.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Pinned webinar cards */}
-              {!hasActiveFilters && (
-                <>
-                  {/* Webinar: Zircon - March 26 */}
-                  <Link
-                    to="/education/webinar/zircon-march-2026"
-                    className="bg-card border-2 border-accent/40 rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative"
-                  >
-                    <div className="relative h-40 overflow-hidden">
-                      <img
-                        src="/images/webinar/cover-zircon-banner.png"
-                        alt="Лайфхаки в работе с цирконом"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                        <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
-                          Бесплатный вебинар
-                        </Badge>
-                        <Badge className="bg-red-500/90 text-white text-xs animate-pulse">
-                          LIVE
-                        </Badge>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                        <Calendar className="h-4 w-4" />
-                        26 марта 2026 | 16:00
-                      </div>
-                      <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                        Лайфхаки в работе с цирконом
-                      </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                        Секреты окрашивания, обжига и стабильной эстетики
-                      </p>
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Monitor className="h-4 w-4 flex-shrink-0" />
-                          Онлайн
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Users className="h-4 w-4 flex-shrink-0" />
-                          Виктория Никулина
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between pt-4 border-t border-border">
-                        <span className="text-xl font-bold text-green-600">Бесплатно</span>
-                        <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                          Подробнее
-                        </Button>
-                      </div>
-                    </div>
-                  </Link>
-                </>
-              )}
               {filteredCourses.map((course) => (
                 <div
                   key={course.id}
@@ -524,57 +469,111 @@ const CourseCalendar = () => {
                 </div>
               ))}
 
-              {/* Past webinar: Brackets - March 11 (moved to end) */}
+              {/* Past webinars (moved to end) */}
               {!hasActiveFilters && (
-                <Link
-                  to="/education/webinar/brackets-march-2026"
-                  className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative opacity-70"
-                >
-                  <div className="relative h-40 overflow-hidden">
-                    <img
-                      src="/images/webinar/cover.jpg"
-                      alt="Непрямая фиксация брекетов"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                      <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
-                        Бесплатный вебинар
-                      </Badge>
-                      <Badge className="bg-muted-foreground text-white text-xs">
-                        УЖЕ ПРОШЕЛ
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Calendar className="h-4 w-4" />
-                      11 марта 2026 | 17:00
-                    </div>
-                    <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                      Непрямая фиксация брекетов: цифровой протокол
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                      Онлайн-вебинар Зухры Чеккуевой — от КТ + скана до джигов в Maestro 3D
-                    </p>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Monitor className="h-4 w-4 flex-shrink-0" />
-                        Онлайн
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Users className="h-4 w-4 flex-shrink-0" />
-                        Зухра Чеккуева
+                <>
+                  {/* Past webinar: Zircon - March 26 */}
+                  <Link
+                    to="/education/webinar/zircon-march-2026"
+                    className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative opacity-70"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src="/images/webinar/cover-zircon-banner.png"
+                        alt="Лайфхаки в работе с цирконом"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                        <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
+                          Бесплатный вебинар
+                        </Badge>
+                        <Badge className="bg-muted-foreground text-white text-xs">
+                          УЖЕ ПРОШЕЛ
+                        </Badge>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <span className="text-xl font-bold text-muted-foreground">Завершён</span>
-                      <Button size="sm" variant="outline">
-                        Подробнее
-                      </Button>
+                    <div className="p-4">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                        <Calendar className="h-4 w-4" />
+                        26 марта 2026 | 16:00
+                      </div>
+                      <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                        Лайфхаки в работе с цирконом
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        Секреты окрашивания, обжига и стабильной эстетики
+                      </p>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Monitor className="h-4 w-4 flex-shrink-0" />
+                          Онлайн
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Users className="h-4 w-4 flex-shrink-0" />
+                          Виктория Никулина
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between pt-4 border-t border-border">
+                        <span className="text-xl font-bold text-muted-foreground">Завершён</span>
+                        <Button size="sm" variant="outline">
+                          Подробнее
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+
+                  {/* Past webinar: Brackets - March 11 */}
+                  <Link
+                    to="/education/webinar/brackets-march-2026"
+                    className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative opacity-70"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src="/images/webinar/cover.jpg"
+                        alt="Непрямая фиксация брекетов"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                        <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
+                          Бесплатный вебинар
+                        </Badge>
+                        <Badge className="bg-muted-foreground text-white text-xs">
+                          УЖЕ ПРОШЕЛ
+                        </Badge>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                        <Calendar className="h-4 w-4" />
+                        11 марта 2026 | 17:00
+                      </div>
+                      <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                        Непрямая фиксация брекетов: цифровой протокол
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        Онлайн-вебинар Зухры Чеккуевой — от КТ + скана до джигов в Maestro 3D
+                      </p>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Monitor className="h-4 w-4 flex-shrink-0" />
+                          Онлайн
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Users className="h-4 w-4 flex-shrink-0" />
+                          Зухра Чеккуева
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between pt-4 border-t border-border">
+                        <span className="text-xl font-bold text-muted-foreground">Завершён</span>
+                        <Button size="sm" variant="outline">
+                          Подробнее
+                        </Button>
+                      </div>
+                    </div>
+                  </Link>
+                </>
               )}
             </div>
           ) : (

@@ -61,7 +61,7 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 }
 
 /* ─── Data ─── */
-const course = courses.find(c => c.id === 21)!;
+const course = courses.find(c => c.id === 22)!;
 
 const topics = [
   {
@@ -161,7 +161,7 @@ const ImplantProtocol = () => {
         <Helmet>
           <title>{course.metaTitle}</title>
           <meta name="description" content={course.metaDescription} />
-          <link rel="canonical" href="https://articon.pro/education/course/21" />
+          <link rel="canonical" href="https://articon.pro/education/course/22" />
         </Helmet>
 
         {/* ═══════ HERO ═══════ */}

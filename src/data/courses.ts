@@ -2084,7 +2084,7 @@ export const courses: Course[] = [
     sectionTags: ["для врачей", "для техников", "ортодонтия"]
   },
   {
-    id: 21,
+    id: 22,
     slug: "implant-prosthetics-protocol",
     title: "Новый протокол для протезирования на имплантатах",
     subtitle: "Цифровой путь от сканирования до реализации конструкции",

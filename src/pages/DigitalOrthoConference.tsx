@@ -447,14 +447,9 @@ const DigitalOrthoConference = () => {
               pricingReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               <div className="bg-[#111827]/80 border border-[#1E293B] rounded-3xl p-10 hover:border-[#00A3FF]/30 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: ACCENT, color: "#0A0E1A" }}>
-                  РАННЕЕ БРОНИРОВАНИЕ
-                </div>
-
                 <span className="text-sm tracking-[0.3em] uppercase mb-6 block" style={{ color: ACCENT }}>Стоимость</span>
 
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <span className="text-2xl text-[#F5F5F5]/30 line-through">{course.originalPrice?.toLocaleString("ru-RU")} ₽</span>
                   <span className="text-5xl md:text-6xl font-extrabold">{course.price.toLocaleString("ru-RU")} ₽</span>
                 </div>
                 <p className="text-[#F5F5F5]/40 text-sm mb-8">Конференция • 1 день • Москва</p>
@@ -592,7 +587,6 @@ const DigitalOrthoConference = () => {
           <div className="flex items-center gap-3">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-lg text-[#F5F5F5]/30 line-through">{course.originalPrice?.toLocaleString("ru-RU")} ₽</span>
                 <span className="font-extrabold text-xl" style={{ color: ACCENT }}>{course.price.toLocaleString("ru-RU")} ₽</span>
               </div>
               <div className="text-xs text-[#F5F5F5]/40 truncate">Цифровая ортодонтия • Москва</div>

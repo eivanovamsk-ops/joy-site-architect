@@ -68,7 +68,7 @@ const topics = [
     title: "UltraFitScan — альтернатива фотограмметрии",
     desc: "Разберем реальный кейс, подчеркнём на что необходимо обратить внимание при работе с UltraFitScan. Последовательность действий влияет на точность скана.",
     icon: Target,
-    image: "/images/courses/course-21-ultrafitscan.png",
+    image: null,
   },
   {
     title: "Ультрастом — решения с мультиюнитами",

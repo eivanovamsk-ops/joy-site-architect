@@ -255,8 +255,8 @@ export default function WebinarZirconMarch2026() {
         phone: form.phone,
         telegram: "",
         specialization: form.specialization || null,
-        course_name: "Вебинар: Лайфхаки в работе с цирконом — 26 марта 2026",
-        course_date: "2026-03-26",
+        course_name: "Вебинар: Лайфхаки в работе с цирконом — 8 апреля 2026",
+        course_date: "2026-04-08",
       } as any);
       if (error) throw error;
 
@@ -291,9 +291,9 @@ export default function WebinarZirconMarch2026() {
     <Layout>
       <Helmet>
         <title>Зуботехническая лаборатория Артикон | Курс для зубных техников и керамистов</title>
-        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00. Регистрация." />
-        <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 26 марта | Articon" />
-        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 26 марта, 16:00." />
+        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 8 апреля, 16:00. Регистрация." />
+        <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 8 апреля | Articon" />
+        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 8 апреля, 16:00." />
         <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -341,7 +341,7 @@ export default function WebinarZirconMarch2026() {
             <div className="flex flex-wrap items-start gap-6 mb-10">
               <div className="flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5 text-accent" />
-                <span className="font-semibold">26 марта 2026</span>
+                <span className="font-semibold">8 апреля 2026</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-accent" />
@@ -516,7 +516,7 @@ export default function WebinarZirconMarch2026() {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Программа вебинара</h2>
-          <p className="text-muted-foreground text-center mb-12">26 марта в 16:00 разберём:</p>
+          <p className="text-muted-foreground text-center mb-12">8 апреля в 16:00 разберём:</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {programTopics.map((t, i) => (
               <div key={i} className="flex gap-5 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
@@ -563,7 +563,7 @@ export default function WebinarZirconMarch2026() {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">26 марта в 16:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-accent font-semibold">8 апреля в 16:00 · Онлайн · Бесплатно</p>
             </div>
 
             {isSubmitted ? (
@@ -572,7 +572,7 @@ export default function WebinarZirconMarch2026() {
                   <CheckCircle2 className="h-8 w-8 text-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Спасибо за регистрацию!</h3>
-                <p className="text-white/70">На почту вам придет ссылка на чат в Телеграм. Добавляйтесь и до встречи 26 марта! (Если письма нет, пожалуйста, проверьте папку &quot;спам&quot;)</p>
+                <p className="text-white/70">На почту вам придет ссылка на чат в Телеграм. Добавляйтесь и до встречи 8 апреля! (Если письма нет, пожалуйста, проверьте папку &quot;спам&quot;)</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">

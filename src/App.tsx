@@ -108,7 +108,7 @@ const App = () => (
                 <Route path="/education/course/19" element={<OrthoConference />} />
                 <Route path="/education/course/20" element={<DentalPhotoProtocol />} />
                 <Route path="/education/course/21" element={<ImplantProtocol />} />
-                <Route path="/education/course/22" element={<ImplantProtocol />} />
+                <Route path="/education/course/23" element={<ImplantProtocol />} />
                 <Route path="/education/course/:id" element={<CourseDetail />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />

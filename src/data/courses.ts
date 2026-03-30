@@ -1091,10 +1091,9 @@ export const courses: Course[] = [
     slug: "indirect-bracket-bonding",
     title: "Непрямая фиксация брекетов",
     subtitle: "Теория и практика",
-    date: "25 марта 2026",
-    dateStart: new Date(2026, 2, 25),
+    date: "23 июня 2026",
+    dateStart: new Date(2026, 5, 23),
     upcomingDates: [
-      { date: "23 июня 2026", dateStart: new Date(2026, 5, 23) },
       { date: "21 августа 2026", dateStart: new Date(2026, 7, 21) },
       { date: "1 декабря 2026", dateStart: new Date(2026, 11, 1) },
     ],

@@ -155,9 +155,9 @@ const DigitalOrthoConference = () => {
             <div className="doc-orb doc-orb-3" />
           </div>
 
-          <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div ref={heroReveal.ref} className="relative z-10 px-4 max-w-5xl mx-auto text-left">
             <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
-              <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
                 <span className="text-sm tracking-[0.3em] uppercase" style={{ color: ACCENT }}>IV Конференция</span>
                 <div className="h-px w-12" style={{ background: `linear-gradient(to left, transparent, ${ACCENT})` }} />
@@ -187,7 +187,7 @@ const DigitalOrthoConference = () => {
             </p>
 
             <div className={cn(
-              "flex flex-wrap justify-center gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
+              "flex flex-wrap gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <div className="flex items-center gap-2.5 bg-[#00A3FF]/20 backdrop-blur-sm border border-[#00A3FF]/40 rounded-full px-5 py-2.5">
@@ -201,7 +201,7 @@ const DigitalOrthoConference = () => {
             </div>
 
             <div className={cn(
-              "flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 delay-900 ease-out",
+              "flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-900 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <div className="doc-cta-glow">

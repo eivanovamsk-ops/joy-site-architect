@@ -54,9 +54,21 @@ export function EducationUpcomingCourses() {
                       {course.title}
                     </h3>
                   </div>
-                  <span className="absolute top-3 right-3 text-xs bg-white/90 text-foreground px-2 py-1 rounded-full font-medium">
-                    {course.category}
-                  </span>
+                  <div className="absolute top-3 right-3 flex gap-1.5">
+                    {course.price === 0 && (
+                      <span className="text-xs bg-green-500/90 text-white px-2 py-1 rounded-full font-medium">
+                        Бесплатно
+                      </span>
+                    )}
+                    {course.location === "Онлайн" && (
+                      <span className="text-xs bg-primary/90 text-white px-2 py-1 rounded-full font-medium">
+                        Онлайн
+                      </span>
+                    )}
+                    <span className="text-xs bg-white/90 text-foreground px-2 py-1 rounded-full font-medium">
+                      {course.category}
+                    </span>
+                  </div>
                 </div>
               )}
 

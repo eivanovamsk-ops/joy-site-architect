@@ -587,7 +587,6 @@ const DigitalOrthoConference = () => {
           <div className="flex items-center gap-3">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-lg text-[#F5F5F5]/30 line-through">{course.originalPrice?.toLocaleString("ru-RU")} ₽</span>
                 <span className="font-extrabold text-xl" style={{ color: ACCENT }}>{course.price.toLocaleString("ru-RU")} ₽</span>
               </div>
               <div className="text-xs text-[#F5F5F5]/40 truncate">Цифровая ортодонтия • Москва</div>

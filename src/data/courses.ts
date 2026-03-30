@@ -2207,7 +2207,7 @@ export const courseCategories = [
   "Менеджмент"
 ];
 
-export const courseFormats = ["Все форматы", "Практика", "Онлайн-курс", "Open Day", "Воркшоп", "Конференция", "Теория + Практика", "Бизнес-встреча"];
+export const courseFormats = ["Все форматы", "Практика", "Онлайн-курс", "Open Day", "Воркшоп", "Конференция", "Теория + Практика", "Бизнес-встреча", "Вебинар"];
 
 // Helper to get unique lecturers
 export const getUniqueLecturers = (): string[] => {

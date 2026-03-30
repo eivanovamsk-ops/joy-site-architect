@@ -11,6 +11,7 @@ import course14Banner from "@/assets/courses/course-14-banner.png";
 import course6Banner from "@/assets/courses/course-6-banner.png";
 import course15Banner from "@/assets/courses/course-15-banner.png";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
+import course22Banner from "@/assets/courses/course-22-banner.png";
 
 export interface Lecturer {
   name: string;
@@ -2003,7 +2004,7 @@ export const courses: Course[] = [
     format: "Конференция",
     price: 17500,
     originalPrice: 25000,
-    coverImage: "https://static.wixstatic.com/media/526e65_9ce935e3241d43da869f35cb48d0e5bb~mv2.jpg/v1/fill/w_1904,h_830,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/526e65_9ce935e3241d43da869f35cb48d0e5bb~mv2.jpg",
+    coverImage: course22Banner,
     description: "Ежегодная конференция, где рождаются новые стандарты лечения. Живые дискуссии, разбор сложных кейсов и нетворкинг с лидерами индустрии. В этом году ортодонтия встретится с челюстно-лицевой хирургией.",
     shortDescription: "Ежегодная встреча ортодонтического сообщества. В этом году — еще жарче!",
     goal: "Объединить ведущих специалистов в области ортодонтии и челюстно-лицевой хирургии для обмена опытом, разбора сложных клинических случаев и формирования новых стандартов лечения.",

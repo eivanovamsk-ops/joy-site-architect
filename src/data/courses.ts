@@ -2088,6 +2088,7 @@ export const courses: Course[] = [
     slug: "implant-prosthetics-protocol",
     title: "Новый протокол для протезирования на имплантатах",
     subtitle: "Цифровой путь от сканирования до реализации конструкции",
+    coverImage: "/images/courses/course-21-hero.png",
     date: "8 апреля 2026 | 15:00-19:00",
     dateStart: new Date(2026, 3, 8),
     location: "Москва, Megapolis Hall, Варшавское шоссе д33к12",

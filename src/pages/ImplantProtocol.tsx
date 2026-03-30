@@ -162,8 +162,8 @@ const ImplantProtocol = () => {
         {/* ═══════ HERO ═══════ */}
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 40%, #00A3FF15 0%, #1A1A1A 70%)" }} />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/60 via-transparent to-[#1A1A1A]" />
+            <img src="/images/courses/course-21-hero.png" alt="Rundeer V5 и UltraFitScan UF-B" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 via-[#1A1A1A]/50 to-[#1A1A1A]" />
           </div>
 
           <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">

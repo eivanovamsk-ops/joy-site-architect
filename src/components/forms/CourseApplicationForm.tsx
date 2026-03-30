@@ -20,7 +20,7 @@ const applicationSchema = z.object({
   name: z.string().trim().min(2, "Введите имя").max(100),
   last_name: z.string().trim().min(2, "Введите фамилию").max(100),
   phone: z.string().trim().min(10, "Введите корректный телефон").max(20),
-  telegram: z.string().trim().min(2, "Введите ник в Telegram").max(100),
+  telegram: z.string().trim().max(100).optional(),
   city: z.string().trim().min(2, "Введите город").max(100),
   specialization: z.string().trim().min(2, "Введите специализацию").max(200),
   email: z.string().trim().email("Введите корректный email").max(255),

@@ -215,8 +215,8 @@ export const seoByPath: Record<string, SeoConfig> = {
     "На странице представлены контактные данные компании Артикон, включая адрес, режим работы, телефоны и Telegram-бот. Также доступна форма для отправки сообщений.",
     DEFAULT_OG_IMAGE,
   ),
-  "/education/course/22": createSeo(
-    "/education/course/22",
+  "/education/course/23": createSeo(
+    "/education/course/23",
     "Круглый стол Новый протокол для протезирования на имплантатах | Артикон",
     "Разберём полный цифровой путь — от сканирования и планирования до точной реализации конструкции",
     EDUCATION_OG_IMAGE,

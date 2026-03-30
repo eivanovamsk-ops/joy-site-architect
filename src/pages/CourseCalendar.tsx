@@ -313,6 +313,18 @@ const CourseCalendar = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute top-3 right-3 flex gap-1.5">
+                        {course.price === 0 && (
+                          <Badge className="bg-green-500/90 text-white text-xs">
+                            Бесплатно
+                          </Badge>
+                        )}
+                        {course.location === "Онлайн" && (
+                          <Badge className="bg-primary/90 text-primary-foreground text-xs">
+                            Онлайн
+                          </Badge>
+                        )}
+                      </div>
                       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                         <Badge className="bg-primary/90 text-primary-foreground text-xs">
                           {course.category}

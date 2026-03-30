@@ -39,34 +39,52 @@ export function EducationUpcomingCourses() {
               key={course.id}
               className="bg-card border border-border rounded-2xl overflow-hidden hover-lift group"
             >
-              {/* Header */}
-              <div className="gradient-education p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2 text-education-foreground/80 text-sm">
-                    <Calendar className="h-4 w-4" />
-                    {course.date}
+              {/* Cover Image */}
+              {course.coverImage && (
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={course.coverImage}
+                    alt={course.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-lg font-bold text-white line-clamp-2 drop-shadow-md">
+                      {course.title}
+                    </h3>
                   </div>
-                  {course.upcomingDates && course.upcomingDates.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {course.upcomingDates.map((ud, i) => (
-                        <span key={i} className="text-xs bg-education-foreground/10 text-education-foreground/70 rounded-full px-2 py-0.5">
-                          {ud.date}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <span className="text-xs bg-education-foreground/20 text-education-foreground px-2 py-1 rounded-full">
+                  <span className="absolute top-3 right-3 text-xs bg-white/90 text-foreground px-2 py-1 rounded-full font-medium">
                     {course.category}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-education-foreground line-clamp-2">
-                  {course.title}
-                </h3>
-              </div>
+              )}
+
+              {/* Header (fallback without image) */}
+              {!course.coverImage && (
+                <div className="gradient-education p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2 text-education-foreground/80 text-sm">
+                      <Calendar className="h-4 w-4" />
+                      {course.date}
+                    </div>
+                    <span className="text-xs bg-education-foreground/20 text-education-foreground px-2 py-1 rounded-full">
+                      {course.category}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-education-foreground line-clamp-2">
+                    {course.title}
+                  </h3>
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-4">
                 <div className="space-y-2 mb-4">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4 flex-shrink-0" />
+                    {course.date}
+                  </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4 flex-shrink-0" />
                     {course.location}

@@ -2177,6 +2177,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 3, 8),
     location: "Онлайн",
     format: "Вебинар",
+    coverImage: "/images/webinar/zircon-case-1.jpg",
     price: 0,
     description: "Бесплатный вебинар для зубных техников: разберём частые ошибки при работе с цирконием, поделимся лайфхаками по окрашиванию и синтеризации.",
     shortDescription: "Лайфхаки и частые ошибки при работе с цирконием",

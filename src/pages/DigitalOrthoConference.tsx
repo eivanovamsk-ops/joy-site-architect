@@ -155,7 +155,7 @@ const DigitalOrthoConference = () => {
             <div className="doc-orb doc-orb-3" />
           </div>
 
-          <div ref={heroReveal.ref} className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div ref={heroReveal.ref} className="relative z-10 px-4 max-w-5xl mx-auto text-left">
             <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
               <div className="flex items-center justify-center gap-3 mb-6">
                 <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />

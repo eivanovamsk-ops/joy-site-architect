@@ -16,7 +16,7 @@ export function EducationUpcomingCourses() {
     ? upcomingCourses 
     : courses.slice(0, 6);
 
-  const regularCourses = displayCourses.slice(0, 5);
+  const regularCourses = displayCourses.slice(0, 6);
 
   return (
     <section className="py-20 bg-background">

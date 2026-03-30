@@ -68,16 +68,20 @@ const topics = [
     title: "UltraFitScan — альтернатива фотограмметрии",
     desc: "Разберем реальный кейс, подчеркнём на что необходимо обратить внимание при работе с UltraFitScan. Последовательность действий влияет на точность скана.",
     icon: Target,
+    image: "/images/courses/course-21-ultrafitscan.png",
   },
   {
     title: "Ультрастом — решения с мультиюнитами",
     desc: "Когда цифра работает правильно — вы экономите время, получаете предсказуемый результат. Одиночные, мостовидные, удлинённые основания.",
     icon: Zap,
+    image: "/images/courses/course-21-bases.png",
+    image2: "/images/courses/course-21-angular.png",
   },
   {
     title: "Реалгайд — диагностика и планирование",
     desc: "На этапе планирования выбираем высоту шейки мультиюнита, угла и направление шахты. Разработаны программы и функционал для удобной работы.",
     icon: Award,
+    image: "/images/courses/course-21-exoplan.png",
   },
   {
     title: "Экзоплан — подбор в Экзокаде",
@@ -253,9 +257,11 @@ const ImplantProtocol = () => {
                 <p className="text-xl text-[#F5F5F5]/50">Полный цифровой путь протезирования на имплантатах</p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-8">
                 {topics.map((item, i) => {
                   const r = useReveal();
+                  const hasImage = 'image' in item && item.image;
+                  const isEven = i % 2 === 0;
                   return (
                     <div
                       key={i}
@@ -266,11 +272,23 @@ const ImplantProtocol = () => {
                       )}
                       style={{ transitionDelay: `${i * 100}ms` }}
                     >
-                      <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110" style={{ background: `${ACCENT}15`, border: `1px solid ${ACCENT}30` }}>
-                        <item.icon className="h-7 w-7" style={{ color: ACCENT }} />
+                      <div className={cn("flex flex-col gap-6", hasImage && "md:flex-row md:items-center", hasImage && !isEven && "md:flex-row-reverse")}>
+                        <div className={cn("flex-1", hasImage && "md:w-1/2")}>
+                          <div className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110" style={{ background: `${ACCENT}15`, border: `1px solid ${ACCENT}30` }}>
+                            <item.icon className="h-7 w-7" style={{ color: ACCENT }} />
+                          </div>
+                          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                          <p className="text-[#F5F5F5]/50 leading-relaxed">{item.desc}</p>
+                        </div>
+                        {hasImage && (
+                          <div className={cn("md:w-1/2 flex flex-col gap-4", 'image2' in item && item.image2 ? "md:flex-row" : "")}>
+                            <img src={item.image} alt={item.title} className="rounded-xl w-full object-contain max-h-[280px]" loading="lazy" />
+                            {'image2' in item && item.image2 && (
+                              <img src={(item as any).image2} alt={item.title} className="rounded-xl w-full md:w-1/2 object-contain max-h-[280px]" loading="lazy" />
+                            )}
+                          </div>
+                        )}
                       </div>
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-[#F5F5F5]/50 leading-relaxed">{item.desc}</p>
                     </div>
                   );
                 })}

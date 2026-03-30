@@ -298,6 +298,10 @@ const CourseDetail = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (course?.externalUrl) {
+    return <Navigate to={course.externalUrl} replace />;
+  }
+
   if (!course) {
     return (
       <Layout>

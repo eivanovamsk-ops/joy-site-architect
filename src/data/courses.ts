@@ -3,7 +3,7 @@ import course16Banner from "@/assets/courses/course-16-banner.jpg";
 import course16Preview from "@/assets/courses/course-16-preview.jpg";
 import course17Banner from "@/assets/courses/course-17-banner.jpg";
 import course17Preview from "@/assets/courses/course-17-preview.jpg";
-import course19Banner from "@/assets/courses/course-19-banner.jpg";
+import course19Banner from "@/assets/courses/course-19-banner.png";
 import course20Banner from "@/assets/courses/course-20-banner.jpg";
 import course12Banner from "@/assets/courses/course-12-banner.png";
 import course5Banner from "@/assets/courses/course-5-banner.png";

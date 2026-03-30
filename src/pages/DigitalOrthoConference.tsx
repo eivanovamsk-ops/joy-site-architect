@@ -155,7 +155,7 @@ const DigitalOrthoConference = () => {
             <div className="doc-orb doc-orb-3" />
           </div>
 
-          <div ref={heroReveal.ref} className="relative z-10 px-4 max-w-5xl mx-auto text-left">
+          <div ref={heroReveal.ref} className="relative z-10 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto text-left">
             <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
@@ -180,7 +180,7 @@ const DigitalOrthoConference = () => {
             </p>
 
             <p className={cn(
-              "text-lg md:text-xl text-[#F5F5F5]/50 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ease-out",
+              "text-lg md:text-xl text-[#F5F5F5]/50 mb-4 max-w-3xl leading-relaxed transition-all duration-1000 delay-500 ease-out",
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               Ежегодная конференция, где рождаются новые стандарты лечения. Живые дискуссии, разбор сложных кейсов и нетворкинг с лидерами индустрии.

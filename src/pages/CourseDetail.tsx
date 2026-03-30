@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { ChevronLeft, ChevronRight as ChevronRightIcon, X, ZoomIn, Camera } from "lucide-react";
@@ -297,6 +297,10 @@ const CourseDetail = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (course?.externalUrl) {
+    return <Navigate to={course.externalUrl} replace />;
+  }
 
   if (!course) {
     return (

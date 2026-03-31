@@ -1990,7 +1990,13 @@ export const courses: Course[] = [
     tags: ["CAD/CAM", "exocad", "фрезерование", "3D-печать", "циркон"],
     sectionTags: ["для техников", "CAD/CAM"],
     isAccredited: true,
-    placesLeft: 5
+    placesLeft: 5,
+    galleryImages: [
+      "/images/courses/cadcam-gallery-1.png",
+      "/images/courses/cadcam-gallery-2.png",
+      "/images/courses/cadcam-gallery-3.png",
+      "/images/courses/cadcam-gallery-4.png"
+    ]
   },
   {
     id: 22,

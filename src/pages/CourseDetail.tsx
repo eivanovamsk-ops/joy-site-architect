@@ -774,10 +774,7 @@ const CourseDetail = () => {
           </section>
         }
 
-        {/* ===== Photo Gallery Section ===== */}
-        {course.galleryImages && course.galleryImages.length > 0 &&
-        <CoursePhotoGallery images={course.galleryImages} />
-        }
+        {/* Photo Gallery moved after Program section */}
 
         {/* Partners / При поддержке */}
         {course.partners && course.partners.length > 0 &&
@@ -945,6 +942,11 @@ const CourseDetail = () => {
             }
           </div>
         </section>
+
+        {/* ===== Photo Gallery Section (after Program) ===== */}
+        {course.galleryImages && course.galleryImages.length > 0 &&
+        <CoursePhotoGallery images={course.galleryImages} />
+        }
 
         {/* FAQ Section — Contrasting background */}
         <section className="bg-muted/50 py-16" id="course-faq">

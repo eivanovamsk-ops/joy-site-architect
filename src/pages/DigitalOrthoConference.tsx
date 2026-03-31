@@ -250,8 +250,8 @@ const DigitalOrthoConference = () => {
             )}>
               <div className="text-center mb-16">
                 <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>Почему стоит прийти</span>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Ортодонтия встречает хирургию</h2>
-                <p className="text-xl font-semibold" style={{ color: ACCENT }}>Уникальная коллаборация в одном зале</p>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Ортодонтия нового уровня</h2>
+                <p className="text-xl font-semibold" style={{ color: ACCENT }}>Цифра, биомеханика и комплексный подход</p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">

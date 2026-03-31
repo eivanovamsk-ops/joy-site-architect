@@ -774,10 +774,7 @@ const CourseDetail = () => {
           </section>
         }
 
-        {/* ===== Photo Gallery Section ===== */}
-        {course.galleryImages && course.galleryImages.length > 0 &&
-        <CoursePhotoGallery images={course.galleryImages} />
-        }
+        {/* Photo Gallery moved after Program section */}
 
         {/* Partners / При поддержке */}
         {course.partners && course.partners.length > 0 &&

@@ -943,6 +943,11 @@ const CourseDetail = () => {
           </div>
         </section>
 
+        {/* ===== Photo Gallery Section (after Program) ===== */}
+        {course.galleryImages && course.galleryImages.length > 0 &&
+        <CoursePhotoGallery images={course.galleryImages} />
+        }
+
         {/* FAQ Section — Contrasting background */}
         <section className="bg-muted/50 py-16" id="course-faq">
           <div className="container mx-auto px-4">

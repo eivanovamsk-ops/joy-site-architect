@@ -142,10 +142,11 @@ const DigitalOrthoConference = () => {
         </Helmet>
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
+        <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
             <img src={course22Banner} alt="IV Конференция Цифровая ортодонтия" className="w-full h-[120%] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0E1A]/60 via-[#0A0E1A]/40 to-[#0A0E1A]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E1A]/90 via-[#0A0E1A]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0E1A]/40 via-transparent to-[#0A0E1A]" />
           </div>
 
           {/* Animated orbs */}
@@ -155,65 +156,67 @@ const DigitalOrthoConference = () => {
             <div className="doc-orb doc-orb-3" />
           </div>
 
-          <div ref={heroReveal.ref} className="relative z-10 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto text-left">
-            <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
-                <span className="text-sm tracking-[0.3em] uppercase" style={{ color: ACCENT }}>IV Конференция</span>
-                <div className="h-px w-12" style={{ background: `linear-gradient(to left, transparent, ${ACCENT})` }} />
+          <div ref={heroReveal.ref} className="relative z-10 w-full px-6 sm:px-10 lg:px-16 xl:px-24">
+            <div className="max-w-3xl">
+              <div className={cn("transition-all duration-1000 ease-out", heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-px w-12" style={{ background: `linear-gradient(to right, transparent, ${ACCENT})` }} />
+                  <span className="text-sm tracking-[0.3em] uppercase" style={{ color: ACCENT }}>IV Конференция</span>
+                  <div className="h-px w-12" style={{ background: `linear-gradient(to left, transparent, ${ACCENT})` }} />
+                </div>
               </div>
-            </div>
 
-            <h1 className={cn(
-              "text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-4 transition-all duration-1000 delay-200 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              <span className="doc-text-reveal inline-block">Цифровая</span>{" "}
-              <span className="doc-text-reveal inline-block" style={{ animationDelay: "0.3s", color: ACCENT }}>ортодонтия</span>
-            </h1>
+              <h1 className={cn(
+                "text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-4 transition-all duration-1000 delay-200 ease-out",
+                heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                <span className="doc-text-reveal block">Цифровая</span>
+                <span className="doc-text-reveal block" style={{ animationDelay: "0.3s", color: ACCENT }}>ортодонтия</span>
+              </h1>
 
-            <p className={cn(
-              "text-2xl md:text-3xl font-bold text-[#F5F5F5]/70 mb-2 transition-all duration-1000 delay-300 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              Все на своих местах
-            </p>
+              <p className={cn(
+                "text-2xl md:text-3xl font-bold text-[#F5F5F5]/70 mb-2 transition-all duration-1000 delay-300 ease-out",
+                heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                Все на своих местах
+              </p>
 
-            <p className={cn(
-              "text-lg md:text-xl text-[#F5F5F5]/50 mb-4 max-w-3xl leading-relaxed transition-all duration-1000 delay-500 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              Ежегодная конференция, где рождаются новые стандарты лечения. Живые дискуссии, разбор сложных кейсов и нетворкинг с лидерами индустрии.
-            </p>
+              <p className={cn(
+                "text-lg md:text-xl text-[#F5F5F5]/50 mb-4 max-w-2xl leading-relaxed transition-all duration-1000 delay-500 ease-out",
+                heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                Ежегодная конференция, где рождаются новые стандарты лечения. Живые дискуссии, разбор сложных кейсов и нетворкинг с лидерами индустрии.
+              </p>
 
-            <div className={cn(
-              "flex flex-wrap gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              <div className="flex items-center gap-2.5 bg-[#00A3FF]/20 backdrop-blur-sm border border-[#00A3FF]/40 rounded-full px-5 py-2.5">
-                <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="font-bold text-[#F5F5F5]">3 июня 2026</span>
+              <div className={cn(
+                "flex flex-wrap gap-4 text-sm mb-10 transition-all duration-1000 delay-700 ease-out",
+                heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                <div className="flex items-center gap-2.5 bg-[#00A3FF]/20 backdrop-blur-sm border border-[#00A3FF]/40 rounded-full px-5 py-2.5">
+                  <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
+                  <span className="font-bold text-[#F5F5F5]">3 июня 2026</span>
+                </div>
+                <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
+                  <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
+                  <span className="text-[#F5F5F5]/80">Москва, MEGAPOLIS HALL</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
-                <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="text-[#F5F5F5]/80">Москва, MEGAPOLIS HALL</span>
-              </div>
-            </div>
 
-            <div className={cn(
-              "flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-900 ease-out",
-              heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            )}>
-              <div className="doc-cta-glow">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate={course.date}
-                  buttonLabel="Забронировать место"
-                />
+              <div className={cn(
+                "flex flex-col sm:flex-row gap-4 items-start transition-all duration-1000 delay-900 ease-out",
+                heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              )}>
+                <div className="doc-cta-glow">
+                  <CourseApplicationForm
+                    courseName={course.title}
+                    courseDate={course.date}
+                    buttonLabel="Забронировать место"
+                  />
+                </div>
+                <button onClick={() => scrollTo("doc-why")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
+                  Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
+                </button>
               </div>
-              <button onClick={() => scrollTo("doc-why")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
-                Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
-              </button>
             </div>
           </div>
 

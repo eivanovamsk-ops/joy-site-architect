@@ -732,13 +732,6 @@ const OrthoConference = () => {
                 </a>
               </div>
 
-              <div className="mt-10 text-[#F5F5F5]/40 text-sm">
-                <p>Остались вопросы? Звоните!</p>
-                <div className="flex flex-wrap justify-center gap-4 mt-2">
-                  <a href="tel:+79032500181" className="hover:text-[#F5F5F5] transition-colors">8 (903) 250-01-81</a>
-                  <a href="tel:+79060457537" className="hover:text-[#F5F5F5] transition-colors">8 (906) 045-75-37</a>
-                </div>
-              </div>
             </div>
           </div>
         </section>

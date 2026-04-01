@@ -17,7 +17,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { Layout } from "@/components/layout/Layout";
 import { courses } from "@/data/courses";
 
-const course = courses.find((item) => item.id === 23)!;
+const course = courses.find((item) => item.id === 24)!;
 
 const audience = [
   "Для владельцев",

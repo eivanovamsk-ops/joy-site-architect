@@ -1305,7 +1305,7 @@ export const courses: Course[] = [
     ]
   },
   {
-    id: 23,
+    id: 24,
     slug: "lab-management",
     title: "Менеджмент зуботехнической лаборатории",
     subtitle: "Организация успешного бизнеса",
@@ -2171,7 +2171,7 @@ export const courses: Course[] = [
     sectionTags: ["для врачей", "для техников", "ортопедия", "CAD/CAM"]
   },
   {
-    id: 24,
+    id: 25,
     slug: "webinar-zircon-april-2026",
     title: "Лайфхаки в работе с цирконом",
     subtitle: "Бесплатный вебинар для зубных техников",

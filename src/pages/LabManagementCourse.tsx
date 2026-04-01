@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   Clock3,
   Coins,
-  Cpu,
   MapPin,
   MessageCircle,
   Phone,

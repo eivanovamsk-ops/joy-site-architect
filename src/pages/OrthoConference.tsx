@@ -679,7 +679,7 @@ const OrthoConference = () => {
 
             {/* CTA after FAQ */}
             <div className="text-center mt-12">
-              <p className="text-[#F5F5F5]/40 mb-4">Остались вопросы?</p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="oc-cta-glow">
                   <CourseApplicationForm

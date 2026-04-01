@@ -60,6 +60,7 @@ const DentalPhotoProtocol = lazy(() => import("./pages/DentalPhotoProtocol"));
 const OrthoConference = lazy(() => import("./pages/OrthoConference"));
 const ImplantProtocol = lazy(() => import("./pages/ImplantProtocol"));
 const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference"));
+const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
 
 const queryClient = new QueryClient();
 

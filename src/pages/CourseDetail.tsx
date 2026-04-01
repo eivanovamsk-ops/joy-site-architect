@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -1036,6 +1037,8 @@ const CourseDetail = () => {
           </section>
         }
       </div>
+
+      <CourseContactBlock />
 
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">

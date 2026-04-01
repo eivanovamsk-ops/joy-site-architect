@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import {
   Calendar, Clock, Monitor, Gift, CheckCircle2, Loader2,
   Stethoscope, GraduationCap, Wrench, ArrowRight, ChevronDown,
@@ -338,6 +339,8 @@ export default function WebinarBrackets() {
           </div>
         </div>
       </section>
+
+      <CourseContactBlock />
     </Layout>
   );
 }

@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { courses } from "@/data/courses";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 const course = courses.find((item) => item.id === 24)!;
 
@@ -648,6 +649,8 @@ const LabManagementCourse = () => {
             </div>
           </div>
         </section>
+
+        <CourseContactBlock />
       </div>
     </Layout>
   );

@@ -14,6 +14,7 @@ import {
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn, Play,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 /* ─── Floating Video Widget ─── */
 function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hideWhenRegVisible: boolean }) {
@@ -593,6 +594,8 @@ export default function WebinarZirconMarch2026() {
           </div>
         </div>
       </section>
+
+      <CourseContactBlock />
 
       {/* Floating Video Widget */}
       <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" hideWhenRegVisible={regVisible} />

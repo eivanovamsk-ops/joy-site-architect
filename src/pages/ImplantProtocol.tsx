@@ -6,6 +6,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 const ACCENT = "#00A3FF"; // Tech-blue for implant/digital feel
 
@@ -478,6 +479,8 @@ const ImplantProtocol = () => {
             </div>
           </div>
         </section>
+
+        <CourseContactBlock />
 
       </div>
     </Layout>

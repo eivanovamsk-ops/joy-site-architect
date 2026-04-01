@@ -7,6 +7,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 
 const ACCENT = "#00A3FF"; // Blue accent for digital orthodontics
@@ -532,6 +533,8 @@ const DigitalOrthoConference = () => {
             </div>
           </div>
         </section>
+
+        <CourseContactBlock />
 
         {/* ═══════ FINAL CTA ═══════ */}
         <section className="py-24 lg:py-32 relative overflow-hidden border-t border-[#1A2035]">

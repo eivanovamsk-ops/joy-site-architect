@@ -480,14 +480,24 @@ const LabManagementCourse = () => {
           <div className="container mx-auto grid gap-8 px-4 lg:grid-cols-[0.9fr_1.1fr]">
             <article className="rounded-[2rem] border border-background/10 bg-background/5 p-8 backdrop-blur-sm">
               <div className="mb-4 text-sm uppercase tracking-[0.28em] text-accent/85">Курс ведёт</div>
-              <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl">
-                Кравченко Мария
-              </h2>
-              <p className="mt-3 text-lg text-background/75">
-                Эксперт по развитию и масштабированию зуботехнических лабораторий.
-              </p>
 
-              <div className="mt-8 space-y-4 text-sm leading-7 text-background/68 sm:text-base">
+              <div className="mb-6 flex items-center gap-5">
+                <img
+                  src="/images/lecturers/kravchenko.png"
+                  alt="Мария Кравченко"
+                  className="h-28 w-28 rounded-full object-cover border-2 border-accent/40 shadow-lg"
+                />
+                <div>
+                  <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl">
+                    Кравченко Мария
+                  </h2>
+                  <p className="mt-1 text-lg text-background/75">
+                    Эксперт по развитию и масштабированию зуботехнических лабораторий.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm leading-7 text-background/68 sm:text-base">
                 <p>
                   Руководитель отдела развития и продвижения ЗТЛ «Артикон Дентал» — одной из крупнейших лабораторий с
                   объёмом производства 50 000+ высококачественных изделий ежегодно и 350+ партнёрами в РФ и СНГ.

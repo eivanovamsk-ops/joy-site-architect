@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {

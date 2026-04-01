@@ -480,6 +480,8 @@ const ImplantProtocol = () => {
           </div>
         </section>
 
+        <CourseContactBlock />
+
       </div>
     </Layout>
   );

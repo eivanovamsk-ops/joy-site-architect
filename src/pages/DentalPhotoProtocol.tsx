@@ -643,6 +643,8 @@ const DentalPhotoProtocol = () => {
           </div>
         </section>
 
+        <CourseContactBlock />
+
         {/* ═══════ BACK LINK ═══════ */}
         <div className="border-t border-[#2A2A2A] py-8">
           <div className="container mx-auto px-4 text-center">

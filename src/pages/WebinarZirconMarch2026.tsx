@@ -595,6 +595,8 @@ export default function WebinarZirconMarch2026() {
         </div>
       </section>
 
+      <CourseContactBlock />
+
       {/* Floating Video Widget */}
       <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" hideWhenRegVisible={regVisible} />
     </Layout>

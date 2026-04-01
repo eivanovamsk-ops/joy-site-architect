@@ -534,6 +534,8 @@ const DigitalOrthoConference = () => {
           </div>
         </section>
 
+        <CourseContactBlock />
+
         {/* ═══════ FINAL CTA ═══════ */}
         <section className="py-24 lg:py-32 relative overflow-hidden border-t border-[#1A2035]">
           <div className="absolute inset-0 pointer-events-none">

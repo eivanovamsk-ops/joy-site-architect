@@ -649,6 +649,8 @@ const LabManagementCourse = () => {
             </div>
           </div>
         </section>
+
+        <CourseContactBlock />
       </div>
     </Layout>
   );

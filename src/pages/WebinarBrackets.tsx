@@ -339,6 +339,8 @@ export default function WebinarBrackets() {
           </div>
         </div>
       </section>
+
+      <CourseContactBlock />
     </Layout>
   );
 }

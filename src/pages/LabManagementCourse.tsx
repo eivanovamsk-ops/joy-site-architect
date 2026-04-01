@@ -619,25 +619,6 @@ const LabManagementCourse = () => {
                     понятный план внедрения и набор инструментов, которые можно использовать сразу.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap gap-6 text-sm text-background/72">
-                    <a href="tel:+79057172061" className="flex items-center gap-2 hover:text-background">
-                      <Phone className="h-4 w-4 text-accent" />
-                      8 (905) 717-20-61
-                    </a>
-                    <a href="tel:+79060457537" className="flex items-center gap-2 hover:text-background">
-                      <Phone className="h-4 w-4 text-accent" />
-                      8 (906) 045-75-37
-                    </a>
-                    <a
-                      href="https://wa.me/79057172061"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 hover:text-background"
-                    >
-                      <MessageCircle className="h-4 w-4 text-accent" />
-                      WhatsApp
-                    </a>
-                  </div>
                 </div>
 
                 <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">

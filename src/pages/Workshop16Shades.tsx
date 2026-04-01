@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { courses } from "@/data/courses";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
 import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";

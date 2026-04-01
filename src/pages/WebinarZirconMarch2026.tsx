@@ -14,6 +14,7 @@ import {
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn, Play,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 
 /* ─── Floating Video Widget ─── */
 function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hideWhenRegVisible: boolean }) {

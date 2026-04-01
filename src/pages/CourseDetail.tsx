@@ -1038,6 +1038,8 @@ const CourseDetail = () => {
         }
       </div>
 
+      <CourseContactBlock />
+
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-3">

@@ -7,6 +7,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 
 const ACCENT = "#00A3FF"; // Blue accent for digital orthodontics

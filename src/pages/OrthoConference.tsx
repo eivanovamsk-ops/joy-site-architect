@@ -7,6 +7,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
+import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import course19Banner from "@/assets/courses/course-19-banner.png";
 
 const ACCENT = "#FF6B35"; // Vibrant orange for ortho energy

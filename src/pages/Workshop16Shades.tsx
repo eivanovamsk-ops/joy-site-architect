@@ -865,6 +865,8 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
+      <CourseContactBlock />
+
       <FloatingVideoWidget videos={["/videos/16-shades-preview.mp4"]} />
 
       <div className="border-t border-[#2A2A2A] py-8">

@@ -223,8 +223,20 @@ export const seoByPath: Record<string, SeoConfig> = {
   ),
   "/education/course/23": createSeo(
     "/education/course/23",
+    "Новый протокол для протезирования на имплантатах | Артикон",
+    "8 апреля 2026, Москва, Megapolis Hall. Цифровой путь от сканирования до реализации конструкции. UltraFitScan, мультиюниты, Реалгайд, Экзоплан.",
+    EDUCATION_OG_IMAGE,
+  ),
+  "/education/course/24": createSeo(
+    "/education/course/24",
     "Менеджмент зуботехнической лаборатории | Артикон",
     "Индивидуальный курс для владельцев и управляющих ЗТЛ: структура, финансы, команда, контроль качества, цифровизация и рост прибыли.",
+    EDUCATION_OG_IMAGE,
+  ),
+  "/education/course/25": createSeo(
+    "/education/course/25",
+    "Вебинар: Лайфхаки в работе с цирконом | Артикон",
+    "Бесплатный вебинар 8 апреля 2026. Лайфхаки и частые ошибки при работе с цирконием для зубных техников.",
     EDUCATION_OG_IMAGE,
   ),
   "/shop/delivery": createSeo(

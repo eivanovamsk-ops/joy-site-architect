@@ -406,16 +406,26 @@ const OrthoConference = () => {
         <section className="py-24 lg:py-32 relative border-t border-[#2A2A2A]">
           <div className="container mx-auto px-4">
             <div ref={citiesReveal.ref} className={cn(
-              "max-w-lg mx-auto text-center transition-all duration-1000",
+              "max-w-4xl mx-auto transition-all duration-1000",
               citiesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             )}>
               <div className="text-center mb-12">
-                <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>География</span>
+                <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>Место проведения</span>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Казань</h2>
-                <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
               </div>
 
-              <div className="oc-cta-glow">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-12">
+                <div className="text-center md:text-left space-y-2">
+                  <h3 className="text-2xl font-bold text-[#F5F5F5]">Отель Ramada by Wyndham</h3>
+                  <p className="text-[#F5F5F5]/60 text-lg">Казань, улица Чернышевского, 39</p>
+                  <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
+                </div>
+                <a href="https://ramadakazan.com/" target="_blank" rel="noopener noreferrer" className="shrink-0 hover:opacity-80 transition-opacity">
+                  <img src="/images/courses/ramada-logo.png" alt="Ramada by Wyndham Kazan City Centre" className="h-24 md:h-28 w-auto" />
+                </a>
+              </div>
+
+              <div className="oc-cta-glow text-center">
                 <CourseApplicationForm
                   courseName={course.title}
                   courseDate="15 апреля 2026"

@@ -597,6 +597,48 @@ export default function WebinarZirconMarch2026() {
 
       <CourseContactBlock />
 
+      {/* Trust / Why Articon */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            Почему обучающему центру Articon можно доверять
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "3 000+ специалистов прошли обучение с 2022 года",
+                text: "Наш центр уже помог тысячам зубных техников и специалистов освоить современные технологии и повысить уровень работ.",
+              },
+              {
+                title: "Очное обучение с упором на практику",
+                text: "Мы не даём «теорию ради теории». Все программы построены вокруг практики, реальных кейсов и отработки навыков, которые вы сразу применяете в работе.",
+              },
+              {
+                title: "Максимум внимания к каждому участнику",
+                text: "Мы работаем в небольших группах — до 16 человек. Это позволяет уделить внимание каждому и довести результат до уверенного уровня.",
+              },
+              {
+                title: "Гарантия результата, а не просто обучение",
+                text: "Наша задача — не просто показать, а добиться, чтобы у вас получилось. Преподаватели сопровождают участников на всех этапах и помогают отработать каждый шаг.",
+              },
+              {
+                title: "225+ специалистов уже освоили CAD/CAM и работают в цифре",
+                text: "Выпускники школы CAD/CAM внедряют цифровые технологии в лабораториях и клиниках и повышают свою востребованность на рынке.",
+              },
+              {
+                title: "Обучение на базе реальной лаборатории",
+                text: "Вы учитесь не на абстрактных примерах, а на реальных рабочих кейсах, которые ежедневно выполняются в Articon.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-background rounded-2xl p-6 shadow-sm">
+                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Floating Video Widget */}
       <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" hideWhenRegVisible={regVisible} />
     </Layout>

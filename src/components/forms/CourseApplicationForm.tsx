@@ -86,7 +86,6 @@ export function CourseApplicationForm({
   const handleOpenChange = (value: boolean) => {
     setOpen(value);
     if (!value) {
-      setIsSubmitted(false);
       setErrors({});
     }
   };

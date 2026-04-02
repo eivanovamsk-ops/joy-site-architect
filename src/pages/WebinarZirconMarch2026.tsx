@@ -649,7 +649,24 @@ export default function WebinarZirconMarch2026() {
         </div>
       </section>
 
-      {/* Floating Video Widget */}
+      {/* Videos about school */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <video controls className="w-full" preload="metadata" poster="">
+                <source src="/videos/about-school-2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <video controls className="w-full" preload="metadata" poster="">
+                <source src="/videos/about-school-3.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FloatingVideoWidget video="/videos/zircon-webinar-preview.mp4" hideWhenRegVisible={regVisible} />
     </Layout>
   );

@@ -290,7 +290,7 @@ export default function WebinarBrackets() {
                   <CheckCircle2 className="h-8 w-8 text-[hsl(155,80%,65%)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 11 марта!</p>
+                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 5 июня!</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">

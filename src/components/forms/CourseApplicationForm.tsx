@@ -143,7 +143,8 @@ export function CourseApplicationForm({
       }
 
       setFormData(initialFormData);
-      setIsSubmitted(true);
+      setOpen(false);
+      navigate("/education/thank-you");
       onSuccess?.();
     } catch {
       toast({

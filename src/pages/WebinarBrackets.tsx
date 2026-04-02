@@ -75,8 +75,8 @@ export default function WebinarBrackets() {
         phone: form.phone,
         telegram: form.telegram,
         specialization: form.specialization || null,
-        course_name: "Вебинар: Непрямая фиксация брекетов — 11 марта 2026",
-        course_date: "2026-03-11",
+        course_name: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026",
+        course_date: "2026-06-05",
       } as any);
       if (error) throw error;
 
@@ -105,20 +105,11 @@ export default function WebinarBrackets() {
   return (
     <Layout>
       <Helmet>
-        <title>Вебинар: Непрямая фиксация брекетов — 11 марта | Articon</title>
-        <meta name="description" content="Бесплатный онлайн-вебинар по непрямой фиксации брекетов. Разберем топ-5 проблем при позиционировании. 11 марта, 17:00. Регистрация." />
+        <title>Вебинар: Непрямая фиксация брекетов — 5 июня | Articon</title>
+        <meta name="description" content="Бесплатный онлайн-вебинар по непрямой фиксации брекетов. Разберем топ-5 проблем при позиционировании. 5 июня, 17:00. Регистрация." />
       </Helmet>
 
       {/* Past event banner */}
-      <div className="bg-muted border-b border-border py-4 text-center">
-        <div className="container mx-auto px-4 flex items-center justify-center gap-3">
-          <Badge className="bg-muted-foreground text-white text-sm px-3 py-1">УЖЕ ПРОШЕЛ</Badge>
-          <p className="text-muted-foreground text-sm md:text-base">
-            Этот вебинар состоялся 11 марта 2026. Следите за новыми событиями в{" "}
-            <a href="/education/calendar" className="text-primary underline hover:no-underline">календаре</a>.
-          </p>
-        </div>
-      </div>
 
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[hsl(222,30%,7%)] via-[hsl(218,55%,12%)] to-[hsl(270,40%,15%)]">
@@ -153,7 +144,7 @@ export default function WebinarBrackets() {
             <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
               <div className="flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5 text-accent" />
-                <span className="font-semibold">11 марта 2026</span>
+                <span className="font-semibold">5 июня 2026</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-accent" />
@@ -237,7 +228,7 @@ export default function WebinarBrackets() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Программа вебинара</h2>
-          <p className="text-muted-foreground text-center mb-12">11 марта разберем:</p>
+          <p className="text-muted-foreground text-center mb-12">5 июня разберем:</p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {programTopics.map((t, i) => (
               <div key={i} className="flex gap-5 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
@@ -290,7 +281,7 @@ export default function WebinarBrackets() {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">11 марта в 17:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-accent font-semibold">5 июня в 17:00 · Онлайн · Бесплатно</p>
             </div>
 
             {isSubmitted ? (
@@ -299,7 +290,7 @@ export default function WebinarBrackets() {
                   <CheckCircle2 className="h-8 w-8 text-[hsl(155,80%,65%)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 11 марта!</p>
+                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 5 июня!</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">

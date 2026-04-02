@@ -1906,6 +1906,13 @@ export const courses: Course[] = [
         bio: "Выпускник РУДН 2011. Стаж в ортодонтии более 9 лет. Преподаватель кафедры стоматологии СПбГУ 2014-2018. Основатель проекта Orthoart, создатель клиники Ortho Bar.",
         photo: "https://static.wixstatic.com/media/526e65_8928bf93068f4b2e98a7cf87b43517e0~mv2.png/v1/fill/w_344,h_345,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%D0%9D%D1%83%D1%80%D1%82%D0%B4%D0%B8%D0%BD%D0%BE%D0%B2%C2%A0%D0%98%D0%BB%D1%8C%D1%8F%D1%80.png",
         achievements: ["Основатель Orthoart", "Основатель Ortho Bar"]
+      },
+      {
+        name: "Чеккуева Зухра",
+        position: "Врач-ортодонт, эксперт в области 3D ортодонтии",
+        bio: "Более 2 000 смоделированных сетапов. Сертифицированный врач Flexiligner, Ormco, Spark. Лечение пациентов только по цифровому протоколу.",
+        photo: "/images/lecturers/chekkueva-zuhra.png",
+        achievements: ["2000+ сетапов", "Сертифицированный врач Flexiligner, Ormco, Spark"]
       }
     ],
     guestSpeakerNote: "Спикеры разберут самые сложные клинические случаи с позиции ортодонтии и хирургии. Это уникальная возможность увидеть подобную коллаборацию в деле.",

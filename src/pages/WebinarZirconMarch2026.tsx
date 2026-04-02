@@ -381,6 +381,17 @@ export default function WebinarZirconMarch2026() {
         </button>
       </section>
 
+      {/* GIFTS */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <Badge className="mb-4 bg-accent/10 text-accent border-accent/20 text-base px-4 py-1">🎁 ПОДАРКИ</Badge>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Подарки участникам</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            На вебинаре дарим подарки — руководство по работе с диоксидом циркона <strong>Upcera Function</strong>
+          </p>
+        </div>
+      </section>
+
 
       {/* ABOUT SECTION */}
       <section id="about" className="py-20 bg-background">

@@ -218,8 +218,8 @@ const mentors = [
 export default function WebinarZirconMarch2026() {
   const { toast } = useToast();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [regVisible, setRegVisible] = useState(false);

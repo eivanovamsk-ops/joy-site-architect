@@ -173,34 +173,7 @@ export function CourseApplicationForm({
 
       <DialogContent
         className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto"
-        onOpenAutoFocus={(e) => {
-          if (isSubmitted) e.preventDefault();
-        }}
       >
-        {isSubmitted ? (
-          <div className="flex flex-col items-center justify-center py-8 text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle2 className="h-8 w-8 text-primary" />
-            </div>
-            <DialogHeader>
-              <DialogTitle className="text-xl mb-2">Спасибо, что выбрали Артикон!</DialogTitle>
-            </DialogHeader>
-            <p className="text-muted-foreground mb-2">
-              Куратор Учебного центра свяжется с вами в ближайшее время!
-            </p>
-            <p className="text-sm text-muted-foreground mb-6">
-              Если вы не увидели письмо на почте, пожалуйста, проверьте папку СПАМ
-            </p>
-            <Button
-              onClick={() => {
-                setOpen(false);
-                setIsSubmitted(false);
-              }}
-            >
-              Закрыть
-            </Button>
-          </div>
-        ) : (
           <>
             <DialogHeader>
               <div className="flex items-center gap-3">

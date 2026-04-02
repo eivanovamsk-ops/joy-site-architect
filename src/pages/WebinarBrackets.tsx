@@ -75,8 +75,8 @@ export default function WebinarBrackets() {
         phone: form.phone,
         telegram: form.telegram,
         specialization: form.specialization || null,
-        course_name: "Вебинар: Непрямая фиксация брекетов — 11 марта 2026",
-        course_date: "2026-03-11",
+        course_name: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026",
+        course_date: "2026-06-05",
       } as any);
       if (error) throw error;
 

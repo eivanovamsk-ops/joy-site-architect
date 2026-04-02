@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -217,8 +218,8 @@ const mentors = [
 export default function WebinarZirconMarch2026() {
   const { toast } = useToast();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [regVisible, setRegVisible] = useState(false);
@@ -275,7 +276,7 @@ export default function WebinarZirconMarch2026() {
         console.error("Email invocation failed:", emailErr);
       }
 
-      setIsSubmitted(true);
+      navigate("/education/webinar/zircon-march-2026/thank-you");
     } catch {
       toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
     } finally {
@@ -562,16 +563,7 @@ export default function WebinarZirconMarch2026() {
               <p className="text-xl text-accent font-semibold">8 апреля в 16:00 · Онлайн · Бесплатно</p>
             </div>
 
-            {isSubmitted ? (
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="h-8 w-8 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Спасибо за регистрацию!</h3>
-                <p className="text-white/70">На почту вам придет ссылка на чат в Телеграм. Добавляйтесь и до встречи 8 апреля! (Если письма нет, пожалуйста, проверьте папку &quot;спам&quot;)</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
+            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
                 <div className="space-y-1.5">
                   <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
                   <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
@@ -600,7 +592,6 @@ export default function WebinarZirconMarch2026() {
                   <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
                 </p>
               </form>
-            )}
           </div>
         </div>
       </section>

@@ -63,6 +63,7 @@ const ImplantProtocol = lazy(() => import("./pages/ImplantProtocol"));
 const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference"));
 const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
 const Webinars = lazy(() => import("./pages/Webinars"));
+const CourseThankYou = lazy(() => import("./pages/CourseThankYou"));
 
 const queryClient = new QueryClient();
 
@@ -119,6 +120,7 @@ const App = () => (
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />
                 <Route path="/education/webinar/zircon-march-2026/thank-you" element={<WebinarThankYou />} />
+                <Route path="/education/thank-you" element={<CourseThankYou />} />
                 <Route path="/education/:section" element={<EducationSection />} />
                 <Route path="/shop/brands/upcera" element={<BrandUpcera />} />
                 <Route path="/about" element={<About />} />

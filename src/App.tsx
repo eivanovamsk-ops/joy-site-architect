@@ -62,6 +62,7 @@ const OrthoConference = lazy(() => import("./pages/OrthoConference"));
 const ImplantProtocol = lazy(() => import("./pages/ImplantProtocol"));
 const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference"));
 const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
+const Webinars = lazy(() => import("./pages/Webinars"));
 
 const queryClient = new QueryClient();
 
@@ -114,6 +115,7 @@ const App = () => (
                 <Route path="/education/course/22" element={<DigitalOrthoConference />} />
                 <Route path="/education/course/24" element={<LabManagementCourse />} />
                 <Route path="/education/course/:id" element={<CourseDetail />} />
+                <Route path="/education/webinars" element={<Webinars />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />
                 <Route path="/education/webinar/zircon-march-2026/thank-you" element={<WebinarThankYou />} />

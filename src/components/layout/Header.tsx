@@ -142,14 +142,7 @@ const educationMenuItems = [{
   }]
 }, {
   label: "Вебинары",
-  href: "/education/webinar/zircon-march-2026",
-  subcategories: [{
-    label: "Лайфхаки в работе с цирконом",
-    href: "/education/webinar/zircon-march-2026"
-  }, {
-    label: "Брекет-системы",
-    href: "/education/webinar/brackets-march-2026"
-  }]
+  href: "/education/webinars"
 }, {
   label: "Контакты",
   href: "/education/contacts"

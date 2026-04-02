@@ -276,7 +276,7 @@ export default function WebinarZirconMarch2026() {
         console.error("Email invocation failed:", emailErr);
       }
 
-      setIsSubmitted(true);
+      navigate("/education/webinar/zircon-march-2026/thank-you");
     } catch {
       toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
     } finally {

@@ -116,6 +116,7 @@ const App = () => (
                 <Route path="/education/course/:id" element={<CourseDetail />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />
+                <Route path="/education/webinar/zircon-march-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/:section" element={<EducationSection />} />
                 <Route path="/shop/brands/upcera" element={<BrandUpcera />} />
                 <Route path="/about" element={<About />} />

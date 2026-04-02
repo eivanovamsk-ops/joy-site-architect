@@ -144,7 +144,7 @@ export default function WebinarBrackets() {
             <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
               <div className="flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5 text-accent" />
-                <span className="font-semibold">11 марта 2026</span>
+                <span className="font-semibold">5 июня 2026</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-accent" />

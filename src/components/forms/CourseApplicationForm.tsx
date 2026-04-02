@@ -344,8 +344,6 @@ export function CourseApplicationForm({
                 Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
               </p>
             </form>
-          </>
-        )}
       </DialogContent>
     </Dialog>
   );

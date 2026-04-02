@@ -281,7 +281,7 @@ export default function WebinarBrackets() {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">11 марта в 17:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-accent font-semibold">5 июня в 17:00 · Онлайн · Бесплатно</p>
             </div>
 
             {isSubmitted ? (

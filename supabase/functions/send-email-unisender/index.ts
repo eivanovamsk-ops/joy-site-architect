@@ -409,7 +409,8 @@ const buildWebinarClientEmailHtml = (course: CourseEmailData): string => {
           <p>Здравствуйте, <strong>${course.name}</strong>!</p>
           <p>Вы успешно зарегистрировались на бесплатный онлайн-вебинар <strong>«${course.courseName}»</strong>.</p>
           ${course.courseDate ? `<div class="info-block">📅 <strong>Дата:</strong> ${course.courseDate}</div>` : ""}
-          <p>Чтобы не пропустить вебинар, вступите в <strong>Telegram-чат участников</strong>. Именно там мы пришлём ссылку на трансляцию и напомним о начале.</p>
+          <div class="info-block">🔗 <strong>Ссылка на вебинар:</strong> <a href="https://start.bizon365.ru/room/206008/8386800fae48" style="color: #2563eb;">https://start.bizon365.ru/room/206008/8386800fae48</a></div>
+          <p>Чтобы не пропустить вебинар, вступите в <strong>Telegram-чат участников</strong>. Именно там мы напомним о начале.</p>
           <p style="text-align: center; margin: 20px 0;">
             <a href="${course.telegramChatUrl}" class="cta-btn">Перейти в чат участников</a>
           </p>

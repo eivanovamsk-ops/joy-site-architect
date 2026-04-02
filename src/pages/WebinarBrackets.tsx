@@ -228,7 +228,7 @@ export default function WebinarBrackets() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Программа вебинара</h2>
-          <p className="text-muted-foreground text-center mb-12">11 марта разберем:</p>
+          <p className="text-muted-foreground text-center mb-12">5 июня разберем:</p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {programTopics.map((t, i) => (
               <div key={i} className="flex gap-5 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">

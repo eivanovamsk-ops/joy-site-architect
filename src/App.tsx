@@ -53,6 +53,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const EducationSection = lazy(() => import("./pages/EducationSection"));
 const WebinarBrackets = lazy(() => import("./pages/WebinarBrackets"));
 const WebinarZirconMarch2026 = lazy(() => import("./pages/WebinarZirconMarch2026"));
+const WebinarThankYou = lazy(() => import("./pages/WebinarThankYou"));
 const BundleUpceraKit = lazy(() => import("./pages/BundleUpceraKit"));
 const BrandUpcera = lazy(() => import("./pages/BrandUpcera"));
 const Workshop16Shades = lazy(() => import("./pages/Workshop16Shades"));

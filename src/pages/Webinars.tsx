@@ -14,7 +14,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
-    image: "/images/webinar/cover-zircon.jpg",
+    image: "/images/webinar/cover-zircon-banner.png",
   },
   {
     slug: "brackets-march-2026",

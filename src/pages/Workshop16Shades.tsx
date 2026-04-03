@@ -8,7 +8,6 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { courses } from "@/data/courses";
-import course18Banner from "@/assets/courses/course-18-banner.jpg";
 import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";
 import pantherPrize from "@/assets/courses/course-18-prize-panther.png";
 import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
@@ -295,16 +294,6 @@ const Workshop16Shades = () => {
   return (
     <Layout>
     <div className="w16s-page bg-[#1A1A1A] text-[#F5F5F5] min-h-screen overflow-hidden -mt-[116px] lg:-mt-[164px]" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <Helmet>
-        <title>Зуботехническая лаборатория Артикон | Обучение зубных техников и керамистов | Курсы</title>
-        <meta name="description" content={course.metaDescription} />
-        <link rel="canonical" href="https://articon.pro/education/course/18" />
-        <meta property="og:title" content="Шестнадцать оттенков белого — Воркшоп | Артикон" />
-        <meta property="og:description" content={course.metaDescription} />
-        <meta property="og:image" content={course18Banner} />
-        <meta property="og:type" content="article" />
-      </Helmet>
-
       {/* ═══════ HERO ═══════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">

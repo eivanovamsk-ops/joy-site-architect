@@ -13,6 +13,7 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 const LAB_OG_IMAGE = `${SITE_URL}/og-laboratory.jpg`;
 const SHOP_OG_IMAGE = `${SITE_URL}/og-shop.jpg`;
 const EDUCATION_OG_IMAGE = `${SITE_URL}/og-education.jpg`;
+const COURSE_18_OG_IMAGE = `${SITE_URL}/images/courses/course-18-hero.jpg`;
 
 const normalizePath = (pathname: string) => {
   if (!pathname || pathname === "/") return "/";
@@ -184,6 +185,12 @@ export const seoByPath: Record<string, SeoConfig> = {
     "Календарь курсов | Учебный центр Артикон",
     "На этой странице представлено расписание различных курсов, вебинаров, мастер-классов и конференций, связанных со стоматологией и ортодонтией, включая даты, места проведения, темы, форматы, преподавателей и цены.",
     EDUCATION_OG_IMAGE,
+  ),
+  "/education/course/18": createSeo(
+    "/education/course/18",
+    "Зуботехническая лаборатория Артикон | Обучение зубных техников и керамистов | Курсы",
+    "Воркшоп для зубных техников — мастер-классы по окрашиванию и нанесению от сертифицированных тренеров. 10 апреля 2026, Москва. 7 000₽.",
+    COURSE_18_OG_IMAGE,
   ),
   "/education/course/cad-cam-pro": createSeo(
     "/education/course/cad-cam-pro",

@@ -474,8 +474,8 @@ export default function WebinarZirconMarch2026() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0">
-              <div className="w-52 h-52 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl bg-muted">
-                <img src="/images/lecturers/viktoria-nikulina.png" alt="Виктория Никулина" className="w-full h-full object-cover object-top" />
+              <div className="w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl bg-muted group/speaker cursor-pointer">
+                <img src="/images/webinar/speaker-zircon.jpg" alt="Виктория Никулина" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/speaker:scale-110" />
               </div>
             </div>
             <div>

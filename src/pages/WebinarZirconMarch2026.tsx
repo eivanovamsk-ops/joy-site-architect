@@ -521,9 +521,9 @@ export default function WebinarZirconMarch2026() {
       {/* FORMAT */}
       <section className="py-16 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Формат вебинара</h2>
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-3 gap-6 mb-10">
               <div className="p-4 rounded-xl bg-card border border-border">
                 <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />
                 <p className="font-medium">Практический разбор</p>
@@ -539,6 +539,18 @@ export default function WebinarZirconMarch2026() {
                 <p className="font-medium">Ответы на вопросы</p>
                 <p className="text-sm text-muted-foreground mt-1">участников в прямом эфире</p>
               </div>
+            </div>
+
+            {/* Video */}
+            <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
+              <p className="text-lg font-semibold py-3 bg-card">🎬 Как проходит вебинар?</p>
+              <video
+                src="/videos/webinar-format.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full aspect-video bg-black"
+              />
             </div>
           </div>
         </div>

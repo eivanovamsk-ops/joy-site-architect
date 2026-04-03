@@ -14,6 +14,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
+    image: "/images/webinar/cover-zircon.jpg",
   },
   {
     slug: "brackets-march-2026",
@@ -24,6 +25,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
+    image: "/images/webinar/cover.jpg",
   },
 ];
 
@@ -47,40 +49,51 @@ export default function Webinars() {
               <Link
                 key={w.slug}
                 to={`/education/webinar/${w.slug}`}
-                className="group block rounded-2xl border border-border bg-card p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge variant="secondary" className="text-xs">{w.badge}</Badge>
-                  <Badge variant="outline" className="text-xs flex items-center gap-1">
-                    <Monitor className="h-3 w-3" />
-                    {w.format}
-                  </Badge>
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
 
-                <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {w.title}
-                </h2>
-
-                <p className="text-muted-foreground text-sm mb-6 line-clamp-3">
-                  {w.description}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="h-4 w-4" />
-                      {w.date}
-                    </span>
-                    {w.time && (
-                      <span className="flex items-center gap-1.5">
-                        <Clock className="h-4 w-4" />
-                        {w.time}
-                      </span>
-                    )}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge variant="secondary" className="text-xs">{w.badge}</Badge>
+                    <Badge variant="outline" className="text-xs flex items-center gap-1">
+                      <Monitor className="h-3 w-3" />
+                      {w.format}
+                    </Badge>
                   </div>
-                  <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    Подробнее <ArrowRight className="h-4 w-4" />
-                  </span>
+
+                  <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {w.title}
+                  </h2>
+
+                  <p className="text-muted-foreground text-sm mb-6 line-clamp-3">
+                    {w.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="h-4 w-4" />
+                        {w.date}
+                      </span>
+                      {w.time && (
+                        <span className="flex items-center gap-1.5">
+                          <Clock className="h-4 w-4" />
+                          {w.time}
+                        </span>
+                      )}
+                    </div>
+                    <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      Подробнее <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}

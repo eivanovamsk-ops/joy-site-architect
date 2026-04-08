@@ -1166,7 +1166,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 0, 1),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Индивидуальный курс",
-    price: 35000,
+    price: 40000,
     coverImage: course16Banner,
     previewImage: course16Preview,
     description: "Курс для владельцев и руководителей зуботехнических лабораторий. Бизнес-процессы, управление командой, финансы, маркетинг, внедрение цифровых технологий.",

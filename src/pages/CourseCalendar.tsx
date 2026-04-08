@@ -508,7 +508,7 @@ const CourseCalendar = () => {
                     <div className="p-4">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                         <Calendar className="h-4 w-4" />
-                        8 апреля 2026 | 16:00
+                        14 апреля 2026 | 19:00
                       </div>
                       <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
                         Лайфхаки в работе с цирконом

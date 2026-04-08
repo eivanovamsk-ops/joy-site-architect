@@ -257,8 +257,8 @@ export default function WebinarZirconMarch2026() {
         phone: form.phone,
         telegram: "",
         specialization: form.specialization || null,
-        course_name: "Вебинар: Лайфхаки в работе с цирконом — 8 апреля 2026",
-        course_date: "2026-04-08",
+        course_name: "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026",
+        course_date: "2026-04-14",
       } as any);
       if (error) throw error;
 
@@ -343,11 +343,11 @@ export default function WebinarZirconMarch2026() {
             <div className="flex flex-wrap items-start gap-6 mb-10">
               <div className="flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5 text-accent" />
-                <span className="font-semibold">8 апреля 2026</span>
+                <span className="font-semibold">14 апреля 2026</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Clock className="w-5 h-5 text-accent" />
-                <span className="font-semibold">16:00</span>
+                <span className="font-semibold">19:00</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Monitor className="w-5 h-5 text-accent" />

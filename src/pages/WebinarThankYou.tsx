@@ -22,7 +22,7 @@ const WebinarThankYou = () => {
               На почту вам придет ссылка на чат в Телеграм.
             </p>
             <p className="text-lg text-muted-foreground mb-4">
-              Добавляйтесь, и до встречи 8 апреля!
+              Добавляйтесь, и до встречи 14 апреля!
             </p>
             <p className="text-sm text-muted-foreground mb-12">
               (Если вы не увидели письмо во входящих, пожалуйста, проверьте папку «Спам»)

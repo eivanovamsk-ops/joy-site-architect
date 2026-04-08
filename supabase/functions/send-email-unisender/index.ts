@@ -105,16 +105,16 @@ const WEBINAR_CONFIGS: Record<string, { courseName: string; courseDate: string; 
     courseName: "Вебинар: Непрямая фиксация брекетов",
     courseDate: "11 марта 2026, 17:00",
   },
-  "Вебинар: Лайфхаки в работе с цирконом — 8 апреля 2026": {
+  "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026": {
     courseName: "Лайфхаки в работе с цирконом",
-    courseDate: "8 апреля 2026, 16:00 МСК",
+    courseDate: "14 апреля 2026, 19:00 МСК",
     telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
   },
 };
 
 const ZIRCON_WEBINAR_CONFIG = {
   courseName: "Лайфхаки в работе с цирконом",
-  courseDate: "8 апреля 2026, 16:00 МСК",
+  courseDate: "14 апреля 2026, 19:00 МСК",
   telegramChatUrl: "https://t.me/+DDRGM-a1KrE3YzIy",
 };
 

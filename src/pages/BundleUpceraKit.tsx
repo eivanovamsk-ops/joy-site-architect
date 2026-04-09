@@ -198,6 +198,22 @@ const BundleUpceraKit = () => {
           </div>
         </div>
 
+        {/* Service Advantages */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-5">
+            <Wrench className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold text-foreground">Преимущества</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {serviceAdvantages.map((a) => (
+              <div key={a} className="flex items-start gap-2 text-sm text-muted-foreground bg-secondary rounded-xl p-4">
+                <span className="text-primary mt-0.5 font-bold">✔</span>
+                <span>{a}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="bg-secondary rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-3">Готовы обсудить комплект?</h2>

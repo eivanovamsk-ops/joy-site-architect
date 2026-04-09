@@ -69,11 +69,17 @@ interface BundleRequestNotification {
   bundleRequestId: string;
 }
 
+interface CallbackRequestNotification {
+  type: "callback_request";
+  callbackRequestId: string;
+}
+
 type EmailRequest =
   | OrderConfirmationRequest
   | CourseApplicationRequest
   | FeedbackNotificationRequest
   | BundleRequestNotification
+  | CallbackRequestNotification
   | { type: "legacy" };
 
 interface AuthContext {

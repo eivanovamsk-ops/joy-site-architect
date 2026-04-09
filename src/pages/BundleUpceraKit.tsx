@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Badge } from "@/components/ui/badge";
 import BundleRequestForm from "@/components/bundle/BundleRequestForm";
 import { Link } from "react-router-dom";
-import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home } from "lucide-react";
+import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home, Wrench } from "lucide-react";
 import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
 import upceraGT1 from "@/assets/products/upcera-gt1-pro-bundle.png";
 import upceraR412 from "@/assets/products/upcera-r412-bundle.png";
@@ -36,6 +36,15 @@ const benefits = [
   "Единая сервисная поддержка",
   "Быстрый запуск цифрового производства",
   "Оптимальная настройка процессов «фрезеровка → синтеризация → чистота производства»",
+];
+
+const serviceAdvantages = [
+  "Пусконаладка и запуск включены в стоимость",
+  "Сертифицированные инженеры и техподдержка",
+  "Удалённая помощь и сервис после покупки",
+  "Лизинг — можно начать без больших вложений",
+  "Материалы всегда в наличии под ваши задачи",
+  "Работаем на оборудовании, которое продаём",
 ];
 
 const audience = [
@@ -185,6 +194,22 @@ const BundleUpceraKit = () => {
               <Badge key={r} variant="secondary" className="text-sm font-normal py-2 px-4">
                 {r}
               </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Service Advantages */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-5">
+            <Wrench className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold text-foreground">Преимущества</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {serviceAdvantages.map((a) => (
+              <div key={a} className="flex items-start gap-2 text-sm text-muted-foreground bg-secondary rounded-xl p-4">
+                <span className="text-primary mt-0.5 font-bold">✔</span>
+                <span>{a}</span>
+              </div>
             ))}
           </div>
         </div>

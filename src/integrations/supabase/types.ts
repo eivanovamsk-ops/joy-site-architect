@@ -35,6 +35,30 @@ export type Database = {
         }
         Relationships: []
       }
+      callback_requests: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          phone: string
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          phone: string
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          phone?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
       course_applications: {
         Row: {
           city: string | null

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Badge } from "@/components/ui/badge";
 import BundleRequestForm from "@/components/bundle/BundleRequestForm";
 import { Link } from "react-router-dom";
-import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home } from "lucide-react";
+import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home, Wrench } from "lucide-react";
 import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
 import upceraGT1 from "@/assets/products/upcera-gt1-pro-bundle.png";
 import upceraR412 from "@/assets/products/upcera-r412-bundle.png";

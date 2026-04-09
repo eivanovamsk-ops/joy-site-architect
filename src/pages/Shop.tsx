@@ -9,6 +9,7 @@ import { ShopBrands } from "@/components/shop/Brands";
 import { UpceraShopBanner } from "@/components/shop/UpceraShopBanner";
 import { WhyArticon } from "@/components/shop/WhyArticon";
 import { products } from "@/data/products";
+import { CallbackPopup } from "@/components/CallbackPopup";
 
 const Shop = () => {
   const saleProducts = products.filter(p => p.isSale);
@@ -71,6 +72,7 @@ const Shop = () => {
       <WhyArticon />
       <ShopAdvantages />
       <ShopBrands />
+      <CallbackPopup />
     </Layout>
   );
 };

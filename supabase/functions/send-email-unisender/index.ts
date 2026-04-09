@@ -1016,6 +1016,47 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
+    if (requestData.type === "callback_request") {
+      if (!requestData.callbackRequestId || !isUuid(requestData.callbackRequestId)) {
+        throw new HttpError(400, "A valid callbackRequestId is required");
+      }
+
+      const { data: cb, error: cbError } = await serviceClient
+        .from("callback_requests")
+        .select("name, phone, source, created_at")
+        .eq("id", requestData.callbackRequestId)
+        .maybeSingle();
+
+      if (cbError) throw new HttpError(500, "Failed to load callback request");
+      if (!cb) throw new HttpError(404, "Callback request not found");
+
+      const htmlBody = `
+        <div style="font-family:Arial,sans-serif;max-width:600px;">
+          <h2 style="color:#333;">📞 Запрос обратного звонка с сайта</h2>
+          <table style="border-collapse:collapse;width:100%;">
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${cb.name}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;">${cb.phone}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Источник</td><td style="padding:8px;border:1px solid #eee;">${cb.source || 'popup'}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Дата</td><td style="padding:8px;border:1px solid #eee;">${new Date(cb.created_at).toLocaleString("ru-RU", { timeZone: "Europe/Moscow" })}</td></tr>
+          </table>
+        </div>
+      `;
+
+      const result = await sendEmail(
+        UNISENDER_API_KEY,
+        "marketing@articon.pro",
+        `📞 Обратный звонок — ${cb.name}`,
+        htmlBody,
+        "Articon",
+        "marketing@articon.pro",
+      );
+
+      return new Response(JSON.stringify({ success: true, result }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
     throw new HttpError(410, "Legacy email mode is disabled");
   } catch (error: unknown) {
     console.error("Error in send-email-unisender function:", error);

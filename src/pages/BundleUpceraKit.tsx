@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import BundleRequestForm from "@/components/bundle/BundleRequestForm";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home, Wrench } from "lucide-react";
+import { BundleVideoCarousel } from "@/components/bundle/VideoCarousel";
 import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
 import upceraGT1 from "@/assets/products/upcera-gt1-pro-bundle.png";
 import upceraR412 from "@/assets/products/upcera-r412-bundle.png";
@@ -213,6 +214,9 @@ const BundleUpceraKit = () => {
             ))}
           </div>
         </div>
+
+        {/* Video Carousel */}
+        <BundleVideoCarousel />
 
         {/* CTA */}
         <div className="bg-secondary rounded-2xl p-8 text-center">

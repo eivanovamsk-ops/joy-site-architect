@@ -72,18 +72,17 @@ export function CallbackPopup() {
     }
 
     setSubmitting(true);
+    const requestId = crypto.randomUUID();
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("callback_requests" as any)
-        .insert({ name: name.trim(), phone: phone.trim(), source: "popup" } as any)
-        .select("id")
-        .single();
+        .insert({ id: requestId, name: name.trim(), phone: phone.trim(), source: "popup" } as any);
 
       if (error) throw error;
 
       supabase.functions
         .invoke("send-email-unisender", {
-          body: { type: "callback_request", callbackRequestId: (data as any).id },
+          body: { type: "callback_request", callbackRequestId: requestId },
         })
         .catch((err) => console.error("Email send error:", err));
 

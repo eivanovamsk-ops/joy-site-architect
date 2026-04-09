@@ -293,9 +293,9 @@ export default function WebinarZirconMarch2026() {
     <Layout>
       <Helmet>
         <title>Зуботехническая лаборатория Артикон | Курс для зубных техников и керамистов</title>
-        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 8 апреля, 16:00. Регистрация." />
-        <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 8 апреля | Articon" />
-        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 8 апреля, 16:00." />
+        <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 14 апреля, 19:00. Регистрация." />
+        <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 14 апреля | Articon" />
+        <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 14 апреля, 19:00." />
         <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -503,7 +503,7 @@ export default function WebinarZirconMarch2026() {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Программа вебинара</h2>
-          <p className="text-muted-foreground text-center mb-12">8 апреля в 16:00 разберём:</p>
+          <p className="text-muted-foreground text-center mb-12">14 апреля в 19:00 разберём:</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {programTopics.map((t, i) => (
               <div key={i} className="flex gap-5 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow">
@@ -572,7 +572,7 @@ export default function WebinarZirconMarch2026() {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">8 апреля в 16:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-accent font-semibold">14 апреля в 19:00 · Онлайн · Бесплатно</p>
             </div>
 
             <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">

@@ -110,10 +110,10 @@ const BundleUpceraKit = () => {
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
                 CAD/CAM-комплект UPCERA
               </h1>
-              <p className="text-lg text-muted-foreground mb-4">
+              <p className="text-lg text-foreground mb-4">
                 Комплексное решение для цифровой лаборатории
               </p>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-lg mb-6">
+              <p className="text-sm text-foreground leading-relaxed max-w-lg mb-6">
                 Запустите или модернизируйте цифровую зуботехническую лабораторию на базе оборудования UPCERA
                 и получите комплект выгоднее на 8% по сравнению с покупкой каждого устройства отдельно.
               </p>
@@ -145,7 +145,7 @@ const BundleUpceraKit = () => {
                 />
               </div>
               <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{item.name}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              <p className="text-sm text-foreground leading-relaxed">{item.description}</p>
             </Link>
           ))}
         </div>
@@ -159,7 +159,7 @@ const BundleUpceraKit = () => {
             </div>
             <ul className="space-y-3">
               {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <li key={b} className="flex items-start gap-2 text-sm text-foreground">
                   <span className="text-primary mt-0.5">✓</span>
                   <span>{b}</span>
                 </li>
@@ -174,7 +174,7 @@ const BundleUpceraKit = () => {
             </div>
             <ul className="space-y-3">
               {audience.map((a) => (
-                <li key={a} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <li key={a} className="flex items-start gap-2 text-sm text-foreground">
                   <span className="text-primary mt-0.5">✓</span>
                   <span>{a}</span>
                 </li>
@@ -206,7 +206,7 @@ const BundleUpceraKit = () => {
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {serviceAdvantages.map((a) => (
-              <div key={a} className="flex items-start gap-2 text-sm text-muted-foreground bg-secondary rounded-xl p-4">
+              <div key={a} className="flex items-start gap-2 text-sm text-foreground bg-secondary rounded-xl p-4">
                 <span className="text-primary mt-0.5 font-bold">✔</span>
                 <span>{a}</span>
               </div>
@@ -217,7 +217,7 @@ const BundleUpceraKit = () => {
         {/* CTA */}
         <div className="bg-secondary rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-3">Готовы обсудить комплект?</h2>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+          <p className="text-foreground mb-6 max-w-lg mx-auto">
             Свяжитесь с нами, чтобы получить персональное предложение и узнать точную стоимость комплекта с учётом скидки –8%.
           </p>
           <BundleRequestForm triggerClassName="bg-primary hover:bg-primary/90" />

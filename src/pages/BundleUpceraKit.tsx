@@ -5,6 +5,7 @@ import BundleRequestForm from "@/components/bundle/BundleRequestForm";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Users, TrendingUp, Package, ChevronRight, Home, Wrench } from "lucide-react";
 import { BundleVideoCarousel } from "@/components/bundle/VideoCarousel";
+import { RelatedProducts } from "@/components/shop/RelatedProducts";
 import upceraA52 from "@/assets/products/upcera-a52-bundle.png";
 import upceraGT1 from "@/assets/products/upcera-gt1-pro-bundle.png";
 import upceraR412 from "@/assets/products/upcera-r412-bundle.png";
@@ -217,6 +218,9 @@ const BundleUpceraKit = () => {
 
         {/* Video Carousel */}
         <BundleVideoCarousel />
+
+        {/* Related Products */}
+        <RelatedProducts productId="bundle-upcera-cadcam-kit" />
 
         {/* CTA */}
         <div className="bg-secondary rounded-2xl p-8 text-center">

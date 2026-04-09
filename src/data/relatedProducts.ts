@@ -48,6 +48,18 @@ const directMap: Record<string, string[]> = {
   "upcera-e52-hybrid": UPCERA_BURS,
   "upcera-b52": UPCERA_BURS,
   "upcera-b42": UPCERA_BURS,
+
+  // Bundle page → zirconia discs
+  "bundle-upcera-cadcam-kit": [
+    "upcera-explore-98x14-a1",
+    "upcera-explore-98x14-a2",
+    "upcera-explore-98x16-a1",
+    "upcera-explore-98x16-a2",
+    "upcera-explore-98x18-a1",
+    "upcera-explore-98x18-a2",
+    "upcera-explore-98x12-a2",
+    "upcera-explore-98x14-a35",
+  ],
 };
 
 /**

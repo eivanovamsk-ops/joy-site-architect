@@ -11,8 +11,14 @@ import {
 import bannerRundeer from "@/assets/banners/banner-rundeer-split.jpg";
 import bannerUpcera from "@/assets/banners/banner-upcera-aevra-duo.jpg";
 import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
+import bannerCadcamKit from "@/assets/banners/banner-upcera-cadcam-kit.png";
 
 const banners = [
+  {
+    image: bannerCadcamKit,
+    alt: "CAD/CAM-комплект UPCERA для цифровой лаборатории",
+    href: "/shop/bundle/upcera-cadcam-kit",
+  },
   {
     image: bannerRundeer,
     alt: "Сканеры Rundeer — Плати частями через Яндекс Сплит",

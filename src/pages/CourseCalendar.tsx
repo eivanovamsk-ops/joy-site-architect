@@ -52,7 +52,7 @@ const CourseCalendar = () => {
 
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
-      if (course.id === 13) return false;
+      if (course.id === 13 || course.id === 23) return false;
       const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
         selectedCategory === "Все разделы" ||
@@ -481,9 +481,60 @@ const CourseCalendar = () => {
                 </div>
               ))}
 
-              {/* Past webinars (moved to end) */}
+              {/* Past events (moved to end) */}
               {!hasActiveFilters && (
                 <>
+                  {/* Past event: Implant Protocol - April 8 */}
+                  <Link
+                    to="/education/course/23"
+                    className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group relative opacity-70"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src="/images/courses/course-21-hero.png"
+                        alt="Новый протокол для протезирования на имплантатах"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                        <Badge className="bg-accent text-accent-foreground text-xs font-semibold">
+                          Бизнес-встреча
+                        </Badge>
+                        <Badge className="bg-muted-foreground text-white text-xs">
+                          УЖЕ ПРОШЕЛ
+                        </Badge>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                        <Calendar className="h-4 w-4" />
+                        8 апреля 2026 | 15:00-19:00
+                      </div>
+                      <h3 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                        Новый протокол для протезирования на имплантатах
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        Цифровой путь от сканирования до реализации конструкции
+                      </p>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <MapPin className="h-4 w-4 flex-shrink-0" />
+                          Москва, Megapolis Hall
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Users className="h-4 w-4 flex-shrink-0" />
+                          Дамир Гуфранов, Артем Борисенко, Артем Алимбетов
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between pt-4 border-t border-border">
+                        <span className="text-xl font-bold text-muted-foreground">Завершён</span>
+                        <Button size="sm" variant="outline">
+                          Подробнее
+                        </Button>
+                      </div>
+                    </div>
+                  </Link>
+
                   {/* Past webinar: Zircon - March 26 */}
                   <Link
                     to="/education/webinar/zircon-march-2026"

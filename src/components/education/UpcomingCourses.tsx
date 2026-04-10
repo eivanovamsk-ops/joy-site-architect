@@ -7,7 +7,7 @@ import { courses } from "@/data/courses";
 export function EducationUpcomingCourses() {
   // Sort courses by date and get upcoming ones (limit to 6)
   const upcomingCourses = courses
-    .filter(course => course.dateStart >= new Date())
+    .filter(course => course.id !== 23 && course.dateStart >= new Date())
     .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime())
     .slice(0, 6);
 

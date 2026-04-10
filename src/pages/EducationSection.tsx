@@ -61,6 +61,10 @@ const EducationSection = () => {
         course.sectionTags?.includes(config.subsectionTag)
       )
       .sort((a, b) => {
+        const isArchivedA = a.id === 23;
+        const isArchivedB = b.id === 23;
+        if (isArchivedA && !isArchivedB) return 1;
+        if (!isArchivedA && isArchivedB) return -1;
         const isLastA = a.isComingSoon;
         const isLastB = b.isComingSoon;
         if (isLastA && !isLastB) return 1;
@@ -101,7 +105,7 @@ const EducationSection = () => {
                 <Link
                   key={course.id + "-" + course.slug}
                   to={course.externalUrl || `/education/course/${course.id}`}
-                  className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block"
+                  className={`bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block ${course.id === 23 ? "opacity-70" : ""}`}
                 >
                   {course.coverImage && (
                     <div className="relative h-40 overflow-hidden">
@@ -127,9 +131,11 @@ const EducationSection = () => {
                   )}
 
                   <div className="p-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                       <Calendar className="h-4 w-4" />
-                      {course.isComingSoon ? (
+                      {course.id === 23 ? (
+                        <Badge variant="secondary" className="text-xs font-medium">УЖЕ ПРОШЕЛ</Badge>
+                      ) : course.isComingSoon ? (
                         <Badge variant="secondary" className="text-xs font-medium">{course.comingSoonLabel || "Уже скоро"}</Badge>
                       ) : (
                         course.date

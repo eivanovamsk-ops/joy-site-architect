@@ -13,8 +13,10 @@ import {
 import bannerRundeer from "@/assets/banners/banner-rundeer-split.jpg";
 import bannerUpcera from "@/assets/banners/banner-upcera-aevra-duo.jpg";
 import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
+import bannerCadcamKit from "@/assets/banners/banner-upcera-cadcam-kit.png";
 
 const banners = [
+  { image: bannerCadcamKit, alt: "CAD/CAM-комплект UPCERA для цифровой лаборатории", href: "/shop/bundle/upcera-cadcam-kit" },
   { image: bannerRundeer, alt: "Сканеры Rundeer — Плати частями", href: "/shop/product/rundeer-3ds-v6" },
   { image: bannerUpcera, alt: "Диски Upcera Explore Esthetic", href: "/shop/catalog/zirconia-discs" },
   { image: bannerHeygears, alt: "3D-принтер HeyGears", href: "/shop/catalog/3d-printers" },

@@ -1952,7 +1952,7 @@ export const courses: Course[] = [
     subtitle: "Цифровой путь от сканирования до реализации конструкции",
     coverImage: "/images/courses/course-21-hero.png",
     date: "8 апреля 2026 | 15:00-19:00",
-    dateStart: new Date(2026, 3, 8),
+    dateStart: new Date(2026, 3, 8, 0, 0, 0),
     location: "Москва, Megapolis Hall, Варшавское шоссе д33к12",
     format: "Бизнес-встреча",
     price: 7000,

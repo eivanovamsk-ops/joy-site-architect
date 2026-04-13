@@ -8,15 +8,8 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { courses } from "@/data/courses";
-import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";
-import pantherPrize from "@/assets/courses/course-18-prize-panther.png";
-import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
-import eonLogo from "@/assets/partners/eon-logo.png";
+import upceraLogo from "@/assets/partners/upcera-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
-import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
-import stidentLogo from "@/assets/partners/stident-logo.png";
-import zubtexLogo from "@/assets/partners/zubtex-logo.jpg";
-import greendentLogo from "@/assets/partners/greendent-logo.jpg";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -152,92 +145,20 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 const course = courses.find(c => c.id === 18)!;
 
 const GOLD = "#D4AF37";
-const speakers = [
-  {
-    name: "Дмитрий Никоненко",
-    photo: "/images/lecturers/dmitry-nikonenko.png",
-    role: "Мастер-керамист",
-    short: "Колоссальный опыт в мануальной практике, виртуозное владение кистью, глубокое понимание эстетики и морфологии зуба. Представитель классической школы, где результат создается гениальностью рук.",
-    tag: "MANUAL",
-  },
-  {
-    name: "Дмитрий Филинов",
-    photo: "/images/lecturers/dmitry-filinov.png",
-    role: "Цифровой дизайнер",
-    short: "Невероятные навыки 3D-моделирования, эксперт в CAD/CAM системах. Специалист, который создает безупречно точные цифровые прототипы и каркасы, являющиеся идеальной основой для дальнейшей работы.",
-    tag: "DIGITAL",
-  },
-  {
-    name: "Шамиль Магомедов",
-    photo: "/images/lecturers/shamil-magomedov.png",
-    role: "Техник-универсал",
-    short: "Руководитель отдела эстетики Артикон, ежедневно выполняющий огромный объем работ на высокотехнологичном производстве. Обладает уникальным опытом работы с самыми разными материалами и технологиями и доводит каждую работу до высочайшей эстетики.",
-    tag: "COLORING",
-  },
-];
 
 const partners = [
   {
-    name: "EON",
-    logo: eonLogo,
-    url: "",
+    name: "UPCERA",
+    logo: upceraLogo,
+    url: "https://articon.pro/brand/upcera",
   },
   {
     name: "HeyGears",
     logo: heygearsLogo,
     url: "",
   },
-  {
-    name: "Ультрастом",
-    logo: ultrastomLogo,
-    url: "https://ultrastom.shop/",
-  },
-  {
-    name: "S.T.I.Dent",
-    logo: stidentLogo,
-    url: "https://stident.ru/",
-  },
-  {
-    name: "Зубной техник",
-    logo: zubtexLogo,
-    url: "https://zubtex.ru/magazine/",
-  },
-  {
-    name: "Green Dent",
-    logo: greendentLogo,
-    url: "",
-  },
 ];
 
-const prizes = [
-  {
-    place: "🏆 1 место",
-    title: "Бинокуляр UPCERA DFL",
-    description: "Стоимостью 165 000 ₽",
-    image: binocularsPrize,
-  },
-  {
-    place: "🥈 2 место",
-    title: "Dental Direkt Panther Starter Kit",
-    description: "Набор для обработки циркона",
-    image: pantherPrize,
-  },
-  {
-    place: "🥉 3 место",
-    title: "LeBrush Lab Harmony",
-    description: "Набор кистей",
-    image: brushesPrize,
-  },
-];
-
-const timeline = [
-  { time: "15:00", title: "Регистрация и Welcome Drink", speaker: "", desc: "Встреча гостей, знакомство с коллегами в неформальной обстановке. Хорошее начало дня — залог продуктивного обучения." },
-  { time: "16:00", title: "Цифровые инструменты планирования", speaker: "Дмитрий Филинов", desc: "Цифровые инструменты планирования и изготовления протяженных конструкций. Как создавать безупречные каркасы в CAD/CAM, которые станут идеальной основой для мануальной работы." },
-  { time: "17:00", title: "Aevra — максимальная возможность приблизиться к естественности", speaker: "Шамиль Магомедов", desc: "Важность формы и цвета в работе с полноанатомическими конструкциями." },
-  { time: "18:00", title: "Кофе-брейк", speaker: "", desc: "Перерыв, неформальное общение, возможность подойти к спикерам с вопросами." },
-  { time: "19:00", title: "Noritake — фронтальная эстетика", speaker: "Дмитрий Никоненко", desc: "Виниры на рефракторном материале. Мастер-класс по послойной технике нанесения: как «оживить» работу и добиться глубины, которую не даст ни один цифровой инструмент." },
-  { time: "20:00", title: "Фуршет, розыгрыш и живая музыка", speaker: "", desc: "Розыгрыш призов, угощения, напитки, выступление кавер-группы и живое общение в непринужденной обстановке. Отличный способ закончить насыщенную пятницу в хорошей компании." },
-];
 
 const perks = [
   { icon: MessageCircle, title: "Живое общение", desc: "В перерывах и после основной части у вас будет возможность в непринужденной обстановке пообщаться со спикерами и коллегами, обсудить рабочие моменты и наладить новые профессиональные связи.", image: "/images/courses/course-18-communication.jpg" },
@@ -248,13 +169,12 @@ const perks = [
 const Workshop16Shades = () => {
   const heroReveal = useReveal();
   const formatReveal = useReveal();
-  const speakersReveal = useReveal();
-  const synergyReveal = useReveal();
-  const timelineReveal = useReveal();
+
+
   const perksReveal = useReveal();
   const innovationsReveal = useReveal();
   const partnersReveal = useReveal();
-  const prizesReveal = useReveal();
+  
   const ctaReveal = useReveal();
 
   /* smooth scroll */
@@ -275,21 +195,8 @@ const Workshop16Shades = () => {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  /* timeline line animation */
-  const timelineLineRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const handler = () => {
-      const el = timelineLineRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const progress = Math.min(1, Math.max(0, (vh - rect.top) / (rect.height + vh * 0.4)));
-      el.style.setProperty("--line-progress", `${progress * 100}%`);
-    };
-    window.addEventListener("scroll", handler, { passive: true });
-    handler();
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+
+
 
   return (
     <Layout>
@@ -352,7 +259,7 @@ const Workshop16Shades = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" style={{ color: GOLD }} />
-                <span>10 апреля</span>
+                <span>13 ноября</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" style={{ color: GOLD }} />
@@ -421,156 +328,11 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-speakers" className="py-16 lg:py-20 relative">
-        <div className="container mx-auto px-4">
-          <div ref={speakersReveal.ref} className={cn(
-            "text-center mb-6 transition-all duration-700",
-            speakersReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}>
-            <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Эксперты</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Спикеры: три кита современной стоматологии</h2>
-            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
-              Мы собрали команду из трех звездных техников, каждый из которых является признанным экспертом в своей области. Это уникальная возможность перенять опыт у лучших из лучших.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
-            {speakers.map((s, i) => {
-              const reveal = useReveal();
-              return (
-                <div
-                  key={i}
-                  ref={reveal.ref}
-                  className={cn(
-                    "group bg-[#222]/80 rounded-2xl overflow-hidden border border-[#333] transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-[0_0_40px_-10px_#D4AF3740] flex flex-col",
-                    reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12",
-                  )}
-                  style={{ transitionDelay: `${i * 150}ms` }}
-                >
-                  <div className="relative aspect-[3/4] overflow-hidden flex-shrink-0">
-                    <div className="absolute top-4 right-4 z-10 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD, background: "#1A1A1A90" }}>
-                      {s.tag}
-                    </div>
-                    <img
-                      src={s.photo}
-                      alt={s.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                    />
-                  </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{s.name}</h3>
-                    <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-white/90 leading-relaxed">
-                      {s.short}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
-      <section className="py-16 lg:py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div ref={synergyReveal.ref} className={cn(
-            "transition-all duration-1000",
-            synergyReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          )}>
-            <div className="text-center mb-12">
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Уникальность</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Что делает этот воркшоп особенным?</h2>
-            </div>
 
-            <div className="max-w-3xl mx-auto mb-12 space-y-6 text-[#F5F5F5]/90 leading-relaxed text-center">
-              <p>
-                Классические подходы «старой школы» высокой эстетики и более чем 30-летний мануальный опыт Дмитрия Никоненко + цифровые возможности Cad/Cam и новинки Exocad 2026 от Дмитрия Филинова.
-              </p>
-              <p>
-                Вы станете мастером, который виртуозно владеет всеми инструментами.
-              </p>
-            </div>
 
-            <div className="grid lg:grid-cols-2 gap-0 max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#333]">
-              <div className="relative bg-[#1E1E1E] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
-                <div className="absolute top-6 left-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border border-[#555] text-[#BBB]">
-                  MANUAL
-                </div>
-                <div className="text-6xl lg:text-8xl font-extrabold text-[#2A2A2A] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-                  01
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Мануальное<br />мастерство</h3>
-                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
-                  Послойная техника нанесения, работа с кистью и керамикой — классическое искусство, отточенное десятилетиями.
-                </p>
-              </div>
-
-              <div className="relative bg-[#161616] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
-                <div className="absolute top-6 right-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD }}>
-                  DIGITAL
-                </div>
-                <div className="text-6xl lg:text-8xl font-extrabold text-[#222] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-                  02
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Цифровая<br />точность</h3>
-                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
-                  CAD/CAM планирование, фрезерованная стеклокерамика — технологии, которые задают новые стандарты.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="w16s-program" className="py-16 lg:py-20 relative">
-        <div className="container mx-auto px-4">
-          <div ref={timelineReveal.ref} className={cn(
-            "text-center mb-6 transition-all duration-700",
-            timelineReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}>
-            <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Программа</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Программа курса</h2>
-            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
-              Симбиоз цифровой точности и мануального искусства для создания тотальных работ, которые не отличить от живых зубов.
-            </p>
-          </div>
-
-          <div ref={timelineLineRef} className="relative max-w-3xl mx-auto mt-12">
-            <div className="absolute left-[28px] md:left-[40px] top-0 bottom-0 w-px bg-[#333]">
-              <div className="absolute top-0 left-0 w-full bg-gradient-to-b transition-all duration-100" style={{ height: "var(--line-progress, 0%)", backgroundImage: `linear-gradient(to bottom, ${GOLD}, ${GOLD}40)` }} />
-            </div>
-
-            <div className="space-y-12">
-              {timeline.map((item, i) => {
-                const reveal = useReveal(0.2);
-                return (
-                  <div
-                    key={i}
-                    ref={reveal.ref}
-                    className={cn(
-                      "relative pl-16 md:pl-24 transition-all duration-700",
-                      reveal.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[-30px]",
-                    )}
-                    style={{ transitionDelay: `${i * 100}ms` }}
-                  >
-                    <div className="absolute left-[22px] md:left-[34px] top-1 w-3 h-3 rounded-full border-2 transition-colors duration-500" style={{ borderColor: reveal.visible ? GOLD : "#555", background: reveal.visible ? GOLD : "transparent" }} />
-
-                    <div className="text-sm font-bold tracking-wider mb-1" style={{ color: GOLD }}>{item.time}</div>
-
-                    <div className="bg-[#222]/60 border border-[#333] rounded-xl p-6 hover:border-[#D4AF37]/30 transition-all duration-300">
-                      <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                      {item.speaker && <p className="text-sm text-white/90 mb-2">{item.speaker}</p>}
-                      <p className="text-[#F5F5F5]/90 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 lg:py-20 relative">
         <div className="absolute inset-0 pointer-events-none">
@@ -640,53 +402,8 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full blur-[140px]" style={{ background: `${GOLD}12` }} />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div ref={prizesReveal.ref} className={cn(
-            "max-w-6xl mx-auto transition-all duration-1000",
-            prizesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          )}>
-            <div className="text-center mb-12">
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Розыгрыш призов</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Подарки для участников мероприятия</h2>
-              <p className="text-[#F5F5F5]/80 max-w-3xl mx-auto text-lg">
-                Среди участников мероприятия мы разыграем ценные призы от партнёров — профессиональные инструменты и аксессуары для ежедневной практики.
-              </p>
-            </div>
 
-            <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
-              {prizes.map((prize, index) => (
-                <div
-                  key={prize.title}
-                  className="group rounded-3xl border border-[#333] bg-[#222]/70 overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_0_40px_-10px_#D4AF3740]"
-                  style={{ transitionDelay: `${index * 120}ms` }}
-                >
-                  <div className="bg-white px-6 py-8 md:px-8 md:py-10 min-h-[260px] flex items-center justify-center">
-                    <div className="flex h-[180px] md:h-[200px] w-full items-center justify-center">
-                      <img
-                        src={prize.image}
-                        alt={prize.title}
-                        className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: GOLD }}>
-                      {prize.place}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">{prize.title}</h3>
-                    <p className="text-[#F5F5F5]/90 leading-relaxed">{prize.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">
@@ -776,7 +493,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
+            <div className="grid gap-4 grid-cols-2 max-w-2xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
                   <div className="rounded-2xl aspect-[3/2] flex items-center justify-center bg-white p-5">

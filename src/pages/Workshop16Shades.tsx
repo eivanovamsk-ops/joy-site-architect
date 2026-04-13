@@ -174,7 +174,7 @@ const Workshop16Shades = () => {
   const perksReveal = useReveal();
   const innovationsReveal = useReveal();
   const partnersReveal = useReveal();
-  const prizesReveal = useReveal();
+  
   const ctaReveal = useReveal();
 
   /* smooth scroll */

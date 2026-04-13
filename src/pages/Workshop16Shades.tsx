@@ -8,15 +8,8 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { courses } from "@/data/courses";
-import binocularsPrize from "@/assets/courses/course-18-prize-binoculars.png";
-import pantherPrize from "@/assets/courses/course-18-prize-panther.png";
-import brushesPrize from "@/assets/courses/course-18-prize-brushes.png";
-import eonLogo from "@/assets/partners/eon-logo.png";
+import upceraLogo from "@/assets/partners/upcera-logo.png";
 import heygearsLogo from "@/assets/partners/heygears-logo.png";
-import ultrastomLogo from "@/assets/partners/ultrastom-logo.png";
-import stidentLogo from "@/assets/partners/stident-logo.png";
-import zubtexLogo from "@/assets/partners/zubtex-logo.jpg";
-import greendentLogo from "@/assets/partners/greendent-logo.jpg";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {
@@ -178,33 +171,13 @@ const speakers = [
 
 const partners = [
   {
-    name: "EON",
-    logo: eonLogo,
-    url: "",
+    name: "UPCERA",
+    logo: upceraLogo,
+    url: "https://articon.pro/brand/upcera",
   },
   {
     name: "HeyGears",
     logo: heygearsLogo,
-    url: "",
-  },
-  {
-    name: "Ультрастом",
-    logo: ultrastomLogo,
-    url: "https://ultrastom.shop/",
-  },
-  {
-    name: "S.T.I.Dent",
-    logo: stidentLogo,
-    url: "https://stident.ru/",
-  },
-  {
-    name: "Зубной техник",
-    logo: zubtexLogo,
-    url: "https://zubtex.ru/magazine/",
-  },
-  {
-    name: "Green Dent",
-    logo: greendentLogo,
     url: "",
   },
 ];
@@ -421,108 +394,8 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section id="w16s-speakers" className="py-16 lg:py-20 relative">
-        <div className="container mx-auto px-4">
-          <div ref={speakersReveal.ref} className={cn(
-            "text-center mb-6 transition-all duration-700",
-            speakersReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}>
-            <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Эксперты</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Спикеры: три кита современной стоматологии</h2>
-            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
-              Мы собрали команду из трех звездных техников, каждый из которых является признанным экспертом в своей области. Это уникальная возможность перенять опыт у лучших из лучших.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
-            {speakers.map((s, i) => {
-              const reveal = useReveal();
-              return (
-                <div
-                  key={i}
-                  ref={reveal.ref}
-                  className={cn(
-                    "group bg-[#222]/80 rounded-2xl overflow-hidden border border-[#333] transition-all duration-500 hover:border-[#D4AF37]/50 hover:shadow-[0_0_40px_-10px_#D4AF3740] flex flex-col",
-                    reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12",
-                  )}
-                  style={{ transitionDelay: `${i * 150}ms` }}
-                >
-                  <div className="relative aspect-[3/4] overflow-hidden flex-shrink-0">
-                    <div className="absolute top-4 right-4 z-10 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD, background: "#1A1A1A90" }}>
-                      {s.tag}
-                    </div>
-                    <img
-                      src={s.photo}
-                      alt={s.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                    />
-                  </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{s.name}</h3>
-                    <p className="text-sm mb-3" style={{ color: GOLD }}>{s.role}</p>
-                    <p className="text-sm text-white/90 leading-relaxed">
-                      {s.short}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 lg:py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div ref={synergyReveal.ref} className={cn(
-            "transition-all duration-1000",
-            synergyReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          )}>
-            <div className="text-center mb-12">
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Уникальность</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Что делает этот воркшоп особенным?</h2>
-            </div>
-
-            <div className="max-w-3xl mx-auto mb-12 space-y-6 text-[#F5F5F5]/90 leading-relaxed text-center">
-              <p>
-                Классические подходы «старой школы» высокой эстетики и более чем 30-летний мануальный опыт Дмитрия Никоненко + цифровые возможности Cad/Cam и новинки Exocad 2026 от Дмитрия Филинова.
-              </p>
-              <p>
-                Вы станете мастером, который виртуозно владеет всеми инструментами.
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-0 max-w-6xl mx-auto rounded-3xl overflow-hidden border border-[#333]">
-              <div className="relative bg-[#1E1E1E] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
-                <div className="absolute top-6 left-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border border-[#555] text-[#BBB]">
-                  MANUAL
-                </div>
-                <div className="text-6xl lg:text-8xl font-extrabold text-[#2A2A2A] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-                  01
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Мануальное<br />мастерство</h3>
-                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
-                  Послойная техника нанесения, работа с кистью и керамикой — классическое искусство, отточенное десятилетиями.
-                </p>
-              </div>
-
-              <div className="relative bg-[#161616] p-10 lg:p-14 flex flex-col justify-center min-h-[350px]">
-                <div className="absolute top-6 right-6 text-[10px] tracking-[0.2em] font-bold px-3 py-1 rounded-full border" style={{ borderColor: `${GOLD}40`, color: GOLD }}>
-                  DIGITAL
-                </div>
-                <div className="text-6xl lg:text-8xl font-extrabold text-[#222] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-                  02
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 relative z-10">Цифровая<br />точность</h3>
-                <p className="text-[#F5F5F5]/80 relative z-10 leading-relaxed">
-                  CAD/CAM планирование, фрезерованная стеклокерамика — технологии, которые задают новые стандарты.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <section id="w16s-program" className="py-16 lg:py-20 relative">
         <div className="container mx-auto px-4">
@@ -640,53 +513,8 @@ const Workshop16Shades = () => {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 h-[280px] w-[280px] -translate-x-1/2 rounded-full blur-[140px]" style={{ background: `${GOLD}12` }} />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div ref={prizesReveal.ref} className={cn(
-            "max-w-6xl mx-auto transition-all duration-1000",
-            prizesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          )}>
-            <div className="text-center mb-12">
-              <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Розыгрыш призов</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Подарки для участников мероприятия</h2>
-              <p className="text-[#F5F5F5]/80 max-w-3xl mx-auto text-lg">
-                Среди участников мероприятия мы разыграем ценные призы от партнёров — профессиональные инструменты и аксессуары для ежедневной практики.
-              </p>
-            </div>
 
-            <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
-              {prizes.map((prize, index) => (
-                <div
-                  key={prize.title}
-                  className="group rounded-3xl border border-[#333] bg-[#222]/70 overflow-hidden transition-all duration-500 hover:border-[#D4AF37]/40 hover:shadow-[0_0_40px_-10px_#D4AF3740]"
-                  style={{ transitionDelay: `${index * 120}ms` }}
-                >
-                  <div className="bg-white px-6 py-8 md:px-8 md:py-10 min-h-[260px] flex items-center justify-center">
-                    <div className="flex h-[180px] md:h-[200px] w-full items-center justify-center">
-                      <img
-                        src={prize.image}
-                        alt={prize.title}
-                        className="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: GOLD }}>
-                      {prize.place}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">{prize.title}</h3>
-                    <p className="text-[#F5F5F5]/90 leading-relaxed">{prize.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section className="py-16 lg:py-20 relative border-t border-[#2A2A2A]">
         <div className="container mx-auto px-4">

@@ -145,72 +145,8 @@ function Counter({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 const course = courses.find(c => c.id === 18)!;
 
 const GOLD = "#D4AF37";
-const speakers = [
-  {
-    name: "Дмитрий Никоненко",
-    photo: "/images/lecturers/dmitry-nikonenko.png",
-    role: "Мастер-керамист",
-    short: "Колоссальный опыт в мануальной практике, виртуозное владение кистью, глубокое понимание эстетики и морфологии зуба. Представитель классической школы, где результат создается гениальностью рук.",
-    tag: "MANUAL",
-  },
-  {
-    name: "Дмитрий Филинов",
-    photo: "/images/lecturers/dmitry-filinov.png",
-    role: "Цифровой дизайнер",
-    short: "Невероятные навыки 3D-моделирования, эксперт в CAD/CAM системах. Специалист, который создает безупречно точные цифровые прототипы и каркасы, являющиеся идеальной основой для дальнейшей работы.",
-    tag: "DIGITAL",
-  },
-  {
-    name: "Шамиль Магомедов",
-    photo: "/images/lecturers/shamil-magomedov.png",
-    role: "Техник-универсал",
-    short: "Руководитель отдела эстетики Артикон, ежедневно выполняющий огромный объем работ на высокотехнологичном производстве. Обладает уникальным опытом работы с самыми разными материалами и технологиями и доводит каждую работу до высочайшей эстетики.",
-    tag: "COLORING",
-  },
-];
 
-const partners = [
-  {
-    name: "UPCERA",
-    logo: upceraLogo,
-    url: "https://articon.pro/brand/upcera",
-  },
-  {
-    name: "HeyGears",
-    logo: heygearsLogo,
-    url: "",
-  },
-];
 
-const prizes = [
-  {
-    place: "🏆 1 место",
-    title: "Бинокуляр UPCERA DFL",
-    description: "Стоимостью 165 000 ₽",
-    image: binocularsPrize,
-  },
-  {
-    place: "🥈 2 место",
-    title: "Dental Direkt Panther Starter Kit",
-    description: "Набор для обработки циркона",
-    image: pantherPrize,
-  },
-  {
-    place: "🥉 3 место",
-    title: "LeBrush Lab Harmony",
-    description: "Набор кистей",
-    image: brushesPrize,
-  },
-];
-
-const timeline = [
-  { time: "15:00", title: "Регистрация и Welcome Drink", speaker: "", desc: "Встреча гостей, знакомство с коллегами в неформальной обстановке. Хорошее начало дня — залог продуктивного обучения." },
-  { time: "16:00", title: "Цифровые инструменты планирования", speaker: "Дмитрий Филинов", desc: "Цифровые инструменты планирования и изготовления протяженных конструкций. Как создавать безупречные каркасы в CAD/CAM, которые станут идеальной основой для мануальной работы." },
-  { time: "17:00", title: "Aevra — максимальная возможность приблизиться к естественности", speaker: "Шамиль Магомедов", desc: "Важность формы и цвета в работе с полноанатомическими конструкциями." },
-  { time: "18:00", title: "Кофе-брейк", speaker: "", desc: "Перерыв, неформальное общение, возможность подойти к спикерам с вопросами." },
-  { time: "19:00", title: "Noritake — фронтальная эстетика", speaker: "Дмитрий Никоненко", desc: "Виниры на рефракторном материале. Мастер-класс по послойной технике нанесения: как «оживить» работу и добиться глубины, которую не даст ни один цифровой инструмент." },
-  { time: "20:00", title: "Фуршет, розыгрыш и живая музыка", speaker: "", desc: "Розыгрыш призов, угощения, напитки, выступление кавер-группы и живое общение в непринужденной обстановке. Отличный способ закончить насыщенную пятницу в хорошей компании." },
-];
 
 const perks = [
   { icon: MessageCircle, title: "Живое общение", desc: "В перерывах и после основной части у вас будет возможность в непринужденной обстановке пообщаться со спикерами и коллегами, обсудить рабочие моменты и наладить новые профессиональные связи.", image: "/images/courses/course-18-communication.jpg" },
@@ -397,53 +333,8 @@ const Workshop16Shades = () => {
 
 
 
-      <section id="w16s-program" className="py-16 lg:py-20 relative">
-        <div className="container mx-auto px-4">
-          <div ref={timelineReveal.ref} className={cn(
-            "text-center mb-6 transition-all duration-700",
-            timelineReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}>
-            <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: GOLD }}>Программа</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Программа курса</h2>
-            <p className="text-[#F5F5F5]/80 max-w-2xl mx-auto text-lg">
-              Симбиоз цифровой точности и мануального искусства для создания тотальных работ, которые не отличить от живых зубов.
-            </p>
-          </div>
 
-          <div ref={timelineLineRef} className="relative max-w-3xl mx-auto mt-12">
-            <div className="absolute left-[28px] md:left-[40px] top-0 bottom-0 w-px bg-[#333]">
-              <div className="absolute top-0 left-0 w-full bg-gradient-to-b transition-all duration-100" style={{ height: "var(--line-progress, 0%)", backgroundImage: `linear-gradient(to bottom, ${GOLD}, ${GOLD}40)` }} />
-            </div>
 
-            <div className="space-y-12">
-              {timeline.map((item, i) => {
-                const reveal = useReveal(0.2);
-                return (
-                  <div
-                    key={i}
-                    ref={reveal.ref}
-                    className={cn(
-                      "relative pl-16 md:pl-24 transition-all duration-700",
-                      reveal.visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[-30px]",
-                    )}
-                    style={{ transitionDelay: `${i * 100}ms` }}
-                  >
-                    <div className="absolute left-[22px] md:left-[34px] top-1 w-3 h-3 rounded-full border-2 transition-colors duration-500" style={{ borderColor: reveal.visible ? GOLD : "#555", background: reveal.visible ? GOLD : "transparent" }} />
-
-                    <div className="text-sm font-bold tracking-wider mb-1" style={{ color: GOLD }}>{item.time}</div>
-
-                    <div className="bg-[#222]/60 border border-[#333] rounded-xl p-6 hover:border-[#D4AF37]/30 transition-all duration-300">
-                      <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                      {item.speaker && <p className="text-sm text-white/90 mb-2">{item.speaker}</p>}
-                      <p className="text-[#F5F5F5]/90 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 lg:py-20 relative">
         <div className="absolute inset-0 pointer-events-none">

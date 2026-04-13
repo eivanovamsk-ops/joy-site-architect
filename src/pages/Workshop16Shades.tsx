@@ -259,7 +259,7 @@ const Workshop16Shades = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" style={{ color: GOLD }} />
-                <span>10 апреля</span>
+                <span>13 ноября</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" style={{ color: GOLD }} />
@@ -493,7 +493,7 @@ const Workshop16Shades = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Партнёры мероприятия</h2>
             </div>
 
-            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto">
+            <div className="grid gap-4 grid-cols-2 max-w-2xl mx-auto">
               {partners.map((partner, index) => {
                 const content = (
                   <div className="rounded-2xl aspect-[3/2] flex items-center justify-center bg-white p-5">

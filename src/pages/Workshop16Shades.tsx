@@ -146,6 +146,18 @@ const course = courses.find(c => c.id === 18)!;
 
 const GOLD = "#D4AF37";
 
+const partners = [
+  {
+    name: "UPCERA",
+    logo: upceraLogo,
+    url: "https://articon.pro/brand/upcera",
+  },
+  {
+    name: "HeyGears",
+    logo: heygearsLogo,
+    url: "",
+  },
+];
 
 
 const perks = [
@@ -157,9 +169,8 @@ const perks = [
 const Workshop16Shades = () => {
   const heroReveal = useReveal();
   const formatReveal = useReveal();
-  const speakersReveal = useReveal();
-  const synergyReveal = useReveal();
-  const timelineReveal = useReveal();
+
+
   const perksReveal = useReveal();
   const innovationsReveal = useReveal();
   const partnersReveal = useReveal();

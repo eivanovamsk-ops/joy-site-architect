@@ -110,6 +110,7 @@ const App = () => (
                 <Route path="/education/contacts" element={<EducationContacts />} />
                 <Route path="/education/calendar" element={<CourseCalendar />} />
                 <Route path="/education/course/18" element={<Workshop16Shades />} />
+                <Route path="/education/workshop/archive/16-shades-10-04-2026" element={<Workshop16Shades />} />
                 <Route path="/education/course/19" element={<OrthoConference />} />
                 <Route path="/education/course/20" element={<DentalPhotoProtocol />} />
                 <Route path="/education/course/23" element={<ImplantProtocol />} />

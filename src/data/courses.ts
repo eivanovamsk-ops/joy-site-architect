@@ -1399,7 +1399,8 @@ export const courses: Course[] = [
     metaDescription: "Воркшоп для зубных техников: мастер-классы по окрашиванию и нанесению от сертифицированных тренеров. 10 апреля 2026, Москва. 7 000₽.",
     category: "Эстетика",
     tags: ["воркшоп", "окрашивание", "нанесение", "UPCERA", "Uniformation"],
-    sectionTags: ["для техников", "CAD/CAM"]
+    sectionTags: ["для техников", "CAD/CAM"],
+    externalUrl: "/education/workshop/archive/16-shades-10-04-2026"
   },
   {
     id: 19,

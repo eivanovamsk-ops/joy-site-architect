@@ -195,21 +195,8 @@ const Workshop16Shades = () => {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  /* timeline line animation */
-  const timelineLineRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const handler = () => {
-      const el = timelineLineRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const progress = Math.min(1, Math.max(0, (vh - rect.top) / (rect.height + vh * 0.4)));
-      el.style.setProperty("--line-progress", `${progress * 100}%`);
-    };
-    window.addEventListener("scroll", handler, { passive: true });
-    handler();
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
+
+
 
   return (
     <Layout>

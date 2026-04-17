@@ -3,8 +3,23 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
+
+/* ─── Registration Closed Notice ─── */
+function RegistrationClosed({ variant = "default" }: { variant?: "default" | "card" | "compact" }) {
+  if (variant === "compact") {
+    return (
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#222] border border-[#444] text-[#F5F5F5]/70 text-sm font-semibold whitespace-nowrap">
+        Регистрация закрыта
+      </div>
+    );
+  }
+  return (
+    <div className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#222] border border-[#444] text-[#F5F5F5]/80 font-semibold">
+      Регистрация закрыта · мероприятие завершено
+    </div>
+  );
+}
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";

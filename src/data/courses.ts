@@ -13,6 +13,7 @@ import course15Banner from "@/assets/courses/course-15-banner.png";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 import course27Banner from "@/assets/courses/course-27-banner.jpg";
+import lecturerNikulina from "@/assets/lecturers/viktoria-nikulina.jpg";
 
 export interface Lecturer {
   name: string;
@@ -2140,7 +2141,7 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Виктория Никулина",
-        photo: "",
+        photo: lecturerNikulina,
         position: "Зубной техник, эксперт по работе с дисиликатом лития",
         bio: "Практикующий зубной техник, специалист по эстетическим реставрациям из дисиликата лития. Обучает техникам контурирования, кристаллизации, окрашивания и глазуровки CAD/CAM-реставраций."
       }

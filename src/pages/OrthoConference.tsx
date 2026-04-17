@@ -329,12 +329,7 @@ const OrthoConference = () => {
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <div className="oc-cta-glow">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate={course.date}
-                  buttonLabel="Забронировать место"
-                  
-                />
+                <RegistrationClosed />
               </div>
               <button onClick={() => scrollTo("oc-why")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
                 Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
@@ -405,12 +400,7 @@ const OrthoConference = () => {
               {/* CTA after why */}
               <div className="text-center mt-12">
                 <div className="oc-cta-glow inline-block">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
               </div>
             </div>
@@ -442,11 +432,7 @@ const OrthoConference = () => {
               </div>
 
               <div className="oc-cta-glow text-center">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate="15 апреля 2026"
-                  buttonLabel="Записаться на конференцию"
-                />
+                <RegistrationClosed />
               </div>
             </div>
           </div>
@@ -505,12 +491,7 @@ const OrthoConference = () => {
             {/* CTA after speakers */}
             <div className="text-center mt-12">
               <div className="oc-cta-glow inline-block">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate={course.date}
-                  buttonLabel="Записаться на конференцию"
-                  
-                />
+                <RegistrationClosed />
               </div>
             </div>
           </div>
@@ -602,12 +583,7 @@ const OrthoConference = () => {
               {/* CTA after skills */}
               <div className="text-center mt-12">
                 <div className="oc-cta-glow inline-block">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
               </div>
             </div>
@@ -645,13 +621,7 @@ const OrthoConference = () => {
                 </div>
 
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonVariant="card"
-                    buttonLabel="Забронировать место"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
 
                 <p className="text-xs text-[#F5F5F5]/30 mt-4">
@@ -697,12 +667,7 @@ const OrthoConference = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="border-[#555] text-[#F5F5F5] hover:bg-[#F5F5F5]/10 hover:border-[#888]">
@@ -733,12 +698,7 @@ const OrthoConference = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Забронировать место"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="border-[#555] text-[#F5F5F5] hover:bg-[#F5F5F5]/10 hover:border-[#888]">
@@ -775,13 +735,7 @@ const OrthoConference = () => {
               </div>
               <div className="text-xs text-[#F5F5F5]/40 truncate">Точка опоры • Казань</div>
             </div>
-            <CourseApplicationForm
-              courseName={course.title}
-              courseDate={course.date}
-              buttonVariant="card"
-              buttonLabel="Записаться"
-              
-            />
+            <RegistrationClosed variant="compact" />
           </div>
         </div>
         <div className="h-20 lg:hidden" />

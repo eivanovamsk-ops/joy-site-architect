@@ -6,17 +6,6 @@ import { Calendar, Clock, Monitor, ArrowRight } from "lucide-react";
 
 const webinars = [
   {
-    slug: "zircon-march-2026",
-    title: "Лайфхаки в работе с цирконом",
-    description: "Практические лайфхаки работы с диоксидом циркония: как избежать ошибок, добиться стабильного оттенка и сократить количество переделок.",
-    date: "14 апреля 2026",
-    time: "19:00 МСК",
-    format: "Онлайн",
-    badge: "Бесплатно",
-    status: "upcoming" as const,
-    image: "/images/webinar/cover-zircon-banner.png",
-  },
-  {
     slug: "brackets-march-2026",
     title: "Брекет-системы",
     description: "Современные подходы к работе с брекет-системами: от планирования до фиксации. Разбор реальных клинических кейсов.",
@@ -26,6 +15,17 @@ const webinars = [
     badge: "Бесплатно",
     status: "upcoming" as const,
     image: "/images/webinar/cover.jpg",
+  },
+  {
+    slug: "zircon-march-2026",
+    title: "Лайфхаки в работе с цирконом",
+    description: "Практические лайфхаки работы с диоксидом циркония: как избежать ошибок, добиться стабильного оттенка и сократить количество переделок.",
+    date: "14 апреля 2026",
+    time: "19:00 МСК",
+    format: "Онлайн",
+    badge: "Уже прошёл",
+    status: "past" as const,
+    image: "/images/webinar/cover-zircon-banner.png",
   },
 ];
 

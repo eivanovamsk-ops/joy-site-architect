@@ -3,8 +3,23 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
+
+/* ─── Registration Closed Notice ─── */
+function RegistrationClosed({ variant = "default" }: { variant?: "default" | "card" | "compact" }) {
+  if (variant === "compact") {
+    return (
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#222] border border-[#444] text-[#F5F5F5]/70 text-sm font-semibold whitespace-nowrap">
+        Регистрация закрыта
+      </div>
+    );
+  }
+  return (
+    <div className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#222] border border-[#444] text-[#F5F5F5]/80 font-semibold">
+      Регистрация закрыта · мероприятие завершено
+    </div>
+  );
+}
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
@@ -314,12 +329,7 @@ const OrthoConference = () => {
               heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}>
               <div className="oc-cta-glow">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate={course.date}
-                  buttonLabel="Забронировать место"
-                  
-                />
+                <RegistrationClosed />
               </div>
               <button onClick={() => scrollTo("oc-why")} className="text-[#F5F5F5]/50 hover:text-[#F5F5F5] transition-colors text-sm flex items-center gap-2">
                 Подробнее <ChevronDown className="h-4 w-4 animate-bounce" />
@@ -390,12 +400,7 @@ const OrthoConference = () => {
               {/* CTA after why */}
               <div className="text-center mt-12">
                 <div className="oc-cta-glow inline-block">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
               </div>
             </div>
@@ -427,11 +432,7 @@ const OrthoConference = () => {
               </div>
 
               <div className="oc-cta-glow text-center">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate="15 апреля 2026"
-                  buttonLabel="Записаться на конференцию"
-                />
+                <RegistrationClosed />
               </div>
             </div>
           </div>
@@ -490,12 +491,7 @@ const OrthoConference = () => {
             {/* CTA after speakers */}
             <div className="text-center mt-12">
               <div className="oc-cta-glow inline-block">
-                <CourseApplicationForm
-                  courseName={course.title}
-                  courseDate={course.date}
-                  buttonLabel="Записаться на конференцию"
-                  
-                />
+                <RegistrationClosed />
               </div>
             </div>
           </div>
@@ -587,12 +583,7 @@ const OrthoConference = () => {
               {/* CTA after skills */}
               <div className="text-center mt-12">
                 <div className="oc-cta-glow inline-block">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
               </div>
             </div>
@@ -630,13 +621,7 @@ const OrthoConference = () => {
                 </div>
 
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonVariant="card"
-                    buttonLabel="Забронировать место"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
 
                 <p className="text-xs text-[#F5F5F5]/30 mt-4">
@@ -682,12 +667,7 @@ const OrthoConference = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Записаться на конференцию"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="border-[#555] text-[#F5F5F5] hover:bg-[#F5F5F5]/10 hover:border-[#888]">
@@ -718,12 +698,7 @@ const OrthoConference = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="oc-cta-glow">
-                  <CourseApplicationForm
-                    courseName={course.title}
-                    courseDate={course.date}
-                    buttonLabel="Забронировать место"
-                    
-                  />
+                  <RegistrationClosed />
                 </div>
                 <a href="https://t.me/articon_education" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="border-[#555] text-[#F5F5F5] hover:bg-[#F5F5F5]/10 hover:border-[#888]">
@@ -760,13 +735,7 @@ const OrthoConference = () => {
               </div>
               <div className="text-xs text-[#F5F5F5]/40 truncate">Точка опоры • Казань</div>
             </div>
-            <CourseApplicationForm
-              courseName={course.title}
-              courseDate={course.date}
-              buttonVariant="card"
-              buttonLabel="Записаться"
-              
-            />
+            <RegistrationClosed variant="compact" />
           </div>
         </div>
         <div className="h-20 lg:hidden" />

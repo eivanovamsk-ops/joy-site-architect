@@ -356,14 +356,11 @@ export default function WebinarZirconMarch2026() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Button
-                onClick={scrollToReg}
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_hsl(42,82%,52%,0.3)] animate-pulse-soft"
-              >
-                Зарегистрироваться бесплатно
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4">
+                <Badge className="bg-muted-foreground text-white text-xs mb-2">УЖЕ ПРОШЁЛ</Badge>
+                <p className="text-white/90 font-semibold">Регистрация на вебинар закрыта</p>
+                <p className="text-white/60 text-sm mt-1">Следите за анонсами новых вебинаров</p>
+              </div>
               <Button
                 asChild
                 size="lg"
@@ -571,39 +568,20 @@ export default function WebinarZirconMarch2026() {
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Присоединяйтесь к вебинару</h2>
-              <p className="text-xl text-accent font-semibold">14 апреля в 19:00 · Онлайн · Бесплатно</p>
+              <Badge className="mb-4 bg-muted-foreground text-white text-sm px-4 py-1">УЖЕ ПРОШЁЛ</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Вебинар уже прошёл</h2>
+              <p className="text-lg text-white/70 mb-8">
+                Регистрация на вебинар «Лайфхаки в работе с цирконом» закрыта.<br/>
+                Подпишитесь на анонсы, чтобы не пропустить следующие вебинары.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold"
+              >
+                <a href="/education/webinars">Все вебинары</a>
+              </Button>
             </div>
-
-            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
-                  <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
-                  {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
-                  <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
-                  {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email *</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
-                  {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
-                  <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Зубной техник" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                </div>
-                <Button type="submit" disabled={isLoading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-bold rounded-xl shadow-[0_0_30px_hsl(42,82%,52%,0.3)]">
-                  {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                  Зарегистрироваться бесплатно
-                </Button>
-                <p className="text-xs text-white/40 text-center">
-                  Нажимая кнопку, вы соглашаетесь с{" "}
-                  <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
-                </p>
-              </form>
           </div>
         </div>
       </section>

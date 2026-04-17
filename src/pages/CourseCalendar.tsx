@@ -75,10 +75,14 @@ const CourseCalendar = () => {
       return matchesCategory && matchesDate && matchesSearch && matchesLecturer && matchesSectionTags;
     });
 
-    // Sort: isComingSoon courses and specific titles go to the end
+    // Sort: archived (id 19), isComingSoon courses and specific titles go to the end
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
+      const isArchivedA = a.id === 19;
+      const isArchivedB = b.id === 19;
+      if (isArchivedA && !isArchivedB) return 1;
+      if (!isArchivedA && isArchivedB) return -1;
       const isLastA = a.isComingSoon || titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');
       const isLastB = b.isComingSoon || titleB.includes('менеджмент') || titleB.includes('сканирование по запросу') || titleB.includes('интраоральное сканирование');
       

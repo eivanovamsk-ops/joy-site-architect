@@ -13,6 +13,11 @@ import course15Banner from "@/assets/courses/course-15-banner.png";
 import course18Banner from "@/assets/courses/course-18-banner.jpg";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 import course27Banner from "@/assets/courses/course-27-banner.jpg";
+import course27Gallery1 from "@/assets/courses/course-27-gallery-1.jpg";
+import course27Gallery2 from "@/assets/courses/course-27-gallery-2.jpg";
+import course27Gallery3 from "@/assets/courses/course-27-gallery-3.jpg";
+import course27Gallery4 from "@/assets/courses/course-27-gallery-4.jpg";
+import course27Gallery5 from "@/assets/courses/course-27-gallery-5.jpg";
 import lecturerNikulina from "@/assets/lecturers/viktoria-nikulina.jpg";
 
 export interface Lecturer {
@@ -2175,7 +2180,14 @@ export const courses: Course[] = [
     metaDescription: "Практический однодневный курс для зубных техников: CAD, кристаллизация, окрашивание и глазуровка дисиликата лития. Виктория Никулина. Москва, 25 000 ₽.",
     category: "CAD/CAM",
     tags: ["дисиликат лития", "CAD/CAM", "эстетика", "окрашивание", "глазуровка"],
-    sectionTags: ["для техников", "CAD/CAM"]
+    sectionTags: ["для техников", "CAD/CAM"],
+    galleryImages: [
+      course27Gallery1,
+      course27Gallery2,
+      course27Gallery3,
+      course27Gallery4,
+      course27Gallery5
+    ]
   }
 ];
 

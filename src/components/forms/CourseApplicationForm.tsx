@@ -146,6 +146,46 @@ export function CourseApplicationForm({
 
       setFormData(initialFormData);
       setOpen(false);
+
+      // Если у курса есть цена и оплата от частного лица — инициируем оплату через Т-Банк
+      if (coursePrice && coursePrice > 0 && formData.payment_type === "private") {
+        try {
+          const { data, error: payError } = await supabase.functions.invoke(
+            "tbank-init-payment",
+            {
+              body: {
+                courseApplicationId: applicationId,
+                courseName,
+                amount: coursePrice,
+                customerEmail: formData.email,
+                customerPhone: formData.phone,
+                successUrl: `${window.location.origin}/education/payment-success`,
+                failUrl: `${window.location.origin}/education/payment-failed`,
+              },
+            },
+          );
+
+          if (payError) throw payError;
+
+          if (data?.paymentUrl) {
+            window.location.href = data.paymentUrl;
+            return;
+          }
+          throw new Error("Не получена ссылка на оплату");
+        } catch (payErr) {
+          console.error("Payment init failed:", payErr);
+          toast({
+            variant: "destructive",
+            title: "Не удалось перейти к оплате",
+            description:
+              "Заявка сохранена. Мы свяжемся с вами для оплаты по счёту.",
+          });
+          navigate("/education/thank-you");
+          onSuccess?.();
+          return;
+        }
+      }
+
       navigate("/education/thank-you");
       onSuccess?.();
     } catch {

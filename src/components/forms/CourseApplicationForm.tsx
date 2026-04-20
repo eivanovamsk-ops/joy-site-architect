@@ -59,6 +59,7 @@ const initialFormData = {
 export function CourseApplicationForm({
   courseName,
   courseDate: _courseDate,
+  coursePrice,
   onSuccess,
   buttonVariant = "default",
   buttonLabel = "Записаться на курс",

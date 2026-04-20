@@ -109,7 +109,7 @@ Deno.serve(async (req) => {
     // Описание для Т-Кассы (макс. 250 символов)
     const description = `Курс: ${courseName}`.slice(0, 250);
 
-    // Параметры запроса Init (БЕЗ Receipt — фискализация на стороне Бизнес.Ру)
+    // Параметры запроса Init
     const initParams: Record<string, string | number> = {
       TerminalKey: TERMINAL_KEY,
       Amount: amountInKopecks,
@@ -121,6 +121,25 @@ Deno.serve(async (req) => {
 
     const token = await generateToken(initParams, PASSWORD);
 
+    // Чек (54-ФЗ) — обязателен для боевого терминала Т-Кассы.
+    // Email обязателен для отправки электронного чека покупателю.
+    const receipt = {
+      Email: customerEmail,
+      ...(customerPhone ? { Phone: customerPhone } : {}),
+      Taxation: "usn_income",
+      Items: [
+        {
+          Name: description,
+          Price: amountInKopecks,
+          Quantity: 1,
+          Amount: amountInKopecks,
+          Tax: "none",
+          PaymentMethod: "full_prepayment",
+          PaymentObject: "service",
+        },
+      ],
+    };
+
     const requestBody = {
       ...initParams,
       Token: token,
@@ -129,6 +148,7 @@ Deno.serve(async (req) => {
         Phone: customerPhone || "",
         CourseApplicationId: courseApplicationId,
       },
+      Receipt: receipt,
     };
 
     console.log("Sending Init request to T-Bank for order:", orderId);

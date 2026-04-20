@@ -667,7 +667,7 @@ export const courses: Course[] = [
     comingSoonLabel: "Уже скоро",
     location: "Москва, Варшавское шоссе, д33с12, MEGAPOLIS HALL",
     format: "Open Day",
-    price: 5000,
+    price: 10,
     coverImage: "https://static.wixstatic.com/media/526e65_06f64d3b852348b68bd78b9c77eceddbf000.jpg/v1/fill/w_1904,h_992,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/526e65_06f64d3b852348b68bd78b9c77eceddbf000.jpg",
     description: "Живая встреча в формате Open Day: доклады и реальная демонстрация работы оборудования. Посчитаем время, деньги и выгоду для различных бизнес-задач.",
     shortDescription: "Обсудим почему и как именно 3D-печать меняет стоматологию",

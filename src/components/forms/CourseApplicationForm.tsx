@@ -36,6 +36,7 @@ const applicationSchemaWithoutTelegram = applicationSchema.extend({
 interface CourseApplicationFormProps {
   courseName: string;
   courseDate?: string;
+  coursePrice?: number;
   onSuccess?: () => void;
   buttonVariant?: "default" | "card";
   buttonLabel?: string;

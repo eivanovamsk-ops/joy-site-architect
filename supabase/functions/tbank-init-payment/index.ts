@@ -14,6 +14,7 @@ interface InitRequest {
   amount: number; // в рублях
   customerEmail: string;
   customerPhone: string;
+  customerName?: string; // ФИО плательщика
   successUrl: string;
   failUrl: string;
 }
@@ -79,6 +80,7 @@ Deno.serve(async (req) => {
       amount,
       customerEmail,
       customerPhone,
+      customerName,
       successUrl,
       failUrl,
     } = body;
@@ -106,8 +108,10 @@ Deno.serve(async (req) => {
     const orderId = crypto.randomUUID();
     const amountInKopecks = Math.round(amount * 100);
 
-    // Описание для Т-Кассы (макс. 250 символов)
-    const description = `Курс: ${courseName}`.slice(0, 250);
+    // Описание для Т-Кассы (макс. 250 символов).
+    // Включаем ФИО, чтобы оно было видно в карточке платежа в ЛК Т-Банка.
+    const customerLabel = customerName?.trim() || customerEmail;
+    const description = `${courseName} — ${customerLabel}`.slice(0, 250);
 
     // Параметры запроса Init
     const initParams: Record<string, string | number> = {
@@ -122,14 +126,13 @@ Deno.serve(async (req) => {
     const token = await generateToken(initParams, PASSWORD);
 
     // Чек (54-ФЗ) — обязателен для боевого терминала Т-Кассы.
-    // Email обязателен для отправки электронного чека покупателю.
     const receipt = {
       Email: customerEmail,
       ...(customerPhone ? { Phone: customerPhone } : {}),
       Taxation: "osn",
       Items: [
         {
-          Name: description,
+          Name: `Курс: ${courseName}`.slice(0, 128),
           Price: amountInKopecks,
           Quantity: 1,
           Amount: amountInKopecks,
@@ -140,14 +143,23 @@ Deno.serve(async (req) => {
       ],
     };
 
+    // DATA — произвольные параметры, отображаются в ЛК Т-Банка
+    // в разделе «Дополнительные параметры». Не показываются клиенту.
+    // Ключи и значения — только латиница/цифры, до 20/100 символов.
+    const dataParams: Record<string, string> = {
+      Email: customerEmail,
+      Phone: customerPhone || "",
+      CourseApplicationId: courseApplicationId,
+      CourseName: courseName.slice(0, 100),
+    };
+    if (customerName?.trim()) {
+      dataParams.CustomerName = customerName.trim().slice(0, 100);
+    }
+
     const requestBody = {
       ...initParams,
       Token: token,
-      DATA: {
-        Email: customerEmail,
-        Phone: customerPhone || "",
-        CourseApplicationId: courseApplicationId,
-      },
+      DATA: dataParams,
       Receipt: receipt,
     };
 

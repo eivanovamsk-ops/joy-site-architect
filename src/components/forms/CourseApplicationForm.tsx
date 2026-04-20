@@ -159,6 +159,7 @@ export function CourseApplicationForm({
                 amount: coursePrice,
                 customerEmail: formData.email,
                 customerPhone: formData.phone,
+                customerName: `${formData.last_name} ${formData.name}`.trim(),
                 successUrl: `${window.location.origin}/education/payment-success`,
                 failUrl: `${window.location.origin}/education/payment-failed`,
               },

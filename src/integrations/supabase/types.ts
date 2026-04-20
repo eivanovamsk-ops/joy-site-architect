@@ -263,6 +263,68 @@ export type Database = {
           },
         ]
       }
+      payments: {
+        Row: {
+          amount: number
+          course_application_id: string | null
+          course_name: string | null
+          created_at: string
+          customer_email: string | null
+          customer_phone: string | null
+          error_code: string | null
+          error_message: string | null
+          id: string
+          payment_url: string | null
+          raw_response: Json | null
+          status: string
+          tbank_order_id: string
+          tbank_payment_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          course_application_id?: string | null
+          course_name?: string | null
+          created_at?: string
+          customer_email?: string | null
+          customer_phone?: string | null
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          payment_url?: string | null
+          raw_response?: Json | null
+          status?: string
+          tbank_order_id: string
+          tbank_payment_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          course_application_id?: string | null
+          course_name?: string | null
+          created_at?: string
+          customer_email?: string | null
+          customer_phone?: string | null
+          error_code?: string | null
+          error_message?: string | null
+          id?: string
+          payment_url?: string | null
+          raw_response?: Json | null
+          status?: string
+          tbank_order_id?: string
+          tbank_payment_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payments_course_application_id_fkey"
+            columns: ["course_application_id"]
+            isOneToOne: false
+            referencedRelation: "course_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string

@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { EducationLegalInfo } from "@/components/education/EducationLegalInfo";
 
 const EducationContacts = () => {
   const phones = [
@@ -177,6 +178,10 @@ const EducationContacts = () => {
                 />
               </div>
             </div>
+          </div>
+
+          <div className="mt-16">
+            <EducationLegalInfo variant="compact" />
           </div>
         </div>
       </section>

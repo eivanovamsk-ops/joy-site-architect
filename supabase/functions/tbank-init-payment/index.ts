@@ -1,0 +1,195 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+};
+
+const TBANK_INIT_URL = "https://securepay.tinkoff.ru/v2/Init";
+
+interface InitRequest {
+  courseApplicationId: string;
+  courseName: string;
+  amount: number; // в рублях
+  customerEmail: string;
+  customerPhone: string;
+  successUrl: string;
+  failUrl: string;
+}
+
+/**
+ * Генерация подписи (Token) согласно документации Т-Кассы:
+ * 1. Берём все верхнеуровневые параметры запроса (исключая Receipt, DATA, Token, Shops, Items).
+ * 2. Добавляем поле Password.
+ * 3. Сортируем по ключу в алфавитном порядке.
+ * 4. Конкатенируем значения.
+ * 5. SHA-256 от полученной строки.
+ */
+async function generateToken(
+  params: Record<string, string | number>,
+  password: string,
+): Promise<string> {
+  const tokenParams: Record<string, string> = { Password: password };
+
+  for (const [key, value] of Object.entries(params)) {
+    if (value === undefined || value === null) continue;
+    if (typeof value === "object") continue;
+    tokenParams[key] = String(value);
+  }
+
+  const sortedKeys = Object.keys(tokenParams).sort();
+  const concatenated = sortedKeys.map((k) => tokenParams[k]).join("");
+
+  const encoder = new TextEncoder();
+  const data = encoder.encode(concatenated);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const TERMINAL_KEY = Deno.env.get("TBANK_TERMINAL_KEY");
+    const PASSWORD = Deno.env.get("TBANK_PASSWORD");
+    const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+    const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get(
+      "SUPABASE_SERVICE_ROLE_KEY",
+    )!;
+
+    if (!TERMINAL_KEY || !PASSWORD) {
+      console.error("Missing TBANK credentials");
+      return new Response(
+        JSON.stringify({ error: "Платёжная система не настроена" }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    const body: InitRequest = await req.json();
+    const {
+      courseApplicationId,
+      courseName,
+      amount,
+      customerEmail,
+      customerPhone,
+      successUrl,
+      failUrl,
+    } = body;
+
+    // Валидация
+    if (
+      !courseApplicationId ||
+      !courseName ||
+      !amount ||
+      amount <= 0 ||
+      !customerEmail
+    ) {
+      return new Response(
+        JSON.stringify({ error: "Некорректные данные платежа" }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+
+    // Уникальный OrderId — используем UUID
+    const orderId = crypto.randomUUID();
+    const amountInKopecks = Math.round(amount * 100);
+
+    // Описание для Т-Кассы (макс. 250 символов)
+    const description = `Курс: ${courseName}`.slice(0, 250);
+
+    // Параметры запроса Init (БЕЗ Receipt — фискализация на стороне Бизнес.Ру)
+    const initParams: Record<string, string | number> = {
+      TerminalKey: TERMINAL_KEY,
+      Amount: amountInKopecks,
+      OrderId: orderId,
+      Description: description,
+      SuccessURL: successUrl,
+      FailURL: failUrl,
+    };
+
+    const token = await generateToken(initParams, PASSWORD);
+
+    const requestBody = {
+      ...initParams,
+      Token: token,
+      DATA: {
+        Email: customerEmail,
+        Phone: customerPhone || "",
+        CourseApplicationId: courseApplicationId,
+      },
+    };
+
+    console.log("Sending Init request to T-Bank for order:", orderId);
+
+    const tbankResponse = await fetch(TBANK_INIT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestBody),
+    });
+
+    const tbankData = await tbankResponse.json();
+    console.log("T-Bank Init response:", JSON.stringify(tbankData));
+
+    // Сохраняем запись о платеже
+    await supabase.from("payments").insert({
+      course_application_id: courseApplicationId,
+      tbank_payment_id: tbankData.PaymentId?.toString() || null,
+      tbank_order_id: orderId,
+      amount: amount,
+      status: tbankData.Status || (tbankData.Success ? "NEW" : "REJECTED"),
+      payment_url: tbankData.PaymentURL || null,
+      customer_email: customerEmail,
+      customer_phone: customerPhone || null,
+      course_name: courseName,
+      error_code: tbankData.ErrorCode || null,
+      error_message: tbankData.Message || tbankData.Details || null,
+      raw_response: tbankData,
+    });
+
+    if (!tbankData.Success || !tbankData.PaymentURL) {
+      return new Response(
+        JSON.stringify({
+          error: tbankData.Message || "Не удалось создать платёж",
+          details: tbankData.Details,
+        }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
+        paymentUrl: tbankData.PaymentURL,
+        paymentId: tbankData.PaymentId,
+        orderId,
+      }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
+  } catch (err) {
+    console.error("tbank-init-payment error:", err);
+    return new Response(
+      JSON.stringify({ error: "Внутренняя ошибка сервера" }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
+  }
+});

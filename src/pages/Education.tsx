@@ -9,6 +9,7 @@ import { EducationOrthoSection } from "@/components/education/OrthoSection";
 import { EducationDigitalPartnersSection } from "@/components/education/DigitalPartnersSection";
 import { EducationCTASection } from "@/components/education/CTASection";
 import { EducationSEOContentSection } from "@/components/education/SEOContentSection";
+import { EducationLegalInfo } from "@/components/education/EducationLegalInfo";
 
 const Education = () => {
   const structuredData = {
@@ -111,6 +112,7 @@ const Education = () => {
       <EducationDigitalPartnersSection />
       <EducationOrthoSection />
       <EducationCTASection />
+      <EducationLegalInfo />
     </Layout>
   );
 };

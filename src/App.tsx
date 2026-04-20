@@ -16,6 +16,8 @@ const PriceListsAndOrders = lazy(() => import("./pages/PriceListsAndOrders"));
 const Shop = lazy(() => import("./pages/Shop"));
 const Education = lazy(() => import("./pages/Education"));
 const EducationContacts = lazy(() => import("./pages/EducationContacts"));
+const EducationPrivacy = lazy(() => import("./pages/EducationPrivacy"));
+const EducationTerms = lazy(() => import("./pages/EducationTerms"));
 const About = lazy(() => import("./pages/About"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const GeneralContacts = lazy(() => import("./pages/GeneralContacts"));
@@ -108,6 +110,8 @@ const App = () => (
                 <Route path="/shop/contacts" element={<Delivery />} />
                 <Route path="/education" element={<Education />} />
                 <Route path="/education/contacts" element={<EducationContacts />} />
+                <Route path="/education/privacy" element={<EducationPrivacy />} />
+                <Route path="/education/terms" element={<EducationTerms />} />
                 <Route path="/education/calendar" element={<CourseCalendar />} />
                 <Route path="/education/course/18" element={<Workshop16Shades />} />
                 <Route path="/education/workshop/archive/16-shades-10-04-2026" element={<Workshop16Shades />} />

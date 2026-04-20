@@ -14,6 +14,7 @@ interface InitRequest {
   amount: number; // в рублях
   customerEmail: string;
   customerPhone: string;
+  customerName?: string; // ФИО плательщика
   successUrl: string;
   failUrl: string;
 }

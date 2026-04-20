@@ -66,6 +66,8 @@ const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference
 const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
 const Webinars = lazy(() => import("./pages/Webinars"));
 const CourseThankYou = lazy(() => import("./pages/CourseThankYou"));
+const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const PaymentFailed = lazy(() => import("./pages/PaymentFailed"));
 
 const queryClient = new QueryClient();
 

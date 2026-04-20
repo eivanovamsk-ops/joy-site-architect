@@ -126,14 +126,14 @@ Deno.serve(async (req) => {
     const receipt = {
       Email: customerEmail,
       ...(customerPhone ? { Phone: customerPhone } : {}),
-      Taxation: "usn_income",
+      Taxation: "osn",
       Items: [
         {
           Name: description,
           Price: amountInKopecks,
           Quantity: 1,
           Amount: amountInKopecks,
-          Tax: "none",
+          Tax: "vat22",
           PaymentMethod: "full_prepayment",
           PaymentObject: "service",
         },

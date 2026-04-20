@@ -479,6 +479,7 @@ const CourseDetail = () => {
             <div className="hidden sm:block flex-shrink-0">
               <CourseApplicationForm
                 courseName={course.title}
+                coursePrice={course.price}
                 courseDate={course.date}
                 showTelegramField={course.id !== 18}
                 buttonVariant="card"
@@ -574,6 +575,7 @@ const CourseDetail = () => {
                   <div className="animate-pulse-soft">
                     <CourseApplicationForm
                       courseName={course.title}
+                      coursePrice={course.price}
                       courseDate={course.date}
                 showTelegramField={course.id !== 18}
                       buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"} />
@@ -603,14 +605,14 @@ const CourseDetail = () => {
                   
                   {course.isComingSoon ?
                   <>
-                      <CourseApplicationForm courseName={course.title} courseDate={course.date}
+                      <CourseApplicationForm courseName={course.title} coursePrice={course.price} courseDate={course.date}
                 showTelegramField={course.id !== 18} buttonVariant="card" buttonLabel="Добавьте меня в лист ожидания" />
                       <p className="text-sm text-muted-foreground text-center mb-3 mt-3">
                         Как только новая дата курса будет согласована, мы сразу с вами свяжемся
                       </p>
                     </> :
 
-                  <CourseApplicationForm courseName={course.title} courseDate={course.date}
+                  <CourseApplicationForm courseName={course.title} coursePrice={course.price} courseDate={course.date}
                 showTelegramField={course.id !== 18} buttonVariant="card" />
                   }
 
@@ -765,6 +767,7 @@ const CourseDetail = () => {
                 <div className="mt-10 text-center">
                   <CourseApplicationForm
                   courseName={course.title}
+                  coursePrice={course.price}
                   courseDate={course.date}
                 showTelegramField={course.id !== 18}
                   buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"} />
@@ -929,6 +932,7 @@ const CourseDetail = () => {
                 <div className="animate-pulse-soft inline-block">
                   <CourseApplicationForm
                     courseName={course.title}
+                    coursePrice={course.price}
                     courseDate={course.date}
                 showTelegramField={course.id !== 18}
                     buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться на курс"} />
@@ -993,11 +997,11 @@ const CourseDetail = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 {course.isComingSoon ?
-                <CourseApplicationForm courseName={course.title} courseDate={course.date}
+                <CourseApplicationForm courseName={course.title} coursePrice={course.price} courseDate={course.date}
                 showTelegramField={course.id !== 18} buttonLabel="Добавьте меня в лист ожидания" /> :
 
                 <div className="animate-pulse-soft">
-                    <CourseApplicationForm courseName={course.title} courseDate={course.date}
+                    <CourseApplicationForm courseName={course.title} coursePrice={course.price} courseDate={course.date}
                 showTelegramField={course.id !== 18} />
                   </div>
                 }
@@ -1049,6 +1053,7 @@ const CourseDetail = () => {
           </div>
           <CourseApplicationForm
             courseName={course.title}
+            coursePrice={course.price}
             courseDate={course.date}
                 showTelegramField={course.id !== 18}
             buttonVariant="card"

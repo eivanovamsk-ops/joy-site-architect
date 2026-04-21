@@ -61,7 +61,7 @@ export function CourseApplicationForm({
   buttonVariant = "default",
   buttonLabel = "Записаться на курс",
   cityOptions,
-  showTelegramField = true,
+  showTelegramField: _showTelegramField,
 }: CourseApplicationFormProps) {
   const { toast } = useToast();
   const { user } = useAuth();

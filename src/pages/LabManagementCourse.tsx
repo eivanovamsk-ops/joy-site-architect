@@ -614,12 +614,31 @@ const LabManagementCourse = () => {
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-foreground">Цифровая зуботехническая лаборатория ARTICON</h3>
-                    <p className="mt-2 text-base text-muted-foreground">Москва, Варшавское шоссе, д33к12</p>
+                    <h3 className="text-2xl font-semibold text-foreground">MEGAPOLIS HALL</h3>
+                    <a
+                      href="https://yandex.ru/maps/?text=MEGAPOLIS%20HALL%20Москва%20Варшавское%20шоссе%2033к12"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-block text-base text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+                    >
+                      Москва, Варшавское шоссе, д33к12
+                    </a>
                   </div>
                 </div>
 
-                <div className="mt-8 grid gap-4">
+                <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-border">
+                  <iframe
+                    title="Карта MEGAPOLIS HALL"
+                    src="https://yandex.ru/map-widget/v1/?ll=37.628906%2C55.687389&mode=search&text=MEGAPOLIS%20HALL%20Варшавское%20шоссе%2033к12&z=16"
+                    width="100%"
+                    height="280"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="block"
+                  />
+                </div>
+
+                <div className="mt-6 grid gap-4">
                   {routeLinks.map((item) => (
                     <a
                       key={item.title}

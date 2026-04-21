@@ -397,6 +397,44 @@ const LabManagementCourse = () => {
           </div>
         </section>
 
+        <section className="relative border-t border-background/10 py-20 lg:py-24">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <div className="mb-3 text-sm uppercase tracking-[0.28em] text-accent/85">Контекст встречи</div>
+              <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl lg:text-5xl">
+                Зуботехнические лаборатории в системе здравоохранения 2026
+              </h2>
+              <p className="mt-6 text-base leading-8 text-background/72 sm:text-lg">
+                На встрече вместе с представителями Московской торгово-промышленной палаты и профильных
+                профессиональных объединений обсудим место зуботехнических лабораторий в текущей системе
+                здравоохранения, вопросы регулирования деятельности, взаимодействия с клиниками и
+                государственными структурами, а также подходы к выстраиванию устойчивой работы в новых условиях.
+              </p>
+
+              <h3 className="mt-10 text-xl font-semibold text-background sm:text-2xl">Что будем обсуждать:</h3>
+
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Как лабораториям работать в новых реалиях 2026 года: налоги, проверки, лицензирование, сотрудники",
+                  "Как грамотно выстроить договор с клиниками: чтобы не терять прибыль на переделках и спорах",
+                  "Работа с персоналом: лучшие методы рекрутинга сотрудников",
+                  "Финансы и структура: оптимизация расходов, налоговые особенности, юр. лица",
+                  "Заказы и работа с клиниками: как выстраивать стабильный поток заказов",
+                  "Цифровые технологии: влияние на будущее бизнеса зуботехнических лабораторий",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-4 rounded-2xl border border-background/10 bg-background/5 p-5 backdrop-blur-sm"
+                  >
+                    <span className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-sm bg-accent" aria-hidden="true" />
+                    <span className="text-base leading-7 text-background/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section id="management-program" className="relative py-20 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-10 max-w-4xl">

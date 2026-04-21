@@ -212,6 +212,7 @@ const DigitalOrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonLabel="Забронировать место"
                   />
                 </div>
@@ -347,6 +348,7 @@ const DigitalOrthoConference = () => {
                 <CourseApplicationForm
                   courseName={course.title}
                   courseDate={course.date}
+                  coursePrice={course.price}
                   buttonLabel="Записаться на конференцию"
                 />
               </div>
@@ -436,6 +438,7 @@ const DigitalOrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonLabel="Записаться на конференцию"
                   />
                 </div>
@@ -472,6 +475,7 @@ const DigitalOrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonVariant="card"
                     buttonLabel="Забронировать место"
                   />
@@ -522,6 +526,7 @@ const DigitalOrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonLabel="Записаться на конференцию"
                   />
                 </div>
@@ -559,6 +564,7 @@ const DigitalOrthoConference = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonLabel="Забронировать место"
                   />
                 </div>
@@ -601,6 +607,7 @@ const DigitalOrthoConference = () => {
             <CourseApplicationForm
               courseName={course.title}
               courseDate={course.date}
+              coursePrice={course.price}
               buttonVariant="card"
               buttonLabel="Записаться"
             />

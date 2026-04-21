@@ -953,6 +953,88 @@ const CourseDetail = () => {
         <CoursePhotoGallery images={course.galleryImages} />
         }
 
+        {/* How to get there — only for course 21 */}
+        {course.id === 21 &&
+        <section className="py-16 bg-background" id="course-location">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                  <MapPin className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <h2 className="text-3xl font-bold">Как добраться</h2>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">MEGAPOLIS HALL</h3>
+                    <a
+                      href="https://yandex.ru/maps/?text=MEGAPOLIS%20HALL%20Москва%20Варшавское%20шоссе%2033к12"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-lg text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+                    >
+                      Москва, Варшавское шоссе, д. 33к12
+                    </a>
+                  </div>
+
+                  <div className="bg-primary/5 rounded-2xl p-8 border border-primary/20">
+                    <h3 className="text-lg font-bold text-foreground mb-3">Вход</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Вход в зал MEGAPOLIS HALL находится с левого торца здания, в арку со внутренней
+                      стороны двора. Ориентир — вывеска «МЕГАПОЛИС».
+                    </p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <a
+                      href="https://clck.ru/3CyWTt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-card rounded-xl p-5 border border-border hover:border-primary/50 hover:shadow-md transition-all"
+                    >
+                      <div className="font-semibold text-foreground">МЦК Верхние Котлы</div>
+                      <div className="text-sm text-muted-foreground mt-1">~590 м · 5 минут пешком</div>
+                    </a>
+                    <a
+                      href="https://clck.ru/3CyWfk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-card rounded-xl p-5 border border-border hover:border-primary/50 hover:shadow-md transition-all"
+                    >
+                      <div className="font-semibold text-foreground">м. Нагатинская</div>
+                      <div className="text-sm text-muted-foreground mt-1">~970 м · 10 минут пешком</div>
+                    </a>
+                    <a
+                      href="https://clck.ru/3CyWaM"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-card rounded-xl p-5 border border-border hover:border-primary/50 hover:shadow-md transition-all sm:col-span-2"
+                    >
+                      <div className="font-semibold text-foreground">Бесплатная городская парковка</div>
+                      <div className="text-sm text-muted-foreground mt-1">Варшавское ш., 37 · ~350 м</div>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden border border-border shadow-sm min-h-[420px]">
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=109957568237"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="MEGAPOLIS HALL на карте"
+                    className="w-full h-full min-h-[420px]"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        }
+
         {/* FAQ Section — Contrasting background */}
         <section className="bg-muted/50 py-16" id="course-faq">
           <div className="container mx-auto px-4">

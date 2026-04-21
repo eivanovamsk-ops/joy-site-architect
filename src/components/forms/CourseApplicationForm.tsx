@@ -92,8 +92,7 @@ export function CourseApplicationForm({
     e.preventDefault();
     setErrors({});
 
-    const validationSchema = showTelegramField ? applicationSchema : applicationSchemaWithoutTelegram;
-    const result = validationSchema.safeParse(formData);
+    const result = applicationSchema.safeParse(formData);
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};

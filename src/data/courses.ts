@@ -1612,7 +1612,7 @@ export const courses: Course[] = [
     title: "Встреча руководителей лабораторий",
     subtitle: "Бизнес-встреча для владельцев и управляющих зуботехнических лабораторий",
     slug: "business-meetup",
-    date: "14 мая 2026",
+    date: "14 мая 2026, 16:00–20:00",
     dateStart: new Date('2026-05-14'),
     location: "Москва, MEGAPOLIS HALL",
     price: 10000,

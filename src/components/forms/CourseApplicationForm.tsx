@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
@@ -119,10 +120,11 @@ export function CourseApplicationForm({
         course_date: null,
         message: null,
         last_name: formData.last_name,
-        telegram: showTelegramField ? formData.telegram : null,
+        telegram: null,
         city: formData.city,
         specialization: formData.specialization,
-        organization: formData.organization || null,
+        organization: formData.organization,
+        message: formData.comment || null,
         payment_type: formData.payment_type,
       } as any);
 
@@ -262,19 +264,6 @@ export function CourseApplicationForm({
             {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
           </div>
 
-          {showTelegramField && (
-            <div className="space-y-1.5">
-              <Label htmlFor="app-telegram">Ник в Telegram *</Label>
-              <Input
-                id="app-telegram"
-                value={formData.telegram}
-                onChange={(e) => updateField("telegram", e.target.value)}
-                placeholder="@username"
-                className={errors.telegram ? "border-destructive" : ""}
-              />
-              {errors.telegram && <p className="text-xs text-destructive">{errors.telegram}</p>}
-            </div>
-          )}
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
@@ -335,12 +324,28 @@ export function CourseApplicationForm({
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="app-org">Организация</Label>
+            <Label htmlFor="app-org">Организация *</Label>
             <Input
               id="app-org"
               value={formData.organization}
               onChange={(e) => updateField("organization", e.target.value)}
               placeholder="Название клиники или компании"
+              className={errors.organization ? "border-destructive" : ""}
+            />
+            {errors.organization && (
+              <p className="text-xs text-destructive">{errors.organization}</p>
+            )}
+          </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="app-comment">Комментарий</Label>
+            <Textarea
+              id="app-comment"
+              value={formData.comment}
+              onChange={(e) => updateField("comment", e.target.value)}
+              placeholder="Дополнительная информация или вопросы"
+              rows={3}
+              className="resize-none"
             />
           </div>
 

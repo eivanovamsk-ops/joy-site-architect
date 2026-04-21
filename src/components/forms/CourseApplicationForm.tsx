@@ -118,7 +118,7 @@ export function CourseApplicationForm({
         phone: formData.phone,
         course_name: courseName,
         course_date: null,
-        message: null,
+        
         last_name: formData.last_name,
         telegram: null,
         city: formData.city,

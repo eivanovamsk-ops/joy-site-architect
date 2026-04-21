@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
@@ -21,16 +22,12 @@ const applicationSchema = z.object({
   name: z.string().trim().min(2, "Введите имя").max(100),
   last_name: z.string().trim().min(2, "Введите фамилию").max(100),
   phone: z.string().trim().min(10, "Введите корректный телефон").max(20),
-  telegram: z.string().trim().max(100).optional(),
   city: z.string().trim().min(2, "Введите город").max(100),
   specialization: z.string().trim().min(2, "Введите специализацию").max(200),
   email: z.string().trim().email("Введите корректный email").max(255),
-  organization: z.string().trim().max(200).optional(),
+  organization: z.string().trim().min(2, "Введите название организации").max(200),
+  comment: z.string().trim().max(1000).optional(),
   payment_type: z.enum(["private", "company"]),
-});
-
-const applicationSchemaWithoutTelegram = applicationSchema.extend({
-  telegram: z.string().trim().max(100).optional(),
 });
 
 interface CourseApplicationFormProps {
@@ -48,11 +45,11 @@ const initialFormData = {
   name: "",
   last_name: "",
   phone: "",
-  telegram: "",
   city: "",
   specialization: "",
   email: "",
   organization: "",
+  comment: "",
   payment_type: "private" as "private" | "company",
 };
 
@@ -64,7 +61,7 @@ export function CourseApplicationForm({
   buttonVariant = "default",
   buttonLabel = "Записаться на курс",
   cityOptions,
-  showTelegramField = true,
+  showTelegramField: _showTelegramField,
 }: CourseApplicationFormProps) {
   const { toast } = useToast();
   const { user } = useAuth();
@@ -96,8 +93,7 @@ export function CourseApplicationForm({
     e.preventDefault();
     setErrors({});
 
-    const validationSchema = showTelegramField ? applicationSchema : applicationSchemaWithoutTelegram;
-    const result = validationSchema.safeParse(formData);
+    const result = applicationSchema.safeParse(formData);
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -122,12 +118,13 @@ export function CourseApplicationForm({
         phone: formData.phone,
         course_name: courseName,
         course_date: null,
-        message: null,
+        
         last_name: formData.last_name,
-        telegram: showTelegramField ? formData.telegram : null,
+        telegram: null,
         city: formData.city,
         specialization: formData.specialization,
-        organization: formData.organization || null,
+        organization: formData.organization,
+        message: formData.comment || null,
         payment_type: formData.payment_type,
       } as any);
 
@@ -267,19 +264,6 @@ export function CourseApplicationForm({
             {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
           </div>
 
-          {showTelegramField && (
-            <div className="space-y-1.5">
-              <Label htmlFor="app-telegram">Ник в Telegram *</Label>
-              <Input
-                id="app-telegram"
-                value={formData.telegram}
-                onChange={(e) => updateField("telegram", e.target.value)}
-                placeholder="@username"
-                className={errors.telegram ? "border-destructive" : ""}
-              />
-              {errors.telegram && <p className="text-xs text-destructive">{errors.telegram}</p>}
-            </div>
-          )}
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
@@ -340,12 +324,28 @@ export function CourseApplicationForm({
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="app-org">Организация</Label>
+            <Label htmlFor="app-org">Организация *</Label>
             <Input
               id="app-org"
               value={formData.organization}
               onChange={(e) => updateField("organization", e.target.value)}
               placeholder="Название клиники или компании"
+              className={errors.organization ? "border-destructive" : ""}
+            />
+            {errors.organization && (
+              <p className="text-xs text-destructive">{errors.organization}</p>
+            )}
+          </div>
+
+          <div className="space-y-1.5">
+            <Label htmlFor="app-comment">Комментарий</Label>
+            <Textarea
+              id="app-comment"
+              value={formData.comment}
+              onChange={(e) => updateField("comment", e.target.value)}
+              placeholder="Дополнительная информация или вопросы"
+              rows={3}
+              className="resize-none"
             />
           </div>
 

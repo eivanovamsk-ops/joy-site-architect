@@ -44,11 +44,11 @@ const initialFormData = {
   name: "",
   last_name: "",
   phone: "",
-  telegram: "",
   city: "",
   specialization: "",
   email: "",
   organization: "",
+  comment: "",
   payment_type: "private" as "private" | "company",
 };
 

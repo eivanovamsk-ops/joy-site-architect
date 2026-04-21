@@ -625,6 +625,7 @@ const LabManagementCourse = () => {
                   <CourseApplicationForm
                     courseName={course.title}
                     courseDate={course.date}
+                    coursePrice={course.price}
                     buttonLabel="Записаться на курс"
                   />
                   <button

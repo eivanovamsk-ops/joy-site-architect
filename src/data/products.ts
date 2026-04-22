@@ -80,7 +80,7 @@ import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
 import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
 import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-real.jpg";
 import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
-import harzDentalTrayV2Preview from "@/assets/products/harz-dental-tray-v2-preview.jpg";
+import harzDentalTrayV2Preview from "@/assets/products/harz-dental-tray-v2-real.jpg";
 import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
 import harzDentalYellowClearProPreview from "@/assets/products/harz-dental-yellow-clear-pro-preview.jpg";
 
@@ -861,7 +861,7 @@ Dental Sand A1-A2 обеспечивает:
     subcategory: "photopolymers",
     price: 9900,
     image: harzDentalTrayV2Preview,
-    gallery: [harzDentalTrayV2Preview, harzDentalTray],
+    gallery: [harzDentalTrayV2Preview],
     brand: "HARZ Labs",
     inStock: true,
     metaTitle: "Фотополимер HARZ Labs Dental Tray для печати индивидуальных ложек",

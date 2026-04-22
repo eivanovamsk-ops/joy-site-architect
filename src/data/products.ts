@@ -167,6 +167,7 @@ export interface Product {
   isSale?: boolean;
   sku?: string;
   description?: string;
+  metaTitle?: string;
   metaDescription?: string;
   specifications?: Record<string, string>;
   externalUrl?: string;

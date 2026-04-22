@@ -1596,7 +1596,6 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
       shining3dAutoscanDsExProC3,
     ],
     video: "/videos/shining3d-autoscan-ds-ex-pro-c.mp4",
-    videoPosition: 1,
     brand: "Shining 3D",
     inStock: true,
     metaTitle: "3D-сканер AutoScan-DS-EX Pro(C) — быстрый лабораторный сканер для цифровой стоматологии",

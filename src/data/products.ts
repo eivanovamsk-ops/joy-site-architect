@@ -79,6 +79,7 @@ import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
 import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
 import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
 import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
+import harzDentalYellowClearProPreview from "@/assets/products/harz-dental-yellow-clear-pro-preview.jpg";
 
 // Upcera zirconia disc images
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
@@ -737,18 +738,77 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
   },
   {
     id: "harz-dental-yellow-clear-pro",
-    name: "Фотополимер HARZ Labs Dental Yellow Clear PRO (1кг)",
+    name: "Фотополимер HARZ Labs Dental Yellow Clear Pro для хирургических шаблонов",
     category: "3d-print",
     subcategory: "photopolymers",
     price: 13900,
-    image: harzDentalYellowClear,
+    image: harzDentalYellowClearProPreview,
+    gallery: [harzDentalYellowClearProPreview, harzDentalYellowClear],
     brand: "HARZ Labs",
     inStock: true,
-    description: "Dental Yellow Clear Pro представляет собой твердую PMMA-подобную смолу для печати автоклавируемых хирургических шаблонов.",
+    metaTitle: "Фотополимер HARZ Labs Dental Yellow Clear Pro для хирургических шаблонов",
+    metaDescription: "Фотополимер HARZ Labs Dental Yellow Clear Pro для хирургических шаблонов. Биосовместимый материал, высокая прочность, прозрачность, усадка <0,5%. Купить фотополимер в Москве с доставкой по России.",
+    description: `HARZ Labs Dental Yellow Clear Pro — это фотополимерная смола для 3D-печати, предназначенная для изготовления хирургических шаблонов в стоматологии. Материал обладает высокой прочностью, прозрачностью и точностью, что делает его подходящим для медицинского применения.
+
+Если вы планируете купить фотополимер для хирургических шаблонов в Москве, HARZ Labs Dental Yellow Clear Pro — это надежное решение для клиник и лабораторий.
+
+Биосовместимый материал для медицины
+
+Смола изготовлена из биосовместимого сырья, используемого в стоматологических пломбах, и соответствует требованиям:
+• ГОСТ Р ИСО 10993
+• разрешена для медицинского применения
+
+Подходит для изготовления автоклавируемых хирургических шаблонов.
+
+Прочность и точность
+
+Материал обеспечивает:
+• высокую прочность на растяжение — 80 ± 5 МПа
+• твердость — 85 ± 3 Shore D
+• стабильную геометрию
+• низкую усадку — < 0,5%
+
+Это позволяет получать точные и надежные изделия.
+
+Прозрачность и удобство работы
+
+Dental Yellow Clear Pro обладает:
+• прозрачным желтым цветом
+• высокой детализацией
+• устойчивостью к механическим воздействиям
+
+Слабовыраженный запах и отсутствие вредных мономеров делают материал удобным для использования в лабораториях.
+
+Области применения
+
+Фотополимер используется для:
+• хирургических шаблонов
+• медицинских стоматологических изделий
+
+Почему стоит купить HARZ Labs Dental Yellow Clear Pro в Articon
+
+Компания Articon поставляет материалы для цифровой стоматологии. Вы можете купить фотополимер HARZ Labs Dental Yellow Clear Pro в Москве с профессиональной поддержкой:
+• помощь в подборе материалов
+• консультации по настройке печати
+• сопровождение внедрения
+• доставка по всей России`,
     specifications: {
-      "Объём": "1 кг",
-      "Цвет": "Жёлтый прозрачный",
+      "Тип материала": "Фотополимер (PMMA-подобный)",
+      "Назначение": "Хирургические шаблоны",
+      "Цвет": "Прозрачный желтый",
+      "Усадка": "< 0,5%",
+      "Прочность на растяжение": "80 ± 5 МПа",
+      "Удлинение при разрыве": "10 ± 3 %",
+      "Твердость": "85 ± 3 Shore D",
+      "Вязкость": "600 ± 200 мПа·с",
+      "Запах": "Слабовыраженный",
+      "Объем": "1 литр",
+      "Вес": "1 кг",
       "Автоклавируемость": "Да",
+      "Производитель": "Harz Labs",
+      "Страна": "Россия",
+      "Гарантия": "2 года",
+      "Габариты (Д×Ш×В)": "8 × 8 × 23,5 см",
     },
   },
 

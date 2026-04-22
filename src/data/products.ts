@@ -101,6 +101,14 @@ import shining3dAutoscanDsExProC1 from "@/assets/products/shining3d-autoscan-ds-
 import shining3dAutoscanDsExProC2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp";
 import shining3dAutoscanDsExProC3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-3.webp";
 
+// Shining 3D AutoScan DS-EX Pro(H) images
+import shining3dAutoscanDsExProH1 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-1.webp";
+import shining3dAutoscanDsExProH2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-2.webp";
+import shining3dAutoscanDsExProH3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-3.webp";
+import shining3dAutoscanDsExProH4 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-4.webp";
+import shining3dAutoscanDsExProH5 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-5.webp";
+import shining3dAutoscanDsExProH6 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-6.webp";
+
 // Cure 3 Ultra images
 import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
 import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";

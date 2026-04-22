@@ -75,7 +75,7 @@ import upceraUpcadLt from "@/assets/products/upcera-upcad-lt.jpg";
 
 // HARZ Labs images
 import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
-import harzDentalCastCherryPreview from "@/assets/products/harz-dental-cast-cherry-preview.jpg";
+import harzDentalCastCherryPreview from "@/assets/products/harz-dental-cast-cherry-real.jpg";
 import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
 import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
 import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-real.jpg";
@@ -685,7 +685,7 @@ Magnum Dental Flash PRO работает в диапазоне 280–700 нм (�
     subcategory: "photopolymers",
     price: null,
     image: harzDentalCastCherryPreview,
-    gallery: [harzDentalCastCherryPreview, harzDentalCast],
+    gallery: [harzDentalCastCherryPreview],
     brand: "HARZ Labs",
     inStock: true,
     metaTitle: "Фотополимер HARZ Labs Dental Cast Cherry для 3D-печати 1 л.",

@@ -1602,8 +1602,11 @@ AutoScan-DS-EX Pro(C) поддерживает:
       "Оттиск": "22 сек",
     },
   },
+
+  // ==============================================
+  // ДИСКИ CAD/CAM - ЦИРКОН КАРКАСНЫЙ (ST Color)
+  // ==============================================
   {
-    id: "upcera-st-color-98x10-a1",
     name: "Upcera ST Color циркониевые диски, 98 x 10 мм, цвет A1",
     category: "cad-cam-discs",
     subcategory: "zirconia-framework",

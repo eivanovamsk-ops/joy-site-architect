@@ -77,7 +77,7 @@ const ProductDetail = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{product.name} | Купить в Артикон — {product.brand}</title>
+        <title>{product.metaTitle ?? `${product.name} | Купить в Артикон — ${product.brand}`}</title>
         <meta name="description" content={generateSeoDescription()} />
         <meta name="keywords" content={`${product.name}, ${product.brand}, ${getCategoryName()}, купить, цена, Артикон, стоматологическое оборудование, зуботехническая лаборатория`} />
         <link rel="canonical" href={`https://articon.pro/shop/product/${product.id}`} />

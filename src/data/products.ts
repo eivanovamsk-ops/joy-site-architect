@@ -50,7 +50,7 @@ import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
 import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
 import topcoreModel from "@/assets/products/topcore-model.png";
 import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
-import topcoreModelProPreview from "@/assets/products/topcore-model-pro-preview.jpg";
+import topcoreModelProPreview from "@/assets/products/topcore-model-pro-real.png";
 import topcorePink from "@/assets/products/topcore-pink.png";
 import topcorePinkBase from "@/assets/products/topcore-pink-base.png";
 import topcoreSg from "@/assets/products/topcore-sg.png";

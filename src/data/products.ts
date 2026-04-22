@@ -82,7 +82,7 @@ import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-real
 import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
 import harzDentalTrayV2Preview from "@/assets/products/harz-dental-tray-v2-real.jpg";
 import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
-import harzDentalYellowClearProPreview from "@/assets/products/harz-dental-yellow-clear-pro-preview.jpg";
+import harzDentalYellowClearProPreview from "@/assets/products/harz-dental-yellow-clear-pro-real.jpg";
 
 // Upcera zirconia disc images
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
@@ -932,7 +932,7 @@ Dental Tray отличается:
     subcategory: "photopolymers",
     price: 13900,
     image: harzDentalYellowClearProPreview,
-    gallery: [harzDentalYellowClearProPreview, harzDentalYellowClear],
+    gallery: [harzDentalYellowClearProPreview],
     brand: "HARZ Labs",
     inStock: true,
     metaTitle: "Фотополимер HARZ Labs Dental Yellow Clear Pro для хирургических шаблонов",

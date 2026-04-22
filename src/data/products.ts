@@ -101,6 +101,14 @@ import shining3dAutoscanDsExProC1 from "@/assets/products/shining3d-autoscan-ds-
 import shining3dAutoscanDsExProC2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp";
 import shining3dAutoscanDsExProC3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-3.webp";
 
+// Shining 3D AutoScan DS-EX Pro(H) images
+import shining3dAutoscanDsExProH1 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-1.webp";
+import shining3dAutoscanDsExProH2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-2.webp";
+import shining3dAutoscanDsExProH3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-3.webp";
+import shining3dAutoscanDsExProH4 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-4.webp";
+import shining3dAutoscanDsExProH5 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-5.webp";
+import shining3dAutoscanDsExProH6 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-6.webp";
+
 // Cure 3 Ultra images
 import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
 import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
@@ -1600,6 +1608,122 @@ AutoScan-DS-EX Pro(C) поддерживает:
       "1–4 культи": "15 сек",
       "5–8 культей": "17 сек",
       "Оттиск": "22 сек",
+    },
+  },
+  {
+    id: "shining3d-autoscan-ds-ex-pro-h",
+    name: "3D-сканер AutoScan-DS-EX Pro(H) — лабораторный сканер с точностью до 8 мкм",
+    category: "3d-scanners",
+    subcategory: "laboratory",
+    price: null,
+    image: shining3dAutoscanDsExProH1,
+    gallery: [
+      shining3dAutoscanDsExProH1,
+      shining3dAutoscanDsExProH6,
+      shining3dAutoscanDsExProH2,
+      shining3dAutoscanDsExProH3,
+      shining3dAutoscanDsExProH4,
+      shining3dAutoscanDsExProH5,
+    ],
+    brand: "Shining 3D",
+    inStock: true,
+    metaTitle: "3D-сканер AutoScan-DS-EX Pro(H) — лабораторный сканер с точностью до 8 мкм",
+    metaDescription: "3D-сканер AutoScan-DS-EX Pro(H) для стоматологии. Точность до 8 мкм, камеры 5.0 MP, быстрые сканы от 6.5 сек, поддержка STL/PLY/OBJ. Купить 3D-сканер в Москве с доставкой по России.",
+    description: `AutoScan-DS-EX Pro(H) — профессиональный стоматологический 3D-сканер, предназначенный для цифровизации моделей, оттисков, абатментов и ортопедических конструкций. Устройство обеспечивает высокую точность сканирования, стабильные результаты и быстрый рабочий процесс в зуботехнической лаборатории.
+
+Если вы планируете купить 3D-сканер для зуботехнической лаборатории в Москве, AutoScan-DS-EX Pro(H) — это современное решение для цифрового протокола CAD/CAM.
+
+Высокая точность сканирования
+
+Сканер обеспечивает точность до ≤ 8 мкм, что позволяет:
+• получать точные цифровые модели
+• минимизировать погрешности
+• использовать данные для сложных ортопедических работ
+
+Такая точность соответствует требованиям современной цифровой стоматологии.
+
+Камеры 5.0 MP для максимальной детализации
+
+AutoScan-DS-EX Pro(H) оснащён двумя камерами по 5.0 МП. Это обеспечивает:
+• точную передачу мелких деталей
+• высокое качество сканов
+• стабильную цифровизацию сложных объектов
+
+Высокая скорость сканирования
+
+Сканер позволяет значительно ускорить рабочий процесс:
+• прикус — 6.5 сек
+• верхняя/нижняя челюсть — 14 сек
+• 1–4 культи — 21.5 сек
+• 5–8 культей — 25.5 сек
+• оттиск — 31 сек
+
+Быстрая обработка данных повышает производительность лаборатории.
+
+Гибкий рабочий процесс
+
+Сканер поддерживает различные сценарии работы:
+• all-in-one сканирование
+• triple tray
+• индивидуальная настройка рабочего процесса
+
+Это позволяет адаптировать оборудование под задачи лаборатории.
+
+Параллельная обработка данных
+
+Сканирование и обработка данных могут выполняться одновременно, что:
+• сокращает время работы
+• повышает эффективность
+• ускоряет производство
+
+Расширенные режимы сканирования
+
+Программное обеспечение поддерживает:
+• Multi Path Scan
+• High Quality Scan
+• AI Scan
+• Texture Scan
+• HDR Mode
+• Reduce High Brightness Scan
+
+Это позволяет получать качественные данные в разных условиях.
+
+Области применения
+
+AutoScan-DS-EX Pro(H) используется для:
+• сканирования моделей
+• оттисков
+• абатментов
+• артикуляторов
+• мостов и имплантационных конструкций
+• полных протезов
+• scanbody и post&core
+
+Почему стоит купить AutoScan-DS-EX Pro(H) в Articon
+
+Компания Articon поставляет оборудование для цифровой стоматологии.
+
+Вы можете купить 3D-сканер AutoScan-DS-EX Pro(H) в Москве с полным сопровождением:
+• помощь в подборе оборудования
+• настройка и запуск
+• обучение персонала
+• техническая поддержка
+• доставка по всей России`,
+    specifications: {
+      "Тип оборудования": "Стоматологический 3D-сканер",
+      "Камеры": "2 × 5.0 MP",
+      "Точность": "≤ 8 мкм",
+      "Источник света": "Синий свет",
+      "Форматы файлов": "STL, PLY, OBJ",
+      "Интерфейс": "USB 3.0",
+      "Питание": "DC 24V",
+      "Размеры": "420 × 260 × 270 мм",
+      "Вес": "5 кг",
+      "Прикус (скорость)": "6.5 сек",
+      "Верхняя/нижняя челюсть": "14 сек",
+      "1–4 культи": "21.5 сек",
+      "5–8 культей": "25.5 сек",
+      "Оттиск": "31 сек",
     },
   },
 

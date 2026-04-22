@@ -78,7 +78,7 @@ import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
 import harzDentalCastCherryPreview from "@/assets/products/harz-dental-cast-cherry-preview.jpg";
 import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
 import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
-import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-preview.jpg";
+import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-real.jpg";
 import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
 import harzDentalTrayV2Preview from "@/assets/products/harz-dental-tray-v2-preview.jpg";
 import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
@@ -780,7 +780,7 @@ HARZ Labs Dental Cast Cherry обеспечивает:
     subcategory: "photopolymers",
     price: 17900,
     image: harzDentalSandPreview,
-    gallery: [harzDentalSandPreview, harzDentalSand],
+    gallery: [harzDentalSandPreview],
     brand: "HARZ Labs",
     inStock: true,
     metaTitle: "Фотополимер HARZ Labs Dental Sand A1-A2 для временных коронок и мостов",

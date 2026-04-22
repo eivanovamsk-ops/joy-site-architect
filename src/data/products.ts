@@ -117,7 +117,7 @@ import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
 import upceraA52Milling from "@/assets/products/upcera-a52-milling.png";
 import upceraB52 from "@/assets/products/upcera-b52.png";
 import upceraB42 from "@/assets/products/upcera-b42.png";
-import upceraB42Preview from "@/assets/products/upcera-b42-preview.jpg";
+import upceraB42Preview from "@/assets/products/upcera-b42-real.png";
 import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
 import upceraE52Hybrid from "@/assets/products/upcera-e52-hybrid.png";
 import upceraGt1ProNew from "@/assets/products/upcera-gt1-pro-new.webp";

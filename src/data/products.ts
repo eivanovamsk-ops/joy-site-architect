@@ -196,7 +196,6 @@ export interface Product {
   image: string;
   gallery?: string[];
   video?: string;
-  videoPosition?: number;
   brand: string;
   inStock: boolean;
   isNew?: boolean;

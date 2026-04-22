@@ -109,6 +109,13 @@ import shining3dAutoscanDsExProC9 from "@/assets/products/shining3d-autoscan-ds-
 import shining3dAutoscanDsExProC10 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-10.webp";
 import shining3dAutoscanDsExProC11 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-11.webp";
 import shining3dAutoscanDsExProC12 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-12.webp";
+import shining3dAutoscanDsExProC13 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-13.webp";
+import shining3dAutoscanDsExProC14 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-14.jpg";
+import shining3dAutoscanDsExProC15 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-15.webp";
+import shining3dAutoscanDsExProC16 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-16.webp";
+import shining3dAutoscanDsExProC17 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-17.webp";
+import shining3dAutoscanDsExProC18 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-18.webp";
+import shining3dAutoscanDsExProC19 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-19.webp";
 
 // Shining 3D AutoScan DS-EX Pro(H) images
 import shining3dAutoscanDsExProH1 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-1.webp";
@@ -1568,8 +1575,15 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
     image: shining3dAutoscanDsExProC1,
     gallery: [
       shining3dAutoscanDsExProC1,
+      shining3dAutoscanDsExProC13,
+      shining3dAutoscanDsExProC14,
       shining3dAutoscanDsExProC4,
       shining3dAutoscanDsExProC12,
+      shining3dAutoscanDsExProC17,
+      shining3dAutoscanDsExProC18,
+      shining3dAutoscanDsExProC16,
+      shining3dAutoscanDsExProC19,
+      shining3dAutoscanDsExProC15,
       shining3dAutoscanDsExProC8,
       shining3dAutoscanDsExProC9,
       shining3dAutoscanDsExProC2,
@@ -1580,6 +1594,7 @@ HeyGears UltraPrint-D Model GP Caramel используется для:
       shining3dAutoscanDsExProC6,
       shining3dAutoscanDsExProC3,
     ],
+    video: "/videos/shining3d-autoscan-ds-ex-pro-c.mp4",
     brand: "Shining 3D",
     inStock: true,
     metaTitle: "3D-сканер AutoScan-DS-EX Pro(C) — быстрый лабораторный сканер для цифровой стоматологии",

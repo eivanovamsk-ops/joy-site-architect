@@ -150,7 +150,7 @@ const ProductDetail = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Product Image */}
           <ProductImageSlider
-            images={[product.image, ...(product.gallery || [])]}
+            images={Array.from(new Set([product.image, ...(product.gallery || [])]))}
             name={product.name}
             isNew={product.isNew}
             isSale={product.isSale}

@@ -17,12 +17,14 @@ import bannerGT1Pro from "@/assets/banners/shop-upcera-gt1-pro.jpg";
 import bannerR412 from "@/assets/banners/shop-upcera-r412.jpg";
 import bannerA52 from "@/assets/banners/shop-upcera-a52.jpg";
 import bannerAevra from "@/assets/banners/shop-aevra-discs.jpg";
+import bannerHeygearsA2D from "@/assets/banners/shop-heygears-a2d.jpg";
 
 const banners = [
   { image: bannerCadcamKit, alt: "CAD/CAM-комплект UPCERA — комплексное решение со скидкой 8%", href: "/shop/bundle/upcera-cadcam-kit" },
   { image: bannerA52, alt: "5-осевой фрезерный станок UPCERA A52", href: "/shop/product/upcera-a52" },
   { image: bannerGT1Pro, alt: "Печь для синтеризации диоксида циркония UPCERA GT1 Pro", href: "/shop/catalog/furnaces" },
   { image: bannerAevra, alt: "Циркониевые диски Aevra — прозрачность до 50%", href: "/shop/catalog/zirconia-discs" },
+  { image: bannerHeygearsA2D, alt: "3D-принтер HeyGears UltraCraft A2D HD — точность ±26,8 мкм", href: "/shop/catalog/3d-printers" },
   { image: bannerRundeerV6, alt: "Интраоральный сканер Rundeer 3DS V6 — точность <10 мкм", href: "/shop/product/rundeer-3ds-v6" },
   { image: bannerShining, alt: "Лабораторный сканер SHINING 3D AutoScan-DS-EX Pro(H)", href: "/shop/catalog/lab-scanners" },
   { image: bannerR412, alt: "Пылесос UPCERA R-412 для фрезерных станков сухой обработки", href: "/shop/catalog/vacuums" },

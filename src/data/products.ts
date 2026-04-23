@@ -1379,7 +1379,7 @@ TopCore Model PRO используется для:
     subcategory: "photopolymers",
     price: null,
     image: heygearsModelGpCaramel,
-    gallery: [heygearsModelGpCaramel, heygearsModelGpGrey, heygearsModelGpSamples],
+    gallery: [heygearsModelGpCaramel, heygearsModelGpSamples],
     brand: "HeyGears",
     inStock: true,
     isNew: true,

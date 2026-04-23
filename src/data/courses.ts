@@ -86,6 +86,7 @@ export interface Course {
   galleryImages?: string[];
   partners?: { name: string; logo: string; url: string }[];
   upcomingDates?: { date: string; dateStart: Date }[];
+  handsOnModule?: { title: string; description: string };
 }
 
 export const courses: Course[] = [
@@ -361,9 +362,6 @@ export const courses: Course[] = [
         day: 1,
         title: "Программа курса",
         topics: [
-          "🔥 HAND-ON МОДУЛЬ 🔥",
-          "ПРАКТИКА постановки винтов на моделях",
-          "",
           "Виды современных ортодонтических систем для работы в области неба. Какие аномалии можно корректировать небными аппаратами",
           "Анатомия неба и анатомические особенности на КЛКТ при планировании установки небных винтов. Места установки и анализ КЛКТ. Установка винтов с использованием хирургических шаблонов",
           "Планирование небных аппаратов. Протокол врача",

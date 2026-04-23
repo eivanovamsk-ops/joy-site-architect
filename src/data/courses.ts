@@ -343,7 +343,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 9, 13),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Лекция",
-    price: 25000,
+    price: 40000,
     coverImage: "https://static.wixstatic.com/media/526e65_a77a2e11713c47d0af8109403ab03fd3~mv2.jpg/v1/fill/w_1904,h_889,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/526e65_a77a2e11713c47d0af8109403ab03fd3~mv2.jpg",
     description: "Углубленный курс по планированию SARPE и MARPE. Протоколы командной работы ортодонт-хирург-техник. Коррекция трансверсальных, сагиттальных и вертикальных аномалий.",
     shortDescription: "Протоколы взаимодействия в команде ортодонт-хирург-техник",

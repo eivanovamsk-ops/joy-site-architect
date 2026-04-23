@@ -822,6 +822,31 @@ const CourseDetail = () => {
                 <h2 className="text-3xl font-bold">Программа курса</h2>
               </div>
 
+              {course.handsOnModule && (
+                <div className="mb-8 relative overflow-hidden rounded-2xl border-2 border-primary shadow-xl bg-gradient-to-br from-primary via-primary to-primary/80">
+                  <div className="absolute inset-0 opacity-20 pointer-events-none">
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white rounded-full blur-3xl" />
+                  </div>
+                  <div className="relative px-8 py-7 flex items-center gap-5">
+                    <div className="flex-shrink-0 w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30 animate-pulse-soft">
+                      <Wrench className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 mb-2">
+                        <span className="text-xs font-bold text-primary-foreground uppercase tracking-wider">🔥 Эксклюзивно</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-extrabold text-primary-foreground uppercase tracking-tight leading-tight">
+                        {course.handsOnModule.title}
+                      </h3>
+                      <p className="text-primary-foreground/95 text-base md:text-lg font-semibold mt-1">
+                        {course.handsOnModule.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {course.program.length > 1 ?
               <Tabs defaultValue="day-1" className="w-full">
                   <TabsList className="w-full flex-wrap h-auto gap-2 bg-primary/5 p-2 mb-8 rounded-xl border border-primary/10">

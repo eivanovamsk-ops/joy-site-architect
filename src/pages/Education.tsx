@@ -10,6 +10,7 @@ import { EducationDigitalPartnersSection } from "@/components/education/DigitalP
 import { EducationCTASection } from "@/components/education/CTASection";
 import { EducationSEOContentSection } from "@/components/education/SEOContentSection";
 import { EducationLegalInfo } from "@/components/education/EducationLegalInfo";
+import { CourseRecommendationPopup } from "@/components/education/CourseRecommendationPopup";
 
 const Education = () => {
   const structuredData = {

@@ -74,12 +74,18 @@ interface CallbackRequestNotification {
   callbackRequestId: string;
 }
 
+interface CourseRecommendationNotification {
+  type: "course_recommendation";
+  recommendationId: string;
+}
+
 type EmailRequest =
   | OrderConfirmationRequest
   | CourseApplicationRequest
   | FeedbackNotificationRequest
   | BundleRequestNotification
   | CallbackRequestNotification
+  | CourseRecommendationNotification
   | { type: "legacy" };
 
 interface AuthContext {

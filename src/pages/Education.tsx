@@ -114,6 +114,7 @@ const Education = () => {
       <EducationOrthoSection />
       <EducationCTASection />
       <EducationLegalInfo />
+      <CourseRecommendationPopup />
     </Layout>
   );
 };

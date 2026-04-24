@@ -45,6 +45,12 @@ const DIRECTIONS = [
 const formSchema = z
   .object({
     name: z.string().trim().min(2, "Введите имя").max(100),
+    phone: z
+      .string()
+      .trim()
+      .min(10, "Введите корректный номер телефона")
+      .max(20, "Номер телефона слишком длинный")
+      .regex(/^[\d\s\+\-\(\)]+$/, "Некорректный формат номера"),
     city: z.string().trim().min(2, "Введите город").max(100),
     specializations: z
       .array(z.string())

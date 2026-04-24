@@ -123,14 +123,17 @@ export const CourseRecommendationPopup = () => {
     try {
       const { data: inserted, error: insertError } = await supabase
         .from("course_recommendations")
-        .insert({
-          name: data.name,
-          city: data.city,
-          specializations: data.specializations,
-          direction: data.direction,
-          direction_other:
-            data.direction === "Другое" ? data.directionOther ?? null : null,
-        })
+        .insert([
+          {
+            name: data.name,
+            phone: data.phone,
+            city: data.city,
+            specializations: data.specializations,
+            direction: data.direction,
+            direction_other:
+              data.direction === "Другое" ? data.directionOther ?? null : null,
+          },
+        ])
         .select("id")
         .single();
 

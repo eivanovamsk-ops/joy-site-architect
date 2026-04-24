@@ -45,6 +45,12 @@ const DIRECTIONS = [
 const formSchema = z
   .object({
     name: z.string().trim().min(2, "Введите имя").max(100),
+    phone: z
+      .string()
+      .trim()
+      .min(10, "Введите корректный номер телефона")
+      .max(20, "Номер телефона слишком длинный")
+      .regex(/^[\d\s+\-()]+$/, "Некорректный формат номера"),
     city: z.string().trim().min(2, "Введите город").max(100),
     specializations: z
       .array(z.string())
@@ -77,6 +83,7 @@ export const CourseRecommendationPopup = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
       city: "",
       specializations: [],
       direction: undefined as unknown as FormData["direction"],
@@ -116,14 +123,17 @@ export const CourseRecommendationPopup = () => {
     try {
       const { data: inserted, error: insertError } = await supabase
         .from("course_recommendations")
-        .insert({
-          name: data.name,
-          city: data.city,
-          specializations: data.specializations,
-          direction: data.direction,
-          direction_other:
-            data.direction === "Другое" ? data.directionOther ?? null : null,
-        })
+        .insert([
+          {
+            name: data.name,
+            phone: data.phone,
+            city: data.city,
+            specializations: data.specializations,
+            direction: data.direction,
+            direction_other:
+              data.direction === "Другое" ? data.directionOther ?? null : null,
+          },
+        ])
         .select("id")
         .single();
 
@@ -343,6 +353,24 @@ export const CourseRecommendationPopup = () => {
                         <FormLabel>Как мы можем к вам обращаться? *</FormLabel>
                         <FormControl>
                           <Input placeholder="Ваше имя" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Телефон *</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="tel"
+                            placeholder="+7 (999) 123-45-67"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

@@ -1070,7 +1070,7 @@ const handler = async (req: Request): Promise<Response> => {
 
       const { data: rec, error: recError } = await serviceClient
         .from("course_recommendations")
-        .select("name, city, specializations, direction, direction_other, created_at")
+        .select("name, phone, city, specializations, direction, direction_other, created_at")
         .eq("id", requestData.recommendationId)
         .maybeSingle();
 
@@ -1089,6 +1089,7 @@ const handler = async (req: Request): Promise<Response> => {
           <p style="color:#6b7280;">Заявка с popup-формы /education</p>
           <table style="border-collapse:collapse;width:100%;margin-top:12px;">
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${rec.name}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;"><a href="tel:${rec.phone}">${rec.phone}</a></td></tr>
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Город</td><td style="padding:8px;border:1px solid #eee;">${rec.city}</td></tr>
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Специализация</td><td style="padding:8px;border:1px solid #eee;">${specs}</td></tr>
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Интересующее направление</td><td style="padding:8px;border:1px solid #eee;">${directionFull}</td></tr>

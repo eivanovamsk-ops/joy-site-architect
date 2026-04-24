@@ -124,6 +124,36 @@ export type Database = {
           },
         ]
       }
+      course_recommendations: {
+        Row: {
+          city: string
+          created_at: string
+          direction: string
+          direction_other: string | null
+          id: string
+          name: string
+          specializations: string[]
+        }
+        Insert: {
+          city: string
+          created_at?: string
+          direction: string
+          direction_other?: string | null
+          id?: string
+          name: string
+          specializations?: string[]
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          direction?: string
+          direction_other?: string | null
+          id?: string
+          name?: string
+          specializations?: string[]
+        }
+        Relationships: []
+      }
       feedback: {
         Row: {
           created_at: string

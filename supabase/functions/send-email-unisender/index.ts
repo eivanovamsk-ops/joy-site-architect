@@ -1063,6 +1063,56 @@ const handler = async (req: Request): Promise<Response> => {
       });
     }
 
+    if (requestData.type === "course_recommendation") {
+      if (!requestData.recommendationId || !isUuid(requestData.recommendationId)) {
+        throw new HttpError(400, "A valid recommendationId is required");
+      }
+
+      const { data: rec, error: recError } = await serviceClient
+        .from("course_recommendations")
+        .select("name, city, specializations, direction, direction_other, created_at")
+        .eq("id", requestData.recommendationId)
+        .maybeSingle();
+
+      if (recError) throw new HttpError(500, "Failed to load recommendation");
+      if (!rec) throw new HttpError(404, "Recommendation not found");
+
+      const dateStr = new Date(rec.created_at).toLocaleString("ru-RU", { timeZone: "Europe/Moscow" });
+      const specs = Array.isArray(rec.specializations) ? rec.specializations.join(", ") : "—";
+      const directionFull = rec.direction === "Другое" && rec.direction_other
+        ? `Другое: ${rec.direction_other}`
+        : rec.direction;
+
+      const htmlBody = `
+        <div style="font-family:Arial,sans-serif;max-width:600px;">
+          <h2 style="color:#1a365d;">🎯 Запрос на подбор курса</h2>
+          <p style="color:#6b7280;">Заявка с popup-формы /education</p>
+          <table style="border-collapse:collapse;width:100%;margin-top:12px;">
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${rec.name}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Город</td><td style="padding:8px;border:1px solid #eee;">${rec.city}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Специализация</td><td style="padding:8px;border:1px solid #eee;">${specs}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Интересующее направление</td><td style="padding:8px;border:1px solid #eee;">${directionFull}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Дата</td><td style="padding:8px;border:1px solid #eee;">${dateStr}</td></tr>
+          </table>
+          <p style="margin-top:16px;color:#6b7280;font-size:13px;">Свяжитесь с клиентом для подбора программы.</p>
+        </div>
+      `;
+
+      const result = await sendEmail(
+        UNISENDER_API_KEY,
+        "e.ivanova@articon.pro",
+        `🎯 Подбор курса — ${rec.name} (${rec.city})`,
+        htmlBody,
+        "Articon Education",
+        "event@articon.pro",
+      );
+
+      return new Response(JSON.stringify({ success: true, result }), {
+        status: 200,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
     throw new HttpError(410, "Legacy email mode is disabled");
   } catch (error: unknown) {
     console.error("Error in send-email-unisender function:", error);

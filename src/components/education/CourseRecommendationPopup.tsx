@@ -83,6 +83,7 @@ export const CourseRecommendationPopup = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
       city: "",
       specializations: [],
       direction: undefined as unknown as FormData["direction"],

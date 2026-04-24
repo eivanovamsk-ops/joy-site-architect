@@ -132,6 +132,7 @@ export type Database = {
           direction_other: string | null
           id: string
           name: string
+          phone: string
           specializations: string[]
         }
         Insert: {
@@ -141,6 +142,7 @@ export type Database = {
           direction_other?: string | null
           id?: string
           name: string
+          phone: string
           specializations?: string[]
         }
         Update: {
@@ -150,6 +152,7 @@ export type Database = {
           direction_other?: string | null
           id?: string
           name?: string
+          phone?: string
           specializations?: string[]
         }
         Relationships: []

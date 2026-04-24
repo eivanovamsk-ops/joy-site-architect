@@ -359,6 +359,24 @@ export const CourseRecommendationPopup = () => {
                     )}
                   />
 
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Телефон *</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="tel"
+                            placeholder="+7 (999) 123-45-67"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
                   <Button
                     type="submit"
                     disabled={form.formState.isSubmitting}

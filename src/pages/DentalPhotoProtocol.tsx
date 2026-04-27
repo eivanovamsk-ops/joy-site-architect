@@ -585,7 +585,7 @@ const DentalPhotoProtocol = () => {
               <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>Место проведения</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Учебный центр ARTICON</h2>
               <p className="text-[#F5F5F5]/50 text-lg mb-2">Москва, Варшавское шоссе 33с12</p>
-              <p className="text-[#F5F5F5]/50 mb-8">23 апреля 2026 / 10:00–20:00</p>
+              <p className="text-[#F5F5F5]/50 mb-8">Осень 2026 / 10:00–20:00</p>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
                 <a href="https://yandex.ru/maps/?um=constructor%3A442f99c6df6275987c5859cab9ee67bdc166a3cc90cacccb19fad26b76c17fa8&source=constructorLink" target="_blank" rel="noopener noreferrer" className="bg-[#222]/60 border border-[#333] rounded-xl p-4 hover:border-[#00BCD4]/30 transition-colors text-center">

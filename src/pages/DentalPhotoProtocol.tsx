@@ -277,10 +277,10 @@ const DentalPhotoProtocol = () => {
       <div className="dpp-page bg-[#1A1A1A] text-[#F5F5F5] min-h-screen overflow-hidden -mt-[116px] lg:-mt-[164px]" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
         <Helmet>
           <title>Курс «Дентальный фотопротокол» | Учебный центр Артикон</title>
-          <meta name="description" content="Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. 23 апреля 2026, Москва. От съёмки до постобработки за 1 день." />
+          <meta name="description" content="Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. Осень 2026, Москва. От съёмки до постобработки за 1 день." />
           <link rel="canonical" href="https://articon.pro/education/course/20" />
           <meta property="og:title" content="Дентальный фотопротокол — Курс | Артикон" />
-          <meta property="og:description" content="Авторский курс по дентальной фотографии. 23 апреля 2026, Москва. Теория + практика." />
+          <meta property="og:description" content="Авторский курс по дентальной фотографии. Осень 2026, Москва. Теория + практика." />
           <meta property="og:image" content={course20Banner} />
           <meta property="og:type" content="article" />
         </Helmet>
@@ -329,7 +329,7 @@ const DentalPhotoProtocol = () => {
             )}>
               <div className="flex items-center gap-2.5 bg-[#00BCD4]/20 backdrop-blur-sm border border-[#00BCD4]/40 rounded-full px-5 py-2.5">
                 <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="font-bold text-[#F5F5F5]">23 апреля 2026</span>
+                <span className="font-bold text-[#F5F5F5]">Осень 2026</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
@@ -585,7 +585,7 @@ const DentalPhotoProtocol = () => {
               <span className="text-sm tracking-[0.3em] uppercase mb-4 block" style={{ color: ACCENT }}>Место проведения</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Учебный центр ARTICON</h2>
               <p className="text-[#F5F5F5]/50 text-lg mb-2">Москва, Варшавское шоссе 33с12</p>
-              <p className="text-[#F5F5F5]/50 mb-8">23 апреля 2026 / 10:00–20:00</p>
+              <p className="text-[#F5F5F5]/50 mb-8">Осень 2026 / 10:00–20:00</p>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
                 <a href="https://yandex.ru/maps/?um=constructor%3A442f99c6df6275987c5859cab9ee67bdc166a3cc90cacccb19fad26b76c17fa8&source=constructorLink" target="_blank" rel="noopener noreferrer" className="bg-[#222]/60 border border-[#333] rounded-xl p-4 hover:border-[#00BCD4]/30 transition-colors text-center">

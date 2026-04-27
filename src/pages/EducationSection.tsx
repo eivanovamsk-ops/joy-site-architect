@@ -61,8 +61,8 @@ const EducationSection = () => {
         course.sectionTags?.includes(config.subsectionTag)
       )
       .sort((a, b) => {
-        const isArchivedA = a.id === 23 || a.id === 19 || a.id === 25;
-        const isArchivedB = b.id === 23 || b.id === 19 || b.id === 25;
+        const isArchivedA = a.id === 23 || a.id === 19 || a.id === 25 || a.id === 11;
+        const isArchivedB = b.id === 23 || b.id === 19 || b.id === 25 || b.id === 11;
         if (isArchivedA && !isArchivedB) return 1;
         if (!isArchivedA && isArchivedB) return -1;
         const isLastA = a.isComingSoon;
@@ -105,7 +105,7 @@ const EducationSection = () => {
                 <Link
                   key={course.id + "-" + course.slug}
                   to={course.externalUrl || `/education/course/${course.id}`}
-                  className={`bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block ${(course.id === 23 || course.id === 19 || course.id === 25) ? "opacity-70" : ""}`}
+                  className={`bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block ${(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11) ? "opacity-70" : ""}`}
                 >
                   {course.coverImage && (
                     <div className="relative h-40 overflow-hidden">
@@ -133,7 +133,7 @@ const EducationSection = () => {
                   <div className="p-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                       <Calendar className="h-4 w-4" />
-                      {(course.id === 23 || course.id === 19 || course.id === 25) ? (
+                      {(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11) ? (
                         <Badge variant="secondary" className="text-xs font-medium">УЖЕ ПРОШЕЛ</Badge>
                       ) : course.isComingSoon ? (
                         <Badge variant="secondary" className="text-xs font-medium">{course.comingSoonLabel || "Уже скоро"}</Badge>

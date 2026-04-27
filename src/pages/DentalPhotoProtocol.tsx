@@ -329,7 +329,7 @@ const DentalPhotoProtocol = () => {
             )}>
               <div className="flex items-center gap-2.5 bg-[#00BCD4]/20 backdrop-blur-sm border border-[#00BCD4]/40 rounded-full px-5 py-2.5">
                 <Calendar className="h-4 w-4" style={{ color: ACCENT }} />
-                <span className="font-bold text-[#F5F5F5]">23 апреля 2026</span>
+                <span className="font-bold text-[#F5F5F5]">Осень 2026</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2.5">
                 <MapPin className="h-4 w-4" style={{ color: ACCENT }} />

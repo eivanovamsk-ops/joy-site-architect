@@ -280,7 +280,7 @@ const DentalPhotoProtocol = () => {
           <meta name="description" content="Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. Осень 2026, Москва. От съёмки до постобработки за 1 день." />
           <link rel="canonical" href="https://articon.pro/education/course/20" />
           <meta property="og:title" content="Дентальный фотопротокол — Курс | Артикон" />
-          <meta property="og:description" content="Авторский курс по дентальной фотографии. 23 апреля 2026, Москва. Теория + практика." />
+          <meta property="og:description" content="Авторский курс по дентальной фотографии. Осень 2026, Москва. Теория + практика." />
           <meta property="og:image" content={course20Banner} />
           <meta property="og:type" content="article" />
         </Helmet>

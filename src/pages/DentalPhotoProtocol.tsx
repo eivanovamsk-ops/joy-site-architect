@@ -277,7 +277,7 @@ const DentalPhotoProtocol = () => {
       <div className="dpp-page bg-[#1A1A1A] text-[#F5F5F5] min-h-screen overflow-hidden -mt-[116px] lg:-mt-[164px]" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
         <Helmet>
           <title>Курс «Дентальный фотопротокол» | Учебный центр Артикон</title>
-          <meta name="description" content="Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. 23 апреля 2026, Москва. От съёмки до постобработки за 1 день." />
+          <meta name="description" content="Авторский курс Оксаны Кузнецовой по дентальной фотографии для стоматологов. Осень 2026, Москва. От съёмки до постобработки за 1 день." />
           <link rel="canonical" href="https://articon.pro/education/course/20" />
           <meta property="og:title" content="Дентальный фотопротокол — Курс | Артикон" />
           <meta property="og:description" content="Авторский курс по дентальной фотографии. 23 апреля 2026, Москва. Теория + практика." />

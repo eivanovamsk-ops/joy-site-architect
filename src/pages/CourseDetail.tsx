@@ -521,7 +521,9 @@ const CourseDetail = () => {
                       <Award className="h-3.5 w-3.5 mr-1" /> НМО
                     </Badge>
                   }
-                  {course.placesLeft && course.placesLeft < 10 &&
+                  {course.soldOut ? (
+                  <Badge className="bg-red-600 text-white text-sm px-3 py-1">Места закончились</Badge>
+                  ) : course.placesLeft && course.placesLeft < 10 &&
                   <Badge className="bg-orange-500 text-white text-sm px-3 py-1">Осталось {course.placesLeft} мест</Badge>
                   }
                 </div>

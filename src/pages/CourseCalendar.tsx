@@ -340,7 +340,11 @@ const CourseCalendar = () => {
                               НМО
                             </Badge>
                           )}
-                          {course.placesLeft && course.placesLeft < 10 && (
+                          {course.soldOut ? (
+                            <Badge className="bg-red-600/90 text-white text-xs">
+                              Места закончились
+                            </Badge>
+                          ) : course.placesLeft && course.placesLeft < 10 && (
                             <Badge className="bg-orange-500/90 text-white text-xs">
                               Осталось {course.placesLeft} мест
                             </Badge>

@@ -89,7 +89,8 @@ export default function WebinarAlignersMay2026() {
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "Введите имя";
     if (!form.phone.trim()) errs.phone = "Введите телефон";
-    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (!form.email.trim()) errs.email = "Введите email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = "Некорректный email";
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
     setIsLoading(true);
@@ -340,7 +341,7 @@ export default function WebinarAlignersMay2026() {
                   <CheckCircle2 className="h-8 w-8 text-[hsl(155,80%,65%)]" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар в Telegram. До встречи 29 мая!</p>
+                <p className="text-white/70">Мы пришлём ссылку на вебинар на вашу почту. До встречи 29 мая!</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
@@ -355,13 +356,13 @@ export default function WebinarAlignersMay2026() {
                   {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="w-tg" className="text-white/90">Telegram *</Label>
-                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.telegram ? "border-destructive" : ""}`} />
-                  {errors.telegram && <p className="text-xs text-red-400">{errors.telegram}</p>}
+                  <Label htmlFor="w-email" className="text-white/90">Email *</Label>
+                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
+                  {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+                  <Label htmlFor="w-tg" className="text-white/90">Telegram</Label>
+                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>

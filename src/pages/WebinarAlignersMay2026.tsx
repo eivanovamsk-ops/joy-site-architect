@@ -89,7 +89,8 @@ export default function WebinarAlignersMay2026() {
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "Введите имя";
     if (!form.phone.trim()) errs.phone = "Введите телефон";
-    if (!form.telegram.trim()) errs.telegram = "Введите Telegram";
+    if (!form.email.trim()) errs.email = "Введите email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = "Некорректный email";
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
     setIsLoading(true);

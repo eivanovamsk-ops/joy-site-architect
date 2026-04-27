@@ -533,6 +533,11 @@
 
   <!-- Вебинары -->
   <url>
+    <loc>https://articon.pro/education/webinar/aligners-maestro-may-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://articon.pro/education/webinar/brackets-march-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

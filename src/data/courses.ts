@@ -183,7 +183,6 @@ export const courses: Course[] = [
     date: "5 мая 2026",
     dateStart: new Date(2026, 4, 5),
     upcomingDates: [
-      { date: "2 июля 2026", dateStart: new Date(2026, 6, 2) },
       { date: "3 сентября 2026", dateStart: new Date(2026, 8, 3) },
       { date: "16 декабря 2026", dateStart: new Date(2026, 11, 16) },
     ],

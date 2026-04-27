@@ -78,6 +78,7 @@ export interface Course {
   externalUrl?: string;
   isAccredited?: boolean;
   placesLeft?: number;
+  soldOut?: boolean;
   isComingSoon?: boolean;
   comingSoonLabel?: string;
   programDescription?: string;

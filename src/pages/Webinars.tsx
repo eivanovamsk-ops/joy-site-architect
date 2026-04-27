@@ -6,6 +6,17 @@ import { Calendar, Clock, Monitor, ArrowRight } from "lucide-react";
 
 const webinars = [
   {
+    slug: "aligners-maestro-may-2026",
+    title: "Элайнеры в Maestro 3D: первые шаги",
+    description: "Пошаговый алгоритм для врачей-ортодонтов и зубных техников. Как начать планировать лечение на элайнерах в Maestro 3D Ortho Studio V6 без страха перед CAD-программами.",
+    date: "29 мая 2026",
+    time: "19:00 МСК",
+    format: "Онлайн",
+    badge: "Бесплатно",
+    status: "upcoming" as const,
+    image: "/images/webinar/cover-aligners.jpg",
+  },
+  {
     slug: "brackets-march-2026",
     title: "Брекет-системы",
     description: "Современные подходы к работе с брекет-системами: от планирования до фиксации. Разбор реальных клинических кейсов.",

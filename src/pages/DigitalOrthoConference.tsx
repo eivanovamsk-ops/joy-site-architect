@@ -503,6 +503,16 @@ const DigitalOrthoConference = () => {
           </div>
         </section>
 
+        {/* ═══════ PHOTO GALLERY ═══════ */}
+        <section className="py-16 lg:py-24 relative border-t border-[#1A2035]">
+          <CoursePhotoSlider
+            slides={galleryslides}
+            title="Фото с прошлых конференций"
+            subtitle="Атмосфера, эксперты и нетворкинг"
+            sectionClassName=""
+          />
+        </section>
+
         {/* ═══════ TARGET AUDIENCE ═══════ */}
         <section className="py-24 lg:py-32 relative border-t border-[#1A2035]">
           <div className="container mx-auto px-4">

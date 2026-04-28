@@ -14,6 +14,7 @@ interface CoursePhotoSliderProps {
   subtitle?: string;
   autoPlay?: boolean;
   interval?: number;
+  sectionClassName?: string;
 }
 
 const positionClasses: Record<NonNullable<CoursePhotoSlide["position"]>, string> = {

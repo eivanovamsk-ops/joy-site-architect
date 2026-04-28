@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle } from "lucide-react";
+import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
-import { CoursePhotoSlider } from "@/components/education/CoursePhotoSlider";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.jpg";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.jpg";
@@ -16,7 +15,7 @@ import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.jpg";
 import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.jpg";
 import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.jpg";
 
-const galleryslides = [
+const gallerySlides = [
   { src: course22Photo1, caption: "Живое общение с экспертами", position: "bottom-left" as const },
   { src: course22Photo2, caption: "Кофе-брейки и фуршет", position: "top-left" as const },
   { src: course22Photo3, caption: "Выставка партнёров", position: "bottom-right" as const },
@@ -112,6 +111,24 @@ const DigitalOrthoConference = () => {
   const statsReveal = useReveal();
   const pricingReveal = useReveal();
   const ctaReveal = useReveal();
+  const [activeGallerySlide, setActiveGallerySlide] = useState(0);
+
+  const goToGallerySlide = useCallback((index: number) => {
+    setActiveGallerySlide(((index % gallerySlides.length) + gallerySlides.length) % gallerySlides.length);
+  }, []);
+
+  const nextGallerySlide = useCallback(() => {
+    goToGallerySlide(activeGallerySlide + 1);
+  }, [activeGallerySlide, goToGallerySlide]);
+
+  const prevGallerySlide = useCallback(() => {
+    goToGallerySlide(activeGallerySlide - 1);
+  }, [activeGallerySlide, goToGallerySlide]);
+
+  useEffect(() => {
+    const timer = window.setInterval(nextGallerySlide, 5000);
+    return () => window.clearInterval(timer);
+  }, [nextGallerySlide]);
 
   const scrollTo = useCallback((id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -504,13 +521,90 @@ const DigitalOrthoConference = () => {
         </section>
 
         {/* ═══════ PHOTO GALLERY ═══════ */}
-        <section className="py-16 lg:py-24 relative border-t border-[#1A2035]">
-          <CoursePhotoSlider
-            slides={galleryslides}
-            title="Фото с прошлых конференций"
-            subtitle="Атмосфера, эксперты и нетворкинг"
-            sectionClassName=""
-          />
+        <section className="py-20 lg:py-28 relative border-t border-[#1A2035]" id="conference-gallery">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-[#00A3FF]/10 border border-[#00A3FF]/20 flex items-center justify-center">
+                  <Camera className="h-6 w-6" style={{ color: ACCENT }} />
+                </div>
+                <div>
+                  <span className="text-sm tracking-[0.3em] uppercase mb-1 block" style={{ color: ACCENT }}>Галерея</span>
+                  <h2 className="text-3xl md:text-5xl font-bold">Фото с прошлых конференций</h2>
+                  <p className="text-[#F5F5F5]/50 text-sm md:text-base mt-2">Атмосфера, эксперты и нетворкинг</p>
+                </div>
+              </div>
+
+              <div className="relative overflow-hidden rounded-3xl border border-[#1E293B] bg-[#111827]/80 shadow-2xl">
+                <div className="relative aspect-[16/9] w-full">
+                  {gallerySlides.map((slide, i) => (
+                    <article
+                      key={slide.src}
+                      className={cn(
+                        "absolute inset-0 transition-opacity duration-700",
+                        i === activeGallerySlide ? "opacity-100 z-10" : "opacity-0 z-0"
+                      )}
+                      aria-hidden={i !== activeGallerySlide}
+                    >
+                      <img
+                        src={slide.src}
+                        alt={slide.caption}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/80 via-[#0A0E1A]/10 to-[#0A0E1A]/30 pointer-events-none" />
+                      <div className={cn(
+                        "absolute max-w-[80%]",
+                        slide.position === "top-left" && "top-6 left-6 text-left",
+                        slide.position === "top-right" && "top-6 right-6 text-right",
+                        slide.position === "bottom-left" && "bottom-8 left-6 text-left",
+                        slide.position === "bottom-right" && "bottom-8 right-6 text-right"
+                      )}>
+                        <h3 className="text-2xl md:text-4xl font-bold text-[#F5F5F5] drop-shadow-lg">{slide.caption}</h3>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={prevGallerySlide}
+                  aria-label="Предыдущее фото"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#0A0E1A]/60 hover:bg-[#0A0E1A]/80 border border-[#F5F5F5]/15 backdrop-blur-sm flex items-center justify-center text-[#F5F5F5] transition-colors"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextGallerySlide}
+                  aria-label="Следующее фото"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#0A0E1A]/60 hover:bg-[#0A0E1A]/80 border border-[#F5F5F5]/15 backdrop-blur-sm flex items-center justify-center text-[#F5F5F5] transition-colors"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+
+                <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-[#0A0E1A]/70 backdrop-blur-sm text-[#F5F5F5] text-xs font-bold border border-[#F5F5F5]/10">
+                  {activeGallerySlide + 1} / {gallerySlides.length}
+                </div>
+
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+                  {gallerySlides.map((slide, i) => (
+                    <button
+                      key={slide.src}
+                      type="button"
+                      onClick={() => goToGallerySlide(i)}
+                      aria-label={`Перейти к фото ${i + 1}`}
+                      className={cn(
+                        "h-2 rounded-full transition-all duration-300",
+                        i === activeGallerySlide ? "w-8 bg-[#00A3FF]" : "w-2 bg-[#F5F5F5]/50 hover:bg-[#F5F5F5]/80"
+                      )}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ═══════ TARGET AUDIENCE ═══════ */}

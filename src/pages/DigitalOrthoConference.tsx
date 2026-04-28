@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle } from "lucide-react";
+import { Calendar, MapPin, Clock, CheckCircle2, ChevronDown, ArrowRight, Users, Target, Zap, Award, HelpCircle, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
-import { CoursePhotoSlider } from "@/components/education/CoursePhotoSlider";
 import course22Banner from "@/assets/courses/course-22-banner.png";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.jpg";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.jpg";
@@ -16,7 +15,7 @@ import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.jpg";
 import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.jpg";
 import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.jpg";
 
-const galleryslides = [
+const gallerySlides = [
   { src: course22Photo1, caption: "Живое общение с экспертами", position: "bottom-left" as const },
   { src: course22Photo2, caption: "Кофе-брейки и фуршет", position: "top-left" as const },
   { src: course22Photo3, caption: "Выставка партнёров", position: "bottom-right" as const },

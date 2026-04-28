@@ -14,20 +14,7 @@ import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { CourseFloatingVideo } from "@/components/education/CourseFloatingVideo";
-import { CoursePhotoSlider } from "@/components/education/CoursePhotoSlider";
-import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.jpg";
-import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.jpg";
-import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.jpg";
-import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.jpg";
-import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.jpg";
 
-const course22GallerySlides = [
-  { src: course22Photo1, caption: "Живое общение с экспертами", position: "bottom-left" as const },
-  { src: course22Photo2, caption: "Кофе-брейки и фуршет", position: "top-left" as const },
-  { src: course22Photo3, caption: "Выставка партнёров", position: "bottom-right" as const },
-  { src: course22Photo4, caption: "Нетворкинг", position: "top-right" as const },
-  { src: course22Photo5, caption: "Все на своих местах", position: "bottom-left" as const },
-];
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -674,14 +661,7 @@ const CourseDetail = () => {
           </div>
         </section>
 
-        {/* Photo Gallery — only for course 22 */}
-        {course.id === 22 && (
-          <CoursePhotoSlider
-            slides={course22GallerySlides}
-            title="Фото с прошлых конференций"
-            subtitle="Атмосфера, эксперты и нетворкинг"
-          />
-        )}
+
 
         {/* Target Audience & Skills */}
         <section className="py-16">

@@ -14,6 +14,7 @@ interface CoursePhotoSliderProps {
   subtitle?: string;
   autoPlay?: boolean;
   interval?: number;
+  sectionClassName?: string;
 }
 
 const positionClasses: Record<NonNullable<CoursePhotoSlide["position"]>, string> = {
@@ -29,6 +30,7 @@ export function CoursePhotoSlider({
   subtitle,
   autoPlay = true,
   interval = 5000,
+  sectionClassName = "py-16 bg-background",
 }: CoursePhotoSliderProps) {
   const [active, setActive] = useState(0);
   const total = slides.length;
@@ -44,7 +46,7 @@ export function CoursePhotoSlider({
   }, [autoPlay, interval, next]);
 
   return (
-    <section className="py-16 bg-background">
+    <section className={sectionClassName}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">

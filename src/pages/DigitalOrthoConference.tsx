@@ -14,13 +14,23 @@ import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.jpg";
 import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.jpg";
 import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.jpg";
 import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.jpg";
+import course22Photo6 from "@/assets/courses/course-22-gallery/photo-6.jpg";
+import course22Photo7 from "@/assets/courses/course-22-gallery/photo-7.jpg";
+import course22Photo8 from "@/assets/courses/course-22-gallery/photo-8.jpg";
+import course22Photo9 from "@/assets/courses/course-22-gallery/photo-9.jpg";
+import course22Photo10 from "@/assets/courses/course-22-gallery/photo-10.jpg";
 
 const gallerySlides = [
-  { src: course22Photo1, caption: "Живое общение с экспертами", position: "bottom-left" as const },
-  { src: course22Photo2, caption: "Кофе-брейки и фуршет", position: "top-left" as const },
-  { src: course22Photo3, caption: "Выставка партнёров", position: "bottom-right" as const },
-  { src: course22Photo4, caption: "Нетворкинг", position: "top-right" as const },
-  { src: course22Photo5, caption: "Все на своих местах", position: "bottom-left" as const },
+  { src: course22Photo1 },
+  { src: course22Photo2 },
+  { src: course22Photo3 },
+  { src: course22Photo4 },
+  { src: course22Photo5 },
+  { src: course22Photo6 },
+  { src: course22Photo7 },
+  { src: course22Photo8 },
+  { src: course22Photo9 },
+  { src: course22Photo10 },
 ];
 
 const ACCENT = "#00A3FF"; // Blue accent for digital orthodontics
@@ -537,7 +547,7 @@ const DigitalOrthoConference = () => {
                     >
                       <img
                         src={slide.src}
-                        alt={slide.caption}
+                        alt={`Фото ${i + 1}`}
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
                         className="w-full h-full object-cover"

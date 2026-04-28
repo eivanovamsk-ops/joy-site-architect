@@ -547,7 +547,7 @@ const DigitalOrthoConference = () => {
                     >
                       <img
                         src={slide.src}
-                        alt={slide.caption}
+                        alt={`Фото ${i + 1}`}
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
                         className="w-full h-full object-cover"

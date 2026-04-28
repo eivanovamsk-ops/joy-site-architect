@@ -674,14 +674,7 @@ const CourseDetail = () => {
           </div>
         </section>
 
-        {/* Photo Gallery — only for course 22 */}
-        {course.id === 22 && (
-          <CoursePhotoSlider
-            slides={course22GallerySlides}
-            title="Фото с прошлых конференций"
-            subtitle="Атмосфера, эксперты и нетворкинг"
-          />
-        )}
+
 
         {/* Target Audience & Skills */}
         <section className="py-16">

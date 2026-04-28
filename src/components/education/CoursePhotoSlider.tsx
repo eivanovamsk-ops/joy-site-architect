@@ -30,6 +30,7 @@ export function CoursePhotoSlider({
   subtitle,
   autoPlay = true,
   interval = 5000,
+  sectionClassName = "py-16 bg-background",
 }: CoursePhotoSliderProps) {
   const [active, setActive] = useState(0);
   const total = slides.length;

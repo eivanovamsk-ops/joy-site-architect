@@ -46,7 +46,7 @@ export function CoursePhotoSlider({
   }, [autoPlay, interval, next]);
 
   return (
-    <section className="py-16 bg-background">
+    <section className={sectionClassName}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">

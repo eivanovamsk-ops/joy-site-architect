@@ -524,17 +524,6 @@ const DigitalOrthoConference = () => {
         <section className="py-20 lg:py-28 relative border-t border-[#1A2035]" id="conference-gallery">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-2xl bg-[#00A3FF]/10 border border-[#00A3FF]/20 flex items-center justify-center">
-                  <Camera className="h-6 w-6" style={{ color: ACCENT }} />
-                </div>
-                <div>
-                  <span className="text-sm tracking-[0.3em] uppercase mb-1 block" style={{ color: ACCENT }}>Галерея</span>
-                  <h2 className="text-3xl md:text-5xl font-bold">Фото с прошлых конференций</h2>
-                  <p className="text-[#F5F5F5]/50 text-sm md:text-base mt-2">Атмосфера, эксперты и нетворкинг</p>
-                </div>
-              </div>
-
               <div className="relative overflow-hidden rounded-3xl border border-[#1E293B] bg-[#111827]/80 shadow-2xl">
                 <div className="relative aspect-[16/9] w-full">
                   {gallerySlides.map((slide, i) => (
@@ -553,16 +542,6 @@ const DigitalOrthoConference = () => {
                         decoding="async"
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A]/80 via-[#0A0E1A]/10 to-[#0A0E1A]/30 pointer-events-none" />
-                      <div className={cn(
-                        "absolute max-w-[80%]",
-                        slide.position === "top-left" && "top-6 left-6 text-left",
-                        slide.position === "top-right" && "top-6 right-6 text-right",
-                        slide.position === "bottom-left" && "bottom-8 left-6 text-left",
-                        slide.position === "bottom-right" && "bottom-8 right-6 text-right"
-                      )}>
-                        <h3 className="text-2xl md:text-4xl font-bold text-[#F5F5F5] drop-shadow-lg">{slide.caption}</h3>
-                      </div>
                     </article>
                   ))}
                 </div>

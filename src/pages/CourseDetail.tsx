@@ -13,6 +13,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
+import { CourseFloatingVideo } from "@/components/education/CourseFloatingVideo";
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -1173,6 +1174,10 @@ const CourseDetail = () => {
 
       {/* Bottom padding for mobile sticky */}
       <div className="h-20 lg:hidden" />
+
+      {course.id === 16 && (
+        <CourseFloatingVideo src="/videos/course-16-preview.mp4" label="Видео о курсе" />
+      )}
     </Layout>);
 
 };

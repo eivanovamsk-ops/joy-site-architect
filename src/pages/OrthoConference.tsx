@@ -726,16 +726,18 @@ const OrthoConference = () => {
         </div>
 
         {/* ═══════ MOBILE STICKY CTA ═══════ */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] px-3 py-2.5 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-3">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="text-lg text-[#F5F5F5]/30 line-through">15 000 ₽</span>
-                <span className="font-extrabold text-xl" style={{ color: ACCENT }}>5 000 ₽</span>
+            <div className="flex-shrink-0 min-w-0 max-w-[45%]">
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-xs sm:text-sm text-[#F5F5F5]/30 line-through">15 000 ₽</span>
+                <span className="font-extrabold text-base sm:text-lg whitespace-nowrap" style={{ color: ACCENT }}>5 000 ₽</span>
               </div>
-              <div className="text-xs text-[#F5F5F5]/40 truncate">Точка опоры • Казань</div>
+              <div className="text-[10px] text-[#F5F5F5]/40 truncate hidden sm:block">Точка опоры • Казань</div>
             </div>
-            <RegistrationClosed variant="compact" />
+            <div className="flex-1 min-w-0">
+              <RegistrationClosed variant="compact" />
+            </div>
           </div>
         </div>
         <div className="h-20 lg:hidden" />

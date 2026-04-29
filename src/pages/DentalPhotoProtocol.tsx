@@ -655,13 +655,15 @@ const DentalPhotoProtocol = () => {
         </div>
 
         {/* ═══════ MOBILE STICKY CTA ═══════ */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#1A1A1A]/95 backdrop-blur-md border-t border-[#333] px-3 py-2.5 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-3">
-            <div className="flex-1 min-w-0">
-              <div className="font-extrabold text-xl" style={{ color: ACCENT }}>25 000 ₽</div>
-              <div className="text-xs text-[#F5F5F5]/40 truncate">Дентальный фотопротокол</div>
+            <div className="flex-shrink-0 min-w-0 max-w-[40%]">
+              <div className="font-extrabold text-base sm:text-lg whitespace-nowrap leading-tight" style={{ color: ACCENT }}>25 000 ₽</div>
+              <div className="text-[10px] text-[#F5F5F5]/40 truncate hidden sm:block">Дентальный фотопротокол</div>
             </div>
-            <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" buttonLabel="Записаться" />
+            <div className="flex-1 min-w-0">
+              <CourseApplicationForm courseName={course.title} courseDate={course.date} buttonVariant="card" buttonLabel="Записаться" />
+            </div>
           </div>
         </div>
         <div className="h-20 lg:hidden" />

@@ -1158,25 +1158,26 @@ const CourseDetail = () => {
       <CourseContactBlock />
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border p-3 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border px-3 py-2.5 safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-3">
-          <div className="flex-1 min-w-0">
-            <div className="font-extrabold text-primary text-xl">{formatPrice(course.price)}</div>
-            <div className="text-xs text-muted-foreground truncate">{course.title}</div>
+          <div className="flex-shrink-0 min-w-0 max-w-[40%]">
+            <div className="font-extrabold text-primary text-base sm:text-lg leading-tight whitespace-nowrap">{formatPrice(course.price)}</div>
+            <div className="text-[10px] text-muted-foreground truncate hidden sm:block">{course.title}</div>
           </div>
-          <CourseApplicationForm
-            courseName={course.title}
-            coursePrice={course.price}
-            courseDate={course.date}
-                showTelegramField={course.id !== 18}
-            buttonVariant="card"
-            buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться"} />
-          
+          <div className="flex-1 min-w-0">
+            <CourseApplicationForm
+              courseName={course.title}
+              coursePrice={course.price}
+              courseDate={course.date}
+              showTelegramField={course.id !== 18}
+              buttonVariant="card"
+              buttonLabel={course.isComingSoon ? "В лист ожидания" : "Записаться"} />
+          </div>
         </div>
       </div>
 
       {/* Bottom padding for mobile sticky */}
-      <div className="h-20 lg:hidden" />
+      <div className="h-24 lg:hidden" />
 
       {course.id === 16 && (
         <CourseFloatingVideo src="/videos/course-16-preview.mp4" label="Видео о курсе" />

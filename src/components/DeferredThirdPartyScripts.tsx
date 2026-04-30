@@ -15,7 +15,10 @@ export function DeferredThirdPartyScripts() {
     if ((window as any).__PRERENDER__) return;
     if (new URLSearchParams(window.location.search).has("no_third_party")) return;
 
+    let loaded = false;
     const loadScripts = () => {
+      if (loaded) return;
+      loaded = true;
       try {
         appendScript("https://www.googletagmanager.com/gtm.js?id=GTM-NT325H7W");
         appendScript("https://returnal.pro/sync", { charset: "UTF-8" });
@@ -37,10 +40,14 @@ export function DeferredThirdPartyScripts() {
       }
     };
 
+    const afterLoad = () => window.setTimeout(loadScripts, 3000);
     const timer = window.setTimeout(loadScripts, 10000);
-    window.addEventListener("load", () => window.setTimeout(loadScripts, 3000), { once: true });
+    window.addEventListener("load", afterLoad, { once: true });
 
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("load", afterLoad);
+    };
   }, []);
 
   return null;

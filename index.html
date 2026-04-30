@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <script>
       window.__PRERENDER__ = /ReactSnap/i.test(navigator.userAgent);
+      (function () {
+        function patchStorage(name) {
+          try {
+            var key = "__storage_test__";
+            window[name].setItem(key, key);
+            window[name].removeItem(key);
+          } catch (e) {
+            var store = {};
+            var storage = {
+              get length() { return Object.keys(store).length; },
+              clear: function () { store = {}; },
+              getItem: function (key) { return Object.prototype.hasOwnProperty.call(store, key) ? store[key] : null; },
+              key: function (index) { return Object.keys(store)[index] || null; },
+              removeItem: function (key) { delete store[key]; },
+              setItem: function (key, value) { store[key] = String(value); }
+            };
+            try { Object.defineProperty(window, name, { configurable: true, value: storage }); } catch (ignore) {}
+          }
+        }
+        patchStorage("localStorage");
+        patchStorage("sessionStorage");
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Артикон — Экосистема цифровых решений для стоматологии</title>

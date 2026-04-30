@@ -7,7 +7,10 @@ const initialFallbackHtml = document.getElementById("root")?.innerHTML ?? "";
 
 const restoreStaticFallback = () => {
   const root = document.getElementById("root");
-  if (!root || root.childElementCount > 0 || !initialFallbackHtml) return;
+  if (!root || !initialFallbackHtml) return;
+
+  const hasMeaningfulContent = root.textContent?.trim().length || root.querySelector("img, a, button, main, section");
+  if (hasMeaningfulContent) return;
 
   root.innerHTML = initialFallbackHtml;
 };
@@ -63,6 +66,9 @@ try {
       <App />
     </HelmetProvider>
   );
+
+  window.setTimeout(restoreStaticFallback, 3500);
+  window.addEventListener("load", () => window.setTimeout(restoreStaticFallback, 1500), { once: true });
 } catch (error) {
   console.error("App bootstrap failed", error);
   rootElement.innerHTML = `

@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User, Shield } from "lucide-react";
-import { SearchDialog } from "@/components/layout/SearchDialog";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { supabase } from "@/integrations/supabase/client";
 import articonLogo from "@/assets/articon-logo.png";
+
+const SearchDialog = lazy(() =>
+  import("@/components/layout/SearchDialog").then((module) => ({ default: module.SearchDialog }))
+);
 
 // Top gray bar navigation - main sections (no dropdowns)
 const topBarSections = [{
@@ -387,6 +390,10 @@ export function Header() {
           </div>
         </div>}
 
-      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      {searchOpen && (
+        <Suspense fallback={null}>
+          <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+        </Suspense>
+      )}
     </header>;
 }

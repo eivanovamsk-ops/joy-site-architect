@@ -19,9 +19,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
+
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        if (!mounted) return;
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
@@ -29,13 +32,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     );
 
     // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
+    const fallbackTimer = window.setTimeout(() => {
+      if (mounted) setLoading(false);
+    }, 2500);
 
-    return () => subscription.unsubscribe();
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        if (!mounted) return;
+        setSession(session);
+        setUser(session?.user ?? null);
+      })
+      .catch((error) => {
+        console.warn("Auth session restore failed", error);
+      })
+      .finally(() => {
+        if (mounted) setLoading(false);
+        window.clearTimeout(fallbackTimer);
+      });
+
+    return () => {
+      mounted = false;
+      window.clearTimeout(fallbackTimer);
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signUp = async (email: string, password: string, fullName?: string, phone?: string) => {

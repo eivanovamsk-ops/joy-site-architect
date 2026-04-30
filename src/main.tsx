@@ -1,30 +1,36 @@
 import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
+import App from "./App.tsx";
 import "./index.css";
 
 const ensureSafeStorage = () => {
-  try {
-    const key = "__storage_test__";
-    window.localStorage.setItem(key, key);
-    window.localStorage.removeItem(key);
-  } catch {
-    const memoryStore = new Map<string, string>();
-    const storage: Storage = {
-      get length() {
-        return memoryStore.size;
-      },
-      clear: () => memoryStore.clear(),
-      getItem: (key) => memoryStore.get(key) ?? null,
-      key: (index) => Array.from(memoryStore.keys())[index] ?? null,
-      removeItem: (key) => memoryStore.delete(key),
-      setItem: (key, value) => memoryStore.set(key, String(value)),
-    };
+  const patchStorage = (name: "localStorage" | "sessionStorage") => {
     try {
-      Object.defineProperty(window, "localStorage", { configurable: true, value: storage });
+      const key = "__storage_test__";
+      window[name].setItem(key, key);
+      window[name].removeItem(key);
     } catch {
-      // If the browser forbids patching storage, still let React try to render.
+      const memoryStore = new Map<string, string>();
+      const storage: Storage = {
+        get length() {
+          return memoryStore.size;
+        },
+        clear: () => memoryStore.clear(),
+        getItem: (key) => memoryStore.get(key) ?? null,
+        key: (index) => Array.from(memoryStore.keys())[index] ?? null,
+        removeItem: (key) => memoryStore.delete(key),
+        setItem: (key, value) => memoryStore.set(key, String(value)),
+      };
+      try {
+        Object.defineProperty(window, name, { configurable: true, value: storage });
+      } catch {
+        // If the browser forbids patching storage, still let React try to render.
+      }
     }
-  }
+  };
+
+  patchStorage("localStorage");
+  patchStorage("sessionStorage");
 };
 
 const rootElement = document.getElementById("root");
@@ -35,9 +41,7 @@ if (!rootElement) {
 
 ensureSafeStorage();
 
-import("./App.tsx").then(({ default: App }) => {
-  // Очищаем root только после успешной загрузки основного приложения.
-  // Если chunk не загрузился на слабой сети/старом браузере, HTML-fallback останется видимым вместо белого экрана.
+try {
   while (rootElement.firstChild) {
     rootElement.removeChild(rootElement.firstChild);
   }
@@ -47,7 +51,7 @@ import("./App.tsx").then(({ default: App }) => {
       <App />
     </HelmetProvider>
   );
-}).catch((error) => {
+} catch (error) {
   console.error("App bootstrap failed", error);
   rootElement.innerHTML = `
     <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font-family:Arial,sans-serif;background:#f6f7fb;color:#172033;text-align:center">
@@ -58,4 +62,4 @@ import("./App.tsx").then(({ default: App }) => {
       </section>
     </main>
   `;
-});
+}

@@ -8,6 +8,7 @@ import { ShopAdvantages } from "@/components/shop/Advantages";
 import { ShopBrands } from "@/components/shop/Brands";
 import { UpceraShopBanner } from "@/components/shop/UpceraShopBanner";
 import { WhyArticon } from "@/components/shop/WhyArticon";
+import { CallbackPopup } from "@/components/CallbackPopup";
 import { products } from "@/data/products";
 
 const Shop = () => {
@@ -71,6 +72,7 @@ const Shop = () => {
       <WhyArticon />
       <ShopAdvantages />
       <ShopBrands />
+      <CallbackPopup />
     </Layout>
   );
 };

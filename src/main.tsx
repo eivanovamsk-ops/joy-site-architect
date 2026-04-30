@@ -33,18 +33,29 @@ if (!rootElement) {
   throw new Error("Root element not found");
 }
 
-// Очищаем root от возможных артефактов (текстовых узлов от сторонних скриптов),
-// чтобы избежать конфликтов гидратации/рендера на некоторых устройствах.
-while (rootElement.firstChild) {
-  rootElement.removeChild(rootElement.firstChild);
-}
-
 ensureSafeStorage();
 
 import("./App.tsx").then(({ default: App }) => {
+  // Очищаем root только после успешной загрузки основного приложения.
+  // Если chunk не загрузился на слабой сети/старом браузере, HTML-fallback останется видимым вместо белого экрана.
+  while (rootElement.firstChild) {
+    rootElement.removeChild(rootElement.firstChild);
+  }
+
   createRoot(rootElement).render(
     <HelmetProvider>
       <App />
     </HelmetProvider>
   );
+}).catch((error) => {
+  console.error("App bootstrap failed", error);
+  rootElement.innerHTML = `
+    <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font-family:Arial,sans-serif;background:#f6f7fb;color:#172033;text-align:center">
+      <section style="max-width:560px">
+        <h1 style="font-size:28px;line-height:1.2;margin:0 0 12px">Артикон</h1>
+        <p style="font-size:16px;line-height:1.6;margin:0 0 20px">Не удалось загрузить интерактивную версию сайта. Обновите страницу или откройте сайт в актуальной версии браузера.</p>
+        <button onclick="window.location.reload()" style="border:0;border-radius:8px;background:#1f3a66;color:#fff;padding:12px 18px;font-weight:700;cursor:pointer">Обновить страницу</button>
+      </section>
+    </main>
+  `;
 });

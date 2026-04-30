@@ -38,14 +38,10 @@ export function CallbackPopup() {
   useEffect(() => {
     if (wasDismissedRecently()) return;
 
-    // 30s idle timer
-    const timer = setTimeout(showPopup, 30000);
-
-    // Scroll to 50%
     const handleScroll = () => {
       const scrolled = window.scrollY + window.innerHeight;
       const total = document.documentElement.scrollHeight;
-      if (scrolled >= total * 0.5) {
+      if (window.scrollY > 400 && scrolled >= total * 0.75) {
         showPopup();
       }
     };
@@ -53,7 +49,6 @@ export function CallbackPopup() {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, [showPopup, wasDismissedRecently]);

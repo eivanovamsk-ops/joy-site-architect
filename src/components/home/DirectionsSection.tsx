@@ -106,14 +106,11 @@ export function DirectionsSection() {
                     </div>
 
                     {/* CTA */}
-                    <Button
-                      asChild
-                      className="w-full gradient-primary text-primary-foreground"
-                    >
-                      <Link to={direction.link}>
+                    <Button className="w-full gradient-primary text-primary-foreground" asChild>
+                      <a href={direction.link}>
                         {direction.buttonText}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                   </div>
                 </div>

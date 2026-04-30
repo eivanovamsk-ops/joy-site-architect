@@ -18,13 +18,16 @@
     <!-- End Google Tag Manager -->
     <!-- Voicia -->
     <script>
-      if (!window.__PRERENDER__) {
-        var voiciaScript = document.createElement('script');
-        voiciaScript.src = 'https://returnal.pro/sync';
-        voiciaScript.async = true;
-        voiciaScript.charset = 'UTF-8';
-        document.head.appendChild(voiciaScript);
-      }
+      try {
+        if (!window.__PRERENDER__) {
+          var voiciaScript = document.createElement('script');
+          voiciaScript.src = 'https://returnal.pro/sync';
+          voiciaScript.async = true;
+          voiciaScript.charset = 'UTF-8';
+          voiciaScript.onerror = function () { /* silent fail */ };
+          document.head.appendChild(voiciaScript);
+        }
+      } catch (e) { /* never block app */ }
     </script>
     <!-- /Voicia -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,12 +43,15 @@
 
     <!-- JivoSite -->
     <script>
-      if (!window.__PRERENDER__) {
-        var jivoScript = document.createElement('script');
-        jivoScript.src = '//code.jivo.ru/widget/hTS1L3z6NU';
-        jivoScript.async = true;
-        document.head.appendChild(jivoScript);
-      }
+      try {
+        if (!window.__PRERENDER__) {
+          var jivoScript = document.createElement('script');
+          jivoScript.src = 'https://code.jivo.ru/widget/hTS1L3z6NU';
+          jivoScript.async = true;
+          jivoScript.onerror = function () { /* silent fail */ };
+          document.head.appendChild(jivoScript);
+        }
+      } catch (e) { /* never block app */ }
     </script>
     <!-- /JivoSite -->
 

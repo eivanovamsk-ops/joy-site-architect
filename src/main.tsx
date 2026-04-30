@@ -19,7 +19,11 @@ const ensureSafeStorage = () => {
       removeItem: (key) => memoryStore.delete(key),
       setItem: (key, value) => memoryStore.set(key, String(value)),
     };
-    Object.defineProperty(window, "localStorage", { configurable: true, value: storage });
+    try {
+      Object.defineProperty(window, "localStorage", { configurable: true, value: storage });
+    } catch {
+      // If the browser forbids patching storage, still let React try to render.
+    }
   }
 };
 

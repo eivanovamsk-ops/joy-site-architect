@@ -5,7 +5,6 @@ import { DirectionsSection } from "@/components/home/DirectionsSection";
 import { EcosystemSection } from "@/components/home/EcosystemSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CTASection } from "@/components/home/CTASection";
-import { CallbackPopup } from "@/components/CallbackPopup";
 
 const Index = () => {
   return (
@@ -35,7 +34,6 @@ const Index = () => {
       <EcosystemSection />
       <TestimonialsSection />
       <CTASection />
-      <CallbackPopup />
     </Layout>
   );
 };

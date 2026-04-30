@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Phone } from "lucide-react";
+import { safeLocalStorage } from "@/lib/safeStorage";
 
 const POPUP_DISMISSED_KEY = "callback_popup_dismissed";
 const DISMISS_HOURS = 24;
@@ -24,7 +25,7 @@ export function CallbackPopup() {
   const [submitted, setSubmitted] = useState(false);
 
   const wasDismissedRecently = useCallback(() => {
-    const ts = localStorage.getItem(POPUP_DISMISSED_KEY);
+    const ts = safeLocalStorage.getItem(POPUP_DISMISSED_KEY);
     if (!ts) return false;
     return Date.now() - Number(ts) < DISMISS_HOURS * 60 * 60 * 1000;
   }, []);
@@ -59,7 +60,7 @@ export function CallbackPopup() {
 
   const handleClose = (isOpen: boolean) => {
     if (!isOpen) {
-      localStorage.setItem(POPUP_DISMISSED_KEY, String(Date.now()));
+      safeLocalStorage.setItem(POPUP_DISMISSED_KEY, String(Date.now()));
     }
     setOpen(isOpen);
   };
@@ -88,7 +89,7 @@ export function CallbackPopup() {
 
       setSubmitted(true);
       toast.success("Спасибо! Менеджер свяжется с вами в ближайшее время.");
-      localStorage.setItem(POPUP_DISMISSED_KEY, String(Date.now()));
+      safeLocalStorage.setItem(POPUP_DISMISSED_KEY, String(Date.now()));
       setOpen(false);
     } catch (err) {
       console.error(err);

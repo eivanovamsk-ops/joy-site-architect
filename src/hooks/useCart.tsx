@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, createContext, useContext, ReactNode } from "react";
+import { safeLocalStorage } from "@/lib/safeStorage";
 
 export interface CartItem {
   slug: string;
@@ -24,7 +25,7 @@ const CART_STORAGE_KEY = "articon_cart";
 
 function readCartFromStorage(): CartItem[] {
   try {
-    const saved = localStorage.getItem(CART_STORAGE_KEY);
+    const saved = safeLocalStorage.getItem(CART_STORAGE_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) {
@@ -44,12 +45,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // if localStorage already has items (prevents accidental wipe)
   useEffect(() => {
     if (items.length > 0) {
-      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      safeLocalStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     } else {
       // Only clear storage if it was an intentional clear (not an init race)
       const stored = readCartFromStorage();
       if (stored.length === 0) {
-        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+        safeLocalStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
       }
     }
   }, [items]);
@@ -113,7 +114,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clearCart = useCallback(() => {
     setItems([]);
-    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+    safeLocalStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
   }, []);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);

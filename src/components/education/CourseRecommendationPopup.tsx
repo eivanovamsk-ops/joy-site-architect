@@ -27,6 +27,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
+import { safeSessionStorage } from "@/lib/safeStorage";
 
 const SPECIALIZATIONS = [
   "Врач ортопед",
@@ -95,7 +96,7 @@ export const CourseRecommendationPopup = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const dismissed = sessionStorage.getItem(STORAGE_KEY);
+    const dismissed = safeSessionStorage.getItem(STORAGE_KEY);
     if (dismissed === "1") setHidden(true);
   }, []);
 
@@ -106,9 +107,7 @@ export const CourseRecommendationPopup = () => {
   const handleHide = (e: React.MouseEvent) => {
     e.stopPropagation();
     setHidden(true);
-    try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {}
+    safeSessionStorage.setItem(STORAGE_KEY, "1");
   };
 
   const handleOpenChange = (next: boolean) => {

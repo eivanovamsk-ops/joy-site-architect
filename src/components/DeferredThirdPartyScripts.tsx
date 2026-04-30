@@ -30,7 +30,8 @@ export function DeferredThirdPartyScripts() {
           accurateTrackBounce: true,
           trackLinks: true,
         });
-        ((window as any)._tmr ||= []).push({ id: "3749351", type: "pageView", start: Date.now() });
+        (window as any)._tmr = (window as any)._tmr || [];
+        (window as any)._tmr.push({ id: "3749351", type: "pageView", start: Date.now() });
       } catch (error) {
         console.warn("Third-party scripts skipped", error);
       }

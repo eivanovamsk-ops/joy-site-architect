@@ -3,6 +3,15 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
+const initialFallbackHtml = document.getElementById("root")?.innerHTML ?? "";
+
+const restoreStaticFallback = () => {
+  const root = document.getElementById("root");
+  if (!root || root.childElementCount > 0 || !initialFallbackHtml) return;
+
+  root.innerHTML = initialFallbackHtml;
+};
+
 const ensureSafeStorage = () => {
   const patchStorage = (name: "localStorage" | "sessionStorage") => {
     try {
@@ -42,11 +51,14 @@ if (!rootElement) {
 ensureSafeStorage();
 
 try {
-  while (rootElement.firstChild) {
-    rootElement.removeChild(rootElement.firstChild);
-  }
+  window.addEventListener("error", restoreStaticFallback);
+  window.addEventListener("unhandledrejection", restoreStaticFallback);
 
-  createRoot(rootElement).render(
+  const root = createRoot(rootElement, {
+    onRecoverableError: (error) => console.warn("React recovered from render issue", error),
+  });
+
+  root.render(
     <HelmetProvider>
       <App />
     </HelmetProvider>

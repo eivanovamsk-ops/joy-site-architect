@@ -14,6 +14,7 @@ export function DeferredThirdPartyScripts() {
   useEffect(() => {
     if ((window as any).__PRERENDER__) return;
     if (new URLSearchParams(window.location.search).has("no_third_party")) return;
+    if (!new URLSearchParams(window.location.search).has("enable_third_party")) return;
 
     let loaded = false;
     const loadScripts = () => {

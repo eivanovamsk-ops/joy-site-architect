@@ -15,10 +15,12 @@ export default defineConfig(({ mode }) => ({
       targets: ["defaults", "not IE 11", "Chrome >= 60", "Safari >= 12", "iOS >= 12", "Firefox >= 60", "Edge >= 79"],
       modernTargets: "Chrome >= 60, Safari >= 12, iOS >= 12, Firefox >= 60, Edge >= 79",
       modernPolyfills: true,
+      renderLegacyChunks: true,
+      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
     }),
   ].filter(Boolean),
   build: {
-    target: "es2018",
+    target: "es2017",
   },
   resolve: {
     alias: {

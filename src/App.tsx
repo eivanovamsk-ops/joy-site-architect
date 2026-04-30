@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { AuthProvider } from "@/hooks/useAuth";
 import { CartProvider } from "@/hooks/useCart";
 import { CookieConsent } from "@/components/CookieConsent";
+import { DeferredThirdPartyScripts } from "@/components/DeferredThirdPartyScripts";
 import Index from "./pages/Index";
 
 const Laboratory = lazy(() => import("./pages/Laboratory"));
@@ -179,6 +180,7 @@ const App = () => (
               </Routes>
               </Suspense>
               <CookieConsent />
+              <DeferredThirdPartyScripts />
             </BrowserRouter>
           </TooltipProvider>
         </CartProvider>

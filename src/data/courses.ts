@@ -2072,7 +2072,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 5, 5),
     location: "Онлайн",
     format: "Вебинар",
-    coverImage: "",
+    coverImage: course26Banner,
     price: 0,
     description: "Бесплатный онлайн-вебинар по непрямой фиксации брекетов. Разберем топ-5 проблем при позиционировании.",
     shortDescription: "Топ-5 проблем при позиционировании брекетов и как их решает работа с КТ и Maestro 3D",

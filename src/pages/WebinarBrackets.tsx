@@ -251,7 +251,7 @@ export default function WebinarBrackets() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {caseImages.map((img, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-white/10 hover:border-accent/40 transition-colors group">
-                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>

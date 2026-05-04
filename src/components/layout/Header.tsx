@@ -255,7 +255,7 @@ export function Header() {
           <div className="flex items-center justify-between h-20 gap-6">
             {/* Logo - larger like articon.com (~50px height) */}
             <Link to="/" className="flex-shrink-0 pl-2">
-              <img src={articonLogo} alt="Articon - Dental Digital Solutions" className="h-12 w-auto" />
+              <img src={articonLogo} alt="Articon - Dental Digital Solutions" className="h-12 w-auto" loading="lazy" />
             </Link>
 
             {/* Mobile Telegram Bot Button - centered */}

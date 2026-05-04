@@ -286,7 +286,7 @@ export default function WebinarAlignersMay2026() {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0">
               <div className="w-52 h-52 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl">
-                <img src="/images/webinar/speaker.png" alt="Зухра Чеккуева — практикующий ортодонт" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/images/webinar/speaker.webp" alt="Зухра Чеккуева — практикующий ортодонт" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
             <div>

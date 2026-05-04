@@ -67,7 +67,7 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={videos[currentIndex]} className="w-full" preload="metadata" muted playsInline />
+            <video src={videos[currentIndex]} className="w-full" preload="none" muted playsInline />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
                 <Play className="h-6 w-6 text-white fill-white" />
@@ -161,9 +161,9 @@ const partners = [
 
 
 const perks = [
-  { icon: MessageCircle, title: "Живое общение", desc: "В перерывах и после основной части у вас будет возможность в непринужденной обстановке пообщаться со спикерами и коллегами, обсудить рабочие моменты и наладить новые профессиональные связи.", image: "/images/courses/course-18-communication.jpg" },
-  { icon: UtensilsCrossed, title: "Питание", desc: "Мы позаботились о том, чтобы день был насыщенным не только знаниями, но и впечатлениями. Вкусные угощения в течение дня — часть атмосферы, которую мы стараемся создать.", image: "/images/courses/course-18-food.jpg" },
-  { icon: Wine, title: "Вечеринка", desc: "А вечером в пятницу мы устроим фуршет с угощениями и напитками, включая алкоголь. Это отличная возможность расслабиться после насыщенного дня, продолжить общение и просто хорошо провести время.", image: "/images/courses/course-18-party.png" },
+  { icon: MessageCircle, title: "Живое общение", desc: "В перерывах и после основной части у вас будет возможность в непринужденной обстановке пообщаться со спикерами и коллегами, обсудить рабочие моменты и наладить новые профессиональные связи.", image: "/images/courses/course-18-communication.webp" },
+  { icon: UtensilsCrossed, title: "Питание", desc: "Мы позаботились о том, чтобы день был насыщенным не только знаниями, но и впечатлениями. Вкусные угощения в течение дня — часть атмосферы, которую мы стараемся создать.", image: "/images/courses/course-18-food.webp" },
+  { icon: Wine, title: "Вечеринка", desc: "А вечером в пятницу мы устроим фуршет с угощениями и напитками, включая алкоголь. Это отличная возможность расслабиться после насыщенного дня, продолжить общение и просто хорошо провести время.", image: "/images/courses/course-18-party.webp" },
 ];
 
 const Workshop16Shades = () => {
@@ -204,7 +204,7 @@ const Workshop16Shades = () => {
       {/* ═══════ HERO ═══════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
-          <img src="/images/courses/course-18-hero.jpg" alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" />
+          <img src="/images/courses/course-18-hero.webp" alt="Шестнадцать оттенков белого" className="w-full h-[120%] object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#1A1A1A]/85 to-[#1A1A1A]/50" />
         </div>
 
@@ -308,9 +308,9 @@ const Workshop16Shades = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { text: "Демонстрация на большом экране", image: "/images/courses/course-18-format-demo.jpg" },
-                { text: "Персональная обратная связь напрямую от мастера", image: "/images/courses/course-18-format-feedback.jpg" },
-                { text: "Презентация новейших материалов и оборудования", image: "/images/courses/course-18-format-equipment.jpg" },
+                { text: "Демонстрация на большом экране", image: "/images/courses/course-18-format-demo.webp" },
+                { text: "Персональная обратная связь напрямую от мастера", image: "/images/courses/course-18-format-feedback.webp" },
+                { text: "Презентация новейших материалов и оборудования", image: "/images/courses/course-18-format-equipment.webp" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col">
                   <p className="text-lg font-medium mb-4 flex items-start gap-3">
@@ -396,7 +396,7 @@ const Workshop16Shades = () => {
               Вы сможете подойти, изучить их вблизи и задать вопросы представителям компаний.
             </p>
             <div className="mt-10 max-w-4xl mx-auto rounded-2xl overflow-hidden">
-              <img src="/images/courses/course-18-innovations.jpg" alt="Инновации, к которым можно прикоснуться" className="w-full h-auto object-cover" loading="lazy" />
+              <img src="/images/courses/course-18-innovations.webp" alt="Инновации, к которым можно прикоснуться" className="w-full h-auto object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -422,21 +422,21 @@ const Workshop16Shades = () => {
               <div className="flex gap-4 items-stretch">
                 <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
-                    src="/images/courses/course-18-band-4.jpg"
+                    src="/images/courses/course-18-band-4.webp"
                     alt="Выступление вокалистки кавер-группы"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
-                    src="/images/courses/course-18-band-1.jpg"
+                    src="/images/courses/course-18-band-1.webp"
                     alt="Кавер-группа на мероприятии Артикон"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1 rounded-2xl overflow-hidden border border-[#333] hover:border-[#D4AF37]/30 transition-all duration-500">
                   <img
-                    src="/images/courses/course-18-band-3.jpg"
+                    src="/images/courses/course-18-band-3.webp"
                     alt="Живое выступление кавер-группы"
                     className="w-full h-full object-cover"
                   />

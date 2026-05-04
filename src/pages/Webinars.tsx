@@ -14,7 +14,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
-    image: "/images/webinar/cover-aligners.jpg",
+    image: "/images/webinar/cover-aligners.webp",
   },
   {
     slug: "brackets-march-2026",
@@ -25,7 +25,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
-    image: "/images/webinar/cover.jpg",
+    image: "/images/webinar/cover.webp",
   },
   {
     slug: "zircon-march-2026",
@@ -36,7 +36,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Уже прошёл",
     status: "past" as const,
-    image: "/images/webinar/cover-zircon-banner.png",
+    image: "/images/webinar/cover-zircon-banner.webp",
   },
 ];
 

@@ -49,7 +49,7 @@ export function EducationOrthoSection() {
                 className="w-full h-full object-cover"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster=""
               />
             </div>

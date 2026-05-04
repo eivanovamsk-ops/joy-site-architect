@@ -50,7 +50,7 @@ function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hid
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={video} className="w-full" preload="metadata" muted playsInline poster="/images/webinar/cover-zircon.jpg" />
+            <video src={video} className="w-full" preload="none" muted playsInline poster="/images/webinar/cover-zircon.webp" />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5 md:p-3">
                 <Play className="h-3 w-3 md:h-6 md:w-6 text-white fill-white" />
@@ -75,11 +75,11 @@ function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hid
 }
 
 const caseImages = [
-  { src: "/images/webinar/zircon-case-1.jpg", alt: "Работа из циркония — мостовидный протез на имплантах" },
-  { src: "/images/webinar/zircon-case-2.jpg", alt: "Работа из циркония — окклюзионный вид коронок" },
-  { src: "/images/webinar/zircon-case-3.jpg", alt: "Работа из циркония — боковая группа зубов" },
-  { src: "/images/webinar/zircon-case-4.jpg", alt: "Работа из циркония — фронтальная группа" },
-  { src: "/images/webinar/zircon-case-5.jpg", alt: "Работа из циркония — коронки с розовой керамикой" },
+  { src: "/images/webinar/zircon-case-1.webp", alt: "Работа из циркония — мостовидный протез на имплантах" },
+  { src: "/images/webinar/zircon-case-2.webp", alt: "Работа из циркония — окклюзионный вид коронок" },
+  { src: "/images/webinar/zircon-case-3.webp", alt: "Работа из циркония — боковая группа зубов" },
+  { src: "/images/webinar/zircon-case-4.webp", alt: "Работа из циркония — фронтальная группа" },
+  { src: "/images/webinar/zircon-case-5.webp", alt: "Работа из циркония — коронки с розовой керамикой" },
 ];
 
 function CasesSlider() {
@@ -296,17 +296,17 @@ export default function WebinarZirconMarch2026() {
         <meta name="description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 14 апреля, 19:00. Регистрация." />
         <meta property="og:title" content="Вебинар: Лайфхаки в работе с цирконом — 14 апреля | Articon" />
         <meta property="og:description" content="Бесплатный онлайн-вебинар: лайфхаки работы с цирконом. Секреты окрашивания, обжига и эстетики. 14 апреля, 19:00." />
-        <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
+        <meta property="og:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.webp" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.png" />
+        <meta name="twitter:image" content="https://joy-site-architect.lovable.app/images/webinar/cover-zircon-banner.webp" />
       </Helmet>
 
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/webinar/cover-zircon-banner.png"
+            src="/images/webinar/cover-zircon-banner.webp"
             alt="Вебинар: Лайфхаки в работе с цирконом — Артикон"
             className="w-full h-full object-cover"
           />
@@ -472,7 +472,7 @@ export default function WebinarZirconMarch2026() {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0">
               <div className="w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl bg-muted group/speaker cursor-pointer">
-                <img src="/images/webinar/speaker-zircon.jpg" alt="Виктория Никулина" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/speaker:scale-110" />
+                <img src="/images/webinar/speaker-zircon.webp" alt="Виктория Никулина" className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/speaker:scale-110" loading="lazy" />
               </div>
             </div>
             <div>
@@ -545,7 +545,7 @@ export default function WebinarZirconMarch2026() {
                 src="/videos/webinar-format.mp4"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 className="w-full aspect-video bg-black"
               />
             </div>
@@ -635,12 +635,12 @@ export default function WebinarZirconMarch2026() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <video controls className="w-full" preload="metadata" poster="">
+              <video controls className="w-full" preload="none" poster="">
                 <source src="/videos/about-school-2.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <video controls className="w-full" preload="metadata" poster="">
+              <video controls className="w-full" preload="none" poster="">
                 <source src="/videos/about-school-3.mp4" type="video/mp4" />
               </video>
             </div>

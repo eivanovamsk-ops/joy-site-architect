@@ -42,7 +42,7 @@ export function CourseFloatingVideo({ src, label = "Видео о курсе" }:
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={src} className="w-full" preload="metadata" muted playsInline />
+            <video src={src} className="w-full" preload="none" muted playsInline />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
                 <Play className="h-6 w-6 text-white fill-white" />

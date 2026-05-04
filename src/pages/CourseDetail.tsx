@@ -219,7 +219,7 @@ function CoursePhotoGallery({ images }: {images: string[];}) {
                 "border-border hover:border-primary/50 opacity-70 hover:opacity-100"
               )}>
               
-                <img src={img} alt={`Миниатюра ${i + 1}`} className="w-full h-full object-cover" />
+                <img src={img} alt={`Миниатюра ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
               </button>
             )}
           </div>
@@ -497,7 +497,7 @@ const CourseDetail = () => {
         {/* Background */}
         {course.coverImage ?
         <div className="absolute inset-0">
-            <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
+            <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" loading="lazy" />
             {!course.lightBanner &&
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
           }
@@ -1136,7 +1136,7 @@ const CourseDetail = () => {
               <Link key={relCourse.id} to={`/education/course/${relCourse.id}`} className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                     {relCourse.coverImage &&
                 <div className="h-40 overflow-hidden">
-                        <img src={relCourse.coverImage} alt={relCourse.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src={relCourse.coverImage} alt={relCourse.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                       </div>
                 }
                     <div className="p-5">

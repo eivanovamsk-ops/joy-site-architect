@@ -632,7 +632,7 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Шкультецкий Григорий",
-        photo: "/images/lecturers/shkultsetsky-grigoriy.png",
+        photo: "/images/lecturers/shkultsetsky-grigoriy.webp",
         position: "Инженер компании Upcera. Технолог ЗТЛ \"Атлас\".",
         bio: "Инженер компании Upcera. Технолог ЗТЛ «Атлас». В Стоматологии более 8 лет."
       }
@@ -712,7 +712,7 @@ export const courses: Course[] = [
       },
       {
         name: "Виктор Артемов",
-        photo: "/images/lecturers/viktor-artemov.png",
+        photo: "/images/lecturers/viktor-artemov.webp",
         position: "Основатель группы компаний Артикон",
         bio: "Основатель и руководитель группы компаний Артикон."
       },
@@ -1158,12 +1158,12 @@ export const courses: Course[] = [
     tags: ["CAD/CAM", "цирконий", "exocad", "MIYO", "фрезерование"],
     sectionTags: ["для техников", "CAD/CAM"],
     galleryImages: [
-      "/images/courses/course-15-gallery-1.jpg",
-      "/images/courses/course-15-gallery-2.jpg",
-      "/images/courses/course-15-gallery-3.jpg",
-      "/images/courses/course-15-gallery-4.jpg",
-      "/images/courses/course-15-gallery-5.jpg",
-      "/images/courses/course-15-gallery-6.jpg"
+      "/images/courses/course-15-gallery-1.webp",
+      "/images/courses/course-15-gallery-2.webp",
+      "/images/courses/course-15-gallery-3.webp",
+      "/images/courses/course-15-gallery-4.webp",
+      "/images/courses/course-15-gallery-5.webp",
+      "/images/courses/course-15-gallery-6.webp"
     ]
   },
   {
@@ -1367,19 +1367,19 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Дмитрий Филинов",
-        photo: "/images/lecturers/dmitry-filinov.png",
+        photo: "/images/lecturers/dmitry-filinov.webp",
         position: "Зубной техник, специалист по цифровым технологиям",
         bio: "Руководитель CAD/CAM департамента группы компаний «РИКОМ». Лектор компании Zirkonzahn. Основатель и владелец зуботехнической лаборатории BrighOneLab. Стаж работы более 13 лет.",
       },
       {
         name: "Дмитрий Никоненко",
-        photo: "/images/lecturers/dmitry-nikonenko.png",
+        photo: "/images/lecturers/dmitry-nikonenko.webp",
         position: "Зубной мастер-техник",
         bio: "Основатель и владелец зуботехнической лаборатории «Дентальные мастерские Феникс». Консультант компании «Kuraray Noritake Dental Inc.». Победитель федеральных и международных чемпионатов зубных техников.",
       },
       {
         name: "Шамиль Магомедов",
-        photo: "/images/lecturers/shamil-magomedov.png",
+        photo: "/images/lecturers/shamil-magomedov.webp",
         position: "Руководитель отдела функциональной эстетики Артикон",
         bio: "Зубной техник, тренер Contrast Dental Direkt, MIYO.",
       },
@@ -1604,13 +1604,13 @@ export const courses: Course[] = [
     tags: ["фотография", "фотопротокол", "документирование", "Lightroom", "Photoshop"],
     sectionTags: ["для врачей", "для техников", "ортодонтия", "ортопедия", "CAD/CAM"],
     galleryImages: [
-      "/images/courses/course-20-gallery-1.jpg",
-      "/images/courses/course-20-gallery-2.jpg",
-      "/images/courses/course-20-gallery-3.jpg",
-      "/images/courses/course-20-gallery-4.jpg",
-      "/images/courses/course-20-gallery-5.jpg",
-      "/images/courses/course-20-gallery-6.jpg",
-      "/images/courses/course-20-gallery-7.jpg",
+      "/images/courses/course-20-gallery-1.webp",
+      "/images/courses/course-20-gallery-2.webp",
+      "/images/courses/course-20-gallery-3.webp",
+      "/images/courses/course-20-gallery-4.webp",
+      "/images/courses/course-20-gallery-5.webp",
+      "/images/courses/course-20-gallery-6.webp",
+      "/images/courses/course-20-gallery-7.webp",
     ]
   },
   {
@@ -1656,19 +1656,19 @@ export const courses: Course[] = [
         name: "Артёмов Виктор",
         position: "Основатель группы компаний Артикон",
         bio: "Основатель группы компаний Артикон. Наша цель — дать вам практические инструменты для роста вашего бизнеса. Мы собрали реальные кейсы, цифровые решения и экспертизу, которые помогут вашей лаборатории работать эффективнее и прибыльнее.",
-        photo: "/images/lecturers/viktor-artemov.png"
+        photo: "/images/lecturers/viktor-artemov.webp"
       },
       {
         name: "Юсуфов Асад",
         position: "Председатель Ассоциации по защите прав в сфере здравоохранения",
         bio: "Председатель Ассоциации организаций, экспертов и специалистов по защите прав в сфере здравоохранения.",
-        photo: "/images/lecturers/asad-yusufov.png"
+        photo: "/images/lecturers/asad-yusufov.webp"
       },
       {
         name: "Маршани Тимур",
         position: "Адвокат, специалист в области медицинского, международного публичного и частного права",
         bio: "Адвокат, специалист в области медицинского, международного публичного и частного права. Консультирует по вопросам правового регулирования медицинской деятельности и защиты прав медицинских организаций.",
-        photo: "/images/lecturers/timur-marshani.png"
+        photo: "/images/lecturers/timur-marshani.webp"
       }
     ],
     includes: [
@@ -1698,17 +1698,17 @@ export const courses: Course[] = [
     partners: [
       {
         name: "Ассоциация организаций, экспертов и специалистов по защите прав в сфере здравоохранения",
-        logo: "/images/partners/health-rights-association.png",
+        logo: "/images/partners/health-rights-association.webp",
         url: "https://xn-----8kcnbtiic3bbbfhn4ak8j.xn--p1ai/"
       },
       {
         name: "Московская торгово-промышленная палата",
-        logo: "/images/partners/moscow-chamber.png",
+        logo: "/images/partners/moscow-chamber.webp",
         url: "https://mostpp.ru/"
       },
       {
         name: "Первая ассоциация зуботехнических лабораторий",
-        logo: "/images/partners/pazl-association.png",
+        logo: "/images/partners/pazl-association.webp",
         url: ""
       }
     ]
@@ -1851,10 +1851,10 @@ export const courses: Course[] = [
     isAccredited: true,
     placesLeft: 5,
     galleryImages: [
-      "/images/courses/cadcam-gallery-1.png",
-      "/images/courses/cadcam-gallery-2.png",
-      "/images/courses/cadcam-gallery-3.png",
-      "/images/courses/cadcam-gallery-4.png"
+      "/images/courses/cadcam-gallery-1.webp",
+      "/images/courses/cadcam-gallery-2.webp",
+      "/images/courses/cadcam-gallery-3.webp",
+      "/images/courses/cadcam-gallery-4.webp"
     ]
   },
   {
@@ -1917,7 +1917,7 @@ export const courses: Course[] = [
         name: "Чеккуева Зухра",
         position: "Врач-ортодонт, эксперт в области 3D ортодонтии",
         bio: "Более 2 000 смоделированных сетапов. Сертифицированный врач Flexiligner, Ormco, Spark. Лечение пациентов только по цифровому протоколу.",
-        photo: "/images/lecturers/chekkueva-zuhra.png",
+        photo: "/images/lecturers/chekkueva-zuhra.webp",
         achievements: ["2000+ сетапов", "Сертифицированный врач Flexiligner, Ormco, Spark"]
       }
     ],
@@ -1956,7 +1956,7 @@ export const courses: Course[] = [
     slug: "implant-prosthetics-protocol",
     title: "Новый протокол для протезирования на имплантатах",
     subtitle: "Цифровой путь от сканирования до реализации конструкции",
-    coverImage: "/images/courses/course-21-hero.png",
+    coverImage: "/images/courses/course-21-hero.webp",
     date: "8 апреля 2026 | 15:00-19:00",
     dateStart: new Date(2026, 3, 8, 0, 0, 0),
     location: "Москва, Megapolis Hall, Варшавское шоссе д33к12",
@@ -2045,7 +2045,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 3, 14),
     location: "Онлайн",
     format: "Вебинар",
-    coverImage: "/images/webinar/cover-zircon-banner.png",
+    coverImage: "/images/webinar/cover-zircon-banner.webp",
     price: 0,
     description: "Бесплатный вебинар для зубных техников: разберём частые ошибки при работе с цирконием, поделимся лайфхаками по окрашиванию и синтеризации.",
     shortDescription: "Лайфхаки и частые ошибки при работе с цирконием",
@@ -2099,7 +2099,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 4, 29),
     location: "Онлайн",
     format: "Вебинар",
-    coverImage: "/images/webinar/cover-aligners.jpg",
+    coverImage: "/images/webinar/cover-aligners.webp",
     price: 0,
     description: "Пошаговый алгоритм для врачей-ортодонтов и зубных техников. Как начать планировать лечение на элайнерах в Maestro 3D Ortho Studio V6 без страха перед CAD-программами.",
     shortDescription: "Первые шаги в планировании элайнеров в Maestro 3D Ortho Studio V6",

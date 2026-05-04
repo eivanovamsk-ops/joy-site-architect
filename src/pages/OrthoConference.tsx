@@ -66,7 +66,7 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={videos[currentIndex]} className="w-full" preload="metadata" muted playsInline />
+            <video src={videos[currentIndex]} className="w-full" preload="none" muted playsInline />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5">
                 <Play className="h-3 w-3 text-white fill-white" />
@@ -271,7 +271,7 @@ const OrthoConference = () => {
         {/* ═══════ HERO ═══════ */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <img src={course19Banner} alt="Точка опоры" className="w-full h-[120%] object-cover" />
+            <img src={course19Banner} alt="Точка опоры" className="w-full h-[120%] object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 via-[#1A1A1A]/50 to-[#1A1A1A]" />
           </div>
 
@@ -427,7 +427,7 @@ const OrthoConference = () => {
                   <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
                 </div>
                 <a href="https://ramadakazan.com/" target="_blank" rel="noopener noreferrer" className="shrink-0 hover:opacity-80 transition-opacity">
-                  <img src="/images/courses/ramada-logo.png" alt="Ramada by Wyndham Kazan City Centre" className="h-24 md:h-28 w-auto" />
+                  <img src="/images/courses/ramada-logo.webp" alt="Ramada by Wyndham Kazan City Centre" className="h-24 md:h-28 w-auto" loading="lazy" />
                 </a>
               </div>
 

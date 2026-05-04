@@ -13,7 +13,7 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 const LAB_OG_IMAGE = `${SITE_URL}/og-laboratory.jpg`;
 const SHOP_OG_IMAGE = `${SITE_URL}/og-shop.jpg`;
 const EDUCATION_OG_IMAGE = `${SITE_URL}/og-education.jpg`;
-const COURSE_18_OG_IMAGE = `${SITE_URL}/images/courses/course-18-hero.jpg`;
+const COURSE_18_OG_IMAGE = `${SITE_URL}/images/courses/course-18-hero.webp`;
 
 const normalizePath = (pathname: string) => {
   if (!pathname || pathname === "/") return "/";

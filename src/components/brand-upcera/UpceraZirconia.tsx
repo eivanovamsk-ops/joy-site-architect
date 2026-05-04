@@ -65,7 +65,7 @@ export function UpceraZirconia() {
             >
               <div className="bg-card border border-border/50 rounded-xl overflow-hidden hover:shadow-md transition-shadow h-full">
                 <div className="aspect-square bg-muted/20 flex items-center justify-center p-4">
-                  <img src={s.image} alt={s.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy" />
+                  <img src={s.image} alt={s.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">{s.name}</h3>

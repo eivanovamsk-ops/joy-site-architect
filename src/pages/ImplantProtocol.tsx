@@ -306,9 +306,9 @@ const ImplantProtocol = () => {
                         </div>
                         {hasImage && (
                           <div className={cn("md:w-1/2 flex flex-col gap-4", 'image2' in item && item.image2 ? "md:flex-row" : "")}>
-                            <img src={item.image} alt={item.title} className="rounded-xl w-full object-contain max-h-[280px]" loading="lazy" loading="lazy" />
+                            <img src={item.image} alt={item.title} className="rounded-xl w-full object-contain max-h-[280px]" loading="lazy" />
                             {'image2' in item && item.image2 && (
-                              <img src={(item as any).image2} alt={item.title} className="rounded-xl w-full md:w-1/2 object-contain max-h-[280px]" loading="lazy" loading="lazy" />
+                              <img src={(item as any).image2} alt={item.title} className="rounded-xl w-full md:w-1/2 object-contain max-h-[280px]" loading="lazy" />
                             )}
                           </div>
                         )}

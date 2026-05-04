@@ -318,7 +318,7 @@ const Workshop16Shades = () => {
                     {item.text}
                   </p>
                   <div className="rounded-2xl overflow-hidden border border-[#333] mt-auto">
-                    <img src={item.image} alt={item.text} className="w-full h-48 object-cover" loading="lazy" loading="lazy" />
+                    <img src={item.image} alt={item.text} className="w-full h-48 object-cover" loading="lazy" />
                   </div>
                 </div>
               ))}
@@ -369,7 +369,7 @@ const Workshop16Shades = () => {
                   <h3 className="text-lg font-bold mb-3">{p.title}</h3>
                   <p className="text-sm text-[#F5F5F5] leading-relaxed mb-4 flex-1">{p.desc}</p>
                   <div className="rounded-xl overflow-hidden mt-auto">
-                    <img src={p.image} alt={p.title} className="w-full h-40 object-cover" loading="lazy" loading="lazy" />
+                    <img src={p.image} alt={p.title} className="w-full h-40 object-cover" loading="lazy" />
                   </div>
                 </div>
               );
@@ -396,7 +396,7 @@ const Workshop16Shades = () => {
               Вы сможете подойти, изучить их вблизи и задать вопросы представителям компаний.
             </p>
             <div className="mt-10 max-w-4xl mx-auto rounded-2xl overflow-hidden">
-              <img src="/images/courses/course-18-innovations.webp" alt="Инновации, к которым можно прикоснуться" className="w-full h-auto object-cover" loading="lazy" loading="lazy" />
+              <img src="/images/courses/course-18-innovations.webp" alt="Инновации, к которым можно прикоснуться" className="w-full h-auto object-cover" loading="lazy" />
             </div>
           </div>
         </div>

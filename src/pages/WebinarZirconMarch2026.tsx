@@ -50,7 +50,7 @@ function FloatingVideoWidget({ video, hideWhenRegVisible }: { video: string; hid
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={video} className="w-full" preload="metadata" muted playsInline poster="/images/webinar/cover-zircon.webp" />
+            <video src={video} className="w-full" preload="none" muted playsInline poster="/images/webinar/cover-zircon.webp" />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5 md:p-3">
                 <Play className="h-3 w-3 md:h-6 md:w-6 text-white fill-white" />
@@ -545,7 +545,7 @@ export default function WebinarZirconMarch2026() {
                 src="/videos/webinar-format.mp4"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 className="w-full aspect-video bg-black"
               />
             </div>
@@ -635,12 +635,12 @@ export default function WebinarZirconMarch2026() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <video controls className="w-full" preload="metadata" poster="">
+              <video controls className="w-full" preload="none" poster="">
                 <source src="/videos/about-school-2.mp4" type="video/mp4" />
               </video>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <video controls className="w-full" preload="metadata" poster="">
+              <video controls className="w-full" preload="none" poster="">
                 <source src="/videos/about-school-3.mp4" type="video/mp4" />
               </video>
             </div>

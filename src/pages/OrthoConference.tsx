@@ -66,7 +66,7 @@ function FloatingVideoWidget({ videos }: { videos: string[] }) {
 
         {!playing ? (
           <div className="relative cursor-pointer group" onClick={handlePlay}>
-            <video src={videos[currentIndex]} className="w-full" preload="metadata" muted playsInline />
+            <video src={videos[currentIndex]} className="w-full" preload="none" muted playsInline />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-1.5">
                 <Play className="h-3 w-3 text-white fill-white" />

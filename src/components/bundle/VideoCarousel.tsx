@@ -36,7 +36,7 @@ const VideoCard = ({ src }: { src: string }) => {
         playsInline
         muted
         loop
-        preload="metadata"
+        preload="none"
         onEnded={() => setPlaying(false)}
       />
       {!playing && (

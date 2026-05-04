@@ -427,7 +427,7 @@ const OrthoConference = () => {
                   <p className="text-[#F5F5F5]/50 text-lg">15 апреля 2026</p>
                 </div>
                 <a href="https://ramadakazan.com/" target="_blank" rel="noopener noreferrer" className="shrink-0 hover:opacity-80 transition-opacity">
-                  <img src="/images/courses/ramada-logo.png" alt="Ramada by Wyndham Kazan City Centre" className="h-24 md:h-28 w-auto" />
+                  <img src="/images/courses/ramada-logo.webp" alt="Ramada by Wyndham Kazan City Centre" className="h-24 md:h-28 w-auto" />
                 </a>
               </div>
 

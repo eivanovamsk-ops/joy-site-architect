@@ -223,13 +223,13 @@ const faq = [
 ];
 
 const galleryImages = [
-  "/images/courses/course-20-gallery-1.jpg",
-  "/images/courses/course-20-gallery-2.jpg",
-  "/images/courses/course-20-gallery-3.jpg",
-  "/images/courses/course-20-gallery-4.jpg",
-  "/images/courses/course-20-gallery-5.jpg",
-  "/images/courses/course-20-gallery-6.jpg",
-  "/images/courses/course-20-gallery-7.jpg",
+  "/images/courses/course-20-gallery-1.webp",
+  "/images/courses/course-20-gallery-2.webp",
+  "/images/courses/course-20-gallery-3.webp",
+  "/images/courses/course-20-gallery-4.webp",
+  "/images/courses/course-20-gallery-5.webp",
+  "/images/courses/course-20-gallery-6.webp",
+  "/images/courses/course-20-gallery-7.webp",
 ];
 
 const DentalPhotoProtocol = () => {

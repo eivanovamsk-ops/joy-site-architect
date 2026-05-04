@@ -15,21 +15,21 @@ import {
 } from "lucide-react";
 
 const caseImages = [
-  { src: "/images/webinar/case-1.jpg", alt: "Кейс до/после — боковая проекция" },
-  { src: "/images/webinar/case-2.jpg", alt: "Кейс до/после — фронтальная проекция" },
-  { src: "/images/webinar/case-3.jpg", alt: "Кейс до/после — верхняя челюсть" },
-  { src: "/images/webinar/case-4.jpg", alt: "Кейс до/после — нижняя челюсть" },
-  { src: "/images/webinar/case-5.jpg", alt: "Фиксация брекет-системы" },
-  { src: "/images/webinar/case-6.jpg", alt: "Элайнер на зубах" },
-  { src: "/images/webinar/case-7.jpg", alt: "Нанесение композита" },
-  { src: "/images/webinar/case-8.jpg", alt: "Непрямая фиксация — джиг" },
-  { src: "/images/webinar/case-9.jpg", alt: "Брекеты с эластиками" },
-  { src: "/images/webinar/case-10.jpg", alt: "3D-модель черепа с брекетами — фронтальная" },
-  { src: "/images/webinar/case-11.jpg", alt: "3D-модель черепа с брекетами — боковая" },
-  { src: "/images/webinar/case-12.jpg", alt: "3D-модель — верхняя челюсть с брекетами" },
-  { src: "/images/webinar/case-13.jpg", alt: "3D-модель — нижняя челюсть с брекетами" },
-  { src: "/images/webinar/case-14.jpg", alt: "Джиги для непрямой фиксации на модели" },
-  { src: "/images/webinar/case-15.jpg", alt: "Прозрачные капы с брекетами — верхняя и нижняя челюсть" },
+  { src: "/images/webinar/case-1.webp", alt: "Кейс до/после — боковая проекция" },
+  { src: "/images/webinar/case-2.webp", alt: "Кейс до/после — фронтальная проекция" },
+  { src: "/images/webinar/case-3.webp", alt: "Кейс до/после — верхняя челюсть" },
+  { src: "/images/webinar/case-4.webp", alt: "Кейс до/после — нижняя челюсть" },
+  { src: "/images/webinar/case-5.webp", alt: "Фиксация брекет-системы" },
+  { src: "/images/webinar/case-6.webp", alt: "Элайнер на зубах" },
+  { src: "/images/webinar/case-7.webp", alt: "Нанесение композита" },
+  { src: "/images/webinar/case-8.webp", alt: "Непрямая фиксация — джиг" },
+  { src: "/images/webinar/case-9.webp", alt: "Брекеты с эластиками" },
+  { src: "/images/webinar/case-10.webp", alt: "3D-модель черепа с брекетами — фронтальная" },
+  { src: "/images/webinar/case-11.webp", alt: "3D-модель черепа с брекетами — боковая" },
+  { src: "/images/webinar/case-12.webp", alt: "3D-модель — верхняя челюсть с брекетами" },
+  { src: "/images/webinar/case-13.webp", alt: "3D-модель — нижняя челюсть с брекетами" },
+  { src: "/images/webinar/case-14.webp", alt: "Джиги для непрямой фиксации на модели" },
+  { src: "/images/webinar/case-15.webp", alt: "Прозрачные капы с брекетами — верхняя и нижняя челюсть" },
 ];
 
 const programTopics = [
@@ -210,7 +210,7 @@ export default function WebinarBrackets() {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0">
               <div className="w-52 h-52 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl">
-                <img src="/images/webinar/speaker.png" alt="Зухра Чеккуева" className="w-full h-full object-cover" />
+                <img src="/images/webinar/speaker.webp" alt="Зухра Чеккуева" className="w-full h-full object-cover" />
               </div>
             </div>
             <div>

@@ -521,7 +521,7 @@ const LabManagementCourse = () => {
 
               <div className="mb-6 flex items-center gap-5">
                 <img
-                  src="/images/lecturers/kravchenko.png"
+                  src="/images/lecturers/kravchenko.webp"
                   alt="Мария Кравченко"
                   className="h-28 w-28 rounded-full object-cover border-2 border-accent/40 shadow-lg"
                 />

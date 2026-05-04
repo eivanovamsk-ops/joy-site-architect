@@ -75,19 +75,19 @@ const topics = [
     title: "Ультрастом — решения с мультиюнитами",
     desc: "Когда цифра работает правильно — вы экономите время, получаете предсказуемый результат.",
     icon: Zap,
-    image: "/images/courses/course-21-multiunit.png",
+    image: "/images/courses/course-21-multiunit.webp",
   },
   {
     title: "Угловое решение до 25°",
     desc: "Угловые решения в ортопедических конструкциях реализуются при помощи титановых оснований с помощью винта Dynamic и специальной отвёртки.",
     icon: Target,
-    image: "/images/courses/course-21-angular-solution.png",
+    image: "/images/courses/course-21-angular-solution.webp",
   },
   {
     title: "Реалгайд — диагностика и планирование",
     desc: "На этапе планирования выбираем высоту шейки мультиюнита, угла и направление шахты. Разработаны программы и функционал для удобной работы.",
     icon: Award,
-    image: "/images/courses/course-21-exoplan.png",
+    image: "/images/courses/course-21-exoplan.webp",
   },
   {
     title: "Экзоплан — подбор в Экзокаде",
@@ -235,7 +235,7 @@ const ImplantProtocol = () => {
               <div className="hidden lg:flex justify-end items-center relative">
                 <div className="relative w-full max-w-2xl">
                   <img
-                    src="/images/courses/course-21-hero.png"
+                    src="/images/courses/course-21-hero.webp"
                     alt="Rundeer V5 и UltraFitScan UF-B"
                     className="w-full object-contain scale-110"
                     style={{

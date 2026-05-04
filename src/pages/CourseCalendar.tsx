@@ -499,7 +499,7 @@ const CourseCalendar = () => {
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
-                        src="/images/courses/course-18-banner.jpg"
+                        src="/images/courses/course-18-banner.webp"
                         alt="Шестнадцать оттенков белого"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
                       />
@@ -550,7 +550,7 @@ const CourseCalendar = () => {
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
-                        src="/images/courses/course-21-hero.png"
+                        src="/images/courses/course-21-hero.webp"
                         alt="Новый протокол для протезирования на имплантатах"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
                       />
@@ -601,7 +601,7 @@ const CourseCalendar = () => {
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
-                        src="/images/webinar/cover-zircon-banner.png"
+                        src="/images/webinar/cover-zircon-banner.webp"
                         alt="Лайфхаки в работе с цирконом"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
                       />
@@ -652,7 +652,7 @@ const CourseCalendar = () => {
                   >
                     <div className="relative h-40 overflow-hidden">
                       <img
-                        src="/images/webinar/cover.jpg"
+                        src="/images/webinar/cover.webp"
                         alt="Непрямая фиксация брекетов"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 grayscale"
                       />

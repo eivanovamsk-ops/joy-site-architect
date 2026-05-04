@@ -497,7 +497,7 @@ const CourseDetail = () => {
         {/* Background */}
         {course.coverImage ?
         <div className="absolute inset-0">
-            <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" loading="lazy" />
+            <img src={course.coverImage} alt={course.title} loading="eager" decoding="async" className="w-full h-full object-cover" />
             {!course.lightBanner &&
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
           }

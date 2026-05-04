@@ -210,7 +210,7 @@ export default function WebinarBrackets() {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0">
               <div className="w-52 h-52 rounded-2xl overflow-hidden border-4 border-accent/30 shadow-2xl">
-                <img src="/images/webinar/speaker.webp" alt="Зухра Чеккуева" className="w-full h-full object-cover" />
+                <img src="/images/webinar/speaker.webp" alt="Зухра Чеккуева" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
             <div>
@@ -251,7 +251,7 @@ export default function WebinarBrackets() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {caseImages.map((img, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-white/10 hover:border-accent/40 transition-colors group">
-                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
             ))}
           </div>

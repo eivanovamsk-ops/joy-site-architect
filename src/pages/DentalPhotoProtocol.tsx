@@ -128,7 +128,7 @@ function PhotoGallery({ images }: { images: string[] }) {
                   : "border-[#333] hover:border-[#00BCD4]/50 opacity-60 hover:opacity-100"
               )}
             >
-              <img src={img} alt={`Миниатюра ${i + 1}`} className="w-full h-full object-cover" />
+              <img src={img} alt={`Миниатюра ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
             </button>
           ))}
         </div>
@@ -288,7 +288,7 @@ const DentalPhotoProtocol = () => {
         {/* ═══════ HERO ═══════ */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <img src={course20Banner} alt="Дентальный фотопротокол" className="w-full h-[120%] object-cover" />
+            <img src={course20Banner} alt="Дентальный фотопротокол" className="w-full h-[120%] object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/60 via-[#1A1A1A]/40 to-[#1A1A1A]" />
           </div>
 

@@ -67,7 +67,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <img src={articonLogo} alt="Articon" className="h-8 w-auto brightness-0 invert" />
+            <img src={articonLogo} alt="Articon" className="h-8 w-auto brightness-0 invert" loading="lazy" />
             <p className="text-background/70 text-sm leading-relaxed">
               ООО «Артикон Трейд»
             </p>

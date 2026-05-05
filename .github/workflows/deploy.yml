@@ -22,8 +22,7 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: your-ftp-server
-          username: your-ftp-user
-          password: your-ftp-password
-          local-dir: dist/
-          server-dir: /domains/articon.pro/public_html/
+          server: 141.8.192.36
+username: a0868516
+password: Articon-2023!@
+server-dir: /domains/articon.pro/public_html/

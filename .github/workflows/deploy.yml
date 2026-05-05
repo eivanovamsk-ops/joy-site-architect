@@ -1,4 +1,4 @@
-name: Deploy to SprintHost
+name: Deploy to Sprinthost
 
 on:
   push:
@@ -13,6 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Install dependencies
         run: npm install
 
@@ -23,6 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 141.8.192.36
-username: a0868516
-password: Articon-2023!@
-server-dir: /domains/articon.pro/public_html/
+          username: a0868516
+          password: Articon-2023!@
+          local-dir: dist/
+          server-dir: /domains/articon.pro/public_html/

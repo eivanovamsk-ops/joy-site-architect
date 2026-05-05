@@ -1,186 +1,163 @@
 // Rundeer V5 images
-import rundeerV5Main from "@/assets/products/rundeer-v5.png";
-import rundeerV5_1 from "@/assets/products/rundeer-v5-1.png";
-import rundeerV5_2 from "@/assets/products/rundeer-v5-2.png";
-import rundeerV5_3 from "@/assets/products/rundeer-v5-3.png";
-import rundeerV5_4 from "@/assets/products/rundeer-v5-4.png";
-import rundeerV5_5 from "@/assets/products/rundeer-v5-5.png";
-import rundeerV5_6 from "@/assets/products/rundeer-v5-6.png";
-import rundeerV5_7 from "@/assets/products/rundeer-v5-7.png";
-import rundeerV5_8 from "@/assets/products/rundeer-v5-8.png";
-import rundeerV5_9 from "@/assets/products/rundeer-v5-9.png";
-
+const rundeerV5Main = new URL("../assets/products/rundeer-v5.png", import.meta.url).href;
+const rundeerV5_1 = new URL("../assets/products/rundeer-v5-1.png", import.meta.url).href;
+const rundeerV5_2 = new URL("../assets/products/rundeer-v5-2.png", import.meta.url).href;
+const rundeerV5_3 = new URL("../assets/products/rundeer-v5-3.png", import.meta.url).href;
+const rundeerV5_4 = new URL("../assets/products/rundeer-v5-4.png", import.meta.url).href;
+const rundeerV5_5 = new URL("../assets/products/rundeer-v5-5.png", import.meta.url).href;
+const rundeerV5_6 = new URL("../assets/products/rundeer-v5-6.png", import.meta.url).href;
+const rundeerV5_7 = new URL("../assets/products/rundeer-v5-7.png", import.meta.url).href;
+const rundeerV5_8 = new URL("../assets/products/rundeer-v5-8.png", import.meta.url).href;
+const rundeerV5_9 = new URL("../assets/products/rundeer-v5-9.png", import.meta.url).href;
 // Rundeer V6 images
-import rundeerV6Main from "@/assets/products/rundeer-v6.png";
-import rundeerV6_1 from "@/assets/products/rundeer-v6-1.png";
-import rundeerV6_2 from "@/assets/products/rundeer-v6-2.png";
-import rundeerV6_3 from "@/assets/products/rundeer-v6-3.png";
-import rundeerV6_4 from "@/assets/products/rundeer-v6-4.png";
-import rundeerV6_5 from "@/assets/products/rundeer-v6-5.png";
-import rundeerV6_6 from "@/assets/products/rundeer-v6-6.png";
-
+const rundeerV6Main = new URL("../assets/products/rundeer-v6.png", import.meta.url).href;
+const rundeerV6_1 = new URL("../assets/products/rundeer-v6-1.png", import.meta.url).href;
+const rundeerV6_2 = new URL("../assets/products/rundeer-v6-2.png", import.meta.url).href;
+const rundeerV6_3 = new URL("../assets/products/rundeer-v6-3.png", import.meta.url).href;
+const rundeerV6_4 = new URL("../assets/products/rundeer-v6-4.png", import.meta.url).href;
+const rundeerV6_5 = new URL("../assets/products/rundeer-v6-5.png", import.meta.url).href;
+const rundeerV6_6 = new URL("../assets/products/rundeer-v6-6.png", import.meta.url).href;
 // Uniformation GK3 Ultra (actual Ultra model) images
-import gk3UltraMain from "@/assets/products/gk3-ultra-main.jpg";
-import gk3UltraScaled from "@/assets/products/gk3-ultra-scaled.webp";
-import gk3UltraResin from "@/assets/products/gk3-ultra-resin.png";
-import gk3UltraCartridges from "@/assets/products/gk3-ultra-cartridges.webp";
-import gk3UltraOpen from "@/assets/products/gk3-ultra-open.webp";
-import gk3UltraZaxis from "@/assets/products/gk3-ultra-zaxis.webp";
-import gk3UltraResinFeed from "@/assets/products/gk3-ultra-resin-feed.webp";
-import gk3UltraHeating from "@/assets/products/gk3-ultra-heating.webp";
-
+const gk3UltraMain = new URL("../assets/products/gk3-ultra-main.jpg", import.meta.url).href;
+const gk3UltraScaled = new URL("../assets/products/gk3-ultra-scaled.webp", import.meta.url).href;
+const gk3UltraResin = new URL("../assets/products/gk3-ultra-resin.png", import.meta.url).href;
+const gk3UltraCartridges = new URL("../assets/products/gk3-ultra-cartridges.webp", import.meta.url).href;
+const gk3UltraOpen = new URL("../assets/products/gk3-ultra-open.webp", import.meta.url).href;
+const gk3UltraZaxis = new URL("../assets/products/gk3-ultra-zaxis.webp", import.meta.url).href;
+const gk3UltraResinFeed = new URL("../assets/products/gk3-ultra-resin-feed.webp", import.meta.url).href;
+const gk3UltraHeating = new URL("../assets/products/gk3-ultra-heating.webp", import.meta.url).href;
 // Uniformation GK3 Pro images
-import gk3Pro1 from "@/assets/products/gk3-pro-1.png";
-import gk3Pro2 from "@/assets/products/gk3-pro-2.png";
-import gk3Pro3 from "@/assets/products/gk3-pro-3.png";
-import gk3Pro4 from "@/assets/products/gk3-pro-4.png";
-import gk3Pro5 from "@/assets/products/gk3-pro-5.png";
-import gk3ProUvCompare from "@/assets/products/gk3-pro-uv-compare.png";
-import gk3ProCuringChart from "@/assets/products/gk3-pro-curing-chart.png";
-
+const gk3Pro1 = new URL("../assets/products/gk3-pro-1.png", import.meta.url).href;
+const gk3Pro2 = new URL("../assets/products/gk3-pro-2.png", import.meta.url).href;
+const gk3Pro3 = new URL("../assets/products/gk3-pro-3.png", import.meta.url).href;
+const gk3Pro4 = new URL("../assets/products/gk3-pro-4.png", import.meta.url).href;
+const gk3Pro5 = new URL("../assets/products/gk3-pro-5.png", import.meta.url).href;
+const gk3ProUvCompare = new URL("../assets/products/gk3-pro-uv-compare.png", import.meta.url).href;
+const gk3ProCuringChart = new URL("../assets/products/gk3-pro-curing-chart.png", import.meta.url).href;
 // HeyGears photopolymers
-import heygearsModelGpCaramel from "@/assets/products/heygears-model-gp-caramel.png";
-import heygearsModelGpGrey from "@/assets/products/heygears-model-gp-grey.png";
-import heygearsModelGpSamples from "@/assets/products/heygears-model-gp-samples.png";
-import heygearsUltraprintModelGpGrey from "@/assets/products/heygears-ultraprint-dental-model-gp-grey.png";
-
+const heygearsModelGpCaramel = new URL("../assets/products/heygears-model-gp-caramel.png", import.meta.url).href;
+const heygearsModelGpGrey = new URL("../assets/products/heygears-model-gp-grey.png", import.meta.url).href;
+const heygearsModelGpSamples = new URL("../assets/products/heygears-model-gp-samples.png", import.meta.url).href;
+const heygearsUltraprintModelGpGrey = new URL("../assets/products/heygears-ultraprint-dental-model-gp-grey.png", import.meta.url).href;
 // TOPCORE images
-import topcoreCompositeA1 from "@/assets/products/topcore-composite-a1.png";
-import topcoreCompositeA2 from "@/assets/products/topcore-composite-a2.png";
-import topcoreCompositeA3 from "@/assets/products/topcore-composite-a3.png";
-import topcoreCompositeBleach from "@/assets/products/topcore-composite-bleach.png";
-import topcoreModel from "@/assets/products/topcore-model.png";
-import topcoreModelPro from "@/assets/products/topcore-model-pro.png";
-import topcoreModelProPreview from "@/assets/products/topcore-model-pro-real.png";
-import topcorePink from "@/assets/products/topcore-pink.png";
-import topcorePinkBase from "@/assets/products/topcore-pink-base.png";
-import topcoreSg from "@/assets/products/topcore-sg.png";
-
+const topcoreCompositeA1 = new URL("../assets/products/topcore-composite-a1.png", import.meta.url).href;
+const topcoreCompositeA2 = new URL("../assets/products/topcore-composite-a2.png", import.meta.url).href;
+const topcoreCompositeA3 = new URL("../assets/products/topcore-composite-a3.png", import.meta.url).href;
+const topcoreCompositeBleach = new URL("../assets/products/topcore-composite-bleach.png", import.meta.url).href;
+const topcoreModel = new URL("../assets/products/topcore-model.png", import.meta.url).href;
+const topcoreModelPro = new URL("../assets/products/topcore-model-pro.png", import.meta.url).href;
+const topcoreModelProPreview = new URL("../assets/products/topcore-model-pro-real.png", import.meta.url).href;
+const topcorePink = new URL("../assets/products/topcore-pink.png", import.meta.url).href;
+const topcorePinkBase = new URL("../assets/products/topcore-pink-base.png", import.meta.url).href;
+const topcoreSg = new URL("../assets/products/topcore-sg.png", import.meta.url).href;
 // Upcera Realism paints & glaze images
-import upceraRealismSingle from "@/assets/products/upcera-realism-single.jpg";
-import upceraRealismColors from "@/assets/products/upcera-realism-colors.jpg";
-import upceraRealismGlaze from "@/assets/products/upcera-realism-glaze.jpg";
-import upceraRealismLiquid from "@/assets/products/upcera-realism-liquid.png";
-import upceraRealism7 from "@/assets/products/upcera-realism-7-colors.jpg";
-import upceraRealism20 from "@/assets/products/upcera-realism-20-colors.jpg";
-import upceraRealism20_2 from "@/assets/products/upcera-realism-20-colors-2.jpg";
-
+const upceraRealismSingle = new URL("../assets/products/upcera-realism-single.jpg", import.meta.url).href;
+const upceraRealismColors = new URL("../assets/products/upcera-realism-colors.jpg", import.meta.url).href;
+const upceraRealismGlaze = new URL("../assets/products/upcera-realism-glaze.jpg", import.meta.url).href;
+const upceraRealismLiquid = new URL("../assets/products/upcera-realism-liquid.png", import.meta.url).href;
+const upceraRealism7 = new URL("../assets/products/upcera-realism-7-colors.jpg", import.meta.url).href;
+const upceraRealism20 = new URL("../assets/products/upcera-realism-20-colors.jpg", import.meta.url).href;
+const upceraRealism20_2 = new URL("../assets/products/upcera-realism-20-colors-2.jpg", import.meta.url).href;
 // PMMA disc images
-import pmmaLima from "@/assets/products/pmma-lima.jpg";
-import pmmaDentalDirekt from "@/assets/products/pmma-dental-direkt.jpg";
-
-
+const pmmaLima = new URL("../assets/products/pmma-lima.jpg", import.meta.url).href;
+const pmmaDentalDirekt = new URL("../assets/products/pmma-dental-direkt.jpg", import.meta.url).href;
 // Upcera UP.CAD press-ceramic images
-import upceraUpcadHt from "@/assets/products/upcera-upcad-ht.jpg";
-import upceraUpcadLt from "@/assets/products/upcera-upcad-lt.jpg";
-
+const upceraUpcadHt = new URL("../assets/products/upcera-upcad-ht.jpg", import.meta.url).href;
+const upceraUpcadLt = new URL("../assets/products/upcera-upcad-lt.jpg", import.meta.url).href;
 // HARZ Labs images
-import harzDentalCast from "@/assets/products/harz-dental-cast.jpg";
-import harzDentalCastCherryPreview from "@/assets/products/harz-dental-cast-cherry-real.jpg";
-import harzDentalModel from "@/assets/products/harz-dental-model.jpg";
-import harzDentalSand from "@/assets/products/harz-dental-sand.jpg";
-import harzDentalSandPreview from "@/assets/products/harz-dental-sand-a1-a2-real.jpg";
-import harzDentalTray from "@/assets/products/harz-dental-tray.jpg";
-import harzDentalTrayV2Preview from "@/assets/products/harz-dental-tray-v2-real.jpg";
-import harzDentalYellowClear from "@/assets/products/harz-dental-yellow-clear.jpg";
-import harzDentalYellowClearProPreview from "@/assets/products/harz-dental-yellow-clear-pro-real.jpg";
-
+const harzDentalCast = new URL("../assets/products/harz-dental-cast.jpg", import.meta.url).href;
+const harzDentalCastCherryPreview = new URL("../assets/products/harz-dental-cast-cherry-real.jpg", import.meta.url).href;
+const harzDentalModel = new URL("../assets/products/harz-dental-model.jpg", import.meta.url).href;
+const harzDentalSand = new URL("../assets/products/harz-dental-sand.jpg", import.meta.url).href;
+const harzDentalSandPreview = new URL("../assets/products/harz-dental-sand-a1-a2-real.jpg", import.meta.url).href;
+const harzDentalTray = new URL("../assets/products/harz-dental-tray.jpg", import.meta.url).href;
+const harzDentalTrayV2Preview = new URL("../assets/products/harz-dental-tray-v2-real.jpg", import.meta.url).href;
+const harzDentalYellowClear = new URL("../assets/products/harz-dental-yellow-clear.jpg", import.meta.url).href;
+const harzDentalYellowClearProPreview = new URL("../assets/products/harz-dental-yellow-clear-pro-real.jpg", import.meta.url).href;
 // Upcera zirconia disc images
-import upceraStColor from "@/assets/products/upcera-st-color.jpg";
-import upceraHtWhite from "@/assets/products/upcera-ht-white.jpg";
-import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
-import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg";
-import upceraStMl from "@/assets/products/upcera-st-ml.jpg";
-import upceraDuo from "@/assets/products/upcera-duo.png";
-
+const upceraStColor = new URL("../assets/products/upcera-st-color.jpg", import.meta.url).href;
+const upceraHtWhite = new URL("../assets/products/upcera-ht-white.jpg", import.meta.url).href;
+const upceraExploreFunctional = new URL("../assets/products/upcera-explore-functional.jpg", import.meta.url).href;
+const upceraExploreEsthetic = new URL("../assets/products/upcera-explore-esthetic.jpg", import.meta.url).href;
+const upceraStMl = new URL("../assets/products/upcera-st-ml.jpg", import.meta.url).href;
+const upceraDuo = new URL("../assets/products/upcera-duo.png", import.meta.url).href;
 // HeyGears A2D HD images
-import heygearsA2dHd from "@/assets/products/heygears-a2d-hd.png";
-import heygearsA2dHd2 from "@/assets/products/heygears-a2d-hd-2.png";
-
+const heygearsA2dHd = new URL("../assets/products/heygears-a2d-hd.png", import.meta.url).href;
+const heygearsA2dHd2 = new URL("../assets/products/heygears-a2d-hd-2.png", import.meta.url).href;
 // Shining 3D AutoScan DS-EX Pro(C) images
-import shining3dAutoscanDsExProC1 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-1.jpeg";
-import shining3dAutoscanDsExProC2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp";
-import shining3dAutoscanDsExProC3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-3.webp";
-import shining3dAutoscanDsExProC4 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-4.jpg";
-import shining3dAutoscanDsExProC5 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-5.webp";
-import shining3dAutoscanDsExProC6 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-6.webp";
-import shining3dAutoscanDsExProC7 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-7.webp";
-import shining3dAutoscanDsExProC8 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-8.webp";
-import shining3dAutoscanDsExProC9 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-9.webp";
-import shining3dAutoscanDsExProC10 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-10.webp";
-import shining3dAutoscanDsExProC11 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-11.webp";
-import shining3dAutoscanDsExProC12 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-12.webp";
-import shining3dAutoscanDsExProC13 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-13.webp";
-import shining3dAutoscanDsExProC14 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-14.jpg";
-import shining3dAutoscanDsExProC15 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-15.webp";
-import shining3dAutoscanDsExProC16 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-16.webp";
-import shining3dAutoscanDsExProC17 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-17.webp";
-import shining3dAutoscanDsExProC18 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-18.webp";
-import shining3dAutoscanDsExProC19 from "@/assets/products/shining3d-autoscan-ds-ex-pro-c-19.webp";
-
+const shining3dAutoscanDsExProC1 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-1.jpeg", import.meta.url).href;
+const shining3dAutoscanDsExProC2 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC3 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-3.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC4 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-4.jpg", import.meta.url).href;
+const shining3dAutoscanDsExProC5 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-5.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC6 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-6.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC7 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-7.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC8 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-8.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC9 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-9.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC10 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-10.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC11 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-11.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC12 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-12.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC13 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-13.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC14 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-14.jpg", import.meta.url).href;
+const shining3dAutoscanDsExProC15 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-15.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC16 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-16.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC17 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-17.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC18 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-18.webp", import.meta.url).href;
+const shining3dAutoscanDsExProC19 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-19.webp", import.meta.url).href;
 // Shining 3D AutoScan DS-EX Pro(H) images
-import shining3dAutoscanDsExProH1 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-1.webp";
-import shining3dAutoscanDsExProH2 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-2.webp";
-import shining3dAutoscanDsExProH3 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-3.webp";
-import shining3dAutoscanDsExProH4 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-4.webp";
-import shining3dAutoscanDsExProH5 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-5.webp";
-import shining3dAutoscanDsExProH6 from "@/assets/products/shining3d-autoscan-ds-ex-pro-h-6.webp";
-
+const shining3dAutoscanDsExProH1 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-1.webp", import.meta.url).href;
+const shining3dAutoscanDsExProH2 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-2.webp", import.meta.url).href;
+const shining3dAutoscanDsExProH3 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-3.webp", import.meta.url).href;
+const shining3dAutoscanDsExProH4 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-4.webp", import.meta.url).href;
+const shining3dAutoscanDsExProH5 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-5.webp", import.meta.url).href;
+const shining3dAutoscanDsExProH6 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-h-6.webp", import.meta.url).href;
 // Cure 3 Ultra images
-import cure3Ultra1 from "@/assets/products/cure-3-ultra-1.jpg";
-import cure3Ultra2 from "@/assets/products/cure-3-ultra-2.jpg";
-
+const cure3Ultra1 = new URL("../assets/products/cure-3-ultra-1.jpg", import.meta.url).href;
+const cure3Ultra2 = new URL("../assets/products/cure-3-ultra-2.jpg", import.meta.url).href;
 // Magnum Dental Flash images
-import magnumFlash1 from "@/assets/products/magnum-dental-flash-1.png";
-import magnumFlash2 from "@/assets/products/magnum-dental-flash-2.png";
-import magnumFlash3 from "@/assets/products/magnum-dental-flash-3.png";
-import magnumFlashBanner from "@/assets/products/magnum-dental-flash-banner.webp";
-import magnumFlashSpectrum from "@/assets/products/magnum-dental-flash-spectrum.webp";
-
+const magnumFlash1 = new URL("../assets/products/magnum-dental-flash-1.png", import.meta.url).href;
+const magnumFlash2 = new URL("../assets/products/magnum-dental-flash-2.png", import.meta.url).href;
+const magnumFlash3 = new URL("../assets/products/magnum-dental-flash-3.png", import.meta.url).href;
+const magnumFlashBanner = new URL("../assets/products/magnum-dental-flash-banner.webp", import.meta.url).href;
+const magnumFlashSpectrum = new URL("../assets/products/magnum-dental-flash-spectrum.webp", import.meta.url).href;
 // Ultrasonic W230 images
-import ultrasonicW230_1 from "@/assets/products/ultrasonic-w230-1.png";
-import ultrasonicW230_2 from "@/assets/products/ultrasonic-w230-2.png";
-
+const ultrasonicW230_1 = new URL("../assets/products/ultrasonic-w230-1.png", import.meta.url).href;
+const ultrasonicW230_2 = new URL("../assets/products/ultrasonic-w230-2.png", import.meta.url).href;
 // Milling machines images
-import upceraA52_1 from "@/assets/products/upcera-a52-1.jpg";
-import upceraA52_2 from "@/assets/products/upcera-a52-2.jpg";
-import upceraA52Milling from "@/assets/products/upcera-a52-milling.png";
-import upceraB52 from "@/assets/products/upcera-b52.png";
-import upceraB42 from "@/assets/products/upcera-b42.png";
-import upceraB42Preview from "@/assets/products/upcera-b42-real.png";
-import upceraA52dw from "@/assets/products/upcera-a52dw.jpg";
-import upceraE52Hybrid from "@/assets/products/upcera-e52-hybrid.png";
-import upceraGt1ProNew from "@/assets/products/upcera-gt1-pro-new.webp";
-import upceraGt1Pro1 from "@/assets/products/upcera-gt1-pro-1.jpg";
-import upceraGt1Pro2 from "@/assets/products/upcera-gt1-pro-2.jpg";
-import dekema674_1 from "@/assets/products/dekema-674-1.jpg";
-import dekema674_2 from "@/assets/products/dekema-674-2.jpg";
-import remezaKm50 from "@/assets/products/remeza-km50.jpg";
-import upceraVacuum from "@/assets/products/upcera-vacuum.jpg";
-
+const upceraA52_1 = new URL("../assets/products/upcera-a52-1.jpg", import.meta.url).href;
+const upceraA52_2 = new URL("../assets/products/upcera-a52-2.jpg", import.meta.url).href;
+const upceraA52Milling = new URL("../assets/products/upcera-a52-milling.png", import.meta.url).href;
+const upceraB52 = new URL("../assets/products/upcera-b52.png", import.meta.url).href;
+const upceraB42 = new URL("../assets/products/upcera-b42.png", import.meta.url).href;
+const upceraB42Preview = new URL("../assets/products/upcera-b42-real.png", import.meta.url).href;
+const upceraA52dw = new URL("../assets/products/upcera-a52dw.jpg", import.meta.url).href;
+const upceraE52Hybrid = new URL("../assets/products/upcera-e52-hybrid.png", import.meta.url).href;
+const upceraGt1ProNew = new URL("../assets/products/upcera-gt1-pro-new.webp", import.meta.url).href;
+const upceraGt1Pro1 = new URL("../assets/products/upcera-gt1-pro-1.jpg", import.meta.url).href;
+const upceraGt1Pro2 = new URL("../assets/products/upcera-gt1-pro-2.jpg", import.meta.url).href;
+const dekema674_1 = new URL("../assets/products/dekema-674-1.jpg", import.meta.url).href;
+const dekema674_2 = new URL("../assets/products/dekema-674-2.jpg", import.meta.url).href;
+const remezaKm50 = new URL("../assets/products/remeza-km50.jpg", import.meta.url).href;
+const upceraVacuum = new URL("../assets/products/upcera-vacuum.jpg", import.meta.url).href;
 // Burs images - Imes-icore
-import bursImes150iPmma from "@/assets/products/burs-imes-150i-pmma.jpg";
-import bursImes150iGlass from "@/assets/products/burs-imes-150i-glass.jpg";
-import bursImes150iZircon from "@/assets/products/burs-imes-150i-zircon.jpg";
-import bursImes350iMetal from "@/assets/products/burs-imes-350i-metal.jpg";
-import bursImes350iZircon from "@/assets/products/burs-imes-350i-zircon.jpg";
-import bursImes350iGlass from "@/assets/products/burs-imes-350i-glass.jpg";
-
+const bursImes150iPmma = new URL("../assets/products/burs-imes-150i-pmma.jpg", import.meta.url).href;
+const bursImes150iGlass = new URL("../assets/products/burs-imes-150i-glass.jpg", import.meta.url).href;
+const bursImes150iZircon = new URL("../assets/products/burs-imes-150i-zircon.jpg", import.meta.url).href;
+const bursImes350iMetal = new URL("../assets/products/burs-imes-350i-metal.jpg", import.meta.url).href;
+const bursImes350iZircon = new URL("../assets/products/burs-imes-350i-zircon.jpg", import.meta.url).href;
+const bursImes350iGlass = new URL("../assets/products/burs-imes-350i-glass.jpg", import.meta.url).href;
 // Lab scanners images
-import meditT310 from "@/assets/products/medit-t310.jpg";
-import hellingSpray from "@/assets/products/helling-spray.png";
-
+const meditT310 = new URL("../assets/products/medit-t310.jpg", import.meta.url).href;
+const hellingSpray = new URL("../assets/products/helling-spray.png", import.meta.url).href;
 // Burs images - Upcera
-import bursUpceraA51A52Pmma from "@/assets/products/burs-upcera-a51-a52-pmma.jpg";
-import bursUpceraA52Zircon from "@/assets/products/burs-upcera-a52-zircon.jpg";
-import bursUpceraA52wMetal from "@/assets/products/burs-upcera-a52w-metal.jpg";
-import bursUpceraA52wGlass from "@/assets/products/burs-upcera-a52w-glass.jpg";
-import bursUpceraB41B42Glass from "@/assets/products/burs-upcera-b41-b42-glass.jpg";
-import bursUpceraB51B52Metal from "@/assets/products/burs-upcera-b51-b52-metal.jpg";
-
+const bursUpceraA51A52Pmma = new URL("../assets/products/burs-upcera-a51-a52-pmma.jpg", import.meta.url).href;
+const bursUpceraA52Zircon = new URL("../assets/products/burs-upcera-a52-zircon.jpg", import.meta.url).href;
+const bursUpceraA52wMetal = new URL("../assets/products/burs-upcera-a52w-metal.jpg", import.meta.url).href;
+const bursUpceraA52wGlass = new URL("../assets/products/burs-upcera-a52w-glass.jpg", import.meta.url).href;
+const bursUpceraB41B42Glass = new URL("../assets/products/burs-upcera-b41-b42-glass.jpg", import.meta.url).href;
+const bursUpceraB51B52Metal = new URL("../assets/products/burs-upcera-b51-b52-metal.jpg", import.meta.url).href;
 // Asiga tray image
-import asigaTray from "@/assets/products/asiga-tray.jpg";
-
+const asigaTray = new URL("../assets/products/asiga-tray.jpg", import.meta.url).href;
 export interface DownloadFile {
   name: string;
   url: string;

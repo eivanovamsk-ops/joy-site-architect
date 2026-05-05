@@ -1,0 +1,29 @@
+name: Deploy to SprintHost
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: your-ftp-server
+          username: your-ftp-user
+          password: your-ftp-password
+          local-dir: dist/
+          server-dir: /domains/articon.pro/public_html/

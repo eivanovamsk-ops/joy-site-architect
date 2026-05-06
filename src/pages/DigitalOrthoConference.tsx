@@ -190,9 +190,9 @@ const DigitalOrthoConference = () => {
         </Helmet>
 
         {/* ═══════ HERO ═══════ */}
-        <section className="relative min-h-[60vh] lg:min-h-[70vh] flex items-end overflow-hidden pt-[116px] lg:pt-[164px] pb-12">
+        <section className="relative flex items-end overflow-hidden pt-[116px] lg:pt-[164px] pb-12" style={{ minHeight: 'max(500px, 55vh)' }}>
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <img src={course22Banner} alt="IV Конференция Цифровая ортодонтия" className="w-full h-full object-cover" style={{ objectPosition: '65% 20%' }} loading="lazy" />
+            <img src={course22Banner} alt="IV Конференция Цифровая ортодонтия" className="w-full h-full object-cover object-center" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E1A]/90 via-[#0A0E1A]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A0E1A]/40 via-transparent to-[#0A0E1A]" />
           </div>

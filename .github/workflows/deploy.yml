@@ -29,6 +29,6 @@ jobs:
         with:
           server: 141.8.192.36
           username: a0868516
-          password: @Articon-2026!
+          password: @Articon2026!
           local-dir: dist/
           server-dir: /domains/articon.pro/public_html/

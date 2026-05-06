@@ -192,7 +192,7 @@ const DigitalOrthoConference = () => {
         {/* ═══════ HERO ═══════ */}
         <section className="relative min-h-screen flex items-center overflow-hidden pt-[116px] lg:pt-[164px]">
           <div ref={heroRef} className="absolute inset-0 will-change-transform">
-            <img src={course22Banner} alt="IV Конференция Цифровая ортодонтия" className="w-full h-full object-cover object-[center_20%]" loading="lazy" />
+            <img src={course22Banner} alt="IV Конференция Цифровая ортодонтия" className="w-full h-full object-cover" style={{ objectPosition: '50% 15%' }} loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E1A]/90 via-[#0A0E1A]/60 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A0E1A]/40 via-transparent to-[#0A0E1A]" />
           </div>

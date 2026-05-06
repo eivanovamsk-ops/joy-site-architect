@@ -1107,6 +1107,33 @@ const CourseDetail = () => {
           </div>
         </section>
 
+        {/* Partners Section — Course 22 only */}
+        {course.id === 22 && (
+          <section className="py-16 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">Партнеры</p>
+                <h2 className="text-3xl md:text-4xl font-bold">Партнеры конференции</h2>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto">
+                {course22Partners.map((partner) => (
+                  <div
+                    key={partner.name}
+                    className="flex items-center justify-center bg-background rounded-2xl border border-border p-6 shadow-sm hover:shadow-md transition-shadow h-28 w-52"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-16 max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Final CTA — Dark dramatic block */}
         <section className="py-20 gradient-primary relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">

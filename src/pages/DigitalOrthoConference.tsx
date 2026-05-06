@@ -14,7 +14,6 @@ import obkLogo from "@/assets/partners/obk-logo.webp";
 import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";
 import protectLogo from "@/assets/partners/protect-logo.webp";
 import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
-import denteduLogo from "@/assets/partners/dentedu-logo.png";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.webp";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.webp";
 import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.webp";
@@ -672,7 +671,7 @@ const DigitalOrthoConference = () => {
               ].map((partner) => (
                 <div
                   key={partner.name}
-                  className="flex items-center justify-center rounded-2xl border border-[#1E293B] bg-[#0F1629] p-6 hover:border-[#334155] transition-colors h-28 w-52"
+                  className="flex items-center justify-center rounded-2xl border border-white bg-white p-6 transition-colors h-28 w-52"
                 >
                   <img
                     src={partner.logo}
@@ -725,29 +724,6 @@ const DigitalOrthoConference = () => {
                   <a href="tel:+79099056457" className="hover:text-[#F5F5F5] transition-colors">+7 (909) 905-64-57</a>
                   <a href="tel:+79060457537" className="hover:text-[#F5F5F5] transition-colors">8 (906) 045-75-37</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════ ПАРТНЁРЫ КОНФЕРЕНЦИИ ═══════ */}
-        <section className="py-16 border-t border-[#1A2035]">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#F5F5F5] mb-10">
-              ПАРТНЁРЫ КОНФЕРЕНЦИИ
-            </h2>
-            <div className="bg-white rounded-2xl p-8 md:p-10">
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                {[
-                  { src: revylineLogo, alt: "Revyline" },
-                  { src: obkLogo, alt: "OBK" },
-                  { src: eonAlignerLogo, alt: "Eon Aligner" },
-                  { src: denteduLogo, alt: "DentEDU" },
-                  { src: protectLogo, alt: "Protect" },
-                  { src: greendentLogo, alt: "GreenDent" },
-                ].map((p, i) => (
-                  <img key={i} src={p.src} alt={p.alt} className="max-h-14 max-w-[160px] object-contain" />
-                ))}
               </div>
             </div>
           </div>

@@ -257,8 +257,8 @@ export const courses: Course[] = [
     slug: "mini-implants-planning",
     title: "Цифровое планирование ортодонтических мини-имплантатов и моделирование аппаратов с кортикальной опорой",
     subtitle: "По концепции pin-first",
-    date: "6 мая 2026",
-    dateStart: new Date(2026, 4, 6),
+    date: "3 июля 2026",
+    dateStart: new Date(2026, 6, 3),
     upcomingDates: [
       { date: "4 сентября 2026", dateStart: new Date(2026, 8, 4) },
       { date: "17 декабря 2026", dateStart: new Date(2026, 11, 17) },
@@ -266,7 +266,6 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 35000,
-    soldOut: true,
     isAccredited: true,
     lightBanner: true,
     coverImage: course6Banner,

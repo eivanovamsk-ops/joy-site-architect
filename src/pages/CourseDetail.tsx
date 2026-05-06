@@ -15,21 +15,6 @@ import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { CourseFloatingVideo } from "@/components/education/CourseFloatingVideo";
 
-// Course 22 partner logos
-import revylineLogo from "@/assets/partners/revyline-logo.webp";
-import obkLogo from "@/assets/partners/obk-logo.webp";
-import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";
-import protectLogo from "@/assets/partners/protect-logo.webp";
-import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
-
-const course22Partners = [
-  { name: "EON Aligner", logo: eonAlignerLogo },
-  { name: "Protect", logo: protectLogo },
-  { name: "Green Dent", logo: greendentLogo },
-  { name: "Revyline", logo: revylineLogo },
-  { name: "OBK", logo: obkLogo },
-];
-
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {
@@ -1107,32 +1092,6 @@ const CourseDetail = () => {
           </div>
         </section>
 
-        {/* Partners Section — Course 22 only */}
-        {course.id === 22 && (
-          <section className="py-16 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-2">Партнеры</p>
-                <h2 className="text-3xl md:text-4xl font-bold">Партнеры конференции</h2>
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto">
-                {course22Partners.map((partner) => (
-                  <div
-                    key={partner.name}
-                    className="flex items-center justify-center bg-background rounded-2xl border border-border p-6 shadow-sm hover:shadow-md transition-shadow h-28 w-52"
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="max-h-16 max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Final CTA — Dark dramatic block */}
         <section className="py-20 gradient-primary relative overflow-hidden">

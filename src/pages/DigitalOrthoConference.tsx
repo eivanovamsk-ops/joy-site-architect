@@ -9,6 +9,11 @@ import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import course22Banner from "@/assets/courses/course-22-banner.webp";
+import revylineLogo from "@/assets/partners/revyline-logo.webp";
+import obkLogo from "@/assets/partners/obk-logo.webp";
+import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";
+import protectLogo from "@/assets/partners/protect-logo.webp";
+import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.webp";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.webp";
 import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.webp";
@@ -648,6 +653,37 @@ const DigitalOrthoConference = () => {
         </section>
 
         <CourseContactBlock />
+
+        {/* ═══════ PARTNERS ═══════ */}
+        <section className="py-20 border-t border-[#1A2035]">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] mb-3" style={{ color: `${ACCENT}99` }}>Партнеры</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5]">Партнеры конференции</h2>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 max-w-4xl mx-auto">
+              {[
+                { name: "EON Aligner", logo: eonAlignerLogo },
+                { name: "Protect", logo: protectLogo },
+                { name: "Green Dent", logo: greendentLogo },
+                { name: "Revyline", logo: revylineLogo },
+                { name: "OBK", logo: obkLogo },
+              ].map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex items-center justify-center rounded-2xl border border-[#1E293B] bg-[#0F1629] p-6 hover:border-[#334155] transition-colors h-28 w-52"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-16 max-w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ═══════ FINAL CTA ═══════ */}
         <section className="py-24 lg:py-32 relative overflow-hidden border-t border-[#1A2035]">

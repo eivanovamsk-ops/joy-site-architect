@@ -736,18 +736,19 @@ const DigitalOrthoConference = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center text-[#F5F5F5] mb-10">
               ПАРТНЁРЫ КОНФЕРЕНЦИИ
             </h2>
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-              {[
-                { src: revylineLogo, alt: "Revyline" },
-                { src: obkLogo, alt: "OBK" },
-                { src: eonAlignerLogo, alt: "Eon Aligner" },
-                { src: protectLogo, alt: "Protect" },
-                { src: greendentLogo, alt: "GreenDent" },
-              ].map((p, i) => (
-                <div key={i} className="bg-white rounded-xl p-4 flex items-center justify-center" style={{ minWidth: 120, minHeight: 70 }}>
-                  <img src={p.src} alt={p.alt} className="max-h-12 max-w-[140px] object-contain" />
-                </div>
-              ))}
+            <div className="bg-white rounded-2xl p-8 md:p-10">
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                {[
+                  { src: revylineLogo, alt: "Revyline" },
+                  { src: obkLogo, alt: "OBK" },
+                  { src: eonAlignerLogo, alt: "Eon Aligner" },
+                  { src: denteduLogo, alt: "DentEDU" },
+                  { src: protectLogo, alt: "Protect" },
+                  { src: greendentLogo, alt: "GreenDent" },
+                ].map((p, i) => (
+                  <img key={i} src={p.src} alt={p.alt} className="max-h-14 max-w-[160px] object-contain" />
+                ))}
+              </div>
             </div>
           </div>
         </section>

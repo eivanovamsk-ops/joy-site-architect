@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import upceraA52 from "@/assets/products/upcera-a52-1.jpg";
+import upceraA52 from "@/assets/products/upcera-a52-1.webp";
 
 export function UpceraShopBanner() {
   return (

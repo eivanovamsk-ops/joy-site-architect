@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import upceraA52 from "@/assets/products/upcera-a52-1.jpg";
+import upceraA52 from "@/assets/products/upcera-a52-1.webp";
 import upceraGt1 from "@/assets/products/upcera-gt1-pro-new.webp";
-import upceraB52 from "@/assets/products/upcera-b52.png";
+import upceraB52 from "@/assets/products/upcera-b52.webp";
 
 const equipment = [
   {

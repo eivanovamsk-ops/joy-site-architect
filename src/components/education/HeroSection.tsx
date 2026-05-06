@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import educationHeroBanner from "@/assets/education-hero-banner.jpg";
+import educationHeroBanner from "@/assets/education-hero-banner.webp";
 
 export function EducationHeroSection() {
   return (

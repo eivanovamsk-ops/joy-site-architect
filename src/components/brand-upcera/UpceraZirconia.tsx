@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import upceraStColor from "@/assets/products/upcera-st-color.jpg";
-import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.jpg";
-import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.jpg";
-import upceraStMl from "@/assets/products/upcera-st-ml.jpg";
+import upceraStColor from "@/assets/products/upcera-st-color.webp";
+import upceraExploreFunctional from "@/assets/products/upcera-explore-functional.webp";
+import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.webp";
+import upceraStMl from "@/assets/products/upcera-st-ml.webp";
 
 const series = [
   {

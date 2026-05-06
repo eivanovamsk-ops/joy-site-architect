@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import laboratoryHeroBanner from "@/assets/laboratory-hero-banner.jpg";
+import laboratoryHeroBanner from "@/assets/laboratory-hero-banner.webp";
 
 export function LaboratoryHeroSection() {
   return (

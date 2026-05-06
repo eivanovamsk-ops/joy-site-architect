@@ -1,7 +1,7 @@
 import { Package } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import bundleBanner from "@/assets/products/upcera-bundle-banner.png";
+import bundleBanner from "@/assets/products/upcera-bundle-banner.webp";
 
 export function BundleSection() {
   return (

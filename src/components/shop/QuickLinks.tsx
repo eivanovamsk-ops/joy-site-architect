@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
-import catSale from "@/assets/categories/cat-sale.jpg";
-import catLabScanners from "@/assets/categories/cat-lab-scanners.jpg";
-import catIntraoralScanners from "@/assets/categories/cat-intraoral-scanners.jpg";
-import cat3dPrinters from "@/assets/categories/cat-3d-printers.jpg";
-import catPhotopolymers from "@/assets/categories/cat-photopolymers.jpg";
-import catMillingMachines from "@/assets/categories/cat-milling-machines.jpg";
-import catBurs from "@/assets/categories/cat-burs.jpg";
-import catZirconiaDiscs from "@/assets/categories/cat-zirconia-discs.jpg";
-import catCadcamDiscs from "@/assets/categories/cat-cadcam-discs.jpg";
-import catPaintsGlaze from "@/assets/categories/cat-paints-glaze.jpg";
+import catSale from "@/assets/categories/cat-sale.webp";
+import catLabScanners from "@/assets/categories/cat-lab-scanners.webp";
+import catIntraoralScanners from "@/assets/categories/cat-intraoral-scanners.webp";
+import cat3dPrinters from "@/assets/categories/cat-3d-printers.webp";
+import catPhotopolymers from "@/assets/categories/cat-photopolymers.webp";
+import catMillingMachines from "@/assets/categories/cat-milling-machines.webp";
+import catBurs from "@/assets/categories/cat-burs.webp";
+import catZirconiaDiscs from "@/assets/categories/cat-zirconia-discs.webp";
+import catCadcamDiscs from "@/assets/categories/cat-cadcam-discs.webp";
+import catPaintsGlaze from "@/assets/categories/cat-paints-glaze.webp";
 
 const categories = [
   { name: "SALE", image: catSale, color: "destructive", slug: "sale" },

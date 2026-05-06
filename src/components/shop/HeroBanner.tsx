@@ -10,14 +10,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import bannerCadcamKit from "@/assets/banners/shop-upcera-cadcam.jpg";
-import bannerShining from "@/assets/banners/shop-shining-3d.jpg";
-import bannerRundeerV6 from "@/assets/banners/shop-rundeer-v6.jpg";
-import bannerGT1Pro from "@/assets/banners/shop-upcera-gt1-pro.jpg";
-import bannerR412 from "@/assets/banners/shop-upcera-r412.jpg";
-import bannerA52 from "@/assets/banners/shop-upcera-a52.jpg";
-import bannerAevra from "@/assets/banners/shop-aevra-discs.jpg";
-import bannerHeygearsA2D from "@/assets/banners/shop-heygears-a2d.jpg";
+import bannerCadcamKit from "@/assets/banners/shop-upcera-cadcam.webp";
+import bannerShining from "@/assets/banners/shop-shining-3d.webp";
+import bannerRundeerV6 from "@/assets/banners/shop-rundeer-v6.webp";
+import bannerGT1Pro from "@/assets/banners/shop-upcera-gt1-pro.webp";
+import bannerR412 from "@/assets/banners/shop-upcera-r412.webp";
+import bannerA52 from "@/assets/banners/shop-upcera-a52.webp";
+import bannerAevra from "@/assets/banners/shop-aevra-discs.webp";
+import bannerHeygearsA2D from "@/assets/banners/shop-heygears-a2d.webp";
 
 const banners = [
   { image: bannerCadcamKit, alt: "CAD/CAM-комплект UPCERA — комплексное решение со скидкой 8%", href: "/shop/bundle/upcera-cadcam-kit" },

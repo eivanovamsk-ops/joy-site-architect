@@ -8,8 +8,8 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { courses } from "@/data/courses";
-import upceraLogo from "@/assets/partners/upcera-logo.png";
-import heygearsLogo from "@/assets/partners/heygears-logo.png";
+import upceraLogo from "@/assets/partners/upcera-logo.webp";
+import heygearsLogo from "@/assets/partners/heygears-logo.webp";
 
 /* ─── FAQ Item component ─── */
 function FaqItem({ question, answer }: { question: string; answer: string }) {

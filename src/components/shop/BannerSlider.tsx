@@ -8,10 +8,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import bannerRundeer from "@/assets/banners/banner-rundeer-split.jpg";
-import bannerUpcera from "@/assets/banners/banner-upcera-aevra-duo.jpg";
-import bannerHeygears from "@/assets/banners/banner-heygears.jpg";
-import bannerCadcamKit from "@/assets/banners/banner-upcera-cadcam-kit.png";
+import bannerRundeer from "@/assets/banners/banner-rundeer-split.webp";
+import bannerUpcera from "@/assets/banners/banner-upcera-aevra-duo.webp";
+import bannerHeygears from "@/assets/banners/banner-heygears.webp";
+import bannerCadcamKit from "@/assets/banners/banner-upcera-cadcam-kit.webp";
 
 const banners = [
   {

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import orthoLogo from "@/assets/ortho-logo.png";
+import orthoLogo from "@/assets/ortho-logo.webp";
 
 export function EducationOrthoSection() {
   return (

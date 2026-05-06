@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Award, Users, Target, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import articonLogo from "@/assets/articon-logo.png";
+import articonLogo from "@/assets/articon-logo.webp";
 
 const milestones = [
   { year: "2008", event: "Основание зуботехнической лаборатории" },

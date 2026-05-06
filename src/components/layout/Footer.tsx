@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import articonLogo from "@/assets/articon-logo.png";
+import articonLogo from "@/assets/articon-logo.webp";
 
 const footerLinks = {
   navigation: [{

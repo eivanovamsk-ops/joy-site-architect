@@ -15,6 +15,21 @@ import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { CourseFloatingVideo } from "@/components/education/CourseFloatingVideo";
 
+// Course 22 partner logos
+import revylineLogo from "@/assets/partners/revyline-logo.webp";
+import obkLogo from "@/assets/partners/obk-logo.webp";
+import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";
+import protectLogo from "@/assets/partners/protect-logo.webp";
+import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
+
+const course22Partners = [
+  { name: "EON Aligner", logo: eonAlignerLogo },
+  { name: "Protect", logo: protectLogo },
+  { name: "Green Dent", logo: greendentLogo },
+  { name: "Revyline", logo: revylineLogo },
+  { name: "OBK", logo: obkLogo },
+];
+
 
 // Scroll reveal hook
 function useReveal<T extends HTMLElement = HTMLDivElement>() {

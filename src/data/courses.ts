@@ -11,7 +11,7 @@ import course14Banner from "@/assets/courses/course-14-banner.webp";
 import course6Banner from "@/assets/courses/course-6-banner.webp";
 import course15Banner from "@/assets/courses/course-15-banner.webp";
 import course18Banner from "@/assets/courses/course-18-banner.webp";
-import course22Banner from "@/assets/courses/course-22-banner.webp";
+import course22Banner from "@/assets/courses/course-22-banner.png";
 import course26Banner from "@/assets/courses/course-26-banner.webp";
 import course27Banner from "@/assets/courses/course-27-banner.webp";
 import course27Gallery1 from "@/assets/courses/course-27-gallery-1.webp";

@@ -729,6 +729,28 @@ const DigitalOrthoConference = () => {
           </div>
         </section>
 
+        {/* ═══════ ПАРТНЁРЫ КОНФЕРЕНЦИИ ═══════ */}
+        <section className="py-16 border-t border-[#1A2035]">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#F5F5F5] mb-10">
+              ПАРТНЁРЫ КОНФЕРЕНЦИИ
+            </h2>
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+              {[
+                { src: revylineLogo, alt: "Revyline" },
+                { src: obkLogo, alt: "OBK" },
+                { src: eonAlignerLogo, alt: "Eon Aligner" },
+                { src: protectLogo, alt: "Protect" },
+                { src: greendentLogo, alt: "GreenDent" },
+              ].map((p, i) => (
+                <div key={i} className="bg-white rounded-xl p-4 flex items-center justify-center" style={{ minWidth: 120, minHeight: 70 }}>
+                  <img src={p.src} alt={p.alt} className="max-h-12 max-w-[140px] object-contain" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ═══════ BACK LINK ═══════ */}
         <div className="border-t border-[#1A2035] py-8">
           <div className="container mx-auto px-4 text-center">

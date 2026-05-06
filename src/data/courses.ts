@@ -181,8 +181,8 @@ export const courses: Course[] = [
     slug: "expanding-appliances",
     title: "Цифровое моделирование расширяющих несъёмных аппаратов",
     subtitle: "Без опоры на мини-имплантаты",
-    date: "5 мая 2026",
-    dateStart: new Date(2026, 4, 5),
+    date: "2 июля 2026",
+    dateStart: new Date(2026, 6, 2),
     upcomingDates: [
       { date: "3 сентября 2026", dateStart: new Date(2026, 8, 3) },
       { date: "16 декабря 2026", dateStart: new Date(2026, 11, 16) },

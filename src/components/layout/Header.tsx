@@ -4,7 +4,7 @@ import { Search, MessageCircle, ChevronDown, Menu, X, Heart, ShoppingCart, User,
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { supabase } from "@/integrations/supabase/client";
-import articonLogo from "@/assets/articon-logo.png";
+import articonLogo from "@/assets/articon-logo.webp";
 
 const SearchDialog = lazy(() =>
   import("@/components/layout/SearchDialog").then((module) => ({ default: module.SearchDialog }))

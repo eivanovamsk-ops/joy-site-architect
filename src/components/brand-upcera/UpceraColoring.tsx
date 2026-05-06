@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import upceraRealismColors from "@/assets/products/upcera-realism-colors.jpg";
-import upceraUpcadHt from "@/assets/products/upcera-upcad-ht.jpg";
+import upceraRealismColors from "@/assets/products/upcera-realism-colors.webp";
+import upceraUpcadHt from "@/assets/products/upcera-upcad-ht.webp";
 
 export function UpceraColoring() {
   return (

@@ -1,4 +1,4 @@
-import exocadErStoreLogo from "@/assets/partners/exocad-er-store-white.png";
+import exocadErStoreLogo from "@/assets/partners/exocad-er-store-white.webp";
 
 export function EducationDigitalPartnersSection() {
   return (

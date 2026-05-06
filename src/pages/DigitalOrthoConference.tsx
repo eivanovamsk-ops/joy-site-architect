@@ -8,17 +8,17 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
-import course22Banner from "@/assets/courses/course-22-banner.png";
-import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.jpg";
-import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.jpg";
-import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.jpg";
-import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.jpg";
-import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.jpg";
-import course22Photo6 from "@/assets/courses/course-22-gallery/photo-6.jpg";
-import course22Photo7 from "@/assets/courses/course-22-gallery/photo-7.jpg";
-import course22Photo8 from "@/assets/courses/course-22-gallery/photo-8.jpg";
-import course22Photo9 from "@/assets/courses/course-22-gallery/photo-9.jpg";
-import course22Photo10 from "@/assets/courses/course-22-gallery/photo-10.jpg";
+import course22Banner from "@/assets/courses/course-22-banner.webp";
+import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.webp";
+import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.webp";
+import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.webp";
+import course22Photo4 from "@/assets/courses/course-22-gallery/photo-4.webp";
+import course22Photo5 from "@/assets/courses/course-22-gallery/photo-5.webp";
+import course22Photo6 from "@/assets/courses/course-22-gallery/photo-6.webp";
+import course22Photo7 from "@/assets/courses/course-22-gallery/photo-7.webp";
+import course22Photo8 from "@/assets/courses/course-22-gallery/photo-8.webp";
+import course22Photo9 from "@/assets/courses/course-22-gallery/photo-9.webp";
+import course22Photo10 from "@/assets/courses/course-22-gallery/photo-10.webp";
 
 const gallerySlides = [
   { src: course22Photo1 },

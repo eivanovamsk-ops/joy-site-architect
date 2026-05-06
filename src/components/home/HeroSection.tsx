@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import articonCrystal from "@/assets/articon-crystal.png";
+import articonCrystal from "@/assets/articon-crystal.webp";
 
 export function HeroSection() {
   const scrollToDirections = () => {

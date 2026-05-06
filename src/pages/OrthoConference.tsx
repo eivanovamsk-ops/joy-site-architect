@@ -23,7 +23,7 @@ function RegistrationClosed({ variant = "default" }: { variant?: "default" | "ca
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
-import course19Banner from "@/assets/courses/course-19-banner.png";
+import course19Banner from "@/assets/courses/course-19-banner.webp";
 
 const ACCENT = "#FF6B35"; // Vibrant orange for ortho energy
 

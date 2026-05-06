@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Download } from "lucide-react";
-import heroImage from "@/assets/brands/upcera-hero.jpg";
+import heroImage from "@/assets/brands/upcera-hero.webp";
 
 const stats = [
   { value: "110+", label: "стран присутствия" },

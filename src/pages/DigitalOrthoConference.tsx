@@ -8,7 +8,7 @@ import { Layout } from "@/components/layout/Layout";
 import { cn } from "@/lib/utils";
 import { courses } from "@/data/courses";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
-import course22Banner from "@/assets/courses/course-22-banner.webp";
+import course22Banner from "@/assets/courses/course-22-banner.png";
 import revylineLogo from "@/assets/partners/revyline-logo.webp";
 import obkLogo from "@/assets/partners/obk-logo.webp";
 import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";

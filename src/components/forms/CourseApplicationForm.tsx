@@ -131,10 +131,21 @@ export function CourseApplicationForm({
       if (error) throw error;
 
       try {
-        await supabase.functions.invoke("send-email-unisender", {
+        await supabase.functions.invoke("send-transactional-email", {
           body: {
-            type: "course_application",
-            courseApplicationId: applicationId,
+            templateName: "course-application",
+            recipientEmail: "education@articon.pro",
+            idempotencyKey: `course-app-${applicationId}`,
+            templateData: {
+              courseName: courseName,
+              name: formData.name,
+              lastName: formData.last_name,
+              phone: formData.phone,
+              city: formData.city,
+              specialization: formData.specialization,
+              email: formData.email,
+              paymentType: formData.payment_type,
+            },
           },
         });
       } catch (emailError) {

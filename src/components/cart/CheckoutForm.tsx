@@ -234,10 +234,20 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
 
       // Send email notifications
       try {
-        await supabase.functions.invoke("send-email-unisender", {
+        await supabase.functions.invoke("send-transactional-email", {
           body: {
-            type: "order_confirmation",
-            orderId: order.id,
+            templateName: "order-notification",
+            recipientEmail: "moscow@articon.pro",
+            idempotencyKey: `order-${order.id}`,
+            templateData: {
+              orderId: order.id,
+              customerName: formData.shippingName,
+              customerPhone: formData.shippingPhone,
+              customerEmail: formData.email || '',
+              total: new Intl.NumberFormat("ru-RU").format(totalPrice) + " ₽",
+              deliveryMethod: formData.deliveryMethod,
+              items: items.map(i => `${i.name} x${i.quantity}`).join(', '),
+            },
           },
         });
       } catch (emailError) {

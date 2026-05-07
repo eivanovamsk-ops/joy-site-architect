@@ -263,13 +263,8 @@ export default function WebinarZirconMarch2026() {
       if (error) throw error;
 
       try {
-        const { error: fnError } = await supabase.functions.invoke("send-email-unisender", {
-          body: {
-            type: "course_application",
-            courseApplicationId: applicationId,
-            emailTemplate: "zircon_webinar_2026",
-            expectedCourseKeyword: "циркон",
-          },
+        const { error: fnError } = await supabase.functions.invoke("send-transactional-email", {
+          body: { templateName: "course-application", recipientEmail: "education@articon.pro", idempotencyKey: `course-app-${applicationId}` },
         });
         if (fnError) console.error("Email function error:", fnError);
       } catch (emailErr) {

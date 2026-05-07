@@ -140,10 +140,12 @@ export const CourseRecommendationPopup = () => {
 
       // Fire-and-forget email notification (non-blocking for UX)
       supabase.functions
-        .invoke("send-email-unisender", {
+        .invoke("send-transactional-email", {
           body: {
-            type: "course_recommendation",
-            recommendationId: inserted.id,
+            templateName: "course-recommendation",
+            recipientEmail: "education@articon.pro",
+            idempotencyKey: `course-rec-${inserted.id}`,
+            templateData: { name: data.name, phone: data.phone },
           },
         })
         .catch((err) => console.error("Email notify failed", err));

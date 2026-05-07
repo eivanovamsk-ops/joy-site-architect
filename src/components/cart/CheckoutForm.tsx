@@ -241,10 +241,10 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
             idempotencyKey: `order-${order.id}`,
             templateData: {
               orderId: order.id,
-              customerName: formData.name,
-              customerPhone: formData.phone,
+              customerName: formData.shippingName,
+              customerPhone: formData.shippingPhone,
               customerEmail: formData.email || '',
-              total: new Intl.NumberFormat("ru-RU").format(totalWithDelivery) + " ₽",
+              total: new Intl.NumberFormat("ru-RU").format(totalPrice) + " ₽",
               deliveryMethod: formData.deliveryMethod,
               items: items.map(i => `${i.name} x${i.quantity}`).join(', '),
             },

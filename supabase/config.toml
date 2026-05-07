@@ -13,3 +13,5 @@ project_id = "minlrvrnprwcrgqfgsws"
     verify_jwt = false
   [functions.tbank-webhook]
     verify_jwt = false
+  [functions.process-email-queue]
+    verify_jwt = true

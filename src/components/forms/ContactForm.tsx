@@ -66,11 +66,12 @@ export function ContactForm({
 
       if (notifyEmail) {
         try {
-          await supabase.functions.invoke("send-email-unisender", {
+          await supabase.functions.invoke("send-transactional-email", {
             body: {
-              type: "feedback_notification",
-              feedbackId,
-              notifyEmail,
+              templateName: "feedback-notification",
+              recipientEmail: notifyEmail,
+              idempotencyKey: `feedback-${feedbackId}`,
+              templateData: { name, email, phone: phone || undefined, message },
             },
           });
         } catch (emailError) {

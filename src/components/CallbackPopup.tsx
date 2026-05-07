@@ -77,8 +77,13 @@ export function CallbackPopup() {
       if (error) throw error;
 
       supabase.functions
-        .invoke("send-email-unisender", {
-          body: { type: "callback_request", callbackRequestId: requestId },
+        .invoke("send-transactional-email", {
+          body: {
+            templateName: "callback-notification",
+            recipientEmail: "moscow@articon.pro",
+            idempotencyKey: `callback-${requestId}`,
+            templateData: { name: name.trim(), phone: phone.trim(), source: "popup" },
+          },
         })
         .catch((err) => console.error("Email send error:", err));
 

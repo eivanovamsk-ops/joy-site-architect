@@ -81,11 +81,8 @@ export default function WebinarBrackets() {
       if (error) throw error;
 
       try {
-        await supabase.functions.invoke("send-email-unisender", {
-          body: {
-            type: "course_application",
-            courseApplicationId: applicationId,
-          },
+        await supabase.functions.invoke("send-transactional-email", {
+          body: { templateName: "course-application", recipientEmail: "education@articon.pro", idempotencyKey: `course-app-${applicationId}` },
         });
       } catch {}
 

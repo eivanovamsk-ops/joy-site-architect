@@ -145,7 +145,7 @@ export const CourseRecommendationPopup = () => {
             templateName: "course-recommendation",
             recipientEmail: "education@articon.pro",
             idempotencyKey: `course-rec-${inserted.id}`,
-            templateData: { courseName: currentCourse?.title, name: name, phone: phone },
+            templateData: { name: data.name, phone: data.phone },
           },
         })
         .catch((err) => console.error("Email notify failed", err));

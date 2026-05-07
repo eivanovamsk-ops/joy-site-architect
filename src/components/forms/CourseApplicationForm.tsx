@@ -139,9 +139,8 @@ export function CourseApplicationForm({
             templateData: {
               courseName: courseName,
               name: formData.name,
-              lastName: formData.lastName,
+              lastName: formData.last_name,
               phone: formData.phone,
-              telegram: formData.telegram,
               city: formData.city,
               specialization: formData.specialization,
               email: formData.email,

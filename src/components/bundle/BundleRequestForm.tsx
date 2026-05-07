@@ -44,8 +44,13 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
       if (error) throw error;
 
       // Send email notification to marketing
-      supabase.functions.invoke("send-email-unisender", {
-        body: { type: "bundle_request", bundleRequestId: (data as any).id },
+      supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "bundle-request",
+          recipientEmail: "moscow@articon.pro",
+          idempotencyKey: `bundle-${(data as any).id}`,
+          templateData: { name: name.trim(), phone: phone.trim() },
+        },
       }).catch((err) => console.error("Email send error:", err));
 
       toast.success("Уже получили вашу заявку, свяжемся с вами в ближайшее время!");

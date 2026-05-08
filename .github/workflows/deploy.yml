@@ -30,5 +30,7 @@ jobs:
           server: 141.8.192.36
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
           local-dir: dist/
           server-dir: /domains/articon.pro/public_html/

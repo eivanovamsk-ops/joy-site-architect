@@ -2587,6 +2587,16 @@ export const courses: Course[] = [
       "Сертификат об обучении",
       "Кофе-брейки и обеды"
     ],
+    galleryImages: [
+      course35Gallery1,
+      course35Gallery2,
+      course35Gallery3,
+      course35Gallery4,
+      course35Gallery5,
+      course35Gallery6,
+      course35Gallery7
+    ],
+    fullWidthGallery: true,
     faq: [
       {
         question: "Нужен ли опыт работы с керамикой?",

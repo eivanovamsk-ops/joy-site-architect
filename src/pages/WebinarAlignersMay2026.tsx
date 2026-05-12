@@ -112,7 +112,7 @@ export default function WebinarAlignersMay2026() {
 
       try {
         await supabase.functions.invoke("send-transactional-email", {
-          body: { templateName: "course-application", recipientEmail: "education@articon.pro", idempotencyKey: `course-app-${applicationId}` },
+          body: { templateName: "course-application", recipientEmail: "edu@articon.pro", idempotencyKey: `course-app-${applicationId}` },
         });
       } catch {}
 

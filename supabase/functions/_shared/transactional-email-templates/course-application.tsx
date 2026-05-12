@@ -46,7 +46,7 @@ export const template = {
   component: CourseApplicationEmail,
   subject: (data: Record<string, any>) => `Заявка на курс: ${data.courseName || 'Курс'}`,
   displayName: 'Заявка на курс (менеджер)',
-  to: 'education@articon.pro',
+  to: 'edu@articon.pro',
   previewData: { courseName: 'Тестовый курс', name: 'Иван', lastName: 'Иванов', phone: '+7 999 123-45-67', city: 'Москва', specialization: 'Ортопед' },
 } satisfies TemplateEntry
 

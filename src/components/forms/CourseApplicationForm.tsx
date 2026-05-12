@@ -134,7 +134,7 @@ export function CourseApplicationForm({
         await supabase.functions.invoke("send-transactional-email", {
           body: {
             templateName: "course-application",
-            recipientEmail: "education@articon.pro",
+            recipientEmail: "edu@articon.pro",
             idempotencyKey: `course-app-${applicationId}`,
             templateData: {
               courseName: courseName,

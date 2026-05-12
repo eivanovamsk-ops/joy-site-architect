@@ -33,7 +33,7 @@ export const template = {
   component: CourseRecommendationEmail,
   subject: 'Интерес к курсу с сайта',
   displayName: 'Рекомендация курса',
-  to: 'education@articon.pro',
+  to: 'edu@articon.pro',
   previewData: { courseName: 'Тестовый курс', name: 'Иван', phone: '+7 999 123-45-67' },
 } satisfies TemplateEntry
 

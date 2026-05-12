@@ -1,6 +1,6 @@
 import * as React from 'npm:react@18.3.1'
 import {
-  Body, Container, Head, Heading, Html, Preview, Text, Section, Hr,
+  Body, Container, Head, Heading, Html, Preview, Text, Section, Hr, Link,
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
@@ -11,7 +11,9 @@ interface CourseApplicationClientProps {
 
 const CourseApplicationClientEmail = (props: CourseApplicationClientProps) => (
   <Html lang="ru" dir="ltr">
-    <Head />
+    <Head>
+      <meta charSet="utf-8" />
+    </Head>
     <Preview>Спасибо за заявку на курс {props.courseName || ''}</Preview>
     <Body style={main}>
       <Container style={container}>
@@ -30,8 +32,10 @@ const CourseApplicationClientEmail = (props: CourseApplicationClientProps) => (
           <Hr style={hr} />
           <Text style={textSmall}>
             <strong>Контакты Учебного центра:</strong><br />
-            Email: edu@articon.pro<br />
-            Telegram: @articon_education
+            Телефон: <Link href="tel:+79060457537" style={link}>+7 906 045 7537</Link><br />
+            Email: <Link href="mailto:edu@articon.pro" style={link}>edu@articon.pro</Link><br />
+            Telegram: <Link href="https://t.me/articon_education" style={link}>@articon_education</Link><br />
+            Сайт: <Link href="https://articon.pro/" style={link}>articon.pro</Link>
           </Text>
           <Text style={footer}>С уважением, команда ARTICON</Text>
         </Section>
@@ -48,12 +52,13 @@ export const template = {
   previewData: { courseName: 'Тестовый курс', name: 'Иван' },
 } satisfies TemplateEntry
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
+const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, Helvetica, sans-serif' }
 const container = { maxWidth: '600px', margin: '0 auto' }
 const header = { backgroundColor: '#1a365d', padding: '24px', borderRadius: '8px 8px 0 0' }
-const h1 = { fontSize: '22px', fontWeight: 'bold' as const, color: '#ffffff', margin: '0' }
+const h1 = { fontSize: '22px', fontWeight: 'bold' as const, color: '#ffffff', margin: '0', fontFamily: 'Arial, Helvetica, sans-serif' }
 const content = { padding: '24px', backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', borderTop: 'none', borderRadius: '0 0 8px 8px' }
 const text = { fontSize: '15px', color: '#1f2937', lineHeight: '1.6', margin: '0 0 14px' }
 const textSmall = { fontSize: '13px', color: '#374151', lineHeight: '1.6', margin: '0 0 14px' }
+const link = { color: '#1a365d', textDecoration: 'underline' }
 const hr = { borderColor: '#e5e7eb', margin: '20px 0' }
 const footer = { fontSize: '13px', color: '#6b7280', margin: '20px 0 0' }

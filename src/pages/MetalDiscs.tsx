@@ -1,14 +1,24 @@
 import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/shop/ProductCard";
+import { VariantProductCard } from "@/components/shop/VariantProductCard";
 import { CatalogSidebar } from "@/components/shop/CatalogSidebar";
 import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
+import { variantProducts } from "@/data/variantProducts";
 
 const MetalDiscs = () => {
   // Фильтруем металлические диски из общего каталога
   const metalDiscs = products.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "metal-discs"
+  );
+
+  // Variant-продукты (с выбором толщины)
+  const metalVariantProducts = variantProducts.filter(
+    (p) => p.category === "cad-cam-discs" && p.subcategory === "metal-discs"
+  );
+  const titaniumVariants = metalVariantProducts.filter((p) =>
+    p.name.toLowerCase().includes("титан") || p.name.toLowerCase().includes("titan")
   );
 
   // Группируем по бренду

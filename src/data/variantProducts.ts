@@ -24,6 +24,7 @@ import upceraStMl from "@/assets/products/upcera-st-ml.webp";
 import upceraDuo from "@/assets/products/upcera-duo.webp";
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraHtWhite from "@/assets/products/upcera-ht-white.jpg";
+import honchonTitan from "@/assets/products/honchon-titan.png";
 
 export interface ProductVariant {
   diameter: number;
@@ -274,6 +275,32 @@ function generateHtWhiteVariants(): ProductVariant[] {
       shade: "Белый",
       price: htWhitePrices[height],
       sku: `HT White D98-${height}`,
+    });
+  }
+  return variants;
+}
+
+// ==========================================
+// HONCHON TITAN (Заготовки из титана)
+// Heights: 12, 14, 16, 18, 20
+// ==========================================
+const honchonTitanPrices: Record<number, number> = {
+  12: 5000,
+  14: 4900,
+  16: 5250,
+  18: 5650,
+  20: 6100,
+};
+
+function generateHonchonTitanVariants(): ProductVariant[] {
+  const variants: ProductVariant[] = [];
+  for (const height of [12, 14, 16, 18, 20]) {
+    variants.push({
+      diameter: 98,
+      height,
+      shade: "Ti",
+      price: honchonTitanPrices[height],
+      sku: `Honchon Titan 98×${height}`,
     });
   }
   return variants;
@@ -754,5 +781,33 @@ Lima — турецкий производитель, успешно проше�
       result.push({ diameter: 98, height: 15, shade: "W3", price: 0, sku: "LIMA-PMMA-15-W3" });
       return result;
     })(),
+  },
+  // === ТИТАНОВЫЕ ДИСКИ ===
+  {
+    id: "honchon-titan-d98",
+    name: "Заготовка из титана Honchon Titan",
+    subtitle: "Титановый диск для CAD/CAM фрезерования каркасов",
+    brand: "Honchon Smile",
+    category: "cad-cam-discs",
+    subcategory: "metal-discs",
+    image: honchonTitan,
+    basePrice: 4900,
+    noShade: true,
+    description: `Заготовка из титана Honchon Titan — диск 98 мм для CAD/CAM фрезерования каркасов коронок, мостовидных протезов и индивидуальных абатментов.
+
+Биосовместимый материал с высокой устойчивостью к коррозии. Совместим со всеми популярными открытыми CAD/CAM системами.
+
+Преимущества:
+• Биосовместимость
+• Высокая устойчивость к коррозии
+• 5 вариантов толщины: 12, 14, 16, 18, 20 мм
+• Диаметр 98 мм`,
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Материал": "Ti (титан)",
+      "Диаметр (мм)": "98",
+      "Свойства": "Биосовместимость, высокая устойчивость к коррозии",
+    },
+    variants: generateHonchonTitanVariants(),
   },
 ];

@@ -143,7 +143,7 @@ export const CourseRecommendationPopup = () => {
         .invoke("send-transactional-email", {
           body: {
             templateName: "course-recommendation",
-            recipientEmail: "education@articon.pro",
+            recipientEmail: "edu@articon.pro",
             idempotencyKey: `course-rec-${inserted.id}`,
             templateData: { name: data.name, phone: data.phone },
           },

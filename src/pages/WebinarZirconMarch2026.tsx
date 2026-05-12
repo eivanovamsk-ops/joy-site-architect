@@ -264,7 +264,7 @@ export default function WebinarZirconMarch2026() {
 
       try {
         const { error: fnError } = await supabase.functions.invoke("send-transactional-email", {
-          body: { templateName: "course-application", recipientEmail: "education@articon.pro", idempotencyKey: `course-app-${applicationId}` },
+          body: { templateName: "course-application", recipientEmail: "edu@articon.pro", idempotencyKey: `course-app-${applicationId}` },
         });
         if (fnError) console.error("Email function error:", fnError);
       } catch (emailErr) {

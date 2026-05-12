@@ -527,7 +527,7 @@ const Admin = () => {
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="font-bold">{app.name}</span>
+                            <span className="font-bold">{app.name}{app.last_name ? ` ${app.last_name}` : ''}</span>
                             {getStatusBadge(app.status)}
                           </div>
                           <p className="text-sm text-muted-foreground">
@@ -537,9 +537,16 @@ const Admin = () => {
                           {app.course_date && (
                             <p className="text-sm">Дата курса: {app.course_date}</p>
                           )}
-                          <div className="text-sm">
+                          <div className="text-sm space-y-1">
                             <p><strong>Email:</strong> {app.email}</p>
                             {app.phone && <p><strong>Телефон:</strong> {app.phone}</p>}
+                            {app.telegram && <p><strong>Telegram:</strong> {app.telegram}</p>}
+                            {app.city && <p><strong>Город:</strong> {app.city}</p>}
+                            {app.specialization && <p><strong>Специализация:</strong> {app.specialization}</p>}
+                            {app.organization && <p><strong>Организация:</strong> {app.organization}</p>}
+                            {app.payment_type && (
+                              <p><strong>Оплата:</strong> {app.payment_type === 'company' ? 'От компании' : 'От частного лица'}</p>
+                            )}
                           </div>
                           {app.message && (
                             <p className="text-sm text-muted-foreground">

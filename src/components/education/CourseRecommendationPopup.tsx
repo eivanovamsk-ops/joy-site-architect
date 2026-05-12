@@ -138,17 +138,19 @@ export const CourseRecommendationPopup = () => {
 
       if (insertError || !inserted) throw insertError ?? new Error("Insert failed");
 
-      // Fire-and-forget email notification (non-blocking for UX)
-      supabase.functions
-        .invoke("send-transactional-email", {
-          body: {
-            templateName: "course-recommendation",
-            recipientEmail: "edu@articon.pro",
-            idempotencyKey: `course-rec-${inserted.id}`,
-            templateData: { name: data.name, phone: data.phone },
-          },
-        })
-        .catch((err) => console.error("Email notify failed", err));
+      // Fire-and-forget email notification to both edu managers
+      for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
+        supabase.functions
+          .invoke("send-transactional-email", {
+            body: {
+              templateName: "course-recommendation",
+              recipientEmail: recipient,
+              idempotencyKey: `course-rec-${inserted.id}-${recipient}`,
+              templateData: { name: data.name, phone: data.phone },
+            },
+          })
+          .catch((err) => console.error("Email notify failed", err));
+      }
 
       setSubmitted(true);
     } catch (err) {

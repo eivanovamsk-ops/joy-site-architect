@@ -16,7 +16,7 @@ export function UpceraCTAForm() {
           <ContactForm
             title="Запрос консультации по UPCERA"
             description="Расскажите о задачах вашей лаборатории — мы подберём подходящее решение"
-            notifyEmail="info@articon.pro"
+            notifyEmail="moscow@articon.pro"
           />
         </div>
       </div>

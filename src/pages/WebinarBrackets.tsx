@@ -86,6 +86,16 @@ export default function WebinarBrackets() {
             body: { templateName: "course-application", recipientEmail: recipient, idempotencyKey: `course-app-${applicationId}-${recipient}` },
           });
         }
+        if (form.email) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "course-application-client",
+              recipientEmail: form.email,
+              idempotencyKey: `course-app-client-${applicationId}`,
+              templateData: { courseName: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026", name: form.name },
+            },
+          });
+        }
       } catch {}
 
       setIsSubmitted(true);

@@ -40,14 +40,28 @@ interface Order {
   shipping_phone: string | null;
   shipping_address: string | null;
   notes: string | null;
+  telegram: string | null;
+  city: string | null;
+  delivery_method: string | null;
+  payment_type: string | null;
+  company_details: string | null;
+  company_file_url: string | null;
+  is_guest_order: boolean | null;
+  guest_email: string | null;
 }
 
 interface CourseApplication {
   id: string;
   created_at: string;
   name: string;
+  last_name: string | null;
   email: string;
   phone: string | null;
+  telegram: string | null;
+  city: string | null;
+  specialization: string | null;
+  organization: string | null;
+  payment_type: string | null;
   course_name: string;
   course_date: string | null;
   message: string | null;
@@ -393,11 +407,23 @@ const Admin = () => {
                             {formatDate(order.created_at)}
                           </p>
                           <p className="font-bold text-lg">{formatPrice(order.total_amount)}</p>
-                          {order.shipping_name && (
-                            <div className="text-sm">
-                              <p><strong>Получатель:</strong> {order.shipping_name}</p>
+                          {(order.shipping_name || order.is_guest_order) && (
+                            <div className="text-sm space-y-1">
+                              {order.shipping_name && <p><strong>Получатель:</strong> {order.shipping_name}</p>}
                               {order.shipping_phone && <p><strong>Телефон:</strong> {order.shipping_phone}</p>}
+                              {order.guest_email && <p><strong>Email:</strong> {order.guest_email}</p>}
+                              {order.telegram && <p><strong>Telegram:</strong> {order.telegram}</p>}
+                              {order.city && <p><strong>Город:</strong> {order.city}</p>}
                               {order.shipping_address && <p><strong>Адрес:</strong> {order.shipping_address}</p>}
+                              {order.delivery_method && <p><strong>Доставка:</strong> {order.delivery_method === 'pickup' ? 'Самовывоз' : 'Доставка'}</p>}
+                              {order.payment_type && <p><strong>Оплата:</strong> {order.payment_type}</p>}
+                              {order.company_details && <p><strong>Реквизиты компании:</strong> {order.company_details}</p>}
+                              {order.company_file_url && (
+                                <p><strong>Файл реквизитов:</strong>{' '}
+                                  <a href={order.company_file_url} target="_blank" rel="noreferrer" className="text-primary underline">Скачать</a>
+                                </p>
+                              )}
+                              {order.is_guest_order && <p className="text-xs text-muted-foreground">Гостевой заказ</p>}
                             </div>
                           )}
                           {order.notes && (
@@ -501,7 +527,7 @@ const Admin = () => {
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="font-bold">{app.name}</span>
+                            <span className="font-bold">{app.name}{app.last_name ? ` ${app.last_name}` : ''}</span>
                             {getStatusBadge(app.status)}
                           </div>
                           <p className="text-sm text-muted-foreground">
@@ -511,9 +537,16 @@ const Admin = () => {
                           {app.course_date && (
                             <p className="text-sm">Дата курса: {app.course_date}</p>
                           )}
-                          <div className="text-sm">
+                          <div className="text-sm space-y-1">
                             <p><strong>Email:</strong> {app.email}</p>
                             {app.phone && <p><strong>Телефон:</strong> {app.phone}</p>}
+                            {app.telegram && <p><strong>Telegram:</strong> {app.telegram}</p>}
+                            {app.city && <p><strong>Город:</strong> {app.city}</p>}
+                            {app.specialization && <p><strong>Специализация:</strong> {app.specialization}</p>}
+                            {app.organization && <p><strong>Организация:</strong> {app.organization}</p>}
+                            {app.payment_type && (
+                              <p><strong>Оплата:</strong> {app.payment_type === 'company' ? 'От компании' : 'От частного лица'}</p>
+                            )}
                           </div>
                           {app.message && (
                             <p className="text-sm text-muted-foreground">

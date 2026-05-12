@@ -131,23 +131,25 @@ export function CourseApplicationForm({
       if (error) throw error;
 
       try {
-        await supabase.functions.invoke("send-transactional-email", {
-          body: {
-            templateName: "course-application",
-            recipientEmail: "edu@articon.pro",
-            idempotencyKey: `course-app-${applicationId}`,
-            templateData: {
-              courseName: courseName,
-              name: formData.name,
-              lastName: formData.last_name,
-              phone: formData.phone,
-              city: formData.city,
-              specialization: formData.specialization,
-              email: formData.email,
-              paymentType: formData.payment_type,
+        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "course-application",
+              recipientEmail: recipient,
+              idempotencyKey: `course-app-${applicationId}-${recipient}`,
+              templateData: {
+                courseName: courseName,
+                name: formData.name,
+                lastName: formData.last_name,
+                phone: formData.phone,
+                city: formData.city,
+                specialization: formData.specialization,
+                email: formData.email,
+                paymentType: formData.payment_type,
+              },
             },
-          },
-        });
+          });
+        }
       } catch (emailError) {
         console.error("Email notification failed:", emailError);
       }

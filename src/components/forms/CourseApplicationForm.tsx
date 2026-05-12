@@ -150,6 +150,16 @@ export function CourseApplicationForm({
             },
           });
         }
+        if (formData.email) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "course-application-client",
+              recipientEmail: formData.email,
+              idempotencyKey: `course-app-client-${applicationId}`,
+              templateData: { courseName, name: formData.name },
+            },
+          });
+        }
       } catch (emailError) {
         console.error("Email notification failed:", emailError);
       }

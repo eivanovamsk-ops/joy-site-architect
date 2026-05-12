@@ -24,6 +24,7 @@ import upceraStMl from "@/assets/products/upcera-st-ml.webp";
 import upceraDuo from "@/assets/products/upcera-duo.webp";
 import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraHtWhite from "@/assets/products/upcera-ht-white.jpg";
+import honchonTitan from "@/assets/products/honchon-titan.png";
 
 export interface ProductVariant {
   diameter: number;

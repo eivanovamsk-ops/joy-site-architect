@@ -139,7 +139,7 @@ function CourseGalleryCard({ images }: {images: string[];}) {
 
 }
 
-function CoursePhotoGallery({ images }: {images: string[];}) {
+function CoursePhotoGallery({ images, fullWidth = false }: {images: string[]; fullWidth?: boolean;}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const galleryRef = useReveal();
@@ -161,8 +161,8 @@ function CoursePhotoGallery({ images }: {images: string[];}) {
 
   return (
     <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div ref={galleryRef} className="max-w-6xl mx-auto">
+      <div className={cn(fullWidth ? "w-full px-4" : "container mx-auto px-4")}>
+        <div ref={galleryRef} className={cn(fullWidth ? "w-full" : "max-w-6xl mx-auto")}>
           <div className="flex items-center gap-3 mb-10">
             <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
               <Camera className="h-6 w-6 text-primary-foreground" />
@@ -981,7 +981,7 @@ const CourseDetail = () => {
 
         {/* ===== Photo Gallery Section (after Program) ===== */}
         {course.galleryImages && course.galleryImages.length > 0 &&
-        <CoursePhotoGallery images={course.galleryImages} />
+        <CoursePhotoGallery images={course.galleryImages} fullWidth={course.fullWidthGallery} />
         }
 
         {/* How to get there — only for course 21 */}

@@ -20,6 +20,13 @@ import course27Gallery3 from "@/assets/courses/course-27-gallery-3.webp";
 import course27Gallery4 from "@/assets/courses/course-27-gallery-4.webp";
 import course27Gallery5 from "@/assets/courses/course-27-gallery-5.webp";
 import course35Banner from "@/assets/courses/course-35-banner.jpg";
+import course35Gallery1 from "@/assets/courses/course-35-gallery-1.jpeg";
+import course35Gallery2 from "@/assets/courses/course-35-gallery-2.jpeg";
+import course35Gallery3 from "@/assets/courses/course-35-gallery-3.jpeg";
+import course35Gallery4 from "@/assets/courses/course-35-gallery-4.jpeg";
+import course35Gallery5 from "@/assets/courses/course-35-gallery-5.jpeg";
+import course35Gallery6 from "@/assets/courses/course-35-gallery-6.jpeg";
+import course35Gallery7 from "@/assets/courses/course-35-gallery-7.jpeg";
 import lecturerNikulina from "@/assets/lecturers/viktoria-nikulina.webp";
 import lecturerNikonenko from "@/assets/lecturers/dmitry-nikonenko.jpg";
 
@@ -88,6 +95,7 @@ export interface Course {
   videos?: string[];
   lightBanner?: boolean;
   galleryImages?: string[];
+  fullWidthGallery?: boolean;
   partners?: { name: string; logo: string; url: string }[];
   upcomingDates?: { date: string; dateStart: Date }[];
   handsOnModule?: { title: string; description: string };
@@ -2579,6 +2587,16 @@ export const courses: Course[] = [
       "Сертификат об обучении",
       "Кофе-брейки и обеды"
     ],
+    galleryImages: [
+      course35Gallery1,
+      course35Gallery2,
+      course35Gallery3,
+      course35Gallery4,
+      course35Gallery5,
+      course35Gallery6,
+      course35Gallery7
+    ],
+    fullWidthGallery: true,
     faq: [
       {
         question: "Нужен ли опыт работы с керамикой?",

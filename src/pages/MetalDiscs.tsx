@@ -91,13 +91,16 @@ const MetalDiscs = () => {
             )}
 
             {/* Titanium Section */}
-            {titaniumProducts.length > 0 && (
+            {(titaniumProducts.length > 0 || titaniumVariants.length > 0) && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
                   <h2 className="text-2xl font-bold text-foreground">Титан (Ti)</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {titaniumVariants.map((product) => (
+                    <VariantProductCard key={product.id} product={product} />
+                  ))}
                   {titaniumProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
@@ -106,11 +109,11 @@ const MetalDiscs = () => {
             )}
 
             {/* Other products or all if no categorization */}
-            {(otherProducts.length > 0 || (cocrProducts.length === 0 && titaniumProducts.length === 0)) && (
+            {(otherProducts.length > 0 || (cocrProducts.length === 0 && titaniumProducts.length === 0 && titaniumVariants.length === 0)) && (
               <section>
                 <div className="flex items-center gap-4 mb-8">
                   <h2 className="text-2xl font-bold text-foreground">
-                    {cocrProducts.length === 0 && titaniumProducts.length === 0 
+                    {cocrProducts.length === 0 && titaniumProducts.length === 0 && titaniumVariants.length === 0
                       ? "Все металлические диски" 
                       : "Другие металлические диски"}
                   </h2>
@@ -124,7 +127,7 @@ const MetalDiscs = () => {
               </section>
             )}
 
-            {metalDiscs.length === 0 && (
+            {metalDiscs.length === 0 && titaniumVariants.length === 0 && (
               <div className="text-center py-16">
                 <p className="text-muted-foreground text-lg">
                   Товары в данной категории скоро появятся

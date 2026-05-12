@@ -116,6 +116,16 @@ export default function WebinarAlignersMay2026() {
             body: { templateName: "course-application", recipientEmail: recipient, idempotencyKey: `course-app-${applicationId}-${recipient}` },
           });
         }
+        if (form.email) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "course-application-client",
+              recipientEmail: form.email,
+              idempotencyKey: `course-app-client-${applicationId}`,
+              templateData: { courseName: "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026", name: form.name },
+            },
+          });
+        }
       } catch {}
 
       setIsSubmitted(true);

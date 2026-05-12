@@ -306,6 +306,7 @@ function generateHonchonTitanVariants(): ProductVariant[] {
   return variants;
 }
 
+export const variantProducts: VariantProduct[] = [
   // === КАРКАСНЫЙ ===
   {
     id: "upcera-st-color",

@@ -407,11 +407,23 @@ const Admin = () => {
                             {formatDate(order.created_at)}
                           </p>
                           <p className="font-bold text-lg">{formatPrice(order.total_amount)}</p>
-                          {order.shipping_name && (
-                            <div className="text-sm">
-                              <p><strong>Получатель:</strong> {order.shipping_name}</p>
+                          {(order.shipping_name || order.is_guest_order) && (
+                            <div className="text-sm space-y-1">
+                              {order.shipping_name && <p><strong>Получатель:</strong> {order.shipping_name}</p>}
                               {order.shipping_phone && <p><strong>Телефон:</strong> {order.shipping_phone}</p>}
+                              {order.guest_email && <p><strong>Email:</strong> {order.guest_email}</p>}
+                              {order.telegram && <p><strong>Telegram:</strong> {order.telegram}</p>}
+                              {order.city && <p><strong>Город:</strong> {order.city}</p>}
                               {order.shipping_address && <p><strong>Адрес:</strong> {order.shipping_address}</p>}
+                              {order.delivery_method && <p><strong>Доставка:</strong> {order.delivery_method === 'pickup' ? 'Самовывоз' : 'Доставка'}</p>}
+                              {order.payment_type && <p><strong>Оплата:</strong> {order.payment_type}</p>}
+                              {order.company_details && <p><strong>Реквизиты компании:</strong> {order.company_details}</p>}
+                              {order.company_file_url && (
+                                <p><strong>Файл реквизитов:</strong>{' '}
+                                  <a href={order.company_file_url} target="_blank" rel="noreferrer" className="text-primary underline">Скачать</a>
+                                </p>
+                              )}
+                              {order.is_guest_order && <p className="text-xs text-muted-foreground">Гостевой заказ</p>}
                             </div>
                           )}
                           {order.notes && (

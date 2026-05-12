@@ -4873,7 +4873,7 @@ UPCERA E52 Hybrid используется для изготовления:
     subcategory: "furnaces",
     price: null,
     image: upceraGt1ProNew,
-    gallery: [upceraGt1ProNew, upceraGt1Pro1, upceraGt1Pro2],
+    gallery: [upceraGt1ProNew],
     brand: "Upcera",
     inStock: true,
     metaDescription: "Купить печь для синтеризации циркония Upcera GT1 Pro в Москве — максимальная температура 1500 °C, PID-контроль, до 200 программ, функция восстановления после сбоя. Articon, доставка по России.",

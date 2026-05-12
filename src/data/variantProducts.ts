@@ -280,7 +280,32 @@ function generateHtWhiteVariants(): ProductVariant[] {
   return variants;
 }
 
-export const variantProducts: VariantProduct[] = [
+// ==========================================
+// HONCHON TITAN (Заготовки из титана)
+// Heights: 12, 14, 16, 18, 20
+// ==========================================
+const honchonTitanPrices: Record<number, number> = {
+  12: 5000,
+  14: 4900,
+  16: 5250,
+  18: 5650,
+  20: 6100,
+};
+
+function generateHonchonTitanVariants(): ProductVariant[] {
+  const variants: ProductVariant[] = [];
+  for (const height of [12, 14, 16, 18, 20]) {
+    variants.push({
+      diameter: 98,
+      height,
+      shade: "Ti",
+      price: honchonTitanPrices[height],
+      sku: `Honchon Titan 98×${height}`,
+    });
+  }
+  return variants;
+}
+
   // === КАРКАСНЫЙ ===
   {
     id: "upcera-st-color",

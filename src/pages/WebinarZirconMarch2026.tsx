@@ -269,6 +269,16 @@ export default function WebinarZirconMarch2026() {
           });
           if (fnError) console.error("Email function error:", fnError);
         }
+        if (form.email) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "course-application-client",
+              recipientEmail: form.email,
+              idempotencyKey: `course-app-client-${applicationId}`,
+              templateData: { courseName: "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026", name: form.name },
+            },
+          });
+        }
       } catch (emailErr) {
         console.error("Email invocation failed:", emailErr);
       }

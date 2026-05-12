@@ -40,14 +40,28 @@ interface Order {
   shipping_phone: string | null;
   shipping_address: string | null;
   notes: string | null;
+  telegram: string | null;
+  city: string | null;
+  delivery_method: string | null;
+  payment_type: string | null;
+  company_details: string | null;
+  company_file_url: string | null;
+  is_guest_order: boolean | null;
+  guest_email: string | null;
 }
 
 interface CourseApplication {
   id: string;
   created_at: string;
   name: string;
+  last_name: string | null;
   email: string;
   phone: string | null;
+  telegram: string | null;
+  city: string | null;
+  specialization: string | null;
+  organization: string | null;
+  payment_type: string | null;
   course_name: string;
   course_date: string | null;
   message: string | null;

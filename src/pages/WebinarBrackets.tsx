@@ -83,7 +83,20 @@ export default function WebinarBrackets() {
       try {
         for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
           await supabase.functions.invoke("send-transactional-email", {
-            body: { templateName: "course-application", recipientEmail: recipient, idempotencyKey: `course-app-${applicationId}-${recipient}` },
+            body: {
+              templateName: "course-application",
+              recipientEmail: recipient,
+              idempotencyKey: `course-app-${applicationId}-${recipient}`,
+              templateData: {
+                courseName: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026",
+                courseDate: "2026-06-05",
+                name: form.name,
+                phone: form.phone,
+                telegram: form.telegram,
+                email: form.email,
+                specialization: form.specialization,
+              },
+            },
           });
         }
         if (form.email) {

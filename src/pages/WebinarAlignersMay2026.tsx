@@ -113,7 +113,20 @@ export default function WebinarAlignersMay2026() {
       try {
         for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
           await supabase.functions.invoke("send-transactional-email", {
-            body: { templateName: "course-application", recipientEmail: recipient, idempotencyKey: `course-app-${applicationId}-${recipient}` },
+            body: {
+              templateName: "course-application",
+              recipientEmail: recipient,
+              idempotencyKey: `course-app-${applicationId}-${recipient}`,
+              templateData: {
+                courseName: "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026",
+                courseDate: "2026-05-29",
+                name: form.name,
+                phone: form.phone,
+                telegram: form.telegram,
+                email: form.email,
+                specialization: form.specialization,
+              },
+            },
           });
         }
         if (form.email) {

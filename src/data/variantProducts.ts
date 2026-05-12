@@ -22,7 +22,7 @@ import upceraExploreFunctional3 from "@/assets/products/upcera-explore-functiona
 import upceraExploreEsthetic from "@/assets/products/upcera-explore-esthetic.webp";
 import upceraStMl from "@/assets/products/upcera-st-ml.webp";
 import upceraDuo from "@/assets/products/upcera-duo.webp";
-import upceraStColor from "@/assets/products/upcera-st-color.webp";
+import upceraStColor from "@/assets/products/upcera-st-color.jpg";
 import upceraHtWhite from "@/assets/products/upcera-ht-white.webp";
 
 export interface ProductVariant {

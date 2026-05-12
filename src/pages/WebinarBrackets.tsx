@@ -81,9 +81,11 @@ export default function WebinarBrackets() {
       if (error) throw error;
 
       try {
-        await supabase.functions.invoke("send-transactional-email", {
-          body: { templateName: "course-application", recipientEmail: "edu@articon.pro", idempotencyKey: `course-app-${applicationId}` },
-        });
+        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
+          await supabase.functions.invoke("send-transactional-email", {
+            body: { templateName: "course-application", recipientEmail: recipient, idempotencyKey: `course-app-${applicationId}-${recipient}` },
+          });
+        }
       } catch {}
 
       setIsSubmitted(true);

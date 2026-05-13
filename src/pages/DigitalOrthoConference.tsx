@@ -653,8 +653,6 @@ const DigitalOrthoConference = () => {
           </div>
         </section>
 
-        <CourseContactBlock />
-
         {/* ═══════ GENERAL PARTNER ═══════ */}
         <section className="py-20 border-t border-[#1A2035]">
           <div className="container mx-auto px-4">

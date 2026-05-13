@@ -295,7 +295,12 @@ export default function WebinarZirconMarch2026() {
         console.error("Email invocation failed:", emailErr);
       }
 
-      navigate("/education/webinar/zircon-march-2026/thank-you");
+      navigate("/education/webinar/zircon-march-2026/thank-you", {
+        state: {
+          webinarName: "Вебинар: Лайфхаки в работе с цирконом",
+          webinarDate: "14 апреля",
+        },
+      });
     } catch {
       toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
     } finally {

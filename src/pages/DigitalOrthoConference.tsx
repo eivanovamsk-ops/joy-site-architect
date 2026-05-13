@@ -14,6 +14,7 @@ import obkLogo from "@/assets/partners/obk-logo.webp";
 import eonAlignerLogo from "@/assets/partners/eon-aligner-logo.svg";
 import protectLogo from "@/assets/partners/protect-logo.webp";
 import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
+import wirelocksLogo from "@/assets/partners/wirelocks-logo.png";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.webp";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.webp";
 import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.webp";
@@ -653,6 +654,26 @@ const DigitalOrthoConference = () => {
         </section>
 
         <CourseContactBlock />
+
+        {/* ═══════ GENERAL PARTNER ═══════ */}
+        <section className="py-20 border-t border-[#1A2035]">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] mb-3" style={{ color: `${ACCENT}99` }}>Генеральный партнер</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5]">Генеральный партнер конференции</h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex items-center justify-center rounded-2xl border border-white bg-white p-8 h-40 w-full max-w-md">
+                <img
+                  src={wirelocksLogo}
+                  alt="WireLocks — digital orthodontic technology"
+                  className="max-h-24 max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ═══════ PARTNERS ═══════ */}
         <section className="py-20 border-t border-[#1A2035]">

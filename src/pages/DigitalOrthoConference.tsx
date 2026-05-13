@@ -655,6 +655,26 @@ const DigitalOrthoConference = () => {
 
         <CourseContactBlock />
 
+        {/* ═══════ GENERAL PARTNER ═══════ */}
+        <section className="py-20 border-t border-[#1A2035]">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] mb-3" style={{ color: `${ACCENT}99` }}>Генеральный партнер</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5]">Генеральный партнер конференции</h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex items-center justify-center rounded-2xl border border-white bg-white p-8 h-40 w-full max-w-md">
+                <img
+                  src={wirelocksLogo}
+                  alt="WireLocks — digital orthodontic technology"
+                  className="max-h-24 max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════ PARTNERS ═══════ */}
         <section className="py-20 border-t border-[#1A2035]">
           <div className="container mx-auto px-4">

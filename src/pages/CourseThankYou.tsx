@@ -1,8 +1,71 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { CheckCircle2, Loader2, CreditCard } from "lucide-react";
+import { useState } from "react";
+
+interface ThankYouState {
+  applicationId?: string;
+  courseName?: string;
+  coursePrice?: number;
+  customerEmail?: string;
+  customerPhone?: string;
+  customerName?: string;
+  paymentType?: string;
+}
 
 const CourseThankYou = () => {
+  const location = useLocation();
+  const { toast } = useToast();
+  const state = (location.state as ThankYouState) || {};
+  const [isPayLoading, setIsPayLoading] = useState(false);
+
+  const needsPayment =
+    state.coursePrice && state.coursePrice > 0 && state.paymentType === "private";
+
+  const handlePay = async () => {
+    if (!state.applicationId || !state.coursePrice) return;
+    setIsPayLoading(true);
+
+    try {
+      const { data, error: payError } = await supabase.functions.invoke(
+        "tbank-init-payment",
+        {
+          body: {
+            courseApplicationId: state.applicationId,
+            courseName: state.courseName,
+            amount: state.coursePrice,
+            customerEmail: state.customerEmail,
+            customerPhone: state.customerPhone,
+            customerName: state.customerName,
+            successUrl: `${window.location.origin}/education/payment-success`,
+            failUrl: `${window.location.origin}/education/payment-failed`,
+          },
+        },
+      );
+
+      if (payError) throw payError;
+
+      if (data?.paymentUrl) {
+        window.location.href = data.paymentUrl;
+        return;
+      }
+      throw new Error("Не получена ссылка на оплату");
+    } catch (err) {
+      console.error("Payment init failed:", err);
+      toast({
+        variant: "destructive",
+        title: "Не удалось перейти к оплате",
+        description: "Попробуйте позже или свяжитесь с нами.",
+      });
+    } finally {
+      setIsPayLoading(false);
+    }
+  };
+
   return (
     <Layout>
       <Helmet>
@@ -24,9 +87,36 @@ const CourseThankYou = () => {
             <p className="text-lg text-muted-foreground mb-4">
               Куратор Учебного центра свяжется с вами в ближайшее время для уточнения деталей.
             </p>
-            <p className="text-sm text-muted-foreground mb-12">
+            <p className="text-sm text-muted-foreground mb-8">
               Если вы не увидели письмо на почте, пожалуйста, проверьте папку СПАМ
             </p>
+
+            {needsPayment && (
+              <div className="mb-10 p-6 rounded-2xl border border-border bg-card">
+                <p className="text-muted-foreground mb-4">
+                  Курс <strong className="text-foreground">«{state.courseName}»</strong>
+                </p>
+                <p className="text-3xl font-bold text-accent mb-6">
+                  {state.coursePrice?.toLocaleString("ru-RU")} ₽
+                </p>
+                <Button
+                  size="lg"
+                  onClick={handlePay}
+                  disabled={isPayLoading}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-6 rounded-xl font-bold"
+                >
+                  {isPayLoading ? (
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  ) : (
+                    <CreditCard className="mr-2 h-5 w-5" />
+                  )}
+                  Оплатить
+                </Button>
+                <p className="text-xs text-muted-foreground mt-4">
+                  После оплаты вы получите подтверждение на почту
+                </p>
+              </div>
+            )}
 
             <div className="border-t border-border pt-8">
               <p className="text-lg font-semibold mb-4">

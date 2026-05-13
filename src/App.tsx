@@ -166,9 +166,11 @@ const App = () => (
                 <Route path="/education/course/:id" element={<CourseDetail />} />
                 <Route path="/education/webinars" element={<Webinars />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
+                <Route path="/education/webinar/brackets-march-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />
-                <Route path="/education/webinar/aligners-maestro-may-2026" element={<WebinarAlignersMay2026 />} />
                 <Route path="/education/webinar/zircon-march-2026/thank-you" element={<WebinarThankYou />} />
+                <Route path="/education/webinar/aligners-maestro-may-2026" element={<WebinarAlignersMay2026 />} />
+                <Route path="/education/webinar/aligners-maestro-may-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/thank-you" element={<CourseThankYou />} />
                 <Route path="/education/payment-success" element={<PaymentSuccess />} />
                 <Route path="/education/payment-failed" element={<PaymentFailed />} />

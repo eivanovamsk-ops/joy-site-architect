@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
+import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import {
   Calendar, Clock, Monitor, Gift, CheckCircle2, Loader2,
@@ -67,50 +67,20 @@ export default function WebinarBrackets() {
     setIsLoading(true);
 
     try {
-      const applicationId = crypto.randomUUID();
-      const { error } = await supabase.from("course_applications").insert({
-        id: applicationId,
-        user_id: user?.id || null,
+      const courseName = "Вебинар: Непрямая фиксация брекетов — 5 июня 2026";
+      const courseDate = "2026-06-05";
+      const applicationPayload = {
+        userId: user?.id || null,
         name: form.name,
-        email: form.email || null,
+        email: form.email || `${form.phone.replace(/\D/g, "")}@no-email.articon.local`,
         phone: form.phone,
         telegram: form.telegram,
         specialization: form.specialization || null,
-        course_name: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026",
-        course_date: "2026-06-05",
-      } as any);
-      if (error) throw error;
-
-      try {
-        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application",
-              recipientEmail: recipient,
-              idempotencyKey: `course-app-${applicationId}-${recipient}`,
-              templateData: {
-                courseName: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026",
-                courseDate: "2026-06-05",
-                name: form.name,
-                phone: form.phone,
-                telegram: form.telegram,
-                email: form.email,
-                specialization: form.specialization,
-              },
-            },
-          });
-        }
-        if (form.email) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application-client",
-              recipientEmail: form.email,
-              idempotencyKey: `course-app-client-${applicationId}`,
-              templateData: { courseName: "Вебинар: Непрямая фиксация брекетов — 5 июня 2026", name: form.name },
-            },
-          });
-        }
-      } catch {}
+        courseName,
+        courseDate,
+      };
+      const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId, email: form.email });
 
       navigate("/education/webinar/brackets-march-2026/thank-you", {
         state: {

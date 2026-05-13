@@ -39,7 +39,7 @@ const withTimeout = async <T,>(promise: Promise<T>, timeoutMs: number): Promise<
 export const submitCourseApplication = async (
   payload: CourseApplicationPayload,
 ): Promise<SubmitCourseApplicationResult> => {
-  const { data, error } = await withTimeout(
+  const { data, error } = await withTimeout<{ data: any; error: any }>(
     (supabase as any).rpc("submit_course_application", {
       p_name: payload.name,
       p_email: payload.email,

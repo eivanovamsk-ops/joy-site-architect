@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -77,8 +78,8 @@ const results = [
 export default function WebinarAlignersMay2026() {
   const { toast } = useToast();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -141,7 +142,12 @@ export default function WebinarAlignersMay2026() {
         }
       } catch {}
 
-      setIsSubmitted(true);
+      navigate("/education/webinar/aligners-maestro-may-2026/thank-you", {
+        state: {
+          webinarName: "Вебинар: Элайнеры в Maestro 3D",
+          webinarDate: "29 мая",
+        },
+      });
     } catch {
       toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
     } finally {

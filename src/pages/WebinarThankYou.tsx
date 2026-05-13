@@ -1,8 +1,19 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CheckCircle2 } from "lucide-react";
 
+interface ThankYouState {
+  webinarName?: string;
+  webinarDate?: string;
+}
+
 const WebinarThankYou = () => {
+  const location = useLocation();
+  const state = (location.state as ThankYouState) || {};
+  const webinarName = state.webinarName || "вебинар";
+  const webinarDate = state.webinarDate || "в назначенную дату";
+
   return (
     <Layout>
       <Helmet>
@@ -22,7 +33,7 @@ const WebinarThankYou = () => {
               На почту вам придет ссылка на чат в Телеграм.
             </p>
             <p className="text-lg text-muted-foreground mb-4">
-              Добавляйтесь, и до встречи 14 апреля!
+              Добавляйтесь, и до встречи {webinarDate}!
             </p>
             <p className="text-sm text-muted-foreground mb-12">
               (Если вы не увидели письмо во входящих, пожалуйста, проверьте папку «Спам»)

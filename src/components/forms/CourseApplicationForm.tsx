@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
+import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
 import { Loader2, GraduationCap } from "lucide-react";
 import { z } from "zod";
 import {
@@ -109,60 +109,23 @@ export function CourseApplicationForm({
     setIsLoading(true);
 
     try {
-      const applicationId = crypto.randomUUID();
-      const { error } = await supabase.from("course_applications").insert({
-        id: applicationId,
-        user_id: user?.id || null,
+      const applicationPayload = {
+        userId: user?.id || null,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        course_name: courseName,
-        course_date: null,
-        
-        last_name: formData.last_name,
+        courseName,
+        courseDate: null,
+        lastName: formData.last_name,
         telegram: null,
         city: formData.city,
         specialization: formData.specialization,
         organization: formData.organization,
         message: formData.comment || null,
-        payment_type: formData.payment_type,
-      } as any);
-
-      if (error) throw error;
-
-      try {
-        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application",
-              recipientEmail: recipient,
-              idempotencyKey: `course-app-${applicationId}-${recipient}`,
-              templateData: {
-                courseName: courseName,
-                name: formData.name,
-                lastName: formData.last_name,
-                phone: formData.phone,
-                city: formData.city,
-                specialization: formData.specialization,
-                email: formData.email,
-                paymentType: formData.payment_type,
-              },
-            },
-          });
-        }
-        if (formData.email) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application-client",
-              recipientEmail: formData.email,
-              idempotencyKey: `course-app-client-${applicationId}`,
-              templateData: { courseName, name: formData.name },
-            },
-          });
-        }
-      } catch (emailError) {
-        console.error("Email notification failed:", emailError);
-      }
+        paymentType: formData.payment_type,
+      };
+      const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId });
 
       setFormData(initialFormData);
       setOpen(false);

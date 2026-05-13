@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
+import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import {
   Calendar, Clock, Monitor, CheckCircle2, Loader2,
@@ -97,50 +97,20 @@ export default function WebinarAlignersMay2026() {
     setIsLoading(true);
 
     try {
-      const applicationId = crypto.randomUUID();
-      const { error } = await supabase.from("course_applications").insert({
-        id: applicationId,
-        user_id: user?.id || null,
+      const courseName = "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026";
+      const courseDate = "2026-05-29";
+      const applicationPayload = {
+        userId: user?.id || null,
         name: form.name,
-        email: form.email || null,
+        email: form.email,
         phone: form.phone,
         telegram: form.telegram,
         specialization: form.specialization || null,
-        course_name: "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026",
-        course_date: "2026-05-29",
-      } as any);
-      if (error) throw error;
-
-      try {
-        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application",
-              recipientEmail: recipient,
-              idempotencyKey: `course-app-${applicationId}-${recipient}`,
-              templateData: {
-                courseName: "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026",
-                courseDate: "2026-05-29",
-                name: form.name,
-                phone: form.phone,
-                telegram: form.telegram,
-                email: form.email,
-                specialization: form.specialization,
-              },
-            },
-          });
-        }
-        if (form.email) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application-client",
-              recipientEmail: form.email,
-              idempotencyKey: `course-app-client-${applicationId}`,
-              templateData: { courseName: "Вебинар: Элайнеры в Maestro 3D — 29 мая 2026", name: form.name },
-            },
-          });
-        }
-      } catch {}
+        courseName,
+        courseDate,
+      };
+      const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId });
 
       navigate("/education/webinar/aligners-maestro-may-2026/thank-you", {
         state: {

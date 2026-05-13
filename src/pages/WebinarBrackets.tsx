@@ -112,7 +112,12 @@ export default function WebinarBrackets() {
         }
       } catch {}
 
-      setIsSubmitted(true);
+      navigate("/education/webinar/brackets-march-2026/thank-you", {
+        state: {
+          webinarName: "Вебинар: Непрямая фиксация брекетов",
+          webinarDate: "5 июня",
+        },
+      });
     } catch {
       toast({ variant: "destructive", title: "Ошибка", description: "Попробуйте позже" });
     } finally {

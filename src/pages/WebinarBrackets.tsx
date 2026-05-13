@@ -49,8 +49,8 @@ const audiences = [
 export default function WebinarBrackets() {
   const { toast } = useToast();
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", telegram: "", email: "", specialization: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 

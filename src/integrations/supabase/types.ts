@@ -532,6 +532,27 @@ export type Database = {
           read_ct: number
         }[]
       }
+      submit_course_application: {
+        Args: {
+          p_city?: string
+          p_course_date?: string
+          p_course_name: string
+          p_email: string
+          p_last_name?: string
+          p_message?: string
+          p_name: string
+          p_organization?: string
+          p_payment_type?: string
+          p_phone: string
+          p_specialization?: string
+          p_telegram?: string
+          p_user_id?: string
+        }
+        Returns: {
+          application_id: string
+          inserted: boolean
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

@@ -363,49 +363,39 @@ export default function WebinarAlignersMay2026() {
               <p className="text-xl text-accent font-semibold mt-3">29 мая в 19:00 · Онлайн · Бесплатно</p>
             </div>
 
-            {isSubmitted ? (
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
-                <div className="w-16 h-16 bg-ortho/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="h-8 w-8 text-[hsl(155,80%,65%)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Вы зарегистрированы!</h3>
-                <p className="text-white/70">Мы пришлём ссылку на вебинар на вашу почту. До встречи 29 мая!</p>
+            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
+                <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
+                {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
-                  <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
-                  {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
-                  <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
-                  {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-email" className="text-white/90">Email *</Label>
-                  <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
-                  {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-tg" className="text-white/90">Telegram</Label>
-                  <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
-                  <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Ортодонт" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-                </div>
-                <Button type="submit" disabled={isLoading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-bold rounded-xl shadow-[0_0_30px_hsl(42,82%,52%,0.3)]">
-                  {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                  Зарегистрироваться
-                </Button>
-                <p className="text-xs text-white/40 text-center">
-                  Нажимая кнопку, вы соглашаетесь с{" "}
-                  <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
-                </p>
-              </form>
-            )}
+              <div className="space-y-1.5">
+                <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
+                <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
+                {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="w-email" className="text-white/90">Email *</Label>
+                <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
+                {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="w-tg" className="text-white/90">Telegram</Label>
+                <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
+                <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Ортодонт" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
+              </div>
+              <Button type="submit" disabled={isLoading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6 font-bold rounded-xl shadow-[0_0_30px_hsl(42,82%,52%,0.3)]">
+                {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                Зарегистрироваться
+              </Button>
+              <p className="text-xs text-white/40 text-center">
+                Нажимая кнопку, вы соглашаетесь с{" "}
+                <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
+              </p>
+            </form>
           </div>
         </div>
       </section>

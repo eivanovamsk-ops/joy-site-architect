@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
+import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
 import {
   Calendar, Clock, Monitor, CheckCircle2, Loader2,
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Sparkles, Target, Palette, Wrench, X, ZoomIn, Play,
@@ -248,52 +248,20 @@ export default function WebinarZirconMarch2026() {
     setIsLoading(true);
 
     try {
-      const applicationId = crypto.randomUUID();
-      const { error } = await supabase.from("course_applications").insert({
-        id: applicationId,
-        user_id: user?.id || null,
+      const courseName = "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026";
+      const courseDate = "2026-04-14";
+      const applicationPayload = {
+        userId: user?.id || null,
         name: form.name,
-        email: form.email || null,
+        email: form.email,
         phone: form.phone,
         telegram: "",
         specialization: form.specialization || null,
-        course_name: "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026",
-        course_date: "2026-04-14",
-      } as any);
-      if (error) throw error;
-
-      try {
-        for (const recipient of ["edu@articon.pro", "event@articon.pro"]) {
-          const { error: fnError } = await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application",
-              recipientEmail: recipient,
-              idempotencyKey: `course-app-${applicationId}-${recipient}`,
-              templateData: {
-                courseName: "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026",
-                courseDate: "2026-04-14",
-                name: form.name,
-                phone: form.phone,
-                email: form.email,
-                specialization: form.specialization,
-              },
-            },
-          });
-          if (fnError) console.error("Email function error:", fnError);
-        }
-        if (form.email) {
-          await supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "course-application-client",
-              recipientEmail: form.email,
-              idempotencyKey: `course-app-client-${applicationId}`,
-              templateData: { courseName: "Вебинар: Лайфхаки в работе с цирконом — 14 апреля 2026", name: form.name },
-            },
-          });
-        }
-      } catch (emailErr) {
-        console.error("Email invocation failed:", emailErr);
-      }
+        courseName,
+        courseDate,
+      };
+      const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId });
 
       navigate("/education/webinar/zircon-march-2026/thank-you", {
         state: {

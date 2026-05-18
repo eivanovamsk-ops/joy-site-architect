@@ -658,7 +658,7 @@ export const courses: Course[] = [
       },
       {
         question: "Какое оборудование используется?",
-        answer: "Фрезерные станки UPCERA, IMES 250, IMES 350."
+        answer: "Фрезерные станки UPCERA, IMES 350."
       },
       {
         question: "Что я получу после курса?",

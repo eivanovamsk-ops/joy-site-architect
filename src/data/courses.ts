@@ -641,7 +641,7 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Шкультецкий Григорий",
-        photo: "/images/lecturers/shkultsetsky-grigoriy.webp",
+        photo: "/images/lecturers/shkultsetsky-grigoriy.jpg",
         position: "Инженер компании Upcera. Технолог ЗТЛ \"Атлас\".",
         bio: "Инженер компании Upcera. Технолог ЗТЛ «Атлас». В Стоматологии более 8 лет."
       }

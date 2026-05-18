@@ -115,9 +115,11 @@ const shining3dAutoscanDsExProH6 = new URL("../assets/products/shining3d-autosca
 const cure3Ultra1 = new URL("../assets/products/cure-3-ultra-1.webp", import.meta.url).href;
 const cure3Ultra2 = new URL("../assets/products/cure-3-ultra-2.webp", import.meta.url).href;
 // Magnum Dental Flash images
-const magnumFlash1 = new URL("../assets/products/magnum-dental-flash-1.webp", import.meta.url).href;
-const magnumFlash2 = new URL("../assets/products/magnum-dental-flash-2.webp", import.meta.url).href;
-const magnumFlash3 = new URL("../assets/products/magnum-dental-flash-3.webp", import.meta.url).href;
+const magnumFlash1 = new URL("../assets/products/magnum-dental-flash-1.png", import.meta.url).href;
+const magnumFlash2 = new URL("../assets/products/magnum-dental-flash-2.jpg", import.meta.url).href;
+const magnumFlash3 = new URL("../assets/products/magnum-dental-flash-3.jpg", import.meta.url).href;
+const magnumFlash4 = new URL("../assets/products/magnum-dental-flash-4.png", import.meta.url).href;
+const magnumFlash5 = new URL("../assets/products/magnum-dental-flash-5.png", import.meta.url).href;
 const magnumFlashBanner = new URL("../assets/products/magnum-dental-flash-banner.webp", import.meta.url).href;
 const magnumFlashSpectrum = new URL("../assets/products/magnum-dental-flash-spectrum.webp", import.meta.url).href;
 // Ultrasonic W230 images
@@ -671,7 +673,7 @@ UniFormation W230 — это эффективное решение для быс
     subcategory: "3d-printers",
     price: null,
     image: magnumFlash1,
-    gallery: [magnumFlash1, magnumFlash2, magnumFlash3, magnumFlashBanner, magnumFlashSpectrum],
+    gallery: [magnumFlash1, magnumFlash2, magnumFlash3, magnumFlash4, magnumFlash5, magnumFlashBanner, magnumFlashSpectrum],
     brand: "Magnum",
     isNew: true,
     inStock: true,

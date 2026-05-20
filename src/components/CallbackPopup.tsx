@@ -108,7 +108,7 @@ export function CallbackPopup() {
             Подберём решение для вас
           </DialogTitle>
           <DialogDescription className="text-base text-muted-foreground pt-2">
-            Подберем для вас идеальное решение по оборудованию и материалам — менеджер свяжется в ближайшее время.
+            Подберем для вас идеальное решение по оборудованию и материалам, - менеджер свяжется в ближайшее время.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 pt-2">

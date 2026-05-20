@@ -1633,7 +1633,7 @@ HeyGears UltraPrint-D Model GP используется для:
     name: "3D-сканер AutoScan-DS-EX Pro(C) — быстрый лабораторный сканер для цифровой стоматологии",
     category: "3d-scanners",
     subcategory: "laboratory",
-    price: null,
+    price: 480000,
     image: shining3dAutoscanDsExProC1,
     gallery: [
       shining3dAutoscanDsExProC1,

@@ -1753,7 +1753,7 @@ AutoScan-DS-EX Pro(C) поддерживает:
     name: "3D-сканер AutoScan-DS-EX Pro(H) — лабораторный сканер с точностью до 8 мкм",
     category: "3d-scanners",
     subcategory: "laboratory",
-    price: 600000,
+    price: 650000,
     image: shining3dAutoscanDsExProH1,
     gallery: [
       shining3dAutoscanDsExProH1,

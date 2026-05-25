@@ -688,6 +688,7 @@ const DigitalOrthoConference = () => {
                 { name: "Green Dent", logo: greendentLogo },
                 { name: "Revyline", logo: revylineLogo },
                 { name: "OBK", logo: obkLogo },
+                { name: "Intl. Orthodontic Services", logo: iosLogo },
               ].map((partner) => (
                 <div
                   key={partner.name}

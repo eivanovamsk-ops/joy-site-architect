@@ -6,6 +6,7 @@ import { courses } from "@/data/courses";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
 import speakerYuriyPonyk from "@/assets/speakers/yuriy-ponyk.jpg";
 import speakerShamilMagomedov from "@/assets/speakers/shamil-magomedov.jpg";
+import speakerVruyrEriknazyan from "@/assets/speakers/vruyr-eriknazyan.jpg";
 import upceraPartnerLogo from "@/assets/partners/upcera-logo.png";
 
 const course = courses.find((c) => c.id === 37)!;
@@ -48,6 +49,7 @@ const speakers = [
   {
     name: "Вруйр Эрикназян",
     role: "Руководитель лаборатории",
+    photo: speakerVruyrEriknazyan,
     topics: [
       "Как раскрыть потенциал материала, а не бороться с ним",
       "Температура решает всё?",

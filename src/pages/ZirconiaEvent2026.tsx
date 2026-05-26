@@ -5,6 +5,7 @@ import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm"
 import { courses } from "@/data/courses";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
 import speakerYuriyPonyk from "@/assets/speakers/yuriy-ponyk.jpg";
+import speakerShamilMagomedov from "@/assets/speakers/shamil-magomedov.jpg";
 
 const course = courses.find((c) => c.id === 37)!;
 
@@ -66,6 +67,7 @@ const speakers = [
   {
     name: "Шамиль Магомедов",
     role: "Зубной техник",
+    photo: speakerShamilMagomedov,
     topics: ["Живая демонстрация рабочих техник"],
   },
 ];

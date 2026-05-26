@@ -20,6 +20,7 @@ import course27Gallery3 from "@/assets/courses/course-27-gallery-3.webp";
 import course27Gallery4 from "@/assets/courses/course-27-gallery-4.webp";
 import course27Gallery5 from "@/assets/courses/course-27-gallery-5.webp";
 import course35Banner from "@/assets/courses/course-35-banner.jpg";
+import course37Banner from "@/assets/courses/course-37-banner.jpg";
 import course35Gallery1 from "@/assets/courses/course-35-gallery-1.jpeg";
 import course35Gallery2 from "@/assets/courses/course-35-gallery-2.jpeg";
 import course35Gallery3 from "@/assets/courses/course-35-gallery-3.jpeg";

@@ -23,8 +23,8 @@ const CourseThankYou = () => {
   const state = (location.state as ThankYouState) || {};
   const [isPayLoading, setIsPayLoading] = useState(false);
 
-  const needsPayment =
-    state.coursePrice && state.coursePrice > 0 && state.paymentType === "private";
+  // Оплата через Т-Банк временно отключена
+  const needsPayment = false;
 
   const handlePay = async () => {
     if (!state.applicationId || !state.coursePrice) return;

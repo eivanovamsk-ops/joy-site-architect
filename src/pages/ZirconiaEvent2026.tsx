@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
+import speakerYuriyPonyk from "@/assets/speakers/yuriy-ponyk.jpg";
 
 const course = courses.find((c) => c.id === 37)!;
 

@@ -34,12 +34,12 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
     setSubmitting(true);
 
     try {
-      // Save to DB
-      const { data, error } = await supabase
+      const idempotencyKey = `bundle-${crypto.randomUUID()}`;
+
+      // Save to DB (no read-back to avoid exposing other submitters' rows)
+      const { error } = await supabase
         .from("bundle_requests" as any)
-        .insert({ name: name.trim(), phone: phone.trim() } as any)
-        .select("id")
-        .single();
+        .insert({ name: name.trim(), phone: phone.trim() } as any);
 
       if (error) throw error;
 
@@ -48,7 +48,7 @@ const BundleRequestForm = ({ triggerClassName, triggerSize = "lg" }: BundleReque
         body: {
           templateName: "bundle-request",
           recipientEmail: "moscow@articon.pro",
-          idempotencyKey: `bundle-${(data as any).id}`,
+          idempotencyKey,
           templateData: { name: name.trim(), phone: phone.trim() },
         },
       }).catch((err) => console.error("Email send error:", err));

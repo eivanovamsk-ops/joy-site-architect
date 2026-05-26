@@ -14,6 +14,7 @@ import { courses } from "@/data/courses";
 import { cn } from "@/lib/utils";
 import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import { CourseFloatingVideo } from "@/components/education/CourseFloatingVideo";
+import upceraPartnerLogo from "@/assets/partners/upcera-logo.png";
 
 
 // Scroll reveal hook

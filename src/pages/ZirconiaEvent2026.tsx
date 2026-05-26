@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { courses } from "@/data/courses";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
+import speakerYuriyPonyk from "@/assets/speakers/yuriy-ponyk.jpg";
 
 const course = courses.find((c) => c.id === 37)!;
 
@@ -55,6 +56,7 @@ const speakers = [
   {
     name: "Юрий Понык",
     role: "Руководитель лаборатории",
+    photo: speakerYuriyPonyk,
     topics: [
       "Независимое тестирование нового диоксида циркония в реальной работе лаборатории",
     ],
@@ -260,12 +262,25 @@ const ZirconiaEvent2026 = () => {
               {speakers.map((s, i) => (
                 <div key={i} className="group">
                   <div className="aspect-[4/5] bg-gradient-to-br from-white/[0.06] to-white/[0.01] border border-white/10 mb-6 flex items-end p-8 relative overflow-hidden">
-                    <div className="absolute top-6 right-6 text-xs font-mono text-amber-400/60">
+                    {(s as any).photo && (
+                      <img
+                        src={(s as any).photo}
+                        alt={s.name}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    )}
+                    {(s as any).photo && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    )}
+                    <div className="absolute top-6 right-6 text-xs font-mono text-amber-400/80 z-10">
                       0{i + 1}
                     </div>
-                    <div className="text-5xl md:text-6xl font-black text-white/10 tracking-tight leading-none">
-                      {s.name.split(" ").map((p) => p[0]).join("")}
-                    </div>
+                    {!(s as any).photo && (
+                      <div className="text-5xl md:text-6xl font-black text-white/10 tracking-tight leading-none">
+                        {s.name.split(" ").map((p) => p[0]).join("")}
+                      </div>
+                    )}
                   </div>
                   <div className="text-xs tracking-[0.2em] uppercase text-amber-400/70 mb-2">{s.role}</div>
                   <h3 className="text-2xl font-bold mb-4">{s.name}</h3>

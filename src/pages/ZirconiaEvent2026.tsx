@@ -6,6 +6,7 @@ import { courses } from "@/data/courses";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
 import speakerYuriyPonyk from "@/assets/speakers/yuriy-ponyk.jpg";
 import speakerShamilMagomedov from "@/assets/speakers/shamil-magomedov.jpg";
+import upceraPartnerLogo from "@/assets/partners/upcera-logo.png";
 
 const course = courses.find((c) => c.id === 37)!;
 
@@ -395,6 +396,24 @@ const ZirconiaEvent2026 = () => {
                 </div>
                 <span className="w-1 h-1 rounded-full bg-white/30" />
                 <span>Количество мест ограничено</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-white p-8 md:p-12 shadow-sm">
+              <p className="text-center text-xs md:text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground mb-6">
+                Наш технологический партнёр
+              </p>
+              <div className="flex items-center justify-center">
+                <img
+                  src={upceraPartnerLogo}
+                  alt="Upcera — технологический партнёр"
+                  className="h-20 md:h-28 w-auto object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>

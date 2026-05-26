@@ -595,7 +595,7 @@ export const courses: Course[] = [
     slug: "millbox-sum",
     title: "MillBox & SUM",
     subtitle: "Полный цикл фрезерования в стоматологии от проекта до готовой конструкции",
-    date: "25 мая 2026",
+    date: "Курс уже прошёл",
     dateStart: new Date(2026, 4, 25),
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",

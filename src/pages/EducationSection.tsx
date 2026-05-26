@@ -61,8 +61,8 @@ const EducationSection = () => {
         course.sectionTags?.includes(config.subsectionTag)
       )
       .sort((a, b) => {
-        const isArchivedA = a.id === 23 || a.id === 19 || a.id === 25 || a.id === 11 || a.id === 21;
-        const isArchivedB = b.id === 23 || b.id === 19 || b.id === 25 || b.id === 11 || b.id === 21;
+        const isArchivedA = a.id === 23 || a.id === 19 || a.id === 25 || a.id === 11 || a.id === 21 || a.id === 10;
+        const isArchivedB = b.id === 23 || b.id === 19 || b.id === 25 || b.id === 11 || b.id === 21 || b.id === 10;
         if (isArchivedA && !isArchivedB) return 1;
         if (!isArchivedA && isArchivedB) return -1;
         const isLastA = a.isComingSoon;

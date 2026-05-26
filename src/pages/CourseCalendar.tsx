@@ -52,7 +52,7 @@ const CourseCalendar = () => {
 
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
-      if (course.id === 13 || course.id === 23 || course.id === 25) return false;
+      if (course.id === 13 || course.id === 23 || course.id === 25 || course.id === 10) return false;
       const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
         selectedCategory === "Все разделы" ||

@@ -146,7 +146,15 @@ export const CourseRecommendationPopup = () => {
               templateName: "course-recommendation",
               recipientEmail: recipient,
               idempotencyKey: `course-rec-${inserted.id}-${recipient}`,
-              templateData: { name: data.name, phone: data.phone },
+              templateData: {
+                name: data.name,
+                phone: data.phone,
+                city: data.city,
+                specializations: data.specializations,
+                direction: data.direction,
+                directionOther:
+                  data.direction === "Другое" ? data.directionOther ?? null : null,
+              },
             },
           })
           .catch((err) => console.error("Email notify failed", err));

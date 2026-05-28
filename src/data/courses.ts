@@ -1929,6 +1929,13 @@ export const courses: Course[] = [
         bio: "Более 2 000 смоделированных сетапов. Сертифицированный врач Flexiligner, Ormco, Spark. Лечение пациентов только по цифровому протоколу.",
         photo: "/images/lecturers/chekkueva-zuhra.webp",
         achievements: ["2000+ сетапов", "Сертифицированный врач Flexiligner, Ormco, Spark"]
+      },
+      {
+        name: "Дробаха Ксения",
+        position: "Стоматолог-ортодонт, к.м.н.",
+        bio: "Сертифицированный врач Invisalign, партнер Dental Brilliance Flexiligner.",
+        photo: "/images/lecturers/ksenia-drobakha.png",
+        achievements: ["к.м.н.", "Сертифицированный врач Invisalign"]
       }
     ],
     guestSpeakerNote: "Спикеры разберут самые сложные клинические случаи с позиции ортодонтии и хирургии. Это уникальная возможность увидеть подобную коллаборацию в деле.",

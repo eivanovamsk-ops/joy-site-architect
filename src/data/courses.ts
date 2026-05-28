@@ -2698,7 +2698,7 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Сергей Юдаков",
-        photo: "",
+        photo: "/images/lecturers/sergey-yudakov.jpg",
         position: "Владелец частной зуботехнической лаборатории «Crown Design», г. Москва",
         bio: "Выпускник OSAKA Ceramic training center. Основатель школы Карвинга в России, один из основателей RSSA (Российская ассоциация зубных техников и врачей стоматологов). Лектор RSSA TRAINING CENTER."
       }

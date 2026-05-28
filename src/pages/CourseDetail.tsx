@@ -163,12 +163,6 @@ function CoursePhotoGallery({ images, fullWidth = false }: {images: string[]; fu
     <section className="py-16 bg-muted/30">
       <div className={cn(fullWidth ? "w-full px-4" : "container mx-auto px-4")}>
         <div ref={galleryRef} className={cn(fullWidth ? "w-full" : "max-w-6xl mx-auto")}>
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
-              <Camera className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <h2 className="text-3xl font-bold">Фото с курса</h2>
-          </div>
 
           {/* Main Image */}
           <div

@@ -21,6 +21,7 @@ import course27Gallery4 from "@/assets/courses/course-27-gallery-4.webp";
 import course27Gallery5 from "@/assets/courses/course-27-gallery-5.webp";
 import course35Banner from "@/assets/courses/course-35-banner.jpg";
 import course37Banner from "@/assets/courses/course-37-banner.jpg";
+import course36Banner from "@/assets/courses/course-36-banner.jpg";
 import course35Gallery1 from "@/assets/courses/course-35-gallery-1.jpeg";
 import course35Gallery2 from "@/assets/courses/course-35-gallery-2.jpeg";
 import course35Gallery3 from "@/assets/courses/course-35-gallery-3.jpeg";
@@ -2636,6 +2637,7 @@ export const courses: Course[] = [
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Теория + Практика",
     price: 90000,
+    coverImage: course36Banner,
     description: "Трёхдневный практический курс Сергея Юдакова по цифровому моделированию и карвингу циркониевых реставраций. Разберём строение и формы зубов, индивидуализацию улыбки, подбор библиотек, работу с красителями и глазуровочными порошками, а также карвинг диоксида циркония до синтеризации.",
     shortDescription: "Цифровое моделирование, карвинг диоксида циркония и работа с красителями",
     goal: "Освоить полный цикл цифрового моделирования и карвинга циркониевых реставраций: от анализа формы зубов и индивидуализации улыбки до красительного и глазуровочного обжига с сохранением текстуры.",

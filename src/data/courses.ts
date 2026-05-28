@@ -2728,7 +2728,14 @@ export const courses: Course[] = [
     metaDescription: "Трёхдневный практический курс Сергея Юдакова: цифровое моделирование, карвинг диоксида циркония, красительный и глазуровочный обжиг. Москва, 20–22 ноября 2026.",
     category: "CAD/CAM",
     tags: ["цирконий", "моделирование", "карвинг", "CAD/CAM", "красители", "форма зубов"],
-    sectionTags: ["для техников", "CAD/CAM"]
+    sectionTags: ["для техников", "CAD/CAM"],
+    galleryImages: [
+      "/images/courses/course-36/gallery-1.jpg",
+      "/images/courses/course-36/gallery-2.jpg",
+      "/images/courses/course-36/gallery-3.jpg",
+      "/images/courses/course-36/gallery-4.jpg"
+    ],
+    fullWidthGallery: true
   },
   {
     id: 37,

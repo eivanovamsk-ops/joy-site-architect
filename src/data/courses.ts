@@ -1932,7 +1932,7 @@ export const courses: Course[] = [
       },
       {
         name: "Дробаха Ксения",
-        position: "Стоматолог-ортодонт, к.м.н.",
+        position: "Врач-ортодонт, к.м.н.",
         bio: "Сертифицированный врач Invisalign, партнер Dental Brilliance Flexiligner.",
         photo: "/images/lecturers/ksenia-drobakha.png",
         achievements: ["к.м.н.", "Сертифицированный врач Invisalign"]

@@ -731,6 +731,47 @@ const CourseDetail = () => {
                   course.lecturers.length === 1 ? 'Преподаватель' : 'Преподаватели'}
                   </h2>
                 </div>
+                {course.lecturers.length === 1 ? (
+                  (() => {
+                    const lecturer = course.lecturers[0];
+                    return (
+                      <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
+                        <div className="grid md:grid-cols-2 gap-0">
+                          <div className="relative w-full h-80 md:h-auto md:min-h-[480px] bg-muted">
+                            {lecturer.photo ? (
+                              <img
+                                src={lecturer.photo}
+                                alt={lecturer.name}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="absolute inset-0 flex items-center justify-center text-6xl text-muted-foreground">
+                                {lecturer.name.split(' ').map((n) => n[0]).join('')}
+                              </div>
+                            )}
+                          </div>
+                          <div className="p-8 md:p-12 flex flex-col justify-center">
+                            <h3 className="font-bold text-2xl md:text-3xl mb-2">{lecturer.name}</h3>
+                            {lecturer.position && (
+                              <p className="text-primary text-sm md:text-base font-medium mb-4">{lecturer.position}</p>
+                            )}
+                            <p className="text-muted-foreground text-base leading-relaxed">{lecturer.bio}</p>
+                            {lecturer.achievements && lecturer.achievements.length > 0 && (
+                              <ul className="mt-5 space-y-2">
+                                {lecturer.achievements.map((a, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                    <Award className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                                    {a}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()
+                ) : (
                 <div className={cn(
                 "grid gap-6",
                 course.galleryImages && course.galleryImages.length > 0 ?
@@ -762,6 +803,7 @@ const CourseDetail = () => {
                 )}
 
                 </div>
+                )}
                 {course.guestSpeakerNote &&
               <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl flex items-center gap-3">
                     <Users className="h-5 w-5 text-primary flex-shrink-0" />

@@ -358,7 +358,7 @@ const DigitalOrthoConference = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12">
               {course.lecturers.map((lecturer, i) => {
                 const reveal = useReveal();
                 return (

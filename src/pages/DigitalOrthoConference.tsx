@@ -358,38 +358,52 @@ const DigitalOrthoConference = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mt-12">
-              {course.lecturers.map((lecturer, i) => {
-                const reveal = useReveal();
-                return (
-                  <div
-                    key={i}
-                    ref={reveal.ref}
-                    className={cn(
-                      "group relative bg-[#111827]/80 rounded-2xl overflow-hidden border border-[#1E293B] transition-all duration-500 hover:border-[#00A3FF]/50 hover:shadow-[0_0_40px_-10px_#00A3FF40]",
-                      reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                    )}
-                    style={{ transitionDelay: `${i * 100}ms` }}
-                  >
-                    <div className="aspect-square overflow-hidden">
-                      <img
-                        src={lecturer.photo}
-                        alt={lecturer.name}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A] via-[#0A0E1A]/20 to-transparent" />
+            {(() => {
+              const rows = [course.lecturers.slice(0, 3), course.lecturers.slice(3)];
+              let idx = 0;
+              return (
+                <div className="max-w-5xl mx-auto mt-12 space-y-6">
+                  {rows.map((row, rIdx) => (
+                    <div
+                      key={rIdx}
+                      className="grid sm:grid-cols-2 gap-6 lg:flex lg:flex-wrap lg:justify-center"
+                    >
+                      {row.map((lecturer) => {
+                        const i = idx++;
+                        const reveal = useReveal();
+                        return (
+                          <div
+                            key={i}
+                            ref={reveal.ref}
+                            className={cn(
+                              "group relative bg-[#111827]/80 rounded-2xl overflow-hidden border border-[#1E293B] transition-all duration-500 hover:border-[#00A3FF]/50 hover:shadow-[0_0_40px_-10px_#00A3FF40] lg:w-[calc((100%-3rem)/3)]",
+                              reveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                            )}
+                            style={{ transitionDelay: `${i * 100}ms` }}
+                          >
+                            <div className="aspect-square overflow-hidden">
+                              <img
+                                src={lecturer.photo}
+                                alt={lecturer.name}
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A] via-[#0A0E1A]/20 to-transparent" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 p-5">
+                              <h3 className="text-lg font-bold mb-1">{lecturer.name}</h3>
+                              <p className="text-xs mb-2" style={{ color: ACCENT }}>{lecturer.position}</p>
+                              <p className="text-xs text-[#F5F5F5]/50 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-32 overflow-hidden">
+                                {lecturer.bio}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="text-lg font-bold mb-1">{lecturer.name}</h3>
-                      <p className="text-xs mb-2" style={{ color: ACCENT }}>{lecturer.position}</p>
-                      <p className="text-xs text-[#F5F5F5]/50 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-h-0 group-hover:max-h-32 overflow-hidden">
-                        {lecturer.bio}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                  ))}
+                </div>
+              );
+            })()}
 
             <div className="text-center mt-12">
               <div className="doc-cta-glow inline-block">

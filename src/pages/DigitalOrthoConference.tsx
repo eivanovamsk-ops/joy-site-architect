@@ -16,6 +16,7 @@ import protectLogo from "@/assets/partners/protect-logo.webp";
 import greendentLogo from "@/assets/partners/greendent-logo-new.webp";
 import wirelocksLogo from "@/assets/partners/wirelocks-logo.png";
 import iosLogo from "@/assets/partners/ios-logo.jpg";
+import eurokappaLogo from "@/assets/partners/eurokappa-logo.png";
 import course22Photo1 from "@/assets/courses/course-22-gallery/photo-1.webp";
 import course22Photo2 from "@/assets/courses/course-22-gallery/photo-2.webp";
 import course22Photo3 from "@/assets/courses/course-22-gallery/photo-3.webp";
@@ -703,6 +704,7 @@ const DigitalOrthoConference = () => {
                 { name: "Revyline", logo: revylineLogo },
                 { name: "OBK", logo: obkLogo },
                 { name: "Intl. Orthodontic Services", logo: iosLogo },
+                { name: "Eurokappa", logo: eurokappaLogo },
               ].map((partner) => (
                 <div
                   key={partner.name}

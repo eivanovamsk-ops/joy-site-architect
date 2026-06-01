@@ -93,6 +93,7 @@ export interface Course {
   soldOut?: boolean;
   isComingSoon?: boolean;
   comingSoonLabel?: string;
+  isPast?: boolean;
   programDescription?: string;
   videos?: string[];
   lightBanner?: boolean;
@@ -849,8 +850,9 @@ export const courses: Course[] = [
     slug: "navigational-surgery-for-orthopedists",
     title: "Навигационная хирургия для ортопеда",
     subtitle: "Как управлять результатом протезирования на всех этапах: от планирования имплантации до изготовления постоянной конструкции",
-    date: "26 мая 2026",
-    dateStart: new Date(2026, 4, 26),
+    date: "",
+    dateStart: new Date(2020, 0, 1),
+    isPast: true,
     location: "Москва, Варшавское шоссе, д33с12",
     format: "Практика",
     price: 20000,

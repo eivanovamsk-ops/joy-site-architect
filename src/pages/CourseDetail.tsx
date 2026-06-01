@@ -517,6 +517,9 @@ const CourseDetail = () => {
                       <Award className="h-3.5 w-3.5 mr-1" /> НМО
                     </Badge>
                   }
+                  {course.isPast &&
+                  <Badge className="bg-muted-foreground text-white text-sm px-3 py-1">Курс завершён</Badge>
+                  }
                   {course.soldOut ? (
                   <Badge className="bg-red-600 text-white text-sm px-3 py-1">Места закончились</Badge>
                   ) : course.placesLeft && course.placesLeft < 10 &&
@@ -537,6 +540,7 @@ const CourseDetail = () => {
                 </p>
                 
                 <div className={cn("flex flex-wrap gap-6 mb-4 animate-fade-in-up", course.lightBanner ? "text-foreground" : "text-white/90")} style={{ animationDelay: '0.5s' }}>
+                  {!course.isPast &&
                   <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <Calendar className="h-5 w-5 text-accent" />
                     {course.isComingSoon ?
@@ -545,6 +549,7 @@ const CourseDetail = () => {
                     <span className="text-sm font-medium">{course.date}</span>
                     }
                   </div>
+                  }
                   <div className={cn("flex items-center gap-2.5 backdrop-blur-sm rounded-full px-4 py-2", course.lightBanner ? "bg-foreground/10" : "bg-white/10")}>
                     <MapPin className="h-5 w-5 text-accent" />
                     <span className="text-sm font-medium">{course.location}</span>

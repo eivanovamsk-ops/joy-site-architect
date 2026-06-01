@@ -148,16 +148,16 @@ export default function WebinarAlignersMay2026() {
         <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-              <Badge className="bg-ortho/20 text-[hsl(155,80%,65%)] border-ortho/30 text-sm px-4 py-1.5 font-semibold">
-                <Monitor className="w-4 h-4 mr-1.5" /> ОНЛАЙН
+              <Badge className="bg-muted text-muted-foreground border-border text-sm px-4 py-1.5 font-semibold">
+                <CheckCircle2 className="w-4 h-4 mr-1.5" /> ВЕБИНАР ЗАВЕРШЁН
               </Badge>
               <Badge className="bg-accent/20 text-accent border-accent/30 text-sm px-4 py-1.5 font-semibold">
                 🎉 БЕСПЛАТНО
               </Badge>
             </div>
 
-            <p className="text-sm md:text-base font-semibold text-accent uppercase tracking-wider mb-5">
-              Бесплатный онлайн-вебинар Артикон
+            <p className="text-sm md:text-base font-semibold text-muted-foreground uppercase tracking-wider mb-5">
+              Архивный вебинар Артикон
             </p>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -222,17 +222,6 @@ export default function WebinarAlignersMay2026() {
         </button>
       </section>
 
-      {/* LIVE STREAM CTA */}
-      <section className="py-10 bg-background border-b border-border">
-        <div className="container mx-auto px-4 flex justify-center">
-          <a href="https://start.bizon365.ru/room/208009/a5583636c738" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="text-lg px-10 py-7 bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all animate-pulse">
-              <span className="mr-2 inline-block w-2.5 h-2.5 rounded-full bg-white" />
-              Перейти на трансляцию
-            </Button>
-          </a>
-        </div>
-      </section>
 
       {/* AUDIENCE */}
       <section id="about" className="py-20 bg-background">

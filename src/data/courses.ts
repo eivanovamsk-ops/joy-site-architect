@@ -93,6 +93,7 @@ export interface Course {
   soldOut?: boolean;
   isComingSoon?: boolean;
   comingSoonLabel?: string;
+  isPast?: boolean;
   programDescription?: string;
   videos?: string[];
   lightBanner?: boolean;

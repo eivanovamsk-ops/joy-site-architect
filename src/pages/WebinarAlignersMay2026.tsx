@@ -222,17 +222,6 @@ export default function WebinarAlignersMay2026() {
         </button>
       </section>
 
-      {/* LIVE STREAM CTA */}
-      <section className="py-10 bg-background border-b border-border">
-        <div className="container mx-auto px-4 flex justify-center">
-          <a href="https://start.bizon365.ru/room/208009/a5583636c738" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="text-lg px-10 py-7 bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all animate-pulse">
-              <span className="mr-2 inline-block w-2.5 h-2.5 rounded-full bg-white" />
-              Перейти на трансляцию
-            </Button>
-          </a>
-        </div>
-      </section>
 
       {/* AUDIENCE */}
       <section id="about" className="py-20 bg-background">

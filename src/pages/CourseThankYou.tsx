@@ -23,8 +23,10 @@ const CourseThankYou = () => {
   const state = (location.state as ThankYouState) || {};
   const [isPayLoading, setIsPayLoading] = useState(false);
 
-  // Оплата через Т-Банк временно отключена
-  const needsPayment = false;
+  // Оплата через Т-Банк включена только для курса 22
+  const needsPayment =
+    state.courseName?.includes("Цифровая ортодонтия") ||
+    state.paymentType === "tbank";
 
   const handlePay = async () => {
     if (!state.applicationId || !state.coursePrice) return;

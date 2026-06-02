@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
+import { supabase } from "@/integrations/supabase/client";
 import { Loader2, GraduationCap } from "lucide-react";
 import { z } from "zod";
 import {
@@ -129,6 +130,41 @@ export function CourseApplicationForm({
 
       setFormData(initialFormData);
       setOpen(false);
+
+      // Для курса «Цифровая ортодонтия» — сразу редиректим на оплату Т-Банк
+      const isTbankCourse = courseName.includes("Цифровая ортодонтия");
+      if (isTbankCourse && applicationId && coursePrice && coursePrice > 0) {
+        try {
+          const { data, error: payError } = await supabase.functions.invoke(
+            "tbank-init-payment",
+            {
+              body: {
+                courseApplicationId: applicationId,
+                courseName,
+                amount: coursePrice,
+                customerEmail: formData.email,
+                customerPhone: formData.phone,
+                customerName: `${formData.last_name} ${formData.name}`.trim(),
+                successUrl: `${window.location.origin}/education/payment-success`,
+                failUrl: `${window.location.origin}/education/payment-failed`,
+              },
+            },
+          );
+          if (payError) throw payError;
+          if (data?.paymentUrl) {
+            window.location.href = data.paymentUrl;
+            return;
+          }
+          throw new Error("Не получена ссылка на оплату");
+        } catch (err) {
+          console.error("Payment init failed:", err);
+          toast({
+            variant: "destructive",
+            title: "Не удалось перейти к оплате",
+            description: "Попробуйте позже или свяжитесь с нами.",
+          });
+        }
+      }
 
       navigate("/education/thank-you", {
         state: {

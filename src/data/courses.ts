@@ -2134,7 +2134,7 @@ export const courses: Course[] = [
     metaDescription: "Бесплатный вебинар 29 мая 2026. Первые шаги в планировании лечения на элайнерах в Maestro 3D Ortho Studio V6.",
     category: "Ортодонтия",
     tags: ["вебинар", "элайнеры", "Maestro 3D", "ортодонтия"],
-    sectionTags: ["для врачей", "для техников", "ортодонтия"],
+    sectionTags: ["для техников", "ортодонтия"],
     externalUrl: "/education/webinar/aligners-maestro-may-2026"
   },
   {

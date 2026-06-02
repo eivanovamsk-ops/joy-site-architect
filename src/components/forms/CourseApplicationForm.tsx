@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
+import { supabase } from "@/integrations/supabase/client";
 import { Loader2, GraduationCap } from "lucide-react";
 import { z } from "zod";
 import {

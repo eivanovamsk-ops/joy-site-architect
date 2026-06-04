@@ -13,6 +13,13 @@ import {
   Workflow,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
 import { Layout } from "@/components/layout/Layout";
 import { courses } from "@/data/courses";
@@ -478,70 +485,89 @@ const LabManagementCourse = () => {
         </section>
 
         <section className="relative py-20 lg:py-24">
-          <div className="container mx-auto grid gap-8 px-4 lg:grid-cols-[0.9fr_1.1fr]">
-            <article className="rounded-[2rem] border border-background/10 bg-background/5 p-8 backdrop-blur-sm">
-              <div className="mb-4 text-sm uppercase tracking-[0.28em] text-accent/85">Курс ведёт</div>
+          <div className="container mx-auto px-4">
+            <article className="rounded-[2rem] border border-background/10 bg-background/5 p-8 backdrop-blur-sm lg:p-12">
+              <div className="mb-6 text-sm uppercase tracking-[0.28em] text-accent/85">Курс ведёт</div>
 
-              <div className="mb-6 flex items-center gap-5">
+              <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
                 <img
                   src="/images/lecturers/kravchenko.webp"
                   alt="Мария Кравченко"
-                  className="h-28 w-28 rounded-full object-cover border-2 border-accent/40 shadow-lg"
+                  className="h-72 w-72 rounded-[2rem] object-cover border-2 border-accent/40 shadow-lg sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem]"
                 />
+
                 <div>
-                  <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl">
+                  <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl lg:text-5xl">
                     Кравченко Мария
                   </h2>
-                  <p className="mt-1 text-lg text-background/75">
+                  <p className="mt-3 text-lg text-background/75 lg:text-xl">
                     Эксперт по развитию и масштабированию зуботехнических лабораторий.
                   </p>
-                </div>
-              </div>
 
-              <div className="space-y-4 text-sm leading-7 text-background/68 sm:text-base">
-                <p>
-                  Руководитель отдела развития и продвижения ЗТЛ «Артикон Дентал» — одной из крупнейших лабораторий с
-                  объёмом производства 50 000+ высококачественных изделий ежегодно и 350+ партнёрами в РФ и СНГ.
-                </p>
-                <p>
-                  16 лет в стоматологическом бизнесе. Практик, который ежедневно работает с реальными процессами,
-                  цифрами и управлением масштабным производством.
-                </p>
-              </div>
+                  <div className="mt-6 space-y-4 text-sm leading-7 text-background/68 sm:text-base">
+                    <p>
+                      Руководитель отдела развития и продвижения ЗТЛ «Артикон Дентал» — одной из крупнейших лабораторий
+                      с объёмом производства 50 000+ высококачественных изделий ежегодно и 350+ партнёрами в РФ и СНГ.
+                    </p>
+                    <p>
+                      16 лет в стоматологическом бизнесе. Практик, который ежедневно работает с реальными процессами,
+                      цифрами и управлением масштабным производством.
+                    </p>
+                  </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-3">
-                <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
-                  <div className="text-2xl font-semibold text-accent">16</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">лет в бизнесе</div>
-                </div>
-                <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
-                  <div className="text-2xl font-semibold text-accent">50 000+</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">изделий в год</div>
-                </div>
-                <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
-                  <div className="text-2xl font-semibold text-accent">350+</div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">партнёров</div>
+                  <div className="mt-8 grid grid-cols-3 gap-3">
+                    <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
+                      <div className="text-2xl font-semibold text-accent">16</div>
+                      <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">лет в бизнесе</div>
+                    </div>
+                    <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
+                      <div className="text-2xl font-semibold text-accent">50 000+</div>
+                      <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">изделий в год</div>
+                    </div>
+                    <div className="rounded-2xl border border-background/10 bg-foreground/35 p-4 text-center">
+                      <div className="text-2xl font-semibold text-accent">350+</div>
+                      <div className="mt-1 text-xs uppercase tracking-[0.2em] text-background/50">партнёров</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </article>
+          </div>
+        </section>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {testimonials.map((item) => (
-                <article
-                  key={item.name}
-                  className="flex h-full flex-col rounded-[1.75rem] border border-background/10 bg-background/5 p-6 backdrop-blur-sm"
-                >
-                  <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
-                    <MessageCircle className="h-5 w-5" />
-                  </div>
-                  <p className="flex-1 text-sm leading-7 text-background/72">{item.quote}</p>
-                  <div className="mt-6 border-t border-background/10 pt-4">
-                    <div className="text-lg font-semibold text-background">{item.name}</div>
-                    <div className="text-sm text-background/52">г. {item.city}</div>
-                  </div>
-                </article>
-              ))}
+        <section className="relative py-20 lg:py-24">
+          <div className="container mx-auto px-4">
+            <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <div className="mb-3 text-sm uppercase tracking-[0.28em] text-accent/85">Отзывы участников</div>
+                <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl lg:text-5xl">
+                  Что говорят руководители ЗТЛ
+                </h2>
+              </div>
             </div>
+
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+              <CarouselContent className="-ml-4">
+                {testimonials.map((item) => (
+                  <CarouselItem key={item.name} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <article className="flex h-full flex-col rounded-[1.75rem] border border-background/10 bg-background/5 p-6 backdrop-blur-sm">
+                      <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                        <MessageCircle className="h-5 w-5" />
+                      </div>
+                      <p className="flex-1 text-sm leading-7 text-background/72">{item.quote}</p>
+                      <div className="mt-6 border-t border-background/10 pt-4">
+                        <div className="text-lg font-semibold text-background">{item.name}</div>
+                        <div className="text-sm text-background/52">г. {item.city}</div>
+                      </div>
+                    </article>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="mt-8 flex justify-end gap-3">
+                <CarouselPrevious className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
+                <CarouselNext className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
+              </div>
+            </Carousel>
           </div>
         </section>
 

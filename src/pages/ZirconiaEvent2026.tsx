@@ -59,10 +59,10 @@ const speakers = [
   },
   {
     name: "Юрий Понык",
-    role: "Руководитель лаборатории",
+    role: "Приглашенный эксперт",
     photo: speakerYuriyPonyk,
     topics: [
-      "Независимое тестирование нового диоксида циркония в реальной работе лаборатории",
+      "Независимая оценка тестов",
     ],
     description:
       "Что проверял, что сравнивал, где были сложности и какие выводы удалось сделать после месяцев тестирования.",
@@ -257,7 +257,7 @@ const ZirconiaEvent2026 = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mb-16">
               <div className="text-xs tracking-[0.3em] uppercase text-amber-400/80 mb-6">
-                / 03 — спикеры
+                / 03 — спикеры и приглашенные эксперты
               </div>
               <h2 className="text-4xl md:text-6xl font-bold leading-tight">
                 Действующие специалисты рынка

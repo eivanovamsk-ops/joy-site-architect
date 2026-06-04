@@ -394,7 +394,7 @@ const ZirconiaEvent2026 = () => {
               <div className="flex items-center justify-center gap-6 text-white/60 flex-wrap">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-amber-400" />
-                  <span>24 июня 2026</span>
+                  <span>24 июня 2026, 15:00–19:00</span>
                 </div>
                 <span className="w-1 h-1 rounded-full bg-white/30" />
                 <span>Количество мест ограничено</span>

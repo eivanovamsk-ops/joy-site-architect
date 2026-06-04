@@ -2744,7 +2744,7 @@ export const courses: Course[] = [
     slug: "delo-ne-v-diske-2026",
     title: "ДЕЛО НЕ В ДИСКЕ",
     subtitle: "Открытый разбор: спекание, цвет, настройки и реальные тесты лабораторий",
-    date: "24 июня 2026",
+    date: "24 июня 2026 | 15:00–19:00",
     dateStart: new Date(2026, 5, 24),
     dateEnd: new Date(2026, 5, 24),
     location: "Москва",

@@ -137,6 +137,10 @@ const ZirconiaEvent2026 = () => {
                   <MapPin className="h-5 w-5 text-amber-400" />
                   <span className="font-medium">Москва</span>
                 </div>
+                <div className="flex items-center gap-2 text-base md:text-lg">
+                  <Tag className="h-5 w-5 text-amber-400" />
+                  <span className="font-medium">3 000 ₽</span>
+                </div>
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4">

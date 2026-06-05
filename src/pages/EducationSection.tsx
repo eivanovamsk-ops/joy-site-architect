@@ -105,7 +105,7 @@ const EducationSection = () => {
                 <Link
                   key={course.id + "-" + course.slug}
                   to={course.externalUrl || `/education/course/${course.id}`}
-                  className={`bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block ${(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11 || course.id === 21) ? "opacity-70" : ""}`}
+                  className={`bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group block ${(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11 || course.id === 21 || course.id === 22) ? "opacity-70" : ""}`}
                 >
                   {course.coverImage && (
                     <div className="relative h-40 overflow-hidden">

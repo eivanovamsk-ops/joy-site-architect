@@ -1,4 +1,4 @@
-import { Calendar, MapPin, ArrowRight, Flame, Thermometer, Brush, FlaskConical, Layers, Users, Building2, Sparkles, CheckCircle2 } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, Flame, Thermometer, Brush, FlaskConical, Layers, Users, Building2, Sparkles, CheckCircle2, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";
@@ -136,6 +136,10 @@ const ZirconiaEvent2026 = () => {
                 <div className="flex items-center gap-2 text-base md:text-lg">
                   <MapPin className="h-5 w-5 text-amber-400" />
                   <span className="font-medium">Москва</span>
+                </div>
+                <div className="flex items-center gap-2 text-base md:text-lg">
+                  <Tag className="h-5 w-5 text-amber-400" />
+                  <span className="font-medium">3 000 ₽</span>
                 </div>
               </div>
 
@@ -397,6 +401,11 @@ const ZirconiaEvent2026 = () => {
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-amber-400" />
                   <span>24 июня 2026, 15:00–19:00</span>
+                </div>
+                <span className="w-1 h-1 rounded-full bg-white/30" />
+                <div className="flex items-center gap-2">
+                  <Tag className="h-4 w-4 text-amber-400" />
+                  <span>3 000 ₽</span>
                 </div>
                 <span className="w-1 h-1 rounded-full bg-white/30" />
                 <span>Количество мест ограничено</span>

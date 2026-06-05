@@ -258,6 +258,12 @@ export const seoByPath: Record<string, SeoConfig> = {
     "Бесплатный вебинар 14 апреля 2026. Лайфхаки и частые ошибки при работе с цирконием для зубных техников.",
     EDUCATION_OG_IMAGE,
   ),
+  "/education/course/38": createSeo(
+    "/education/course/38",
+    "V Конференция «Цифровая ортодонтия» 2027 | Артикон",
+    "Ежегодная встреча ортодонтического сообщества. 3 июня 2027, Москва, MEGAPOLIS HALL. Программа и спикеры на согласовании.",
+    EDUCATION_OG_IMAGE,
+  ),
   "/shop/delivery": createSeo(
     "/shop/delivery",
     "Доставка и оплата | Артикон — Магазин стоматологического оборудования",

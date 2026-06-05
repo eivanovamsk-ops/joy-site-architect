@@ -79,8 +79,8 @@ const CourseCalendar = () => {
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
-      const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.isPast;
-      const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.isPast;
+      const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.id === 22 || a.isPast;
+      const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.id === 22 || b.isPast;
       if (isArchivedA && !isArchivedB) return 1;
       if (!isArchivedA && isArchivedB) return -1;
       const isLastA = a.isComingSoon || titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');

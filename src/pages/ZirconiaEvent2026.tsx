@@ -1,4 +1,4 @@
-import { Calendar, MapPin, ArrowRight, Flame, Thermometer, Brush, FlaskConical, Layers, Users, Building2, Sparkles, CheckCircle2 } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, Flame, Thermometer, Brush, FlaskConical, Layers, Users, Building2, Sparkles, CheckCircle2, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { CourseApplicationForm } from "@/components/forms/CourseApplicationForm";

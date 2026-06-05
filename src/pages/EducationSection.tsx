@@ -133,7 +133,7 @@ const EducationSection = () => {
                   <div className="p-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                       <Calendar className="h-4 w-4" />
-                      {(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11 || course.id === 21) ? (
+                      {(course.id === 23 || course.id === 19 || course.id === 25 || course.id === 11 || course.id === 21 || course.id === 22) ? (
                         <Badge variant="secondary" className="text-xs font-medium">УЖЕ ПРОШЕЛ</Badge>
                       ) : course.isComingSoon ? (
                         <Badge variant="secondary" className="text-xs font-medium">{course.comingSoonLabel || "Уже скоро"}</Badge>

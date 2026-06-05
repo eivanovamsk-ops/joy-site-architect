@@ -66,6 +66,7 @@ const DentalPhotoProtocol = lazy(() => import("./pages/DentalPhotoProtocol"));
 const OrthoConference = lazy(() => import("./pages/OrthoConference"));
 const ImplantProtocol = lazy(() => import("./pages/ImplantProtocol"));
 const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference"));
+const DigitalOrthoConference2027 = lazy(() => import("./pages/DigitalOrthoConference2027"));
 const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
 const ZirconiaEvent2026 = lazy(() => import("./pages/ZirconiaEvent2026"));
 const Webinars = lazy(() => import("./pages/Webinars"));

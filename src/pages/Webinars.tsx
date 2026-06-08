@@ -24,7 +24,7 @@ const webinars = [
     time: "17:00 МСК",
     format: "Онлайн",
     badge: "Бесплатно",
-    status: "upcoming" as const,
+    status: "past" as const,
     image: "/images/webinar/cover.webp",
   },
   {

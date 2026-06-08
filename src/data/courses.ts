@@ -814,7 +814,7 @@ export const courses: Course[] = [
     lecturers: [
       {
         name: "Зухра Чеккуева",
-        photo: "https://static.wixstatic.com/media/99c926_851ea7fa62d840a7a75e9086ce10a13b~mv2.png/v1/fill/w_393,h_358,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/99c926_851ea7fa62d840a7a75e9086ce10a13b~mv2.png",
+        photo: "/__l5e/assets-v1/bdb4bac0-5c03-4463-9211-43a0790f6535/chekkueva-zukhra.png",
         position: "Врач-ортодонт, эксперт в области 3D ортодонтии",
         bio: "Более 2000 смоделированных сетапов. Лечение пациентов только по цифровому протоколу. Сертифицированный врач компании Flexiligner, Ormco, Spark. Опыт работы в программах: Maestro 3D, SimplyCeph 3DS, Exocad, 3Shape Ortho, Avantis 3D и других."
       }

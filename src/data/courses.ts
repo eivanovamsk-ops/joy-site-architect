@@ -2108,8 +2108,8 @@ export const courses: Course[] = [
     metaDescription: "Бесплатный вебинар 5 июня 2026. Топ-5 проблем при позиционировании брекетов.",
     category: "Ортодонтия",
     tags: ["вебинар", "брекеты", "ортодонтия"],
-    sectionTags: ["для врачей", "ортодонтия"],
-    externalUrl: "/education/webinar/brackets-march-2026"
+    externalUrl: "/education/webinar/brackets-march-2026",
+    isPast: true
   },
   {
     id: 30,

@@ -173,18 +173,6 @@ export default function WebinarBrackets() {
                 </a>
               </Button>
             </div>
-            <div className="mt-4 flex justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-foreground hover:bg-white/90 text-lg px-10 py-6 rounded-xl font-bold"
-              >
-                <a href="https://www.twitch.tv/just__zu1" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Перейти на трансляцию
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
 

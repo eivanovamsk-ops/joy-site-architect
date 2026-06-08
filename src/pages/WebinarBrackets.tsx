@@ -13,7 +13,6 @@ import { CourseContactBlock } from "@/components/education/CourseContactBlock";
 import {
   Calendar, Clock, Monitor, Gift, CheckCircle2, Loader2,
   Stethoscope, GraduationCap, Wrench, ArrowRight, ChevronDown,
-  ExternalLink,
 } from "lucide-react";
 
 const caseImages = [

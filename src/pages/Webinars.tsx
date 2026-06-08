@@ -23,8 +23,8 @@ const webinars = [
     date: "5 июня 2026",
     time: "17:00 МСК",
     format: "Онлайн",
-    badge: "Бесплатно",
-    status: "upcoming" as const,
+    badge: "Уже прошёл",
+    status: "past" as const,
     image: "/images/webinar/cover.webp",
   },
   {

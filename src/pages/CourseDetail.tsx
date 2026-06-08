@@ -725,7 +725,7 @@ const CourseDetail = () => {
                     <Users className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <h2 className="text-3xl font-bold">
-                    {course.id === 12 ?
+                    {course.id === 12 || course.id === 14 ?
                   (course.lecturers.length === 1 ? 'Лектор' : 'Лекторы') :
                   (course.format === 'Open Day' || course.format === 'Воркшоп' || course.format === 'Конференция' || course.format === 'Бизнес-встреча' ?
                   (course.lecturers.length === 1 ? 'Спикер' : 'Спикеры') :

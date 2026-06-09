@@ -73,8 +73,8 @@ export default function WebinarPrinter3DJuly2026() {
     setIsLoading(true);
 
     try {
-      const courseName = "Вебинар: Идеальная посадка без перепечаток — 18 июля 2026";
-      const courseDate = "2026-07-18";
+      const courseName = "Вебинар: Идеальная посадка без перепечаток — 18 июня 2026";
+      const courseDate = "2026-06-18";
       const payload = {
         userId: user?.id || null,
         name: form.name,
@@ -91,7 +91,7 @@ export default function WebinarPrinter3DJuly2026() {
       navigate("/education/webinar/printer-3d-july-2026/thank-you", {
         state: {
           webinarName: "Вебинар: Идеальная посадка без перепечаток",
-          webinarDate: "18 июля",
+          webinarDate: "18 июня",
         },
       });
     } catch {
@@ -109,8 +109,8 @@ export default function WebinarPrinter3DJuly2026() {
   return (
     <Layout>
       <Helmet>
-        <title>Вебинар: Идеальная посадка изделий без перепечаток — 18 июля 2026</title>
-        <meta name="description" content="Бесплатный онлайн-вебинар 18 июля 2026 для специалистов 3D-печати. Системная диагностика DLP/LCD/MSLA-принтера: оптика, механика, калибровка, материалы. Зарегистрируйтесь!" />
+        <title>Вебинар: Идеальная посадка изделий без перепечаток — 18 июня 2026</title>
+        <meta name="description" content="Бесплатный онлайн-вебинар 18 июня 2026 для специалистов 3D-печати. Системная диагностика DLP/LCD/MSLA-принтера: оптика, механика, калибровка, материалы. Зарегистрируйтесь!" />
       </Helmet>
 
       {/* HERO */}
@@ -158,7 +158,7 @@ export default function WebinarPrinter3DJuly2026() {
               </ul>
 
               <div className="flex flex-wrap items-center gap-5 mb-8">
-                <div className="flex items-center gap-2 text-white/90"><Calendar className="w-5 h-5 text-cyan-300" /><span className="font-semibold">18 июля 2026</span></div>
+                <div className="flex items-center gap-2 text-white/90"><Calendar className="w-5 h-5 text-cyan-300" /><span className="font-semibold">18 июня 2026</span></div>
                 <div className="flex items-center gap-2 text-white/90"><Clock className="w-5 h-5 text-cyan-300" /><span className="font-semibold">17:00 МСК</span></div>
                 <div className="flex items-center gap-2 text-white/90"><Monitor className="w-5 h-5 text-cyan-300" /><span className="font-semibold">Онлайн</span></div>
               </div>
@@ -288,7 +288,7 @@ export default function WebinarPrinter3DJuly2026() {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Регистрация на вебинар</h2>
-              <p className="text-xl text-cyan-300 font-semibold mt-3">18 июля в 17:00 · Онлайн · Бесплатно</p>
+              <p className="text-xl text-cyan-300 font-semibold mt-3">18 июня в 17:00 · Онлайн · Бесплатно</p>
               <p className="text-white/60 mt-3 text-sm">Количество мест ограничено. Получите практический алгоритм диагностики 3D-принтера.</p>
             </div>
 

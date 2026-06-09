@@ -2149,7 +2149,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 6, 18),
     location: "Онлайн",
     format: "Вебинар",
-    coverImage: "/__l5e/assets-v1/b85021d1-bb0c-4608-9e08-dfb42012c164/hg-printer.png",
+    coverImage: "/__l5e/assets-v1/9edc8b02-5acc-4719-9ebb-2eae21df30d0/hg-printer-hero.jpg",
     price: 0,
     description: "Как выявить и устранить скрытые причины потери точности в DLP/LCD/MSLA-печати. Системный алгоритм диагностики 3D-принтера для зубных техников, операторов 3D-печати и CAD/CAM-специалистов.",
     shortDescription: "Системная диагностика 3D-принтера: оптика, механика, калибровка, материалы",

@@ -69,6 +69,7 @@ const DigitalOrthoConference = lazy(() => import("./pages/DigitalOrthoConference
 const DigitalOrthoConference2027 = lazy(() => import("./pages/DigitalOrthoConference2027"));
 const LabManagementCourse = lazy(() => import("./pages/LabManagementCourse"));
 const ZirconiaEvent2026 = lazy(() => import("./pages/ZirconiaEvent2026"));
+const DigitalScanOrthopedics = lazy(() => import("./pages/DigitalScanOrthopedics"));
 const Webinars = lazy(() => import("./pages/Webinars"));
 const CourseThankYou = lazy(() => import("./pages/CourseThankYou"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
@@ -167,6 +168,7 @@ const App = () => (
                 <Route path="/education/course/38" element={<DigitalOrthoConference2027 />} />
                 <Route path="/education/course/24" element={<LabManagementCourse />} />
                 <Route path="/education/course/37" element={<ZirconiaEvent2026 />} />
+                <Route path="/education/course/39" element={<DigitalScanOrthopedics />} />
                 <Route path="/education/course/:id" element={<CourseDetail />} />
                 <Route path="/education/webinars" element={<Webinars />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />

@@ -17,6 +17,17 @@ const webinars = [
     image: "/images/webinar/cover-aligners.webp",
   },
   {
+    slug: "printer-3d-july-2026",
+    title: "Идеальная посадка без перепечаток",
+    description: "Как выявить и устранить скрытые причины потери точности в DLP/LCD/MSLA-печати. Системный алгоритм диагностики 3D-принтера для зубных техников и операторов 3D-печати.",
+    date: "18 июля 2026",
+    time: "17:00 МСК",
+    format: "Онлайн",
+    badge: "Бесплатно",
+    status: "upcoming" as const,
+    image: "/__l5e/assets-v1/b85021d1-bb0c-4608-9e08-dfb42012c164/hg-printer.png",
+  },
+  {
     slug: "brackets-march-2026",
     title: "Брекет-системы",
     description: "Современные подходы к работе с брекет-системами: от планирования до фиксации. Разбор реальных клинических кейсов.",

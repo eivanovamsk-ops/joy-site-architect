@@ -58,6 +58,7 @@ const EducationSection = lazy(() => import("./pages/EducationSection"));
 const WebinarBrackets = lazy(() => import("./pages/WebinarBrackets"));
 const WebinarZirconMarch2026 = lazy(() => import("./pages/WebinarZirconMarch2026"));
 const WebinarAlignersMay2026 = lazy(() => import("./pages/WebinarAlignersMay2026"));
+const WebinarPrinter3DJuly2026 = lazy(() => import("./pages/WebinarPrinter3DJuly2026"));
 const WebinarThankYou = lazy(() => import("./pages/WebinarThankYou"));
 const BundleUpceraKit = lazy(() => import("./pages/BundleUpceraKit"));
 const BrandUpcera = lazy(() => import("./pages/BrandUpcera"));
@@ -177,6 +178,8 @@ const App = () => (
                 <Route path="/education/webinar/zircon-march-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/webinar/aligners-maestro-may-2026" element={<WebinarAlignersMay2026 />} />
                 <Route path="/education/webinar/aligners-maestro-may-2026/thank-you" element={<WebinarThankYou />} />
+                <Route path="/education/webinar/printer-3d-july-2026" element={<WebinarPrinter3DJuly2026 />} />
+                <Route path="/education/webinar/printer-3d-july-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/thank-you" element={<CourseThankYou />} />
                 <Route path="/education/payment-success" element={<PaymentSuccess />} />
                 <Route path="/education/payment-failed" element={<PaymentFailed />} />

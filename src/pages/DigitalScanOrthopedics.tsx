@@ -414,14 +414,22 @@ const DigitalScanOrthopedics = () => {
                 />
                 <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
                   <div
-                    className="flex-shrink-0 w-36 h-36 md:w-44 md:h-44 rounded-2xl flex items-center justify-center text-5xl font-black border-2"
+                    className="flex-shrink-0 w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden flex items-center justify-center text-5xl font-black border-2"
                     style={{
                       background: `linear-gradient(135deg, ${ACCENT}30, ${ACCENT2}30)`,
                       borderColor: `${ACCENT}60`,
                       color: ACCENT,
                     }}
                   >
-                    {initials}
+                    {lecturer.photo ? (
+                      <img
+                        src={lecturer.photo}
+                        alt={lecturer.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      initials
+                    )}
                   </div>
                   <div className="flex-1 text-center md:text-left">
                     <h3 className="text-2xl md:text-3xl font-bold mb-2">{lecturer.name}</h3>

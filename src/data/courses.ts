@@ -769,7 +769,7 @@ export const courses: Course[] = [
     date: "17 июня 2026",
     dateStart: new Date(2026, 5, 17),
     upcomingDates: [
-      { date: "18 июля 2026", dateStart: new Date(2026, 6, 18) },
+      { date: "18 августа 2026", dateStart: new Date(2026, 7, 18) },
       { date: "25 ноября 2026", dateStart: new Date(2026, 10, 25) },
     ],
     location: "Москва, Варшавское шоссе, д33с12",

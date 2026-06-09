@@ -25,7 +25,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
-    image: "/__l5e/assets-v1/9edc8b02-5acc-4719-9ebb-2eae21df30d0/hg-printer-hero.jpg",
+    image: "/__l5e/assets-v1/f5d4fd03-6e10-44f5-aed9-51c0b02922cf/hg-printer-hero.png",
   },
   {
     slug: "brackets-march-2026",

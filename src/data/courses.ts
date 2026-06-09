@@ -2142,7 +2142,7 @@ export const courses: Course[] = [
   },
   {
     id: 40,
-    slug: "webinar-printer-3d-july-2026",
+    slug: "webinar-printer-3d-june-2026",
     title: "Идеальная посадка без перепечаток",
     subtitle: "Бесплатный онлайн-вебинар для специалистов 3D-печати",
     date: "18 июня 2026 | 17:00",
@@ -2165,7 +2165,7 @@ export const courses: Course[] = [
     category: "CAD/CAM",
     tags: ["вебинар", "3D-печать", "DLP", "LCD", "MSLA", "зубные техники"],
     sectionTags: ["для техников", "CAD/CAM"],
-    externalUrl: "/education/webinar/printer-3d-july-2026"
+    externalUrl: "/education/webinar/printer-3d-june-2026"
   },
   {
     id: 27,

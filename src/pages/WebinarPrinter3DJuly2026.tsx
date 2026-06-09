@@ -88,7 +88,7 @@ export default function WebinarPrinter3DJuly2026() {
       const { applicationId, inserted } = await submitCourseApplication(payload);
       if (inserted) sendCourseApplicationEmails({ ...payload, applicationId });
 
-      navigate("/education/webinar/printer-3d-july-2026/thank-you", {
+      navigate("/education/webinar/printer-3d-june-2026/thank-you", {
         state: {
           webinarName: "Вебинар: Идеальная посадка без перепечаток",
           webinarDate: "18 июня",

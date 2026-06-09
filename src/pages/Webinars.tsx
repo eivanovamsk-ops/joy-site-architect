@@ -17,7 +17,7 @@ const webinars = [
     image: "/images/webinar/cover-aligners.webp",
   },
   {
-    slug: "printer-3d-july-2026",
+    slug: "printer-3d-june-2026",
     title: "Идеальная посадка без перепечаток",
     description: "Как выявить и устранить скрытые причины потери точности в DLP/LCD/MSLA-печати. Системный алгоритм диагностики 3D-принтера для зубных техников и операторов 3D-печати.",
     date: "18 июня 2026",

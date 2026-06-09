@@ -414,7 +414,7 @@ const DigitalScanOrthopedics = () => {
                 />
                 <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
                   <div
-                    className="flex-shrink-0 w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden flex items-center justify-center text-5xl font-black border-2"
+                    className="flex-shrink-0 w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden flex items-center justify-center text-5xl font-black border-2"
                     style={{
                       background: `linear-gradient(135deg, ${ACCENT}30, ${ACCENT2}30)`,
                       borderColor: `${ACCENT}60`,

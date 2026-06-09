@@ -16,7 +16,7 @@ import {
   Layers, Cpu, ScanLine, Sliders, Settings2, AlertTriangle,
   FlaskConical, ListChecks, Users, Building2,
 } from "lucide-react";
-import printerImg from "@/assets/webinars/hg-printer-hero.png.asset.json";
+import printerImg from "@/assets/webinars/heygears-a20-hero.png.asset.json";
 
 const audiences = [
   { icon: Wrench, title: "Зубные техники" },

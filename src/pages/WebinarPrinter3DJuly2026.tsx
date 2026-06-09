@@ -176,10 +176,8 @@ export default function WebinarPrinter3DJuly2026() {
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-tr from-emerald-400/20 via-cyan-400/20 to-sky-500/20 rounded-3xl blur-3xl" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-sm p-8">
-                <img src={printerImg.url} alt="3D-принтер для стоматологии" className="w-full h-auto object-contain mx-auto drop-shadow-[0_30px_60px_rgba(34,211,238,0.3)]" />
-              </div>
+              <div className="absolute -inset-10 bg-gradient-to-tr from-emerald-400/25 via-cyan-400/20 to-sky-500/20 rounded-full blur-3xl" />
+              <img src={printerImg.url} alt="3D-принтер для стоматологии" className="relative w-full h-auto object-contain mx-auto rounded-3xl drop-shadow-[0_40px_80px_rgba(34,211,238,0.35)]" />
             </div>
           </div>
         </div>

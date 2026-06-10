@@ -124,6 +124,16 @@ const PrintMoneyLab2026 = () => {
                 </div>
               </div>
 
+              <div className="mt-8 inline-flex flex-wrap items-baseline gap-3 rounded-xl border border-cyan-400/25 bg-cyan-500/5 px-5 py-4">
+                <span className="text-3xl md:text-4xl font-black bg-gradient-to-r from-cyan-300 to-fuchsia-400 bg-clip-text text-transparent">
+                  5 000 ₽
+                </span>
+                <span className="text-white/45 line-through text-lg">10 000 ₽</span>
+                <span className="text-sm md:text-base text-white/70 font-mono uppercase tracking-wider">
+                  при оплате до 31 июля 2026
+                </span>
+              </div>
+
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <CourseApplicationForm
                   courseName={course.title}
@@ -289,8 +299,13 @@ const PrintMoneyLab2026 = () => {
               <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6">
                 Займите место на главной конференции года
               </h2>
-              <p className="text-xl text-white/60 mb-10 max-w-2xl mx-auto">
+              <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
                 Для зубных техников, CAD/CAM-специалистов, операторов 3D-печати и руководителей лабораторий.
+              </p>
+              <p className="mb-10 text-lg text-white/80">
+                <span className="text-2xl font-black text-cyan-300">5 000 ₽</span>{" "}
+                <span className="text-white/40 line-through">10 000 ₽</span>{" "}
+                <span className="text-white/60">— при оплате до 31 июля 2026</span>
               </p>
               <div className="flex justify-center">
                 <CourseApplicationForm

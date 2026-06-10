@@ -722,8 +722,8 @@ const LabManagementCourse = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground lg:-left-5" />
-              <CarouselNext className="right-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground lg:-right-5" />
+              <CarouselPrevious className="left-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground" />
+              <CarouselNext className="right-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground" />
             </Carousel>
           </div>
         </section>

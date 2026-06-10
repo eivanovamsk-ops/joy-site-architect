@@ -468,7 +468,7 @@ const DigitalScanOrthopedics = () => {
                 <span className="text-xs tracking-[0.3em] uppercase mb-4 block font-semibold" style={{ color: ACCENT }}>
                   Заберёте с собой
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold">Раздаточные материалы</h2>
+                <h2 className="text-3xl md:text-4xl font-bold">Клинические чек-листы и алгоритмы</h2>
               </div>
               <div className="space-y-3">
                 {handouts.map((h, i) => (

@@ -663,7 +663,7 @@ const LabManagementCourse = () => {
           </div>
         </section>
 
-        <section className="relative pt-14 pb-20 lg:pt-16 lg:pb-24">
+        <section className="relative pt-14 pb-12 lg:pt-16 lg:pb-14">
           <div className="container mx-auto px-4">
             <div className="mb-10 max-w-3xl">
               <div className="mb-3 text-sm uppercase tracking-[0.28em] text-accent/85">Результаты</div>
@@ -728,7 +728,7 @@ const LabManagementCourse = () => {
           </div>
         </section>
 
-        <section className="relative py-20 lg:py-24">
+        <section className="relative pt-12 pb-20 lg:pt-14 lg:pb-24">
           <div className="container mx-auto px-4">
             <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>

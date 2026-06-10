@@ -676,7 +676,7 @@ const LabManagementCourse = () => {
               <CarouselContent className="-ml-4">
                 {problemSlides.map((slide, i) => (
                   <CarouselItem key={i} className="pl-4">
-                    <article className="grid gap-0 overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm lg:grid-cols-[minmax(0,420px)_1fr]">
+                    <article className="grid h-full gap-0 overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm lg:grid-cols-[minmax(0,420px)_1fr]">
                       <div className="aspect-[3/4] w-full overflow-hidden lg:aspect-auto lg:h-full">
                         <img
                           src={slide.src}

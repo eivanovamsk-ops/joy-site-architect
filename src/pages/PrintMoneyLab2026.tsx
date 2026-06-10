@@ -210,7 +210,12 @@ const PrintMoneyLab2026 = () => {
               <div className="text-xs tracking-[0.3em] uppercase text-cyan-300/80 mb-6 font-mono">
                 / 02 — программа
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">Шесть блоков. Ноль воды.</h2>
+              <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Печатать умеют многие.{" "}
+                <span className="bg-gradient-to-r from-cyan-300 to-fuchsia-400 bg-clip-text text-transparent">
+                  Зарабатывать на этом — единицы.
+                </span>
+              </h2>
               <p className="text-xl text-white/60">
                 Рынок, экономика, автоматизация, материалы, металл и честный разбор провалов.
               </p>

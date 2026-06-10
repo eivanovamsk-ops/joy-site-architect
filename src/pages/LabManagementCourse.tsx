@@ -98,9 +98,10 @@ const problemSlides: {
   src: string;
   name: string;
   subtitle: string;
-  intro: string;
-  points: string[];
-  outro: string;
+  intro?: string;
+  points?: string[];
+  paragraphs?: string[];
+  outro?: string;
 }[] = [
   {
     src: "/images/courses/course-24-review-piskunov.jpg",
@@ -119,6 +120,19 @@ const problemSlides: {
       "Маршрут входящей работы в лаборатории",
     ],
     outro: "Все вопросы разобраны, вектор развития задан, алгоритмы все прописаны! Теперь только вперёд 🚀",
+  },
+  {
+    src: "/images/courses/course-24-review-akberov.jpg",
+    name: "Юсиф Акберов",
+    subtitle: "основатель сети стоматологических клиник Имплант52, Нижний Новгород",
+    paragraphs: [
+      "Юсиф Акберов — основатель сети стоматологических клиник Имплант52 в Нижнем Новгороде и человек, для которого развитие — не лозунг, а образ жизни.",
+      "Сегодня он открывает зуботехническую лабораторию, чтобы полностью закрыть потребности своих клиник, поэтому приехал в Артикон на курс Кравченко Марии — Менеджмент ЗТЛ.",
+      "Для нас особенно ценно, когда за знаниями приходят сильные управленцы и практикующие врачи, для которых обучение — инструмент роста.",
+      "Рады быть полезными и делиться опытом.",
+      "Учитывая, что помимо управления клиниками Юсиф помогает другим руководителям выстраивать эффективные бизнес-модели и повышать стандарты работы, во время встречи мы обсудили формат совместных образовательных программ — для крупных стоматологических проектов, где лечение и производство объединены в единую, выстроенную систему.",
+    ],
+    outro: "Продолжение точно следует.",
   },
 ];
 
@@ -588,20 +602,35 @@ const LabManagementCourse = () => {
                       <div className="p-6 lg:p-10">
                         <h3 className="text-2xl font-semibold text-background">{slide.name}</h3>
                         <p className="mt-1 text-sm text-background/55">{slide.subtitle}</p>
-                        <p className="mt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
-                          {slide.intro}
-                        </p>
-                        <ul className="mt-4 space-y-2.5">
-                          {slide.points.map((point) => (
-                            <li key={point} className="flex items-start gap-3">
-                              <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
-                              <span className="text-sm leading-6 text-background/68">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="mt-6 border-t border-background/10 pt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
-                          {slide.outro}
-                        </p>
+                        {slide.intro && (
+                          <p className="mt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
+                            {slide.intro}
+                          </p>
+                        )}
+                        {slide.points && (
+                          <ul className="mt-4 space-y-2.5">
+                            {slide.points.map((point) => (
+                              <li key={point} className="flex items-start gap-3">
+                                <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
+                                <span className="text-sm leading-6 text-background/68">{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {slide.paragraphs && (
+                          <div className="mt-5 space-y-4">
+                            {slide.paragraphs.map((paragraph) => (
+                              <p key={paragraph} className="text-sm leading-7 text-background/72 sm:text-base">
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        )}
+                        {slide.outro && (
+                          <p className="mt-6 border-t border-background/10 pt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
+                            {slide.outro}
+                          </p>
+                        )}
                       </div>
                     </article>
                   </CarouselItem>

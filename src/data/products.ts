@@ -949,7 +949,7 @@ Dental Model Light Grey используется для:
     name: "Фотополимер HARZ Labs Dental Sand A1-A2 для временных коронок и мостов",
     category: "3d-print",
     subcategory: "photopolymers",
-    price: 17900,
+    price: 19390,
     image: harzDentalSandPreview,
     gallery: [harzDentalSandPreview],
     brand: "HARZ Labs",

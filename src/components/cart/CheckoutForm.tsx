@@ -87,9 +87,22 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
     }
   };
 
+  const ALLOWED_FILE_EXTENSIONS = [".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"];
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      const isAllowedType = ALLOWED_FILE_EXTENSIONS.some((ext) =>
+        file.name.toLowerCase().endsWith(ext)
+      );
+      if (!isAllowedType) {
+        toast({
+          variant: "destructive",
+          title: "Недопустимый формат файла",
+          description: "Разрешены только PDF, DOC, DOCX, JPG и PNG",
+        });
+        return;
+      }
       if (file.size > 5 * 1024 * 1024) {
         toast({
           variant: "destructive",

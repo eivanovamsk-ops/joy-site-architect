@@ -8,15 +8,44 @@ const corsHeaders = {
 
 const TBANK_INIT_URL = "https://securepay.tinkoff.ru/v2/Init";
 
+// SECURITY: server-side course price catalog. The client-supplied amount is ignored.
+// Only courses listed here can be paid online. Keep in sync with src/data/courses.ts.
+const TBANK_COURSE_PRICES: Record<string, number> = {
+  "IV Конференция «Цифровая ортодонтия» 2026": 15000,
+  "V Конференция «Цифровая ортодонтия» 2027": 15000,
+};
+
+const DEFAULT_SUCCESS_URL = "https://joy-site-architect.lovable.app/education/payment-success";
+const DEFAULT_FAIL_URL = "https://joy-site-architect.lovable.app/education/payment-failed";
+
+const isUuid = (value: unknown): value is string =>
+  typeof value === "string" &&
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+
+// Only allow redirects back to our own domains
+const safeRedirect = (raw: unknown, fallback: string): string => {
+  if (typeof raw !== "string") return fallback;
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== "https:") return fallback;
+    const host = url.hostname;
+    if (
+      host === "articon.pro" ||
+      host.endsWith(".articon.pro") ||
+      host.endsWith(".lovable.app")
+    ) {
+      return url.toString();
+    }
+  } catch {
+    // ignore
+  }
+  return fallback;
+};
+
 interface InitRequest {
   courseApplicationId: string;
-  courseName: string;
-  amount: number; // в рублях
-  customerEmail: string;
-  customerPhone: string;
-  customerName?: string; // ФИО плательщика
-  successUrl: string;
-  failUrl: string;
+  successUrl?: string;
+  failUrl?: string;
 }
 
 /**
@@ -74,25 +103,10 @@ Deno.serve(async (req) => {
     }
 
     const body: InitRequest = await req.json();
-    const {
-      courseApplicationId,
-      courseName,
-      amount,
-      customerEmail,
-      customerPhone,
-      customerName,
-      successUrl,
-      failUrl,
-    } = body;
+    const { courseApplicationId } = body;
 
-    // Валидация
-    if (
-      !courseApplicationId ||
-      !courseName ||
-      !amount ||
-      amount <= 0 ||
-      !customerEmail
-    ) {
+    // Валидация входных данных
+    if (!isUuid(courseApplicationId)) {
       return new Response(
         JSON.stringify({ error: "Некорректные данные платежа" }),
         {
@@ -104,13 +118,66 @@ Deno.serve(async (req) => {
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
+    // SECURITY: загружаем заявку из базы — имя, email, телефон и название курса
+    // берём только из доверенного источника, а не из тела запроса.
+    const { data: application, error: applicationError } = await supabase
+      .from("course_applications")
+      .select("id, course_name, name, last_name, email, phone")
+      .eq("id", courseApplicationId)
+      .maybeSingle();
+
+    if (applicationError) {
+      console.error("Failed to load course application:", applicationError);
+      return new Response(
+        JSON.stringify({ error: "Внутренняя ошибка сервера" }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    if (!application) {
+      return new Response(
+        JSON.stringify({ error: "Заявка не найдена" }),
+        {
+          status: 404,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    // SECURITY: цена определяется только серверным каталогом по названию курса.
+    const courseName: string = application.course_name;
+    const amount = TBANK_COURSE_PRICES[courseName];
+
+    if (!amount || !application.email) {
+      return new Response(
+        JSON.stringify({ error: "Онлайн-оплата для этого курса недоступна" }),
+        {
+          status: 403,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
+
+    const customerEmail: string = application.email;
+    const customerPhone: string = application.phone ?? "";
+    const customerName = [application.last_name, application.name]
+      .filter(Boolean)
+      .join(" ")
+      .trim();
+
+    const successUrl = safeRedirect(body.successUrl, DEFAULT_SUCCESS_URL);
+    const failUrl = safeRedirect(body.failUrl, DEFAULT_FAIL_URL);
+
     // Уникальный OrderId — используем UUID
     const orderId = crypto.randomUUID();
     const amountInKopecks = Math.round(amount * 100);
 
     // Описание для Т-Кассы (макс. 250 символов).
     // Включаем ФИО, чтобы оно было видно в карточке платежа в ЛК Т-Банка.
-    const customerLabel = customerName?.trim() || customerEmail;
+    const customerLabel = customerName || customerEmail;
     const description = `${courseName} — ${customerLabel}`.slice(0, 250);
 
     // Параметры запроса Init
@@ -152,8 +219,8 @@ Deno.serve(async (req) => {
       CourseApplicationId: courseApplicationId,
       CourseName: courseName.slice(0, 100),
     };
-    if (customerName?.trim()) {
-      dataParams.CustomerName = customerName.trim().slice(0, 100);
+    if (customerName) {
+      dataParams.CustomerName = customerName.slice(0, 100);
     }
 
     const requestBody = {
@@ -194,7 +261,6 @@ Deno.serve(async (req) => {
       return new Response(
         JSON.stringify({
           error: tbankData.Message || "Не удалось создать платёж",
-          details: tbankData.Details,
         }),
         {
           status: 400,

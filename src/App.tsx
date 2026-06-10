@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { AuthProvider } from "@/hooks/useAuth";
 import { CartProvider } from "@/hooks/useCart";
@@ -171,7 +171,8 @@ const App = () => (
                 <Route path="/education/course/37" element={<ZirconiaEvent2026 />} />
                 <Route path="/education/course/39" element={<DigitalScanOrthopedics />} />
                 <Route path="/education/course/:id" element={<CourseDetail />} />
-                <Route path="/education/webinars" element={<Webinars />} />
+                <Route path="/education/webinar" element={<Webinars />} />
+                <Route path="/education/webinars" element={<Navigate to="/education/webinar" replace />} />
                 <Route path="/education/webinar/brackets-march-2026" element={<WebinarBrackets />} />
                 <Route path="/education/webinar/brackets-march-2026/thank-you" element={<WebinarThankYou />} />
                 <Route path="/education/webinar/zircon-march-2026" element={<WebinarZirconMarch2026 />} />

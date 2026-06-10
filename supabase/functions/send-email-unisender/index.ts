@@ -136,6 +136,15 @@ const formatPrice = (price: number): string => {
   return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
 };
 
+// SECURITY: escape user-supplied values before interpolating into HTML emails
+const escapeHtml = (value: string | undefined | null): string =>
+  String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 const getDeliveryMethodText = (method: string): string => {
   switch (method) {
     case "moscow_delivery":
@@ -189,7 +198,7 @@ const buildCustomerEmailHtml = (order: OrderEmailData): string => {
   const itemsHtml = order.items
     .map(
       (item) => `<tr>
-        <td style="padding: 8px; border-bottom: 1px solid #eee;">${item.name}</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">${escapeHtml(item.name)}</td>
         <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
         <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">${formatPrice(item.price * item.quantity)}</td>
       </tr>`,
@@ -218,7 +227,7 @@ const buildCustomerEmailHtml = (order: OrderEmailData): string => {
           <h1 style="margin: 0;">Спасибо за заказ!</h1>
         </div>
         <div class="content">
-          <p>Уважаемый(ая) <strong>${order.customerName}</strong>,</p>
+          <p>Уважаемый(ая) <strong>${escapeHtml(order.customerName)}</strong>,</p>
           <p>Ваш заказ <strong>#${order.orderId.slice(0, 8).toUpperCase()}</strong> успешно оформлен.</p>
           <p style="background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb;">
             📞 Наш менеджер свяжется с вами в ближайшее время для подтверждения заказа.
@@ -243,7 +252,7 @@ const buildCustomerEmailHtml = (order: OrderEmailData): string => {
           </div>
           
           <p><strong>Способ доставки:</strong> ${getDeliveryMethodText(order.deliveryMethod)}</p>
-          ${order.address ? `<p><strong>Адрес:</strong> ${order.city}, ${order.address}</p>` : ""}
+          ${order.address ? `<p><strong>Адрес:</strong> ${escapeHtml(order.city)}, ${escapeHtml(order.address)}</p>` : ""}
           
           <p>Если у вас есть вопросы, свяжитесь с нами:</p>
           <p>📧 Email: moscow@articon.pro<br>
@@ -263,7 +272,7 @@ const buildAdminEmailHtml = (order: OrderEmailData): string => {
   const itemsHtml = order.items
     .map(
       (item) => `<tr>
-        <td style="padding: 8px; border: 1px solid #ddd;">${item.name}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${escapeHtml(item.name)}</td>
         <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${item.quantity}</td>
         <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">${formatPrice(item.price)}</td>
         <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">${formatPrice(item.price * item.quantity)}</td>
@@ -296,25 +305,25 @@ const buildAdminEmailHtml = (order: OrderEmailData): string => {
         <div class="content">
           <div class="info-block">
             <p class="label">Данные клиента</p>
-            <p><strong>Имя:</strong> ${order.customerName}</p>
-            <p><strong>Телефон:</strong> ${order.customerPhone}</p>
-            <p><strong>Email:</strong> ${order.customerEmail}</p>
-            ${order.telegram ? `<p><strong>Telegram:</strong> ${order.telegram}</p>` : ""}
+            <p><strong>Имя:</strong> ${escapeHtml(order.customerName)}</p>
+            <p><strong>Телефон:</strong> ${escapeHtml(order.customerPhone)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(order.customerEmail)}</p>
+            ${order.telegram ? `<p><strong>Telegram:</strong> ${escapeHtml(order.telegram)}</p>` : ""}
           </div>
           
           <div class="info-block">
             <p class="label">Доставка и оплата</p>
             <p><strong>Способ доставки:</strong> ${getDeliveryMethodText(order.deliveryMethod)}</p>
-            <p><strong>Город:</strong> ${order.city}</p>
-            ${order.address ? `<p><strong>Адрес:</strong> ${order.address}</p>` : ""}
+            <p><strong>Город:</strong> ${escapeHtml(order.city)}</p>
+            ${order.address ? `<p><strong>Адрес:</strong> ${escapeHtml(order.address)}</p>` : ""}
             <p><strong>Способ оплаты:</strong> ${getPaymentTypeText(order.paymentType)}</p>
-            ${order.companyDetails ? `<p><strong>Реквизиты компании:</strong><br>${order.companyDetails.replace(/\n/g, "<br>")}</p>` : ""}
+            ${order.companyDetails ? `<p><strong>Реквизиты компании:</strong><br>${escapeHtml(order.companyDetails).replace(/\n/g, "<br>")}</p>` : ""}
           </div>
           
           ${order.notes ? `
           <div class="info-block">
             <p class="label">Комментарий к заказу</p>
-            <p>${order.notes}</p>
+            <p>${escapeHtml(order.notes)}</p>
           </div>
           ` : ""}
           
@@ -365,21 +374,21 @@ const buildCourseAdminEmailHtml = (course: CourseEmailData): string => {
       <div class="container">
         <div class="header">
           <h2 style="margin: 0;">🎓 Новая заявка на курс</h2>
-          <p style="margin: 5px 0 0; opacity: 0.9;">${course.courseName}</p>
+          <p style="margin: 5px 0 0; opacity: 0.9;">${escapeHtml(course.courseName)}</p>
         </div>
         <div class="content">
-          ${course.courseDate ? `<p><strong>Дата курса:</strong> ${course.courseDate}</p>` : "<p><strong>Дата:</strong> Уточняется</p>"}
+          ${course.courseDate ? `<p><strong>Дата курса:</strong> ${escapeHtml(course.courseDate)}</p>` : "<p><strong>Дата:</strong> Уточняется</p>"}
 
           <div class="info-block">
             <p class="label">Данные участника</p>
-            <p><strong>Имя:</strong> ${course.name}</p>
-            <p><strong>Фамилия:</strong> ${course.lastName}</p>
-            <p><strong>Телефон:</strong> ${course.phone}</p>
-            <p><strong>Telegram:</strong> ${course.telegram}</p>
-            <p><strong>Город:</strong> ${course.city}</p>
-            <p><strong>Специализация:</strong> ${course.specialization}</p>
-            ${course.email ? `<p><strong>Email:</strong> ${course.email}</p>` : ""}
-            ${course.organization ? `<p><strong>Организация:</strong> ${course.organization}</p>` : ""}
+            <p><strong>Имя:</strong> ${escapeHtml(course.name)}</p>
+            <p><strong>Фамилия:</strong> ${escapeHtml(course.lastName)}</p>
+            <p><strong>Телефон:</strong> ${escapeHtml(course.phone)}</p>
+            <p><strong>Telegram:</strong> ${escapeHtml(course.telegram)}</p>
+            <p><strong>Город:</strong> ${escapeHtml(course.city)}</p>
+            <p><strong>Специализация:</strong> ${escapeHtml(course.specialization)}</p>
+            ${course.email ? `<p><strong>Email:</strong> ${escapeHtml(course.email)}</p>` : ""}
+            ${course.organization ? `<p><strong>Организация:</strong> ${escapeHtml(course.organization)}</p>` : ""}
           </div>
 
           <div class="info-block">
@@ -418,9 +427,9 @@ const buildWebinarClientEmailHtml = (course: CourseEmailData): string => {
           <h1 style="margin: 0; font-size: 22px;">🎉 Регистрация подтверждена!</h1>
         </div>
         <div class="content">
-          <p>Здравствуйте, <strong>${course.name}</strong>!</p>
-          <p>Вы успешно зарегистрировались на бесплатный онлайн-вебинар <strong>«${course.courseName}»</strong>.</p>
-          ${course.courseDate ? `<div class="info-block">📅 <strong>Дата:</strong> ${course.courseDate}</div>` : ""}
+          <p>Здравствуйте, <strong>${escapeHtml(course.name)}</strong>!</p>
+          <p>Вы успешно зарегистрировались на бесплатный онлайн-вебинар <strong>«${escapeHtml(course.courseName)}»</strong>.</p>
+          ${course.courseDate ? `<div class="info-block">📅 <strong>Дата:</strong> ${escapeHtml(course.courseDate)}</div>` : ""}
           <div class="info-block">🔗 <strong>Ссылка на вебинар:</strong> <a href="https://start.bizon365.ru/room/206008/8386800fae48" style="color: #2563eb;">https://start.bizon365.ru/room/206008/8386800fae48</a></div>
           <p>Чтобы не пропустить вебинар, вступите в <strong>Telegram-чат участников</strong>. Именно там мы напомним о начале.</p>
           <p style="text-align: center; margin: 20px 0;">
@@ -459,9 +468,9 @@ const buildStandardCourseClientEmailHtml = (course: CourseEmailData): string => 
           <h1 style="margin: 0;">Спасибо за запись!</h1>
         </div>
         <div class="content">
-          <p>Уважаемый(ая) <strong>${formatCourseDisplayName(course)}</strong>,</p>
-          <p>Ваша заявка на курс <strong>«${course.courseName}»</strong> успешно оформлена.</p>
-          ${course.courseDate ? `<p><strong>Дата проведения:</strong> ${course.courseDate}</p>` : ""}
+          <p>Уважаемый(ая) <strong>${escapeHtml(formatCourseDisplayName(course))}</strong>,</p>
+          <p>Ваша заявка на курс <strong>«${escapeHtml(course.courseName)}»</strong> успешно оформлена.</p>
+          ${course.courseDate ? `<p><strong>Дата проведения:</strong> ${escapeHtml(course.courseDate)}</p>` : ""}
           <div class="info-block">
             📞 Куратор Учебного центра свяжется с вами в ближайшее время для подтверждения записи и уточнения деталей.
           </div>
@@ -500,11 +509,11 @@ const buildFeedbackEmailHtml = (feedback: { name: string; email: string; phone?:
         </div>
         <div class="content">
           <div class="card">
-            <p><strong>Имя:</strong> ${feedback.name}</p>
-            <p><strong>Email:</strong> ${feedback.email}</p>
-            ${feedback.phone ? `<p><strong>Телефон:</strong> ${feedback.phone}</p>` : ""}
+            <p><strong>Имя:</strong> ${escapeHtml(feedback.name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(feedback.email)}</p>
+            ${feedback.phone ? `<p><strong>Телефон:</strong> ${escapeHtml(feedback.phone)}</p>` : ""}
             <p><strong>Сообщение:</strong></p>
-            <p>${feedback.message}</p>
+            <p>${escapeHtml(feedback.message)}</p>
           </div>
         </div>
       </div>
@@ -537,8 +546,8 @@ const buildBundleRequestEmailHtml = (bundle: { name: string; phone: string; crea
         <div class="content">
           <p>Новый лид с посадочной страницы комплекта UPCERA (A52 + GT1 Pro + R-412).</p>
           <div class="card">
-            <p><strong>Имя:</strong> ${bundle.name}</p>
-            <p><strong>Телефон:</strong> ${bundle.phone}</p>
+            <p><strong>Имя:</strong> ${escapeHtml(bundle.name)}</p>
+            <p><strong>Телефон:</strong> ${escapeHtml(bundle.phone)}</p>
             <p><strong>Дата заявки:</strong> ${date}</p>
           </div>
           <p style="margin-top: 16px; color: #6b7280; font-size: 13px;">Свяжитесь с клиентом в ближайшее время.</p>
@@ -1040,9 +1049,9 @@ const handler = async (req: Request): Promise<Response> => {
         <div style="font-family:Arial,sans-serif;max-width:600px;">
           <h2 style="color:#333;">📞 Запрос обратного звонка с сайта</h2>
           <table style="border-collapse:collapse;width:100%;">
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${cb.name}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;">${cb.phone}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Источник</td><td style="padding:8px;border:1px solid #eee;">${cb.source || 'popup'}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(cb.name)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(cb.phone)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Источник</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(cb.source || 'popup')}</td></tr>
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Дата</td><td style="padding:8px;border:1px solid #eee;">${new Date(cb.created_at).toLocaleString("ru-RU", { timeZone: "Europe/Moscow" })}</td></tr>
           </table>
         </div>
@@ -1088,11 +1097,11 @@ const handler = async (req: Request): Promise<Response> => {
           <h2 style="color:#1a365d;">🎯 Запрос на подбор курса</h2>
           <p style="color:#6b7280;">Заявка с popup-формы /education</p>
           <table style="border-collapse:collapse;width:100%;margin-top:12px;">
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${rec.name}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;"><a href="tel:${rec.phone}">${rec.phone}</a></td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Город</td><td style="padding:8px;border:1px solid #eee;">${rec.city}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Специализация</td><td style="padding:8px;border:1px solid #eee;">${specs}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Интересующее направление</td><td style="padding:8px;border:1px solid #eee;">${directionFull}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Имя</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(rec.name)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Телефон</td><td style="padding:8px;border:1px solid #eee;"><a href="tel:${escapeHtml(rec.phone)}">${escapeHtml(rec.phone)}</a></td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Город</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(rec.city)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Специализация</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(specs)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Интересующее направление</td><td style="padding:8px;border:1px solid #eee;">${escapeHtml(directionFull)}</td></tr>
             <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold;">Дата</td><td style="padding:8px;border:1px solid #eee;">${dateStr}</td></tr>
           </table>
           <p style="margin-top:16px;color:#6b7280;font-size:13px;">Свяжитесь с клиентом для подбора программы.</p>

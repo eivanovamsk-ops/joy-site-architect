@@ -94,11 +94,32 @@ const results = [
   },
 ];
 
-const problemSlides: { src: string; caption: string }[] = [
-  { src: "/placeholder.svg", caption: "" },
-  { src: "/placeholder.svg", caption: "" },
-  { src: "/placeholder.svg", caption: "" },
-  { src: "/placeholder.svg", caption: "" },
+const problemSlides: {
+  src: string;
+  name: string;
+  subtitle: string;
+  intro: string;
+  points: string[];
+  outro: string;
+}[] = [
+  {
+    src: "/images/courses/course-24-review-piskunov.jpg",
+    name: "Пискунов Антон",
+    subtitle: "лаборатория в Санкт-Петербурге",
+    intro: "Вопросы, которые беспокоят большинство руководителей ЗТЛ:",
+    points: [
+      "Контроль загрузки: как считать ёмкость техника?",
+      "Как бороться с лавинообразной загрузкой и как в целом её контролировать?",
+      "Роль и обязанности старшего техника",
+      "Поиск и адаптация сотрудников",
+      "Роль и обязанности администратора? Чек-лист? ЗП?",
+      "Какие сейчас зарплаты сотрудников по рынку",
+      "Должностные обязанности сотрудников (от администратора до техника)",
+      "Мотивация сотрудников",
+      "Маршрут входящей работы в лаборатории",
+    ],
+    outro: "Все вопросы разобраны, вектор развития задан, алгоритмы все прописаны! Теперь только вперёд 🚀",
+  },
 ];
 
 const modules = [
@@ -555,21 +576,34 @@ const LabManagementCourse = () => {
               <CarouselContent className="-ml-4">
                 {problemSlides.map((slide, i) => (
                   <CarouselItem key={i} className="pl-4">
-                    <figure className="overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm">
-                      <div className="aspect-[16/9] w-full overflow-hidden">
+                    <article className="grid gap-0 overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm lg:grid-cols-[minmax(0,420px)_1fr]">
+                      <div className="aspect-[3/4] w-full overflow-hidden lg:aspect-auto lg:h-full">
                         <img
                           src={slide.src}
-                          alt={slide.caption || `Фото ${i + 1}`}
+                          alt={`${slide.name} — ${slide.subtitle}`}
                           loading="lazy"
                           className="h-full w-full object-cover"
                         />
                       </div>
-                      {slide.caption && (
-                        <figcaption className="p-6 text-sm leading-7 text-background/72 sm:text-base">
-                          {slide.caption}
-                        </figcaption>
-                      )}
-                    </figure>
+                      <div className="p-6 lg:p-10">
+                        <h3 className="text-2xl font-semibold text-background">{slide.name}</h3>
+                        <p className="mt-1 text-sm text-background/55">{slide.subtitle}</p>
+                        <p className="mt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
+                          {slide.intro}
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {slide.points.map((point) => (
+                            <li key={point} className="flex items-start gap-3">
+                              <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
+                              <span className="text-sm leading-6 text-background/68">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-6 border-t border-background/10 pt-5 text-sm font-medium leading-7 text-background/80 sm:text-base">
+                          {slide.outro}
+                        </p>
+                      </div>
+                    </article>
                   </CarouselItem>
                 ))}
               </CarouselContent>

@@ -145,7 +145,7 @@ const educationMenuItems = [{
   }]
 }, {
   label: "Вебинары",
-  href: "/education/webinars"
+  href: "/education/webinar"
 }, {
   label: "Контакты",
   href: "/education/contacts"

@@ -571,7 +571,7 @@ export default function WebinarZirconMarch2026() {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-xl font-bold"
               >
-                <a href="/education/webinars">Все вебинары</a>
+                <a href="/education/webinar">Все вебинары</a>
               </Button>
             </div>
           </div>

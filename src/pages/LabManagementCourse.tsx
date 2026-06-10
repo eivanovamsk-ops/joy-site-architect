@@ -677,12 +677,12 @@ const LabManagementCourse = () => {
                 {problemSlides.map((slide, i) => (
                   <CarouselItem key={i} className="pl-4">
                     <article className="grid h-full gap-0 overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm lg:grid-cols-[minmax(0,420px)_1fr]">
-                      <div className="aspect-[3/4] w-full overflow-hidden lg:aspect-auto lg:h-full">
+                      <div className="flex w-full items-center justify-center overflow-hidden bg-foreground/40 lg:h-full">
                         <img
                           src={slide.src}
                           alt={`${slide.name} — ${slide.subtitle}`}
                           loading="lazy"
-                          className="h-full w-full object-cover"
+                          className="h-auto w-full lg:h-full lg:w-auto lg:max-w-full lg:object-contain"
                         />
                       </div>
                       <div className="p-6 lg:p-10">

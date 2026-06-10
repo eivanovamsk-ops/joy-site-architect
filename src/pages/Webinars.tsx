@@ -36,7 +36,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Уже прошёл",
     status: "past" as const,
-    image: "/images/webinar/cover.webp",
+    image: "/images/webinar/cover.jpg",
   },
   {
     slug: "zircon-march-2026",

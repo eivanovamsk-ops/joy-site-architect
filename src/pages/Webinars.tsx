@@ -25,7 +25,7 @@ const webinars = [
     format: "Онлайн",
     badge: "Бесплатно",
     status: "upcoming" as const,
-    image: "/__l5e/assets-v1/3d947232-4b40-4661-80a7-25063c43ad16/heygears-a20-hero.jpg",
+    image: "/images/webinar/heygears-a20-hero.jpg",
   },
   {
     slug: "brackets-march-2026",

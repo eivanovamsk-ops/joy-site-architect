@@ -2149,7 +2149,7 @@ export const courses: Course[] = [
     dateStart: new Date(2026, 5, 18),
     location: "Онлайн",
     format: "Вебинар",
-    coverImage: "/__l5e/assets-v1/3d947232-4b40-4661-80a7-25063c43ad16/heygears-a20-hero.jpg",
+    coverImage: "/images/webinar/heygears-a20-hero.jpg",
     price: 0,
     description: "Как выявить и устранить скрытые причины потери точности в DLP/LCD/MSLA-печати. Системный алгоритм диагностики 3D-принтера для зубных техников, операторов 3D-печати и CAD/CAM-специалистов.",
     shortDescription: "Системная диагностика 3D-принтера: оптика, механика, калибровка, материалы",

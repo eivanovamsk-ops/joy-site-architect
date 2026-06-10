@@ -16,7 +16,8 @@ import {
   Layers, Cpu, ScanLine, Sliders, Settings2, AlertTriangle,
   FlaskConical, ListChecks, Users, Building2,
 } from "lucide-react";
-import printerImg from "@/assets/webinars/heygears-a20-hero.jpg.asset.json";
+
+const printerHeroImage = "/images/webinar/heygears-a20-hero.jpg";
 
 const audiences = [
   { icon: Wrench, title: "Зубные техники" },
@@ -179,7 +180,7 @@ export default function WebinarPrinter3DJuly2026() {
               <div className="absolute -inset-10 bg-gradient-to-tr from-emerald-400/25 via-cyan-400/20 to-sky-500/20 rounded-full blur-3xl" />
               <div className="relative aspect-[1568/1003] w-full overflow-hidden rounded-3xl bg-white/5 drop-shadow-[0_40px_80px_rgba(34,211,238,0.35)]">
                 <img
-                  src={printerImg.url}
+                  src={printerHeroImage}
                   alt="3D-принтер для стоматологии"
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="eager"

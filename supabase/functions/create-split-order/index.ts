@@ -7,6 +7,32 @@ const corsHeaders = {
 
 const YANDEX_PAY_API_URL = "https://pay.yandex.ru/api/merchant/v1/orders";
 
+// SECURITY: server-side product catalog. The client-supplied price/name are ignored.
+// Keep in sync with src/data/products.ts for the split-eligible products.
+const SPLIT_PRODUCTS: Record<string, { name: string; price: number }> = {
+  "rundeer-3ds-v5": { name: "Интраоральный сканер Rundeer 3DS V5", price: 365000 },
+  "rundeer-3ds-v6": { name: "Интраоральный сканер Rundeer 3DS V6", price: 500000 },
+};
+
+const DEFAULT_REDIRECT = "https://joy-site-architect.lovable.app/shop";
+
+// Only allow redirects back to our own domains
+const isAllowedRedirect = (raw: unknown): raw is string => {
+  if (typeof raw !== "string") return false;
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== "https:") return false;
+    const host = url.hostname;
+    return (
+      host === "articon.pro" ||
+      host.endsWith(".articon.pro") ||
+      host.endsWith(".lovable.app")
+    );
+  } catch {
+    return false;
+  }
+};
+
 const sendAdminNotification = async (productName: string, price: number, orderId: string) => {
   try {
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL');
@@ -81,14 +107,26 @@ serve(async (req) => {
       throw new Error('YANDEX_PAY_MERCHANT_ID is not configured');
     }
 
-    const { productId, productName, price, successUrl, errorUrl } = await req.json();
+    const { productId, successUrl, errorUrl } = await req.json();
 
-    if (!productId || !productName || !price) {
+    if (typeof productId !== "string" || !productId) {
       return new Response(
-        JSON.stringify({ error: 'Missing required fields: productId, productName, price' }),
+        JSON.stringify({ error: 'Missing required field: productId' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+
+    // SECURITY: price and product name come from the server-side catalog only.
+    const product = SPLIT_PRODUCTS[productId];
+    if (!product) {
+      return new Response(
+        JSON.stringify({ error: 'Этот товар недоступен для оплаты через Сплит' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const productName = product.name;
+    const price = product.price;
 
     const orderId = `split-${productId}-${Date.now()}`;
 
@@ -111,8 +149,8 @@ serve(async (req) => {
       },
       availablePaymentMethods: ["SPLIT"],
       redirectUrls: {
-        onSuccess: successUrl || "https://joy-site-architect.lovable.app/shop",
-        onError: errorUrl || "https://joy-site-architect.lovable.app/shop",
+        onSuccess: isAllowedRedirect(successUrl) ? successUrl : DEFAULT_REDIRECT,
+        onError: isAllowedRedirect(errorUrl) ? errorUrl : DEFAULT_REDIRECT,
       },
       ttl: 1800,
     };
@@ -131,7 +169,7 @@ serve(async (req) => {
 
     if (!response.ok) {
       console.error("Yandex Pay API error:", JSON.stringify(data));
-      throw new Error(`Yandex Pay API error [${response.status}]: ${JSON.stringify(data)}`);
+      throw new Error(`Yandex Pay API error [${response.status}]`);
     }
 
     // Send admin notification (non-blocking)
@@ -143,9 +181,8 @@ serve(async (req) => {
     );
   } catch (error) {
     console.error("Error creating split order:", error);
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: "Не удалось создать заказ. Попробуйте позже." }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }

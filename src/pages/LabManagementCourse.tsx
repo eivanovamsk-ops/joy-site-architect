@@ -722,10 +722,8 @@ const LabManagementCourse = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="mt-8 flex justify-end gap-3">
-                <CarouselPrevious className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
-                <CarouselNext className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
-              </div>
+              <CarouselPrevious className="left-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground lg:-left-5" />
+              <CarouselNext className="right-3 top-1/2 h-11 w-11 -translate-y-1/2 border-accent/50 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 hover:text-accent-foreground lg:-right-5" />
             </Carousel>
           </div>
         </section>

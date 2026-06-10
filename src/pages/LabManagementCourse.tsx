@@ -94,6 +94,13 @@ const results = [
   },
 ];
 
+const problemSlides: { src: string; caption: string }[] = [
+  { src: "/placeholder.svg", caption: "" },
+  { src: "/placeholder.svg", caption: "" },
+  { src: "/placeholder.svg", caption: "" },
+  { src: "/placeholder.svg", caption: "" },
+];
+
 const modules = [
   {
     number: "01",
@@ -532,6 +539,45 @@ const LabManagementCourse = () => {
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+
+        <section className="relative py-20 lg:py-24">
+          <div className="container mx-auto px-4">
+            <div className="mb-10 max-w-3xl">
+              <div className="mb-3 text-sm uppercase tracking-[0.28em] text-accent/85">Результаты</div>
+              <h2 className="text-3xl font-semibold tracking-tight text-background sm:text-4xl lg:text-5xl">
+                Какие проблемы решаем
+              </h2>
+            </div>
+
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+              <CarouselContent className="-ml-4">
+                {problemSlides.map((slide, i) => (
+                  <CarouselItem key={i} className="pl-4">
+                    <figure className="overflow-hidden rounded-[2rem] border border-background/10 bg-background/5 backdrop-blur-sm">
+                      <div className="aspect-[16/9] w-full overflow-hidden">
+                        <img
+                          src={slide.src}
+                          alt={slide.caption || `Фото ${i + 1}`}
+                          loading="lazy"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      {slide.caption && (
+                        <figcaption className="p-6 text-sm leading-7 text-background/72 sm:text-base">
+                          {slide.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="mt-8 flex justify-end gap-3">
+                <CarouselPrevious className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
+                <CarouselNext className="static translate-y-0 border-background/20 bg-background/10 text-background hover:bg-background/20 hover:text-background" />
+              </div>
+            </Carousel>
           </div>
         </section>
 

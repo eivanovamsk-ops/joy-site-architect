@@ -1101,7 +1101,7 @@ Dental Tray отличается:
     name: "Фотополимер HARZ Labs Dental Yellow Clear Pro для хирургических шаблонов",
     category: "3d-print",
     subcategory: "photopolymers",
-    price: 13900,
+    price: 15190,
     image: harzDentalYellowClearProPreview,
     gallery: [harzDentalYellowClearProPreview],
     brand: "HARZ Labs",

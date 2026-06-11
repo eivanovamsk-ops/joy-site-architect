@@ -68,38 +68,37 @@ export default function Webinars() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {webinars.map((w) => (
-              <Link
+              <div
                 key={w.slug}
-                to={`/education/webinar/${w.slug}`}
-                className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col"
               >
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={w.image}
-                    alt={w.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Badge variant="secondary" className="text-xs">{w.badge}</Badge>
-                    <Badge variant="outline" className="text-xs flex items-center gap-1">
-                      <Monitor className="h-3 w-3" />
-                      {w.format}
-                    </Badge>
+                <Link to={`/education/webinar/${w.slug}`} className="block">
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={w.image}
+                      alt={w.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
 
-                  <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {w.title}
-                  </h2>
+                  <div className="p-6 pb-0">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Badge variant="secondary" className="text-xs">{w.badge}</Badge>
+                      <Badge variant="outline" className="text-xs flex items-center gap-1">
+                        <Monitor className="h-3 w-3" />
+                        {w.format}
+                      </Badge>
+                    </div>
 
-                  <p className="text-muted-foreground text-sm mb-6 line-clamp-3">
-                    {w.description}
-                  </p>
+                    <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {w.title}
+                    </h2>
 
-                  <div className="flex items-center justify-between">
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                      {w.description}
+                    </p>
+
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="h-4 w-4" />
@@ -112,12 +111,21 @@ export default function Webinars() {
                         </span>
                       )}
                     </div>
-                    <span className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                      Подробнее <ArrowRight className="h-4 w-4" />
-                    </span>
                   </div>
+                </Link>
+
+                <div className="p-6 pt-4 mt-auto">
+                  <Link to={`/education/webinar/${w.slug}`}>
+                    <Button
+                      size="sm"
+                      className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-semibold"
+                    >
+                      {w.status === "upcoming" ? "Зарегистрироваться" : "Подробнее"}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

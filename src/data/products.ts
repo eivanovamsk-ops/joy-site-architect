@@ -17,6 +17,9 @@ const rundeerV6_3 = new URL("../assets/products/rundeer-v6-3.webp", import.meta.
 const rundeerV6_4 = new URL("../assets/products/rundeer-v6-4.webp", import.meta.url).href;
 const rundeerV6_5 = new URL("../assets/products/rundeer-v6-5.webp", import.meta.url).href;
 const rundeerV6_6 = new URL("../assets/products/rundeer-v6-6.webp", import.meta.url).href;
+// Likaymo OS-6 workstation
+const likaymoOs6Front = new URL("../assets/products/likaymo-os-6-front.webp", import.meta.url).href;
+const likaymoOs6Back = new URL("../assets/products/likaymo-os-6-back.webp", import.meta.url).href;
 // Uniformation GK3 Ultra (actual Ultra model) images
 const gk3UltraMain = new URL("../assets/products/gk3-ultra-main.webp", import.meta.url).href;
 const gk3UltraScaled = new URL("../assets/products/gk3-ultra-scaled.webp", import.meta.url).href;

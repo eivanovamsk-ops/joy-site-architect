@@ -33,5 +33,7 @@ jobs:
           protocol: ftp
           security: loose
           port: 21
+          timeout: 180000
+          log-level: verbose
           local-dir: dist/
           server-dir: /domains/articon.pro/public_html/

@@ -84,6 +84,10 @@ const upceraDuo = new URL("../assets/products/upcera-duo.webp", import.meta.url)
 // HeyGears A2D HD images
 const heygearsA2dHd = new URL("../assets/products/heygears-a2d-hd.webp", import.meta.url).href;
 const heygearsA2dHd2 = new URL("../assets/products/heygears-a2d-hd-2.webp", import.meta.url).href;
+// Magnum N2 nitrogen generator images
+const magnumN2Front = new URL("../assets/products/magnum-n2-front.webp", import.meta.url).href;
+const magnumN2Angle = new URL("../assets/products/magnum-n2-angle.webp", import.meta.url).href;
+const magnumN2Back = new URL("../assets/products/magnum-n2-back.webp", import.meta.url).href;
 // Shining 3D AutoScan DS-EX Pro(C) images
 const shining3dAutoscanDsExProC1 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-1.webp", import.meta.url).href;
 const shining3dAutoscanDsExProC2 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp", import.meta.url).href;
@@ -234,6 +238,49 @@ export const products: Product[] = [
   // ==============================================
   // 3Д-ПЕЧАТЬ - ПРИНТЕРЫ
   // ==============================================
+  {
+    id: "magnum-n2-nitrogen-generator",
+    name: "Генератор азота Magnum N₂",
+    category: "3d-print",
+    subcategory: "3d-printers",
+    price: 245000,
+    brand: "Magnum",
+    inStock: true,
+    isNew: true,
+    image: magnumN2Front,
+    gallery: [magnumN2Front, magnumN2Angle, magnumN2Back],
+    metaDescription: "Генератор азота Magnum N₂ для камеры полимеризации Magnum Dental Flash. Чистота инертного газа 99,9%, производительность до 80 л/ч, бесшумная работа. Купить в Articon с доставкой по России.",
+    description: `Генератор азота Magnum N₂ предназначен для обеспечения камеры полимеризации чистым инертным газом для создания бескислородной среды. Для работы генератора требуется только сжатый воздух и электропитание. Его работа основана на технологии получения газообразного азота из атмосферного воздуха методом мембранного разделения.
+
+
+Преимущества оборудования
+
+1. Инертный газ чистотой 99,9%
+2. Бесшумная работа
+3. Компактные размеры
+4. Сенсорный экран управления
+5. Оптимизирован для Magnum Flash
+6. Более 15 лет службы мембраны
+
+
+Применение
+
+Подключив генератор азота к камере полимеризации Magnum Dental Flash, вы получаете возможность засвечивать изделия в бескислородной среде без необходимости приобретать баллоны с азотом.
+
+Генератор имеет запас инертного газа на 4–6 циклов засветки. На накопление газа, необходимого на 1 цикл засветки, требуется не более 20 минут. Этого вполне хватает для беспрерывной работы лаборатории.`,
+    specifications: {
+      "Чистота инертного газа": "99,9%",
+      "Содержание кислорода": "не более 0,08%",
+      "Максимальное давление сжатого воздуха на входе": "8 бар",
+      "Минимально необходимое давление на входе": "6 бар",
+      "Производительность": "до 80 литров в час",
+      "Время накопления газа на 1 цикл засветки": "20 минут",
+      "Питание от сети": "220 В, 50 Гц",
+      "Потребляемая мощность": "до 150 Вт",
+      "Габаритные размеры": "313 × 416 × 590 мм",
+      "Вес": "18 кг без упаковки",
+    },
+  },
   {
     id: "ultracraft-a2d-hd",
     name: "3D-принтер HeyGears UltraCraft A2D HD",

@@ -24,6 +24,7 @@ const catalogCategories: Category[] = [
     href: "/shop/catalog/printers",
     subcategories: [
       { id: "printers", name: "3D-принтеры", href: "/shop/catalog/printers" },
+      { id: "curing-chambers", name: "Камеры для полимеризации", href: "/shop/catalog/curing-chambers" },
       { id: "photopolymers", name: "Фотополимеры", href: "/shop/catalog/photopolymers" },
     ],
   },

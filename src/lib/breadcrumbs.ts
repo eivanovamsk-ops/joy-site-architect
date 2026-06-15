@@ -17,6 +17,7 @@ const categoryMap: Record<string, BreadcrumbItem> = {
 const subcategoryMap: Record<string, BreadcrumbItem> = {
   // 3D-печать
   "3d-printers": { label: "3D-принтеры", href: "/shop/catalog/printers" },
+  "curing-chambers": { label: "Камеры для полимеризации", href: "/shop/catalog/curing-chambers" },
   "photopolymers": { label: "Фотополимеры", href: "/shop/catalog/photopolymers" },
   // 3D-сканеры
   "clinical": { label: "Интраоральные сканеры", href: "/shop/catalog/intraoral-scanners" },

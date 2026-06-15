@@ -205,6 +205,7 @@ export const categories: Category[] = [
     name: "3Д-печать",
     subcategories: [
       { id: "3d-printers", name: "3Д-принтеры", href: "/shop/catalog/printers" },
+      { id: "curing-chambers", name: "Камеры для полимеризации", href: "/shop/catalog/curing-chambers" },
       { id: "photopolymers", name: "Фотополимеры", href: "/shop/catalog/photopolymers" },
     ],
   },

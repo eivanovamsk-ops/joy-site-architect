@@ -11,8 +11,8 @@ const Printers3D = () => {
     (p) => p.category === "3d-print" && p.subcategory === "3d-printers"
   );
 
-  const consumables = products.filter(
-    (p) => p.category === "3d-print" && p.subcategory === "consumables"
+  const curingChambers = products.filter(
+    (p) => p.category === "3d-print" && p.subcategory === "curing-chambers"
   );
 
   const photopolymers = products.filter(

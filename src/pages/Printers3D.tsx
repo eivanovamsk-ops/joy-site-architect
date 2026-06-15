@@ -11,8 +11,8 @@ const Printers3D = () => {
     (p) => p.category === "3d-print" && p.subcategory === "3d-printers"
   );
 
-  const consumables = products.filter(
-    (p) => p.category === "3d-print" && p.subcategory === "consumables"
+  const curingChambers = products.filter(
+    (p) => p.category === "3d-print" && p.subcategory === "curing-chambers"
   );
 
   const photopolymers = products.filter(
@@ -77,15 +77,15 @@ const Printers3D = () => {
               </section>
             )}
 
-            {/* Consumables Section */}
-            {consumables.length > 0 && (
+            {/* Curing Chambers Section */}
+            {curingChambers.length > 0 && (
               <section className="mb-16">
                 <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Расходные материалы</h2>
+                  <h2 className="text-2xl font-bold text-foreground">Камеры для полимеризации</h2>
                   <div className="h-px flex-1 bg-border" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {consumables.map((product) => (
+                  {curingChambers.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>

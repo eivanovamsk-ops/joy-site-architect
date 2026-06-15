@@ -60,6 +60,9 @@ const shopMenuItems = [{
     label: "3Д-принтеры",
     href: "/shop/catalog/3d-printers"
   }, {
+    label: "Камеры для полимеризации",
+    href: "/shop/catalog/curing-chambers"
+  }, {
     label: "Фотополимеры",
     href: "/shop/catalog/photopolymers"
   }]

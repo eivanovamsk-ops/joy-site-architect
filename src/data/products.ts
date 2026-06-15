@@ -1631,6 +1631,7 @@ HeyGears UltraPrint-D Model GP используется для:
       "Точность": "< 10 мкм (коронка)",
       "Режимы": "Проводной/беспроводной",
       "Форматы": "STL, OBJ, PLY",
+    },
   },
   {
     id: "likaymo-os-6-workstation",

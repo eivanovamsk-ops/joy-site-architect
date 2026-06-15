@@ -84,6 +84,10 @@ const upceraDuo = new URL("../assets/products/upcera-duo.webp", import.meta.url)
 // HeyGears A2D HD images
 const heygearsA2dHd = new URL("../assets/products/heygears-a2d-hd.webp", import.meta.url).href;
 const heygearsA2dHd2 = new URL("../assets/products/heygears-a2d-hd-2.webp", import.meta.url).href;
+// Magnum N2 nitrogen generator images
+const magnumN2Front = new URL("../assets/products/magnum-n2-front.webp", import.meta.url).href;
+const magnumN2Angle = new URL("../assets/products/magnum-n2-angle.webp", import.meta.url).href;
+const magnumN2Back = new URL("../assets/products/magnum-n2-back.webp", import.meta.url).href;
 // Shining 3D AutoScan DS-EX Pro(C) images
 const shining3dAutoscanDsExProC1 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-1.webp", import.meta.url).href;
 const shining3dAutoscanDsExProC2 = new URL("../assets/products/shining3d-autoscan-ds-ex-pro-c-2.webp", import.meta.url).href;

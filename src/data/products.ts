@@ -17,6 +17,9 @@ const rundeerV6_3 = new URL("../assets/products/rundeer-v6-3.webp", import.meta.
 const rundeerV6_4 = new URL("../assets/products/rundeer-v6-4.webp", import.meta.url).href;
 const rundeerV6_5 = new URL("../assets/products/rundeer-v6-5.webp", import.meta.url).href;
 const rundeerV6_6 = new URL("../assets/products/rundeer-v6-6.webp", import.meta.url).href;
+// Likaymo OS-6 workstation
+const likaymoOs6Front = new URL("../assets/products/likaymo-os-6-front.webp", import.meta.url).href;
+const likaymoOs6Back = new URL("../assets/products/likaymo-os-6-back.webp", import.meta.url).href;
 // Uniformation GK3 Ultra (actual Ultra model) images
 const gk3UltraMain = new URL("../assets/products/gk3-ultra-main.webp", import.meta.url).href;
 const gk3UltraScaled = new URL("../assets/products/gk3-ultra-scaled.webp", import.meta.url).href;
@@ -1628,6 +1631,60 @@ HeyGears UltraPrint-D Model GP используется для:
       "Точность": "< 10 мкм (коронка)",
       "Режимы": "Проводной/беспроводной",
       "Форматы": "STL, OBJ, PLY",
+    },
+  },
+  {
+    id: "likaymo-os-6-workstation",
+    name: "Мобильная рабочая станция для интраорального сканирования Likaymo OS-6",
+    category: "3d-scanners",
+    subcategory: "clinical",
+    price: 350000,
+    image: likaymoOs6Front,
+    gallery: [likaymoOs6Front, likaymoOs6Back],
+    brand: "Likaymo",
+    inStock: true,
+    description: `Универсальная рабочая станция для сканирования полости рта.
+
+Это полностью интегрированная мобильная система внутриротового сканирования для стоматологических целей. Она включает в себя сенсорный монитор высокого разрешения, установленный на регулируемом кронштейне, компактный наконечник сканера и прочную тележку с блокируемыми колесами для удобного перемещения по клинике, что повышает эффективность работы с цифровыми оттисками.
+
+Компьютер (моноблок):
+• Операционная система: Windows 11
+• Монитор: Сенсорный 23.8" FHD
+• Процессор: Intel Core i7-12700F
+• Видеокарта: RTX 4060
+• Оперативная память: 32G DDR4
+• Накопитель: SSD 1TB
+• Разрешение экрана: 1920×1080 IPS
+• Интерфейсы: USB 3.0 × 2, Wi-Fi
+
+Источник бесперебойного питания:
+• Мощность: 720W
+• Ёмкость аккумулятора: 150Wh
+• Время автономной работы: 100 минут
+
+Цвета станции: Белый или Чёрный`,
+    specifications: {
+      "Тип модели": "OS-2",
+      "Материал": "Авиационный алюминиевый сплав и медицинский АБС-пластик",
+      "Цвет": "Белый",
+      "Грузоподъёмность": "12 кг",
+      "Вес упаковки": "40 кг",
+      "Размер упаковки": "58×58×100 см",
+      "Высота тележки": "100–120 см / 39,4–47,2 дюйма",
+      "Количество кастеров": "4 бесшумных тормозных ролика",
+      "Диаметр поворотного колеса": "7,6 см / 3 дюйма",
+      "Базовый размер": "48×48 см / 18,8×18,8 дюйма",
+      "Материал колонки": "Авиационный алюминий",
+      "VESA крепления": "75×75 / 100×100 мм",
+      "Размеры монитора": "15–32\"",
+      "Операционная система": "Windows 11",
+      "Монитор": "Сенсорный 23.8\" FHD, 1920×1080 IPS",
+      "Процессор": "Intel Core i7-12700F",
+      "Видеокарта": "RTX 4060",
+      "Оперативная память": "32G DDR4",
+      "Накопитель": "SSD 1TB",
+      "Интерфейсы": "USB 3.0 × 2, Wi-Fi",
+      "ИБП": "720W, 150Wh, до 100 мин автономной работы",
     },
   },
 

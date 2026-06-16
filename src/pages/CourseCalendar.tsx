@@ -84,8 +84,8 @@ const CourseCalendar = () => {
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
-     const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.id === 22 || a.id === 42 || a.id === 43 || a.id === 44 || a.id === 45 || a.id === 46 || a.id === 47 || a.id === 48 || a.isPast;
-     const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.id === 22 || b.id === 42 || b.id === 43 || b.id === 44 || b.id === 45 || b.id === 46 || b.id === 47 || b.id === 48 || b.isPast;
+     const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.id === 22 || a.id === 42 || a.id === 43 || a.id === 44 || a.id === 45 || a.id === 46 || a.id === 47 || a.id === 48 || a.id === 49 || a.isPast;
+     const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.id === 22 || b.id === 42 || b.id === 43 || b.id === 44 || b.id === 45 || b.id === 46 || b.id === 47 || b.id === 48 || b.id === 49 || b.isPast;
       if (isArchivedA && !isArchivedB) return 1;
       if (!isArchivedA && isArchivedB) return -1;
       const isLastA = a.isComingSoon || titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');

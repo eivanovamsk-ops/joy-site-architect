@@ -508,7 +508,8 @@ const CourseCalendar = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+                );
+              })}
 
               {/* Past events (moved to end) */}
               {!hasActiveFilters && (

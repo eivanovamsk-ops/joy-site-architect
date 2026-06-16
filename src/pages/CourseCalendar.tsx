@@ -55,7 +55,7 @@ const CourseCalendar = () => {
 
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
-      if (course.id === 13 || course.id === 23 || course.id === 25 || course.id === 10 || course.id === 26 || course.id === 30 || course.id === 42 || course.id === 43 || course.id === 44 || course.id === 45 || course.id === 46 || course.id === 47) return false;
+      if (course.id === 13 || course.id === 23 || course.id === 25 || course.id === 10 || course.id === 26 || course.id === 30 || course.id === 42 || course.id === 43 || course.id === 44 || course.id === 45 || course.id === 46 || course.id === 47 || course.id === 48) return false;
       const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
         selectedCategory === "Все разделы" ||

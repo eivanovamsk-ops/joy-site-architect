@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { courses, type Course } from "@/data/courses";
 
-export const FLAGSHIP_EVENT_IDS = [21, 22, 37, 41, 42, 43, 44, 45, 46, 47, 48];
+export const FLAGSHIP_EVENT_IDS = [21, 22, 37, 41, 42, 43, 44, 45, 46, 47, 48, 49];
 
 function FlagshipCard({ course, archive = false }: { course: Course; archive?: boolean }) {
   const isClosed = /закрыт/i.test(course.format);

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { courses, type Course } from "@/data/courses";
 
-export const FLAGSHIP_EVENT_IDS = [21, 22, 37, 41, 42, 43, 44, 45, 46, 47];
+export const FLAGSHIP_EVENT_IDS = [21, 22, 37, 41, 42, 43, 44, 45, 46, 47, 48];
 
 function FlagshipCard({ course, archive = false }: { course: Course; archive?: boolean }) {
   const isClosed = /закрыт/i.test(course.format);
@@ -97,7 +97,7 @@ export function FlagshipEvents() {
     .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
   const past = courses
-    .filter((c) => [21, 22, 42, 43, 44, 45, 46, 47].includes(c.id))
+    .filter((c) => [21, 22, 42, 43, 44, 45, 46, 47, 48].includes(c.id))
     .sort((a, b) => b.dateStart.getTime() - a.dateStart.getTime());
 
   return (

@@ -1,30 +1,69 @@
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, MapPin, Monitor, Video, Users } from "lucide-react";
+import { ArrowRight, Calendar, MapPin, Video, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { courses } from "@/data/courses";
+import { FLAGSHIP_EVENT_IDS } from "./FlagshipEvents";
+import { cn } from "@/lib/utils";
+
+type FilterId = "all" | "ortho-doc" | "ortho-tech" | "cadcam" | "webinars";
+
+const FILTERS: { id: FilterId; label: string }[] = [
+  { id: "all", label: "Все" },
+  { id: "ortho-doc", label: "Ортопедия" },
+  { id: "ortho-tech", label: "Ортодонтия" },
+  { id: "cadcam", label: "CAD/CAM" },
+  { id: "webinars", label: "Вебинары" },
+];
 
 export function EducationUpcomingCourses() {
-  // Sort courses by date and get upcoming ones (limit to 6)
-  const upcomingCourses = courses
-    .filter(course => course.id !== 23 && course.id !== 19 && course.id !== 25 && course.id !== 11 && course.id !== 21 && course.dateStart >= new Date())
-    .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime())
-    .slice(0, 6);
+  const [filter, setFilter] = useState<FilterId>("all");
 
-  // If no upcoming courses, show all courses sorted by date
-  const displayCourses = upcomingCourses.length > 0 
-    ? upcomingCourses 
-    : courses.slice(0, 6);
+  const baseCourses = useMemo(() => {
+    return courses
+      .filter(
+        (c) =>
+          !FLAGSHIP_EVENT_IDS.includes(c.id) &&
+          ![23, 19, 25, 11].includes(c.id) &&
+          c.dateStart >= new Date()
+      )
+      .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
+  }, []);
 
-  const regularCourses = displayCourses.slice(0, 6);
+  const filtered = useMemo(() => {
+    const list = baseCourses.filter((c) => {
+      switch (filter) {
+        case "all":
+          return true;
+        case "ortho-doc":
+          return c.sectionTags?.includes("ортопедия");
+        case "ortho-tech":
+          return c.sectionTags?.includes("ортодонтия");
+        case "cadcam":
+          return c.sectionTags?.includes("CAD/CAM");
+        case "webinars":
+          return /вебинар/i.test(c.format) || /вебинар/i.test(c.category);
+        default:
+          return true;
+      }
+    });
+    return list.slice(0, 6);
+  }, [baseCourses, filter]);
+
+  const display = filtered.length > 0 ? filtered : baseCourses.slice(0, 6);
 
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Ближайшие курсы и события
-          </h2>
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+          <div>
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-2">
+              Регулярное обучение
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold">
+              Ближайшие курсы и вебинары
+            </h2>
+          </div>
           <Link
             to="/education/calendar"
             className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all"
@@ -33,13 +72,30 @@ export function EducationUpcomingCourses() {
           </Link>
         </div>
 
+        {/* Filter tags */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {FILTERS.map((f) => (
+            <button
+              key={f.id}
+              onClick={() => setFilter(f.id)}
+              className={cn(
+                "px-4 py-2 rounded-full text-sm font-medium border transition-all",
+                filter === f.id
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-muted/50 text-muted-foreground border-transparent hover:bg-muted hover:text-foreground"
+              )}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {regularCourses.map((course) => (
+          {display.map((course) => (
             <div
               key={course.id}
               className="bg-card border border-border rounded-2xl overflow-hidden hover-lift group"
             >
-              {/* Cover Image */}
               {course.coverImage && (
                 <div className="relative h-40 overflow-hidden">
                   <img
@@ -72,7 +128,6 @@ export function EducationUpcomingCourses() {
                 </div>
               )}
 
-              {/* Header (fallback without image) */}
               {!course.coverImage && (
                 <div className="gradient-education p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -90,7 +145,6 @@ export function EducationUpcomingCourses() {
                 </div>
               )}
 
-              {/* Content */}
               <div className="p-4">
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -136,4 +190,3 @@ export function EducationUpcomingCourses() {
     </section>
   );
 }
-

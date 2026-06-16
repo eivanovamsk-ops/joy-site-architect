@@ -23,6 +23,8 @@ import {
 } from "@/components/ui/popover";
 
 import { courses, getUniqueLecturers, sectionTags, SectionTag } from "@/data/courses";
+import { FLAGSHIP_EVENT_IDS } from "@/components/education/FlagshipEvents";
+import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const CourseCalendar = () => {
@@ -44,6 +46,7 @@ const CourseCalendar = () => {
 
   const calendarSections = [
     { label: "Все разделы", tags: [] as SectionTag[] },
+    { label: "Конференции и спецсобытия", tags: [] as SectionTag[], flagshipOnly: true },
     { label: "Ортопедия (врачи)", tags: ["для врачей", "ортопедия"] as SectionTag[] },
     { label: "Ортодонтия (врачи)", tags: ["для врачей", "ортодонтия"] as SectionTag[] },
     { label: "CAD/CAM (техники)", tags: ["для техников", "CAD/CAM"] as SectionTag[] },
@@ -56,7 +59,9 @@ const CourseCalendar = () => {
       const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
         selectedCategory === "Все разделы" ||
-        (selectedSection && selectedSection.tags.every(tag => course.sectionTags?.includes(tag)));
+        (selectedSection?.flagshipOnly
+          ? FLAGSHIP_EVENT_IDS.includes(course.id)
+          : selectedSection && selectedSection.tags.every(tag => course.sectionTags?.includes(tag)));
       const matchesDate =
         !selectedDate ||
         (course.dateStart.getMonth() === selectedDate.getMonth() &&

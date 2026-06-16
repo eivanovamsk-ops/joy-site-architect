@@ -55,7 +55,7 @@ const CourseCalendar = () => {
 
   const filteredCourses = useMemo(() => {
     const filtered = courses.filter((course) => {
-      if (course.id === 13 || course.id === 23 || course.id === 25 || course.id === 10 || course.id === 26 || course.id === 30) return false;
+      if (course.id === 13 || course.id === 23 || course.id === 25 || course.id === 10 || course.id === 26 || course.id === 30 || course.id === 42) return false;
       const selectedSection = calendarSections.find(s => s.label === selectedCategory);
       const matchesCategory =
         selectedCategory === "Все разделы" ||
@@ -84,8 +84,8 @@ const CourseCalendar = () => {
     return filtered.sort((a, b) => {
       const titleA = a.title.toLowerCase();
       const titleB = b.title.toLowerCase();
-      const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.id === 22 || a.isPast;
-      const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.id === 22 || b.isPast;
+      const isArchivedA = a.id === 19 || a.id === 11 || a.id === 21 || a.id === 22 || a.id === 42 || a.isPast;
+      const isArchivedB = b.id === 19 || b.id === 11 || b.id === 21 || b.id === 22 || b.id === 42 || b.isPast;
       if (isArchivedA && !isArchivedB) return 1;
       if (!isArchivedA && isArchivedB) return -1;
       const isLastA = a.isComingSoon || titleA.includes('менеджмент') || titleA.includes('сканирование по запросу') || titleA.includes('интраоральное сканирование');

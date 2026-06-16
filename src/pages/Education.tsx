@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { EducationHeroSection } from "@/components/education/HeroSection";
 import { EducationStatsSection } from "@/components/education/StatsSection";
 import { EducationUpcomingCourses } from "@/components/education/UpcomingCourses";
+import { FlagshipEvents } from "@/components/education/FlagshipEvents";
 import { EducationCategories } from "@/components/education/Categories";
 import { EducationAdvantages } from "@/components/education/Advantages";
 import { EducationOrthoSection } from "@/components/education/OrthoSection";
@@ -105,6 +106,7 @@ const Education = () => {
       </Helmet>
       
       <EducationHeroSection />
+      <FlagshipEvents />
       <EducationStatsSection />
       <EducationUpcomingCourses />
       <EducationSEOContentSection />

@@ -97,7 +97,7 @@ export function FlagshipEvents() {
     .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
   const past = courses
-    .filter((c) => [21, 22, 42, 43, 44, 45, 46, 47, 48].includes(c.id))
+    .filter((c) => [21, 22, 42, 43, 44, 45, 46, 47, 48, 49].includes(c.id))
     .sort((a, b) => b.dateStart.getTime() - a.dateStart.getTime());
 
   return (

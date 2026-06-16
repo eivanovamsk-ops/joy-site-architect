@@ -306,10 +306,18 @@ const CourseCalendar = () => {
           {/* Course List */}
           {filteredCourses.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredCourses.map((course) => (
+              {filteredCourses.map((course) => {
+                const isFlagship = FLAGSHIP_EVENT_IDS.includes(course.id);
+                const isClosed = isFlagship && /закрыт/i.test(course.format);
+                return (
                 <div
                   key={course.id}
-                  className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all group"
+                  className={cn(
+                    "bg-card border rounded-2xl overflow-hidden hover:shadow-lg transition-all group",
+                    isFlagship
+                      ? "border-primary/50 ring-1 ring-primary/30 bg-gradient-to-br from-primary/5 to-card shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.3)]"
+                      : "border-border"
+                  )}
                 >
                   {/* Cover Image */}
                   {course.coverImage && (
@@ -322,17 +330,25 @@ const CourseCalendar = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute top-3 right-3 flex gap-1.5">
-                        {course.price === 0 && (
-                          <Badge className="bg-green-500/90 text-white text-xs">
-                            Бесплатно
+                      <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2">
+                        {isFlagship && (
+                          <Badge className="bg-primary text-primary-foreground text-[10px] font-bold tracking-[0.1em] uppercase shadow-lg gap-1">
+                            <Sparkles className="h-3 w-3" />
+                            {isClosed ? "Закрытое событие" : "Конференция"}
                           </Badge>
                         )}
-                        {course.location === "Онлайн" && (
-                          <Badge className="bg-primary/90 text-primary-foreground text-xs">
-                            Онлайн
-                          </Badge>
-                        )}
+                        <div className="flex gap-1.5 ml-auto">
+                          {course.price === 0 && (
+                            <Badge className="bg-green-500/90 text-white text-xs">
+                              Бесплатно
+                            </Badge>
+                          )}
+                          {course.location === "Онлайн" && (
+                            <Badge className="bg-primary/90 text-primary-foreground text-xs">
+                              Онлайн
+                            </Badge>
+                          )}
+                        </div>
                       </div>
                       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                         <Badge className="bg-primary/90 text-primary-foreground text-xs">

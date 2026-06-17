@@ -19,22 +19,28 @@ export function EducationLegalInfo({ variant = "section" }: EducationLegalInfoPr
         <dl className="space-y-2 text-sm text-muted-foreground">
           <div>
             <dt className="font-semibold text-foreground">
-              ООО «АРТИКОН»
+              ООО «Артикон Трейд»
             </dt>
           </div>
           <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 pt-2">
             <dt>ИНН:</dt>
-            <dd className="text-foreground">7735570899</dd>
+            <dd className="text-foreground">7725752561</dd>
             <dt>КПП:</dt>
             <dd className="text-foreground">772401001</dd>
             <dt>ОГРН:</dt>
-            <dd className="text-foreground">1107746609134</dd>
-            <dt>Адрес:</dt>
+            <dd className="text-foreground">1127746237607</dd>
+            <dt>Р/с:</dt>
+            <dd className="text-foreground">40702810602860000274</dd>
+            <dt>К/с:</dt>
+            <dd className="text-foreground">30101810200000000593</dd>
+            <dt>БИК:</dt>
+            <dd className="text-foreground">044525593</dd>
+            <dt>Банк:</dt>
+            <dd className="text-foreground">АО «АЛЬФА-БАНК»</dd>
+            <dt>Юр. адрес:</dt>
             <dd className="text-foreground">
-              115230, г. Москва, Каширское ш., д. 3, к. 2, стр. 4, эт. 1, ком. 32
+              115230, г. Москва, Варшавское шоссе, дом 33, строение 12
             </dd>
-            <dt>Директор:</dt>
-            <dd className="text-foreground">Артемов Виктор Юрьевич</dd>
           </div>
         </dl>
       </div>

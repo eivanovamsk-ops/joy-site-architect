@@ -78,8 +78,8 @@ const harzDentalTrayV2Preview = new URL("../assets/products/harz-dental-tray-v2-
 const harzDentalYellowClear = new URL("../assets/products/harz-dental-yellow-clear.webp", import.meta.url).href;
 const harzDentalYellowClearProPreview = new URL("../assets/products/harz-dental-yellow-clear-pro-real.webp", import.meta.url).href;
 // Upcera zirconia disc images
-const upceraStColor = new URL("../assets/products/upcera-st-color.webp", import.meta.url).href;
-const upceraHtWhite = new URL("../assets/products/upcera-ht-white.webp", import.meta.url).href;
+const upceraStColor = new URL("../assets/products/upcera-st-color.jpg", import.meta.url).href;
+const upceraHtWhite = new URL("../assets/products/upcera-ht-white.jpg", import.meta.url).href;
 const upceraExploreFunctional = new URL("../assets/products/upcera-explore-functional.webp", import.meta.url).href;
 const upceraExploreEsthetic = new URL("../assets/products/upcera-explore-esthetic.webp", import.meta.url).href;
 const upceraStMl = new URL("../assets/products/upcera-st-ml.webp", import.meta.url).href;

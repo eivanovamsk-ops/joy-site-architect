@@ -179,8 +179,42 @@ const EducationContacts = () => {
             </div>
           </div>
 
-          <div className="mt-16">
-            <EducationLegalInfo variant="compact" />
+          <div className="mt-16 max-w-5xl mx-auto">
+            <div className="bg-card rounded-2xl p-6 lg:p-8 border border-border">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Building2 className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground">Реквизиты Учебного центра</h3>
+              </div>
+              <dl className="space-y-2 text-sm text-muted-foreground">
+                <div>
+                  <dt className="font-semibold text-foreground">
+                    ООО «Артикон Трейд»
+                  </dt>
+                </div>
+                <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 pt-2">
+                  <dt>ИНН:</dt>
+                  <dd className="text-foreground">7725752561</dd>
+                  <dt>КПП:</dt>
+                  <dd className="text-foreground">772401001</dd>
+                  <dt>ОГРН:</dt>
+                  <dd className="text-foreground">1127746237607</dd>
+                  <dt>Р/с:</dt>
+                  <dd className="text-foreground">40702810602860000274</dd>
+                  <dt>К/с:</dt>
+                  <dd className="text-foreground">30101810200000000593</dd>
+                  <dt>БИК:</dt>
+                  <dd className="text-foreground">044525593</dd>
+                  <dt>Банк:</dt>
+                  <dd className="text-foreground">АО «АЛЬФА-БАНК»</dd>
+                  <dt>Юр. адрес:</dt>
+                  <dd className="text-foreground">
+                    115230, г. Москва, Варшавское шоссе, дом 33, строение 12
+                  </dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>

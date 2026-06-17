@@ -1,9 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Helmet } from "react-helmet-async";
 
-import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle, Mail } from "lucide-react";
+import { Phone, MapPin, Navigation, Car, DoorOpen, MessageCircle, Mail, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { EducationLegalInfo } from "@/components/education/EducationLegalInfo";
 
 const EducationContacts = () => {
   const phones = [

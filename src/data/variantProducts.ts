@@ -15,8 +15,7 @@ import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint
 import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
-import audentalPmmaML from "@/assets/products/audental-pmma-ml.webp";
-import audentalPmmaMono from "@/assets/products/audental-pmma-mono.webp";
+import audentalPmma from "@/assets/products/audental-pmma.jpg.asset.json";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -1177,7 +1176,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Audental",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: audentalPmmaML,
+    image: audentalPmma.url,
     basePrice: 1350,
     description: `Audental PMMA Multilayer — многослойная блок-заготовка из PMMA для временных конструкций длительного ношения. Материал отличается прочностью, биосовместимостью, легкой обработкой и стойкостью к истиранию. Доступны оттенки A1, A2, A3 и BL3.
 
@@ -1217,7 +1216,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Audental",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: audentalPmmaMono,
+    image: audentalPmma.url,
     basePrice: 700,
     description: `Audental PMMA Mono — монослойный PMMA-диск для изготовления временных конструкций при помощи открытых CAD/CAM-систем. Материал подходит для повседневных лабораторных задач, отличается легкой обработкой и стабильной геометрией после фрезерования.
 

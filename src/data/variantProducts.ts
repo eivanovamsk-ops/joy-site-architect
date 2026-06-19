@@ -5,6 +5,8 @@ import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.webp";
 import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
+import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
+import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-mono.webp";
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
@@ -14,9 +16,6 @@ import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
 import audentalPmma from "@/assets/products/audental-pmma.jpg.asset.json";
-
-const articonPmmaMonoImage = "https://cdn.articon.pro/uploads/0-0-1/10a56f67-c6b7-4c75-875f-2c70220c3547.png";
-const stDentalPmmaMonoImage = "https://cdn.articon.pro/uploads/0-0-1/33d52367-628f-43b9-bf39-813c015b3e2e.png";
 
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
@@ -792,7 +791,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Articon",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: articonPmmaMonoImage,
+    image: articonPmmaMono,
     basePrice: 700,
     description: `Диск PMMA Articon Mono — это однослойная блок-заготовка из полиметилметакрилата для изготовления временных коронок, мостов и диагностических/примерочных конструкций. Материал подходит для лабораторий, которым нужен доступный расходный материал для регулярной CAD/CAM-работы.
 
@@ -830,7 +829,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "ST Dental",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: stDentalPmmaMonoImage,
+    image: stDentalPmmaMono,
     basePrice: 750,
     description: `ST Dental PMMA Mono — монослойная PMMA-заготовка для фрезерования временных коронок и мостов. Материал рассчитан на стандартные лабораторные задачи, хорошо подходит для экономичных временных конструкций и примерочных работ.
 

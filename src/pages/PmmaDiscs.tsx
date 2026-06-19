@@ -18,6 +18,7 @@ const PmmaDiscs = () => {
   const upceraVariants = pmmaVariants.filter((p) => p.brand === "Upcera");
   const limaVariants = pmmaVariants.filter((p) => p.brand === "Lima");
   const articonVariants = pmmaVariants.filter((p) => p.brand === "Articon");
+  const stDentalVariants = pmmaVariants.filter((p) => p.brand === "ST Dental");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
   const otherProducts = pmmaDiscs.filter(
     (p) => p.brand !== "Dental Direkt"
@@ -102,6 +103,21 @@ const PmmaDiscs = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {articonVariants.map((product) => (
+                    <VariantProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ST Dental Section */}
+            {stDentalVariants.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">ST Dental</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {stDentalVariants.map((product) => (
                     <VariantProductCard key={product.id} product={product} />
                   ))}
                 </div>

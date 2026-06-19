@@ -6,6 +6,7 @@ import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
 import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
+import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -819,6 +820,43 @@ Lima — турецкий производитель, успешно проше�
     variants: [
       { diameter: 98, height: 16, shade: "A2", price: 700, sku: "ARTICON-PMMA-MONO-98-16-A2" },
       { diameter: 98, height: 16, shade: "A3", price: 700, sku: "ARTICON-PMMA-MONO-98-16-A3" },
+    ],
+  },
+  // === PMMA ST Dental Mono ===
+  {
+    id: "st-dental-pmma-mono-d98",
+    name: "Диск ST DENTAL PMMA MONO",
+    subtitle: "Однослойный PMMA-диск для временных ортопедических конструкций",
+    brand: "ST Dental",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: stDentalPmmaMono,
+    basePrice: 750,
+    description: `ST Dental PMMA Mono — монослойная PMMA-заготовка для фрезерования временных коронок и мостов. Материал рассчитан на стандартные лабораторные задачи, хорошо подходит для экономичных временных конструкций и примерочных работ.
+
+Назначение: временные коронки, мосты и примерочные работы.
+
+Преимущества:
+• монослойная структура
+• универсальное применение
+• доступная стоимость
+• обработка в открытых CAD/CAM-системах`,
+    metaDescription: "Диск ST DENTAL PMMA MONO 98x20 мм — однослойный PMMA для временных конструкций. Оттенок A3. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "ST Dental",
+      "Страна": "—",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "Monolayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм",
+      "Цвета": "A3",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A3", price: 750, sku: "ST-DENTAL-PMMA-MONO-98-20-A3" },
     ],
   },
   // === ТИТАНОВЫЕ ДИСКИ ===

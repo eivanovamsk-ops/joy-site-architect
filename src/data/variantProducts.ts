@@ -738,17 +738,17 @@ UPCERA PMMA диски доступны в широкой палитре отт�
     })(),
   },
 
-  // === PMMA Lima ===
+  // === PMMA Lima Mono ===
   {
-    id: "lima-pmma",
-    name: "Диск Lima PMMA D98",
-    subtitle: "PMMA диск для временных конструкций",
+    id: "lima-pmma-mono-d98",
+    name: "Диск LIMA PMMA MONO",
+    subtitle: "Однослойный PMMA диск для временных конструкций",
     brand: "Lima",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     image: pmmaLima,
-    basePrice: 0,
-    description: `Диск PMMA от Lima — это однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
+    basePrice: 700,
+    description: `Диск LIMA PMMA MONO — однослойная, предокрашенная блок-заготовка из полиметилакрилата (ПММА) диаметром 98 мм, предназначенная для изготовления временных конструкций длительного ношения при помощи открытых CAD/CAM систем.
 
 Lima — турецкий производитель, успешно прошедший тестирования в нашей лаборатории. Рекомендуем как качественный материал по отличной цене.
 
@@ -765,34 +765,23 @@ Lima — турецкий производитель, успешно проше�
 • Диагностические конструкции
 • Временные работы на имплантатах
 
-Купить диски Lima PMMA можно в компании Articon (Артикон) — поставщик зуботехнических материалов в Москве с доставкой по всей России.`,
-    metaDescription: "Диск Lima PMMA для CAD/CAM — однослойный PMMA 15–20 мм (A1–A3, BL). Качественный турецкий материал для временных конструкций. Articon, Москва, доставка по России",
+Купить диски LIMA PMMA MONO можно в компании Articon (Артикон) — поставщик зуботехнических материалов в Москве с доставкой по всей России.`,
+    metaDescription: "Диск LIMA PMMA MONO для CAD/CAM — однослойный PMMA 15–20 мм (A1, A2, BL). Качественный турецкий материал для временных конструкций. Articon, Москва, доставка по России",
     specifications: {
       "Производитель": "Lima",
       "Страна производства": "Турция",
       "Материал": "PMMA",
+      "Тип": "Диски PMMA — MO",
       "Серия": "Monolayer",
       "Система": "98 мм",
     },
-    variants: (() => {
-      const shades = ["A1", "A2", "A3"];
-      const heights = [15, 20];
-      const result: ProductVariant[] = [];
-      for (const shade of shades) {
-        for (const height of heights) {
-          result.push({
-            diameter: 98,
-            height,
-            shade,
-            price: 0,
-            sku: `LIMA-PMMA-${height}-${shade.replace(".", "")}`,
-          });
-        }
-      }
-      // BL only 20mm
-      result.push({ diameter: 98, height: 20, shade: "BL", price: 0, sku: "LIMA-PMMA-20-BL" });
-      return result;
-    })(),
+    variants: [
+      { diameter: 98, height: 15, shade: "A1", price: 700, sku: "LIMA-PMMA-MONO-15-A1" },
+      { diameter: 98, height: 15, shade: "A2", price: 700, sku: "LIMA-PMMA-MONO-15-A2" },
+      { diameter: 98, height: 20, shade: "A2", price: 750, sku: "LIMA-PMMA-MONO-20-A2" },
+      { diameter: 98, height: 15, shade: "BL", price: 700, sku: "LIMA-PMMA-MONO-15-BL" },
+      { diameter: 98, height: 20, shade: "BL", price: 750, sku: "LIMA-PMMA-MONO-20-BL" },
+    ],
   },
   // === PMMA Articon Mono ===
   {

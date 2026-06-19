@@ -19,6 +19,7 @@ const PmmaDiscs = () => {
   const limaVariants = pmmaVariants.filter((p) => p.brand === "Lima");
   const articonVariants = pmmaVariants.filter((p) => p.brand === "Articon");
   const stDentalVariants = pmmaVariants.filter((p) => p.brand === "ST Dental");
+  const dentalDirektVariants = pmmaVariants.filter((p) => p.brand === "Dental Direkt");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
   const otherProducts = pmmaDiscs.filter(
     (p) => p.brand !== "Dental Direkt"

@@ -5,6 +5,7 @@ import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.webp";
 import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
+import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -781,6 +782,44 @@ Lima — турецкий производитель, успешно проше�
       result.push({ diameter: 98, height: 20, shade: "BL", price: 0, sku: "LIMA-PMMA-20-BL" });
       return result;
     })(),
+  },
+  // === PMMA Articon Mono ===
+  {
+    id: "articon-pmma-mono-d98",
+    name: "Диск ARTICON PMMA MONO 98x16",
+    subtitle: "Однослойный PMMA-диск для временных конструкций",
+    brand: "Articon",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: articonPmmaMono,
+    basePrice: 700,
+    description: `Диск PMMA Articon Mono — это однослойная блок-заготовка из полиметилметакрилата для изготовления временных коронок, мостов и диагностических/примерочных конструкций. Материал подходит для лабораторий, которым нужен доступный расходный материал для регулярной CAD/CAM-работы.
+
+Назначение: временные коронки и мосты, примерочные конструкции.
+
+Преимущества:
+• экономичное решение для ежедневной работы
+• монослойная структура
+• простая фрезеровка и полировка
+• совместимость с открытыми системами`,
+    metaDescription: "Диск ARTICON PMMA MONO 98x16 мм — однослойный PMMA для временных конструкций. Оттенки A2, A3. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Articon",
+      "Страна": "—",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "Monolayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "16 мм",
+      "Цвета": "A2, A3",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 16, shade: "A2", price: 700, sku: "ARTICON-PMMA-MONO-98-16-A2" },
+      { diameter: 98, height: 16, shade: "A3", price: 700, sku: "ARTICON-PMMA-MONO-98-16-A3" },
+    ],
   },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {

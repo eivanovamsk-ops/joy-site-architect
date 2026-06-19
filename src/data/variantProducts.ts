@@ -16,6 +16,7 @@ import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
 import audentalPmmaML from "@/assets/products/audental-pmma-ml.webp";
+import audentalPmmaMono from "@/assets/products/audental-pmma-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";

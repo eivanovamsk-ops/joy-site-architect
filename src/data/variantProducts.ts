@@ -1134,6 +1134,7 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 30, shade: "Pink", price: 850, sku: "HONCHON-PMMA-MO-98-30-PINK" },
       { diameter: 98, height: 20, shade: "Clear", price: 1000, sku: "HONCHON-PMMA-MO-98-20-CLEAR" },
     ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

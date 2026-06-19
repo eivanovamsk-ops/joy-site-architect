@@ -22,6 +22,7 @@ const PmmaDiscs = () => {
   const dentalDirektVariants = pmmaVariants.filter((p) => p.brand === "Dental Direkt");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
   const honchonSmileVariants = pmmaVariants.filter((p) => p.brand === "Honchon Smile");
+  const audentalVariants = pmmaVariants.filter((p) => p.brand === "Audental");
   const otherProducts = pmmaDiscs.filter(
     (p) => p.brand !== "Dental Direkt" && p.brand !== "Honchon Smile"
   );
@@ -153,6 +154,21 @@ const PmmaDiscs = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                   {honchonSmileVariants.map((product) => (
+                    <VariantProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Audental Section */}
+            {audentalVariants.length > 0 && (
+              <section className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <h2 className="text-2xl font-bold text-foreground">Audental</h2>
+                  <div className="h-px flex-1 bg-border" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {audentalVariants.map((product) => (
                     <VariantProductCard key={product.id} product={product} />
                   ))}
                 </div>

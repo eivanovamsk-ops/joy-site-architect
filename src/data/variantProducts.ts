@@ -6,6 +6,7 @@ import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
 import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
+import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";

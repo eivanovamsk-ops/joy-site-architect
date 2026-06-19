@@ -763,7 +763,7 @@ Lima — турецкий производитель, успешно проше�
       "Система": "98 мм",
     },
     variants: (() => {
-      const shades = ["A1", "A2", "A3", "A3.5"];
+      const shades = ["A1", "A2", "A3"];
       const heights = [15, 20];
       const result: ProductVariant[] = [];
       for (const shade of shades) {
@@ -779,8 +779,6 @@ Lima — турецкий производитель, успешно проше�
       }
       // BL only 20mm
       result.push({ diameter: 98, height: 20, shade: "BL", price: 0, sku: "LIMA-PMMA-20-BL" });
-      // W3 only 15mm
-      result.push({ diameter: 98, height: 15, shade: "W3", price: 0, sku: "LIMA-PMMA-15-W3" });
       return result;
     })(),
   },

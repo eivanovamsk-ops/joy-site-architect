@@ -791,7 +791,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Articon",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: articonPmmaMono,
+    image: articonPmmaMono.url,
     basePrice: 700,
     description: `Диск PMMA Articon Mono — это однослойная блок-заготовка из полиметилметакрилата для изготовления временных коронок, мостов и диагностических/примерочных конструкций. Материал подходит для лабораторий, которым нужен доступный расходный материал для регулярной CAD/CAM-работы.
 

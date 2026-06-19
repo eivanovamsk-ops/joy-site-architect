@@ -11,7 +11,7 @@ import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
-import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
+
 import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";

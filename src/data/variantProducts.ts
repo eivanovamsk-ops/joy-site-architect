@@ -11,7 +11,7 @@ import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
-import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
+
 import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
@@ -1004,44 +1004,6 @@ Lima — турецкий производитель, успешно проше�
     },
     variants: [
       { diameter: 98, height: 20, shade: "B0", price: 1350, sku: "DD-POLYMED-ML-98-20-B0" },
-    ],
-  },
-  // === PMMA Dental Direkt Bio splint P HI ===
-  {
-    id: "dental-direkt-bio-splint-p-hi-d98",
-    name: "Диск пластиковый Bio splint P HI",
-    subtitle: "PMMA-диск для изготовления шин и капп",
-    brand: "Dental Direkt",
-    category: "cad-cam-discs",
-    subcategory: "pmma-discs",
-    image: dentalDirektBioSplintPHI,
-    basePrice: 1000,
-    outOfStock: true,
-    description: `Bio splint P HI — PMMA-заготовка для CAD/CAM-фрезерования шин, капп и ортопедических конструкций. Материал подходит для изготовления защитных капп, шин при бруксизме и временных ортопедических аппаратов.
-
-Назначение: шины, каппы, временные ортопедические конструкции.
-
-Преимущества:
-• медицинский PMMA
-• удобная фрезеруемость
-• стабильная геометрия диска
-• совместимость с открытыми CAD/CAM-системами`,
-    metaDescription: "Диск пластиковый Bio splint P HI Dental Direkt 98×20 мм — PMMA для шин и капп. Купить в Articon, доставка по России.",
-    specifications: {
-      "Производитель": "Dental Direkt",
-      "Страна": "Германия",
-      "Категория": "CAD/CAM диски и блоки",
-      "Тип": "Диски PMMA — MO",
-      "Серия": "Bio splint P HI",
-      "Материал": "PMMA",
-      "Диаметр": "98 мм",
-      "Высота": "20 мм",
-      "Цвета": "Transparent",
-      "Упаковка": "1 шт.",
-      "Совместимость": "открытые CAD/CAM-системы",
-    },
-    variants: [
-      { diameter: 98, height: 20, shade: "Transparent", price: 1000, sku: "DD-BIO-SPLINT-PHI-98-20-TR" },
     ],
   },
   // === PMMA Honchon Smile Multilayer ===

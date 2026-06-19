@@ -426,17 +426,21 @@ const ProductDetailVariant = () => {
               <Button
                 size="lg"
                 className="w-full bg-primary hover:bg-primary/90"
-                disabled={!allSelected}
+                disabled={!allSelected || product.outOfStock}
                 onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-5 w-5 mr-2" />
-                {allSelected ? "Добавить в корзину" : "Выберите параметры"}
+                {product.outOfStock
+                  ? "Нет в наличии"
+                  : allSelected
+                  ? "Добавить в корзину"
+                  : "Выберите параметры"}
               </Button>
               <div className="flex gap-3">
-                <Button size="lg" variant="outline" className="flex-1">
+                <Button size="lg" variant="outline" className="flex-1" disabled={product.outOfStock}>
                   <Heart className="h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="flex-1">
+                <Button size="lg" variant="outline" className="flex-1" disabled={product.outOfStock}>
                   <Share2 className="h-5 w-5" />
                 </Button>
               </div>

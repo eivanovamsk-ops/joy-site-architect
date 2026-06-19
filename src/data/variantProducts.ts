@@ -860,6 +860,43 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "A3", price: 750, sku: "ST-DENTAL-PMMA-MONO-98-20-A3" },
     ],
   },
+  // === PMMA Dental Direkt DD Provi PHI Mono ===
+  {
+    id: "dental-direkt-provi-phi-mono-d98",
+    name: "Диск DENTAL DIREKT DD PROVI PHI MONO",
+    subtitle: "Предокрашенная PMMA-заготовка для временных реставраций",
+    brand: "Dental Direkt",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: dentalDirektProviPhiMono,
+    basePrice: 750,
+    description: `DD Provi PHI — PMMA-диск для CAD/CAM-фрезерования временных реставраций. Материал подходит для изготовления временных коронок и мостов, отличается хорошей полируемостью, стабильностью и удобной обработкой на фрезерном оборудовании.
+
+Назначение: временные реставрации, коронки и мосты.
+
+Преимущества:
+• медицинский термопластичный полимер
+• низкий остаточный мономер
+• прочность на изгиб
+• хорошая фрезеруемость`,
+    metaDescription: "Диск DENTAL DIREKT DD PROVI PHI MONO 98x20 мм — предокрашенный PMMA для временных коронок и мостов. Оттенок A1. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Dental Direkt",
+      "Страна": "Германия",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "DD Provi CAM / PHI",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм",
+      "Цвета": "A1",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A1", price: 750, sku: "DD-PROVI-PHI-MONO-98-20-A1" },
+    ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

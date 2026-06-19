@@ -898,6 +898,43 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "A1", price: 750, sku: "DD-PROVI-PHI-MONO-98-20-A1" },
     ],
   },
+  // === PMMA Dental Direkt DD temp MED Mono ===
+  {
+    id: "dental-direkt-temp-med-mono-d98",
+    name: "Диск DENTAL DIREKT DD TEMP MED MONO",
+    subtitle: "Высокопрозрачный PMMA-диск для эстетичных временных конструкций",
+    brand: "Dental Direkt",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: dentalDirektTempMedMono,
+    basePrice: 700,
+    description: `DD temp MED — предокрашенная PMMA-заготовка для изготовления временных коронок, мостов и других ортопедических конструкций. Материал имеет высокую прозрачность, хорошую полируемость, низкое водопоглощение и устойчивость к образованию налета.
+
+Назначение: эстетичные временные коронки и мосты.
+
+Преимущества:
+• высокая прозрачность
+• биосовместимость
+• низкое водопоглощение
+• CAM-оптимизированная твердость`,
+    metaDescription: "Диск DENTAL DIREKT DD TEMP MED MONO 98x16 мм — высокопрозрачный PMMA для эстетичных временных конструкций. Оттенок Bleach. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Dental Direkt",
+      "Страна": "Германия",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "DD temp MED",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "16 мм",
+      "Цвета": "Bleach",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 16, shade: "Bleach", price: 700, sku: "DD-TEMP-MED-MONO-98-16-BLEACH" },
+    ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

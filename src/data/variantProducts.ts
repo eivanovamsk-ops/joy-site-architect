@@ -1011,6 +1011,7 @@ Lima — турецкий производитель, успешно проше�
     variants: [
       { diameter: 98, height: 20, shade: "B0", price: 1350, sku: "DD-POLYMED-ML-98-20-B0" },
     ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

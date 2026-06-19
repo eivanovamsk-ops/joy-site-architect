@@ -2496,7 +2496,7 @@ AutoScan-DS-EX Pro(H) используется для:
     name: "DENTAL DIREKT DD BIO SPLINT P HI",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    price: 2150,
+    price: 1000,
     image: pmmaDentalDirekt,
     brand: "Dental Direkt",
     inStock: true,

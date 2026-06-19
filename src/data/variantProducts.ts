@@ -754,7 +754,7 @@ Lima — турецкий производитель, успешно проше�
 • Временные работы на имплантатах
 
 Купить диски Lima PMMA можно в компании Articon (Артикон) — поставщик зуботехнических материалов в Москве с доставкой по всей России.`,
-    metaDescription: "Диск Lima PMMA для CAD/CAM — однослойный PMMA 15–20 мм (A1–A3.5, BL, W3). Качественный турецкий материал для временных конструкций. Articon, Москва, доставка по России",
+    metaDescription: "Диск Lima PMMA для CAD/CAM — однослойный PMMA 15–20 мм (A1–A3, BL). Качественный турецкий материал для временных конструкций. Articon, Москва, доставка по России",
     specifications: {
       "Производитель": "Lima",
       "Страна производства": "Турция",
@@ -763,7 +763,7 @@ Lima — турецкий производитель, успешно проше�
       "Система": "98 мм",
     },
     variants: (() => {
-      const shades = ["A1", "A2", "A3", "A3.5"];
+      const shades = ["A1", "A2", "A3"];
       const heights = [15, 20];
       const result: ProductVariant[] = [];
       for (const shade of shades) {
@@ -779,8 +779,6 @@ Lima — турецкий производитель, успешно проше�
       }
       // BL only 20mm
       result.push({ diameter: 98, height: 20, shade: "BL", price: 0, sku: "LIMA-PMMA-20-BL" });
-      // W3 only 15mm
-      result.push({ diameter: 98, height: 15, shade: "W3", price: 0, sku: "LIMA-PMMA-15-W3" });
       return result;
     })(),
   },

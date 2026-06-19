@@ -426,17 +426,21 @@ const ProductDetailVariant = () => {
               <Button
                 size="lg"
                 className="w-full bg-primary hover:bg-primary/90"
-                disabled={!allSelected}
+                disabled={!allSelected || product.outOfStock}
                 onClick={handleAddToCart}
               >
                 <ShoppingCart className="h-5 w-5 mr-2" />
-                {allSelected ? "Добавить в корзину" : "Выберите параметры"}
+                {product.outOfStock
+                  ? "Нет в наличии"
+                  : allSelected
+                  ? "Добавить в корзину"
+                  : "Выберите параметры"}
               </Button>
               <div className="flex gap-3">
-                <Button size="lg" variant="outline" className="flex-1">
+                <Button size="lg" variant="outline" className="flex-1" disabled={product.outOfStock}>
                   <Heart className="h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="flex-1">
+                <Button size="lg" variant="outline" className="flex-1" disabled={product.outOfStock}>
                   <Share2 className="h-5 w-5" />
                 </Button>
               </div>
@@ -534,7 +538,9 @@ const ProductDetailVariant = () => {
                 ))}
               <div className="flex py-3 border-b border-border">
                 <span className="w-1/3 text-muted-foreground">Наличие</span>
-                <span className="font-medium">В наличии</span>
+                <span className="font-medium">
+                  {product.outOfStock ? "Нет в наличии" : "В наличии"}
+                </span>
               </div>
             </div>
           </TabsContent>

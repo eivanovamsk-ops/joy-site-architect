@@ -12,6 +12,7 @@ import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mo
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
 import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
+import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -1049,6 +1050,48 @@ Lima — турецкий производитель, успешно проше�
     },
     variants: [
       { diameter: 98, height: 20, shade: "Transparent", price: 1000, sku: "DD-BIO-SPLINT-PHI-98-20-TR" },
+    ],
+  },
+  // === PMMA Honchon Smile Multilayer ===
+  {
+    id: "honchon-smile-pmma-ml-d98",
+    name: "Диск HONCHON SMILE PMMA ML",
+    subtitle: "Многослойная PMMA-заготовка для временных коронок и мостов",
+    brand: "Honchon Smile",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: honchonSmilePmmaML,
+    basePrice: 1350,
+    description: `Honchon Smile PMMA ML — многослойный диск из полиметилметакрилата для эстетичных временных коронок и мостов. Градиентная окраска помогает получить более естественный переход оттенка, а высокая стойкость к истиранию и стабильность цвета делают материал удобным для временных конструкций длительного ношения.
+
+Назначение: временные коронки и мосты длительного ношения.
+
+Преимущества:
+• повышенная прозрачность
+• градиентная окраска
+• высокая эстетичность
+• стойкость к истиранию`,
+    metaDescription: "Диск HONCHON SMILE PMMA ML 98×20 мм — многослойный PMMA для эстетичных временных коронок и мостов. Оттенки A1, A2, A3, A3.5, B1, BL1. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Страна": "Китай",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — ML",
+      "Серия": "Multilayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм",
+      "Цвета": "A1, A2, A3, A3.5, B1, BL1",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A1", price: 1350, sku: "HONCHON-PMMA-ML-98-20-A1" },
+      { diameter: 98, height: 20, shade: "A2", price: 1350, sku: "HONCHON-PMMA-ML-98-20-A2" },
+      { diameter: 98, height: 20, shade: "A3", price: 1350, sku: "HONCHON-PMMA-ML-98-20-A3" },
+      { diameter: 98, height: 20, shade: "A3.5", price: 1350, sku: "HONCHON-PMMA-ML-98-20-A3.5" },
+      { diameter: 98, height: 20, shade: "B1", price: 1350, sku: "HONCHON-PMMA-ML-98-20-B1" },
+      { diameter: 98, height: 20, shade: "BL1", price: 1350, sku: "HONCHON-PMMA-ML-98-20-BL1" },
     ],
   },
   // === ТИТАНОВЫЕ ДИСКИ ===

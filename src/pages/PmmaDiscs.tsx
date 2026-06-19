@@ -6,6 +6,7 @@ import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { variantProducts } from "@/data/variantProducts";
+import pmmaBanner from "@/assets/banners/pmma-banner.png.asset.json";
 
 const PmmaDiscs = () => {
   const pmmaDiscs = products.filter(
@@ -62,16 +63,14 @@ const PmmaDiscs = () => {
         <link rel="canonical" href="https://articon.pro/shop/catalog/pmma-discs" />
       </Helmet>
 
-      <div className="bg-muted/30 py-8">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Диски пластик (PMMA)
-          </h1>
-          <p className="text-muted-foreground max-w-3xl">
-            Профессиональные диски PMMA для CAD/CAM фрезерования.
-            Блок-заготовки из полиметилакрилата для изготовления временных конструкций длительного ношения.
-          </p>
-        </div>
+      <h1 className="sr-only">Диски пластик (PMMA)</h1>
+      <div className="container mx-auto px-4 pt-6">
+        <img
+          src={pmmaBanner.url}
+          alt="Антикризисная цена на PMMA Mono & Multilayer — от 700 ₽"
+          className="w-full h-auto rounded-lg shadow-md"
+          loading="eager"
+        />
       </div>
 
       <div className="container mx-auto px-4 py-12">

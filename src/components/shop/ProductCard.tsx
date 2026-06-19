@@ -54,7 +54,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           />
           
           {/* Badges */}
-          <div className="absolute top-3 left-3 flex flex-col gap-1">
+          <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
             {product.isNew && (
               <Badge className="bg-primary text-primary-foreground text-xs">
                 NEW
@@ -63,6 +63,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             {product.isSale && (
               <Badge className="bg-accent text-accent-foreground text-xs">
                 SALE
+              </Badge>
+            )}
+            {!product.inStock && (
+              <Badge variant="destructive" className="text-xs">
+                Нет в наличии
               </Badge>
             )}
           </div>

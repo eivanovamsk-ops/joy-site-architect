@@ -21,8 +21,9 @@ const PmmaDiscs = () => {
   const stDentalVariants = pmmaVariants.filter((p) => p.brand === "ST Dental");
   const dentalDirektVariants = pmmaVariants.filter((p) => p.brand === "Dental Direkt");
   const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
+  const honchonSmileVariants = pmmaVariants.filter((p) => p.brand === "Honchon Smile");
   const otherProducts = pmmaDiscs.filter(
-    (p) => p.brand !== "Dental Direkt"
+    (p) => p.brand !== "Dental Direkt" && p.brand !== "Honchon Smile"
   );
 
   return (

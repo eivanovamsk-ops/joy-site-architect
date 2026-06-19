@@ -538,7 +538,9 @@ const ProductDetailVariant = () => {
                 ))}
               <div className="flex py-3 border-b border-border">
                 <span className="w-1/3 text-muted-foreground">Наличие</span>
-                <span className="font-medium">В наличии</span>
+                <span className="font-medium">
+                  {product.outOfStock ? "Нет в наличии" : "В наличии"}
+                </span>
               </div>
             </div>
           </TabsContent>

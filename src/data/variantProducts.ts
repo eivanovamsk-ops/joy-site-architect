@@ -13,6 +13,7 @@ import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
 import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
 import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
+import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -1092,6 +1093,46 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "A3.5", price: 1350, sku: "HONCHON-PMMA-ML-98-20-A3.5" },
       { diameter: 98, height: 20, shade: "B1", price: 1350, sku: "HONCHON-PMMA-ML-98-20-B1" },
       { diameter: 98, height: 20, shade: "BL1", price: 1350, sku: "HONCHON-PMMA-ML-98-20-BL1" },
+    ],
+  },
+  // === PMMA Honchon Smile Monolayer ===
+  {
+    id: "honchon-smile-pmma-mono-d98",
+    name: "Диск HONCHON SMILE PMMA MONO",
+    subtitle: "Монослойные PMMA-диски для временных реставраций и протезных конструкций",
+    brand: "Honchon Smile",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: honchonSmilePmmaMono,
+    basePrice: 750,
+    description: `Honchon Smile PMMA MO — монослойная заготовка из PMMA для изготовления временных реставраций краткосрочного или долгосрочного ношения, а также протезов с винтовой или цементной фиксацией. Доступны оттенки A3, Pink и Clear под разные задачи лаборатории.
+
+Назначение: временные реставрации, протезные конструкции, розовые и прозрачные элементы.
+
+Преимущества:
+• монослойная структура
+• цвета Pink и Clear
+• простая фрезеровка
+• стабильность оттенка`,
+    metaDescription: "Диск HONCHON SMILE PMMA MONO 98 мм — монослойный PMMA для временных реставраций и протезных конструкций. Оттенки A3, Pink, Clear. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Страна": "Китай",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "Monolayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм, 30 мм",
+      "Цвета": "A3, Pink, Clear",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A3", price: 750, sku: "HONCHON-PMMA-MO-98-20-A3" },
+      { diameter: 98, height: 20, shade: "Pink", price: 750, sku: "HONCHON-PMMA-MO-98-20-PINK" },
+      { diameter: 98, height: 30, shade: "Pink", price: 850, sku: "HONCHON-PMMA-MO-98-30-PINK" },
+      { diameter: 98, height: 20, shade: "Clear", price: 1000, sku: "HONCHON-PMMA-MO-98-20-CLEAR" },
     ],
   },
   // === ТИТАНОВЫЕ ДИСКИ ===

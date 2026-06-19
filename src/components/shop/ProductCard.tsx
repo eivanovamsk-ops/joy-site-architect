@@ -98,6 +98,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             )}
           </div>
           
+          {product.shortDescription && (
+            <p className="text-xs text-muted-foreground mb-1 line-clamp-2">
+              {product.shortDescription}
+            </p>
+          )}
+          
           <h3 className="font-medium text-sm leading-tight mb-3 line-clamp-2 min-h-[2.5rem] text-foreground">
             {product.name}
           </h3>

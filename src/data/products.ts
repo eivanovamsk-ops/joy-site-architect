@@ -189,6 +189,7 @@ export interface Product {
   isSale?: boolean;
   sku?: string;
   description?: string;
+  shortDescription?: string;
   metaTitle?: string;
   metaDescription?: string;
   specifications?: Record<string, string>;
@@ -2500,6 +2501,7 @@ AutoScan-DS-EX Pro(H) используется для:
     image: pmmaDentalDirekt,
     brand: "Dental Direkt",
     inStock: true,
+    shortDescription: "Прозрачный PMMA-диск Dental Direkt для изготовления окклюзионных шин, капп и сплинтов.",
     description: `Диск пластиковый DD Bio Splint P HI - Dental Direkt - 98x15, Clear – это высококачественная заготовка из полиметилметакрилата (PMMA), предназначенная для создания штифтов, терапевтических шин, регуляторов прикуса и протезов.
 
 Серия Bio splint P HI – это серия бланков, которые обладают высокой устойчивостью к ударам, благодаря чему они обеспечивают отличную стабильность. Эти бланки легко полируются, образуя гладкие поверхности, которые менее подвержены окрашиванию и образованию налёта, что минимизирует риск воспаления.`,

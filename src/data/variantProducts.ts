@@ -11,6 +11,7 @@ import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
+import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";

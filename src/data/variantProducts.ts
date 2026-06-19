@@ -56,6 +56,7 @@ export interface VariantProduct {
   variants: ProductVariant[];
   noShade?: boolean;
   downloadFiles?: DownloadFile[];
+  outOfStock?: boolean;
 }
 
 // ==========================================

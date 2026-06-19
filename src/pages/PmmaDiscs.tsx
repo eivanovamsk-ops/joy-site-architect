@@ -15,17 +15,10 @@ const PmmaDiscs = () => {
   const pmmaVariants = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
-  const upceraVariants = pmmaVariants.filter((p) => p.brand === "Upcera");
-  const limaVariants = pmmaVariants.filter((p) => p.brand === "Lima");
-  const articonVariants = pmmaVariants.filter((p) => p.brand === "Articon");
-  const stDentalVariants = pmmaVariants.filter((p) => p.brand === "ST Dental");
-  const dentalDirektVariants = pmmaVariants.filter((p) => p.brand === "Dental Direkt");
-  const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
-  const honchonSmileVariants = pmmaVariants.filter((p) => p.brand === "Honchon Smile");
-  const audentalVariants = pmmaVariants.filter((p) => p.brand === "Audental");
-  const otherProducts = pmmaDiscs.filter(
-    (p) => p.brand !== "Dental Direkt" && p.brand !== "Honchon Smile"
-  );
+  const allPmmaItems = [
+    ...pmmaDiscs.map((p) => ({ type: "product" as const, data: p })),
+    ...pmmaVariants.map((p) => ({ type: "variant" as const, data: p })),
+  ];
 
   return (
     <Layout>

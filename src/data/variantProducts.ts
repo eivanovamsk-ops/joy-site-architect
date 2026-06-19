@@ -1179,6 +1179,45 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "Clear", price: 1000, sku: "HONCHON-PMMA-FLEX-98-20-CLEAR" },
     ],
   },
+  // === PMMA Audental Multilayer ===
+  {
+    id: "audental-pmma-ml-d98",
+    name: "Диск AUDENTAL PMMA MULTILAYER",
+    subtitle: "Многослойный предокрашенный PMMA-диск для эстетичных временных конструкций",
+    brand: "Audental",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: audentalPmmaML,
+    basePrice: 1350,
+    description: `Audental PMMA Multilayer — многослойная блок-заготовка из PMMA для временных конструкций длительного ношения. Материал отличается прочностью, биосовместимостью, легкой обработкой и стойкостью к истиранию. Доступны оттенки A1, A2, A3 и BL3.
+
+Назначение: эстетичные временные конструкции длительного ношения.
+
+Преимущества:
+• многослойная структура
+• высокая биосовместимость
+• легкая обработка
+• стойкость к истиранию`,
+    metaDescription: "Диск AUDENTAL PMMA MULTILAYER 98×20 мм — многослойный PMMA для эстетичных временных конструкций. Оттенки A1, A2, A3, BL3. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Audental",
+      "Страна": "Китай",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — ML",
+      "Серия": "Multilayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм",
+      "Цвета": "A1, A2, A3, BL3",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A1", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-A1" },
+      { diameter: 98, height: 20, shade: "A2", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-A2" },
+      { diameter: 98, height: 20, shade: "A3", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-A3" },
+      { diameter: 98, height: 20, shade: "BL3", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-BL3" },
+    ],
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

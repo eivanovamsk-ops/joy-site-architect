@@ -1218,6 +1218,7 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "A3", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-A3" },
       { diameter: 98, height: 20, shade: "BL3", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-BL3" },
     ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

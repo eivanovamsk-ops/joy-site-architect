@@ -15,13 +15,32 @@ const PmmaDiscs = () => {
   const pmmaVariants = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
+  const brandOrder = [
+    "Upcera",
+    "Lima",
+    "Articon",
+    "ST Dental",
+    "Dental Direkt",
+    "Honchon Smile",
+    "Audental",
+  ];
+
   const allPmmaItems = [
     ...pmmaDiscs.map((p) => ({ type: "product" as const, data: p })),
     ...pmmaVariants.map((p) => ({ type: "variant" as const, data: p })),
   ].sort((a, b) => {
     const aInStock = a.type === "product" ? a.data.inStock : !a.data.outOfStock;
     const bInStock = b.type === "product" ? b.data.inStock : !b.data.outOfStock;
-    return Number(bInStock) - Number(aInStock);
+    if (aInStock !== bInStock) return Number(bInStock) - Number(aInStock);
+
+    const aBrand = a.data.brand ?? "";
+    const bBrand = b.data.brand ?? "";
+    const aIndex = brandOrder.indexOf(aBrand);
+    const bIndex = brandOrder.indexOf(bBrand);
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    return aBrand.localeCompare(bBrand);
   });
 
   return (

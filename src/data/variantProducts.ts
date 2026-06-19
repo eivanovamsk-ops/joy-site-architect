@@ -14,6 +14,7 @@ import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.we
 import dentalDirektBioSplintPHI from "@/assets/products/dental-direkt-bio-splint-p-hi.webp";
 import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
 import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
+import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";
@@ -1133,6 +1134,48 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "Pink", price: 750, sku: "HONCHON-PMMA-MO-98-20-PINK" },
       { diameter: 98, height: 30, shade: "Pink", price: 850, sku: "HONCHON-PMMA-MO-98-30-PINK" },
       { diameter: 98, height: 20, shade: "Clear", price: 1000, sku: "HONCHON-PMMA-MO-98-20-CLEAR" },
+    ],
+  },
+  // === PMMA Honchon Smile Flexible ===
+  {
+    id: "honchon-smile-pmma-flexible-d98",
+    name: "Диск HONCHON SMILE PMMA FLEXIBLE",
+    subtitle: "Гибкие PMMA-диски для конструкций с упругостью и точной CAD/CAM-обработкой",
+    brand: "Honchon Smile",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: honchonSmilePmmaFlexible,
+    basePrice: 1000,
+    description: `Honchon Smile PMMA Flexible — полимерные заготовки для изготовления гибких временных и вспомогательных конструкций. В наличии зубные оттенки, розовые варианты для протезирования и прозрачный Clear для капп/шинных задач.
+
+Назначение: гибкие временные конструкции, каппы/шины, розовые элементы.
+
+Преимущества:
+• гибкость материала
+• широкий выбор цветов
+• варианты 20 и 25 мм
+• подходит для открытых CAD/CAM-систем`,
+    metaDescription: "Диск HONCHON SMILE PMMA FLEXIBLE 98 мм — гибкие PMMA-диски для временных конструкций. Оттенки A1, A2, Pink, Clear. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Honchon Smile",
+      "Страна": "Китай",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — Flexible",
+      "Серия": "Flexible",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм, 25 мм",
+      "Цвета": "A1, A2, Pink, Clear",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "A1", price: 1000, sku: "HONCHON-PMMA-FLEX-98-20-A1" },
+      { diameter: 98, height: 20, shade: "A2", price: 1000, sku: "HONCHON-PMMA-FLEX-98-20-A2" },
+      { diameter: 98, height: 25, shade: "A2", price: 1000, sku: "HONCHON-PMMA-FLEX-98-25-A2" },
+      { diameter: 98, height: 20, shade: "Pink", price: 1000, sku: "HONCHON-PMMA-FLEX-98-20-PINK" },
+      { diameter: 98, height: 25, shade: "Pink", price: 1000, sku: "HONCHON-PMMA-FLEX-98-25-PINK" },
+      { diameter: 98, height: 20, shade: "Clear", price: 1000, sku: "HONCHON-PMMA-FLEX-98-20-CLEAR" },
     ],
   },
   // === ТИТАНОВЫЕ ДИСКИ ===

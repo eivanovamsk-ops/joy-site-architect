@@ -5,7 +5,7 @@ import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.webp";
 import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
-import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
+import articonPmmaMono from "@/assets/products/articon-pmma-mono.jpg.asset.json";
 import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-mono.webp";
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";

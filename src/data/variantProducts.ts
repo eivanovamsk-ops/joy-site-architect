@@ -1220,6 +1220,46 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 20, shade: "BL3", price: 1350, sku: "AUDENTAL-PMMA-ML-98-20-BL3" },
     ],
   },
+  // === PMMA Audental Monolayer ===
+  {
+    id: "audental-pmma-mono-d98",
+    name: "Диск AUDENTAL PMMA MONO",
+    subtitle: "Однослойные PMMA-диски для временных коронок, мостов и примерочных конструкций",
+    brand: "Audental",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: audentalPmmaMono,
+    basePrice: 700,
+    description: `Audental PMMA Mono — монослойный PMMA-диск для изготовления временных конструкций при помощи открытых CAD/CAM-систем. Материал подходит для повседневных лабораторных задач, отличается легкой обработкой и стабильной геометрией после фрезерования.
+
+Назначение: временные коронки, мосты и примерочные конструкции.
+
+Преимущества:
+• монослойная структура
+• 4 ходовых оттенка
+• легкая обработка
+• совместимость с CAD/CAM`,
+    metaDescription: "Диск AUDENTAL PMMA MONO 98×16 мм — однослойный PMMA для временных конструкций. Оттенки A1, A2, A3, BL3. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Audental",
+      "Страна": "Китай",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "Monolayer",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "16 мм",
+      "Цвета": "A1, A2, A3, BL3",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 16, shade: "A1", price: 700, sku: "AUDENTAL-PMMA-MO-98-16-A1" },
+      { diameter: 98, height: 16, shade: "A2", price: 700, sku: "AUDENTAL-PMMA-MO-98-16-A2" },
+      { diameter: 98, height: 16, shade: "A3", price: 700, sku: "AUDENTAL-PMMA-MO-98-16-A3" },
+      { diameter: 98, height: 16, shade: "BL3", price: 700, sku: "AUDENTAL-PMMA-MO-98-16-BL3" },
+    ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

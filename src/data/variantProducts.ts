@@ -1050,6 +1050,7 @@ Lima — турецкий производитель, успешно проше�
     variants: [
       { diameter: 98, height: 20, shade: "Transparent", price: 1000, sku: "DD-BIO-SPLINT-PHI-98-20-TR" },
     ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

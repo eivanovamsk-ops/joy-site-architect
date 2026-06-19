@@ -936,6 +936,44 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 16, shade: "Bleach", price: 700, sku: "DD-TEMP-MED-MONO-98-16-BLEACH" },
     ],
   },
+  // === PMMA Dental Direkt DD poly base MONO ===
+  {
+    id: "dental-direkt-poly-base-mono-d98",
+    name: "Диск DENTAL DIREKT DD POLY BASE MONO",
+    subtitle: "PMMA-диски для изготовления базисов протезов и розовых элементов",
+    brand: "Dental Direkt",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: dentalDirektPolyBaseMono,
+    basePrice: 1200,
+    description: `DD poly base — PMMA-заготовка розового цвета для CAD/CAM-изготовления базисов съемных протезов, временных протезных конструкций и участков имитации десны. Вариант Pink Veined визуально имитирует прожилки естественной слизистой.
+
+Назначение: базисы протезов, розовые элементы, временные протезные конструкции.
+
+Преимущества:
+• розовые оттенки для базисов
+• вариант с прожилками
+• стабильная геометрия
+• легкая обработка`,
+    metaDescription: "Диск DENTAL DIREKT DD POLY BASE MONO 98x25 мм — PMMA для базисов протезов и розовых элементов. Оттенки Pink, Pink Veined. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Dental Direkt",
+      "Страна": "Германия",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — MO",
+      "Серия": "DD poly base",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "25 мм",
+      "Цвета": "Pink, Pink Veined",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 25, shade: "Pink", price: 1200, sku: "DD-POLY-BASE-MONO-98-25-PINK" },
+      { diameter: 98, height: 25, shade: "Pink Veined", price: 1200, sku: "DD-POLY-BASE-MONO-98-25-PINK-VEINED" },
+    ],
+  },
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

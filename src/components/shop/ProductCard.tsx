@@ -111,18 +111,25 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           )}
 
           <div className="flex items-center justify-between">
-            <div className="font-bold text-lg text-foreground">
-              {product.price ? formatPrice(product.price) : "По запросу"}
-            </div>
-            
-            <Button
-              size="sm"
-              className="h-9 px-3 bg-primary hover:bg-primary/90"
-              onClick={handleAddToCart}
-            >
-              <ShoppingCart className="h-4 w-4 mr-1" />
-              {product.price ? "В корзину" : "Запросить"}
-            </Button>
+            {product.inStock ? (
+              <>
+                <div className="font-bold text-lg text-foreground">
+                  {product.price ? formatPrice(product.price) : "По запросу"}
+                </div>
+                <Button
+                  size="sm"
+                  className="h-9 px-3 bg-primary hover:bg-primary/90"
+                  onClick={handleAddToCart}
+                >
+                  <ShoppingCart className="h-4 w-4 mr-1" />
+                  {product.price ? "В корзину" : "Запросить"}
+                </Button>
+              </>
+            ) : (
+              <div className="text-xs text-primary font-medium px-3 py-1.5 border border-primary rounded-lg">
+                Выбрать
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>

@@ -25,6 +25,11 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
     <Link to={`/shop/variant/${product.id}`} className="block">
       <Card className="group overflow-hidden border-border/50 bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
         <div className="relative aspect-square overflow-hidden bg-muted/30">
+          {product.outOfStock && (
+            <div className="absolute top-3 left-3 z-10">
+              <Badge variant="destructive" className="text-xs">Нет в наличии</Badge>
+            </div>
+          )}
           <img
             src={product.image}
             alt={product.name}

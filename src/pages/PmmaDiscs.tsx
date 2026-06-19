@@ -18,7 +18,11 @@ const PmmaDiscs = () => {
   const allPmmaItems = [
     ...pmmaDiscs.map((p) => ({ type: "product" as const, data: p })),
     ...pmmaVariants.map((p) => ({ type: "variant" as const, data: p })),
-  ];
+  ].sort((a, b) => {
+    const aInStock = a.type === "product" ? a.data.inStock : !a.data.outOfStock;
+    const bInStock = b.type === "product" ? b.data.inStock : !b.data.outOfStock;
+    return Number(bInStock) - Number(aInStock);
+  });
 
   return (
     <Layout>

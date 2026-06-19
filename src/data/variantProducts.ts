@@ -5,7 +5,7 @@ import upceraPmmaShades from "@/assets/products/upcera-pmma-shades.webp";
 import upceraPmmaSpecs from "@/assets/products/upcera-pmma-specs.webp";
 import upceraPmmaB1 from "@/assets/products/upcera-pmma-b1.webp";
 import pmmaLima from "@/assets/products/pmma-lima.webp";
-import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
+import articonPmmaMono from "@/assets/products/articon-pmma-mono.jpg.asset.json";
 import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-mono.webp";
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
@@ -791,7 +791,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Articon",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: articonPmmaMono,
+    image: articonPmmaMono.url,
     basePrice: 700,
     description: `Диск PMMA Articon Mono — это однослойная блок-заготовка из полиметилметакрилата для изготовления временных коронок, мостов и диагностических/примерочных конструкций. Материал подходит для лабораторий, которым нужен доступный расходный материал для регулярной CAD/CAM-работы.
 

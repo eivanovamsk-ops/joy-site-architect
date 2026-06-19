@@ -975,6 +975,42 @@ Lima — турецкий производитель, успешно проше�
       { diameter: 98, height: 25, shade: "Pink Veined", price: 1200, sku: "DD-POLY-BASE-MONO-98-25-PINK-VEINED" },
     ],
   },
+  // === PMMA Dental Direkt DD polyMED ML ===
+  {
+    id: "dental-direkt-polymed-ml-d98",
+    name: "Диск DENTAL DIREKT DD POLYMED ML",
+    subtitle: "Многослойный PMMA-диск для эстетичных временных конструкций",
+    brand: "Dental Direkt",
+    category: "cad-cam-discs",
+    subcategory: "pmma-discs",
+    image: dentalDirektPolymedML,
+    basePrice: 1350,
+    description: `DD polyMED ML — многослойная PMMA-заготовка для временных реставраций, где важны плавный переход оттенка и более естественная эстетика. Подходит для коронок, мостов и временных ортопедических конструкций длительного ношения.
+
+Назначение: эстетичные временные коронки и мосты.
+
+Преимущества:
+• многослойная эстетика
+• градиент оттенка
+• стабильность цвета
+• хорошая полировка`,
+    metaDescription: "Диск DENTAL DIREKT DD POLYMED ML 98x20 мм — многослойный PMMA для эстетичных временных конструкций. Оттенок B0. Купить в Articon, доставка по России.",
+    specifications: {
+      "Производитель": "Dental Direkt",
+      "Страна": "Германия",
+      "Категория": "CAD/CAM диски и блоки",
+      "Тип": "Диски PMMA — ML",
+      "Серия": "DD polyMED ML",
+      "Материал": "PMMA",
+      "Диаметр": "98 мм",
+      "Высота": "20 мм",
+      "Цвета": "B0",
+      "Упаковка": "1 шт.",
+      "Совместимость": "открытые CAD/CAM-системы",
+    },
+    variants: [
+      { diameter: 98, height: 20, shade: "B0", price: 1350, sku: "DD-POLYMED-ML-98-20-B0" },
+    ],
   // === ТИТАНОВЫЕ ДИСКИ ===
   {
     id: "honchon-titan-d98",

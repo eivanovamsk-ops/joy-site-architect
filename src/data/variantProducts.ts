@@ -9,6 +9,7 @@ import articonPmmaMono from "@/assets/products/articon-pmma-mono.webp";
 import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-mono.webp";
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
+import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
 import aevraMLShades from "@/assets/products/aevra-ml-shades.webp";

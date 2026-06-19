@@ -15,17 +15,10 @@ const PmmaDiscs = () => {
   const pmmaVariants = variantProducts.filter(
     (p) => p.category === "cad-cam-discs" && p.subcategory === "pmma-discs"
   );
-  const upceraVariants = pmmaVariants.filter((p) => p.brand === "Upcera");
-  const limaVariants = pmmaVariants.filter((p) => p.brand === "Lima");
-  const articonVariants = pmmaVariants.filter((p) => p.brand === "Articon");
-  const stDentalVariants = pmmaVariants.filter((p) => p.brand === "ST Dental");
-  const dentalDirektVariants = pmmaVariants.filter((p) => p.brand === "Dental Direkt");
-  const dentalDirektProducts = pmmaDiscs.filter((p) => p.brand === "Dental Direkt");
-  const honchonSmileVariants = pmmaVariants.filter((p) => p.brand === "Honchon Smile");
-  const audentalVariants = pmmaVariants.filter((p) => p.brand === "Audental");
-  const otherProducts = pmmaDiscs.filter(
-    (p) => p.brand !== "Dental Direkt" && p.brand !== "Honchon Smile"
-  );
+  const allPmmaItems = [
+    ...pmmaDiscs.map((p) => ({ type: "product" as const, data: p })),
+    ...pmmaVariants.map((p) => ({ type: "variant" as const, data: p })),
+  ];
 
   return (
     <Layout>
@@ -67,130 +60,17 @@ const PmmaDiscs = () => {
           </div>
 
           <div className="flex-1">
-            {/* Upcera Section */}
-            {upceraVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Upcera</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {upceraVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Lima Section */}
-            {limaVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Lima</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {limaVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Articon Section */}
-            {articonVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Articon</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {articonVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* ST Dental Section */}
-            {stDentalVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">ST Dental</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {stDentalVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Dental Direkt Section */}
-            {(dentalDirektProducts.length > 0 || dentalDirektVariants.length > 0) && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Dental Direkt</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {dentalDirektProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                  {dentalDirektVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Honchon Smile Section */}
-            {honchonSmileVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Honchon Smile</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {honchonSmileVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Audental Section */}
-            {audentalVariants.length > 0 && (
-              <section className="mb-16">
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Audental</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {audentalVariants.map((product) => (
-                    <VariantProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Other products */}
-            {otherProducts.length > 0 && (
-              <section>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl font-bold text-foreground">Другие</h2>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {otherProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {pmmaDiscs.length === 0 && (
+            {allPmmaItems.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {allPmmaItems.map((item) =>
+                  item.type === "product" ? (
+                    <ProductCard key={item.data.id} product={item.data} />
+                  ) : (
+                    <VariantProductCard key={item.data.id} product={item.data} />
+                  )
+                )}
+              </div>
+            ) : (
               <div className="text-center py-16">
                 <p className="text-muted-foreground text-lg">
                   Товары в данной категории скоро появятся

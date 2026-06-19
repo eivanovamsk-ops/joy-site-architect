@@ -2493,7 +2493,7 @@ AutoScan-DS-EX Pro(H) используется для:
   // ==============================================
   {
     id: "dental-direkt-98x15",
-    name: "Диск пластиковый Bio splint P HI – Dental Direkt – 98×15",
+    name: "DENTAL DIREKT DD BIO SPLINT P HI",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
     price: 2150,

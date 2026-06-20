@@ -6,9 +6,11 @@ import { VariantProduct } from "@/data/variantProducts";
 
 interface VariantProductCardProps {
   product: VariantProduct;
+  showPromo?: boolean;
 }
 
-export const VariantProductCard = ({ product }: VariantProductCardProps) => {
+
+export const VariantProductCard = ({ product, showPromo }: VariantProductCardProps) => {
   const formatPrice = (price: number) =>
     new Intl.NumberFormat("ru-RU").format(price) + " ₽";
 
@@ -25,11 +27,19 @@ export const VariantProductCard = ({ product }: VariantProductCardProps) => {
     <Link to={`/shop/variant/${product.id}`} className="block">
       <Card className="group overflow-hidden border-border/50 bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
         <div className="relative aspect-square overflow-hidden bg-muted/30">
+          {showPromo && !product.outOfStock && (
+            <div className="absolute top-3 left-3 z-10">
+              <Badge className="bg-destructive text-destructive-foreground text-base font-bold px-4 py-1.5 shadow-sm">
+                АКЦИЯ
+              </Badge>
+            </div>
+          )}
           {product.outOfStock && (
             <div className="absolute top-3 left-3 z-10">
               <Badge variant="destructive" className="text-xs">Нет в наличии</Badge>
             </div>
           )}
+
           <img
             src={product.image}
             alt={product.name}

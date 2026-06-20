@@ -58,7 +58,7 @@ export const ProductCard = ({ product, showPromo }: ProductCardProps) => {
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
             {showPromo && product.inStock && (
-              <Badge className="bg-destructive text-destructive-foreground text-sm font-bold px-3 py-1">
+              <Badge className="bg-destructive text-destructive-foreground text-base font-bold px-4 py-1.5 shadow-sm">
                 АКЦИЯ
               </Badge>
             )}

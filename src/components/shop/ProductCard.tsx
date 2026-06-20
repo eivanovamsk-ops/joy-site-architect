@@ -10,9 +10,11 @@ import { SPLIT_ELIGIBLE_PRODUCTS } from "./YandexSplitButton";
 
 interface ProductCardProps {
   product: Product;
+  showPromo?: boolean;
 }
 
-export const ProductCard = ({ product }: ProductCardProps) => {
+
+export const ProductCard = ({ product, showPromo }: ProductCardProps) => {
   const { addItem } = useCart();
 
   const formatPrice = (price: number) => {
@@ -55,6 +57,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
+            {showPromo && product.inStock && (
+              <Badge className="bg-destructive text-destructive-foreground text-sm font-bold px-3 py-1">
+                АКЦИЯ
+              </Badge>
+            )}
             {product.isNew && (
               <Badge className="bg-primary text-primary-foreground text-xs">
                 NEW
@@ -71,6 +78,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               </Badge>
             )}
           </div>
+
 
           {/* Quick actions */}
           <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">

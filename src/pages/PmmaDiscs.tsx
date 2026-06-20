@@ -86,11 +86,12 @@ const PmmaDiscs = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {allPmmaItems.map((item) =>
                   item.type === "product" ? (
-                    <ProductCard key={item.data.id} product={item.data} />
+                    <ProductCard key={item.data.id} product={item.data} showPromo />
                   ) : (
-                    <VariantProductCard key={item.data.id} product={item.data} />
+                    <VariantProductCard key={item.data.id} product={item.data} showPromo />
                   )
                 )}
+
               </div>
             ) : (
               <div className="text-center py-16">

@@ -29,7 +29,7 @@ export const VariantProductCard = ({ product, showPromo }: VariantProductCardPro
         <div className="relative aspect-square overflow-hidden bg-muted/30">
           {showPromo && !product.outOfStock && (
             <div className="absolute top-3 left-3 z-10">
-              <Badge className="bg-destructive text-destructive-foreground text-sm font-bold px-3 py-1">
+              <Badge className="bg-destructive text-destructive-foreground text-base font-bold px-4 py-1.5 shadow-sm">
                 АКЦИЯ
               </Badge>
             </div>

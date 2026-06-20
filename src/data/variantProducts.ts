@@ -12,9 +12,7 @@ import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mo
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
 import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp.asset.json";
 
-import honchonSmilePmmaML from "@/assets/products/honchon-smile-pmma-ml.webp";
-import honchonSmilePmmaMono from "@/assets/products/honchon-smile-pmma-mono.webp";
-import honchonSmilePmmaFlexible from "@/assets/products/honchon-smile-pmma-flexible.webp";
+import honchonSmilePmma from "@/assets/products/honchon-smile-pmma.webp.asset.json";
 import audentalPmma from "@/assets/products/audental-pmma.jpg.asset.json";
 
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
@@ -1015,7 +1013,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmmaML,
+    image: honchonSmilePmma.url,
     basePrice: 1350,
     description: `Honchon Smile PMMA ML — многослойный диск из полиметилметакрилата для эстетичных временных коронок и мостов. Градиентная окраска помогает получить более естественный переход оттенка, а высокая стойкость к истиранию и стабильность цвета делают материал удобным для временных конструкций длительного ношения.
 
@@ -1057,7 +1055,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmmaMono,
+    image: honchonSmilePmma.url,
     basePrice: 750,
     description: `Honchon Smile PMMA MO — монослойная заготовка из PMMA для изготовления временных реставраций краткосрочного или долгосрочного ношения, а также протезов с винтовой или цементной фиксацией. Доступны оттенки A3, Pink и Clear под разные задачи лаборатории.
 
@@ -1097,7 +1095,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmmaFlexible,
+    image: honchonSmilePmma.url,
     basePrice: 1000,
     description: `Honchon Smile PMMA Flexible — полимерные заготовки для изготовления гибких временных и вспомогательных конструкций. В наличии зубные оттенки, розовые варианты для протезирования и прозрачный Clear для капп/шинных задач.
 

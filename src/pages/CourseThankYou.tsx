@@ -23,10 +23,12 @@ const CourseThankYou = () => {
   const state = (location.state as ThankYouState) || {};
   const [isPayLoading, setIsPayLoading] = useState(false);
 
-  // Оплата через Т-Банк включена только для курса 22
+  // Кнопка оплаты доступна для всех платных курсов при оплате от частного лица.
+  // Сервер сам отклонит курсы без актуальной даты или уже прошедшие.
   const needsPayment =
-    state.courseName?.includes("Цифровая ортодонтия") ||
-    state.paymentType === "tbank";
+    !!state.coursePrice &&
+    state.coursePrice > 0 &&
+    (state.paymentType ?? "private") !== "company";
 
   const handlePay = async () => {
     if (!state.applicationId || !state.coursePrice) return;

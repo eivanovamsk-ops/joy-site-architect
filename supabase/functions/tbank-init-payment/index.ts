@@ -8,12 +8,43 @@ const corsHeaders = {
 
 const TBANK_INIT_URL = "https://securepay.tinkoff.ru/v2/Init";
 
-// SECURITY: server-side course price catalog. The client-supplied amount is ignored.
-// Only courses listed here can be paid online. Keep in sync with src/data/courses.ts.
-const TBANK_COURSE_PRICES: Record<string, number> = {
-  "IV Конференция «Цифровая ортодонтия» 2026": 15000,
-  "V Конференция «Цифровая ортодонтия» 2027": 15000,
+// SECURITY: server-side course catalog. Client-supplied amount is ignored.
+// Only courses listed here with a future `validUntil` can be paid online.
+// Keep in sync with src/data/courses.ts. For courses with several dates
+// `validUntil` should be the latest scheduled day (inclusive).
+interface TbankCourse {
+  price: number;
+  validUntil: string | null; // YYYY-MM-DD inclusive, or null = unavailable
+}
+
+const TBANK_COURSES: Record<string, TbankCourse> = {
+  "Цифровое моделирование сплинтов и работа в виртуальном артикуляторе": { price: 20000, validUntil: "2026-07-21" },
+  "Цифровое моделирование расширяющих несъёмных аппаратов": { price: 20000, validUntil: "2026-12-16" },
+  "Цифровое планирование ортодонтических мини-имплантатов и моделирование аппаратов с кортикальной опорой": { price: 35000, validUntil: "2026-12-17" },
+  "Планирование ортодонтических аппаратов на скелетной опоре (SARPE, MARPE)": { price: 40000, validUntil: "2026-10-13" },
+  "Цвет и форма": { price: 25000, validUntil: "2026-07-07" },
+  "Элайнеры | Maestro 3D V6 в практике врача-ортодонта и зубного техника": { price: 35000, validUntil: "2026-11-25" },
+  "Непрямая фиксация брекетов": { price: 30000, validUntil: "2026-12-01" },
+  "CAD/CAM PRO": { price: 90000, validUntil: "2026-10-07" },
+  "Шестнадцать оттенков белого": { price: 7000, validUntil: "2026-11-13" },
+  "CAD/CAM SCHOOL": { price: 70000, validUntil: "2026-09-18" },
+  "V Конференция «Цифровая ортодонтия» 2027": { price: 15000, validUntil: "2027-06-03" },
+  "Мастерство дисиликата лития: от CAD до идеальной реставрации": { price: 25000, validUntil: "2026-07-14" },
+  "Виниры на рефракторе. Noritake CZR": { price: 70000, validUntil: "2026-09-26" },
+  "Моделирование и карвинг циркониевых реставраций": { price: 90000, validUntil: "2026-11-22" },
+  "ДЕЛО НЕ В ДИСКЕ": { price: 3000, validUntil: "2026-06-24" },
+  "Скан без переделок": { price: 5000, validUntil: "2026-07-22" },
+  "ПЕЧАТЬ. ДЕНЬГИ. ЛАБОРАТОРИЯ.": { price: 5000, validUntil: "2026-10-30" },
 };
+
+function getCoursePrice(courseName: string): number | null {
+  const entry = TBANK_COURSES[courseName];
+  if (!entry || !entry.validUntil) return null;
+  // validUntil inclusive: allow payment up to end of that day (UTC)
+  const cutoff = new Date(`${entry.validUntil}T23:59:59Z`).getTime();
+  if (Number.isNaN(cutoff) || Date.now() > cutoff) return null;
+  return entry.price;
+}
 
 const DEFAULT_SUCCESS_URL = "https://joy-site-architect.lovable.app/education/payment-success";
 const DEFAULT_FAIL_URL = "https://joy-site-architect.lovable.app/education/payment-failed";
@@ -149,7 +180,7 @@ Deno.serve(async (req) => {
 
     // SECURITY: цена определяется только серверным каталогом по названию курса.
     const courseName: string = application.course_name;
-    const amount = TBANK_COURSE_PRICES[courseName];
+    const amount = getCoursePrice(courseName);
 
     if (!amount || !application.email) {
       return new Response(

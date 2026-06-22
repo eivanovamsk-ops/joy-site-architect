@@ -131,20 +131,22 @@ export function CourseApplicationForm({
       setFormData(initialFormData);
       setOpen(false);
 
-      // Для курса «Цифровая ортодонтия» — сразу редиректим на оплату Т-Банк
-      const isTbankCourse = courseName.includes("Цифровая ортодонтия");
-      if (isTbankCourse && applicationId && coursePrice && coursePrice > 0) {
+      // Онлайн-оплата через Т-Банк доступна для всех курсов с ценой
+      // при оплате от частного лица. Сервер сам отклонит курсы без
+      // актуальной даты или уже прошедшие.
+      const canPayOnline =
+        formData.payment_type === "private" &&
+        !!applicationId &&
+        !!coursePrice &&
+        coursePrice > 0;
+
+      if (canPayOnline) {
         try {
           const { data, error: payError } = await supabase.functions.invoke(
             "tbank-init-payment",
             {
               body: {
                 courseApplicationId: applicationId,
-                courseName,
-                amount: coursePrice,
-                customerEmail: formData.email,
-                customerPhone: formData.phone,
-                customerName: `${formData.last_name} ${formData.name}`.trim(),
                 successUrl: `${window.location.origin}/education/payment-success`,
                 failUrl: `${window.location.origin}/education/payment-failed`,
               },
@@ -155,16 +157,15 @@ export function CourseApplicationForm({
             window.location.href = data.paymentUrl;
             return;
           }
-          throw new Error("Не получена ссылка на оплату");
+          // Если сервер вернул, что оплата недоступна — просто продолжаем
+          // на страницу «Спасибо» без редиректа на оплату.
         } catch (err) {
           console.error("Payment init failed:", err);
-          toast({
-            variant: "destructive",
-            title: "Не удалось перейти к оплате",
-            description: "Попробуйте позже или свяжитесь с нами.",
-          });
+          // Тихо проваливаемся на страницу «Спасибо» — пользователь
+          // всё равно получит письмо с инструкциями.
         }
       }
+
 
       navigate("/education/thank-you", {
         state: {

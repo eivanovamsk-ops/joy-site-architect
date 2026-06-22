@@ -6,7 +6,6 @@ import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { variantProducts } from "@/data/variantProducts";
-import pmmaBanner from "@/assets/banners/pmma-banner.png.asset.json";
 
 const PmmaDiscs = () => {
   const pmmaDiscs = products.filter(
@@ -65,12 +64,25 @@ const PmmaDiscs = () => {
 
       <h1 className="sr-only">Диски пластик (PMMA)</h1>
       <div className="container mx-auto px-4 pt-6">
-        <img
-          src={pmmaBanner.url}
-          alt="Антикризисная цена на PMMA Mono & Multilayer — от 700 ₽"
-          className="w-full h-auto rounded-lg shadow-md"
-          loading="eager"
-        />
+        <section
+          aria-label="Антикризисная цена на PMMA Mono & Multilayer — от 700 ₽"
+          className="overflow-hidden rounded-lg border border-border bg-card shadow-md"
+        >
+          <div className="grid min-h-28 gap-4 px-5 py-5 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:px-8 lg:min-h-36 lg:px-10">
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-destructive text-sm font-bold uppercase text-destructive-foreground shadow-card sm:h-20 sm:w-20">
+              Акция
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase text-muted-foreground">PMMA Mono & Multilayer</p>
+              <p className="mt-1 text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
+                Антикризисная цена
+              </p>
+            </div>
+            <div className="justify-self-start rounded-md bg-accent px-4 py-2 text-xl font-bold text-accent-foreground shadow-soft sm:justify-self-end sm:text-2xl">
+              от 700 ₽
+            </div>
+          </div>
+        </section>
       </div>
 
       <div className="container mx-auto px-4 py-12">

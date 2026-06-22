@@ -180,7 +180,7 @@ Deno.serve(async (req) => {
 
     // SECURITY: цена определяется только серверным каталогом по названию курса.
     const courseName: string = application.course_name;
-    const amount = TBANK_COURSE_PRICES[courseName];
+    const amount = getCoursePrice(courseName);
 
     if (!amount || !application.email) {
       return new Response(

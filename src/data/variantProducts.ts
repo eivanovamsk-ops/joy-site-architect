@@ -10,10 +10,10 @@ import stDentalPmmaMono from "@/assets/products/st-dental-pmma-mono.webp";
 import dentalDirektProviPhiMono from "@/assets/products/dental-direkt-provi-phi-mono.webp";
 import dentalDirektTempMedMono from "@/assets/products/dental-direkt-temp-med-mono.webp";
 import dentalDirektPolyBaseMono from "@/assets/products/dental-direkt-poly-base-mono.webp";
-import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp.asset.json";
+import dentalDirektPolymedML from "@/assets/products/dental-direkt-polymed-ml.webp";
 
-import honchonSmilePmma from "@/assets/products/honchon-smile-pmma.webp.asset.json";
-import audentalPmma from "@/assets/products/audental-pmma.jpg.asset.json";
+import honchonSmilePmma from "@/assets/products/honchon-smile-pmma.webp";
+import audentalPmma from "@/assets/products/audental-pmma.jpg";
 
 import aevraMLd98 from "@/assets/products/aevra-ml-d98.webp";
 import aevraMLHero from "@/assets/products/aevra-ml-hero.webp";
@@ -976,7 +976,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Dental Direkt",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: dentalDirektPolymedML.url,
+    image: dentalDirektPolymedML,
     basePrice: 1350,
     description: `DD polyMED ML — многослойная PMMA-заготовка для временных реставраций, где важны плавный переход оттенка и более естественная эстетика. Подходит для коронок, мостов и временных ортопедических конструкций длительного ношения.
 
@@ -1013,7 +1013,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmma.url,
+    image: honchonSmilePmma,
     basePrice: 1350,
     description: `Honchon Smile PMMA ML — многослойный диск из полиметилметакрилата для эстетичных временных коронок и мостов. Градиентная окраска помогает получить более естественный переход оттенка, а высокая стойкость к истиранию и стабильность цвета делают материал удобным для временных конструкций длительного ношения.
 
@@ -1055,7 +1055,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmma.url,
+    image: honchonSmilePmma,
     basePrice: 750,
     description: `Honchon Smile PMMA MO — монослойная заготовка из PMMA для изготовления временных реставраций краткосрочного или долгосрочного ношения, а также протезов с винтовой или цементной фиксацией. Доступны оттенки A3, Pink и Clear под разные задачи лаборатории.
 
@@ -1095,7 +1095,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Honchon Smile",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: honchonSmilePmma.url,
+    image: honchonSmilePmma,
     basePrice: 1000,
     description: `Honchon Smile PMMA Flexible — полимерные заготовки для изготовления гибких временных и вспомогательных конструкций. В наличии зубные оттенки, розовые варианты для протезирования и прозрачный Clear для капп/шинных задач.
 
@@ -1137,7 +1137,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Audental",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: audentalPmma.url,
+    image: audentalPmma,
     basePrice: 1350,
     description: `Audental PMMA Multilayer — многослойная блок-заготовка из PMMA для временных конструкций длительного ношения. Материал отличается прочностью, биосовместимостью, легкой обработкой и стойкостью к истиранию. Доступны оттенки A1, A2, A3 и BL3.
 
@@ -1177,7 +1177,7 @@ Lima — турецкий производитель, успешно проше�
     brand: "Audental",
     category: "cad-cam-discs",
     subcategory: "pmma-discs",
-    image: audentalPmma.url,
+    image: audentalPmma,
     basePrice: 700,
     description: `Audental PMMA Mono — монослойный PMMA-диск для изготовления временных конструкций при помощи открытых CAD/CAM-систем. Материал подходит для повседневных лабораторных задач, отличается легкой обработкой и стабильной геометрией после фрезерования.
 

@@ -6,7 +6,7 @@ import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { variantProducts } from "@/data/variantProducts";
-import pmmaBanner from "@/assets/banners/pmma-banner.png.asset.json";
+import pmmaBanner from "@/assets/banners/pmma-banner.png";
 
 const PmmaDiscs = () => {
   const pmmaDiscs = products.filter(
@@ -66,7 +66,7 @@ const PmmaDiscs = () => {
       <h1 className="sr-only">Диски пластик (PMMA)</h1>
       <div className="container mx-auto px-4 pt-6">
         <img
-          src={pmmaBanner.url}
+          src={pmmaBanner}
           alt="Антикризисная цена на PMMA Mono & Multilayer — от 700 ₽"
           className="w-full h-auto rounded-lg shadow-md"
           loading="eager"

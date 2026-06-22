@@ -6,7 +6,7 @@ import { MobileCatalogDrawer } from "@/components/shop/MobileCatalogDrawer";
 import { Helmet } from "react-helmet-async";
 import { products } from "@/data/products";
 import { variantProducts } from "@/data/variantProducts";
-import pmmaBanner from "@/assets/banners/pmma-banner.png";
+import pmmaBanner from "@/assets/banners/pmma-banner.webp";
 
 const PmmaDiscs = () => {
   const pmmaDiscs = products.filter(

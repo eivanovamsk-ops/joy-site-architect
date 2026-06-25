@@ -2137,7 +2137,8 @@ export const courses: Course[] = [
     category: "Ортодонтия",
     tags: ["вебинар", "элайнеры", "Maestro 3D", "ортодонтия"],
     sectionTags: ["для техников", "ортодонтия"],
-    externalUrl: "/education/webinar/aligners-maestro-may-2026"
+    externalUrl: "/education/webinar/aligners-maestro-may-2026",
+    isPast: true
   },
   {
     id: 40,

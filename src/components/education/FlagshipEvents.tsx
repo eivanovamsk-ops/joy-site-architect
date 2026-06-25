@@ -93,11 +93,11 @@ function FlagshipCard({ course, archive = false }: { course: Course; archive?: b
 
 export function FlagshipEvents() {
   const upcoming = courses
-    .filter((c) => [37, 41].includes(c.id))
+    .filter((c) => [41].includes(c.id))
     .sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
 
   const past = courses
-    .filter((c) => [21, 22, 42, 43, 44, 45, 46, 47, 48, 49, 50].includes(c.id))
+    .filter((c) => [37, 21, 22, 42, 43, 44, 45, 46, 47, 48, 49, 50].includes(c.id))
     .sort((a, b) => b.dateStart.getTime() - a.dateStart.getTime());
 
   return (

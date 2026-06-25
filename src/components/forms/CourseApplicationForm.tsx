@@ -157,9 +157,24 @@ export function CourseApplicationForm({
         organization: formData.organization,
         message: formData.comment || null,
         paymentType: formData.payment_type,
+        companyDetails: formData.payment_type === "company" ? formData.company_details : null,
       };
       const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
-      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId });
+
+      let companyFileUrl: string | null = null;
+      let companyFileName: string | null = null;
+      if (formData.payment_type === "company" && companyFile && applicationId) {
+        const filePath = await uploadCompanyFile(applicationId);
+        if (filePath) {
+          companyFileName = companyFile.name;
+          const { data: signed } = await supabase.storage
+            .from("company-requisites")
+            .createSignedUrl(filePath, 60 * 60 * 24 * 7);
+          companyFileUrl = signed?.signedUrl || null;
+        }
+      }
+
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId, companyFileUrl, companyFileName });
 
       setFormData(initialFormData);
       setOpen(false);

@@ -24,8 +24,8 @@ const webinars = [
     date: "18 июня 2026",
     time: "17:00 МСК",
     format: "Онлайн",
-    badge: "Бесплатно",
-    status: "upcoming" as const,
+    badge: "Уже прошёл",
+    status: "past" as const,
     image: "/images/webinar/heygears-a20-hero.jpg",
   },
   {

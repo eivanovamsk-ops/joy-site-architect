@@ -229,15 +229,9 @@ export default function WebinarPrinter3DJuly2026() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button
-              onClick={scrollToReg}
-              size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white text-lg px-10 py-6 rounded-xl font-bold"
-            >
-              Зарегистрироваться бесплатно
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+          <div className="text-center mt-12 text-muted-foreground">
+            Вебинар уже прошёл. Запись и анонсы новых эфиров — на странице{" "}
+            <a href="/education/webinars" className="text-primary underline">Вебинары</a>.
           </div>
         </div>
       </section>

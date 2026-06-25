@@ -230,11 +230,17 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
             .from("orders")
             .update({ company_file_url: filePath })
             .eq("id", order.id);
-          // Generate signed URL valid for 7 days for the manager email
-          const { data: signed } = await supabase.storage
-            .from("company-requisites")
-            .createSignedUrl(filePath, 60 * 60 * 24 * 7);
-          companyFileUrl = signed?.signedUrl || null;
+          // Generate signed URL via edge function (uses service role so it
+          // works for guest checkouts and bypasses storage RLS).
+          try {
+            const { data: signResp } = await supabase.functions.invoke(
+              "sign-company-requisites",
+              { body: { orderId: order.id } }
+            );
+            companyFileUrl = signResp?.signedUrl || null;
+          } catch (signErr) {
+            console.error("Failed to sign company file URL:", signErr);
+          }
         }
       }
 

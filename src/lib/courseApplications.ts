@@ -14,6 +14,9 @@ export interface CourseApplicationPayload {
   organization?: string | null;
   message?: string | null;
   paymentType?: "private" | "company" | string | null;
+  companyDetails?: string | null;
+  companyFileUrl?: string | null;
+  companyFileName?: string | null;
 }
 
 interface SubmitCourseApplicationResult {
@@ -86,7 +89,12 @@ export const sendCourseApplicationEmails = (payload: CourseApplicationPayload & 
           city: payload.city,
           specialization: payload.specialization,
           email: payload.email,
+          organization: payload.organization,
+          message: payload.message,
           paymentType: payload.paymentType,
+          companyDetails: payload.companyDetails || "",
+          companyFileUrl: payload.companyFileUrl || "",
+          companyFileName: payload.companyFileName || "",
         },
       },
     }),

@@ -126,8 +126,8 @@ export default function WebinarPrinter3DJuly2026() {
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <Badge className="bg-emerald-500/15 text-emerald-300 border-emerald-400/30 text-sm px-4 py-1.5 font-semibold">
-                  🎉 БЕСПЛАТНО
+                <Badge className="bg-white/10 text-white border-white/20 text-sm px-4 py-1.5 font-semibold">
+                  ⏱ Вебинар уже прошёл
                 </Badge>
                 <Badge className="bg-white/10 text-white border-white/20 text-sm px-4 py-1.5 font-semibold">
                   Онлайн-вебинар

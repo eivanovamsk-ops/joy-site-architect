@@ -56,9 +56,10 @@ const EducationSection = () => {
   const filteredCourses = useMemo(() => {
     if (!config) return [];
     return courses
-      .filter(course => 
-        course.sectionTags?.includes(config.sectionTag) && 
-        course.sectionTags?.includes(config.subsectionTag)
+      .filter(course =>
+        course.sectionTags?.includes(config.sectionTag) &&
+        course.sectionTags?.includes(config.subsectionTag) &&
+        !course.isPast
       )
       .sort((a, b) => {
         const isArchivedA = a.id === 23 || a.id === 19 || a.id === 25 || a.id === 11 || a.id === 21 || a.id === 10 || a.id === 22;

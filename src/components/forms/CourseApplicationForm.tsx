@@ -412,6 +412,49 @@ export function CourseApplicationForm({
             </RadioGroup>
           </div>
 
+          {formData.payment_type === "company" && (
+            <div className="space-y-3 rounded-md border border-border bg-muted/30 p-3">
+              <div className="space-y-2">
+                <Label htmlFor="company_details">Реквизиты организации</Label>
+                <Textarea
+                  id="company_details"
+                  value={formData.company_details}
+                  onChange={(e) => updateField("company_details", e.target.value)}
+                  placeholder="Название, ИНН, КПП, расчётный счёт, банк и т.д."
+                  rows={3}
+                  className="resize-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label>Файл с реквизитами (необязательно)</Label>
+                {companyFile ? (
+                  <div className="flex items-center justify-between gap-2 rounded-md border bg-background p-2 text-sm">
+                    <span className="truncate">{companyFile.name}</span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setCompanyFile(null)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ) : (
+                  <label className="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-dashed border-border bg-background p-3 text-sm text-muted-foreground hover:bg-muted/50">
+                    <Upload className="h-4 w-4" />
+                    <span>Прикрепить файл (PDF, DOC, JPG, до 5 МБ)</span>
+                    <input
+                      type="file"
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                )}
+              </div>
+            </div>
+          )}
+
           <Button
             type="submit"
             className="w-full gradient-primary text-primary-foreground"

@@ -3717,6 +3717,40 @@ export const courses: Course[] = [
   }
 ];
 
+// Auto-shift past dates to next upcoming date and mark fully-past courses as isPast.
+// Runs once on module load, so all consumers see up-to-date schedules.
+(() => {
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  for (const course of courses) {
+    if (course.isPast) continue;
+    // Skip far-future placeholder dates (year > 2090 means "TBA")
+    if (course.dateStart.getFullYear() > 2090) continue;
+
+    const mainEnd = course.dateEnd ?? course.dateStart;
+    const mainPassed = mainEnd < startOfToday;
+    const upcoming = (course.upcomingDates ?? []).filter(d => d.dateStart >= startOfToday);
+
+    if (mainPassed) {
+      if (upcoming.length > 0) {
+        // Promote earliest upcoming date to main
+        upcoming.sort((a, b) => a.dateStart.getTime() - b.dateStart.getTime());
+        const [next, ...rest] = upcoming;
+        course.date = next.date;
+        course.dateStart = next.dateStart;
+        if (course.dateEnd) course.dateEnd = next.dateStart;
+        course.upcomingDates = rest.length ? rest : undefined;
+      } else {
+        course.isPast = true;
+      }
+    } else if (course.upcomingDates && upcoming.length !== course.upcomingDates.length) {
+      course.upcomingDates = upcoming.length ? upcoming : undefined;
+    }
+  }
+})();
+
+
+
 
 export const courseCategories = [
   "Все категории",

@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { sendCourseApplicationEmails, submitCourseApplication } from "@/lib/courseApplications";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2, GraduationCap } from "lucide-react";
+import { Loader2, GraduationCap, Upload, X } from "lucide-react";
 import { z } from "zod";
 import {
   Dialog,
@@ -52,7 +52,10 @@ const initialFormData = {
   organization: "",
   comment: "",
   payment_type: "private" as "private" | "company",
+  company_details: "",
 };
+
+const ALLOWED_FILE_EXTENSIONS = [".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"];
 
 export function CourseApplicationForm({
   courseName,
@@ -71,6 +74,36 @@ export function CourseApplicationForm({
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [companyFile, setCompanyFile] = useState<File | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const isAllowed = ALLOWED_FILE_EXTENSIONS.some((ext) => file.name.toLowerCase().endsWith(ext));
+    if (!isAllowed) {
+      toast({ variant: "destructive", title: "Неподдерживаемый формат", description: "PDF, DOC, DOCX, JPG, PNG" });
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast({ variant: "destructive", title: "Файл слишком большой", description: "Максимум 5 МБ" });
+      return;
+    }
+    setCompanyFile(file);
+  };
+
+  const uploadCompanyFile = async (applicationId: string): Promise<string | null> => {
+    if (!companyFile) return null;
+    const folder = user ? user.id : `guest-course-${applicationId}`;
+    const filePath = `${folder}/${Date.now()}-${companyFile.name}`;
+    const { data, error } = await supabase.storage
+      .from("company-requisites")
+      .upload(filePath, companyFile);
+    if (error) {
+      console.error("Course file upload error:", error);
+      return null;
+    }
+    return data.path;
+  };
 
   const updateField = (field: keyof typeof initialFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -124,9 +157,24 @@ export function CourseApplicationForm({
         organization: formData.organization,
         message: formData.comment || null,
         paymentType: formData.payment_type,
+        companyDetails: formData.payment_type === "company" ? formData.company_details : null,
       };
       const { applicationId, inserted } = await submitCourseApplication(applicationPayload);
-      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId });
+
+      let companyFileUrl: string | null = null;
+      let companyFileName: string | null = null;
+      if (formData.payment_type === "company" && companyFile && applicationId) {
+        const filePath = await uploadCompanyFile(applicationId);
+        if (filePath) {
+          companyFileName = companyFile.name;
+          const { data: signed } = await supabase.storage
+            .from("company-requisites")
+            .createSignedUrl(filePath, 60 * 60 * 24 * 7);
+          companyFileUrl = signed?.signedUrl || null;
+        }
+      }
+
+      if (inserted) sendCourseApplicationEmails({ ...applicationPayload, applicationId, companyFileUrl, companyFileName });
 
       setFormData(initialFormData);
       setOpen(false);
@@ -363,6 +411,49 @@ export function CourseApplicationForm({
               </div>
             </RadioGroup>
           </div>
+
+          {formData.payment_type === "company" && (
+            <div className="space-y-3 rounded-md border border-border bg-muted/30 p-3">
+              <div className="space-y-2">
+                <Label htmlFor="company_details">Реквизиты организации</Label>
+                <Textarea
+                  id="company_details"
+                  value={formData.company_details}
+                  onChange={(e) => updateField("company_details", e.target.value)}
+                  placeholder="Название, ИНН, КПП, расчётный счёт, банк и т.д."
+                  rows={3}
+                  className="resize-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label>Файл с реквизитами (необязательно)</Label>
+                {companyFile ? (
+                  <div className="flex items-center justify-between gap-2 rounded-md border bg-background p-2 text-sm">
+                    <span className="truncate">{companyFile.name}</span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setCompanyFile(null)}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ) : (
+                  <label className="flex cursor-pointer items-center justify-center gap-2 rounded-md border border-dashed border-border bg-background p-3 text-sm text-muted-foreground hover:bg-muted/50">
+                    <Upload className="h-4 w-4" />
+                    <span>Прикрепить файл (PDF, DOC, JPG, до 5 МБ)</span>
+                    <input
+                      type="file"
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                )}
+              </div>
+            </div>
+          )}
 
           <Button
             type="submit"

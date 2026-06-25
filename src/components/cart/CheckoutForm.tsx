@@ -220,13 +220,21 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
       const order = { id: orderId };
 
       // Upload company file if exists
+      let companyFileUrl: string | null = null;
+      let companyFilePath: string | null = null;
       if (companyFile) {
         const filePath = await uploadCompanyFile(order.id);
         if (filePath) {
+          companyFilePath = filePath;
           await supabase
             .from("orders")
             .update({ company_file_url: filePath })
             .eq("id", order.id);
+          // Generate signed URL valid for 7 days for the manager email
+          const { data: signed } = await supabase.storage
+            .from("company-requisites")
+            .createSignedUrl(filePath, 60 * 60 * 24 * 7);
+          companyFileUrl = signed?.signedUrl || null;
         }
       }
 
@@ -260,6 +268,10 @@ export function CheckoutForm({ items, totalPrice, isGuest, onBack }: CheckoutFor
               total: new Intl.NumberFormat("ru-RU").format(totalPrice) + " ₽",
               deliveryMethod: formData.deliveryMethod,
               items: items.map(i => `${i.name} x${i.quantity}`).join(', '),
+              paymentType: paymentType,
+              companyDetails: paymentType === "company" ? companyDetails : "",
+              companyFileUrl: companyFileUrl || "",
+              companyFileName: companyFile?.name || (companyFilePath ? companyFilePath.split("/").pop() || "" : ""),
             },
           },
         });

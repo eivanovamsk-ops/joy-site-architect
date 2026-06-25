@@ -19,58 +19,6 @@ export function EducationHeroSection() {
         className="w-full"
       >
         <CarouselContent>
-          {/* Slide 1 — Анонс ближайшего крупного события */}
-          <CarouselItem>
-            <div className="relative py-20 lg:py-32 overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  src={course37Banner}
-                  alt="ДЕЛО НЕ В ДИСКЕ — закрытый разбор по диоксиду циркония"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
-              </div>
-              <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-3xl">
-                  <span className="inline-block text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-3 py-1 border border-primary/40 rounded-full bg-primary/10">
-                    Ближайшее закрытое событие
-                  </span>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 uppercase leading-tight">
-                    ДЕЛО НЕ В ДИСКЕ
-                  </h1>
-                  <p className="text-lg md:text-xl text-white/85 mb-6 max-w-2xl">
-                    Закрытый разбор по диоксиду циркония: спекание, цвет,
-                    настройки и реальные тесты лабораторий.
-                  </p>
-                  <div className="flex flex-wrap gap-4 text-white/80 mb-8 text-sm md:text-base">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-primary" />
-                      24 июня 2026
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-primary" />
-                      Москва
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-primary font-bold">3 000 ₽</span>
-                    </div>
-                  </div>
-                  <Link to="/education/course/37">
-                    <Button
-                      size="lg"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 gap-2"
-                    >
-                      Узнать подробнее <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </CarouselItem>
-
-          {/* Slide 2 — Имиджевый */}
-          <CarouselItem>
             <div className="relative py-20 lg:py-32 overflow-hidden">
               <div className="absolute inset-0">
                 <img

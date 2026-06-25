@@ -126,8 +126,8 @@ export default function WebinarPrinter3DJuly2026() {
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <Badge className="bg-emerald-500/15 text-emerald-300 border-emerald-400/30 text-sm px-4 py-1.5 font-semibold">
-                  🎉 БЕСПЛАТНО
+                <Badge className="bg-white/10 text-white border-white/20 text-sm px-4 py-1.5 font-semibold">
+                  ⏱ Вебинар уже прошёл
                 </Badge>
                 <Badge className="bg-white/10 text-white border-white/20 text-sm px-4 py-1.5 font-semibold">
                   Онлайн-вебинар
@@ -164,15 +164,9 @@ export default function WebinarPrinter3DJuly2026() {
                 <div className="flex items-center gap-2 text-white/90"><Monitor className="w-5 h-5 text-cyan-300" /><span className="font-semibold">Онлайн</span></div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <Button
-                  onClick={scrollToReg}
-                  size="lg"
-                  className="bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-900 text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_rgba(52,211,153,0.4)]"
-                >
-                  Занять место бесплатно
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <div className="rounded-xl border border-white/15 bg-white/5 px-6 py-5 text-white/80">
+                Регистрация закрыта — вебинар уже прошёл. Следите за анонсами новых эфиров на странице{" "}
+                <a href="/education/webinars" className="text-cyan-300 underline hover:text-cyan-200">Вебинары</a>.
               </div>
             </div>
 
@@ -235,15 +229,9 @@ export default function WebinarPrinter3DJuly2026() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button
-              onClick={scrollToReg}
-              size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white text-lg px-10 py-6 rounded-xl font-bold"
-            >
-              Зарегистрироваться бесплатно
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+          <div className="text-center mt-12 text-muted-foreground">
+            Вебинар уже прошёл. Запись и анонсы новых эфиров — на странице{" "}
+            <a href="/education/webinars" className="text-primary underline">Вебинары</a>.
           </div>
         </div>
       </section>
@@ -295,45 +283,24 @@ export default function WebinarPrinter3DJuly2026() {
       <section id="registration" className="py-20 bg-gradient-to-br from-[hsl(222,40%,6%)] via-[hsl(200,60%,10%)] to-[hsl(180,70%,12%)]">
         <div className="container mx-auto px-4">
           <div className="max-w-lg mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Регистрация на вебинар</h2>
-              <p className="text-xl text-cyan-300 font-semibold mt-3">18 июня в 17:00 · Онлайн · Бесплатно</p>
-              <p className="text-white/60 mt-3 text-sm">Количество мест ограничено. Получите практический алгоритм диагностики 3D-принтера.</p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="w-name" className="text-white/90">Имя *</Label>
-                <Input id="w-name" value={form.name} onChange={e => updateField("name", e.target.value)} placeholder="Иван" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.name ? "border-destructive" : ""}`} />
-                {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="w-phone" className="text-white/90">Телефон *</Label>
-                <Input id="w-phone" type="tel" value={form.phone} onChange={e => updateField("phone", e.target.value)} placeholder="+7 (999) 123-45-67" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.phone ? "border-destructive" : ""}`} />
-                {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="w-email" className="text-white/90">Email *</Label>
-                <Input id="w-email" type="email" value={form.email} onChange={e => updateField("email", e.target.value)} placeholder="your@email.com" className={`bg-white/10 border-white/20 text-white placeholder:text-white/40 ${errors.email ? "border-destructive" : ""}`} />
-                {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="w-tg" className="text-white/90">Telegram</Label>
-                <Input id="w-tg" value={form.telegram} onChange={e => updateField("telegram", e.target.value)} placeholder="@username" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="w-spec" className="text-white/90">Специализация</Label>
-                <Input id="w-spec" value={form.specialization} onChange={e => updateField("specialization", e.target.value)} placeholder="Зубной техник / оператор 3D-печати" className="bg-white/10 border-white/20 text-white placeholder:text-white/40" />
-              </div>
-              <Button type="submit" disabled={isLoading} className="w-full bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-900 text-lg py-6 font-bold rounded-xl shadow-[0_0_30px_rgba(52,211,153,0.3)]">
-                {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                Зарегистрироваться
-              </Button>
-              <p className="text-xs text-white/40 text-center">
-                Нажимая кнопку, вы соглашаетесь с{" "}
-                <a href="/privacy" className="underline hover:text-white/60">политикой обработки данных</a>
+            <div className="text-center">
+              <Badge className="bg-white/10 text-white border-white/20 text-sm px-4 py-1.5 font-semibold mb-6">
+                ⏱ Вебинар уже прошёл
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Регистрация закрыта</h2>
+              <p className="text-white/70 mt-3">
+                Эфир состоялся 18 июня 2026 года. Подписывайтесь на анонсы, чтобы не пропустить следующие бесплатные вебинары Учебного центра Артикон.
               </p>
-            </form>
+              <div className="mt-8">
+                <a
+                  href="/education/webinars"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-900 text-lg px-8 py-4 font-bold shadow-[0_0_30px_rgba(52,211,153,0.3)]"
+                >
+                  Все вебинары
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

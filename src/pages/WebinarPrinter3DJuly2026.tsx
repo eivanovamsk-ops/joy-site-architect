@@ -164,15 +164,9 @@ export default function WebinarPrinter3DJuly2026() {
                 <div className="flex items-center gap-2 text-white/90"><Monitor className="w-5 h-5 text-cyan-300" /><span className="font-semibold">Онлайн</span></div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <Button
-                  onClick={scrollToReg}
-                  size="lg"
-                  className="bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 text-slate-900 text-lg px-10 py-6 rounded-xl font-bold shadow-[0_0_40px_rgba(52,211,153,0.4)]"
-                >
-                  Занять место бесплатно
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <div className="rounded-xl border border-white/15 bg-white/5 px-6 py-5 text-white/80">
+                Регистрация закрыта — вебинар уже прошёл. Следите за анонсами новых эфиров на странице{" "}
+                <a href="/education/webinars" className="text-cyan-300 underline hover:text-cyan-200">Вебинары</a>.
               </div>
             </div>
 

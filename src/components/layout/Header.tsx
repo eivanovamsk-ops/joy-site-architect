@@ -108,7 +108,7 @@ const shopMenuItems = [{
     label: "Диски пластик (ПММА)",
     href: "/shop/catalog/pmma-discs"
   }, {
-    label: "Пресс-керамика",
+    label: "Блоки",
     href: "/shop/catalog/press-ceramic"
   }]
 }, {
